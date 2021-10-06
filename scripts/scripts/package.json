@@ -1,0 +1,8 @@
+{
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "js-yaml": "^4.1.0",
+    "semver": "^7.3.5"
+  }
+}
