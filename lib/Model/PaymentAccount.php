@@ -227,7 +227,7 @@ class PaymentAccount implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['type'] = $data['type'] ?? TYPE_STANDARD;
+        $this->container['type'] = $data['type'] ?? self::TYPE_STANDARD;
         $this->container['iban'] = $data['iban'] ?? null;
         $this->container['sia'] = $data['sia'] ?? null;
         $this->container['cuc'] = $data['cuc'] ?? null;

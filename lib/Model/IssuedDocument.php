@@ -607,7 +607,7 @@ class IssuedDocument implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['h_margins'] = $data['h_margins'] ?? null;
         $this->container['show_payments'] = $data['show_payments'] ?? null;
         $this->container['show_payment_method'] = $data['show_payment_method'] ?? null;
-        $this->container['show_totals'] = $data['show_totals'] ?? SHOW_TOTALS_ALL;
+        $this->container['show_totals'] = $data['show_totals'] ?? self::SHOW_TOTALS_ALL;
         $this->container['v_margins'] = $data['v_margins'] ?? null;
         $this->container['show_paypal_button'] = $data['show_paypal_button'] ?? false;
         $this->container['show_notification_button'] = $data['show_notification_button'] ?? false;

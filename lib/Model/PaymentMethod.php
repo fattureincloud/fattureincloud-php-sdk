@@ -221,7 +221,7 @@ class PaymentMethod implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['type'] = $data['type'] ?? TYPE_STANDARD;
+        $this->container['type'] = $data['type'] ?? self::TYPE_STANDARD;
         $this->container['is_default'] = $data['is_default'] ?? null;
         $this->container['default_payment_account'] = $data['default_payment_account'] ?? null;
         $this->container['details'] = $data['details'] ?? null;

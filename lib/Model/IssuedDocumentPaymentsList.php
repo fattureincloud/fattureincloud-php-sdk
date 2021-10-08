@@ -223,7 +223,7 @@ class IssuedDocumentPaymentsList implements ModelInterface, ArrayAccess, \JsonSe
     {
         $this->container['due_date'] = $data['due_date'] ?? null;
         $this->container['amount'] = $data['amount'] ?? null;
-        $this->container['status'] = $data['status'] ?? STATUS_NOT_PAID;
+        $this->container['status'] = $data['status'] ?? self::STATUS_NOT_PAID;
         $this->container['payment_account'] = $data['payment_account'] ?? null;
         $this->container['paid_date'] = $data['paid_date'] ?? null;
         $this->container['ei_raw'] = $data['ei_raw'] ?? null;
