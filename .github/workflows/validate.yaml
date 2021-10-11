@@ -1,4 +1,4 @@
-name: Validare PHP SDK
+name: PHP SDK Validation
 
 on:
   pull_request:
@@ -10,9 +10,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - id: checkout
+      name: Checkout repo
+      uses: actions/checkout@v2
 
-    - name: Validate composer.json and composer.lock
+    - id: setup-php
+      if: ${{ env.ACT }}
+      name: Setup PHP
+      run: |
+        sudo apt update
+        sudo apt install php-cli php-curl php-mbstring php-xml unzip -y
+        wget -O composer-setup.php https://getcomposer.org/installer
+        sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+    - id: composer-validation
+      name: Validate composer.json and composer.lock
       run: composer validate --strict
 
     - name: Cache Composer packages
@@ -24,8 +36,19 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-php-
 
-    - name: Install dependencies
+    - id: composer-install
+      name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
-    - name: Run test suite
+    - id: php-unit-tests
+      name: Run test suite
       run: ./vendor/bin/phpunit
+    
+    - id: psalm-validation
+      name: Psalm Validation
+      run: |
+        composer require --dev vimeo/psalm
+        ./vendor/bin/psalm --init
+        composer require --dev alexeyshockov/guzzle-psalm-plugin && vendor/bin/psalm-plugin enable alexeyshockov/guzzle-psalm-plugin
+        ./vendor/bin/psalm
+        ./vendor/bin/psalm --taint-analysis
