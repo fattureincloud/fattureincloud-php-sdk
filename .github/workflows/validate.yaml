@@ -43,9 +43,13 @@ jobs:
     - id: php-unit-tests
       name: Run test suite
       run: ./vendor/bin/phpunit
-
+    
     - id: psalm-validation
-      name: Psalm
+      name: Psalm Validation
+      uses: docker://vimeo/psalm-github-actions
+
+    - id: psalm-security
+      name: Psalm Security
       uses: docker://vimeo/psalm-github-actions
       with:
         security_analysis: true
