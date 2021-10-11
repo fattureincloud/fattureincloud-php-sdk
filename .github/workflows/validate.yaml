@@ -1,4 +1,4 @@
-name: Validare PHP SDK
+name: Validate PHP SDK
 
 on:
   pull_request:
@@ -11,6 +11,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
+    - name: Setup PHP with PECL extension
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.1'
+
+    - name: Install composer
+      run: |
+        wget -O composer-setup.php https://getcomposer.org/installer
+        sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+        php -v
 
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
@@ -29,3 +40,12 @@ jobs:
 
     - name: Run test suite
       run: ./vendor/bin/phpunit
+    
+    - id: psalm-validation
+      name: Psalm Validation
+      run: |
+        composer require --dev vimeo/psalm
+        ./vendor/bin/psalm --init
+        composer require --dev alexeyshockov/guzzle-psalm-plugin && vendor/bin/psalm-plugin enable alexeyshockov/guzzle-psalm-plugin
+        ./vendor/bin/psalm
+        ./vendor/bin/psalm --taint-analysis 

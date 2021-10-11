@@ -31,8 +31,7 @@ For more information, please visit [https://www.fattureincloud.it](https://www.f
 
 ### Requirements
 
-PHP 7.3 and later.
-Should also work with PHP 8.0 but has not been tested.
+Backward-compatible version to PHP 7.1.
 
 ### Composer
 
@@ -41,7 +40,7 @@ To install the bindings via [Composer](https://getcomposer.org/), add the follow
 ```json
 {
   "require": {
-    "fattureincloud/fattureincloud-php-sdk": "2.0.1"
+    "fattureincloud/fattureincloud-php-71-sdk": "2.0.1"
   }
 }
 ```
