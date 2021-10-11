@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ListReceivedDocumentCategoriesResponseTest Class Doc Comment
@@ -55,6 +56,19 @@ class ListReceivedDocumentCategoriesResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": [
+                "Telefono e internet",
+                "Assicurazioni e quote",
+                "Auto ed altri veicoli",
+                "Computer e accessori",
+                "Server e hosting"
+            ]
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListReceivedDocumentCategoriesResponse');
     }
 
     /**
@@ -76,8 +90,10 @@ class ListReceivedDocumentCategoriesResponseTest extends TestCase
      */
     public function testListReceivedDocumentCategoriesResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +101,9 @@ class ListReceivedDocumentCategoriesResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

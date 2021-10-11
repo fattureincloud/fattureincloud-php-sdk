@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * VatTypeTest Class Doc Comment
@@ -55,6 +56,21 @@ class VatTypeTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "id": 0,
+            "value": 22,
+            "description": "Non imponibile art. 123",
+            "notes": "IVA non imponibile ai sensi dell\'articolo 123, comma 2",
+            "e_invoice": true,
+            "ei_type": 2,
+            "ei_description": "string",
+            "editable": true,
+            "is_disabled": false
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\VatType');
     }
 
     /**
@@ -76,8 +92,10 @@ class VatTypeTest extends TestCase
      */
     public function testVatType()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +103,7 @@ class VatTypeTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['id'], $this->array['id']);
     }
 
     /**
@@ -94,8 +111,7 @@ class VatTypeTest extends TestCase
      */
     public function testPropertyValue()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['value'], $this->array['value']);
     }
 
     /**
@@ -103,8 +119,7 @@ class VatTypeTest extends TestCase
      */
     public function testPropertyDescription()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['description'], $this->array['description']);
     }
 
     /**
@@ -112,8 +127,7 @@ class VatTypeTest extends TestCase
      */
     public function testPropertyNotes()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['notes'], $this->array['notes']);
     }
 
     /**
@@ -121,8 +135,7 @@ class VatTypeTest extends TestCase
      */
     public function testPropertyEInvoice()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['e_invoice'], $this->array['e_invoice']);
     }
 
     /**
@@ -130,8 +143,7 @@ class VatTypeTest extends TestCase
      */
     public function testPropertyEiType()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['ei_type'], $this->array['ei_type']);
     }
 
     /**
@@ -139,8 +151,7 @@ class VatTypeTest extends TestCase
      */
     public function testPropertyEiDescription()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['ei_description'], $this->array['ei_description']);
     }
 
     /**
@@ -148,8 +159,7 @@ class VatTypeTest extends TestCase
      */
     public function testPropertyEditable()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['editable'], $this->array['editable']);
     }
 
     /**
@@ -157,7 +167,6 @@ class VatTypeTest extends TestCase
      */
     public function testPropertyIsDisabled()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['is_disabled'], $this->array['is_disabled']);
     }
 }

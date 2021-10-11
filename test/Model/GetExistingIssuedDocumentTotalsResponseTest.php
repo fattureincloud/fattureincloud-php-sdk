@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * GetExistingIssuedDocumentTotalsResponseTest Class Doc Comment
@@ -55,6 +56,28 @@ class GetExistingIssuedDocumentTotalsResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": {
+                "amount_net": 68.18,
+                "amount_rivalsa": 13.64,
+                "amount_net_with_rivalsa": 81.82000000000001,
+                "taxable_amount": 81.82,
+                "vat_list": {
+                  "10": {
+                    "amount_net": 81.82,
+                    "amount_vat": 8.18
+                  }
+                },
+                "amount_vat": 8.18,
+                "amount_gross": 90,
+                "amount_due": 90,
+                "payments_sum": 75
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\GetExistingIssuedDocumentTotalsResponse');
     }
 
     /**
@@ -76,8 +99,10 @@ class GetExistingIssuedDocumentTotalsResponseTest extends TestCase
      */
     public function testGetExistingIssuedDocumentTotalsResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value)
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +110,9 @@ class GetExistingIssuedDocumentTotalsResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

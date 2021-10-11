@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * CreateReceivedDocumentRequestTest Class Doc Comment
@@ -55,6 +56,61 @@ class CreateReceivedDocumentRequestTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "pending_id": 5,
+            "data": {
+                "id": 12345,
+                "type": "expense",
+                "description": "Soggiorno di lavoro",
+                "amortization": 1,
+                "rc_center": "",
+                "invoice_number": "",
+                "is_marked": false,
+                "is_detailed": false,
+                "e_invoice": false,
+                "entity": {
+                  "id": 111,
+                  "name": "Hotel Rubino Palace"
+                },
+                "date": "2021-08-15",
+                "next_due_date": "2021-08-15",
+                "currency": {
+                  "id": "EUR",
+                  "exchange_rate": "1.00000",
+                  "symbol": "€"
+                },
+                "amount_net": 592,
+                "amount_vat": 0,
+                "amount_gross": 592,
+                "amount_withholding_tax": 0,
+                "amount_other_withholding_tax": 0,
+                "tax_deductibility": 50,
+                "vat_deductibility": 100,
+                "payments_list": [
+                  {
+                    "amount": 592,
+                    "due_date": "2021-08-15",
+                    "paid_date": "2021-08-15",
+                    "id": 777,
+                    "payment_terms": {
+                      "days": 0,
+                      "type": "standard"
+                    },
+                    "status": "paid",
+                    "payment_account": {
+                      "id": 222,
+                      "name": "Contanti",
+                      "virtual": false
+                    }
+                  }
+                ],
+                "attachment_url": "spesa_ger5i783t45hu6ti.pdf"
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CreateReceivedDocumentRequest');
     }
 
     /**
@@ -76,8 +132,10 @@ class CreateReceivedDocumentRequestTest extends TestCase
      */
     public function testCreateReceivedDocumentRequest()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +143,7 @@ class CreateReceivedDocumentRequestTest extends TestCase
      */
     public function testPropertyPendingId()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        Testcase::assertEquals($this->array['pending_id'], $this->object['pending_id']);
     }
 
     /**
@@ -94,7 +151,9 @@ class CreateReceivedDocumentRequestTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

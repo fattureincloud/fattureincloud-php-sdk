@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ListUnitsOfMeasureResponseTest Class Doc Comment
@@ -55,6 +56,21 @@ class ListUnitsOfMeasureResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": [
+                "pezzi",
+                "kg",
+                "litri",
+                "ore",
+                "giorni",
+                "km",
+                "mesi"
+            ]
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListUnitsOfMeasureResponse');
     }
 
     /**
@@ -76,8 +92,10 @@ class ListUnitsOfMeasureResponseTest extends TestCase
      */
     public function testListUnitsOfMeasureResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +103,9 @@ class ListUnitsOfMeasureResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

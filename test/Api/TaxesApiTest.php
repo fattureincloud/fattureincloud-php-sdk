@@ -33,6 +33,12 @@ use \FattureInCloud\ApiException;
 use \FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
+use \GuzzleHttp\Client;
+use \GuzzleHttp\Handler\MockHandler;
+use \GuzzleHttp\HandlerStack;
+use \GuzzleHttp\Psr7\Response;
+use \GuzzleHttp\Psr7\Request;
+use \GuzzleHttp\Exception\RequestException;
 /**
  * TaxesApiTest Class Doc Comment
  *
@@ -80,8 +86,23 @@ class TaxesApiTest extends TestCase
      */
     public function testCreateF24()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $stream = '{"data":{"amount":840.36,"description":"PAGAMENTO IVA 2021","due_date":"2021-12-31","status":"paid","payment_account":{"id":111},"attachment_token":"b19c01da9b1688fb73d0d9e8ad"}}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\TaxesApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $create_f24_request = "json";
+        $result = $apiInstance->createF24($company_id, $create_f24_request);
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreateF24Response');
+
+        TestCase::assertEquals($obj, $result);
     }
 
     /**
@@ -92,8 +113,7 @@ class TaxesApiTest extends TestCase
      */
     public function testDeleteF24()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals(1, 1);
     }
 
     /**
@@ -104,8 +124,7 @@ class TaxesApiTest extends TestCase
      */
     public function testDeleteF24Attachment()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals(1, 1);
     }
 
     /**
@@ -116,8 +135,23 @@ class TaxesApiTest extends TestCase
      */
     public function testGetF24()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $stream = '{"data":{"id":12345,"amount":840.36,"description":"PAGAMENTO IVA 2021","due_date":"2021-12-31","status":"paid","payment_account":{"id":111,"name":"Indesa - carta conto"},"attachment_url":"b19c01da9b1688fb73d0d9e8adae89a8.pdf"}}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\TaxesApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $f24_id = 12345;
+        $result = $apiInstance->getF24($company_id, $f24_id);
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetF24Response');
+
+        TestCase::assertEquals($obj, $result);
     }
 
     /**
@@ -128,8 +162,22 @@ class TaxesApiTest extends TestCase
      */
     public function testListF24()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $stream = '{"current_page":1,"data":[{"id":12345,"amount":840.36,"description":"PAGAMENTO IVA 2021","due_date":"2021-12-31","status":"paid","payment_account":{"id":111,"name":"Indesa - carta conto"},"attachment_url":"b19c01da9b1688fb73d0d9e8adae89a8.pdf"},{"id":12346,"amount":810.62,"description":"PAGAMENTO IVA 2020","due_date":"2020-12-31","status":"paid","payment_account":{"id":111,"name":"Indesa - carta conto"},"attachment_url":"bb6df8490dad4770353b378ea926d8ba.pdf"}],"first_page_url":"page=1","from":1,"last_page":1,"last_page_url":"page=1","next_page_url":null,"path":"taxes","per_page":50,"prev_page_url":null,"to":2,"total":2,"aggregated_data":{"amount":"6438.96"}}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\TaxesApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $result = $apiInstance->listF24($company_id);
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListF24Response');
+
+        TestCase::assertEquals($obj, $result);
     }
 
     /**
@@ -140,8 +188,24 @@ class TaxesApiTest extends TestCase
      */
     public function testModifyF24()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $stream = '{"data":{"id":12345,"amount":840.36,"description":"PAGAMENTO IVA 2021","due_date":"2021-12-31","status":"paid","payment_account":{"id":111,"name":"Indesa - carta conto"},"attachment_url":"b19c01da9b1688fb73d0d9e8adae89a8.pdf"}}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\TaxesApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $f24_id = 12345;
+        $modify_f24_request = "json";
+        $result = $apiInstance->modifyF24($company_id, $f24_id, $modify_f24_request);
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyF24Response');
+
+        TestCase::assertEquals($obj, $result);
     }
 
     /**
@@ -152,7 +216,22 @@ class TaxesApiTest extends TestCase
      */
     public function testUploadF24Attachment()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $stream = '{"data":{"attachment_token":"YmMyNWYxYzIwMTU3N2Y4ZGE3ZjZiMzg5OWY0ODNkZDQveXl5LmRvYw"}}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\TaxesApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $upload_f24_attachment = "json";
+        $result = $apiInstance->uploadF24Attachment($company_id, $upload_f24_attachment);
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\UploadF24AttachmentResponse');
+
+        TestCase::assertEquals($obj, $result);
     }
 }

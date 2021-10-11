@@ -30,7 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-
+use \FattureInCloud\ObjectSerializer;
 /**
  * CompanyInfoPlanInfoFunctionsTest Class Doc Comment
  *
@@ -55,6 +55,30 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "document_attachments": true,
+            "archive": true,
+            "payment_notifications": true,
+            "paypal": true,
+            "receipts": true,
+            "e_invoice": true,
+            "genius": true,
+            "stock": true,
+            "smtp": true,
+            "mail_tracking": true,
+            "subaccounts": true,
+            "tessera_sanitaria": true,
+            "recurring": true,
+            "sofort": false,
+            "cerved": true,
+            "ts_digital": true,
+            "ts_pay": true,
+            "ts_invoice_trading": true
+          }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CompanyInfoPlanInfoFunctions');
     }
 
     /**
@@ -76,8 +100,10 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testCompanyInfoPlanInfoFunctions()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +111,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyArchive()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['archive'], $this->array['archive']);
     }
 
     /**
@@ -94,8 +119,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyCerved()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['cerved'], $this->array['cerved']);
     }
 
     /**
@@ -103,8 +127,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyDocumentAttachments()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['document_attachments'], $this->array['document_attachments']);
     }
 
     /**
@@ -112,8 +135,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyEInvoice()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['e_invoice'], $this->array['e_invoice']);
     }
 
     /**
@@ -121,8 +143,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyGenius()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['genius'], $this->array['genius']);
     }
 
     /**
@@ -130,8 +151,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyMailTracking()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['mail_tracking'], $this->array['mail_tracking']);
     }
 
     /**
@@ -139,8 +159,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyPaymentNotifications()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['payment_notifications'], $this->array['payment_notifications']);
     }
 
     /**
@@ -148,8 +167,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyPaypal()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['paypal'], $this->array['paypal']);
     }
 
     /**
@@ -157,8 +175,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyReceipts()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['receipts'], $this->array['receipts']);
     }
 
     /**
@@ -166,8 +183,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyRecurring()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['recurring'], $this->array['recurring']);
     }
 
     /**
@@ -175,8 +191,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertySmtp()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['smtp'], $this->array['smtp']);
     }
 
     /**
@@ -184,8 +199,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertySofort()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['sofort'], $this->array['sofort']);
     }
 
     /**
@@ -193,8 +207,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyStock()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['stock'], $this->array['stock']);
     }
 
     /**
@@ -202,8 +215,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertySubaccounts()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['subaccounts'], $this->array['subaccounts']);
     }
 
     /**
@@ -211,8 +223,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyTesseraSanitaria()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['tessera_sanitaria'], $this->array['tessera_sanitaria']);
     }
 
     /**
@@ -220,8 +231,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyTsDigital()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['ts_digital'], $this->array['ts_digital']);
     }
 
     /**
@@ -229,8 +239,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyTsInvoiceTrading()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['ts_invoice_trading'], $this->array['ts_invoice_trading']);
     }
 
     /**
@@ -238,7 +247,6 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyTsPay()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['ts_pay'], $this->array['ts_pay']);
     }
 }

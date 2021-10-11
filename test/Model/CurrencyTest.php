@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * CurrencyTest Class Doc Comment
@@ -55,6 +56,16 @@ class CurrencyTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "id": "EUR",
+            "symbol": "€",
+            "html_symbol": "&euro;",
+            "exchange_rate": "1.00000"
+          }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\Currency');
     }
 
     /**
@@ -76,8 +87,10 @@ class CurrencyTest extends TestCase
      */
     public function testCurrency()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +98,7 @@ class CurrencyTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['id'], $this->array['id']);
     }
 
     /**
@@ -94,8 +106,7 @@ class CurrencyTest extends TestCase
      */
     public function testPropertySymbol()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['symbol'], $this->array['symbol']);
     }
 
     /**
@@ -103,8 +114,7 @@ class CurrencyTest extends TestCase
      */
     public function testPropertyExchangeRate()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['exchange_rate'], $this->array['exchange_rate']);
     }
 
     /**
@@ -112,7 +122,6 @@ class CurrencyTest extends TestCase
      */
     public function testPropertyHtmlSymbol()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['html_symbol'], $this->array['html_symbol']);
     }
 }

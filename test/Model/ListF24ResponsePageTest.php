@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ListF24ResponsePageTest Class Doc Comment
@@ -55,6 +56,38 @@ class ListF24ResponsePageTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": [
+                {
+                  "id": 12345,
+                  "amount": 840.36,
+                  "description": "PAGAMENTO IVA 2021",
+                  "due_date": "2021-12-31",
+                  "status": "paid",
+                  "payment_account": {
+                    "id": 111,
+                    "name": "Indesa - carta conto"
+                  },
+                  "attachment_url": "b19c01da9b1688fb73d0d9e8adae89a8.pdf"
+                },
+                {
+                  "id": 12346,
+                  "amount": 810.62,
+                  "description": "PAGAMENTO IVA 2020",
+                  "due_date": "2020-12-31",
+                  "status": "paid",
+                  "payment_account": {
+                    "id": 111,
+                    "name": "Indesa - carta conto"
+                  },
+                  "attachment_url": "bb6df8490dad4770353b378ea926d8ba.pdf"
+                }
+            ]
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListF24ResponsePage');
     }
 
     /**
@@ -76,8 +109,10 @@ class ListF24ResponsePageTest extends TestCase
      */
     public function testListF24ResponsePage()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +120,9 @@ class ListF24ResponsePageTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

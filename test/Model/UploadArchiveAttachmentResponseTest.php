@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * UploadArchiveAttachmentResponseTest Class Doc Comment
@@ -55,6 +56,15 @@ class UploadArchiveAttachmentResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": {
+                "attachment_token": "YmMyNWYxYzIwMTU3N2Y4ZGE3ZjZiMzg5OWY0ODNkZDQveXl5LmRvYw"
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\UploadArchiveAttachmentResponse');
     }
 
     /**
@@ -76,8 +86,10 @@ class UploadArchiveAttachmentResponseTest extends TestCase
      */
     public function testUploadArchiveAttachmentResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +97,9 @@ class UploadArchiveAttachmentResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

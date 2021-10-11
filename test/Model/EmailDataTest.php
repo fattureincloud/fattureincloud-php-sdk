@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * EmailDataTest Class Doc Comment
@@ -55,6 +56,35 @@ class EmailDataTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "recipient_email": "mary.red@example.com",
+            "cc_email": "m.rossi@exxample.com",
+            "subject": "Nostra pro forma nr. 1",
+            "body": "Gentile Mario Rossi,<br>per vedere la nostra pro forma di  o per scaricarne una copia in versione PDF prema sul bottone sottoastante.<br><br>{{allegati}}<br><br>Cordiali saluti,<br><b>Mario Rossi</b>",
+            "document_exists": true,
+            "delivery_note_exists": false,
+            "attachment_exists": false,
+            "accompanying_invoice_exists": false,
+            "default_attach_pdf": false,
+            "default_sender_email": {
+                "id": 0,
+                "email": "no-reply@fattureincloud.it"
+              },
+              "sender_emails_list": [
+                {
+                  "id": 0,
+                  "email": "no-reply@fattureincloud.it"
+                },
+                {
+                  "id": 888,
+                  "email": "mariorossi@fattureincloud.it"
+                }
+            ]
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\EmailData');
     }
 
     /**
@@ -76,8 +106,10 @@ class EmailDataTest extends TestCase
      */
     public function testEmailData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +117,7 @@ class EmailDataTest extends TestCase
      */
     public function testPropertyRecipientEmail()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['recipient_email'], $this->array['recipient_email']);
     }
 
     /**
@@ -94,8 +125,10 @@ class EmailDataTest extends TestCase
      */
     public function testPropertyDefaultSenderEmail()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['default_sender_email'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['default_sender_email']);
+        }
     }
 
     /**
@@ -103,8 +136,10 @@ class EmailDataTest extends TestCase
      */
     public function testPropertySenderEmailsList()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['sender_emails_list'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['sender_emails_list']);
+        }
     }
 
     /**
@@ -112,8 +147,7 @@ class EmailDataTest extends TestCase
      */
     public function testPropertyCcEmail()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['cc_email'], $this->array['cc_email']);
     }
 
     /**
@@ -121,8 +155,7 @@ class EmailDataTest extends TestCase
      */
     public function testPropertySubject()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['subject'], $this->array['subject']);
     }
 
     /**
@@ -130,8 +163,7 @@ class EmailDataTest extends TestCase
      */
     public function testPropertyBody()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['body'], $this->array['body']);
     }
 
     /**
@@ -139,8 +171,7 @@ class EmailDataTest extends TestCase
      */
     public function testPropertyDocumentExists()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['document_exists'], $this->array['document_exists']);
     }
 
     /**
@@ -148,8 +179,7 @@ class EmailDataTest extends TestCase
      */
     public function testPropertyDeliveryNoteExists()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['delivery_note_exists'], $this->array['delivery_note_exists']);
     }
 
     /**
@@ -157,8 +187,7 @@ class EmailDataTest extends TestCase
      */
     public function testPropertyAttachmentExists()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['attachment_exists'], $this->array['attachment_exists']);
     }
 
     /**
@@ -166,8 +195,7 @@ class EmailDataTest extends TestCase
      */
     public function testPropertyAccompanyingInvoiceExists()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['accompanying_invoice_exists'], $this->array['accompanying_invoice_exists']);
     }
 
     /**
@@ -175,7 +203,6 @@ class EmailDataTest extends TestCase
      */
     public function testPropertyDefaultAttachPdf()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['default_attach_pdf'], $this->array['default_attach_pdf']);
     }
 }

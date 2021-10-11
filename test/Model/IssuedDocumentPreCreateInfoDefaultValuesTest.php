@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * IssuedDocumentPreCreateInfoDefaultValuesTest Class Doc Comment
@@ -55,6 +56,53 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "default_template": {
+                "id": 111,
+                "type": "standard",
+                "name": "Light Smoke"
+            },
+            "dn_template": {
+                "id": 222,
+                "type": "delivery_note",
+                "name": "DDT 1"
+            },
+            "ai_template": {
+                "id": 333,
+                "type": "accompanying_invoice",
+                "name": "FT Accompagnatoria 1"
+            },
+            "notes": "",
+            "rivalsa": 0,
+            "cassa": 0,
+            "withholding_tax": 0,
+            "withholding_tax_taxable": 100,
+            "other_withholding_tax": 0,
+            "use_gross_prices": false,
+            "payment_method": {
+                "id": 123321,
+                "name": "Bonifico bancario",
+                "is_default": true,
+                "details": [
+                    {
+                    "title": "Banca",
+                    "description": "Indesa"
+                    },
+                    {
+                    "title": "IBAN",
+                    "description": "IT17QA12345600000003498936"
+                    },
+                    {
+                    "title": "Intestatario",
+                    "description": "Mario Rossi"
+                    }
+                ]
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\IssuedDocumentPreCreateInfoDefaultValues');
     }
 
     /**
@@ -76,8 +124,10 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testIssuedDocumentPreCreateInfoDefaultValues()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +135,10 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyDefaultTemplate()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['default_template'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['default_template']);
+        }
     }
 
     /**
@@ -94,8 +146,10 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyDnTemplate()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['dn_template'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['dn_template']);
+        }
     }
 
     /**
@@ -103,8 +157,10 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyAiTemplate()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['ai_template'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['ai_template']);
+        }
     }
 
     /**
@@ -112,8 +168,7 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyNotes()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        Testcase::assertEquals($this->array['notes'], $this->object['notes']);
     }
 
     /**
@@ -121,8 +176,7 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyRivalsa()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        Testcase::assertEquals($this->array['rivalsa'], $this->object['rivalsa']);
     }
 
     /**
@@ -130,8 +184,7 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyCassa()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        Testcase::assertEquals($this->array['cassa'], $this->object['cassa']);
     }
 
     /**
@@ -139,8 +192,7 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyWithholdingTax()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        Testcase::assertEquals($this->array['withholding_tax'], $this->object['withholding_tax']);
     }
 
     /**
@@ -148,8 +200,7 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyWithholdingTaxTaxable()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        Testcase::assertEquals($this->array['withholding_tax_taxable'], $this->object['withholding_tax_taxable']);
     }
 
     /**
@@ -157,8 +208,7 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyOtherWithholdingTax()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        Testcase::assertEquals($this->array['other_withholding_tax'], $this->object['other_withholding_tax']);
     }
 
     /**
@@ -166,8 +216,7 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyUseGrossPrices()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        Testcase::assertEquals($this->array['use_gross_prices'], $this->object['use_gross_prices']);
     }
 
     /**
@@ -175,7 +224,9 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyPaymentMethod()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['payment_method'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['payment_method']);
+        }
     }
 }

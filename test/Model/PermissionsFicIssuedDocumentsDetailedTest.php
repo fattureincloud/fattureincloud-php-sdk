@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * PermissionsFicIssuedDocumentsDetailedTest Class Doc Comment
@@ -55,6 +56,22 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "quotes": "write",
+            "proformas": "write",
+            "invoices": "write",
+            "receipts": "write",
+            "delivery_notes": "write",
+            "credit_notes": "write",
+            "orders": "write",
+            "work_reports": "write",
+            "supplier_orders": "write",
+            "self_invoices": "write"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\PermissionsFicIssuedDocumentsDetailed');
     }
 
     /**
@@ -76,8 +93,10 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPermissionsFicIssuedDocumentsDetailed()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +104,7 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPropertyQuotes()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['quotes'], $this->array['quotes']);
     }
 
     /**
@@ -94,8 +112,7 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPropertyProformas()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['proformas'], $this->array['proformas']);
     }
 
     /**
@@ -103,8 +120,7 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPropertyInvoices()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['invoices'], $this->array['invoices']);
     }
 
     /**
@@ -112,8 +128,7 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPropertyReceipts()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['receipts'], $this->array['receipts']);
     }
 
     /**
@@ -121,8 +136,7 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPropertyDeliveryNotes()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['delivery_notes'], $this->array['delivery_notes']);
     }
 
     /**
@@ -130,8 +144,7 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPropertyCreditNotes()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['credit_notes'], $this->array['credit_notes']);
     }
 
     /**
@@ -139,8 +152,7 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPropertyOrders()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['orders'], $this->array['orders']);
     }
 
     /**
@@ -148,8 +160,7 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPropertyWorkReports()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['work_reports'], $this->array['work_reports']);
     }
 
     /**
@@ -157,8 +168,7 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPropertySupplierOrders()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['supplier_orders'], $this->array['supplier_orders']);
     }
 
     /**
@@ -166,7 +176,6 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPropertySelfInvoices()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['self_invoices'], $this->array['self_invoices']);
     }
 }

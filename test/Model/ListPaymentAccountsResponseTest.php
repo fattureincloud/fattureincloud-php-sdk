@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ListPaymentAccountsResponseTest Class Doc Comment
@@ -55,6 +56,30 @@ class ListPaymentAccountsResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": [
+                {
+                  "id": 21,
+                  "name": "Indesa - Carta conto",
+                  "type": "standard",
+                  "iban": null,
+                  "sia": null,
+                  "virtual": false
+                },
+                {
+                  "id": 109,
+                  "name": "Indesa",
+                  "type": "bank",
+                  "iban": "IT17A1234563200000003498936",
+                  "sia": "IN234",
+                  "virtual": false
+                }
+            ]
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListPaymentAccountsResponse');
     }
 
     /**
@@ -76,8 +101,10 @@ class ListPaymentAccountsResponseTest extends TestCase
      */
     public function testListPaymentAccountsResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +112,9 @@ class ListPaymentAccountsResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

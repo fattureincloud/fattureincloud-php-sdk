@@ -28,6 +28,7 @@
  */
 
 namespace FattureInCloud\Test\Model;
+use \FattureInCloud\ObjectSerializer;
 
 use PHPUnit\Framework\TestCase;
 
@@ -55,6 +56,46 @@ class CompanyInfoPlanInfoTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "limits": {
+                "clients": 5000,
+                "suppliers": 5000,
+                "products": 5000,
+                "documents": 3000
+              },
+              "functions": {
+                "document_attachments": true,
+                "archive": true,
+                "payment_notifications": true,
+                "paypal": true,
+                "receipts": true,
+                "e_invoice": true,
+                "genius": true,
+                "stock": true,
+                "smtp": true,
+                "mail_tracking": true,
+                "subaccounts": true,
+                "tessera_sanitaria": true,
+                "recurring": true,
+                "sofort": false,
+                "cerved": true,
+                "ts_digital": true,
+                "ts_pay": true,
+                "ts_invoice_trading": true
+              },
+              "functions_status": {
+                "ts_digital": {
+                  "active": true
+                },
+                "ts_pay": {
+                  "active": true
+                }
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CompanyInfoPlanInfo');
     }
 
     /**
@@ -76,8 +117,10 @@ class CompanyInfoPlanInfoTest extends TestCase
      */
     public function testCompanyInfoPlanInfo()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +128,10 @@ class CompanyInfoPlanInfoTest extends TestCase
      */
     public function testPropertyLimits()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['limits'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['limits']);
+        }
     }
 
     /**
@@ -94,8 +139,10 @@ class CompanyInfoPlanInfoTest extends TestCase
      */
     public function testPropertyFunctions()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['functions'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['functions']);
+        }
     }
 
     /**
@@ -103,7 +150,9 @@ class CompanyInfoPlanInfoTest extends TestCase
      */
     public function testPropertyFunctionsStatus()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['functions_status'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['functions_status']);
+        }
     }
 }

@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * VerifyEInvoiceXmlErrorResponseTest Class Doc Comment
@@ -55,6 +56,23 @@ class VerifyEInvoiceXmlErrorResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "error": {
+                "message": "errore",
+                "validation_result": {
+                    "success": false
+                }
+            },
+            "extra": {
+                "errors": [
+                    "errore brutto"
+                ]
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\VerifyEInvoiceXmlErrorResponse');
     }
 
     /**
@@ -76,8 +94,10 @@ class VerifyEInvoiceXmlErrorResponseTest extends TestCase
      */
     public function testVerifyEInvoiceXmlErrorResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +105,10 @@ class VerifyEInvoiceXmlErrorResponseTest extends TestCase
      */
     public function testPropertyError()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['error'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['error']);
+        }
     }
 
     /**
@@ -94,7 +116,9 @@ class VerifyEInvoiceXmlErrorResponseTest extends TestCase
      */
     public function testPropertyExtra()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['extra'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['extra']);
+        }
     }
 }

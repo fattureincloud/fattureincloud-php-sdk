@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * GetReceiptPreCreateInfoResponseTest Class Doc Comment
@@ -55,6 +56,85 @@ class GetReceiptPreCreateInfoResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": {
+                "numerations": {
+                    "2016": {
+                      "sales_receipt": {
+                        "REC003": 12,
+                        "REC002": 5,
+                        "REC001": 2
+                      },
+                      "till_receipt": {
+                        "REC002": 6,
+                        "REC001": 2
+                      }
+                    },
+                    "2017": {
+                      "sales_receipt": {
+                        "REC003": 14,
+                        "REC002": 7,
+                        "REC001": 1
+                      },
+                      "till_receipt": {
+                        "REC003": 1,
+                        "REC001": 3
+                      }
+                    },
+                    "2018": {
+                      "sales_receipt": {
+                        "REC001": 3
+                      }
+                    },
+                    "2019": {
+                      "sales_receipt": {
+                        "REC002": 105,
+                        "REC001": 22
+                      },
+                      "till_receipt": {
+                        "REC003": 21,
+                        "REC002": 24,
+                        "REC001": 25
+                      }
+                    },
+                    "2020": {
+                      "sales_receipt": {
+                        "REC001": 3
+                      }
+                    },
+                    "2021": {
+                      "sales_receipt": {
+                        "REC005": 3,
+                        "REC004": 2,
+                        "REC003": 2,
+                        "REC001": 7
+                      }
+                    }
+                  },
+                  "numerations_list": [
+                    "REC001",
+                    "REC002",
+                    "REC003",
+                    "REC005",
+                    "REC006"
+                  ],
+                  "rc_centers_list": [
+                    "Sede generale",
+                    "Negozio Bergamo",
+                    "Negozio Milano"
+                  ],
+                  "payment_accounts_list": [
+                    {
+                      "id": 111,
+                      "name": "Indesa - carta conto"
+                    }
+                ]
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\GetReceiptPreCreateInfoResponse');
     }
 
     /**
@@ -76,8 +156,10 @@ class GetReceiptPreCreateInfoResponseTest extends TestCase
      */
     public function testGetReceiptPreCreateInfoResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +167,9 @@ class GetReceiptPreCreateInfoResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

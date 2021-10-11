@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * CompanyInfoPlanInfoFunctionsStatusTest Class Doc Comment
@@ -55,7 +56,19 @@ class CompanyInfoPlanInfoFunctionsStatusTest extends TestCase
      */
     public function setUp(): void
     {
-    }
+        $json = '{
+            "ts_digital": {
+              "active": true
+            },
+            "ts_pay": {
+              "active": true
+            }
+          }';
+
+          $this->array = json_decode($json, true);
+
+          $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CompanyInfoPlanInfoFunctionsStatus');
+      }
 
     /**
      * Clean up after running each test case
@@ -76,8 +89,10 @@ class CompanyInfoPlanInfoFunctionsStatusTest extends TestCase
      */
     public function testCompanyInfoPlanInfoFunctionsStatus()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+      foreach ($this->array as $key => $value) 
+      {
+         Testcase::assertArrayHasKey($key, $this->object);
+      }
     }
 
     /**
@@ -85,8 +100,7 @@ class CompanyInfoPlanInfoFunctionsStatusTest extends TestCase
      */
     public function testPropertyTsDigital()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['ts_digital']['active'], $this->array['ts_digital']['active']);
     }
 
     /**
@@ -94,7 +108,6 @@ class CompanyInfoPlanInfoFunctionsStatusTest extends TestCase
      */
     public function testPropertyTsPay()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['ts_digital']['active'], $this->array['ts_digital']['active']);
     }
 }

@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * F24Test Class Doc Comment
@@ -55,6 +56,23 @@ class F24Test extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "id": 12345,
+            "amount": 840.36,
+            "description": "PAGAMENTO IVA 2021",
+            "due_date": "2021-12-31",
+            "status": "paid",
+            "attachment_url": "b19c01da9b1688fb73d0d9e8adae89a8.pdf",
+            "payment_account": {
+                "id": 111,
+                "name": "Indesa - carta conto"
+            },
+            "attachment_token": "Adfqregwthwrt6whrtghsrgbsdthyeruerur6u6676e5879"
+          }';
+
+          $this->array = json_decode($json, true);
+
+          $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\F24');
     }
 
     /**
@@ -76,8 +94,10 @@ class F24Test extends TestCase
      */
     public function testF24()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +105,7 @@ class F24Test extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['id'], $this->array['id']);
     }
 
     /**
@@ -94,8 +113,8 @@ class F24Test extends TestCase
      */
     public function testPropertyDueDate()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $date = new \DateTime($this->array['due_date']);
+        TestCase::assertEquals($this->object['due_date'], $date);
     }
 
     /**
@@ -103,8 +122,7 @@ class F24Test extends TestCase
      */
     public function testPropertyStatus()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['status'], $this->array['status']);
     }
 
     /**
@@ -112,8 +130,10 @@ class F24Test extends TestCase
      */
     public function testPropertyPaymentAccount()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['payment_account'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['payment_account']);
+        }
     }
 
     /**
@@ -121,8 +141,7 @@ class F24Test extends TestCase
      */
     public function testPropertyAmount()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['amount'], $this->array['amount']);
     }
 
     /**
@@ -130,8 +149,7 @@ class F24Test extends TestCase
      */
     public function testPropertyAttachmentUrl()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['attachment_url'], $this->array['attachment_url']);
     }
 
     /**
@@ -139,8 +157,7 @@ class F24Test extends TestCase
      */
     public function testPropertyAttachmentToken()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['attachment_token'], $this->array['attachment_token']);
     }
 
     /**
@@ -148,7 +165,6 @@ class F24Test extends TestCase
      */
     public function testPropertyDescription()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['description'], $this->array['description']);
     }
 }

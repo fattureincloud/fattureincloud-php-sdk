@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ListDeliveryNotesDefaultCausalsResponseTest Class Doc Comment
@@ -55,6 +56,25 @@ class ListDeliveryNotesDefaultCausalsResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": [
+                "Vendita",
+                "Conto visione",
+                "Conto deposito",
+                "Conto vendita",
+                "Tentata vendita",
+                "Prestito d\'uso",
+                "Conto lavorazione",
+                "Omaggio",
+                "Riparazione",
+                "Reso per accredito",
+                "Reso per sostituzione"
+              ]
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListDeliveryNotesDefaultCausalsResponse');
     }
 
     /**
@@ -76,8 +96,10 @@ class ListDeliveryNotesDefaultCausalsResponseTest extends TestCase
      */
     public function testListDeliveryNotesDefaultCausalsResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +107,9 @@ class ListDeliveryNotesDefaultCausalsResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

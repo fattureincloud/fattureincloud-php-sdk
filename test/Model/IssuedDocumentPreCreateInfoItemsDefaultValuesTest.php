@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * IssuedDocumentPreCreateInfoItemsDefaultValuesTest Class Doc Comment
@@ -55,6 +56,23 @@ class IssuedDocumentPreCreateInfoItemsDefaultValuesTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "vat": {
+                "id": 0,
+                "value": 22,
+                "description": "iva",
+                "notes": "",
+                "e_invoice": true,
+                "ei_type": "0",
+                "ei_description": "",
+                "is_disabled": false,
+                "editable": false
+              }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\IssuedDocumentPreCreateInfoItemsDefaultValues');
     }
 
     /**
@@ -76,8 +94,10 @@ class IssuedDocumentPreCreateInfoItemsDefaultValuesTest extends TestCase
      */
     public function testIssuedDocumentPreCreateInfoItemsDefaultValues()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +105,9 @@ class IssuedDocumentPreCreateInfoItemsDefaultValuesTest extends TestCase
      */
     public function testPropertyVat()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['vat'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['vat']);
+        }
     }
 }

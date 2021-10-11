@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * FunctionStatusTest Class Doc Comment
@@ -55,6 +56,13 @@ class FunctionStatusTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "active": true
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\FunctionStatus');
     }
 
     /**
@@ -76,8 +84,10 @@ class FunctionStatusTest extends TestCase
      */
     public function testFunctionStatus()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +95,6 @@ class FunctionStatusTest extends TestCase
      */
     public function testPropertyActive()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['active'], $this->array['active']);
     }
 }

@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * SendEInvoiceRequestDataTest Class Doc Comment
@@ -55,6 +56,14 @@ class SendEInvoiceRequestDataTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "cassa_type": "ct",
+            "withholding_tax_causal": "causale"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\SendEInvoiceRequestData');
     }
 
     /**
@@ -76,8 +85,10 @@ class SendEInvoiceRequestDataTest extends TestCase
      */
     public function testSendEInvoiceRequestData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +96,7 @@ class SendEInvoiceRequestDataTest extends TestCase
      */
     public function testPropertyCassaType()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['cassa_type'], $this->array['cassa_type']);
     }
 
     /**
@@ -94,7 +104,6 @@ class SendEInvoiceRequestDataTest extends TestCase
      */
     public function testPropertyWithholdingTaxCausal()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['withholding_tax_causal'], $this->array['withholding_tax_causal']);
     }
 }

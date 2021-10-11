@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * SupplierTest Class Doc Comment
@@ -55,6 +56,34 @@ class SupplierTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "id": 12345,
+            "code": "AE86",
+            "name": "Mario Rossi S.R.L.",
+            "type": "company",
+            "first_name": "Mario",
+            "last_name": "Rossi",
+            "contact_person": "",
+            "vat_number": "111222333",
+            "tax_code": "111122233",
+            "address_street": "Corso Magellano, 46",
+            "address_postal_code": "20146",
+            "address_city": "Milano",
+            "address_province": "MI",
+            "address_extra": "",
+            "country": "Italia",
+            "email": "mario.rossi@example.com",
+            "certified_email": "mario.rossi@pec.example.com",
+            "phone": "1234567890",
+            "fax": "123456789",
+            "notes": "",
+            "created_at": "2021-15-08",
+            "updated_at": "2021-15-08"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\Supplier');
     }
 
     /**
@@ -76,8 +105,10 @@ class SupplierTest extends TestCase
      */
     public function testSupplier()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +116,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['id'], $this->array['id']);
     }
 
     /**
@@ -94,8 +124,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyCode()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['code'], $this->array['code']);
     }
 
     /**
@@ -103,8 +132,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['name'], $this->array['name']);
     }
 
     /**
@@ -112,8 +140,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyType()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['type'], $this->array['type']);
     }
 
     /**
@@ -121,8 +148,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyFirstName()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['first_name'], $this->array['first_name']);
     }
 
     /**
@@ -130,8 +156,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyLastName()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['last_name'], $this->array['last_name']);
     }
 
     /**
@@ -139,8 +164,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyContactPerson()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['contact_person'], $this->array['contact_person']);
     }
 
     /**
@@ -148,8 +172,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyVatNumber()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['vat_number'], $this->array['vat_number']);
     }
 
     /**
@@ -157,8 +180,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyTaxCode()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['tax_code'], $this->array['tax_code']);
     }
 
     /**
@@ -166,8 +188,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyAddressStreet()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['address_street'], $this->array['address_street']);
     }
 
     /**
@@ -175,8 +196,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyAddressPostalCode()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['address_postal_code'], $this->array['address_postal_code']);
     }
 
     /**
@@ -184,8 +204,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyAddressCity()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['address_city'], $this->array['address_city']);
     }
 
     /**
@@ -193,8 +212,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyAddressProvince()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['address_province'], $this->array['address_province']);
     }
 
     /**
@@ -202,8 +220,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyAddressExtra()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['address_extra'], $this->array['address_extra']);
     }
 
     /**
@@ -211,8 +228,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyCountry()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['country'], $this->array['country']);
     }
 
     /**
@@ -220,8 +236,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyEmail()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['email'], $this->array['email']);
     }
 
     /**
@@ -229,8 +244,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyCertifiedEmail()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['certified_email'], $this->array['certified_email']);
     }
 
     /**
@@ -238,8 +252,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyPhone()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['phone'], $this->array['phone']);
     }
 
     /**
@@ -247,8 +260,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyFax()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['fax'], $this->array['fax']);
     }
 
     /**
@@ -256,8 +268,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyNotes()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['notes'], $this->array['notes']);
     }
 
     /**
@@ -265,8 +276,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyCreatedAt()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['created_at'], $this->array['created_at']);
     }
 
     /**
@@ -274,7 +284,6 @@ class SupplierTest extends TestCase
      */
     public function testPropertyUpdatedAt()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['updated_at'], $this->array['updated_at']);
     }
 }

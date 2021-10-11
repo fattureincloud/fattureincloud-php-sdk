@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ListClientsResponseTest Class Doc Comment
@@ -55,6 +56,105 @@ class ListClientsResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "current_page": 2,
+            "first_page_url": "page=1",
+            "from": 1,
+            "last_page": 3,
+            "last_page_url": "page=3",
+            "next_page_url": "page=3",
+            "path": "/archive",
+            "per_page": 50,
+            "prev_page_url": "page=1",
+            "to": 3,
+            "total": 155,
+            "data": [
+                {
+                  "id": 16451,
+                  "code": "AE86",
+                  "name": "Avv. Maria Rossi",
+                  "type": "person",
+                  "first_name": "Maria",
+                  "last_name": "Rossi",
+                  "contact_person": "",
+                  "vat_number": "IT12345640962",
+                  "tax_code": "BLTGNI5ABCDA794E",
+                  "address_street": "Via Roma, 1",
+                  "address_postal_code": "20900",
+                  "address_city": "Milano",
+                  "address_province": "MI",
+                  "address_extra": "",
+                  "country": "Italia",
+                  "email": "maria.rossi@example.com",
+                  "certified_email": "maria.rossi@pec.example.com",
+                  "phone": "1234567890",
+                  "fax": "",
+                  "notes": "",
+                  "created_at": "2021-04-29 08:53:07",
+                  "updated_at": "2021-04-29 08:53:07",
+                  "default_payment_terms": 1,
+                  "default_payment_terms_type": "standard",
+                  "bank_name": "Indesa",
+                  "bank_iban": "IT40P123456781000000123456",
+                  "bank_swift_code": "AK86PCT",
+                  "shipping_address": "Corso Magellano 4",
+                  "e_invoice": true,
+                  "ei_code": "111111",
+                  "default_vat": {
+                    "id": 54321,
+                    "value": 45,
+                    "description": "",
+                    "is_disabled": false
+                  },
+                  "default_payment_method": {
+                    "id": 386092,
+                    "name": "Credit card"
+                  }
+                },
+                {
+                  "id": 25330696,
+                  "code": "PD00",
+                  "name": "Mario Rossi",
+                  "type": "person",
+                  "first_name": "Mario",
+                  "last_name": "Rossi",
+                  "contact_person": "",
+                  "vat_number": "IT1234567890",
+                  "tax_code": "ABCDEF12G34H567I",
+                  "address_street": "Via largo augusto 123",
+                  "address_postal_code": "21012",
+                  "address_city": "Bergamo",
+                  "address_province": "BG",
+                  "address_extra": "",
+                  "country": "Italia",
+                  "email": "info@mariorossi.it",
+                  "certified_email": "info@pec.mariorossi.it",
+                  "phone": "012345678",
+                  "fax": "012345678",
+                  "notes": "",
+                  "created_at": "2021-04-29 08:53:07",
+                  "default_payment_terms": 0,
+                  "default_payment_terms_type": "standard",
+                  "bank_name": "Monte dei Pascoli",
+                  "bank_iban": "IT00P123456781000000123456",
+                  "bank_swift_code": "APL86PCT",
+                  "shipping_address": "Via Miilano 4",
+                  "e_invoice": false,
+                  "ei_code": "7654321",
+                  "default_vat": {
+                    "id": 66,
+                    "value": 22,
+                    "description": "",
+                    "is_disabled": false
+                  },
+                  "default_payment_method": null
+                }
+              ]
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListClientsResponse');
     }
 
     /**
@@ -76,8 +176,10 @@ class ListClientsResponseTest extends TestCase
      */
     public function testListClientsResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +187,7 @@ class ListClientsResponseTest extends TestCase
      */
     public function testPropertyCurrentPage()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['current_page'], $this->array['current_page']);
     }
 
     /**
@@ -94,8 +195,7 @@ class ListClientsResponseTest extends TestCase
      */
     public function testPropertyFirstPageUrl()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['first_page_url'], $this->array['first_page_url']);
     }
 
     /**
@@ -103,8 +203,7 @@ class ListClientsResponseTest extends TestCase
      */
     public function testPropertyFrom()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['from'], $this->array['from']);
     }
 
     /**
@@ -112,8 +211,7 @@ class ListClientsResponseTest extends TestCase
      */
     public function testPropertyLastPage()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['last_page'], $this->array['last_page']);
     }
 
     /**
@@ -121,8 +219,7 @@ class ListClientsResponseTest extends TestCase
      */
     public function testPropertyLastPageUrl()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['last_page_url'], $this->array['last_page_url']);
     }
 
     /**
@@ -130,8 +227,7 @@ class ListClientsResponseTest extends TestCase
      */
     public function testPropertyNextPageUrl()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['next_page_url'], $this->array['next_page_url']);
     }
 
     /**
@@ -139,8 +235,7 @@ class ListClientsResponseTest extends TestCase
      */
     public function testPropertyPath()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['path'], $this->array['path']);
     }
 
     /**
@@ -148,8 +243,7 @@ class ListClientsResponseTest extends TestCase
      */
     public function testPropertyPerPage()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['per_page'], $this->array['per_page']);
     }
 
     /**
@@ -157,8 +251,7 @@ class ListClientsResponseTest extends TestCase
      */
     public function testPropertyPrevPageUrl()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['prev_page_url'], $this->array['prev_page_url']);
     }
 
     /**
@@ -166,8 +259,7 @@ class ListClientsResponseTest extends TestCase
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['to'], $this->array['to']);
     }
 
     /**
@@ -175,8 +267,7 @@ class ListClientsResponseTest extends TestCase
      */
     public function testPropertyTotal()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['total'], $this->array['total']);
     }
 
     /**
@@ -184,7 +275,9 @@ class ListClientsResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

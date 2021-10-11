@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * GetReceiptResponseTest Class Doc Comment
@@ -55,6 +56,45 @@ class GetReceiptResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": {
+                "id": 12346,
+                "date": "2021-08-19",
+                "number": 6,
+                "numeration": "REC006",
+                "amount_net": 8.2,
+                "amount_vat": 1.8,
+                "amount_gross": 10,
+                "use_gross_prices": true,
+                "type": "sales_receipt",
+                "description": "cassa 1",
+                "rc_center": "",
+                "created_at": "2021-08-19 17:57:56",
+                "updated_at": "2021-08-19 17:57:56",
+                "payment_account": {
+                  "id": 555,
+                  "name": "contanti"
+                },
+                "items_list": [
+                  {
+                    "id": 888,
+                    "amount_net": 8.2,
+                    "amount_vat": 1.8,
+                    "amount_gross": 10,
+                    "category": "altro",
+                    "vat": {
+                      "id": 0,
+                      "value": 22,
+                      "description": "iva"
+                    }
+                  }
+                ]
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\GetReceiptResponse');
     }
 
     /**
@@ -76,8 +116,10 @@ class GetReceiptResponseTest extends TestCase
      */
     public function testGetReceiptResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +127,9 @@ class GetReceiptResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

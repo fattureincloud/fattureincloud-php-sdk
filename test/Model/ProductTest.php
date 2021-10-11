@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ProductTest Class Doc Comment
@@ -55,6 +56,37 @@ class ProductTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "id": 12345,
+            "name": "Tavolo di marmo",
+            "code": "TAVOLO003",
+            "net_price": 240,
+            "gross_price": 280,
+            "use_gross_price": false,
+            "net_cost": 0,
+            "measure": "",
+            "description": "Tavolo in marmo pregiato",
+            "category": "arredamento",
+            "in_stock": true,
+            "notes": "",
+            "stock_initial": 99,
+            "stock_current": 98,
+            "average_cost": 200,
+            "average_price": 300,
+            "created_at": "2021-10-10",
+            "updated_at": "",
+            "default_vat": {
+                "id": 3,
+                "value": 22,
+                "description": "Non imponibile art. 123",
+                "notes": "IVA non imponibile ai sensi dell\'articolo 123, comma 2",
+                "is_disabled": false
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\Product');
     }
 
     /**
@@ -76,8 +108,10 @@ class ProductTest extends TestCase
      */
     public function testProduct()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +119,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['id'], $this->array['id']);
     }
 
     /**
@@ -94,8 +127,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['name'], $this->array['name']);
     }
 
     /**
@@ -103,8 +135,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyCode()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['code'], $this->array['code']);
     }
 
     /**
@@ -112,8 +143,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyNetPrice()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['net_price'], $this->array['net_price']);
     }
 
     /**
@@ -121,8 +151,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyGrossPrice()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['gross_price'], $this->array['gross_price']);
     }
 
     /**
@@ -130,8 +159,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyUseGrossPrice()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['use_gross_price'], $this->array['use_gross_price']);
     }
 
     /**
@@ -139,8 +167,10 @@ class ProductTest extends TestCase
      */
     public function testPropertyDefaultVat()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['default_vat'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['default_vat']);
+        }
     }
 
     /**
@@ -148,8 +178,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyNetCost()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['net_cost'], $this->array['net_cost']);
     }
 
     /**
@@ -157,8 +186,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyMeasure()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['measure'], $this->array['measure']);
     }
 
     /**
@@ -166,8 +194,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyDescription()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['description'], $this->array['description']);
     }
 
     /**
@@ -175,8 +202,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyCategory()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['category'], $this->array['category']);
     }
 
     /**
@@ -184,8 +210,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyNotes()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['notes'], $this->array['notes']);
     }
 
     /**
@@ -193,8 +218,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyInStock()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['in_stock'], $this->array['in_stock']);
     }
 
     /**
@@ -202,8 +226,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyStockInitial()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['stock_initial'], $this->array['stock_initial']);
     }
 
     /**
@@ -211,8 +234,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyStockCurrent()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['stock_current'], $this->array['stock_current']);
     }
 
     /**
@@ -220,8 +242,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyAverageCost()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['average_cost'], $this->array['average_cost']);
     }
 
     /**
@@ -229,8 +250,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyAveragePrice()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['average_price'], $this->array['average_price']);
     }
 
     /**
@@ -238,8 +258,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyCreatedAt()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['created_at'], $this->array['created_at']);
     }
 
     /**
@@ -247,7 +266,6 @@ class ProductTest extends TestCase
      */
     public function testPropertyUpdatedAt()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['updated_at'], $this->array['updated_at']);
     }
 }
