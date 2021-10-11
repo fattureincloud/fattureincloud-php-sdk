@@ -1,4 +1,4 @@
-name: Validare PHP SDK
+name: PHP SDK Validation
 
 on:
   pull_request:
