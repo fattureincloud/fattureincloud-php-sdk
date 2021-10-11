@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * GetUserInfoResponseTest Class Doc Comment
@@ -55,6 +56,29 @@ class GetUserInfoResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": {
+                "id": 12345,
+                "name": "Mario Rossi",
+                "first_name": "Mario",
+                "last_name": "Rossi",
+                "email": "mario.rossi@example.com",
+                "hash": "5add29e1234532a1bf2ed7b612043029",
+                "picture": "picture.jpg"
+              },
+            "info": {
+                "need_marketing_consents_confirmation": false,
+                "need_password_change": false,
+                "need_terms_of_service_confirmation": false
+            },
+            "email_confirmation_state": {
+                "need_confirmation": false
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\GetUserInfoResponse');
     }
 
     /**
@@ -76,8 +100,10 @@ class GetUserInfoResponseTest extends TestCase
      */
     public function testGetUserInfoResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +111,10 @@ class GetUserInfoResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 
     /**
@@ -94,8 +122,10 @@ class GetUserInfoResponseTest extends TestCase
      */
     public function testPropertyInfo()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['info'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['info']);
+        }
     }
 
     /**
@@ -103,7 +133,9 @@ class GetUserInfoResponseTest extends TestCase
      */
     public function testPropertyEmailConfirmationState()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['email_confirmation_state'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['email_confirmation_state']);
+        }
     }
 }

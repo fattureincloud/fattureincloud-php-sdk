@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * IssuedDocumentRefersToTest Class Doc Comment
@@ -55,6 +56,17 @@ class IssuedDocumentRefersToTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "id": 12345,
+            "date": "2020-12-10",
+            "number": 2,
+            "numeration": "num2",
+            "description": ""
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\IssuedDocumentRefersTo');
     }
 
     /**
@@ -76,8 +88,10 @@ class IssuedDocumentRefersToTest extends TestCase
      */
     public function testIssuedDocumentRefersTo()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +99,7 @@ class IssuedDocumentRefersToTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['id'], $this->array['id']);
     }
 
     /**
@@ -94,8 +107,8 @@ class IssuedDocumentRefersToTest extends TestCase
      */
     public function testPropertyDate()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $date = new \DateTime($this->array['date']);
+        TestCase::assertEquals($this->object['date'], $date);
     }
 
     /**
@@ -103,8 +116,7 @@ class IssuedDocumentRefersToTest extends TestCase
      */
     public function testPropertyNumber()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['number'], $this->array['number']);
     }
 
     /**
@@ -112,8 +124,7 @@ class IssuedDocumentRefersToTest extends TestCase
      */
     public function testPropertyNumeration()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['numeration'], $this->array['numeration']);
     }
 
     /**
@@ -121,7 +132,6 @@ class IssuedDocumentRefersToTest extends TestCase
      */
     public function testPropertyDescription()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['description'], $this->array['description']);
     }
 }

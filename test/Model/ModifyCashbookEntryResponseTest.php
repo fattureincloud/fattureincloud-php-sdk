@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ModifyCashbookEntryResponseTest Class Doc Comment
@@ -55,6 +56,26 @@ class ModifyCashbookEntryResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": {
+                "date": "2021-08-24",
+                "amount_in": 122,
+                "payment_account_in": {
+                  "id": 333
+                },
+                "description": "Fattura n. 201/2021",
+                "entity_name": "Rossi S.r.l.",
+                "kind": "issued_document",
+                "document": {
+                  "id": 54321
+                },
+                "type": "in"
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ModifyCashbookEntryResponse');
     }
 
     /**
@@ -76,8 +97,10 @@ class ModifyCashbookEntryResponseTest extends TestCase
      */
     public function testModifyCashbookEntryResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +108,9 @@ class ModifyCashbookEntryResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * PaymentAccountTest Class Doc Comment
@@ -55,6 +56,19 @@ class PaymentAccountTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "id": 21,
+            "name": "Indesa - Carta conto",
+            "type": "standard",
+            "iban": "ITP09029019203192301920AES32",
+            "sia": "sai",
+            "cuc": "cuc",
+            "virtual": false
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\PaymentAccount');
     }
 
     /**
@@ -76,8 +90,10 @@ class PaymentAccountTest extends TestCase
      */
     public function testPaymentAccount()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +101,7 @@ class PaymentAccountTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['id'], $this->array['id']);
     }
 
     /**
@@ -94,8 +109,7 @@ class PaymentAccountTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['name'], $this->array['name']);
     }
 
     /**
@@ -103,8 +117,7 @@ class PaymentAccountTest extends TestCase
      */
     public function testPropertyType()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['type'], $this->array['type']);
     }
 
     /**
@@ -112,8 +125,7 @@ class PaymentAccountTest extends TestCase
      */
     public function testPropertyIban()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['iban'], $this->array['iban']);
     }
 
     /**
@@ -121,8 +133,7 @@ class PaymentAccountTest extends TestCase
      */
     public function testPropertySia()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['sia'], $this->array['sia']);
     }
 
     /**
@@ -130,8 +141,7 @@ class PaymentAccountTest extends TestCase
      */
     public function testPropertyCuc()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['cuc'], $this->array['cuc']);
     }
 
     /**
@@ -139,7 +149,6 @@ class PaymentAccountTest extends TestCase
      */
     public function testPropertyVirtual()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['virtual'], $this->array['virtual']);
     }
 }

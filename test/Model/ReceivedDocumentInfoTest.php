@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ReceivedDocumentInfoTest Class Doc Comment
@@ -55,6 +56,61 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "default_values": {
+                "detailed": false
+            },
+            "items_default_values": {
+                "vat": 21
+            },
+            "countries_list": [
+                "Italia",
+                "Afghanistan",
+                "Albania"
+            ],
+            "currencies_list": [
+                {
+                  "id": "AED",
+                  "symbol": "AED",
+                  "html_symbol": "AED",
+                  "exchange_rate": "4.09500"
+                },
+                {
+                  "id": "ALL",
+                  "symbol": "ALL",
+                  "html_symbol": "ALL",
+                  "exchange_rate": "121.50000"
+                }
+            ],
+            "categories_list": [
+                "Auto",
+                "Telefono e internet"
+            ],
+            "payment_accounts_list": [
+                {
+                  "id": 111,
+                  "name": "Indesa - carta conto"
+                }
+            ],
+            "vat_types_list": [
+                {
+                  "id": 1334,
+                  "value": 0,
+                  "description": "Non imp. art. 17 c. 6 DPR 633/72 e s.m.i.",
+                  "is_disabled": false
+                },
+                {
+                  "id": 1333,
+                  "value": 0,
+                  "description": "Non sogg. art. 74 c. 7 e 8 DPR 633/72",
+                  "is_disabled": false
+                }
+            ]
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ReceivedDocumentInfo');
     }
 
     /**
@@ -76,8 +132,10 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testReceivedDocumentInfo()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +143,10 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testPropertyDefaultValues()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['default_values'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['default_values']);
+        }
     }
 
     /**
@@ -94,8 +154,10 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testPropertyItemsDefaultValues()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['items_default_values'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['items_default_values']);
+        }
     }
 
     /**
@@ -103,8 +165,10 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testPropertyCountriesList()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['countries_list'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['countries_list']);
+        }
     }
 
     /**
@@ -112,8 +176,10 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testPropertyCurrenciesList()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['currencies_list'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['currencies_list']);
+        }
     }
 
     /**
@@ -121,8 +187,10 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testPropertyCategoriesList()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['categories_list'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['categories_list']);
+        }
     }
 
     /**
@@ -130,8 +198,10 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testPropertyPaymentAccountsList()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['payment_accounts_list'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['payment_accounts_list']);
+        }
     }
 
     /**
@@ -139,7 +209,9 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testPropertyVatTypesList()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['vat_types_list'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['vat_types_list']);
+        }
     }
 }

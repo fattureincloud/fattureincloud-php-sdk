@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ScheduleEmailRequestTest Class Doc Comment
@@ -55,6 +56,26 @@ class ScheduleEmailRequestTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": {
+                "sender_email": "mariorossi@fattureincloud.it",
+                "recipient_email": "mary.red@example.com",
+                "subject": "Nostra pro forma nr. 1",
+                "body": "Gentile Mario Rossi,<br>per vedere la nostra pro forma di  o per scaricarne una copia in versione PDF prema sul bottone sottostante.<br><br>{{allegati}}<br><br>Cordiali saluti,<br><b>Mario Rossi</b>",
+                "include": {
+                  "document": false,
+                  "delivery_note": false,
+                  "attachment": false,
+                  "accompanying_invoice": false
+                },
+                "attach_pdf": true,
+                "send_copy": false
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ScheduleEmailRequest');
     }
 
     /**
@@ -76,8 +97,10 @@ class ScheduleEmailRequestTest extends TestCase
      */
     public function testScheduleEmailRequest()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +108,9 @@ class ScheduleEmailRequestTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

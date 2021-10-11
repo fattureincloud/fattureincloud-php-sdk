@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * CompanyInfoPlanInfoLimitsTest Class Doc Comment
@@ -55,6 +56,16 @@ class CompanyInfoPlanInfoLimitsTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "clients": 5000,
+            "suppliers": 5000,
+            "products": 5000,
+            "documents": 3000
+          }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CompanyInfoPlanInfoLimits');
     }
 
     /**
@@ -76,8 +87,10 @@ class CompanyInfoPlanInfoLimitsTest extends TestCase
      */
     public function testCompanyInfoPlanInfoLimits()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +98,7 @@ class CompanyInfoPlanInfoLimitsTest extends TestCase
      */
     public function testPropertyClients()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['clients'], $this->array['clients']);
     }
 
     /**
@@ -94,8 +106,7 @@ class CompanyInfoPlanInfoLimitsTest extends TestCase
      */
     public function testPropertySuppliers()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['suppliers'], $this->array['suppliers']);
     }
 
     /**
@@ -103,8 +114,7 @@ class CompanyInfoPlanInfoLimitsTest extends TestCase
      */
     public function testPropertyProducts()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['products'], $this->array['products']);
     }
 
     /**
@@ -112,7 +122,6 @@ class CompanyInfoPlanInfoLimitsTest extends TestCase
      */
     public function testPropertyDocuments()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['documents'], $this->array['documents']);
     }
 }

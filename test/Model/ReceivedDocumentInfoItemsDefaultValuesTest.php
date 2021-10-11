@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ReceivedDocumentInfoItemsDefaultValuesTest Class Doc Comment
@@ -55,6 +56,13 @@ class ReceivedDocumentInfoItemsDefaultValuesTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "vat": 21
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ReceivedDocumentInfoItemsDefaultValues');
     }
 
     /**
@@ -76,8 +84,10 @@ class ReceivedDocumentInfoItemsDefaultValuesTest extends TestCase
      */
     public function testReceivedDocumentInfoItemsDefaultValues()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +95,6 @@ class ReceivedDocumentInfoItemsDefaultValuesTest extends TestCase
      */
     public function testPropertyVat()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::AssertEquals($this->array['vat'], $this->object['vat']);
     }
 }

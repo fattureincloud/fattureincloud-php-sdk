@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ReceivedDocumentTypeTest Class Doc Comment
@@ -55,6 +56,13 @@ class ReceivedDocumentTypeTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "type": "expense"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ReceivedDocument');
     }
 
     /**
@@ -76,7 +84,6 @@ class ReceivedDocumentTypeTest extends TestCase
      */
     public function testReceivedDocumentType()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        Testcase::assertEquals($this->array['type'], $this->object['type']);
     }
 }

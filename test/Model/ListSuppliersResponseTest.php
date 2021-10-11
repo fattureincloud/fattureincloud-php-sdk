@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ListSuppliersResponseTest Class Doc Comment
@@ -55,6 +56,73 @@ class ListSuppliersResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "current_page": 2,
+            "first_page_url": "page=1",
+            "from": 1,
+            "last_page": 3,
+            "last_page_url": "page=3",
+            "next_page_url": "page=3",
+            "path": "/archive",
+            "per_page": 50,
+            "prev_page_url": "page=1",
+            "to": 3,
+            "total": 155,
+            "data": [
+                {
+                  "id": 12345,
+                  "code": "AE86",
+                  "name": "Mario Rossi S.R.L.",
+                  "type": "company",
+                  "first_name": "Mario",
+                  "last_name": "Rossi",
+                  "contact_person": "",
+                  "vat_number": "111222333",
+                  "tax_code": "111122233",
+                  "address_street": "Corso Magellano, 46",
+                  "address_postal_code": "20146",
+                  "address_city": "Milano",
+                  "address_province": "MI",
+                  "address_extra": "",
+                  "country": "Italia",
+                  "email": "mario.rossi@example.com",
+                  "certified_email": "mario.rossi@pec.example.com",
+                  "phone": "1234567890",
+                  "fax": "123456789",
+                  "notes": "",
+                  "created_at": "2021-15-08",
+                  "updated_at": "2021-15-08"
+                },
+                {
+                  "id": 12346,
+                  "code": "GT86",
+                  "name": "Maria Grossi S.R.L.",
+                  "type": "company",
+                  "first_name": "",
+                  "last_name": "",
+                  "contact_person": "",
+                  "vat_number": "200020102020",
+                  "tax_code": "200020102020",
+                  "address_street": "Vicolo stretto, 32",
+                  "address_postal_code": "20146",
+                  "address_city": "Milano",
+                  "address_province": "MI",
+                  "address_extra": "",
+                  "country": "Italia",
+                  "email": "maria.grossi@example.com",
+                  "certified_email": "maria.grossi@pec.example.com",
+                  "phone": "0987654321",
+                  "fax": "098765432",
+                  "notes": "",
+                  "created_at": "2021-15-09",
+                  "updated_at": "2021-15-09"
+                }
+            ]
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListSuppliersResponse');
     }
 
     /**
@@ -76,8 +144,10 @@ class ListSuppliersResponseTest extends TestCase
      */
     public function testListSuppliersResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +155,7 @@ class ListSuppliersResponseTest extends TestCase
      */
     public function testPropertyCurrentPage()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['current_page'], $this->array['current_page']);
     }
 
     /**
@@ -94,8 +163,7 @@ class ListSuppliersResponseTest extends TestCase
      */
     public function testPropertyFirstPageUrl()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['first_page_url'], $this->array['first_page_url']);
     }
 
     /**
@@ -103,8 +171,7 @@ class ListSuppliersResponseTest extends TestCase
      */
     public function testPropertyFrom()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['from'], $this->array['from']);
     }
 
     /**
@@ -112,8 +179,7 @@ class ListSuppliersResponseTest extends TestCase
      */
     public function testPropertyLastPage()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['last_page'], $this->array['last_page']);
     }
 
     /**
@@ -121,8 +187,7 @@ class ListSuppliersResponseTest extends TestCase
      */
     public function testPropertyLastPageUrl()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['last_page_url'], $this->array['last_page_url']);
     }
 
     /**
@@ -130,8 +195,7 @@ class ListSuppliersResponseTest extends TestCase
      */
     public function testPropertyNextPageUrl()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['next_page_url'], $this->array['next_page_url']);
     }
 
     /**
@@ -139,8 +203,7 @@ class ListSuppliersResponseTest extends TestCase
      */
     public function testPropertyPath()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['path'], $this->array['path']);
     }
 
     /**
@@ -148,8 +211,7 @@ class ListSuppliersResponseTest extends TestCase
      */
     public function testPropertyPerPage()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['per_page'], $this->array['per_page']);
     }
 
     /**
@@ -157,8 +219,7 @@ class ListSuppliersResponseTest extends TestCase
      */
     public function testPropertyPrevPageUrl()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['prev_page_url'], $this->array['prev_page_url']);
     }
 
     /**
@@ -166,8 +227,7 @@ class ListSuppliersResponseTest extends TestCase
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['to'], $this->array['to']);
     }
 
     /**
@@ -175,8 +235,7 @@ class ListSuppliersResponseTest extends TestCase
      */
     public function testPropertyTotal()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['total'], $this->array['total']);
     }
 
     /**
@@ -184,7 +243,9 @@ class ListSuppliersResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

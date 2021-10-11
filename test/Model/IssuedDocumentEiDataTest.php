@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * IssuedDocumentEiDataTest Class Doc Comment
@@ -55,6 +56,24 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "vat_kind": "I",
+            "od_number": 2,
+            "od_date": "2020-10-10",
+            "original_document_type": "ordine", 
+            "cig": " ",
+            "cup": " ",
+            "payment_method": " ",
+            "bank_name": " ",
+            "bank_iban": " ",
+            "bank_beneficiary": " ",
+            "invoice_number": " ",
+            "invoice_date": "2020-12-12" 
+        }';
+        
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\IssuedDocumentEiData');
     }
 
     /**
@@ -76,8 +95,10 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testIssuedDocumentEiData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +106,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyVatKind()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['vat_kind'], $this->array['vat_kind']);
     }
 
     /**
@@ -94,8 +114,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyOriginalDocumentType()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['original_document_type'], $this->array['original_document_type']);
     }
 
     /**
@@ -103,8 +122,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyOdNumber()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['od_number'], $this->array['od_number']);
     }
 
     /**
@@ -112,8 +130,8 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyOdDate()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $date = new \DateTime($this->array['od_date']);
+        TestCase::assertEquals($this->object['od_date'], $date);
     }
 
     /**
@@ -121,8 +139,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyCig()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['cig'], $this->array['cig']);
     }
 
     /**
@@ -130,8 +147,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyCup()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['cup'], $this->array['cup']);
     }
 
     /**
@@ -139,8 +155,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyPaymentMethod()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['payment_method'], $this->array['payment_method']);
     }
 
     /**
@@ -148,8 +163,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyBankName()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['bank_name'], $this->array['bank_name']);
     }
 
     /**
@@ -157,8 +171,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyBankIban()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['bank_iban'], $this->array['bank_iban']);
     }
 
     /**
@@ -166,8 +179,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyBankBeneficiary()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['bank_beneficiary'], $this->array['bank_beneficiary']);
     }
 
     /**
@@ -175,8 +187,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyInvoiceNumber()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['invoice_number'], $this->array['invoice_number']);
     }
 
     /**
@@ -184,7 +195,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyInvoiceDate()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $date = new \DateTime($this->array['invoice_date']);
+        TestCase::assertEquals($this->object['invoice_date'], $date);
     }
 }

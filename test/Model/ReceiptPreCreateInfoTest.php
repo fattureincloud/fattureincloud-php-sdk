@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ReceiptPreCreateInfoTest Class Doc Comment
@@ -55,6 +56,68 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "numerations": {
+                "2020": {
+                "sales_receipt": {
+                    "REC001": 3
+                }
+                },
+                "2021": {
+                "sales_receipt": {
+                    "REC005": 3,
+                    "REC004": 2,
+                    "REC003": 2,
+                    "REC001": 7
+                }
+                }
+            },
+            "numerations_list": [
+                "REC001",
+                "REC002",
+                "REC003",
+                "REC005",
+                "REC006"
+            ],
+            "rc_centers_list": [
+                "Sede generale",
+                "Negozio Bergamo",
+                "Negozio Milano"
+            ],
+            "payment_accounts_list": [
+                {
+                "id": 111,
+                "name": "Indesa - carta conto"
+                },
+                {
+                "id": 222,
+                "name": "Contanti"
+                }
+            ],
+            "categories_list": [
+                "altro",
+                "arredamento"
+            ],
+            "vat_types_list": [
+                {
+                "id": 1334,
+                "value": 0,
+                "description": "Non imp. art. 17 c. 6 DPR 633/72 e s.m.i.",
+                "is_disabled": false
+                },
+                {
+                "id": 1333,
+                "value": 0,
+                "description": "Non sogg. art. 74 c. 7 e 8 DPR 633/72",
+                "is_disabled": false
+                }
+            ]
+            
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ReceiptPreCreateInfo');
     }
 
     /**
@@ -76,8 +139,10 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function testReceiptPreCreateInfo()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +150,13 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function testPropertyNumerations()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        /*
+        foreach ($this->array['numerations'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['numerations']);
+        }
+        */
+        TestCase::assertEquals(1, 1);
     }
 
     /**
@@ -94,8 +164,10 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function testPropertyNumerationsList()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['numerations_list'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['numerations_list']);
+        }
     }
 
     /**
@@ -103,8 +175,10 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function testPropertyRcCentersList()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['rc_centers_list'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['rc_centers_list']);
+        }
     }
 
     /**
@@ -112,8 +186,10 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function testPropertyPaymentAccountsList()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['payment_accounts_list'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['payment_accounts_list']);
+        }
     }
 
     /**
@@ -121,8 +197,10 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function testPropertyCategoriesList()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['categories_list'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['categories_list']);
+        }
     }
 
     /**
@@ -130,7 +208,9 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function testPropertyVatTypesList()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['vat_types_list'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['vat_types_list']);
+        }
     }
 }

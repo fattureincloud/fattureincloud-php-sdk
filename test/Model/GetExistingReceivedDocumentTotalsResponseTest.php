@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * GetExistingReceivedDocumentTotalsResponseTest Class Doc Comment
@@ -55,6 +56,21 @@ class GetExistingReceivedDocumentTotalsResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": {
+                "amount_net": 592,
+                "amount_vat": 20,
+                "amount_gross": 612,
+                "amount_withholding_tax": 0,
+                "amount_other_withholding_tax": 0,
+                "amount_due": 612,
+                "payments_sum": 592
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\GetExistingReceivedDocumentTotalsResponse');
     }
 
     /**
@@ -76,8 +92,10 @@ class GetExistingReceivedDocumentTotalsResponseTest extends TestCase
      */
     public function testGetExistingReceivedDocumentTotalsResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +103,9 @@ class GetExistingReceivedDocumentTotalsResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

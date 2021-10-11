@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * GetEmailDataResponseTest Class Doc Comment
@@ -55,6 +56,36 @@ class GetEmailDataResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": {
+                "recipient_email": "mary.red@example.com",
+                "default_sender_email": {
+                  "id": 0,
+                  "email": "no-reply@fattureincloud.it"
+                },
+                "sender_emails_list": [
+                  {
+                    "id": 0,
+                    "email": "no-reply@fattureincloud.it"
+                  },
+                  {
+                    "id": 888,
+                    "email": "mariorossi@fattureincloud.it"
+                  }
+                ],
+                "cc_email": "m.rossi@exxample.com",
+                "subject": "Nostra pro forma nr. 1",
+                "body": "Gentile Mario Rossi,<br>per vedere la nostra pro forma di  o per scaricarne una copia in versione PDF prema sul bottone sottoastante.<br><br>{{allegati}}<br><br>Cordiali saluti,<br><b>Mario Rossi</b>",
+                "document_exists": true,
+                "delivery_note_exists": false,
+                "attachment_exists": false,
+                "accompanying_invoice_exists": false
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\GetEmailDataResponse');
     }
 
     /**
@@ -76,8 +107,10 @@ class GetEmailDataResponseTest extends TestCase
      */
     public function testGetEmailDataResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +118,9 @@ class GetEmailDataResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

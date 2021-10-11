@@ -33,6 +33,12 @@ use \FattureInCloud\ApiException;
 use \FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
+use \GuzzleHttp\Client;
+use \GuzzleHttp\Handler\MockHandler;
+use \GuzzleHttp\HandlerStack;
+use \GuzzleHttp\Psr7\Response;
+use \GuzzleHttp\Psr7\Request;
+use \GuzzleHttp\Exception\RequestException;
 /**
  * ArchiveApiTest Class Doc Comment
  *
@@ -80,8 +86,23 @@ class ArchiveApiTest extends TestCase
      */
     public function testCreateArchiveDocument()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $stream = '{"data":{"date":"2021-08-20","category":"Altri documenti","description":"spesa 1","attachment_token":"ibfjdbf94ey9w94g3w894qbasrga"}}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\ArchiveApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $create_archive_document_request = "json";
+        $result = $apiInstance->createArchiveDocument($company_id, $create_archive_document_request);
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreateArchiveDocumentResponse');
+
+        TestCase::assertEquals($obj, $result);
     }
 
     /**
@@ -92,8 +113,7 @@ class ArchiveApiTest extends TestCase
      */
     public function testDeleteArchiveDocument()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals(1, 1);
     }
 
     /**
@@ -104,8 +124,23 @@ class ArchiveApiTest extends TestCase
      */
     public function testGetArchiveDocument()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $stream = '{"data":{"id":12345,"date":"2021-08-20","category":"Altri documenti","description":"spesa 2","attachment_url":"spesa2.pdf"}}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\ArchiveApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $archive_document_id = 12345;
+        $result = $apiInstance->getArchiveDocument($company_id, $archive_document_id);
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetArchiveDocumentResponse');
+
+        TestCase::assertEquals($obj, $result);
     }
 
     /**
@@ -116,8 +151,22 @@ class ArchiveApiTest extends TestCase
      */
     public function testListArchiveDocuments()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $stream = '{"current_page":1,"data":[{"id":12345,"date":"2021-08-20","category":"Altri documenti","description":"spesa 2","attachment_url":"spesa2.pdf"},{"id":12346,"date":"2021-08-19","category":"Altri documenti","description":"spesa 1","attachment_url":"spesa1.pdf"}],"first_page_url":"page=1","from":1,"last_page":1,"last_page_url":"page=1","next_page_url":null,"path":"\/archive","per_page":50,"prev_page_url":null,"to":2,"total":2}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\ArchiveApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $result = $apiInstance->listArchiveDocuments($company_id);
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListArchiveDocumentsResponse');
+
+        TestCase::assertEquals($obj, $result);
     }
 
     /**
@@ -128,8 +177,24 @@ class ArchiveApiTest extends TestCase
      */
     public function testModifyArchiveDocument()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $stream = '{"data":{"id":12345,"date":"2021-08-20","category":"Altri documenti","description":"spesa 2","attachment_url":"spesa2.pdf"}}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\ArchiveApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $archive_document_id = 12345;
+        $modify_archive_document_request = "json";
+        $result = $apiInstance->modifyArchiveDocument($company_id, $archive_document_id, $modify_archive_document_request);
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyArchiveDocumentResponse');
+
+        TestCase::assertEquals($obj, $result);
     }
 
     /**
@@ -140,7 +205,22 @@ class ArchiveApiTest extends TestCase
      */
     public function testUploadArchiveDocumentAttachment()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $stream = '{"data":{"attachment_token":"YmMyNWYxYzIwMTU3N2Y4ZGE3ZjZiMzg5OWY0ODNkZDQveXl5LmRvYw"}}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\ArchiveApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $upload_archive_document_attachment = "json";
+        $result = $apiInstance->uploadArchiveDocumentAttachment($company_id, $upload_archive_document_attachment);
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\UploadArchiveAttachmentResponse');
+
+        TestCase::assertEquals($obj, $result);
     }
 }

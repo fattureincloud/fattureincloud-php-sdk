@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * GetReceivedDocumentPreCreateInfoResponseTest Class Doc Comment
@@ -55,6 +56,49 @@ class GetReceivedDocumentPreCreateInfoResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": {
+                "default_values": {
+                    "detailed": false
+                },
+                "items_default_values": {
+                    "vat": null
+                },
+                "countries_list": [
+                    "Italia",
+                    "Afghanistan",
+                    "Albania"
+                ],
+                "currencies_list": [
+                    {
+                      "id": "AED",
+                      "symbol": "AED",
+                      "html_symbol": "AED",
+                      "exchange_rate": "4.09500"
+                    },
+                    {
+                      "id": "ALL",
+                      "symbol": "ALL",
+                      "html_symbol": "ALL",
+                      "exchange_rate": "121.50000"
+                    }
+                ],
+                "categories_list": [
+                    "Auto",
+                    "Telefono e internet"
+                ],
+                "payment_accounts_list": [
+                    {
+                      "id": 111,
+                      "name": "Indesa - carta conto"
+                    }
+                ]
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\GetReceivedDocumentPreCreateInfoResponse');
     }
 
     /**
@@ -76,8 +120,10 @@ class GetReceivedDocumentPreCreateInfoResponseTest extends TestCase
      */
     public function testGetReceivedDocumentPreCreateInfoResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +131,9 @@ class GetReceivedDocumentPreCreateInfoResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

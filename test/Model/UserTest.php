@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * UserTest Class Doc Comment
@@ -55,6 +56,19 @@ class UserTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "id": 12345,
+            "name": "Mario Rossi",
+            "first_name": "Mario",
+            "last_name": "Rossi",
+            "email": "mario.rossi@example.com",
+            "hash": "5add29e1234532a1bf2ed7b612043029",
+            "picture": "picture.jpg"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\User');
     }
 
     /**
@@ -76,8 +90,10 @@ class UserTest extends TestCase
      */
     public function testUser()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +101,7 @@ class UserTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['id'], $this->array['id']);
     }
 
     /**
@@ -94,8 +109,7 @@ class UserTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['name'], $this->array['name']);
     }
 
     /**
@@ -103,8 +117,7 @@ class UserTest extends TestCase
      */
     public function testPropertyFirstName()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['first_name'], $this->array['first_name']);
     }
 
     /**
@@ -112,8 +125,7 @@ class UserTest extends TestCase
      */
     public function testPropertyLastName()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['last_name'], $this->array['last_name']);
     }
 
     /**
@@ -121,8 +133,7 @@ class UserTest extends TestCase
      */
     public function testPropertyEmail()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['email'], $this->array['email']);
     }
 
     /**
@@ -130,8 +141,7 @@ class UserTest extends TestCase
      */
     public function testPropertyHash()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['hash'], $this->array['hash']);
     }
 
     /**
@@ -139,7 +149,6 @@ class UserTest extends TestCase
      */
     public function testPropertyPicture()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['picture'], $this->array['picture']);
     }
 }

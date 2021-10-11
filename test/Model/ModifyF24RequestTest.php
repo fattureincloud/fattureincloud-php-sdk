@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ModifyF24RequestTest Class Doc Comment
@@ -55,6 +56,21 @@ class ModifyF24RequestTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": {
+                "amount": 840.36,
+                "description": "PAGAMENTO IVA 2021",
+                "due_date": "2021-12-31",
+                "status": "paid",
+                "payment_account": {
+                  "id": 111
+                }
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ModifyF24Request');
     }
 
     /**
@@ -76,8 +92,10 @@ class ModifyF24RequestTest extends TestCase
      */
     public function testModifyF24Request()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +103,9 @@ class ModifyF24RequestTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

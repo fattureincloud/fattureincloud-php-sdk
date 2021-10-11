@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ReceivedDocumentInfoDefaultValuesTest Class Doc Comment
@@ -55,6 +56,13 @@ class ReceivedDocumentInfoDefaultValuesTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "detailed": false
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ReceivedDocumentInfoDefaultValues');
     }
 
     /**
@@ -76,8 +84,10 @@ class ReceivedDocumentInfoDefaultValuesTest extends TestCase
      */
     public function testReceivedDocumentInfoDefaultValues()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +95,6 @@ class ReceivedDocumentInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyDetailed()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['detailed'], $this->array['detailed']);
     }
 }

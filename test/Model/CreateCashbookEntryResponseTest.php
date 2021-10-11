@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * CreateCashbookEntryResponseTest Class Doc Comment
@@ -55,6 +56,28 @@ class CreateCashbookEntryResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": {
+                "id": 54321,
+                "date": "2021-08-24",
+                "amount_in": 122,
+                "amount_out": 0,
+                "description": "Fattura n. 201/2021",
+                "payment_account_in": {
+                  "id": 21,
+                  "name": "Indesa - Carta conto"
+                },
+                "payment_account_out": {
+                    "id": 21,
+                    "name": "Indesa - Carta conto"
+                },
+                "kind": "cashbook"
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CreateCashbookEntryResponse');
     }
 
     /**
@@ -76,8 +99,10 @@ class CreateCashbookEntryResponseTest extends TestCase
      */
     public function testCreateCashbookEntryResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +110,9 @@ class CreateCashbookEntryResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

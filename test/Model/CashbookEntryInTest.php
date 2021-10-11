@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * CashbookEntryInTest Class Doc Comment
@@ -55,6 +56,27 @@ class CashbookEntryInTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "id": 12345,
+            "date": "2021-08-24",
+            "description": "Fattura n. 201/2021",
+            "entity_name": "Rossi S.r.l.",
+            "kind": "issued_document",
+            "type": "in",
+            "amount_in": 100,
+            "payment_account_in": {
+                "id": 333
+            },
+            "document": {
+                "id": 12345,
+                "type": "issued_document",
+                "path": "/doc1.pdf"
+            }
+          }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CashbookEntryIn');
     }
 
     /**
@@ -76,8 +98,10 @@ class CashbookEntryInTest extends TestCase
      */
     public function testCashbookEntryIn()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +109,7 @@ class CashbookEntryInTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['id'], $this->array['id']);
     }
 
     /**
@@ -94,8 +117,8 @@ class CashbookEntryInTest extends TestCase
      */
     public function testPropertyDate()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $date = new \DateTime($this->array['date']);
+        TestCase::assertEquals($this->object['date'], $date);
     }
 
     /**
@@ -103,8 +126,7 @@ class CashbookEntryInTest extends TestCase
      */
     public function testPropertyDescription()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['description'], $this->array['description']);
     }
 
     /**
@@ -112,8 +134,7 @@ class CashbookEntryInTest extends TestCase
      */
     public function testPropertyKind()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['kind'], $this->array['kind']);
     }
 
     /**
@@ -121,8 +142,7 @@ class CashbookEntryInTest extends TestCase
      */
     public function testPropertyType()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['type'], $this->array['type']);
     }
 
     /**
@@ -130,8 +150,7 @@ class CashbookEntryInTest extends TestCase
      */
     public function testPropertyEntityName()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['entity_name'], $this->array['entity_name']);
     }
 
     /**
@@ -139,8 +158,10 @@ class CashbookEntryInTest extends TestCase
      */
     public function testPropertyDocument()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['document'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['document']);
+        }
     }
 
     /**
@@ -148,8 +169,7 @@ class CashbookEntryInTest extends TestCase
      */
     public function testPropertyAmountIn()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['amount_in'], $this->array['amount_in']);
     }
 
     /**
@@ -157,7 +177,9 @@ class CashbookEntryInTest extends TestCase
      */
     public function testPropertyPaymentAccountIn()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['payment_account_in'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['payment_account_in']);
+        }
     }
 }

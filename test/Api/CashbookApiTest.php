@@ -33,6 +33,12 @@ use \FattureInCloud\ApiException;
 use \FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
+use \GuzzleHttp\Client;
+use \GuzzleHttp\Handler\MockHandler;
+use \GuzzleHttp\HandlerStack;
+use \GuzzleHttp\Psr7\Response;
+use \GuzzleHttp\Psr7\Request;
+use \GuzzleHttp\Exception\RequestException;
 /**
  * CashbookApiTest Class Doc Comment
  *
@@ -80,8 +86,23 @@ class CashbookApiTest extends TestCase
      */
     public function testCreateCashbookEntry()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $stream = '{"data":{"date":"2021-08-24","amount_out":122,"payment_account_out":{"id":333},"description":"Fattura n. 201\/2021","entity_name":"Rossi S.r.l.","kind":"issued_document","document":{"id":54321},"type":"out"}}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\CashbookApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $create_cashbook_entry_request = "json";
+        $result = $apiInstance->createCashbookEntry($company_id, $create_cashbook_entry_request);
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreateCashbookEntryResponse');
+        
+        TestCase::assertEquals($obj, $result);
     }
 
     /**
@@ -92,8 +113,7 @@ class CashbookApiTest extends TestCase
      */
     public function testDeleteCashbookEntry()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals(1,1);
     }
 
     /**
@@ -104,8 +124,23 @@ class CashbookApiTest extends TestCase
      */
     public function testGetCashbookEntry()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $stream = '{"data":{"date":"2021-10-10”,”amount_out":122,"payment_account_out":{"id”:21},”description":"Fattura n. 201\/2021","entity_name":"Rossi S.r.l.","kind":"issued_document","document":{"id":54321},"type":"out"}}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\CashbookApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $cashbook_id = 12345;
+        $result = $apiInstance->getCashbookEntry($company_id, $cashbook_id);
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetCashbookEntryResponse');
+        
+        TestCase::assertEquals($obj, $result);
     }
 
     /**
@@ -116,8 +151,24 @@ class CashbookApiTest extends TestCase
      */
     public function testListCashbookEntries()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $stream = '{"data":[{"date":"2021-08-24","amount_in":122,"payment_account_in":{"id":333},"description":"Fattura n. 201\/2021","entity_name":"Rossi S.r.l.","kind":"issued_document","document":{"id":54321},"type":"in"},{"date":"2021-08-29","amount_out":211,"payment_account_out":{"id":444},"description":"Fattura n. 202\/2021","entity_name":"Red S.r.l.","kind":"issued_document","document":{"id":12345},"type":"out"}]}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\CashbookApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $date_to = "2017-10-10";
+        $date_from = "2020-10-10";
+        $result = $apiInstance->listCashbookEntries($company_id, $date_from, $date_to);
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListCashbookEntriesResponse');
+        
+        TestCase::assertEquals($obj, $result);
     }
 
     /**
@@ -128,7 +179,22 @@ class CashbookApiTest extends TestCase
      */
     public function testModifyCashbookEntry()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $stream = '{"data":{"date":"2021-08-24","amount_out":122,"payment_account_out":{"id":333},"description":"Fattura n. 201\/2021","entity_name":"Rossi S.r.l.","kind":"issued_document","document":{"id":54321},"type":"out"}}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\CashbookApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $modify_cashbook_entry_request = "json";
+        $result = $apiInstance->modifyCashbookEntry($company_id, $modify_cashbook_entry_request);
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyCashbookEntryResponse');
+        
+        TestCase::assertEquals($obj, $result);
     }
 }

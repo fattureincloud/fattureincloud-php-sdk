@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ListCurrenciesResponseTest Class Doc Comment
@@ -55,6 +56,26 @@ class ListCurrenciesResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": [
+                {
+                  "id": "AED",
+                  "symbol": "AED",
+                  "html_symbol": "AED",
+                  "exchange_rate": "4.09500"
+                },
+                {
+                  "id": "EUR",
+                  "symbol": "€",
+                  "html_symbol": "&euro;",
+                  "exchange_rate": "1.00000"
+                }
+            ]
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListCurrenciesResponse');
     }
 
     /**
@@ -76,8 +97,10 @@ class ListCurrenciesResponseTest extends TestCase
      */
     public function testListCurrenciesResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +108,9 @@ class ListCurrenciesResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

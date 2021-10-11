@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * CreateIssuedDocumentRequestTest Class Doc Comment
@@ -55,6 +56,82 @@ class CreateIssuedDocumentRequestTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": {
+                "type": "receipt",
+                "numeration": "rec123",
+                "subject": "",
+                "visible_subject": "",
+                "amount_net": 68.18,
+                "amount_vat": 6.82,
+                "amount_gross": 75,
+                "amount_due_discount": 0,
+                "entity": {
+                  "id": 54321,
+                  "name": "Mary Red S.r.L.",
+                  "vat_number": "IT05432181211",
+                  "tax_code": "IT05432181211",
+                  "address_street": "Corso impero, 66",
+                  "address_postal_code": "20900",
+                  "address_city": "Milano",
+                  "address_province": "MI",
+                  "address_extra": "",
+                  "country": "Italia",
+                  "certified_email": "mary@pec.red.com",
+                  "ei_code": "ABCXCR1"
+                },
+                "date": "2021-08-20",
+                "number": 1,
+                "next_due_date": "2021-12-31",
+                "attachment_token": "ypbqqe4u8w8bdabcd5fd5b1a",
+                "items_list": [
+                  {
+                    "product_id": 333,
+                    "code": "SG3",
+                    "name": "Soggiorno",
+                    "measure": "",
+                    "net_price": 68.18182,
+                    "category": "",
+                    "id": 277875565,
+                    "gross_price": 75,
+                    "apply_withholding_taxes": true,
+                    "discount": 0,
+                    "discount_highlight": false,
+                    "in_dn": false,
+                    "qty": 1,
+                    "vat": {
+                      "id": 3,
+                      "value": 10,
+                      "description": ""
+                    },
+                    "stock": true,
+                    "description": "",
+                    "not_taxable": false
+                  }
+                ],
+                "payments_list": [
+                  {
+                    "amount": 75,
+                    "due_date": "2020-08-23",
+                    "paid_date": null,
+                    "id": 444,
+                    "payment_terms": {
+                      "days": 0,
+                      "type": "standard"
+                    },
+                    "status": "not_paid",
+                    "payment_account": null
+                  }
+                ]
+            },
+            "options": {
+                "entity_create": true
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CreateIssuedDocumentRequest');
     }
 
     /**
@@ -76,8 +153,10 @@ class CreateIssuedDocumentRequestTest extends TestCase
      */
     public function testCreateIssuedDocumentRequest()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +164,10 @@ class CreateIssuedDocumentRequestTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 
     /**
@@ -94,7 +175,9 @@ class CreateIssuedDocumentRequestTest extends TestCase
      */
     public function testPropertyOptions()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['options'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['options']);
+        }
     }
 }

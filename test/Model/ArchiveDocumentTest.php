@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ArchiveDocumentTest Class Doc Comment
@@ -42,12 +43,13 @@ use PHPUnit\Framework\TestCase;
  */
 class ArchiveDocumentTest extends TestCase
 {
-
+    public $array = [];
+    public $object;
     /**
      * Setup before running any test case
      */
     public static function setUpBeforeClass(): void
-    {
+    {  
     }
 
     /**
@@ -55,6 +57,19 @@ class ArchiveDocumentTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "id": 12345,
+            "date": "2021-08-20",
+            "category": "Altri documenti",
+            "description": "spesa 2",
+            "attachment_url": "spesa2.pdf",
+            "attachment_token": "jwfbaiuwbfoiewfoa8weohafw7gefa9we"
+        
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ArchiveDocument');
     }
 
     /**
@@ -76,8 +91,10 @@ class ArchiveDocumentTest extends TestCase
      */
     public function testArchiveDocument()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +102,7 @@ class ArchiveDocumentTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['id'], $this->array['id']);
     }
 
     /**
@@ -94,8 +110,8 @@ class ArchiveDocumentTest extends TestCase
      */
     public function testPropertyDate()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $date = new \DateTime($this->array['date']);
+        TestCase::assertEquals($this->object['date'], $date);
     }
 
     /**
@@ -103,8 +119,7 @@ class ArchiveDocumentTest extends TestCase
      */
     public function testPropertyDescription()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['description'], $this->array['description']);
     }
 
     /**
@@ -112,8 +127,7 @@ class ArchiveDocumentTest extends TestCase
      */
     public function testPropertyAttachmentUrl()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['attachment_url'], $this->array['attachment_url']);
     }
 
     /**
@@ -121,8 +135,7 @@ class ArchiveDocumentTest extends TestCase
      */
     public function testPropertyCategory()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['category'], $this->array['category']);
     }
 
     /**
@@ -130,7 +143,6 @@ class ArchiveDocumentTest extends TestCase
      */
     public function testPropertyAttachmentToken()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['attachment_token'], $this->array['attachment_token']);
     }
 }

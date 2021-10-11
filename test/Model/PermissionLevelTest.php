@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * PermissionLevelTest Class Doc Comment
@@ -55,6 +56,7 @@ class PermissionLevelTest extends TestCase
      */
     public function setUp(): void
     {
+
     }
 
     /**
@@ -76,7 +78,6 @@ class PermissionLevelTest extends TestCase
      */
     public function testPermissionLevel()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::AssertEquals(1,1);
     }
 }
