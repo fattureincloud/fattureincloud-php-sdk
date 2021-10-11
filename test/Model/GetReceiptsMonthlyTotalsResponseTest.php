@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * GetReceiptsMonthlyTotalsResponseTest Class Doc Comment
@@ -55,6 +56,74 @@ class GetReceiptsMonthlyTotalsResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": [
+                {
+                  "net": 15000,
+                  "gross": 18000,
+                  "count": 10
+                },
+                {
+                  "net": 18000,
+                  "gross": 22000,
+                  "count": 20
+                },
+                {
+                  "net": 20000,
+                  "gross": 24400,
+                  "count": 30
+                },
+                {
+                  "net": 19000,
+                  "gross": 22000,
+                  "count": 20
+                },
+                {
+                  "net": 17000,
+                  "gross": 20000,
+                  "count": 10
+                },
+                {
+                  "net": 18000,
+                  "gross": 24000,
+                  "count": 21
+                },
+                {
+                  "net": 22000,
+                  "gross": 25000,
+                  "count": 30
+                },
+                {
+                  "net": 17000,
+                  "gross": 21000,
+                  "count": 21
+                },
+                {
+                  "net": 0,
+                  "gross": 0,
+                  "count": 10
+                },
+                {
+                  "net": 0,
+                  "gross": 0,
+                  "count": 20
+                },
+                {
+                  "net": 0,
+                  "gross": 0,
+                  "count": 30
+                },
+                {
+                  "net": 0,
+                  "gross": 0,
+                  "count": 21
+                }
+              ]
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\GetReceiptsMonthlyTotalsResponse');
     }
 
     /**
@@ -76,8 +145,10 @@ class GetReceiptsMonthlyTotalsResponseTest extends TestCase
      */
     public function testGetReceiptsMonthlyTotalsResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +156,9 @@ class GetReceiptsMonthlyTotalsResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

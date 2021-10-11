@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * EmailScheduleIncludeTest Class Doc Comment
@@ -55,6 +56,16 @@ class EmailScheduleIncludeTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "document": false,
+            "delivery_note": false,
+            "attachment": false,
+            "accompanying_invoice": false
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\EmailScheduleInclude');
     }
 
     /**
@@ -76,8 +87,10 @@ class EmailScheduleIncludeTest extends TestCase
      */
     public function testEmailScheduleInclude()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +98,7 @@ class EmailScheduleIncludeTest extends TestCase
      */
     public function testPropertyDocument()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['document'], $this->array['document']);
     }
 
     /**
@@ -94,8 +106,7 @@ class EmailScheduleIncludeTest extends TestCase
      */
     public function testPropertyDeliveryNote()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['delivery_note'], $this->array['delivery_note']);
     }
 
     /**
@@ -103,8 +114,7 @@ class EmailScheduleIncludeTest extends TestCase
      */
     public function testPropertyAttachment()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['attachment'], $this->array['attachment']);
     }
 
     /**
@@ -112,7 +122,6 @@ class EmailScheduleIncludeTest extends TestCase
      */
     public function testPropertyAccompanyingInvoice()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['accompanying_invoice'], $this->array['accompanying_invoice']);
     }
 }

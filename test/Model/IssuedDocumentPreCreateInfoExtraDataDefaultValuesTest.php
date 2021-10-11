@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * IssuedDocumentPreCreateInfoExtraDataDefaultValuesTest Class Doc Comment
@@ -55,6 +56,16 @@ class IssuedDocumentPreCreateInfoExtraDataDefaultValuesTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "ts_communication": false,
+            "ts_tipo_spesa": "SR",
+            "ts_flag_tipo_spesa": 0,
+            "ts_pagamento_tracciato": false
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\IssuedDocumentPreCreateInfoExtraDataDefaultValues');
     }
 
     /**
@@ -76,8 +87,10 @@ class IssuedDocumentPreCreateInfoExtraDataDefaultValuesTest extends TestCase
      */
     public function testIssuedDocumentPreCreateInfoExtraDataDefaultValues()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +98,7 @@ class IssuedDocumentPreCreateInfoExtraDataDefaultValuesTest extends TestCase
      */
     public function testPropertyTsCommunication()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['ts_communication'], $this->array['ts_communication']);
     }
 
     /**
@@ -94,8 +106,7 @@ class IssuedDocumentPreCreateInfoExtraDataDefaultValuesTest extends TestCase
      */
     public function testPropertyTsTipoSpesa()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['ts_tipo_spesa'], $this->array['ts_tipo_spesa']);
     }
 
     /**
@@ -103,8 +114,7 @@ class IssuedDocumentPreCreateInfoExtraDataDefaultValuesTest extends TestCase
      */
     public function testPropertyTsFlagTipoSpesa()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['ts_flag_tipo_spesa'], $this->array['ts_flag_tipo_spesa']);
     }
 
     /**
@@ -112,7 +122,6 @@ class IssuedDocumentPreCreateInfoExtraDataDefaultValuesTest extends TestCase
      */
     public function testPropertyTsPagamentoTracciato()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['ts_pagamento_tracciato'], $this->array['ts_pagamento_tracciato']);
     }
 }

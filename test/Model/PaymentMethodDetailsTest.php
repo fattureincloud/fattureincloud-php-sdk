@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * PaymentMethodDetailsTest Class Doc Comment
@@ -55,6 +56,14 @@ class PaymentMethodDetailsTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "title": "details",
+            "description": "new details"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\PaymentMethodDetails');
     }
 
     /**
@@ -76,8 +85,10 @@ class PaymentMethodDetailsTest extends TestCase
      */
     public function testPaymentMethodDetails()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +96,7 @@ class PaymentMethodDetailsTest extends TestCase
      */
     public function testPropertyTitle()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['title'], $this->array['title']);
     }
 
     /**
@@ -94,7 +104,6 @@ class PaymentMethodDetailsTest extends TestCase
      */
     public function testPropertyDescription()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['description'], $this->array['description']);
     }
 }

@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * CompanyInfoAccessInfoTest Class Doc Comment
@@ -55,6 +56,21 @@ class CompanyInfoAccessInfoTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "role": "master",
+            "through_accountant": false,
+            "permissions": {
+                "fic_situation": "read",
+                "fic_clients": "write",
+                "fic_suppliers": "write",
+                "fic_products": "write",
+                "fic_issued_documents": "detailed"
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CompanyInfoAccessInfo');
     }
 
     /**
@@ -76,8 +92,10 @@ class CompanyInfoAccessInfoTest extends TestCase
      */
     public function testCompanyInfoAccessInfo()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +103,7 @@ class CompanyInfoAccessInfoTest extends TestCase
      */
     public function testPropertyRole()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['role'], $this->array['role']);
     }
 
     /**
@@ -94,8 +111,10 @@ class CompanyInfoAccessInfoTest extends TestCase
      */
     public function testPropertyPermissions()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['permissions'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['permissions']);
+        }
     }
 
     /**
@@ -103,7 +122,6 @@ class CompanyInfoAccessInfoTest extends TestCase
      */
     public function testPropertyThroughAccountant()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['through_accountant'], $this->array['through_accountant']);
     }
 }

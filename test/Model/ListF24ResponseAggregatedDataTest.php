@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ListF24ResponseAggregatedDataTest Class Doc Comment
@@ -55,6 +56,15 @@ class ListF24ResponseAggregatedDataTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "aggregated_data": {
+                "amount": 5
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListF24ResponseAggregatedData');
     }
 
     /**
@@ -76,8 +86,10 @@ class ListF24ResponseAggregatedDataTest extends TestCase
      */
     public function testListF24ResponseAggregatedData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +97,9 @@ class ListF24ResponseAggregatedDataTest extends TestCase
      */
     public function testPropertyAggregatedData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['aggregated_data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['aggregated_data']);
+        }
     }
 }

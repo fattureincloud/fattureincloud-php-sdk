@@ -33,6 +33,12 @@ use \FattureInCloud\ApiException;
 use \FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
+use \GuzzleHttp\Client;
+use \GuzzleHttp\Handler\MockHandler;
+use \GuzzleHttp\HandlerStack;
+use \GuzzleHttp\Psr7\Response;
+use \GuzzleHttp\Psr7\Request;
+use \GuzzleHttp\Exception\RequestException;
 /**
  * IssuedEInvoicesApiTest Class Doc Comment
  *
@@ -80,8 +86,24 @@ class IssuedEInvoicesApiTest extends TestCase
      */
     public function testSendEInvoice()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $stream = '{"data":{"name":"CARICATO","date":"2021-08-23 10:38:03"}}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\IssuedEInvoicesApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $send_einvoice_request = "json";
+        $document_id = 12345;
+        $result = $apiInstance->sendEInvoice($company_id, $send_einvoice_request, $document_id);
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\SendEInvoiceResponse');
+
+        TestCase::assertEquals($obj, $result);
     }
 
     /**
@@ -92,7 +114,22 @@ class IssuedEInvoicesApiTest extends TestCase
      */
     public function testVerifyEInvoiceXml()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $stream = '{"data":{"success":true}}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\IssuedEInvoicesApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $document_id = 12345;
+        $result = $apiInstance->verifyEInvoiceXml($company_id, $document_id);
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\VerifyEInvoiceXmlResponse');
+
+        TestCase::assertEquals($obj, $result);
     }
 }

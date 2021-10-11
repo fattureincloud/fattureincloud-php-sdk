@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * EntityOptionsTest Class Doc Comment
@@ -55,6 +56,16 @@ class EntityOptionsTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "entity_search_fields": "id",
+            "entity_autocomplete": true,
+            "entity_create": false,
+            "entity_update": ""
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\EntityOptions');
     }
 
     /**
@@ -76,8 +87,10 @@ class EntityOptionsTest extends TestCase
      */
     public function testEntityOptions()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +98,7 @@ class EntityOptionsTest extends TestCase
      */
     public function testPropertyEntitySearchFields()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['entity_search_fields'], $this->array['entity_search_fields']);
     }
 
     /**
@@ -94,8 +106,7 @@ class EntityOptionsTest extends TestCase
      */
     public function testPropertyEntityAutocomplete()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['entity_autocomplete'], $this->array['entity_autocomplete']);
     }
 
     /**
@@ -103,8 +114,7 @@ class EntityOptionsTest extends TestCase
      */
     public function testPropertyEntityCreate()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['entity_create'], $this->array['entity_create']);
     }
 
     /**
@@ -112,7 +122,6 @@ class EntityOptionsTest extends TestCase
      */
     public function testPropertyEntityUpdate()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['entity_update'], $this->array['entity_update']);
     }
 }

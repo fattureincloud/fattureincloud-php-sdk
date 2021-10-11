@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ListUserCompaniesResponseTest Class Doc Comment
@@ -55,6 +56,58 @@ class ListUserCompaniesResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": {
+                "companies": [
+                  {
+                    "id": 12345,
+                    "name": "Studio Commercialista",
+                    "tax_code": "ABCSFN94T17A794K",
+                    "type": "accountant",
+                    "access_token": "4ff5f0fe5abcd1d7157fa13ca72ab62b6183db0667a576a0e19164801c18c4f7362a848fa32dbb8c3a3f94c34f3df95",
+                    "connection_id": 94566,
+                    "controlled_companies": [
+                      {
+                        "id": 12246,
+                        "name": "Studio Commercialista",
+                        "tax_code": "ABCSFN94T17A794K",
+                        "type": "company",
+                        "access_token": "4ff5f0fe5abcdf1d7157fa13ca72ab62b6183db0667a576a0e19164801c18c4f7362a848fa32dbb8c3a3f94c34f3df95",
+                        "connection_id": 94566,
+                        "controlled_companies": [],
+                        "fic": true,
+                        "dic": true,
+                        "fic_plan": "premium_plus",
+                        "fic_license_expire": "2021-12-31",
+                        "permissions": {
+                          "fic_situation": "write",
+                          "fic_clients": "write",
+                          "fic_suppliers": "write",
+                          "fic_products": "write",
+                          "fic_issued_documents": "write",
+                          "fic_received_documents": "write",
+                          "fic_receipts": "write",
+                          "fic_calendar": "write",
+                          "fic_archive": "write",
+                          "fic_taxes": "write",
+                          "fic_stock": "write",
+                          "fic_cashbook": "write",
+                          "fic_settings": "write",
+                          "fic_emails": "write",
+                          "dic_employees": "write",
+                          "dic_timesheet": "write",
+                          "dic_settings": "write"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListUserCompaniesResponse');
     }
 
     /**
@@ -76,8 +129,10 @@ class ListUserCompaniesResponseTest extends TestCase
      */
     public function testListUserCompaniesResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +140,9 @@ class ListUserCompaniesResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

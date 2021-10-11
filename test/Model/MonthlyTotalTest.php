@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * MonthlyTotalTest Class Doc Comment
@@ -55,6 +56,15 @@ class MonthlyTotalTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "net": 15000,
+            "gross": 18000,
+            "count": 10
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\MonthlyTotal');
     }
 
     /**
@@ -76,8 +86,10 @@ class MonthlyTotalTest extends TestCase
      */
     public function testMonthlyTotal()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +97,7 @@ class MonthlyTotalTest extends TestCase
      */
     public function testPropertyNet()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['net'], $this->array['net']);
     }
 
     /**
@@ -94,8 +105,7 @@ class MonthlyTotalTest extends TestCase
      */
     public function testPropertyGross()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['gross'], $this->array['gross']);
     }
 
     /**
@@ -103,7 +113,6 @@ class MonthlyTotalTest extends TestCase
      */
     public function testPropertyCount()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['count'], $this->array['count']);
     }
 }

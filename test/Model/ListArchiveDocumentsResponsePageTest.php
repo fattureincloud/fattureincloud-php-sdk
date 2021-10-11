@@ -30,7 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-
+use \FattureInCloud\ObjectSerializer;
 /**
  * ListArchiveDocumentsResponsePageTest Class Doc Comment
  *
@@ -55,6 +55,28 @@ class ListArchiveDocumentsResponsePageTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": [
+              {
+                "id": 12345,
+                "date": "2021-08-20",
+                "category": "Altri documenti",
+                "description": "spesa 2",
+                "attachment_url": "spesa2.pdf"
+              },
+              {
+                "id": 12346,
+                "date": "2021-08-19",
+                "category": "Altri documenti",
+                "description": "spesa 1",
+                "attachment_url": "spesa1.pdf"
+              }
+            ]
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListArchiveDocumentsResponsePage');
     }
 
     /**
@@ -76,8 +98,10 @@ class ListArchiveDocumentsResponsePageTest extends TestCase
      */
     public function testListArchiveDocumentsResponsePage()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +109,9 @@ class ListArchiveDocumentsResponsePageTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ListArchiveDocumentsResponseTest Class Doc Comment
@@ -55,6 +56,39 @@ class ListArchiveDocumentsResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "current_page": 2,
+            "first_page_url": "page=1",
+            "from": 1,
+            "last_page": 3,
+            "last_page_url": "page=3",
+            "next_page_url": "page=3",
+            "path": "/archive",
+            "per_page": 50,
+            "prev_page_url": "page=1",
+            "to": 3,
+            "total": 155,
+            "data": [
+                {
+                  "id": 12345,
+                  "date": "2021-08-20",
+                  "category": "Altri documenti",
+                  "description": "spesa 2",
+                  "attachment_url": "spesa2.pdf"
+                },
+                {
+                  "id": 12346,
+                  "date": "2021-08-19",
+                  "category": "Altri documenti",
+                  "description": "spesa 1",
+                  "attachment_url": "spesa1.pdf"
+                }
+            ]
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListArchiveDocumentsResponse');
     }
 
     /**
@@ -76,8 +110,10 @@ class ListArchiveDocumentsResponseTest extends TestCase
      */
     public function testListArchiveDocumentsResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +121,7 @@ class ListArchiveDocumentsResponseTest extends TestCase
      */
     public function testPropertyCurrentPage()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['current_page'], $this->array['current_page']);
     }
 
     /**
@@ -94,8 +129,7 @@ class ListArchiveDocumentsResponseTest extends TestCase
      */
     public function testPropertyFirstPageUrl()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['first_page_url'], $this->array['first_page_url']);
     }
 
     /**
@@ -103,8 +137,7 @@ class ListArchiveDocumentsResponseTest extends TestCase
      */
     public function testPropertyFrom()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['from'], $this->array['from']);
     }
 
     /**
@@ -112,8 +145,7 @@ class ListArchiveDocumentsResponseTest extends TestCase
      */
     public function testPropertyLastPage()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['last_page'], $this->array['last_page']);
     }
 
     /**
@@ -121,8 +153,7 @@ class ListArchiveDocumentsResponseTest extends TestCase
      */
     public function testPropertyLastPageUrl()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['last_page_url'], $this->array['last_page_url']);
     }
 
     /**
@@ -130,8 +161,7 @@ class ListArchiveDocumentsResponseTest extends TestCase
      */
     public function testPropertyNextPageUrl()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['next_page_url'], $this->array['next_page_url']);
     }
 
     /**
@@ -139,8 +169,7 @@ class ListArchiveDocumentsResponseTest extends TestCase
      */
     public function testPropertyPath()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['path'], $this->array['path']);
     }
 
     /**
@@ -148,8 +177,7 @@ class ListArchiveDocumentsResponseTest extends TestCase
      */
     public function testPropertyPerPage()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['per_page'], $this->array['per_page']);
     }
 
     /**
@@ -157,8 +185,7 @@ class ListArchiveDocumentsResponseTest extends TestCase
      */
     public function testPropertyPrevPageUrl()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['prev_page_url'], $this->array['prev_page_url']);
     }
 
     /**
@@ -166,8 +193,7 @@ class ListArchiveDocumentsResponseTest extends TestCase
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['to'], $this->array['to']);
     }
 
     /**
@@ -175,8 +201,7 @@ class ListArchiveDocumentsResponseTest extends TestCase
      */
     public function testPropertyTotal()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['total'], $this->array['total']);
     }
 
     /**
@@ -184,7 +209,9 @@ class ListArchiveDocumentsResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

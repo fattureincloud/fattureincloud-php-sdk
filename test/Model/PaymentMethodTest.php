@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * PaymentMethodTest Class Doc Comment
@@ -55,6 +56,23 @@ class PaymentMethodTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{  
+            "id": 12346,
+            "name": "Bonifico bancario",
+            "type": "standard",
+            "is_default": true,
+            "details": [{
+                "title":"t1"
+            }],
+            "default_payment_account": {
+                "id": 21,
+                "name": "n1"
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\PaymentMethod');
     }
 
     /**
@@ -76,8 +94,10 @@ class PaymentMethodTest extends TestCase
      */
     public function testPaymentMethod()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +105,7 @@ class PaymentMethodTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['id'], $this->array['id']);
     }
 
     /**
@@ -94,8 +113,7 @@ class PaymentMethodTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['name'], $this->array['name']);
     }
 
     /**
@@ -103,8 +121,7 @@ class PaymentMethodTest extends TestCase
      */
     public function testPropertyType()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['type'], $this->array['type']);
     }
 
     /**
@@ -112,8 +129,7 @@ class PaymentMethodTest extends TestCase
      */
     public function testPropertyIsDefault()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['is_default'], $this->array['is_default']);
     }
 
     /**
@@ -121,8 +137,10 @@ class PaymentMethodTest extends TestCase
      */
     public function testPropertyDefaultPaymentAccount()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['default_payment_account'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['default_payment_account']);
+        }
     }
 
     /**
@@ -130,7 +148,9 @@ class PaymentMethodTest extends TestCase
      */
     public function testPropertyDetails()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['details'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['details']);
+        }
     }
 }

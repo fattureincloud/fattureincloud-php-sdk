@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * IssuedDocumentTotalsTest Class Doc Comment
@@ -55,6 +56,35 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "amount_net": 68.18,
+            "taxable_amount": 68.18,
+            "amount_vat": 6.82,
+            "amount_gross": 75,
+            "amount_due": 75,
+            "payments_sum": 75,
+            "amount_rivalsa": 10,
+            "amount_net_with_rivalsa": 10,
+            "amount_cassa": 10,
+            "not_taxable_amount": 10,
+            "taxable_amount_withholding_tax": 10,
+            "amount_withholding_tax": 10,
+            "taxable_amount_other_withholding_tax": 10,
+            "amount_other_withholding_tax": 10,
+            "stamp_duty": 10,
+            "is_enasarco_maximal_exceeded": false,
+            "payments_sum": 2,
+            "vat_list": {
+                "vat_item": {
+                  "amount_net": 68.18,
+                  "amount_vat": 6.82
+                }
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\IssuedDocumentTotals');
     }
 
     /**
@@ -76,8 +106,10 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testIssuedDocumentTotals()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +117,7 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountNet()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['amount_net'], $this->array['amount_net']);
     }
 
     /**
@@ -94,8 +125,8 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountRivalsa()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['amount_rivalsa'], $this->array['amount_rivalsa']);
+
     }
 
     /**
@@ -103,8 +134,8 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountNetWithRivalsa()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['amount_net_with_rivalsa'], $this->array['amount_net_with_rivalsa']);
+
     }
 
     /**
@@ -112,8 +143,8 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountCassa()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['amount_cassa'], $this->array['amount_cassa']);
+
     }
 
     /**
@@ -121,8 +152,8 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyTaxableAmount()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['taxable_amount'], $this->array['taxable_amount']);
+
     }
 
     /**
@@ -130,8 +161,8 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyNotTaxableAmount()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['not_taxable_amount'], $this->array['not_taxable_amount']);
+
     }
 
     /**
@@ -139,8 +170,8 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountVat()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['amount_vat'], $this->array['amount_vat']);
+
     }
 
     /**
@@ -148,8 +179,8 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountGross()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['amount_gross'], $this->array['amount_gross']);
+
     }
 
     /**
@@ -157,8 +188,8 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyTaxableAmountWithholdingTax()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['taxable_amount_withholding_tax'], $this->array['taxable_amount_withholding_tax']);
+
     }
 
     /**
@@ -166,8 +197,8 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountWithholdingTax()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['amount_withholding_tax'], $this->array['amount_withholding_tax']);
+
     }
 
     /**
@@ -175,8 +206,8 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyTaxableAmountOtherWithholdingTax()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['taxable_amount_other_withholding_tax'], $this->array['taxable_amount_other_withholding_tax']);
+
     }
 
     /**
@@ -184,8 +215,8 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountOtherWithholdingTax()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['amount_other_withholding_tax'], $this->array['amount_other_withholding_tax']);
+
     }
 
     /**
@@ -193,8 +224,8 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyStampDuty()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['stamp_duty'], $this->array['stamp_duty']);
+
     }
 
     /**
@@ -202,8 +233,8 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountDue()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['amount_due'], $this->array['amount_due']);
+
     }
 
     /**
@@ -211,8 +242,8 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyIsEnasarcoMaximalExceeded()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['is_enasarco_maximal_exceeded'], $this->array['is_enasarco_maximal_exceeded']);
+
     }
 
     /**
@@ -220,8 +251,8 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyPaymentsSum()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['payments_sum'], $this->array['payments_sum']);
+
     }
 
     /**
@@ -229,7 +260,9 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyVatList()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['vat_list'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['vat_list']);
+        }
     }
 }

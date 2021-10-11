@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ModifyArchiveDocumentRequestTest Class Doc Comment
@@ -55,6 +56,17 @@ class ModifyArchiveDocumentRequestTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": {
+                "date": "2021-08-20",
+                "category": "Altri documenti",
+                "description": "spesa 2"
+              }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ModifyArchiveDocumentRequest');
     }
 
     /**
@@ -76,8 +88,10 @@ class ModifyArchiveDocumentRequestTest extends TestCase
      */
     public function testModifyArchiveDocumentRequest()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +99,9 @@ class ModifyArchiveDocumentRequestTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

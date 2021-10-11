@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * GetUserInfoResponseInfoTest Class Doc Comment
@@ -55,6 +56,15 @@ class GetUserInfoResponseInfoTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "need_marketing_consents_confirmation": false,
+            "need_password_change": false,
+            "need_terms_of_service_confirmation": false
+         }';
+ 
+         $this->array = json_decode($json, true);
+ 
+         $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\GetUserInfoResponseInfo');
     }
 
     /**
@@ -76,8 +86,10 @@ class GetUserInfoResponseInfoTest extends TestCase
      */
     public function testGetUserInfoResponseInfo()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +97,7 @@ class GetUserInfoResponseInfoTest extends TestCase
      */
     public function testPropertyNeedMarketingConsentsConfirmation()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['need_marketing_consents_confirmation'], $this->array['need_marketing_consents_confirmation']);
     }
 
     /**
@@ -94,8 +105,7 @@ class GetUserInfoResponseInfoTest extends TestCase
      */
     public function testPropertyNeedPasswordChange()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['need_password_change'], $this->array['need_password_change']);
     }
 
     /**
@@ -103,7 +113,6 @@ class GetUserInfoResponseInfoTest extends TestCase
      */
     public function testPropertyNeedTermsOfServiceConfirmation()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['need_terms_of_service_confirmation'], $this->array['need_terms_of_service_confirmation']);
     }
 }

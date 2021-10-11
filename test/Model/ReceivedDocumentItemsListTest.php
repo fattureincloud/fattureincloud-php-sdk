@@ -29,6 +29,7 @@
 
 namespace FattureInCloud\Test\Model;
 
+use \FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -55,6 +56,27 @@ class ReceivedDocumentItemsListTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "id": 12345,
+            "product_id": 54321,
+            "code": "pdr01",
+            "measure": "very big",
+            "name": "prod uan",
+            "net_price": 100,
+            "category": "other",
+            "qty": 1,
+            "stock": 99,
+            "vat": {
+                "id": 1020,
+                "value": 0,
+                "description": "PA Non imp art. 2",
+                "is_disabled": false
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ReceivedDocumentItemsList');
     }
 
     /**
@@ -76,8 +98,10 @@ class ReceivedDocumentItemsListTest extends TestCase
      */
     public function testReceivedDocumentItemsList()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +109,7 @@ class ReceivedDocumentItemsListTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['id'], $this->array['id']);
     }
 
     /**
@@ -94,8 +117,7 @@ class ReceivedDocumentItemsListTest extends TestCase
      */
     public function testPropertyProductId()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['product_id'], $this->array['product_id']);
     }
 
     /**
@@ -103,8 +125,7 @@ class ReceivedDocumentItemsListTest extends TestCase
      */
     public function testPropertyCode()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['code'], $this->array['code']);
     }
 
     /**
@@ -112,8 +133,7 @@ class ReceivedDocumentItemsListTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['name'], $this->array['name']);
     }
 
     /**
@@ -121,8 +141,7 @@ class ReceivedDocumentItemsListTest extends TestCase
      */
     public function testPropertyMeasure()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['measure'], $this->array['measure']);
     }
 
     /**
@@ -130,8 +149,7 @@ class ReceivedDocumentItemsListTest extends TestCase
      */
     public function testPropertyNetPrice()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['net_price'], $this->array['net_price']);
     }
 
     /**
@@ -139,8 +157,7 @@ class ReceivedDocumentItemsListTest extends TestCase
      */
     public function testPropertyCategory()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['category'], $this->array['category']);
     }
 
     /**
@@ -148,8 +165,7 @@ class ReceivedDocumentItemsListTest extends TestCase
      */
     public function testPropertyQty()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['qty'], $this->array['qty']);
     }
 
     /**
@@ -157,8 +173,10 @@ class ReceivedDocumentItemsListTest extends TestCase
      */
     public function testPropertyVat()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['vat'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['vat']);
+        }
     }
 
     /**
@@ -166,7 +184,6 @@ class ReceivedDocumentItemsListTest extends TestCase
      */
     public function testPropertyStock()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['stock'], $this->array['stock']);
     }
 }

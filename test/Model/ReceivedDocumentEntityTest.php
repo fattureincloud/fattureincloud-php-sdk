@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ReceivedDocumentEntityTest Class Doc Comment
@@ -55,6 +56,14 @@ class ReceivedDocumentEntityTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "id": 111,
+            "name": "Hotel Rubino Palace"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ReceivedDocumentEntity');
     }
 
     /**
@@ -76,8 +85,10 @@ class ReceivedDocumentEntityTest extends TestCase
      */
     public function testReceivedDocumentEntity()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +96,7 @@ class ReceivedDocumentEntityTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['id'], $this->array['id']);
     }
 
     /**
@@ -94,7 +104,6 @@ class ReceivedDocumentEntityTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['name'], $this->array['name']);
     }
 }

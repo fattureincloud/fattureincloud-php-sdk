@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ListVatTypesResponseTest Class Doc Comment
@@ -55,6 +56,35 @@ class ListVatTypesResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": [
+                {
+                  "id": 0,
+                  "value": 22,
+                  "description": "Non imponibile art. 123",
+                  "notes": "IVA non imponibile ai sensi dell\'articolo 123, comma 2",
+                  "e_invoice": "string",
+                  "ei_type": 2,
+                  "ei_description": "string",
+                  "editable": true
+                },
+                {
+                  "id": 1010,
+                  "value": 0,
+                  "description": "NON IMPONIBILE IVA EX ART. 8 COMMA 1 LETT.A",
+                  "notes": "",
+                  "e_invoice": false,
+                  "ei_type": 0,
+                  "ei_description": null,
+                  "is_disabled": false,
+                  "editable": true
+                }
+            ]
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListVatTypesResponse');
     }
 
     /**
@@ -76,8 +106,10 @@ class ListVatTypesResponseTest extends TestCase
      */
     public function testListVatTypesResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +117,9 @@ class ListVatTypesResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

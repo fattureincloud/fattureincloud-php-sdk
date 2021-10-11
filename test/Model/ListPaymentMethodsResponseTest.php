@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ListPaymentMethodsResponseTest Class Doc Comment
@@ -55,6 +56,26 @@ class ListPaymentMethodsResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": [
+                {
+                  "id": 12345,
+                  "name": "Carta di credito",
+                  "is_default": false,
+                  "default_payment_account": null
+                },
+                {
+                  "id": 12346,
+                  "name": "Bonifico bancario",
+                  "is_default": true,
+                  "default_payment_account": null
+                }
+            ]
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListPaymentMethodsResponse');
     }
 
     /**
@@ -76,8 +97,10 @@ class ListPaymentMethodsResponseTest extends TestCase
      */
     public function testListPaymentMethodsResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +108,9 @@ class ListPaymentMethodsResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }
