@@ -46,10 +46,9 @@ jobs:
     
     - id: psalm-validation
       name: Psalm Validation
-      uses: docker://vimeo/psalm-github-actions
-
-    - id: psalm-security
-      name: Psalm Security
-      uses: docker://vimeo/psalm-github-actions
-      with:
-        security_analysis: true
+      run: |
+        composer require --dev vimeo/psalm
+        ./vendor/bin/psalm --init
+        composer require --dev alexeyshockov/guzzle-psalm-plugin && vendor/bin/psalm-plugin enable alexeyshockov/guzzle-psalm-plugin
+        ./vendor/bin/psalm
+        ./vendor/bin/psalm --taint-analysis
