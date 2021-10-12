@@ -1,4 +1,4 @@
-name: Validate PHP SDK
+name: PHP SDK Validation
 
 on:
   pull_request:
@@ -24,6 +24,7 @@ jobs:
         php -v
 
     - name: Validate composer.json and composer.lock
+
       run: composer validate --strict
 
     - name: Cache Composer packages
@@ -35,10 +36,12 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-php-
 
-    - name: Install dependencies
+    - id: composer-install
+      name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
-    - name: Run test suite
+    - id: php-unit-tests
+      name: Run test suite
       run: ./vendor/bin/phpunit
     
     - id: psalm-validation
@@ -48,4 +51,4 @@ jobs:
         ./vendor/bin/psalm --init
         composer require --dev alexeyshockov/guzzle-psalm-plugin && vendor/bin/psalm-plugin enable alexeyshockov/guzzle-psalm-plugin
         ./vendor/bin/psalm
-        ./vendor/bin/psalm --taint-analysis 
+        ./vendor/bin/psalm --taint-analysis

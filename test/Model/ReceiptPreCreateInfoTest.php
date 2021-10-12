@@ -150,12 +150,7 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function testPropertyNumerations()
     {
-        /*
-        foreach ($this->array['numerations'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['numerations']);
-        }
-        */
+
         TestCase::assertEquals(1, 1);
     }
 
