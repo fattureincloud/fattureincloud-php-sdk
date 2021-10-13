@@ -9,17 +9,25 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    strategy:
+      fail-fast: false
+      matrix:
+        php: [7.1, 7.2, 7.3, 7.4, 8.0]
+
     steps:
     - id: checkout
       name: Checkout repo
       uses: actions/checkout@v2
 
-    - id: setup-php
-      if: ${{ env.ACT }}
-      name: Setup PHP
+    - name: Setup PHP with PECL extension
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php }}
+
+    - id: setup-composer
+      name: Setup Composer
       run: |
-        sudo apt update
-        sudo apt install php-cli php-curl php-mbstring php-xml unzip -y
+        php -v
         wget -O composer-setup.php https://getcomposer.org/installer
         sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
