@@ -19,7 +19,7 @@ createProduct($company_id, $create_product_request): \FattureInCloud\Model\Creat
 
 Create Product
 
-👥 Company context 🔒 Required scope: products:a  Create a new product.
+Creates a new product.
 
 ### Example
 
@@ -38,7 +38,7 @@ $apiInstance = new FattureInCloud\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $create_product_request = {"data":{"name":"Tavolo di marmo","code":"TAVOLO003","net_price":240,"gross_price":280,"use_gross_price":false,"net_cost":0,"measure":"","description":"Tavolo in marmo pregiato","category":"arredamento","in_stock":true,"default_vat":{"id":3,"value":22,"description":"Non imponibile art. 123","notes":"IVA non imponibile ai sensi dell'articolo 123, comma 2","is_disabled":false}}}; // \FattureInCloud\Model\CreateProductRequest
 
 try {
@@ -53,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **create_product_request** | [**\FattureInCloud\Model\CreateProductRequest**](../Model/CreateProductRequest.md)|  | [optional]
 
 ### Return type
@@ -81,7 +81,7 @@ deleteProduct($company_id, $product_id)
 
 Delete Product
 
-Delete Product
+Deletes the specified product.
 
 ### Example
 
@@ -100,8 +100,8 @@ $apiInstance = new FattureInCloud\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$product_id = 56; // int
+$company_id = 12345; // int | The ID of the company.
+$product_id = 56; // int | The ID of the product.
 
 try {
     $apiInstance->deleteProduct($company_id, $product_id);
@@ -114,8 +114,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **product_id** | **int**|  |
+ **company_id** | **int**| The ID of the company. |
+ **product_id** | **int**| The ID of the product. |
 
 ### Return type
 
@@ -142,7 +142,7 @@ getProduct($company_id, $product_id, $fields, $fieldset): \FattureInCloud\Model\
 
 Get Product
 
-👥 Company context 🔒 Required scope: products:r 🎩 Customized responses supported  Get product details
+Gets the specified product.
 
 ### Example
 
@@ -161,10 +161,10 @@ $apiInstance = new FattureInCloud\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$product_id = 56; // int
+$company_id = 12345; // int | The ID of the company.
+$product_id = 56; // int | The ID of the product.
 $fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
 
 try {
     $result = $apiInstance->getProduct($company_id, $product_id, $fields, $fieldset);
@@ -178,10 +178,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **product_id** | **int**|  |
+ **company_id** | **int**| The ID of the company. |
+ **product_id** | **int**| The ID of the product. |
  **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset | [optional]
+ **fieldset** | **string**| Name of the fieldset. | [optional]
 
 ### Return type
 
@@ -208,7 +208,7 @@ listProducts($company_id, $fields, $fieldset, $sort, $page, $per_page): \Fatture
 
 List Products
 
-👥 Company context 🔒 Required scope: products:r 🔍 Filtering: id, name, code, net_price, gross_price, net_cost, description, category, notes, in_stock, created_at, updated_at ↕️ Sorting: name, code, net_price, gross_price, net_cost, description, category, notes, in_stock, created_at, updated_at 📄 Paginated results 🎩 Customized responses supported  Get a list of products that match the filters.
+Lists the products.
 
 ### Example
 
@@ -227,12 +227,12 @@ $apiInstance = new FattureInCloud\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset
-$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting)
-$page = 1; // int | Requested page
-$per_page = 5; // int | Items to be shown per page
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
+$page = 1; // int | The page to retrieve.
+$per_page = 5; // int | The size of the page.
 
 try {
     $result = $apiInstance->listProducts($company_id, $fields, $fieldset, $sort, $page, $per_page);
@@ -246,12 +246,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset | [optional]
- **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting) | [optional]
- **page** | **int**| Requested page | [optional] [default to 1]
- **per_page** | **int**| Items to be shown per page | [optional] [default to 5]
+ **fieldset** | **string**| Name of the fieldset. | [optional]
+ **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional]
+ **page** | **int**| The page to retrieve. | [optional] [default to 1]
+ **per_page** | **int**| The size of the page. | [optional] [default to 5]
 
 ### Return type
 
@@ -278,7 +278,7 @@ modifyProduct($company_id, $product_id, $modify_product_request): \FattureInClou
 
 Modify Product
 
-👥 Company context 🔒 Required scope: products:a  Edit an existing product by its unique id.
+Modifies the specified product.
 
 ### Example
 
@@ -297,8 +297,8 @@ $apiInstance = new FattureInCloud\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$product_id = 56; // int
+$company_id = 12345; // int | The ID of the company.
+$product_id = 56; // int | The ID of the product.
 $modify_product_request = {"data":{"name":"Tavolo di marmo","code":"TAVOLO003","net_price":240,"gross_price":280,"use_gross_price":false,"net_cost":0,"measure":"","description":"Tavolo in marmo pregiato","category":"arredamento","in_stock":true,"default_vat":{"id":3,"value":22,"description":"Non imponibile art. 123","notes":"IVA non imponibile ai sensi dell'articolo 123, comma 2","is_disabled":false}}}; // \FattureInCloud\Model\ModifyProductRequest | Modified product details.
 
 try {
@@ -313,8 +313,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **product_id** | **int**|  |
+ **company_id** | **int**| The ID of the company. |
+ **product_id** | **int**| The ID of the product. |
  **modify_product_request** | [**\FattureInCloud\Model\ModifyProductRequest**](../Model/ModifyProductRequest.md)| Modified product details. | [optional]
 
 ### Return type

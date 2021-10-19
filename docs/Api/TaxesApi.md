@@ -21,7 +21,7 @@ createF24($company_id, $create_f24_request): \FattureInCloud\Model\CreateF24Resp
 
 Create F24
 
-👥 Company context 🔒 Required scope: taxes:a  Add new F24
+Creates a new F24.
 
 ### Example
 
@@ -40,7 +40,7 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $create_f24_request = {"data":{"amount":840.36,"description":"PAGAMENTO IVA 2021","due_date":"2021-12-31","status":"paid","payment_account":{"id":111},"attachment_token":"b19c01da9b1688fb73d0d9e8ad"}}; // \FattureInCloud\Model\CreateF24Request | The F24 to create
 
 try {
@@ -55,7 +55,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **create_f24_request** | [**\FattureInCloud\Model\CreateF24Request**](../Model/CreateF24Request.md)| The F24 to create | [optional]
 
 ### Return type
@@ -83,7 +83,7 @@ deleteF24($company_id, $document_id)
 
 Delete F24
 
-👥 Company context 🔒 Required scope: taxes:a  Delete an existing document by its unique id.
+Removes the specified F24.
 
 ### Example
 
@@ -102,8 +102,8 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 
 try {
     $apiInstance->deleteF24($company_id, $document_id);
@@ -116,8 +116,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
 
 ### Return type
 
@@ -144,7 +144,7 @@ deleteF24Attachment($company_id, $document_id)
 
 Delete F24 Attachment
 
-👥 Company context 🔒 Required scope: taxes:a  Remove an attachment (but not the F24)
+Removes the attachment of the specified F24.
 
 ### Example
 
@@ -163,8 +163,8 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 
 try {
     $apiInstance->deleteF24Attachment($company_id, $document_id);
@@ -177,8 +177,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
 
 ### Return type
 
@@ -205,7 +205,7 @@ getF24($company_id, $document_id, $fields, $fieldset): \FattureInCloud\Model\Get
 
 Get F24
 
-👥 Company context 🔒 Required scope: taxes:r 🎩 Customized responses supported  Get details of an existing F24 document by its unique id.
+Gets the specified F24.
 
 ### Example
 
@@ -224,10 +224,10 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 $fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
 
 try {
     $result = $apiInstance->getF24($company_id, $document_id, $fields, $fieldset);
@@ -241,10 +241,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
  **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset | [optional]
+ **fieldset** | **string**| Name of the fieldset. | [optional]
 
 ### Return type
 
@@ -271,7 +271,7 @@ listF24($company_id, $fields, $fieldset, $sort, $page, $per_page): \FattureInClo
 
 List F24
 
-👥 Company context 🔒 Required scope: taxes:r 🔍 Filtering: due_date, status, amount, description ↕️ Sorting: due_date, status, amount, description 📄 Paginated results 🎩 Customized responses supported  Get a list of F24 that match the filters.
+Lists the F24s.
 
 ### Example
 
@@ -290,12 +290,12 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset
-$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting)
-$page = 1; // int | Requested page
-$per_page = 5; // int | Items to be shown per page
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
+$page = 1; // int | The page to retrieve.
+$per_page = 5; // int | The size of the page.
 
 try {
     $result = $apiInstance->listF24($company_id, $fields, $fieldset, $sort, $page, $per_page);
@@ -309,12 +309,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset | [optional]
- **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting) | [optional]
- **page** | **int**| Requested page | [optional] [default to 1]
- **per_page** | **int**| Items to be shown per page | [optional] [default to 5]
+ **fieldset** | **string**| Name of the fieldset. | [optional]
+ **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional]
+ **page** | **int**| The page to retrieve. | [optional] [default to 1]
+ **per_page** | **int**| The size of the page. | [optional] [default to 5]
 
 ### Return type
 
@@ -341,7 +341,7 @@ modifyF24($company_id, $document_id, $modify_f24_request): \FattureInCloud\Model
 
 Modify F24
 
-👥 Company context 🔒 Required scope: taxes:a  Edit an existing F24 by its unique id.
+Modifies the specified F24.
 
 ### Example
 
@@ -360,8 +360,8 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 $modify_f24_request = {"data":{"amount":840.36,"description":"PAGAMENTO IVA 2021","due_date":"2021-12-31","status":"paid","payment_account":{"id":111}}}; // \FattureInCloud\Model\ModifyF24Request | The F24
 
 try {
@@ -376,8 +376,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
  **modify_f24_request** | [**\FattureInCloud\Model\ModifyF24Request**](../Model/ModifyF24Request.md)| The F24 | [optional]
 
 ### Return type
@@ -405,7 +405,7 @@ uploadF24Attachment($company_id, $filename, $attachment): \FattureInCloud\Model\
 
 Upload F24 Attachment
 
-👥 Company context 🔒 Required scope: taxes:a  Upload an attachment an return its relative token.
+Uploads an attachment destined to a F24. The actual association between the document and the attachment must be implemented separately, using the returned token.
 
 ### Example
 
@@ -424,7 +424,7 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $filename = 'filename_example'; // string | Name of the file.
 $attachment = "/path/to/file.txt"; // \SplFileObject | Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx
 
@@ -440,7 +440,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **filename** | **string**| Name of the file. | [optional]
  **attachment** | **\SplFileObject****\SplFileObject**| Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx | [optional]
 

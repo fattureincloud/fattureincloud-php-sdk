@@ -24,7 +24,7 @@ createReceivedDocument($company_id, $create_received_document_request): \Fatture
 
 Create Received Document
 
-👥 Company context 🔒 Required scope: received_documents:a (but if the document is a passive_delivery_note you’ll need stock:a scope)  Create a new received document.
+Creates a new document.
 
 ### Example
 
@@ -43,7 +43,7 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $create_received_document_request = {"data":{"type":"expense","description":"Soggiorno di lavoro","amortization":1,"rc_center":"","invoice_number":"","is_marked":false,"is_detailed":false,"e_invoice":false,"entity":{"id":111,"name":"Hotel Rubino Palace"},"date":"2021-08-15","next_due_date":"2021-08-15","currency":{"id":"EUR","exchange_rate":"1.00000","symbol":"€"},"amount_net":592,"amount_vat":0,"amount_gross":592,"amount_withholding_tax":0,"amount_other_withholding_tax":0,"tax_deductibility":50,"vat_deductibility":100,"items_list":null,"payments_list":[{"amount":592,"due_date":"2021-08-15","paid_date":"2021-08-15","id":777,"payment_terms":{"days":0,"type":"standard"},"status":"paid","payment_account":{"id":222,"name":"Contanti","virtual":false}}],"attachment_token":"bnopjao8gvydtgnewgiovs74yrfqwefEF"}}; // \FattureInCloud\Model\CreateReceivedDocumentRequest | Document to create
 
 try {
@@ -58,7 +58,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **create_received_document_request** | [**\FattureInCloud\Model\CreateReceivedDocumentRequest**](../Model/CreateReceivedDocumentRequest.md)| Document to create | [optional]
 
 ### Return type
@@ -86,7 +86,7 @@ deleteReceivedDocument($company_id, $document_id)
 
 Delete Received Document
 
-👥 Company context 🔒 Required scope: received_documents:a (but if the document is a passive_delivery_note you’ll need stock:a scope)  Delete an existing document by its unique id.
+Deletes the specified document.
 
 ### Example
 
@@ -105,8 +105,8 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 
 try {
     $apiInstance->deleteReceivedDocument($company_id, $document_id);
@@ -119,8 +119,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
 
 ### Return type
 
@@ -147,7 +147,7 @@ deleteReceivedDocumentAttachment($company_id, $document_id)
 
 Delete Received Document Attachment
 
-👥 Company context 🔒 Required scope: received_documents:a (but if the document is a passive_delivery_note you’ll need stock:a scope)  Remove the attachment (but not the document)
+Removes the attachment of the specified document.
 
 ### Example
 
@@ -166,8 +166,8 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 
 try {
     $apiInstance->deleteReceivedDocumentAttachment($company_id, $document_id);
@@ -180,8 +180,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
 
 ### Return type
 
@@ -208,7 +208,7 @@ getExistingReceivedDocumentTotals($company_id, $document_id, $get_existing_recei
 
 Get Existing Received Document Totals
 
-👥 Company context 🔒 Required scope: received_documents:a (but if the document is a passive_delivery_note you’ll need stock:a scope)  Calculate totals of the received document indicated by the id with the changes passed in the body.
+Returns the totals for the specified document.
 
 ### Example
 
@@ -227,8 +227,8 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 $get_existing_received_document_totals_request = {"data":{"amount_vat":20}}; // \FattureInCloud\Model\GetExistingReceivedDocumentTotalsRequest | Received document.
 
 try {
@@ -243,8 +243,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
  **get_existing_received_document_totals_request** | [**\FattureInCloud\Model\GetExistingReceivedDocumentTotalsRequest**](../Model/GetExistingReceivedDocumentTotalsRequest.md)| Received document. | [optional]
 
 ### Return type
@@ -272,7 +272,7 @@ getNewReceivedDocumentTotals($company_id, $get_new_received_document_totals_requ
 
 Get New Received Document Totals
 
-👥 Company context 🔒 Required scope: received_documents:a (but if the document is a passive_delivery_note you’ll need stock:a scope)  Calculate totals of the received document passed in the body.
+Returns the totals for a new document.
 
 ### Example
 
@@ -291,7 +291,7 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $get_new_received_document_totals_request = {"data":{"type":"expense","description":"Soggiorno di lavoro","amortization":1,"rc_center":"","invoice_number":"","is_marked":false,"is_detailed":false,"e_invoice":false,"created_at":"2021-08-15 14:02:02","updated_at":"2021-08-15 14:02:02","entity":{"id":111,"name":"Hotel Rubino Palace"},"date":"2021-08-15","next_due_date":"2021-08-15","currency":{"id":"EUR","exchange_rate":"1.00000","symbol":"€"},"amount_net":592,"amount_vat":10,"amount_withholding_tax":0,"amount_other_withholding_tax":0,"tax_deductibility":50,"vat_deductibility":100,"items_list":null,"payments_list":[{"amount":592,"due_date":"2021-08-15","paid_date":"2021-08-15","id":777,"payment_terms":{"days":0,"type":"standard"},"status":"paid"}]}}; // \FattureInCloud\Model\GetNewReceivedDocumentTotalsRequest | Received document.
 
 try {
@@ -306,7 +306,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **get_new_received_document_totals_request** | [**\FattureInCloud\Model\GetNewReceivedDocumentTotalsRequest**](../Model/GetNewReceivedDocumentTotalsRequest.md)| Received document. | [optional]
 
 ### Return type
@@ -334,7 +334,7 @@ getReceivedDocument($company_id, $document_id, $fields, $fieldset): \FattureInCl
 
 Get Received Document
 
-👥 Company context 🔒 Required scope: received_documents:r (but if the document is a passive_delivery_note you’ll need stock:r scope) 🎩 Customized responses supported  Get details of an existing document by its unique id.
+Gets the specified document.
 
 ### Example
 
@@ -353,10 +353,10 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 $fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
 
 try {
     $result = $apiInstance->getReceivedDocument($company_id, $document_id, $fields, $fieldset);
@@ -370,10 +370,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
  **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset | [optional]
+ **fieldset** | **string**| Name of the fieldset. | [optional]
 
 ### Return type
 
@@ -400,7 +400,7 @@ getReceivedDocumentPreCreateInfo($company_id, $type): \FattureInCloud\Model\GetR
 
 Get Received Document Pre-Create Info
 
-👥 Company context 🔒 Required scope: received_documents:r  Get the info needed for the document creation flow.
+Retrieves the information useful while creating a new document.
 
 ### Example
 
@@ -419,8 +419,8 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$type = 'type_example'; // string | Received Document Type
+$company_id = 12345; // int | The ID of the company.
+$type = 'type_example'; // string | The type of the received document.
 
 try {
     $result = $apiInstance->getReceivedDocumentPreCreateInfo($company_id, $type);
@@ -434,8 +434,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **type** | **string**| Received Document Type |
+ **company_id** | **int**| The ID of the company. |
+ **type** | **string**| The type of the received document. |
 
 ### Return type
 
@@ -462,7 +462,7 @@ listReceivedDocuments($company_id, $type, $fields, $fieldset, $sort, $page, $per
 
 List Received Documents
 
-👥 Company context 🔒 Required scope: received_documents:r (but if the document is a passive_delivery_note you’ll need stock:r scope) 🔍 Filtering: id, type, category, description, entity.id, entity.name, date, next_due_date, amount_gross, amount_net, amount_vat, invoice_number, created_at, updated_at ↕️ Sorting: id, category, entity.id, entity.name, date, next_due_date, amount_gross, amount_net, amount_vat, created_at, updated_at 📄 Paginated results 🎩 Customized responses supported (available fieldsets: basic, detailed, fic_list, fic_view) \\  Get a list of documents that match the filters.
+Lists the received documents.
 
 ### Example
 
@@ -481,13 +481,13 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$type = 'type_example'; // string | Received Document Type
+$company_id = 12345; // int | The ID of the company.
+$type = 'type_example'; // string | The type of the received document.
 $fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset
-$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting)
-$page = 1; // int | Requested page
-$per_page = 5; // int | Items to be shown per page
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
+$page = 1; // int | The page to retrieve.
+$per_page = 5; // int | The size of the page.
 
 try {
     $result = $apiInstance->listReceivedDocuments($company_id, $type, $fields, $fieldset, $sort, $page, $per_page);
@@ -501,13 +501,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **type** | **string**| Received Document Type |
+ **company_id** | **int**| The ID of the company. |
+ **type** | **string**| The type of the received document. |
  **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset | [optional]
- **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting) | [optional]
- **page** | **int**| Requested page | [optional] [default to 1]
- **per_page** | **int**| Items to be shown per page | [optional] [default to 5]
+ **fieldset** | **string**| Name of the fieldset. | [optional]
+ **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional]
+ **page** | **int**| The page to retrieve. | [optional] [default to 1]
+ **per_page** | **int**| The size of the page. | [optional] [default to 5]
 
 ### Return type
 
@@ -534,7 +534,7 @@ modifyReceivedDocument($company_id, $document_id, $modify_received_document_requ
 
 Modify Received Document
 
-👥 Company context 🔒 Required scope: received_documents:a (but if the document is a passive_delivery_note you’ll need stock:a scope)  Edit an existing document by its unique id.
+Modifies the specified document.
 
 ### Example
 
@@ -553,8 +553,8 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 $modify_received_document_request = {"data":{"type":"expense","description":"Soggiorno di lavoro","amortization":1,"rc_center":"","invoice_number":"","is_marked":false,"is_detailed":false,"e_invoice":false,"entity":{"id":111,"name":"Hotel Rubino Palace"},"date":"2021-08-15","next_due_date":"2021-08-15","currency":{"id":"EUR","exchange_rate":"1.00000","symbol":"€"},"amount_net":592,"amount_vat":0,"amount_gross":592,"amount_withholding_tax":0,"amount_other_withholding_tax":0,"tax_deductibility":50,"vat_deductibility":100,"items_list":null,"payments_list":[{"amount":592,"due_date":"2021-08-15","paid_date":"2021-08-15","id":777,"payment_terms":{"days":0,"type":"standard"},"status":"paid","payment_account":{"id":222,"name":"Contanti","virtual":false}}]}}; // \FattureInCloud\Model\ModifyReceivedDocumentRequest | Modified document.
 
 try {
@@ -569,8 +569,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
  **modify_received_document_request** | [**\FattureInCloud\Model\ModifyReceivedDocumentRequest**](../Model/ModifyReceivedDocumentRequest.md)| Modified document. | [optional]
 
 ### Return type
@@ -598,7 +598,7 @@ uploadReceivedDocumentAttachment($company_id, $filename, $attachment): \FattureI
 
 Upload Received Document Attachment
 
-👥 Company context 🔒 Required scope: received_documents:a (but if the document is a passive_delivery_note you’ll need stock:a scope)  Upload an attachment and return the relative token.
+Uploads an attachment destined to a received document. The actual association between the document and the attachment must be implemented separately, using the returned token.
 
 ### Example
 
@@ -617,7 +617,7 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $filename = 'filename_example'; // string | Name of the file.
 $attachment = "/path/to/file.txt"; // \SplFileObject | Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx
 
@@ -633,7 +633,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **filename** | **string**| Name of the file. | [optional]
  **attachment** | **\SplFileObject****\SplFileObject**| Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx | [optional]
 

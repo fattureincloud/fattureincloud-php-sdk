@@ -16,7 +16,7 @@ sendEInvoice($company_id, $document_id, $send_e_invoice_request): \FattureInClou
 
 Send the e-invoice
 
-👥 Company context  Send the e-invoice to SDI
+Sends the e-invoice to SDI.
 
 ### Example
 
@@ -35,8 +35,8 @@ $apiInstance = new FattureInCloud\Api\IssuedEInvoicesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 $send_e_invoice_request = {"data":{"withholding_tax_causal":"causale"}}; // \FattureInCloud\Model\SendEInvoiceRequest
 
 try {
@@ -51,8 +51,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
  **send_e_invoice_request** | [**\FattureInCloud\Model\SendEInvoiceRequest**](../Model/SendEInvoiceRequest.md)|  | [optional]
 
 ### Return type
@@ -80,7 +80,7 @@ verifyEInvoiceXml($company_id, $document_id): \FattureInCloud\Model\VerifyEInvoi
 
 Verify e-invoice xml
 
-👥 Company context  Verify e-invoice xml format. Check if all mandatory fields are filled and if all fields are in right format.
+Verifies the e-invoice xml format. Checks if all of the mandatory fields are filled and compliant to the right format.
 
 ### Example
 
@@ -99,8 +99,8 @@ $apiInstance = new FattureInCloud\Api\IssuedEInvoicesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 
 try {
     $result = $apiInstance->verifyEInvoiceXml($company_id, $document_id);
@@ -114,8 +114,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
 
 ### Return type
 

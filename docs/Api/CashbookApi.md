@@ -19,7 +19,7 @@ createCashbookEntry($company_id, $create_cashbook_entry_request): \FattureInClou
 
 Create Cashbook Entry
 
-👥 Company context \\ 🔒 Required scope: `cashbook:a`  Create a new cashbook entry. It is possible to create an entry as an income or an outcome.
+Creates a new cashbook entry.
 
 ### Example
 
@@ -38,7 +38,7 @@ $apiInstance = new FattureInCloud\Api\CashbookApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $create_cashbook_entry_request = {"data":{"date":"2021-08-24","amount_in":122,"payment_account_in":{"id":333},"description":"Fattura n. 201/2021","entity_name":"Rossi S.r.l.","kind":"issued_document","document":{"id":54321},"type":"in"}}; // \FattureInCloud\Model\CreateCashbookEntryRequest | Cashbook entry.
 
 try {
@@ -53,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **create_cashbook_entry_request** | [**\FattureInCloud\Model\CreateCashbookEntryRequest**](../Model/CreateCashbookEntryRequest.md)| Cashbook entry. | [optional]
 
 ### Return type
@@ -81,7 +81,7 @@ deleteCashbookEntry($company_id, $document_id)
 
 Delete Cashbook Entry
 
-👥 Company context \\ 🔒 Required scope: `cashbook:a`  Delete an existing cashbook entry by its unique id.
+Deletes the specified cashbook entry.
 
 ### Example
 
@@ -100,8 +100,8 @@ $apiInstance = new FattureInCloud\Api\CashbookApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 
 try {
     $apiInstance->deleteCashbookEntry($company_id, $document_id);
@@ -114,8 +114,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
 
 ### Return type
 
@@ -142,7 +142,7 @@ getCashbookEntry($company_id, $document_id, $fields, $fieldset): \FattureInCloud
 
 Get Cashbook Entry
 
-👥 Company context \\ 🔒 Required scope: `cashbook:r` \\ 🎩 Customized responses supported  Get details of an existing document by its unique id.
+Gets the specified cashbook entry.
 
 ### Example
 
@@ -161,10 +161,10 @@ $apiInstance = new FattureInCloud\Api\CashbookApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 $fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
 
 try {
     $result = $apiInstance->getCashbookEntry($company_id, $document_id, $fields, $fieldset);
@@ -178,10 +178,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
  **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset | [optional]
+ **fieldset** | **string**| Name of the fieldset. | [optional]
 
 ### Return type
 
@@ -208,7 +208,7 @@ listCashbookEntries($company_id, $date_from, $date_to, $year, $type, $payment_ac
 
 List Cashbook Entries
 
-👥 Company context 🔒 Required scope: cashbook:r \\  Get a list of cashbook notes that match the filters.
+Lists the cashbook entries.
 
 ### Example
 
@@ -227,7 +227,7 @@ $apiInstance = new FattureInCloud\Api\CashbookApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $date_from = 'date_from_example'; // string | Start date.
 $date_to = 'date_to_example'; // string | End date.
 $year = 56; // int | Filter cashbook by year.
@@ -246,7 +246,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **date_from** | **string**| Start date. |
  **date_to** | **string**| End date. |
  **year** | **int**| Filter cashbook by year. | [optional]
@@ -278,7 +278,7 @@ modifyCashbookEntry($company_id, $document_id, $modify_cashbook_entry_request): 
 
 Modify Cashbook Entry
 
-👥 Company context \\ 🔒 Required scope: `cashbook:a`  Edit an existing cashbook entry by its unique id.
+Modifies the specified cashbook entry.
 
 ### Example
 
@@ -297,8 +297,8 @@ $apiInstance = new FattureInCloud\Api\CashbookApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 $modify_cashbook_entry_request = {"data":{"date":"2021-08-24","amount_in":122,"payment_account_in":{"id":333},"description":"Fattura n. 201/2021","entity_name":"Rossi S.r.l."}}; // \FattureInCloud\Model\ModifyCashbookEntryRequest | Cashbook Entry
 
 try {
@@ -313,8 +313,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
  **modify_cashbook_entry_request** | [**\FattureInCloud\Model\ModifyCashbookEntryRequest**](../Model/ModifyCashbookEntryRequest.md)| Cashbook Entry | [optional]
 
 ### Return type

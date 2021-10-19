@@ -15,7 +15,7 @@ getCompanyInfo($company_id): \FattureInCloud\Model\GetCompanyInfoResponse
 
 Get Company Info
 
-Get company info like email, license expire date and access info for each document and section
+Gets the company detailed info.
 
 ### Example
 
@@ -34,7 +34,7 @@ $apiInstance = new FattureInCloud\Api\CompaniesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 
 try {
     $result = $apiInstance->getCompanyInfo($company_id);
@@ -48,7 +48,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
 
 ### Return type
 
