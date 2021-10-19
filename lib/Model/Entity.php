@@ -392,7 +392,7 @@ class Entity implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['notes'] = $data['notes'] ?? null;
         $this->container['default_vat'] = $data['default_vat'] ?? null;
         $this->container['default_payment_terms'] = $data['default_payment_terms'] ?? null;
-        $this->container['default_payment_terms_type'] = $data['default_payment_terms_type'] ?? DEFAULT_PAYMENT_TERMS_TYPE_STANDARD;
+        $this->container['default_payment_terms_type'] = $data['default_payment_terms_type'] ?? self::DEFAULT_PAYMENT_TERMS_TYPE_STANDARD;
         $this->container['default_payment_method'] = $data['default_payment_method'] ?? null;
         $this->container['bank_name'] = $data['bank_name'] ?? null;
         $this->container['bank_iban'] = $data['bank_iban'] ?? null;

@@ -272,7 +272,7 @@ class IssuedDocumentEiData implements ModelInterface, ArrayAccess, \JsonSerializ
     public function __construct(array $data = null)
     {
         $this->container['vat_kind'] = $data['vat_kind'] ?? null;
-        $this->container['original_document_type'] = $data['original_document_type'] ?? ORIGINAL_DOCUMENT_TYPE_ORDINE;
+        $this->container['original_document_type'] = $data['original_document_type'] ?? self::ORIGINAL_DOCUMENT_TYPE_ORDINE;
         $this->container['od_number'] = $data['od_number'] ?? null;
         $this->container['od_date'] = $data['od_date'] ?? null;
         $this->container['cig'] = $data['cig'] ?? null;
