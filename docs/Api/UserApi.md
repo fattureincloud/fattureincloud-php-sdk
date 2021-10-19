@@ -16,7 +16,7 @@ getUserInfo(): \FattureInCloud\Model\GetUserInfoResponse
 
 Get User Info
 
-Makes possible to retrieve the current user's info.  👤 Person context  Get user email, name and id.
+Gets the current user's info.
 
 ### Example
 
@@ -73,7 +73,7 @@ listUserCompanies(): \FattureInCloud\Model\ListUserCompaniesResponse
 
 Get User Companies
 
-👤 Person context  Get a list of the controlled companies and their CompanyAuthentication tokens.
+Lists the companies controlled by the current user.
 
 ### Example
 

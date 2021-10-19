@@ -29,7 +29,7 @@ listArchiveCategories($company_id): \FattureInCloud\Model\ListArchiveCategoriesR
 
 List Archive Categories
 
-👥 Company context  Get the archive categories list
+Lists the archive categories.
 
 ### Example
 
@@ -48,7 +48,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 
 try {
     $result = $apiInstance->listArchiveCategories($company_id);
@@ -62,7 +62,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
 
 ### Return type
 
@@ -89,7 +89,7 @@ listCities($postal_code, $city): \FattureInCloud\Model\ListCitiesResponse
 
 List Cities
 
-Get the list of the Italian cities.
+Lists the Italian cities.
 
 ### Example
 
@@ -151,7 +151,7 @@ listCostCenters($company_id): \FattureInCloud\Model\ListCostCentersResponse
 
 List Cost Centers
 
-👥 Company context  Get a list of the cost centers
+Lists the cost centers.
 
 ### Example
 
@@ -170,7 +170,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 
 try {
     $result = $apiInstance->listCostCenters($company_id);
@@ -184,7 +184,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
 
 ### Return type
 
@@ -211,7 +211,7 @@ listCountries(): \FattureInCloud\Model\ListCountriesResponse
 
 List Countries
 
-Get the list of the countries supported by entities and documents.
+Lists the supported countries.
 
 ### Example
 
@@ -268,7 +268,7 @@ listCurrencies(): \FattureInCloud\Model\ListCurrenciesResponse
 
 List Currencies
 
-Get the currencies list.
+Lists the supported currencies.
 
 ### Example
 
@@ -325,7 +325,7 @@ listDeliveryNotesDefaultCausals(): \FattureInCloud\Model\ListDeliveryNotesDefaul
 
 List Delivery Notes Default Causals
 
-Get the delivery note default causals.
+Lists the delivery note default causals.
 
 ### Example
 
@@ -382,7 +382,7 @@ listLanguages(): \FattureInCloud\Model\ListLanguagesResponse
 
 List Languages
 
-Get the list of the supported languages.
+Lists the supported languages.
 
 ### Example
 
@@ -439,7 +439,7 @@ listPaymentAccounts($company_id, $fields, $fieldset, $sort): \FattureInCloud\Mod
 
 List Payment Accounts
 
-👥 Company context 🎩 Customized responses supported  Get the list of the available payment accounts.
+Lists the available payment accounts.
 
 ### Example
 
@@ -458,10 +458,10 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset
-$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting)
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
 
 try {
     $result = $apiInstance->listPaymentAccounts($company_id, $fields, $fieldset, $sort);
@@ -475,10 +475,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset | [optional]
- **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting) | [optional]
+ **fieldset** | **string**| Name of the fieldset. | [optional]
+ **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional]
 
 ### Return type
 
@@ -505,7 +505,7 @@ listPaymentMethods($company_id, $fields, $fieldset, $sort): \FattureInCloud\Mode
 
 List Payment Methods
 
-👥 Company context 🎩 Customized responses supported  Get the list of the available payment methods.
+Lists the available payment methods.
 
 ### Example
 
@@ -524,10 +524,10 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset
-$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting)
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
 
 try {
     $result = $apiInstance->listPaymentMethods($company_id, $fields, $fieldset, $sort);
@@ -541,10 +541,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset | [optional]
- **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting) | [optional]
+ **fieldset** | **string**| Name of the fieldset. | [optional]
+ **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional]
 
 ### Return type
 
@@ -571,7 +571,7 @@ listProductCategories($company_id, $context): \FattureInCloud\Model\ListProductC
 
 List Product Categories
 
-👥 Company context  Get the product categories list
+Lists the product categories.
 
 ### Example
 
@@ -590,7 +590,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $context = 'context_example'; // string
 
 try {
@@ -605,7 +605,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **context** | **string**|  |
 
 ### Return type
@@ -633,7 +633,7 @@ listReceivedDocumentCategories($company_id): \FattureInCloud\Model\ListReceivedD
 
 List Received Document Categories
 
-👥 Company context  Get the received document categories list
+Lists the received document categories.
 
 ### Example
 
@@ -652,7 +652,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 
 try {
     $result = $apiInstance->listReceivedDocumentCategories($company_id);
@@ -666,7 +666,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
 
 ### Return type
 
@@ -693,7 +693,7 @@ listRevenueCenters($company_id): \FattureInCloud\Model\ListRevenueCentersRespons
 
 List Revenue Centers
 
-👥 Company context  Get a list of the revenue centers
+Lists the revenue centers.
 
 ### Example
 
@@ -712,7 +712,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 
 try {
     $result = $apiInstance->listRevenueCenters($company_id);
@@ -726,7 +726,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
 
 ### Return type
 
@@ -753,7 +753,7 @@ listTemplates($type, $by_type): \FattureInCloud\Model\ListTemplatesResponse
 
 List Templates
 
-Get the list of the available templates. If a CompanyAuthentication is given, custom templates are included.
+Lists the available templates.
 
 ### Example
 
@@ -815,7 +815,7 @@ listUnitsOfMeasure(): \FattureInCloud\Model\ListUnitsOfMeasureResponse
 
 List Units of Measure
 
-Get a list of the units of measure.
+Lists the units of measure.
 
 ### Example
 
@@ -872,7 +872,7 @@ listVatTypes($company_id, $fieldset): \FattureInCloud\Model\ListVatTypesResponse
 
 List Vat Types
 
-👥 Company context 🔒 Required scope: settings:r 🎩 Customized responses supported  Get the list of the available vat types.
+Lists the available vat types.
 
 ### Example
 
@@ -891,8 +891,8 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset
+$company_id = 12345; // int | The ID of the company.
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
 
 try {
     $result = $apiInstance->listVatTypes($company_id, $fieldset);
@@ -906,8 +906,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **fieldset** | **string**| Name of the fieldset | [optional]
+ **company_id** | **int**| The ID of the company. |
+ **fieldset** | **string**| Name of the fieldset. | [optional]
 
 ### Return type
 

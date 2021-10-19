@@ -20,7 +20,7 @@ createArchiveDocument($company_id, $create_archive_document_request): \FattureIn
 
 Create Archive Document
 
-👥 Company context 🔒 Required scope: archive:a  Add a new document into archive
+Creates a new archive document.
 
 ### Example
 
@@ -39,7 +39,7 @@ $apiInstance = new FattureInCloud\Api\ArchiveApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $create_archive_document_request = {"data":{"date":"2021-08-20","category":"Altri documenti","description":"spesa 1","attachment_token":"ibfjdbf94ey9w94g3w894qbasrga"}}; // \FattureInCloud\Model\CreateArchiveDocumentRequest | The Archive Document.
 
 try {
@@ -54,7 +54,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **create_archive_document_request** | [**\FattureInCloud\Model\CreateArchiveDocumentRequest**](../Model/CreateArchiveDocumentRequest.md)| The Archive Document. | [optional]
 
 ### Return type
@@ -82,7 +82,7 @@ deleteArchiveDocument($company_id, $document_id)
 
 Delete Archive Document
 
-👥 Company context 🔒 Required scope: archive:a  Delete an existing document by its unique id.
+Deletes the specified archive document.
 
 ### Example
 
@@ -101,8 +101,8 @@ $apiInstance = new FattureInCloud\Api\ArchiveApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 
 try {
     $apiInstance->deleteArchiveDocument($company_id, $document_id);
@@ -115,8 +115,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
 
 ### Return type
 
@@ -143,7 +143,7 @@ getArchiveDocument($company_id, $document_id, $fields, $fieldset): \FattureInClo
 
 Get Archive Document
 
-👥 Company context 🔒 Required scope: archive:r 🎩 Customized responses supported  Get details of an existing document by its unique id.
+Gets the specified archive document.
 
 ### Example
 
@@ -162,10 +162,10 @@ $apiInstance = new FattureInCloud\Api\ArchiveApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 $fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
 
 try {
     $result = $apiInstance->getArchiveDocument($company_id, $document_id, $fields, $fieldset);
@@ -179,10 +179,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
  **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset | [optional]
+ **fieldset** | **string**| Name of the fieldset. | [optional]
 
 ### Return type
 
@@ -209,7 +209,7 @@ listArchiveDocuments($company_id, $fields, $fieldset, $sort, $page, $per_page): 
 
 List Archive Documents
 
-👥 Company context 🔒 Required scope: archive:r 🔍 Filtering: date, category, description ↕️ Sorting: date, category, description 📄 Paginated results 🎩 Customized responses supported  Get a list of documents in the archive that match the filters.
+Lists the archive documents.
 
 ### Example
 
@@ -228,12 +228,12 @@ $apiInstance = new FattureInCloud\Api\ArchiveApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset
-$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting)
-$page = 1; // int | Requested page
-$per_page = 5; // int | Items to be shown per page
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
+$page = 1; // int | The page to retrieve.
+$per_page = 5; // int | The size of the page.
 
 try {
     $result = $apiInstance->listArchiveDocuments($company_id, $fields, $fieldset, $sort, $page, $per_page);
@@ -247,12 +247,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset | [optional]
- **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting) | [optional]
- **page** | **int**| Requested page | [optional] [default to 1]
- **per_page** | **int**| Items to be shown per page | [optional] [default to 5]
+ **fieldset** | **string**| Name of the fieldset. | [optional]
+ **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional]
+ **page** | **int**| The page to retrieve. | [optional] [default to 1]
+ **per_page** | **int**| The size of the page. | [optional] [default to 5]
 
 ### Return type
 
@@ -279,7 +279,7 @@ modifyArchiveDocument($company_id, $document_id, $modify_archive_document_reques
 
 Modify Archive Document
 
-👥 Company context 🔒 Required scope: archive:a  Edit an existing document
+Modifies the specified archive document.
 
 ### Example
 
@@ -298,8 +298,8 @@ $apiInstance = new FattureInCloud\Api\ArchiveApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 $modify_archive_document_request = {"data":{"date":"2021-08-20","category":"Altri documenti","description":"spesa 2"}}; // \FattureInCloud\Model\ModifyArchiveDocumentRequest | Modified Archive Document
 
 try {
@@ -314,8 +314,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
  **modify_archive_document_request** | [**\FattureInCloud\Model\ModifyArchiveDocumentRequest**](../Model/ModifyArchiveDocumentRequest.md)| Modified Archive Document | [optional]
 
 ### Return type
@@ -343,7 +343,7 @@ uploadArchiveDocumentAttachment($company_id, $filename, $attachment): \FattureIn
 
 Upload Archive Document Attachment
 
-👥 Company context 🔒 Required scope: archive:a  Upload an attachment to a document into archive section
+Uploads an attachment destined to an archive document. The actual association between the document and the attachment must be implemented separately, using the returned token.
 
 ### Example
 
@@ -362,7 +362,7 @@ $apiInstance = new FattureInCloud\Api\ArchiveApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $filename = 'filename_example'; // string | Name of the file.
 $attachment = "/path/to/file.txt"; // \SplFileObject | Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx
 
@@ -378,7 +378,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **filename** | **string**| Name of the file. | [optional]
  **attachment** | **\SplFileObject****\SplFileObject**| Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx | [optional]
 

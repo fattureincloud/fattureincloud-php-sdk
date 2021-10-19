@@ -19,7 +19,7 @@ createClient($company_id, $create_client_request): \FattureInCloud\Model\CreateC
 
 Create Client
 
-👥 Company context \\ 🔒 Required scope: `entity.clients:a`  Create a new client.
+Creates a new client.
 
 ### Example
 
@@ -38,7 +38,7 @@ $apiInstance = new FattureInCloud\Api\ClientsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $create_client_request = {"data":{"code":"AE86","name":"Avv. Maria Rossi","type":"person","first_name":"Maria","last_name":"Rossi","contact_person":"","vat_number":"IT12345640962","tax_code":"BLTGNI5ABCDA794E","address_street":"Via Roma, 1","address_postal_code":"20900","address_city":"Milano","address_province":"MI","address_extra":"","country":"Italia","email":"maria.rossi@example.com","certified_email":"maria.rossi@pec.example.com","phone":"1234567890","fax":"","notes":"","default_payment_terms":1,"default_payment_terms_type":"standard","bank_name":"Indesa","bank_iban":"IT40P123456781000000123456","bank_swift_code":"AK86PCT","shipping_address":"Corso Magellano 4","e_invoice":true,"ei_code":"111111","default_vat":{"id":54321,"value":45,"description":"","is_disabled":false}}}; // \FattureInCloud\Model\CreateClientRequest | The client to create
 
 try {
@@ -53,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **create_client_request** | [**\FattureInCloud\Model\CreateClientRequest**](../Model/CreateClientRequest.md)| The client to create | [optional]
 
 ### Return type
@@ -81,7 +81,7 @@ deleteClient($company_id, $client_id)
 
 Delete Client
 
-👥 Company context 🔒 Required scope: entity.clients:a  Delete an existing client by its unique id.
+Deletes the specified client.
 
 ### Example
 
@@ -100,8 +100,8 @@ $apiInstance = new FattureInCloud\Api\ClientsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$client_id = 56; // int
+$company_id = 12345; // int | The ID of the company.
+$client_id = 56; // int | The ID of the client.
 
 try {
     $apiInstance->deleteClient($company_id, $client_id);
@@ -114,8 +114,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **client_id** | **int**|  |
+ **company_id** | **int**| The ID of the company. |
+ **client_id** | **int**| The ID of the client. |
 
 ### Return type
 
@@ -142,7 +142,7 @@ getClient($company_id, $client_id, $fields, $fieldset): \FattureInCloud\Model\Ge
 
 Get Client
 
-👥 Company context 🔒 Required scope: entity.clients:r 🎩 Customized responses supported  Get details of an existing client by its unique id.
+Gets the specified client.
 
 ### Example
 
@@ -161,10 +161,10 @@ $apiInstance = new FattureInCloud\Api\ClientsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$client_id = 56; // int
+$company_id = 12345; // int | The ID of the company.
+$client_id = 56; // int | The ID of the client.
 $fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
 
 try {
     $result = $apiInstance->getClient($company_id, $client_id, $fields, $fieldset);
@@ -178,10 +178,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **client_id** | **int**|  |
+ **company_id** | **int**| The ID of the company. |
+ **client_id** | **int**| The ID of the client. |
  **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset | [optional]
+ **fieldset** | **string**| Name of the fieldset. | [optional]
 
 ### Return type
 
@@ -208,7 +208,7 @@ listClients($company_id, $fields, $fieldset, $sort, $page, $per_page): \FattureI
 
 List Clients
 
-👥 Company context 🔒 Required scope: entity.clients:r 🔍 Filtering: id, code, name, type, vat_number, tax_code, address_street, address_postal_code, address_city, address_province, country, email, certified_email, phone, fax, notes, imported, atoka_show, e_invoice, ei_code, created_at, updated_at ↕️ Sorting: code, name, type, vat_number, tax_code, address_street, address_postal_code, address_city, address_province, country, email, certified_email, phone, fax, notes, e_invoice, ei_code, created_at, updated_at 📄 Paginated results 🎩 Customized responses supported  Get a list of clients that match the filters.
+Lists the clients.
 
 ### Example
 
@@ -227,12 +227,12 @@ $apiInstance = new FattureInCloud\Api\ClientsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset
-$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting)
-$page = 1; // int | Requested page
-$per_page = 5; // int | Items to be shown per page
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
+$page = 1; // int | The page to retrieve.
+$per_page = 5; // int | The size of the page.
 
 try {
     $result = $apiInstance->listClients($company_id, $fields, $fieldset, $sort, $page, $per_page);
@@ -246,12 +246,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset | [optional]
- **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting) | [optional]
- **page** | **int**| Requested page | [optional] [default to 1]
- **per_page** | **int**| Items to be shown per page | [optional] [default to 5]
+ **fieldset** | **string**| Name of the fieldset. | [optional]
+ **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional]
+ **page** | **int**| The page to retrieve. | [optional] [default to 1]
+ **per_page** | **int**| The size of the page. | [optional] [default to 5]
 
 ### Return type
 
@@ -278,7 +278,7 @@ modifyClient($company_id, $client_id, $modify_client_request): \FattureInCloud\M
 
 Modify Client
 
-👥 Company context 🔒 Required scope: entity.clients:a  Edit an existing client by its unique id.
+Modifies the specified client.
 
 ### Example
 
@@ -297,8 +297,8 @@ $apiInstance = new FattureInCloud\Api\ClientsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$client_id = 56; // int
+$company_id = 12345; // int | The ID of the company.
+$client_id = 56; // int | The ID of the client.
 $modify_client_request = {"data":{"code":"AE86","name":"Avv. Maria Rossi","type":"person","first_name":"Maria","last_name":"Rossi","contact_person":"","vat_number":"IT12345640962","tax_code":"BLTGNI5ABCDA794E","address_street":"Via Roma, 1","address_postal_code":"20900","address_city":"Milano","address_province":"MI","address_extra":"","country":"Italia","email":"maria.rossi@example.com","certified_email":"maria.rossi@pec.example.com","phone":"1234567890","fax":"","notes":"","default_payment_terms":1,"default_payment_terms_type":"standard","bank_name":"Indesa","bank_iban":"IT40P123456781000000123456","bank_swift_code":"AK86PCT","shipping_address":"Corso Magellano 4","e_invoice":true,"ei_code":"111111","default_vat":{"id":54321,"value":45,"description":"","is_disabled":false}}}; // \FattureInCloud\Model\ModifyClientRequest | The modified Client. First level parameters are managed in delta mode.
 
 try {
@@ -313,8 +313,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **client_id** | **int**|  |
+ **company_id** | **int**| The ID of the company. |
+ **client_id** | **int**| The ID of the client. |
  **modify_client_request** | [**\FattureInCloud\Model\ModifyClientRequest**](../Model/ModifyClientRequest.md)| The modified Client. First level parameters are managed in delta mode. | [optional]
 
 ### Return type
