@@ -26,7 +26,7 @@ createIssuedDocument($company_id, $create_issued_document_request): \FattureInCl
 
 Create Issued Document
 
-👥 Company context 🔒 Required scope: issued_documents.[documentType]:a  Create a new document.
+Creates a new document.
 
 ### Example
 
@@ -45,8 +45,8 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$create_issued_document_request = {"data":{"type":"receipt","numeration":"rec123","subject":"","visible_subject":"","amount_net":68.18,"amount_vat":6.82,"amount_gross":75,"amount_due_discount":0,"entity":{"id":54321,"name":"Mary Red S.r.L.","vat_number":"IT05432181211","tax_code":"IT05432181211","address_street":"Corso impero, 66","address_postal_code":"20900","address_city":"Milano","address_province":"MI","address_extra":"","country":"Italia","certified_email":"mary@pec.red.com","ei_code":"ABCXCR1"},"date":"2021-08-20","number":1,"next_due_date":"2021-12-31","attachment_token":"ypbqqe4u8w8bdabcd5fd5b1a","items_list":[{"product_id":333,"code":"SG3","name":"Soggiorno","measure":"","net_price":68.18182,"category":"","id":277875565,"gross_price":75,"apply_withholding_taxes":true,"discount":0,"discount_highlight":false,"in_dn":false,"qty":1,"vat":{"id":3,"value":10,"description":""},"stock":true,"description":"","not_taxable":false}],"payments_list":[{"amount":75,"due_date":"2020-08-23","paid_date":null,"id":444,"payment_terms":{"days":0,"type":"standard"},"status":"not_paid","payment_account":null}]}}; // \FattureInCloud\Model\CreateIssuedDocumentRequest | The Issued Document
+$company_id = 12345; // int | The ID of the company.
+$create_issued_document_request = {"data":{"type":"receipt","numeration":"rec123","subject":"","visible_subject":"","amount_net":68.18,"amount_vat":6.82,"amount_gross":75,"amount_due_discount":0,"entity":{"id":54321,"name":"Mary Red S.r.L.","vat_number":"IT05432181211","tax_code":"IT05432181211","address_street":"Via Italia, 66","address_postal_code":"20900","address_city":"Milano","address_province":"MI","address_extra":"","country":"Italia","certified_email":"mary@pec.red.com","ei_code":"ABCXCR1"},"date":"2021-08-20","number":1,"next_due_date":"2021-12-31","attachment_token":"ypbqqe4u8w8bdabcd5fd5b1a","items_list":[{"product_id":333,"code":"SG3","name":"Soggiorno","measure":"","net_price":68.18182,"category":"","id":277875565,"gross_price":75,"apply_withholding_taxes":true,"discount":0,"discount_highlight":false,"in_dn":false,"qty":1,"vat":{"id":3,"value":10,"description":""},"stock":true,"description":"","not_taxable":false}],"payments_list":[{"amount":75,"due_date":"2020-08-23","paid_date":null,"id":444,"payment_terms":{"days":0,"type":"standard"},"status":"not_paid","payment_account":null}]}}; // \FattureInCloud\Model\CreateIssuedDocumentRequest | The Issued Document
 
 try {
     $result = $apiInstance->createIssuedDocument($company_id, $create_issued_document_request);
@@ -60,7 +60,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **create_issued_document_request** | [**\FattureInCloud\Model\CreateIssuedDocumentRequest**](../Model/CreateIssuedDocumentRequest.md)| The Issued Document | [optional]
 
 ### Return type
@@ -88,7 +88,7 @@ deleteIssuedDocument($company_id, $document_id)
 
 Delete Issued Document
 
-👥 Company context 🔒 Required scope: issued_documents.[documentType]:a  Delete an existing document by its unique id.
+Deletes the specified document.
 
 ### Example
 
@@ -107,8 +107,8 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 
 try {
     $apiInstance->deleteIssuedDocument($company_id, $document_id);
@@ -121,8 +121,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
 
 ### Return type
 
@@ -149,7 +149,7 @@ deleteIssuedDocumentAttachment($company_id, $document_id)
 
 Delete Issued Document Attachment
 
-👥 Company context  Remove the attachment (but not the document)
+Removes the attachment of the specified document.
 
 ### Example
 
@@ -168,8 +168,8 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 
 try {
     $apiInstance->deleteIssuedDocumentAttachment($company_id, $document_id);
@@ -182,8 +182,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
 
 ### Return type
 
@@ -210,7 +210,7 @@ getEmailData($company_id, $document_id): \FattureInCloud\Model\GetEmailDataRespo
 
 Get Email Data
 
-👥 Company context 🔒 Required scope: issued_documents.[documentType]:r  Get pre-compiled email data like subject, body, attachments, SMTP credentials, CC, recipients list.
+Gets the pre-compiled email details.
 
 ### Example
 
@@ -229,8 +229,8 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 
 try {
     $result = $apiInstance->getEmailData($company_id, $document_id);
@@ -244,8 +244,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
 
 ### Return type
 
@@ -272,7 +272,7 @@ getExistingIssuedDocumentTotals($company_id, $document_id, $get_existing_issued_
 
 Get Existing Issued Document Totals
 
-👥 Company context  Get existing document totals
+Returns the totals for a specified document.
 
 ### Example
 
@@ -291,8 +291,8 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 $get_existing_issued_document_totals_request = {"data":{"rivalsa":20}}; // \FattureInCloud\Model\GetExistingIssuedDocumentTotalsRequest
 
 try {
@@ -307,8 +307,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
  **get_existing_issued_document_totals_request** | [**\FattureInCloud\Model\GetExistingIssuedDocumentTotalsRequest**](../Model/GetExistingIssuedDocumentTotalsRequest.md)|  | [optional]
 
 ### Return type
@@ -336,7 +336,7 @@ getIssuedDocument($company_id, $document_id, $fields, $fieldset): \FattureInClou
 
 Get Issued Document
 
-👥 Company context 🔒 Required scope: issued_documents.[documentType]:r 🎩 Customized responses supported  Get details of an existing document by its unique id.
+Gets the specified document.
 
 ### Example
 
@@ -355,10 +355,10 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 $fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
 
 try {
     $result = $apiInstance->getIssuedDocument($company_id, $document_id, $fields, $fieldset);
@@ -372,10 +372,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
  **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset | [optional]
+ **fieldset** | **string**| Name of the fieldset. | [optional]
 
 ### Return type
 
@@ -402,7 +402,7 @@ getIssuedDocumentPreCreateInfo($company_id, $type): \FattureInCloud\Model\GetIss
 
 Get Issued Document Pre-create info
 
-👥 Company context  Get the info needed for the document creation flow.
+Retrieves the information useful while creating a new document.
 
 ### Example
 
@@ -421,8 +421,8 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$type = 'type_example'; // string | Issued Document Type
+$company_id = 12345; // int | The ID of the company.
+$type = 'type_example'; // string | The type of the issued document.
 
 try {
     $result = $apiInstance->getIssuedDocumentPreCreateInfo($company_id, $type);
@@ -436,8 +436,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **type** | **string**| Issued Document Type |
+ **company_id** | **int**| The ID of the company. |
+ **type** | **string**| The type of the issued document. |
 
 ### Return type
 
@@ -464,7 +464,7 @@ getNewIssuedDocumentTotals($company_id, $get_new_issued_document_totals_request)
 
 Get New Issued Document Totals
 
-👥 Company context  Get the totals of a document
+Returns the totals for a new document.
 
 ### Example
 
@@ -483,8 +483,8 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$get_new_issued_document_totals_request = {"data":{"id":12345,"type":"receipt","year":2021,"numeration":"rec123","subject":"","visible_subject":"","rc_center":"","ei_cassa_type":null,"ei_withholding_tax_causal":null,"ei_other_withholding_tax_type":null,"ei_other_withholding_tax_causal":null,"stamp_duty":0,"use_gross_prices":false,"e_invoice":false,"agyo_company_id":null,"agyo_id":null,"agyo_sent_at":null,"delivery_note":false,"accompanying_invoice":false,"amount_net":68.18,"amount_vat":6.82,"amount_gross":75,"amount_due_discount":0,"amount_rivalsa":0,"amount_cassa":0,"amount_withholding_tax":0,"amount_other_withholding_tax":0,"permanent_token":"6pzguy12h45rn9yqwertp43t7ec90vr","h_margins":15,"v_margins":16,"show_payment_method":false,"show_payments":true,"show_totals":"all","show_paypal_button":true,"show_notification_button":false,"is_marked":false,"created_at":"2021-08-13 09:30:20","updated_at":"2021-08-23 05:34:20","entity":{"id":54321,"name":"Mary Red S.r.L.","vat_number":"IT05432181211","tax_code":"IT05432181211","address_street":"Corso impero, 66","address_postal_code":"20900","address_city":"Milano","address_province":"MI","address_extra":"","country":"Italia","certified_email":"mary@pec.red.com","ei_code":"ABCXCR1"},"date":"2021-08-20","number":1,"currency":{"id":"EUR","exchange_rate":"1.00000","symbol":"€"},"language":{"code":"it","name":"Italiano"},"notes":"","rivalsa":0,"cassa":0,"withholding_tax":0,"withholding_tax_taxable":100,"other_withholding_tax":0,"payment_method":{"id":4,"name":"Credit card"},"use_split_payment":false,"merged_in":null,"original_document":null,"items_list":[{"product_id":5432,"code":"SG3","name":"Soggiorno","measure":"","net_price":68.18182,"category":"","id":277876033,"gross_price":75,"apply_withholding_taxes":true,"discount":0,"discount_highlight":false,"in_dn":false,"qty":1,"vat":{"id":3,"value":10,"description":""},"stock":false,"description":"","not_taxable":false}],"payments_list":[{"amount":75,"due_date":"2020-08-23","paid_date":null,"id":69078013,"payment_terms":{"days":0,"type":"standard"},"status":"not_paid","payment_account":null}],"attachment_url":"kdijrnf893hnwkfk45f50f.pdf","seen_date":null,"next_due_date":"2020-08-23","template":{"id":2821,"name":"Light Smoke"},"extra_data":null,"url":"y12h45rn9yf2mse0p43t7ec90vr.pdf","locked":false,"has_ts_pay_pending_payment":false,"show_tspay_button":false,"pay_with_tspay_url":null}}; // \FattureInCloud\Model\GetNewIssuedDocumentTotalsRequest
+$company_id = 12345; // int | The ID of the company.
+$get_new_issued_document_totals_request = {"data":{"id":12345,"type":"receipt","year":2021,"numeration":"rec123","subject":"","visible_subject":"","rc_center":"","ei_cassa_type":null,"ei_withholding_tax_causal":null,"ei_other_withholding_tax_type":null,"ei_other_withholding_tax_causal":null,"stamp_duty":0,"use_gross_prices":false,"e_invoice":false,"agyo_company_id":null,"agyo_id":null,"agyo_sent_at":null,"delivery_note":false,"accompanying_invoice":false,"amount_net":68.18,"amount_vat":6.82,"amount_gross":75,"amount_due_discount":0,"amount_rivalsa":0,"amount_cassa":0,"amount_withholding_tax":0,"amount_other_withholding_tax":0,"permanent_token":"6pzguy12h45rn9yqwertp43t7ec90vr","h_margins":15,"v_margins":16,"show_payment_method":false,"show_payments":true,"show_totals":"all","show_paypal_button":true,"show_notification_button":false,"is_marked":false,"created_at":"2021-08-13 09:30:20","updated_at":"2021-08-23 05:34:20","entity":{"id":54321,"name":"Mary Red S.r.L.","vat_number":"IT05432181211","tax_code":"IT05432181211","address_street":"Via Italia, 66","address_postal_code":"20900","address_city":"Milano","address_province":"MI","address_extra":"","country":"Italia","certified_email":"mary@pec.red.com","ei_code":"ABCXCR1"},"date":"2021-08-20","number":1,"currency":{"id":"EUR","exchange_rate":"1.00000","symbol":"€"},"language":{"code":"it","name":"Italiano"},"notes":"","rivalsa":0,"cassa":0,"withholding_tax":0,"withholding_tax_taxable":100,"other_withholding_tax":0,"payment_method":{"id":4,"name":"Credit card"},"use_split_payment":false,"merged_in":null,"original_document":null,"items_list":[{"product_id":5432,"code":"SG3","name":"Soggiorno","measure":"","net_price":68.18182,"category":"","id":277876033,"gross_price":75,"apply_withholding_taxes":true,"discount":0,"discount_highlight":false,"in_dn":false,"qty":1,"vat":{"id":3,"value":10,"description":""},"stock":false,"description":"","not_taxable":false}],"payments_list":[{"amount":75,"due_date":"2020-08-23","paid_date":null,"id":69078013,"payment_terms":{"days":0,"type":"standard"},"status":"not_paid","payment_account":null}],"attachment_url":"kdijrnf893hnwkfk45f50f.pdf","seen_date":null,"next_due_date":"2020-08-23","template":{"id":2821,"name":"Light Smoke"},"extra_data":null,"url":"y12h45rn9yf2mse0p43t7ec90vr.pdf","locked":false,"has_ts_pay_pending_payment":false,"show_tspay_button":false,"pay_with_tspay_url":null}}; // \FattureInCloud\Model\GetNewIssuedDocumentTotalsRequest
 
 try {
     $result = $apiInstance->getNewIssuedDocumentTotals($company_id, $get_new_issued_document_totals_request);
@@ -498,7 +498,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **get_new_issued_document_totals_request** | [**\FattureInCloud\Model\GetNewIssuedDocumentTotalsRequest**](../Model/GetNewIssuedDocumentTotalsRequest.md)|  | [optional]
 
 ### Return type
@@ -526,7 +526,7 @@ listIssuedDocuments($company_id, $type, $fields, $fieldset, $sort, $page, $per_p
 
 List Issued Documents
 
-👥 Company context 🔒 Required scope: issued_documents.[documentType]:r 🔍 Filtering: type, entity.id, entity.name, entity.vat_number, entity.tax_code, entity.city, entity.province, entity.country, date, number, numeration, any_subject, amount_net, amount_vat, amount_gross, next_due_date, created_at, updated_at ↕️ Sorting: entity.id, entity.name, entity.vat_number, entity.tax_code, entity.city, entity.province, entity.country, date, number, numeration, amount_net, amount_vat, amount_gross, next_due_date, created_at, updated_at 📄 Paginated results 🎩 Customized responses supported  Get a list of documents that match the filters.
+Lists the issued documents.
 
 ### Example
 
@@ -545,13 +545,13 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$type = 'type_example'; // string | Issued Document Type
+$company_id = 12345; // int | The ID of the company.
+$type = 'type_example'; // string | The type of the issued document.
 $fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset
-$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting)
-$page = 1; // int | Requested page
-$per_page = 5; // int | Items to be shown per page
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
+$page = 1; // int | The page to retrieve.
+$per_page = 5; // int | The size of the page.
 
 try {
     $result = $apiInstance->listIssuedDocuments($company_id, $type, $fields, $fieldset, $sort, $page, $per_page);
@@ -565,13 +565,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **type** | **string**| Issued Document Type |
+ **company_id** | **int**| The ID of the company. |
+ **type** | **string**| The type of the issued document. |
  **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset | [optional]
- **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting) | [optional]
- **page** | **int**| Requested page | [optional] [default to 1]
- **per_page** | **int**| Items to be shown per page | [optional] [default to 5]
+ **fieldset** | **string**| Name of the fieldset. | [optional]
+ **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional]
+ **page** | **int**| The page to retrieve. | [optional] [default to 1]
+ **per_page** | **int**| The size of the page. | [optional] [default to 5]
 
 ### Return type
 
@@ -598,7 +598,7 @@ modifyIssuedDocument($company_id, $document_id, $modify_issued_document_request)
 
 Modify Issued Document
 
-👥 Company context 🔒 Required scope: issued_documents.[documentType]:a  Edit an existing document by its unique id.
+Modifies the specified document.
 
 ### Example
 
@@ -617,9 +617,9 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
-$modify_issued_document_request = {"data":{"type":"receipt","numeration":"rec123","subject":"","visible_subject":"","amount_net":68.18,"amount_vat":6.82,"amount_gross":75,"amount_due_discount":0,"entity":{"id":54321,"name":"Mary Red S.r.L.","vat_number":"IT05432181211","tax_code":"IT05432181211","address_street":"Corso impero, 66","address_postal_code":"20900","address_city":"Milano","address_province":"MI","address_extra":"","country":"Italia","certified_email":"mary@pec.red.com","ei_code":"ABCXCR1"},"date":"2021-08-20","number":1,"next_due_date":"2021-12-31","attachment_token":"ypbqqe4u8w8bdabcd5fd5b1a","items_list":[{"product_id":333,"code":"SG3","name":"Soggiorno","measure":"","net_price":68.18182,"category":"","id":277875565,"gross_price":75,"apply_withholding_taxes":true,"discount":0,"discount_highlight":false,"in_dn":false,"qty":1,"vat":{"id":3,"value":10,"description":""},"stock":true,"description":"","not_taxable":false}],"payments_list":[{"amount":75,"due_date":"2020-08-23","paid_date":null,"id":444,"payment_terms":{"days":0,"type":"standard"},"status":"not_paid","payment_account":null}]}}; // \FattureInCloud\Model\ModifyIssuedDocumentRequest | The modified document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
+$modify_issued_document_request = {"data":{"type":"receipt","numeration":"rec123","subject":"","visible_subject":"","amount_net":68.18,"amount_vat":6.82,"amount_gross":75,"amount_due_discount":0,"entity":{"id":54321,"name":"Mary Red S.r.L.","vat_number":"IT05432181211","tax_code":"IT05432181211","address_street":"Via Italia, 66","address_postal_code":"20900","address_city":"Milano","address_province":"MI","address_extra":"","country":"Italia","certified_email":"mary@pec.red.com","ei_code":"ABCXCR1"},"date":"2021-08-20","number":1,"next_due_date":"2021-12-31","attachment_token":"ypbqqe4u8w8bdabcd5fd5b1a","items_list":[{"product_id":333,"code":"SG3","name":"Soggiorno","measure":"","net_price":68.18182,"category":"","id":277875565,"gross_price":75,"apply_withholding_taxes":true,"discount":0,"discount_highlight":false,"in_dn":false,"qty":1,"vat":{"id":3,"value":10,"description":""},"stock":true,"description":"","not_taxable":false}],"payments_list":[{"amount":75,"due_date":"2020-08-23","paid_date":null,"id":444,"payment_terms":{"days":0,"type":"standard"},"status":"not_paid","payment_account":null}]}}; // \FattureInCloud\Model\ModifyIssuedDocumentRequest | The modified document
 
 try {
     $result = $apiInstance->modifyIssuedDocument($company_id, $document_id, $modify_issued_document_request);
@@ -633,8 +633,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
  **modify_issued_document_request** | [**\FattureInCloud\Model\ModifyIssuedDocumentRequest**](../Model/ModifyIssuedDocumentRequest.md)| The modified document | [optional]
 
 ### Return type
@@ -662,7 +662,7 @@ scheduleEmail($company_id, $document_id, $schedule_email_request)
 
 Schedule Email
 
-👥 Company context 🔒 Required scope: issued_documents.[documentType]:r  Schedule email sending of a document.
+Schedules the sending of a document by email.
 
 ### Example
 
@@ -681,8 +681,8 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 $schedule_email_request = {"data":{"sender_email":"mariorossi@fattureincloud.it","recipient_email":"mary.red@example.com","subject":"Nostra pro forma nr. 1","body":"Gentile Mario Rossi,<br>per vedere la nostra pro forma di  o per scaricarne una copia in versione PDF prema sul bottone sottostante.<br><br>{{allegati}}<br><br>Cordiali saluti,<br><b>Mario Rossi</b>","include":{"document":false,"delivery_note":false,"attachment":false,"accompanying_invoice":false},"attach_pdf":true,"send_copy":false}}; // \FattureInCloud\Model\ScheduleEmailRequest | Email Schedule
 
 try {
@@ -696,8 +696,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
  **schedule_email_request** | [**\FattureInCloud\Model\ScheduleEmailRequest**](../Model/ScheduleEmailRequest.md)| Email Schedule | [optional]
 
 ### Return type
@@ -725,7 +725,7 @@ uploadIssuedDocumentAttachment($company_id, $filename, $attachment): \FattureInC
 
 Upload Issued Document Attachment
 
-👥 Company context  Upload an attachment to an issued document
+Uploads an attachment destined to an issued document. The actual association between the document and the attachment must be implemented separately, using the returned token.
 
 ### Example
 
@@ -744,7 +744,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $filename = 'filename_example'; // string | Name of the file.
 $attachment = "/path/to/file.txt"; // \SplFileObject | Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx
 
@@ -760,7 +760,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **filename** | **string**| Name of the file. | [optional]
  **attachment** | **\SplFileObject****\SplFileObject**| Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx | [optional]
 

@@ -1,29 +1,10 @@
 # FattureInCloud PHP SDK
 
-## Request informations
-In every request description you will be able to find some additional informations about context, permissions and supported functionality:
+Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 400.000 businesses in Italy. 
 
-| Parameter | Description |
-|-----------|-------------|
-| 👥 Context | Indicate the subject of the request. Can be `company`, `user` or `accountant`.  |
-| 🔒 Required scope | If present, indicates the required scope to fulfill the request. |
-| 🔍 Filtering | If present, indicates which fields support the filtering feature. |
-| ↕️ Sorting | If present, indicates which fields support the sorting feature. |
-| 📄 Paginated results | If present, indicate that the results are paginated. |
-| 🎩 Customized responses supported | If present, indicate that you can use `field` or `fieldset` to customize the response body. |
+The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-For example the request `GET /entities/{entityRole}` have tis informations: \\
-👥 Company context \\
-🔒 Required scope: `entity.clients:r` or `entity.suppliers:r` (depending on `entityRole`) \\
-🔍 Filtering: `id`, `name` \\
-↕️ Sorting: `id`, `name` \\
-📄 Paginated results \\
-🎩 Customized responses supported
-
-Keep in mind that if you are making **company realted requests**, you will need to specify the company id in the requests:
-```
-GET /c/{company_id}/issued_documents
-```
+For more information, please visit https://www.fattureincloud.it.
 
 For more information, please visit [https://www.fattureincloud.it](https://www.fattureincloud.it).
 
@@ -36,17 +17,11 @@ Should also work with PHP 8.0 but has not been tested.
 
 ### Composer
 
-To install the bindings via [Composer](https://getcomposer.org/), add the following to `composer.json`:
+To install the bindings via [Composer](https://getcomposer.org/), run the following command:
 
-```json
-{
-  "require": {
-    "fattureincloud/fattureincloud-php-sdk": "2.0.1"
-  }
-}
+```sh
+$ composer require fattureincloud/fattureincloud-php-sdk
 ```
-
-Then run `composer install`
 
 ### Manual Installation
 
@@ -77,7 +52,7 @@ $apiInstance = new FattureInCloud\Api\ArchiveApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $create_archive_document_request = {"data":{"date":"2021-08-20","category":"Altri documenti","description":"spesa 1","attachment_token":"ibfjdbf94ey9w94g3w894qbasrga"}}; // \FattureInCloud\Model\CreateArchiveDocumentRequest | The Archive Document.
 
 try {
@@ -163,6 +138,14 @@ Class | Method | HTTP request | Description
 *ReceivedDocumentsApi* | [**listReceivedDocuments**](docs/Api/ReceivedDocumentsApi.md#listreceiveddocuments) | **GET** /c/{company_id}/received_documents | List Received Documents
 *ReceivedDocumentsApi* | [**modifyReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#modifyreceiveddocument) | **PUT** /c/{company_id}/received_documents/{document_id} | Modify Received Document
 *ReceivedDocumentsApi* | [**uploadReceivedDocumentAttachment**](docs/Api/ReceivedDocumentsApi.md#uploadreceiveddocumentattachment) | **POST** /c/{company_id}/received_documents/attachment | Upload Received Document Attachment
+*SettingsApi* | [**createPaymentAccount**](docs/Api/SettingsApi.md#createpaymentaccount) | **POST** /c/{companyId}/settings/payment_accounts | Create Payment Account
+*SettingsApi* | [**createPaymentMethod**](docs/Api/SettingsApi.md#createpaymentmethod) | **POST** /c/{companyId}/settings/payment_methods | Create Payment Method
+*SettingsApi* | [**deletePaymentAccount**](docs/Api/SettingsApi.md#deletepaymentaccount) | **DELETE** /c/{companyId}/settings/payment_accounts/{paymentAccountId} | Delete Payment Account
+*SettingsApi* | [**deletePaymentMethod**](docs/Api/SettingsApi.md#deletepaymentmethod) | **DELETE** /c/{companyId}/settings/payment_method/{paymentMethodId} | Delete Payment Method
+*SettingsApi* | [**getPaymentAccount**](docs/Api/SettingsApi.md#getpaymentaccount) | **GET** /c/{companyId}/settings/payment_accounts/{paymentAccountId} | Get Payment Account
+*SettingsApi* | [**getPaymentMethod**](docs/Api/SettingsApi.md#getpaymentmethod) | **GET** /c/{companyId}/settings/payment_method/{paymentMethodId} | Get Payment Method
+*SettingsApi* | [**modifyPaymentAccount**](docs/Api/SettingsApi.md#modifypaymentaccount) | **PUT** /c/{companyId}/settings/payment_accounts/{paymentAccountId} | Modify Payment Account
+*SettingsApi* | [**modifyPaymentMethod**](docs/Api/SettingsApi.md#modifypaymentmethod) | **PUT** /c/{companyId}/settings/payment_method/{paymentMethodId} | Modify Payment Method
 *SuppliersApi* | [**createSupplier**](docs/Api/SuppliersApi.md#createsupplier) | **POST** /c/{company_id}/entities/suppliers | Create Supplier
 *SuppliersApi* | [**deleteSupplier**](docs/Api/SuppliersApi.md#deletesupplier) | **DELETE** /c/{company_id}/entities/suppliers/{supplier_id} | Delete Supplier
 *SuppliersApi* | [**getSupplier**](docs/Api/SuppliersApi.md#getsupplier) | **GET** /c/{company_id}/entities/suppliers/{supplier_id} | Get Supplier
@@ -208,6 +191,10 @@ Class | Method | HTTP request | Description
 - [CreateF24Response](docs/Model/CreateF24Response.md)
 - [CreateIssuedDocumentRequest](docs/Model/CreateIssuedDocumentRequest.md)
 - [CreateIssuedDocumentResponse](docs/Model/CreateIssuedDocumentResponse.md)
+- [CreatePaymentAccountRequest](docs/Model/CreatePaymentAccountRequest.md)
+- [CreatePaymentAccountResponse](docs/Model/CreatePaymentAccountResponse.md)
+- [CreatePaymentMethodRequest](docs/Model/CreatePaymentMethodRequest.md)
+- [CreatePaymentMethodResponse](docs/Model/CreatePaymentMethodResponse.md)
 - [CreateProductRequest](docs/Model/CreateProductRequest.md)
 - [CreateProductResponse](docs/Model/CreateProductResponse.md)
 - [CreateReceiptRequest](docs/Model/CreateReceiptRequest.md)
@@ -243,6 +230,8 @@ Class | Method | HTTP request | Description
 - [GetNewIssuedDocumentTotalsResponse](docs/Model/GetNewIssuedDocumentTotalsResponse.md)
 - [GetNewReceivedDocumentTotalsRequest](docs/Model/GetNewReceivedDocumentTotalsRequest.md)
 - [GetNewReceivedDocumentTotalsResponse](docs/Model/GetNewReceivedDocumentTotalsResponse.md)
+- [GetPaymentAccountResponse](docs/Model/GetPaymentAccountResponse.md)
+- [GetPaymentMethodResponse](docs/Model/GetPaymentMethodResponse.md)
 - [GetProductResponse](docs/Model/GetProductResponse.md)
 - [GetReceiptPreCreateInfoResponse](docs/Model/GetReceiptPreCreateInfoResponse.md)
 - [GetReceiptResponse](docs/Model/GetReceiptResponse.md)
@@ -314,6 +303,10 @@ Class | Method | HTTP request | Description
 - [ModifyF24Response](docs/Model/ModifyF24Response.md)
 - [ModifyIssuedDocumentRequest](docs/Model/ModifyIssuedDocumentRequest.md)
 - [ModifyIssuedDocumentResponse](docs/Model/ModifyIssuedDocumentResponse.md)
+- [ModifyPaymentAccountRequest](docs/Model/ModifyPaymentAccountRequest.md)
+- [ModifyPaymentAccountResponse](docs/Model/ModifyPaymentAccountResponse.md)
+- [ModifyPaymentMethodRequest](docs/Model/ModifyPaymentMethodRequest.md)
+- [ModifyPaymentMethodResponse](docs/Model/ModifyPaymentMethodResponse.md)
 - [ModifyProductRequest](docs/Model/ModifyProductRequest.md)
 - [ModifyProductResponse](docs/Model/ModifyProductResponse.md)
 - [ModifyReceiptRequest](docs/Model/ModifyReceiptRequest.md)

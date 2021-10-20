@@ -21,7 +21,7 @@ createReceipt($company_id, $create_receipt_request): \FattureInCloud\Model\Creat
 
 Create Receipt
 
-👥 Company context 🔒 Required scope: receipts:a  Create a new receipt.
+Creates a new receipt.
 
 ### Example
 
@@ -40,7 +40,7 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $create_receipt_request = {"data":{"date":"2021-08-19","number":6,"numeration":"REC006","amount_net":8.2,"amount_vat":1.8,"amount_gross":10,"use_gross_prices":true,"type":"sales_receipt","description":"cassa 1","rc_center":"","payment_account":{"id":555,"name":"contanti"},"items_list":[{"id":888,"amount_net":8.2,"amount_vat":1.8,"amount_gross":10,"category":"altro","vat":{"id":0,"value":22,"description":"iva"}}]}}; // \FattureInCloud\Model\CreateReceiptRequest | The Receipt to create.
 
 try {
@@ -55,7 +55,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **create_receipt_request** | [**\FattureInCloud\Model\CreateReceiptRequest**](../Model/CreateReceiptRequest.md)| The Receipt to create. | [optional]
 
 ### Return type
@@ -83,7 +83,7 @@ deleteReceipt($company_id, $document_id)
 
 Delete Receipt
 
-👥 Company context 🔒 Required scope: receipts:a  Delete an existing document by its unique id.
+Deletes the specified receipt.
 
 ### Example
 
@@ -102,8 +102,8 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 
 try {
     $apiInstance->deleteReceipt($company_id, $document_id);
@@ -116,8 +116,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
 
 ### Return type
 
@@ -144,7 +144,7 @@ getReceipt($company_id, $document_id, $fields, $fieldset): \FattureInCloud\Model
 
 Get Receipt
 
-👥 Company context 🔒 Required scope: receipts:r 🎩 Customized responses supported  Get details of an existing document by its unique id.
+Gets the specified receipt.
 
 ### Example
 
@@ -163,10 +163,10 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 $fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
 
 try {
     $result = $apiInstance->getReceipt($company_id, $document_id, $fields, $fieldset);
@@ -180,10 +180,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
  **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset | [optional]
+ **fieldset** | **string**| Name of the fieldset. | [optional]
 
 ### Return type
 
@@ -210,7 +210,7 @@ getReceiptPreCreateInfo($company_id): \FattureInCloud\Model\GetReceiptPreCreateI
 
 Get Receipt Pre-Create Info
 
-👥 Company context 🔒 Required scope: receipts:r  Get the info needed for the document creation flow.
+Retrieves the information useful while creating a new receipt.
 
 ### Example
 
@@ -229,7 +229,7 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 
 try {
     $result = $apiInstance->getReceiptPreCreateInfo($company_id);
@@ -243,7 +243,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
 
 ### Return type
 
@@ -270,7 +270,7 @@ getReceiptsMonthlyTotals($company_id, $type, $year): \FattureInCloud\Model\GetRe
 
 Get Receipts Monthly Totals
 
-👥 Company context 🔒 Required scope: receipts:r  Get the monthly totals by year and receipt type.
+Returns the monthly totals by year and receipt type.
 
 ### Example
 
@@ -289,7 +289,7 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $type = 'type_example'; // string | Receipt Type
 $year = 'year_example'; // string | Year for which you want monthly totals
 
@@ -305,7 +305,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **type** | **string**| Receipt Type |
  **year** | **string**| Year for which you want monthly totals |
 
@@ -334,7 +334,7 @@ listReceipts($company_id, $fields, $fieldset, $page, $per_page, $sort): \Fatture
 
 List Receipts
 
-👥 Company context 🔒 Required scope: receipts:r 🔍 Filtering: date, type, description, rc_center, created_at, updated_at ↕️ Sorting: date, rc_center, created_at, updated_at 📄 Paginated results 🎩 Customized responses supported  Get a list of receipt documents that match the filters.
+Lists the receipts.
 
 ### Example
 
@@ -353,12 +353,12 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
+$company_id = 12345; // int | The ID of the company.
 $fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset
-$page = 1; // int | Requested page
-$per_page = 5; // int | Items to be shown per page
-$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting)
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+$page = 1; // int | The page to retrieve.
+$per_page = 5; // int | The size of the page.
+$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
 
 try {
     $result = $apiInstance->listReceipts($company_id, $fields, $fieldset, $page, $per_page, $sort);
@@ -372,12 +372,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
+ **company_id** | **int**| The ID of the company. |
  **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset | [optional]
- **page** | **int**| Requested page | [optional] [default to 1]
- **per_page** | **int**| Items to be shown per page | [optional] [default to 5]
- **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting) | [optional]
+ **fieldset** | **string**| Name of the fieldset. | [optional]
+ **page** | **int**| The page to retrieve. | [optional] [default to 1]
+ **per_page** | **int**| The size of the page. | [optional] [default to 5]
+ **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional]
 
 ### Return type
 
@@ -404,7 +404,7 @@ modifyReceipt($company_id, $document_id, $modify_receipt_request): \FattureInClo
 
 Modify Receipt
 
-👥 Company context 🔒 Required scope: receipts:a  Edit an existing document by its unique id.
+Modifies the specified receipt.
 
 ### Example
 
@@ -423,8 +423,8 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The Referred Company Id.
-$document_id = 56; // int | Unique Id of the document
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
 $modify_receipt_request = {"data":{"date":"2021-08-19","number":6,"numeration":"REC006","amount_net":8.2,"amount_vat":1.8,"amount_gross":10,"use_gross_prices":true,"type":"sales_receipt","description":"cassa 1","rc_center":"","payment_account":{"id":555,"name":"contanti"},"items_list":[{"id":888,"amount_net":8.2,"amount_vat":1.8,"amount_gross":10,"category":"altro","vat":{"id":0,"value":22,"description":"iva"}}]}}; // \FattureInCloud\Model\ModifyReceiptRequest | Modified receipt.
 
 try {
@@ -439,8 +439,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The Referred Company Id. |
- **document_id** | **int**| Unique Id of the document |
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
  **modify_receipt_request** | [**\FattureInCloud\Model\ModifyReceiptRequest**](../Model/ModifyReceiptRequest.md)| Modified receipt. | [optional]
 
 ### Return type
