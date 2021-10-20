@@ -13,7 +13,7 @@
 /**
  * Fatture in Cloud API v2 - API Reference
  *
- * Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 400.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.  For more information, please visit https://www.fattureincloud.it.
+ * ## Request informations In every request description you will be able to find some additional informations about context, permissions and supported functionality:  | Parameter | Description | |-----------|-------------| | 👥 Context | Indicate the subject of the request. Can be `company`, `user` or `accountant`.  | | 🔒 Required scope | If present, indicates the required scope to fulfill the request. | | 🔍 Filtering | If present, indicates which fields support the filtering feature. | | ↕️ Sorting | If present, indicates which fields support the sorting feature. | | 📄 Paginated results | If present, indicate that the results are paginated. | | 🎩 Customized responses supported | If present, indicate that you can use `field` or `fieldset` to customize the response body. |  For example the request `GET /entities/{entityRole}` have tis informations: \\ 👥 Company context \\ 🔒 Required scope: `entity.clients:r` or `entity.suppliers:r` (depending on `entityRole`) \\ 🔍 Filtering: `id`, `name` \\ ↕️ Sorting: `id`, `name` \\ 📄 Paginated results \\ 🎩 Customized responses supported  Keep in mind that if you are making **company realted requests**, you will need to specify the company id in the requests: ``` GET /c/{company_id}/issued_documents ```
  *
  * The version of the OpenAPI document: 2.0.1
  * Contact: info@fattureincloud.it
@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * CreatePaymentAccountRequestTest Class Doc Comment
@@ -42,7 +43,8 @@ use PHPUnit\Framework\TestCase;
  */
 class CreatePaymentAccountRequestTest extends TestCase
 {
-
+    public $array = [];
+    public $object;
     /**
      * Setup before running any test case
      */
@@ -55,6 +57,20 @@ class CreatePaymentAccountRequestTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+                "data": {
+                    "id": 12345,
+                    "name": "Indesa",
+                    "type": "bank",
+                    "iban": "IT17Q0051343200000003497636",
+                    "sia": "T1234",
+                    "virtual": false
+                }
+            }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CreatePaymentAccountRequest');
     }
 
     /**
@@ -76,8 +92,10 @@ class CreatePaymentAccountRequestTest extends TestCase
      */
     public function testCreatePaymentAccountRequest()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +103,9 @@ class CreatePaymentAccountRequestTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }
