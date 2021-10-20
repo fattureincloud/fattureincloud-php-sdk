@@ -176,7 +176,7 @@ class CreateIssuedDocumentResponseTest extends TestCase
 
         $this->array = json_decode($json, true);
 
-        $this->object = ObjectSerializer::deserialize($json, 'FattureInCloud\Model\CreateIssuedDocumentResponse');
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CreateIssuedDocumentResponse');
     }
 
     /**
