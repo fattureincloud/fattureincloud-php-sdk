@@ -44,9 +44,9 @@ use \GuzzleHttp\Exception\RequestException;
  * SettingsApiTest Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
- * @author   OpenAPI Generator team
- * @link     https://openapi-generator.tech
+ * @package  FattureInCloud
+ * @author   Fatture In Cloud API team
+ * @link     https://fattureincloud.it
  */
 class SettingsApiTest extends TestCase
 {
