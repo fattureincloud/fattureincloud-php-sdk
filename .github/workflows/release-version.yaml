@@ -1,11 +1,5 @@
 name: Release PHP SDK version
-on:
-  workflow_dispatch:
-    inputs:
-      bumpVersion: 
-        description: 'Needs Bump Version'
-        required: true
-        default: 'false'
+on: [workflow_dispatch]
     
 jobs:
   release-version:
@@ -17,12 +11,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.FATTUREINCLOUD_BOT_TOKEN }}
-
-      - id: init-git
-        name: Init GIT
-        run: |
-          git config --global user.email "info@fattureincloud.it"
-          git config --global user.name "fattureincloud-bot"
       
       - id: setup-node
         name: Setup Node.js
@@ -31,33 +19,14 @@ jobs:
       - id: setup-libraries
         name: Install libraries
         run: |
-          npm install -g yarn
-          yarn global add standard-version
           sudo add-apt-repository ppa:rmescandon/yq -y
           sudo apt update
           sudo apt install yq -y
-          cd ./scripts/
-          yarn
 
-      # If we need to bump version, we upload the tag produced by Standard Version
-      - id: bump-php-sdk-version
-        name: Bump PHP SDK version
-        if: github.event.inputs.bumpVersion == 'true'
-        run: |
-          OLD_VERSION=$(yq e '.info.version' ./sdk-version.yaml)
-          echo "Old version: $OLD_VERSION"
-          standard-version --release-as patch
-          SDK_VERSION=$(yq e '.info.version' ./sdk-version.yaml)
-          echo "New version: $SDK_VERSION"
-          echo "sdk_version=$SDK_VERSION" >> $GITHUB_ENV
-
-          git push origin
-          git push origin --tags
-
-      # Otherwise, we read the version and create the tag
+      # We read the version from the sdk-version.yaml file and create the tag
+      # If it is needed to bump version, launch the related workflow
       - id: read-php-sdk-version
         name: Read PHP SDK version
-        if: github.event.inputs.bumpVersion == 'false'
         run: |
           SDK_VERSION=$(yq e '.info.version' ./sdk-version.yaml)
           echo "Releasing version: $SDK_VERSION"
@@ -65,7 +34,6 @@ jobs:
 
       - id: create-tag
         name: Create tag
-        if: github.event.inputs.bumpVersion == 'false'
         uses: actions/github-script@v3
         with:
           github-token: ${{ github.token }}
