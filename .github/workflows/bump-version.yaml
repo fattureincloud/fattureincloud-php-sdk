@@ -20,11 +20,17 @@ jobs:
           ref: master
           repository: ${{ env.GIT_OPENAPI_REPO_PATH }}
           token: ${{ secrets.FATTUREINCLOUD_BOT_TOKEN }}
+      - id: setup-libraries
+        name: Install libraries
+        run: |
+          sudo add-apt-repository ppa:rmescandon/yq -y
+          sudo apt update
+          sudo apt install yq -y
 
       - id: read-openapi-version
         name: Read OpenAPI Version
         run: |
-          OPENAPI_VER=$(yq e '.info.version' ./openapi/openapi.yaml)
+          OPENAPI_VERSION=$(yq e '.info.version' ./openapi/openapi.yaml)
           echo "openapi_version=$OPENAPI_VERSION" >> $GITHUB_ENV
 
       # We trigger the SDK generation from OpenAPI repo to bump version also in the generated code
