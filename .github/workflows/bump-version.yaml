@@ -20,7 +20,6 @@ jobs:
           ref: master
           repository: ${{ env.GIT_OPENAPI_REPO_PATH }}
           token: ${{ secrets.FATTUREINCLOUD_BOT_TOKEN }}
-
       - id: setup-libraries
         name: Install libraries
         run: |
