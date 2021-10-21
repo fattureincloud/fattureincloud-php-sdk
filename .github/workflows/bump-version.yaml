@@ -2,11 +2,12 @@ name: Bump PHP SDK version
 on: [workflow_dispatch]
     
 jobs:
-env:
-      GIT_OPENAPI_REPO_ID: openapi-fattureincloud
-      GIT_USER_ID: fattureincloud
+  
   bump-version:
     runs-on: ubuntu-latest
+    env:
+      GIT_OPENAPI_REPO_ID: openapi-fattureincloud
+      GIT_USER_ID: fattureincloud
     steps: 
 
       - id: checkout-openapi
