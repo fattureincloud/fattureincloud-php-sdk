@@ -44,4 +44,4 @@ jobs:
           token: ${{ secrets.FATTUREINCLOUD_BOT_TOKEN }}
           repository: ${{ env.GIT_OPENAPI_REPO_PATH }}
           event-type: generate-php
-          client-payload: '{"version": "${{ env.openapi_version }}"}'
+          client-payload: '{"version": "${{ env.openapi_version }}", "from-openapi": false}'
