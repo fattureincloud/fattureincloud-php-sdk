@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **connection_id** | **float** | Company connection id. | [optional]
 **dic** | **bool** | Determine if the company has a DIC account. | [optional]
 **fic** | **bool** | Determine if the company has a FIC account. | [optional]
-**fic_license_expire** | [**\DateTime**](\DateTime.md) | Company FIC license expiration date. | [optional]
+**fic_license_expire** | **\DateTime** | Company FIC license expiration date. | [optional]
 **fic_plan** | **string** | Company FIC account plan. | [optional]
 **tax_code** | **string** | Tax code. | [optional]
 
