@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **int** | Unique identifier of the document. | [optional]
 **type** | [**\FattureInCloud\Model\ReceivedDocumentType**](ReceivedDocumentType.md) |  | [optional]
 **entity** | [**\FattureInCloud\Model\ReceivedDocumentEntity**](ReceivedDocumentEntity.md) |  |
-**date** | [**\DateTime**](\DateTime.md) | Date of the document [If not specified, today date is used]. | [optional]
+**date** | **\DateTime** | Date of the document [If not specified, today date is used]. | [optional]
 **category** | **string** | Document category. | [optional]
 **description** | **string** | Document description. | [optional]
 **amount_net** | **float** | Total net amount. | [optional]
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **is_marked** | **bool** |  | [optional]
 **is_detailed** | **bool** |  | [optional]
 **e_invoice** | **bool** | [Read Only] Indicates if this is an e-invoice. | [optional]
-**next_due_date** | [**\DateTime**](\DateTime.md) | [Read Only] Next due date. | [optional] [readonly]
+**next_due_date** | **\DateTime** | [Read Only] Next due date. | [optional] [readonly]
 **currency** | [**\FattureInCloud\Model\Currency**](Currency.md) |  | [optional]
 **tax_deductibility** | **float** | Tax deducibility percentage. | [optional]
 **vat_deductibility** | **float** | Vat deducibility percentage. | [optional]
