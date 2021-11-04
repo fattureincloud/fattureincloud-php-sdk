@@ -427,17 +427,3 @@ lib/Model/VerifyEInvoiceXmlSuccessResponse.php
 lib/Model/VerifyEInvoiceXmlSuccessResponseData.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/SettingsApiTest.php
-test/Model/CashbookEntryInOutTest.php
-test/Model/CreatePaymentAccountRequestTest.php
-test/Model/CreatePaymentAccountResponseTest.php
-test/Model/CreatePaymentMethodRequestTest.php
-test/Model/CreatePaymentMethodResponseTest.php
-test/Model/GetPaymentAccountResponseTest.php
-test/Model/GetPaymentMethodResponseTest.php
-test/Model/ModifyPaymentAccountRequestTest.php
-test/Model/ModifyPaymentAccountResponseTest.php
-test/Model/ModifyPaymentMethodRequestTest.php
-test/Model/ModifyPaymentMethodResponseTest.php
-test/Model/VerifyEInvoiceXmlSuccessResponseDataTest.php
-test/Model/VerifyEInvoiceXmlSuccessResponseTest.php
