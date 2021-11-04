@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** | Cashbook unique identifier. |
-**date** | [**\DateTime**](\DateTime.md) | Cashbook date. |
+**date** | **\DateTime** | Cashbook date. |
 **description** | **string** | Cashbook description. |
 **kind** | **string** | Cashbook kind. |
 **type** | **string** | Cashbook type. |

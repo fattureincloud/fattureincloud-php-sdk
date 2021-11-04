@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Unique identifier | [optional]
 **name** | **string** | Payment account name. |
-**type** | **string** | Payment account type. | [optional] [default to TYPE_STANDARD]
+**type** | **string** | Payment account type. | [optional] [default to 'standard']
 **iban** | **string** | Payment account iban. | [optional]
 **sia** | **string** | Payment account sia. | [optional]
 **cuc** | **string** | Payment account cuc. | [optional]
