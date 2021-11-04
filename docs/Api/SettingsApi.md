@@ -291,7 +291,7 @@ $company_id = 12345; // int | The ID of the company.
 $payment_account_id = 1; // string | The Referred Payment Account Id.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
-$body = new \stdClass; // object
+$body = array('key' => new \stdClass); // object
 
 try {
     $result = $apiInstance->getPaymentAccount($company_id, $payment_account_id, $fields, $fieldset, $body);

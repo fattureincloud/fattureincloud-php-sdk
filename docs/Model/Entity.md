@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **notes** | **string** | Supplier extra notes. | [optional]
 **default_vat** | [**\FattureInCloud\Model\VatType**](VatType.md) |  | [optional]
 **default_payment_terms** | **int** |  | [optional]
-**default_payment_terms_type** | **string** |  | [optional] [default to DEFAULT_PAYMENT_TERMS_TYPE_STANDARD]
+**default_payment_terms_type** | **string** |  | [optional] [default to 'standard']
 **default_payment_method** | [**\FattureInCloud\Model\PaymentMethod**](PaymentMethod.md) |  | [optional]
 **bank_name** | **string** | Client bank name. | [optional]
 **bank_iban** | **string** | Client iban. | [optional]
