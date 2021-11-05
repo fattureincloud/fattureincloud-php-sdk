@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Archive document unique identifier. | [optional]
-**date** | [**\DateTime**](\DateTime.md) | Archive document date. |
+**date** | **\DateTime** | Archive document date. |
 **description** | **string** | Archive Document description. |
 **attachment_url** | **string** | [Read Only] Absolute url of the attached file. Authomatically set if a valid attachment token is passed via POST /archive or PUT /archive/{documentId}. | [optional] [readonly]
 **category** | **string** | Archive document category. |
