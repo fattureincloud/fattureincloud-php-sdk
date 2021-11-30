@@ -4,8 +4,6 @@ Connect your software with Fatture in Cloud, the invoicing platform chosen by mo
 
 The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-For more information, please visit https://www.fattureincloud.it.
-
 For more information, please visit [https://www.fattureincloud.it](https://www.fattureincloud.it).
 
 ## Installation & Usage
@@ -159,7 +157,7 @@ Class | Method | HTTP request | Description
 *TaxesApi* | [**modifyF24**](docs/Api/TaxesApi.md#modifyf24) | **PUT** /c/{company_id}/taxes/{document_id} | Modify F24
 *TaxesApi* | [**uploadF24Attachment**](docs/Api/TaxesApi.md#uploadf24attachment) | **POST** /c/{company_id}/taxes/attachment | Upload F24 Attachment
 *UserApi* | [**getUserInfo**](docs/Api/UserApi.md#getuserinfo) | **GET** /user/info | Get User Info
-*UserApi* | [**listUserCompanies**](docs/Api/UserApi.md#listusercompanies) | **GET** /user/companies | Get User Companies
+*UserApi* | [**listUserCompanies**](docs/Api/UserApi.md#listusercompanies) | **GET** /user/companies | List User Companies
 
 ## Models
 
@@ -170,10 +168,13 @@ Class | Method | HTTP request | Description
 - [CashbookEntryIn](docs/Model/CashbookEntryIn.md)
 - [CashbookEntryInData](docs/Model/CashbookEntryInData.md)
 - [CashbookEntryInOut](docs/Model/CashbookEntryInOut.md)
+- [CashbookEntryKind](docs/Model/CashbookEntryKind.md)
 - [CashbookEntryOut](docs/Model/CashbookEntryOut.md)
 - [CashbookEntryOutData](docs/Model/CashbookEntryOutData.md)
+- [CashbookEntryType](docs/Model/CashbookEntryType.md)
 - [City](docs/Model/City.md)
 - [Client](docs/Model/Client.md)
+- [ClientType](docs/Model/ClientType.md)
 - [Company](docs/Model/Company.md)
 - [CompanyInfo](docs/Model/CompanyInfo.md)
 - [CompanyInfoAccessInfo](docs/Model/CompanyInfoAccessInfo.md)
@@ -181,6 +182,7 @@ Class | Method | HTTP request | Description
 - [CompanyInfoPlanInfoFunctions](docs/Model/CompanyInfoPlanInfoFunctions.md)
 - [CompanyInfoPlanInfoFunctionsStatus](docs/Model/CompanyInfoPlanInfoFunctionsStatus.md)
 - [CompanyInfoPlanInfoLimits](docs/Model/CompanyInfoPlanInfoLimits.md)
+- [CompanyType](docs/Model/CompanyType.md)
 - [CreateArchiveDocumentRequest](docs/Model/CreateArchiveDocumentRequest.md)
 - [CreateArchiveDocumentResponse](docs/Model/CreateArchiveDocumentResponse.md)
 - [CreateCashbookEntryRequest](docs/Model/CreateCashbookEntryRequest.md)
@@ -204,6 +206,7 @@ Class | Method | HTTP request | Description
 - [CreateSupplierRequest](docs/Model/CreateSupplierRequest.md)
 - [CreateSupplierResponse](docs/Model/CreateSupplierResponse.md)
 - [Currency](docs/Model/Currency.md)
+- [DefaultPaymentTermsType](docs/Model/DefaultPaymentTermsType.md)
 - [DocumentTemplate](docs/Model/DocumentTemplate.md)
 - [EmailData](docs/Model/EmailData.md)
 - [EmailDataDefaultSenderEmail](docs/Model/EmailDataDefaultSenderEmail.md)
@@ -213,6 +216,7 @@ Class | Method | HTTP request | Description
 - [Entity](docs/Model/Entity.md)
 - [EntityOptions](docs/Model/EntityOptions.md)
 - [F24](docs/Model/F24.md)
+- [F24Status](docs/Model/F24Status.md)
 - [FunctionStatus](docs/Model/FunctionStatus.md)
 - [GetArchiveDocumentResponse](docs/Model/GetArchiveDocumentResponse.md)
 - [GetCashbookEntryResponse](docs/Model/GetCashbookEntryResponse.md)
@@ -252,6 +256,7 @@ Class | Method | HTTP request | Description
 - [IssuedDocumentPreCreateInfoExtraDataDefaultValues](docs/Model/IssuedDocumentPreCreateInfoExtraDataDefaultValues.md)
 - [IssuedDocumentPreCreateInfoItemsDefaultValues](docs/Model/IssuedDocumentPreCreateInfoItemsDefaultValues.md)
 - [IssuedDocumentRefersTo](docs/Model/IssuedDocumentRefersTo.md)
+- [IssuedDocumentStatus](docs/Model/IssuedDocumentStatus.md)
 - [IssuedDocumentTotals](docs/Model/IssuedDocumentTotals.md)
 - [IssuedDocumentTotalsVatList](docs/Model/IssuedDocumentTotalsVatList.md)
 - [IssuedDocumentTotalsVatListVatItem](docs/Model/IssuedDocumentTotalsVatListVatItem.md)
@@ -316,10 +321,13 @@ Class | Method | HTTP request | Description
 - [ModifySupplierRequest](docs/Model/ModifySupplierRequest.md)
 - [ModifySupplierResponse](docs/Model/ModifySupplierResponse.md)
 - [MonthlyTotal](docs/Model/MonthlyTotal.md)
+- [OriginalDocumentType](docs/Model/OriginalDocumentType.md)
 - [Pagination](docs/Model/Pagination.md)
 - [PaymentAccount](docs/Model/PaymentAccount.md)
+- [PaymentAccountType](docs/Model/PaymentAccountType.md)
 - [PaymentMethod](docs/Model/PaymentMethod.md)
 - [PaymentMethodDetails](docs/Model/PaymentMethodDetails.md)
+- [PaymentMethodType](docs/Model/PaymentMethodType.md)
 - [PermissionLevel](docs/Model/PermissionLevel.md)
 - [Permissions](docs/Model/Permissions.md)
 - [PermissionsFicIssuedDocumentsDetailed](docs/Model/PermissionsFicIssuedDocumentsDetailed.md)
@@ -343,6 +351,7 @@ Class | Method | HTTP request | Description
 - [SendEInvoiceRequestData](docs/Model/SendEInvoiceRequestData.md)
 - [SendEInvoiceResponse](docs/Model/SendEInvoiceResponse.md)
 - [SendEInvoiceResponseData](docs/Model/SendEInvoiceResponseData.md)
+- [ShowTotalsMode](docs/Model/ShowTotalsMode.md)
 - [Supplier](docs/Model/Supplier.md)
 - [UploadArchiveAttachmentResponse](docs/Model/UploadArchiveAttachmentResponse.md)
 - [UploadF24AttachmentResponse](docs/Model/UploadF24AttachmentResponse.md)
@@ -351,6 +360,8 @@ Class | Method | HTTP request | Description
 - [UploadReceivedDocumentAttachmentResponse](docs/Model/UploadReceivedDocumentAttachmentResponse.md)
 - [UploadReceivedDocumentAttachmentResponseData](docs/Model/UploadReceivedDocumentAttachmentResponseData.md)
 - [User](docs/Model/User.md)
+- [UserCompanyRole](docs/Model/UserCompanyRole.md)
+- [VatKind](docs/Model/VatKind.md)
 - [VatType](docs/Model/VatType.md)
 - [VerifyEInvoiceXmlErrorResponse](docs/Model/VerifyEInvoiceXmlErrorResponse.md)
 - [VerifyEInvoiceXmlErrorResponseError](docs/Model/VerifyEInvoiceXmlErrorResponseError.md)
@@ -420,5 +431,5 @@ info@fattureincloud.it
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `2.0.1`
+- API version: `2.0.5`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

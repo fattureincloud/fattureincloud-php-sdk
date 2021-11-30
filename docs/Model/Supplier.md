@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **int** | Unique identifier | [optional]
 **code** | **string** | Supplier code. | [optional]
 **name** | **string** | Supplier name. |
-**type** | **string** | Supplier type. | [optional]
+**type** | [**\FattureInCloud\Model\CompanyType**](CompanyType.md) |  | [optional]
 **first_name** | **string** | Supplier first name. | [optional]
 **last_name** | **string** | Supplier last name. | [optional]
 **contact_person** | **string** |  | [optional]
