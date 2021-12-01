@@ -5,7 +5,7 @@ All URIs are relative to https://api-v2.fattureincloud.it.
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getUserInfo()**](UserApi.md#getUserInfo) | **GET** /user/info | Get User Info
-[**listUserCompanies()**](UserApi.md#listUserCompanies) | **GET** /user/companies | Get User Companies
+[**listUserCompanies()**](UserApi.md#listUserCompanies) | **GET** /user/companies | List User Companies
 
 
 ## `getUserInfo()`
@@ -71,7 +71,7 @@ This endpoint does not need any parameter.
 listUserCompanies(): \FattureInCloud\Model\ListUserCompaniesResponse
 ```
 
-Get User Companies
+List User Companies
 
 Lists the companies controlled by the current user.
 

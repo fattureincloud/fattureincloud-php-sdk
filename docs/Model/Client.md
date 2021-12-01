@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **int** | Unique identifier | [optional]
 **code** | **string** | Client code. | [optional]
 **name** | **string** | Client name |
-**type** | **string** | Client type | [optional]
+**type** | [**\FattureInCloud\Model\ClientType**](ClientType.md) |  | [optional]
 **first_name** | **string** | Client first name. | [optional]
 **last_name** | **string** | Client last name. | [optional]
 **contact_person** | **string** |  | [optional]
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **notes** | **string** | Extra notes. | [optional]
 **default_vat** | [**\FattureInCloud\Model\VatType**](VatType.md) |  | [optional]
 **default_payment_terms** | **int** |  | [optional]
-**default_payment_terms_type** | **string** |  | [optional] [default to DEFAULT_PAYMENT_TERMS_TYPE_STANDARD]
+**default_payment_terms_type** | [**\FattureInCloud\Model\DefaultPaymentTermsType**](DefaultPaymentTermsType.md) |  | [optional]
 **default_payment_method** | [**\FattureInCloud\Model\PaymentMethod**](PaymentMethod.md) |  | [optional]
 **bank_name** | **string** | Client bank name. | [optional]
 **bank_iban** | **string** | Client iban. | [optional]
