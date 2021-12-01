@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * UserCompanyRoleTest Class Doc Comment
@@ -55,6 +56,13 @@ class UserCompanyRoleTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{  
+            "role": "master"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CompanyInfoAccessInfo');
     }
 
     /**
@@ -76,7 +84,6 @@ class UserCompanyRoleTest extends TestCase
      */
     public function testUserCompanyRole()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['role'], $this->array['role']);
     }
 }
