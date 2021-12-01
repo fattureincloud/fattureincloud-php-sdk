@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * PaymentMethodTypeTest Class Doc Comment
@@ -55,6 +56,13 @@ class PaymentMethodTypeTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{  
+            "type": "standard"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\PaymentMethod');
     }
 
     /**
@@ -76,7 +84,6 @@ class PaymentMethodTypeTest extends TestCase
      */
     public function testPaymentMethodType()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['type'], $this->array['type']);
     }
 }

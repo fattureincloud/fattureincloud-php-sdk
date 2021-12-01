@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * OriginalDocumentTypeTest Class Doc Comment
@@ -55,6 +56,13 @@ class OriginalDocumentTypeTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{  
+            "original_document_type": "ordine"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\IssuedDocumentEiData');
     }
 
     /**
@@ -76,7 +84,6 @@ class OriginalDocumentTypeTest extends TestCase
      */
     public function testOriginalDocumentType()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['original_document_type'], $this->array['original_document_type']);
     }
 }
