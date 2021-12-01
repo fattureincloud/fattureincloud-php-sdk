@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ClientTypeTest Class Doc Comment
@@ -55,6 +56,13 @@ class ClientTypeTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{  
+            "type": "company"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\Client');
     }
 
     /**
@@ -76,7 +84,6 @@ class ClientTypeTest extends TestCase
      */
     public function testClientType()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['type'], $this->array['type']);
     }
 }

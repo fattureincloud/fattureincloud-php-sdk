@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * F24StatusTest Class Doc Comment
@@ -55,6 +56,13 @@ class F24StatusTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{  
+            "status": "paid"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\F24');
     }
 
     /**
@@ -76,7 +84,6 @@ class F24StatusTest extends TestCase
      */
     public function testF24Status()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['status'], $this->array['status']);
     }
 }
