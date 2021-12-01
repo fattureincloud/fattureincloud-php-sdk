@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * IssuedDocumentStatusTest Class Doc Comment
@@ -55,6 +56,13 @@ class IssuedDocumentStatusTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{  
+            "status": "paid"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\IssuedDocumentPaymentsList');
     }
 
     /**
@@ -76,7 +84,6 @@ class IssuedDocumentStatusTest extends TestCase
      */
     public function testIssuedDocumentStatus()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['status'], $this->array['status']);
     }
 }

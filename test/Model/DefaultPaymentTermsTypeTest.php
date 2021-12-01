@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * DefaultPaymentTermsTypeTest Class Doc Comment
@@ -55,6 +56,13 @@ class DefaultPaymentTermsTypeTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{  
+            "default_payment_terms_type": "standard"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\Entity');
     }
 
     /**
@@ -76,7 +84,6 @@ class DefaultPaymentTermsTypeTest extends TestCase
      */
     public function testDefaultPaymentTermsType()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['default_payment_terms_type'], $this->array['default_payment_terms_type']);
     }
 }

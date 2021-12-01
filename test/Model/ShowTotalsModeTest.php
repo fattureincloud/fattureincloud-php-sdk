@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ShowTotalsModeTest Class Doc Comment
@@ -55,6 +56,13 @@ class ShowTotalsModeTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{  
+            "show_totals": "all"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\IssuedDocument');
     }
 
     /**
@@ -76,7 +84,6 @@ class ShowTotalsModeTest extends TestCase
      */
     public function testShowTotalsMode()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['show_totals'], $this->array['show_totals']);
     }
 }

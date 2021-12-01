@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * VatKindTest Class Doc Comment
@@ -55,6 +56,13 @@ class VatKindTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{  
+            "vat_kind": "I"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\IssuedDocumentEiData');
     }
 
     /**
@@ -76,7 +84,6 @@ class VatKindTest extends TestCase
      */
     public function testVatKind()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['vat_kind'], $this->array['vat_kind']);
     }
 }

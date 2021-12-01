@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * CashbookEntryKindTest Class Doc Comment
@@ -55,6 +56,13 @@ class CashbookEntryKindTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{  
+            "kind": "cashbook"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CashbookEntry');
     }
 
     /**
@@ -76,7 +84,6 @@ class CashbookEntryKindTest extends TestCase
      */
     public function testCashbookEntryKind()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['kind'], $this->array['kind']);
     }
 }
