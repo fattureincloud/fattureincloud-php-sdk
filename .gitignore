@@ -12,3 +12,12 @@ composer.phar
 
 # PHPUnit cache
 .phpunit.result.cache
+
+# PHP Storm
+.idea/*
+
+# macOS
+.DS_Store
+
+# VisualStudioCode
+.vscode/*
