@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **ts_opposizione** | **bool** |  | [optional]
 **ts_status** | **int** |  | [optional]
 **ts_file_id** | **string** |  | [optional]
-**ts_sent_date** | **string** |  | [optional]
+**ts_sent_date** | **\DateTime** |  | [optional]
 **ts_full_amount** | **bool** |  | [optional]
 **imported_by** | **string** |  | [optional]
 **ts_single_sending** | **bool** |  | [optional]

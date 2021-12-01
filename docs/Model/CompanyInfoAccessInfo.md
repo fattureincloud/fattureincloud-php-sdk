@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**role** | **string** | Role of the user in this company. | [optional]
+**role** | [**\FattureInCloud\Model\UserCompanyRole**](UserCompanyRole.md) |  | [optional]
 **permissions** | [**\FattureInCloud\Model\Permissions**](Permissions.md) |  | [optional]
 **through_accountant** | **bool** |  | [optional]
 

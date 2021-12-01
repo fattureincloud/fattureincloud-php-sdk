@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Unique identifier. | [optional]
 **amount** | **float** | Amount of items. | [optional]
-**due_date** | **string** | Due date | [optional]
-**paid_date** | **string** | Paid date | [optional]
+**due_date** | **\DateTime** | Due date | [optional]
+**paid_date** | **\DateTime** | Paid date | [optional]
 **payment_terms** | [**\FattureInCloud\Model\ReceivedDocumentPaymentTerms**](ReceivedDocumentPaymentTerms.md) |  | [optional]
 **status** | **string** | Payment status. | [optional]
 **payment_account** | [**\FattureInCloud\Model\PaymentAccount**](PaymentAccount.md) |  | [optional]

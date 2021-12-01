@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | Receipt unique identifier. | [optional]
-**date** | [**\DateTime**](\DateTime.md) | Receipt date. |
+**id** | **int** | Receipt unique identifier. | [optional]
+**date** | **\DateTime** | Receipt date. |
 **number** | **float** | Receipt number. | [optional]
 **numeration** | **string** | If it&#39;s null or empty string use the default numeration. | [optional]
 **amount_net** | **float** | Total net amount. | [optional]
