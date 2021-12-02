@@ -123,9 +123,6 @@ class CreateIssuedDocumentRequestTest extends TestCase
                     "payment_account": null
                   }
                 ]
-            },
-            "options": {
-                "entity_create": true
             }
         }';
 
@@ -167,17 +164,6 @@ class CreateIssuedDocumentRequestTest extends TestCase
         foreach ($this->array['data'] as $key => $value) 
         {
            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
-    }
-
-    /**
-     * Test attribute "options"
-     */
-    public function testPropertyOptions()
-    {
-        foreach ($this->array['options'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['options']);
         }
     }
 }
