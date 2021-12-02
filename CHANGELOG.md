@@ -4,11 +4,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### 2.0.5 (2021-12-02)
 
-
-### Bug Fixes
-
-* extracted enums from models and fixed some types ([eed0a3b](https://github.com/fattureincloud/fattureincloud-php-sdk/commit/eed0a3b4d2a12df8ec92eab24694c62e69868efa))
-
 ### 2.0.4 (2021-12-01)
 
 ### 2.0.3 (2021-10-19)
