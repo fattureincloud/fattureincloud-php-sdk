@@ -70,7 +70,6 @@ docs/Model/EmailDataSenderEmailsList.md
 docs/Model/EmailSchedule.md
 docs/Model/EmailScheduleInclude.md
 docs/Model/Entity.md
-docs/Model/EntityOptions.md
 docs/Model/F24.md
 docs/Model/F24Status.md
 docs/Model/FunctionStatus.md
@@ -296,7 +295,6 @@ lib/Model/EmailDataSenderEmailsList.php
 lib/Model/EmailSchedule.php
 lib/Model/EmailScheduleInclude.php
 lib/Model/Entity.php
-lib/Model/EntityOptions.php
 lib/Model/F24.php
 lib/Model/F24Status.php
 lib/Model/FunctionStatus.php
@@ -455,17 +453,3 @@ lib/Model/VerifyEInvoiceXmlSuccessResponse.php
 lib/Model/VerifyEInvoiceXmlSuccessResponseData.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/CashbookEntryKindTest.php
-test/Model/CashbookEntryTypeTest.php
-test/Model/ClientTypeTest.php
-test/Model/CompanyTypeTest.php
-test/Model/DefaultPaymentTermsTypeTest.php
-test/Model/F24StatusTest.php
-test/Model/IssuedDocumentStatusTest.php
-test/Model/OriginalDocumentTypeTest.php
-test/Model/PaymentAccountTypeTest.php
-test/Model/PaymentMethodTypeTest.php
-test/Model/ShowTotalsModeTest.php
-test/Model/SupplierTypeTest.php
-test/Model/UserCompanyRoleTest.php
-test/Model/VatKindTest.php
