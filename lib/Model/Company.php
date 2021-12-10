@@ -36,7 +36,7 @@ use \FattureInCloud\ObjectSerializer;
  * Company Class Doc Comment
  *
  * @category Class
- * @description Description of a company.
+ * @description 
  * @package  FattureInCloud
  * @author   Fatture In Cloud API team
  * @link     https://fattureincloud.it

@@ -36,7 +36,7 @@ use \FattureInCloud\ObjectSerializer;
  * Permissions Class Doc Comment
  *
  * @category Class
- * @description Set of permissions.
+ * @description 
  * @package  FattureInCloud
  * @author   Fatture In Cloud API team
  * @link     https://fattureincloud.it
