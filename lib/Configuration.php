@@ -91,7 +91,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'FattureInCloud/2.0.5/PHP-SDK';
+    protected $userAgent = 'FattureInCloud/2.0.6/PHP-SDK';
 
     /**
      * Debug switch (default set to false)

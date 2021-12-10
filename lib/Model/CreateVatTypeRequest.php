@@ -1,6 +1,6 @@
 <?php
 /**
- * ReceiptPreCreateInfo
+ * CreateVatTypeRequest
  *
  * PHP version 7.3
  *
@@ -33,10 +33,9 @@ use \ArrayAccess;
 use \FattureInCloud\ObjectSerializer;
 
 /**
- * ReceiptPreCreateInfo Class Doc Comment
+ * CreateVatTypeRequest Class Doc Comment
  *
  * @category Class
- * @description 
  * @package  FattureInCloud
  * @author   Fatture In Cloud API team
  * @link     https://fattureincloud.it
@@ -44,7 +43,7 @@ use \FattureInCloud\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializable
+class CreateVatTypeRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +52,7 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ReceiptPreCreateInfo';
+    protected static $openAPIModelName = 'CreateVatTypeRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,12 +60,7 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'numerations' => 'object',
-        'numerations_list' => 'string[]',
-        'rc_centers_list' => 'string[]',
-        'payment_accounts_list' => '\FattureInCloud\Model\PaymentAccount[]',
-        'categories_list' => 'string[]',
-        'vat_types_list' => '\FattureInCloud\Model\VatType[]'
+        'data' => '\FattureInCloud\Model\VatType'
     ];
 
     /**
@@ -77,12 +71,7 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'numerations' => null,
-        'numerations_list' => null,
-        'rc_centers_list' => null,
-        'payment_accounts_list' => null,
-        'categories_list' => null,
-        'vat_types_list' => null
+        'data' => null
     ];
 
     /**
@@ -112,12 +101,7 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'numerations' => 'numerations',
-        'numerations_list' => 'numerations_list',
-        'rc_centers_list' => 'rc_centers_list',
-        'payment_accounts_list' => 'payment_accounts_list',
-        'categories_list' => 'categories_list',
-        'vat_types_list' => 'vat_types_list'
+        'data' => 'data'
     ];
 
     /**
@@ -126,12 +110,7 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'numerations' => 'setNumerations',
-        'numerations_list' => 'setNumerationsList',
-        'rc_centers_list' => 'setRcCentersList',
-        'payment_accounts_list' => 'setPaymentAccountsList',
-        'categories_list' => 'setCategoriesList',
-        'vat_types_list' => 'setVatTypesList'
+        'data' => 'setData'
     ];
 
     /**
@@ -140,12 +119,7 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'numerations' => 'getNumerations',
-        'numerations_list' => 'getNumerationsList',
-        'rc_centers_list' => 'getRcCentersList',
-        'payment_accounts_list' => 'getPaymentAccountsList',
-        'categories_list' => 'getCategoriesList',
-        'vat_types_list' => 'getVatTypesList'
+        'data' => 'getData'
     ];
 
     /**
@@ -205,12 +179,7 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->container['numerations'] = $data['numerations'] ?? null;
-        $this->container['numerations_list'] = $data['numerations_list'] ?? null;
-        $this->container['rc_centers_list'] = $data['rc_centers_list'] ?? null;
-        $this->container['payment_accounts_list'] = $data['payment_accounts_list'] ?? null;
-        $this->container['categories_list'] = $data['categories_list'] ?? null;
-        $this->container['vat_types_list'] = $data['vat_types_list'] ?? null;
+        $this->container['data'] = $data['data'] ?? null;
     }
 
     /**
@@ -222,24 +191,6 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['numerations'] === null) {
-            $invalidProperties[] = "'numerations' can't be null";
-        }
-        if ($this->container['numerations_list'] === null) {
-            $invalidProperties[] = "'numerations_list' can't be null";
-        }
-        if ($this->container['rc_centers_list'] === null) {
-            $invalidProperties[] = "'rc_centers_list' can't be null";
-        }
-        if ($this->container['payment_accounts_list'] === null) {
-            $invalidProperties[] = "'payment_accounts_list' can't be null";
-        }
-        if ($this->container['categories_list'] === null) {
-            $invalidProperties[] = "'categories_list' can't be null";
-        }
-        if ($this->container['vat_types_list'] === null) {
-            $invalidProperties[] = "'vat_types_list' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -256,145 +207,25 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets numerations
+     * Gets data
      *
-     * @return object
+     * @return \FattureInCloud\Model\VatType|null
      */
-    public function getNumerations()
+    public function getData()
     {
-        return $this->container['numerations'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets numerations
+     * Sets data
      *
-     * @param object $numerations Next number by year, receipt type and numeration name.
+     * @param \FattureInCloud\Model\VatType|null $data data
      *
      * @return self
      */
-    public function setNumerations($numerations)
+    public function setData($data)
     {
-        $this->container['numerations'] = $numerations;
-
-        return $this;
-    }
-
-    /**
-     * Gets numerations_list
-     *
-     * @return string[]
-     */
-    public function getNumerationsList()
-    {
-        return $this->container['numerations_list'];
-    }
-
-    /**
-     * Sets numerations_list
-     *
-     * @param string[] $numerations_list List of series used in the past.
-     *
-     * @return self
-     */
-    public function setNumerationsList($numerations_list)
-    {
-        $this->container['numerations_list'] = $numerations_list;
-
-        return $this;
-    }
-
-    /**
-     * Gets rc_centers_list
-     *
-     * @return string[]
-     */
-    public function getRcCentersList()
-    {
-        return $this->container['rc_centers_list'];
-    }
-
-    /**
-     * Sets rc_centers_list
-     *
-     * @param string[] $rc_centers_list List of revenue centers used in the past.
-     *
-     * @return self
-     */
-    public function setRcCentersList($rc_centers_list)
-    {
-        $this->container['rc_centers_list'] = $rc_centers_list;
-
-        return $this;
-    }
-
-    /**
-     * Gets payment_accounts_list
-     *
-     * @return \FattureInCloud\Model\PaymentAccount[]
-     */
-    public function getPaymentAccountsList()
-    {
-        return $this->container['payment_accounts_list'];
-    }
-
-    /**
-     * Sets payment_accounts_list
-     *
-     * @param \FattureInCloud\Model\PaymentAccount[] $payment_accounts_list User payment accounts list.
-     *
-     * @return self
-     */
-    public function setPaymentAccountsList($payment_accounts_list)
-    {
-        $this->container['payment_accounts_list'] = $payment_accounts_list;
-
-        return $this;
-    }
-
-    /**
-     * Gets categories_list
-     *
-     * @return string[]
-     */
-    public function getCategoriesList()
-    {
-        return $this->container['categories_list'];
-    }
-
-    /**
-     * Sets categories_list
-     *
-     * @param string[] $categories_list List of categories used in the past.
-     *
-     * @return self
-     */
-    public function setCategoriesList($categories_list)
-    {
-        $this->container['categories_list'] = $categories_list;
-
-        return $this;
-    }
-
-    /**
-     * Gets vat_types_list
-     *
-     * @return \FattureInCloud\Model\VatType[]
-     */
-    public function getVatTypesList()
-    {
-        return $this->container['vat_types_list'];
-    }
-
-    /**
-     * Sets vat_types_list
-     *
-     * @param \FattureInCloud\Model\VatType[] $vat_types_list List of user vat types with the default 22%, 10%, 4% and 0% vats.
-     *
-     * @return self
-     */
-    public function setVatTypesList($vat_types_list)
-    {
-        $this->container['vat_types_list'] = $vat_types_list;
+        $this->container['data'] = $data;
 
         return $this;
     }

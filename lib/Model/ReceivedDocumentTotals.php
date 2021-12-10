@@ -36,7 +36,7 @@ use \FattureInCloud\ObjectSerializer;
  * ReceivedDocumentTotals Class Doc Comment
  *
  * @category Class
- * @description Document Totals.
+ * @description 
  * @package  FattureInCloud
  * @author   Fatture In Cloud API team
  * @link     https://fattureincloud.it

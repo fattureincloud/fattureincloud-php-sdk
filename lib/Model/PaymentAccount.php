@@ -36,7 +36,7 @@ use \FattureInCloud\ObjectSerializer;
  * PaymentAccount Class Doc Comment
  *
  * @category Class
- * @description Payment account.
+ * @description 
  * @package  FattureInCloud
  * @author   Fatture In Cloud API team
  * @link     https://fattureincloud.it

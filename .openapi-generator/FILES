@@ -1,4 +1,3 @@
-.gitignore
 .php_cs
 .travis.yml
 README.md
@@ -61,6 +60,8 @@ docs/Model/CreateReceivedDocumentRequest.md
 docs/Model/CreateReceivedDocumentResponse.md
 docs/Model/CreateSupplierRequest.md
 docs/Model/CreateSupplierResponse.md
+docs/Model/CreateVatTypeRequest.md
+docs/Model/CreateVatTypeResponse.md
 docs/Model/Currency.md
 docs/Model/DefaultPaymentTermsType.md
 docs/Model/DocumentTemplate.md
@@ -101,6 +102,7 @@ docs/Model/GetSupplierResponse.md
 docs/Model/GetUserInfoResponse.md
 docs/Model/GetUserInfoResponseEmailConfirmationState.md
 docs/Model/GetUserInfoResponseInfo.md
+docs/Model/GetVatTypeResponse.md
 docs/Model/IssuedDocument.md
 docs/Model/IssuedDocumentEiData.md
 docs/Model/IssuedDocumentExtraData.md
@@ -175,6 +177,8 @@ docs/Model/ModifyReceivedDocumentRequest.md
 docs/Model/ModifyReceivedDocumentResponse.md
 docs/Model/ModifySupplierRequest.md
 docs/Model/ModifySupplierResponse.md
+docs/Model/ModifyVatTypeRequest.md
+docs/Model/ModifyVatTypeResponse.md
 docs/Model/MonthlyTotal.md
 docs/Model/OriginalDocumentType.md
 docs/Model/Pagination.md
@@ -286,6 +290,8 @@ lib/Model/CreateReceivedDocumentRequest.php
 lib/Model/CreateReceivedDocumentResponse.php
 lib/Model/CreateSupplierRequest.php
 lib/Model/CreateSupplierResponse.php
+lib/Model/CreateVatTypeRequest.php
+lib/Model/CreateVatTypeResponse.php
 lib/Model/Currency.php
 lib/Model/DefaultPaymentTermsType.php
 lib/Model/DocumentTemplate.php
@@ -326,6 +332,7 @@ lib/Model/GetSupplierResponse.php
 lib/Model/GetUserInfoResponse.php
 lib/Model/GetUserInfoResponseEmailConfirmationState.php
 lib/Model/GetUserInfoResponseInfo.php
+lib/Model/GetVatTypeResponse.php
 lib/Model/IssuedDocument.php
 lib/Model/IssuedDocumentEiData.php
 lib/Model/IssuedDocumentExtraData.php
@@ -401,6 +408,8 @@ lib/Model/ModifyReceivedDocumentRequest.php
 lib/Model/ModifyReceivedDocumentResponse.php
 lib/Model/ModifySupplierRequest.php
 lib/Model/ModifySupplierResponse.php
+lib/Model/ModifyVatTypeRequest.php
+lib/Model/ModifyVatTypeResponse.php
 lib/Model/MonthlyTotal.php
 lib/Model/OriginalDocumentType.php
 lib/Model/Pagination.php
@@ -453,3 +462,8 @@ lib/Model/VerifyEInvoiceXmlSuccessResponse.php
 lib/Model/VerifyEInvoiceXmlSuccessResponseData.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/CreateVatTypeRequestTest.php
+test/Model/CreateVatTypeResponseTest.php
+test/Model/GetVatTypeResponseTest.php
+test/Model/ModifyVatTypeRequestTest.php
+test/Model/ModifyVatTypeResponseTest.php

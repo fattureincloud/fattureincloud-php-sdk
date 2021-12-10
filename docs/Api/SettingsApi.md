@@ -6,12 +6,16 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createPaymentAccount()**](SettingsApi.md#createPaymentAccount) | **POST** /c/{companyId}/settings/payment_accounts | Create Payment Account
 [**createPaymentMethod()**](SettingsApi.md#createPaymentMethod) | **POST** /c/{companyId}/settings/payment_methods | Create Payment Method
-[**deletePaymentAccount()**](SettingsApi.md#deletePaymentAccount) | **DELETE** /c/{companyId}/settings/payment_accounts/{paymentAccountId} | Delete Payment Account
-[**deletePaymentMethod()**](SettingsApi.md#deletePaymentMethod) | **DELETE** /c/{companyId}/settings/payment_method/{paymentMethodId} | Delete Payment Method
-[**getPaymentAccount()**](SettingsApi.md#getPaymentAccount) | **GET** /c/{companyId}/settings/payment_accounts/{paymentAccountId} | Get Payment Account
-[**getPaymentMethod()**](SettingsApi.md#getPaymentMethod) | **GET** /c/{companyId}/settings/payment_method/{paymentMethodId} | Get Payment Method
-[**modifyPaymentAccount()**](SettingsApi.md#modifyPaymentAccount) | **PUT** /c/{companyId}/settings/payment_accounts/{paymentAccountId} | Modify Payment Account
-[**modifyPaymentMethod()**](SettingsApi.md#modifyPaymentMethod) | **PUT** /c/{companyId}/settings/payment_method/{paymentMethodId} | Modify Payment Method
+[**createVatType()**](SettingsApi.md#createVatType) | **POST** /c/{company_id}/settings/vat_types | Create Vat Type
+[**deletePaymentAccount()**](SettingsApi.md#deletePaymentAccount) | **DELETE** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Delete Payment Account
+[**deletePaymentMethod()**](SettingsApi.md#deletePaymentMethod) | **DELETE** /c/{company_id}/settings/payment_method/{payment_method_id} | Delete Payment Method
+[**deleteVatType()**](SettingsApi.md#deleteVatType) | **DELETE** /c/{company_id}/settings/vat_types/{vat_type_id} | Delete Vat Type
+[**getPaymentAccount()**](SettingsApi.md#getPaymentAccount) | **GET** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Get Payment Account
+[**getPaymentMethod()**](SettingsApi.md#getPaymentMethod) | **GET** /c/{company_id}/settings/payment_method/{payment_method_id} | Get Payment Method
+[**getVatType()**](SettingsApi.md#getVatType) | **GET** /c/{company_id}/settings/vat_types/{vat_type_id} | Get Vat Type
+[**modifyPaymentAccount()**](SettingsApi.md#modifyPaymentAccount) | **PUT** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Modify Payment Account
+[**modifyPaymentMethod()**](SettingsApi.md#modifyPaymentMethod) | **PUT** /c/{company_id}/settings/payment_method/{payment_method_id} | Modify Payment Method
+[**modifyVatType()**](SettingsApi.md#modifyVatType) | **PUT** /c/{company_id}/settings/vat_types/{vat_type_id} | Modify Vat Type
 
 
 ## `createPaymentAccount()`
@@ -138,6 +142,68 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `createVatType()`
+
+```php
+createVatType($company_id, $create_vat_type_request): \FattureInCloud\Model\CreateVatTypeResponse
+```
+
+Create Vat Type
+
+Creates a vat type.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
+$config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new FattureInCloud\Api\SettingsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 12345; // int | The ID of the company.
+$create_vat_type_request = {"data":{"id":0,"value":22,"description":"Non imponibile art. 123","notes":"IVA non imponibile ai sensi dell'articolo 123, comma 2","e_invoice":true,"ei_type":2,"ei_description":"string","editable":true,"is_disabled":true}}; // \FattureInCloud\Model\CreateVatTypeRequest
+
+try {
+    $result = $apiInstance->createVatType($company_id, $create_vat_type_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SettingsApi->createVatType: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **company_id** | **int**| The ID of the company. |
+ **create_vat_type_request** | [**\FattureInCloud\Model\CreateVatTypeRequest**](../Model/CreateVatTypeRequest.md)|  | [optional]
+
+### Return type
+
+[**\FattureInCloud\Model\CreateVatTypeResponse**](../Model/CreateVatTypeResponse.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`, `application/xml`, `multipart/form-data`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `deletePaymentAccount()`
 
 ```php
@@ -166,7 +232,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$payment_account_id = 1; // string | The Referred Payment Account Id.
+$payment_account_id = 56; // int | The Referred Payment Account Id.
 
 try {
     $apiInstance->deletePaymentAccount($company_id, $payment_account_id);
@@ -180,7 +246,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| The ID of the company. |
- **payment_account_id** | **string**| The Referred Payment Account Id. |
+ **payment_account_id** | **int**| The Referred Payment Account Id. |
 
 ### Return type
 
@@ -227,7 +293,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$payment_method_id = 1; // int | The Referred Payment Method Id.
+$payment_method_id = 56; // int | The Referred Payment Method Id.
 
 try {
     $apiInstance->deletePaymentMethod($company_id, $payment_method_id);
@@ -260,10 +326,71 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `deleteVatType()`
+
+```php
+deleteVatType($company_id, $vat_type_id)
+```
+
+Delete Vat Type
+
+Deletes the specified vat type.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
+$config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new FattureInCloud\Api\SettingsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 12345; // int | The ID of the company.
+$vat_type_id = 56; // int | The Referred Vat Type Id.
+
+try {
+    $apiInstance->deleteVatType($company_id, $vat_type_id);
+} catch (Exception $e) {
+    echo 'Exception when calling SettingsApi->deleteVatType: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **company_id** | **int**| The ID of the company. |
+ **vat_type_id** | **int**| The Referred Vat Type Id. |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getPaymentAccount()`
 
 ```php
-getPaymentAccount($company_id, $payment_account_id, $fields, $fieldset, $body): \FattureInCloud\Model\GetPaymentAccountResponse
+getPaymentAccount($company_id, $payment_account_id, $fields, $fieldset): \FattureInCloud\Model\GetPaymentAccountResponse
 ```
 
 Get Payment Account
@@ -288,13 +415,12 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$payment_account_id = 1; // string | The Referred Payment Account Id.
+$payment_account_id = 56; // int | The Referred Payment Account Id.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
-$body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->getPaymentAccount($company_id, $payment_account_id, $fields, $fieldset, $body);
+    $result = $apiInstance->getPaymentAccount($company_id, $payment_account_id, $fields, $fieldset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SettingsApi->getPaymentAccount: ', $e->getMessage(), PHP_EOL;
@@ -306,10 +432,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| The ID of the company. |
- **payment_account_id** | **string**| The Referred Payment Account Id. |
+ **payment_account_id** | **int**| The Referred Payment Account Id. |
  **fields** | **string**| List of comma-separated fields. | [optional]
  **fieldset** | **string**| Name of the fieldset. | [optional]
- **body** | **object**|  | [optional]
 
 ### Return type
 
@@ -321,7 +446,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: `application/json`
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -356,7 +481,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$payment_method_id = 1; // int | The Referred Payment Method Id.
+$payment_method_id = 56; // int | The Referred Payment Method Id.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
 
@@ -380,6 +505,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\FattureInCloud\Model\GetPaymentMethodResponse**](../Model/GetPaymentMethodResponse.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getVatType()`
+
+```php
+getVatType($company_id, $vat_type_id): \FattureInCloud\Model\GetVatTypeResponse
+```
+
+Get Vat Type
+
+Gets the specified vat type.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
+$config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new FattureInCloud\Api\SettingsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 12345; // int | The ID of the company.
+$vat_type_id = 56; // int | The Referred Vat Type Id.
+
+try {
+    $result = $apiInstance->getVatType($company_id, $vat_type_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SettingsApi->getVatType: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **company_id** | **int**| The ID of the company. |
+ **vat_type_id** | **int**| The Referred Vat Type Id. |
+
+### Return type
+
+[**\FattureInCloud\Model\GetVatTypeResponse**](../Model/GetVatTypeResponse.md)
 
 ### Authorization
 
@@ -422,7 +609,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$payment_account_id = 1; // string | The Referred Payment Account Id.
+$payment_account_id = 56; // int | The Referred Payment Account Id.
 $modify_payment_account_request = {"data":{"id":0,"name":"Conto Banca Intesa","type":"standard","iban":"string","sia":"string","cuc":"string","virtual":true}}; // \FattureInCloud\Model\ModifyPaymentAccountRequest
 
 try {
@@ -438,7 +625,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| The ID of the company. |
- **payment_account_id** | **string**| The Referred Payment Account Id. |
+ **payment_account_id** | **int**| The Referred Payment Account Id. |
  **modify_payment_account_request** | [**\FattureInCloud\Model\ModifyPaymentAccountRequest**](../Model/ModifyPaymentAccountRequest.md)|  | [optional]
 
 ### Return type
@@ -486,7 +673,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$payment_method_id = 1; // int | The Referred Payment Method Id.
+$payment_method_id = 56; // int | The Referred Payment Method Id.
 $modify_payment_method_request = {"data":{"id":386683,"name":"Bonifico bancario","is_default":true,"type":"standard","details":[{"title":"Banca","description":"Sao Paulo"}],"default_payment_account":{"id":12345,"name":"conto banca SP"}}}; // \FattureInCloud\Model\ModifyPaymentMethodRequest
 
 try {
@@ -508,6 +695,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\FattureInCloud\Model\ModifyPaymentMethodResponse**](../Model/ModifyPaymentMethodResponse.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `modifyVatType()`
+
+```php
+modifyVatType($company_id, $vat_type_id, $modify_vat_type_request): \FattureInCloud\Model\ModifyVatTypeResponse
+```
+
+Modify Vat Type
+
+Modifies the specified vat type.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
+$config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new FattureInCloud\Api\SettingsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 12345; // int | The ID of the company.
+$vat_type_id = 56; // int | The Referred Vat Type Id.
+$modify_vat_type_request = {"data":{"id":0,"value":22,"description":"Non imponibile art. 123","notes":"IVA non imponibile ai sensi dell'articolo 123, comma 2","e_invoice":true,"ei_type":2,"ei_description":"string","editable":true,"is_disabled":true}}; // \FattureInCloud\Model\ModifyVatTypeRequest
+
+try {
+    $result = $apiInstance->modifyVatType($company_id, $vat_type_id, $modify_vat_type_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SettingsApi->modifyVatType: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **company_id** | **int**| The ID of the company. |
+ **vat_type_id** | **int**| The Referred Vat Type Id. |
+ **modify_vat_type_request** | [**\FattureInCloud\Model\ModifyVatTypeRequest**](../Model/ModifyVatTypeRequest.md)|  | [optional]
+
+### Return type
+
+[**\FattureInCloud\Model\ModifyVatTypeResponse**](../Model/ModifyVatTypeResponse.md)
 
 ### Authorization
 
