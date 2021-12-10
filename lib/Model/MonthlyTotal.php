@@ -36,7 +36,7 @@ use \FattureInCloud\ObjectSerializer;
  * MonthlyTotal Class Doc Comment
  *
  * @category Class
- * @description MonthlyTotal
+ * @description 
  * @package  FattureInCloud
  * @author   Fatture In Cloud API team
  * @link     https://fattureincloud.it

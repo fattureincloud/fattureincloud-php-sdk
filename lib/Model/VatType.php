@@ -36,6 +36,7 @@ use \FattureInCloud\ObjectSerializer;
  * VatType Class Doc Comment
  *
  * @category Class
+ * @description 
  * @package  FattureInCloud
  * @author   Fatture In Cloud API team
  * @link     https://fattureincloud.it
@@ -302,7 +303,7 @@ class VatType implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value
      *
-     * @param float $value Percentual value.
+     * @param float $value [Read Only] Percentual value.
      *
      * @return self
      */

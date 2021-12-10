@@ -339,7 +339,6 @@ class ObjectSerializer
             return $data;
         }
 
-        /** @psalm-suppress ParadoxicalCondition */
         if ($class === '\SplFileObject') {
             /** @var \Psr\Http\Message\StreamInterface $data */
 
