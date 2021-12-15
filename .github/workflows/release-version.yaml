@@ -12,6 +12,12 @@ jobs:
         with:
           token: ${{ secrets.FATTUREINCLOUD_BOT_TOKEN }}
       
+      - id: init-git
+        name: Init GIT
+        run: |
+          git config --global user.email "info@fattureincloud.it"
+          git config --global user.name "fattureincloud-bot"
+      
       - id: setup-node
         name: Setup Node.js
         uses: actions/setup-node@v2
@@ -19,9 +25,13 @@ jobs:
       - id: setup-libraries
         name: Install libraries
         run: |
+          npm install -g yarn
+          yarn global add standard-version
           sudo add-apt-repository ppa:rmescandon/yq -y
           sudo apt update
           sudo apt install yq -y
+          cd ./scripts/
+          yarn
 
       # We read the version from the sdk-version.yaml file and create the tag
       # If it is needed to bump version, launch the related workflow
@@ -32,8 +42,21 @@ jobs:
           echo "Releasing version: $SDK_VERSION"
           echo "sdk_version=$SDK_VERSION" >> $GITHUB_ENV
 
+      # Here we use standard-version just to generate the changelog
+      - id: generate-changelog
+        name: Generate Changelog
+        run: |
+          standard-version --skip.bump --skip.tag
+
+      - id: git-push
+        name: Pushing to Git repo
+        if: ${{ !env.ACT }}
+        run: |
+          git push origin
+
       - id: create-tag
         name: Create tag
+        if: ${{ !env.ACT }}
         uses: actions/github-script@v3
         with:
           github-token: ${{ github.token }}
