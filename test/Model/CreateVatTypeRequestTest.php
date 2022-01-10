@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * CreateVatTypeRequestTest Class Doc Comment
@@ -55,6 +56,23 @@ class CreateVatTypeRequestTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": {
+                "id": 0,
+                "value": 22,
+                "description": "Non imponibile art. 123",
+                "notes": "IVA non imponibile ai sensi dell\'articolo 123, comma 2",
+                "e_invoice": true,
+                "ei_type": 2,
+                "ei_description": "string",
+                "editable": true,
+                "is_disabled": true
+              }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CreateVatTypeRequest');
     }
 
     /**
@@ -76,8 +94,10 @@ class CreateVatTypeRequestTest extends TestCase
      */
     public function testCreateVatTypeRequest()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +105,9 @@ class CreateVatTypeRequestTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

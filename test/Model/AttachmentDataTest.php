@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * AttachmentDataTest Class Doc Comment
@@ -55,6 +56,13 @@ class AttachmentDataTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "attachment_token": "abcdefghilmnopqr123456789"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\AttachmentData');
     }
 
     /**
@@ -76,8 +84,10 @@ class AttachmentDataTest extends TestCase
      */
     public function testAttachmentData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +95,6 @@ class AttachmentDataTest extends TestCase
      */
     public function testPropertyAttachmentToken()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['attachment_token'], $this->array['attachment_token']);
     }
 }
