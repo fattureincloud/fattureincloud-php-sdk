@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **date** | **\DateTime** | Cashbook date. |
 **description** | **string** | Cashbook description. |
 **kind** | [**\FattureInCloud\Model\CashbookEntryKind**](CashbookEntryKind.md) |  |
-**type** | [**\FattureInCloud\Model\CashbookEntryType**](CashbookEntryType.md) |  |
+**type** | [**\FattureInCloud\Model\CashbookEntryType**](CashbookEntryType.md) |  | [optional]
 **entity_name** | **string** | Entity name. | [optional]
 **document** | [**\FattureInCloud\Model\CashbookEntryDataDocument**](CashbookEntryDataDocument.md) |  | [optional]
 
