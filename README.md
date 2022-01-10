@@ -136,14 +136,18 @@ Class | Method | HTTP request | Description
 *ReceivedDocumentsApi* | [**listReceivedDocuments**](docs/Api/ReceivedDocumentsApi.md#listreceiveddocuments) | **GET** /c/{company_id}/received_documents | List Received Documents
 *ReceivedDocumentsApi* | [**modifyReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#modifyreceiveddocument) | **PUT** /c/{company_id}/received_documents/{document_id} | Modify Received Document
 *ReceivedDocumentsApi* | [**uploadReceivedDocumentAttachment**](docs/Api/ReceivedDocumentsApi.md#uploadreceiveddocumentattachment) | **POST** /c/{company_id}/received_documents/attachment | Upload Received Document Attachment
-*SettingsApi* | [**createPaymentAccount**](docs/Api/SettingsApi.md#createpaymentaccount) | **POST** /c/{companyId}/settings/payment_accounts | Create Payment Account
-*SettingsApi* | [**createPaymentMethod**](docs/Api/SettingsApi.md#createpaymentmethod) | **POST** /c/{companyId}/settings/payment_methods | Create Payment Method
-*SettingsApi* | [**deletePaymentAccount**](docs/Api/SettingsApi.md#deletepaymentaccount) | **DELETE** /c/{companyId}/settings/payment_accounts/{paymentAccountId} | Delete Payment Account
-*SettingsApi* | [**deletePaymentMethod**](docs/Api/SettingsApi.md#deletepaymentmethod) | **DELETE** /c/{companyId}/settings/payment_method/{paymentMethodId} | Delete Payment Method
-*SettingsApi* | [**getPaymentAccount**](docs/Api/SettingsApi.md#getpaymentaccount) | **GET** /c/{companyId}/settings/payment_accounts/{paymentAccountId} | Get Payment Account
-*SettingsApi* | [**getPaymentMethod**](docs/Api/SettingsApi.md#getpaymentmethod) | **GET** /c/{companyId}/settings/payment_method/{paymentMethodId} | Get Payment Method
-*SettingsApi* | [**modifyPaymentAccount**](docs/Api/SettingsApi.md#modifypaymentaccount) | **PUT** /c/{companyId}/settings/payment_accounts/{paymentAccountId} | Modify Payment Account
-*SettingsApi* | [**modifyPaymentMethod**](docs/Api/SettingsApi.md#modifypaymentmethod) | **PUT** /c/{companyId}/settings/payment_method/{paymentMethodId} | Modify Payment Method
+*SettingsApi* | [**createPaymentAccount**](docs/Api/SettingsApi.md#createpaymentaccount) | **POST** /c/{company_id}/settings/payment_accounts | Create Payment Account
+*SettingsApi* | [**createPaymentMethod**](docs/Api/SettingsApi.md#createpaymentmethod) | **POST** /c/{company_id}/settings/payment_methods | Create Payment Method
+*SettingsApi* | [**createVatType**](docs/Api/SettingsApi.md#createvattype) | **POST** /c/{company_id}/settings/vat_types | Create Vat Type
+*SettingsApi* | [**deletePaymentAccount**](docs/Api/SettingsApi.md#deletepaymentaccount) | **DELETE** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Delete Payment Account
+*SettingsApi* | [**deletePaymentMethod**](docs/Api/SettingsApi.md#deletepaymentmethod) | **DELETE** /c/{company_id}/settings/payment_methods/{payment_method_id} | Delete Payment Method
+*SettingsApi* | [**deleteVatType**](docs/Api/SettingsApi.md#deletevattype) | **DELETE** /c/{company_id}/settings/vat_types/{vat_type_id} | Delete Vat Type
+*SettingsApi* | [**getPaymentAccount**](docs/Api/SettingsApi.md#getpaymentaccount) | **GET** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Get Payment Account
+*SettingsApi* | [**getPaymentMethod**](docs/Api/SettingsApi.md#getpaymentmethod) | **GET** /c/{company_id}/settings/payment_methods/{payment_method_id} | Get Payment Method
+*SettingsApi* | [**getVatType**](docs/Api/SettingsApi.md#getvattype) | **GET** /c/{company_id}/settings/vat_types/{vat_type_id} | Get Vat Type
+*SettingsApi* | [**modifyPaymentAccount**](docs/Api/SettingsApi.md#modifypaymentaccount) | **PUT** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Modify Payment Account
+*SettingsApi* | [**modifyPaymentMethod**](docs/Api/SettingsApi.md#modifypaymentmethod) | **PUT** /c/{company_id}/settings/payment_methods/{payment_method_id} | Modify Payment Method
+*SettingsApi* | [**modifyVatType**](docs/Api/SettingsApi.md#modifyvattype) | **PUT** /c/{company_id}/settings/vat_types/{vat_type_id} | Modify Vat Type
 *SuppliersApi* | [**createSupplier**](docs/Api/SuppliersApi.md#createsupplier) | **POST** /c/{company_id}/entities/suppliers | Create Supplier
 *SuppliersApi* | [**deleteSupplier**](docs/Api/SuppliersApi.md#deletesupplier) | **DELETE** /c/{company_id}/entities/suppliers/{supplier_id} | Delete Supplier
 *SuppliersApi* | [**getSupplier**](docs/Api/SuppliersApi.md#getsupplier) | **GET** /c/{company_id}/entities/suppliers/{supplier_id} | Get Supplier
@@ -162,6 +166,7 @@ Class | Method | HTTP request | Description
 ## Models
 
 - [ArchiveDocument](docs/Model/ArchiveDocument.md)
+- [AttachmentData](docs/Model/AttachmentData.md)
 - [CashbookEntry](docs/Model/CashbookEntry.md)
 - [CashbookEntryData](docs/Model/CashbookEntryData.md)
 - [CashbookEntryDataDocument](docs/Model/CashbookEntryDataDocument.md)
@@ -205,6 +210,8 @@ Class | Method | HTTP request | Description
 - [CreateReceivedDocumentResponse](docs/Model/CreateReceivedDocumentResponse.md)
 - [CreateSupplierRequest](docs/Model/CreateSupplierRequest.md)
 - [CreateSupplierResponse](docs/Model/CreateSupplierResponse.md)
+- [CreateVatTypeRequest](docs/Model/CreateVatTypeRequest.md)
+- [CreateVatTypeResponse](docs/Model/CreateVatTypeResponse.md)
 - [Currency](docs/Model/Currency.md)
 - [DefaultPaymentTermsType](docs/Model/DefaultPaymentTermsType.md)
 - [DocumentTemplate](docs/Model/DocumentTemplate.md)
@@ -245,6 +252,7 @@ Class | Method | HTTP request | Description
 - [GetUserInfoResponse](docs/Model/GetUserInfoResponse.md)
 - [GetUserInfoResponseEmailConfirmationState](docs/Model/GetUserInfoResponseEmailConfirmationState.md)
 - [GetUserInfoResponseInfo](docs/Model/GetUserInfoResponseInfo.md)
+- [GetVatTypeResponse](docs/Model/GetVatTypeResponse.md)
 - [IssuedDocument](docs/Model/IssuedDocument.md)
 - [IssuedDocumentEiData](docs/Model/IssuedDocumentEiData.md)
 - [IssuedDocumentExtraData](docs/Model/IssuedDocumentExtraData.md)
@@ -319,6 +327,8 @@ Class | Method | HTTP request | Description
 - [ModifyReceivedDocumentResponse](docs/Model/ModifyReceivedDocumentResponse.md)
 - [ModifySupplierRequest](docs/Model/ModifySupplierRequest.md)
 - [ModifySupplierResponse](docs/Model/ModifySupplierResponse.md)
+- [ModifyVatTypeRequest](docs/Model/ModifyVatTypeRequest.md)
+- [ModifyVatTypeResponse](docs/Model/ModifyVatTypeResponse.md)
 - [MonthlyTotal](docs/Model/MonthlyTotal.md)
 - [OriginalDocumentType](docs/Model/OriginalDocumentType.md)
 - [Pagination](docs/Model/Pagination.md)
@@ -356,9 +366,7 @@ Class | Method | HTTP request | Description
 - [UploadArchiveAttachmentResponse](docs/Model/UploadArchiveAttachmentResponse.md)
 - [UploadF24AttachmentResponse](docs/Model/UploadF24AttachmentResponse.md)
 - [UploadIssuedDocumentAttachmentResponse](docs/Model/UploadIssuedDocumentAttachmentResponse.md)
-- [UploadIssuedDocumentAttachmentResponseData](docs/Model/UploadIssuedDocumentAttachmentResponseData.md)
 - [UploadReceivedDocumentAttachmentResponse](docs/Model/UploadReceivedDocumentAttachmentResponse.md)
-- [UploadReceivedDocumentAttachmentResponseData](docs/Model/UploadReceivedDocumentAttachmentResponseData.md)
 - [User](docs/Model/User.md)
 - [UserCompanyRole](docs/Model/UserCompanyRole.md)
 - [VatKind](docs/Model/VatKind.md)
@@ -367,8 +375,7 @@ Class | Method | HTTP request | Description
 - [VerifyEInvoiceXmlErrorResponseError](docs/Model/VerifyEInvoiceXmlErrorResponseError.md)
 - [VerifyEInvoiceXmlErrorResponseExtra](docs/Model/VerifyEInvoiceXmlErrorResponseExtra.md)
 - [VerifyEInvoiceXmlResponse](docs/Model/VerifyEInvoiceXmlResponse.md)
-- [VerifyEInvoiceXmlSuccessResponse](docs/Model/VerifyEInvoiceXmlSuccessResponse.md)
-- [VerifyEInvoiceXmlSuccessResponseData](docs/Model/VerifyEInvoiceXmlSuccessResponseData.md)
+- [VerifyEInvoiceXmlResponseData](docs/Model/VerifyEInvoiceXmlResponseData.md)
 
 ## Authorization
 
@@ -431,5 +438,5 @@ info@fattureincloud.it
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `2.0.7`
+- API version: `2.0.8`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

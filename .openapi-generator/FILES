@@ -1,4 +1,3 @@
-.gitignore
 .php_cs
 .travis.yml
 README.md
@@ -18,6 +17,7 @@ docs/Api/SuppliersApi.md
 docs/Api/TaxesApi.md
 docs/Api/UserApi.md
 docs/Model/ArchiveDocument.md
+docs/Model/AttachmentData.md
 docs/Model/CashbookEntry.md
 docs/Model/CashbookEntryData.md
 docs/Model/CashbookEntryDataDocument.md
@@ -61,6 +61,8 @@ docs/Model/CreateReceivedDocumentRequest.md
 docs/Model/CreateReceivedDocumentResponse.md
 docs/Model/CreateSupplierRequest.md
 docs/Model/CreateSupplierResponse.md
+docs/Model/CreateVatTypeRequest.md
+docs/Model/CreateVatTypeResponse.md
 docs/Model/Currency.md
 docs/Model/DefaultPaymentTermsType.md
 docs/Model/DocumentTemplate.md
@@ -101,6 +103,7 @@ docs/Model/GetSupplierResponse.md
 docs/Model/GetUserInfoResponse.md
 docs/Model/GetUserInfoResponseEmailConfirmationState.md
 docs/Model/GetUserInfoResponseInfo.md
+docs/Model/GetVatTypeResponse.md
 docs/Model/IssuedDocument.md
 docs/Model/IssuedDocumentEiData.md
 docs/Model/IssuedDocumentExtraData.md
@@ -175,6 +178,8 @@ docs/Model/ModifyReceivedDocumentRequest.md
 docs/Model/ModifyReceivedDocumentResponse.md
 docs/Model/ModifySupplierRequest.md
 docs/Model/ModifySupplierResponse.md
+docs/Model/ModifyVatTypeRequest.md
+docs/Model/ModifyVatTypeResponse.md
 docs/Model/MonthlyTotal.md
 docs/Model/OriginalDocumentType.md
 docs/Model/Pagination.md
@@ -212,9 +217,7 @@ docs/Model/SupplierType.md
 docs/Model/UploadArchiveAttachmentResponse.md
 docs/Model/UploadF24AttachmentResponse.md
 docs/Model/UploadIssuedDocumentAttachmentResponse.md
-docs/Model/UploadIssuedDocumentAttachmentResponseData.md
 docs/Model/UploadReceivedDocumentAttachmentResponse.md
-docs/Model/UploadReceivedDocumentAttachmentResponseData.md
 docs/Model/User.md
 docs/Model/UserCompanyRole.md
 docs/Model/VatKind.md
@@ -223,8 +226,7 @@ docs/Model/VerifyEInvoiceXmlErrorResponse.md
 docs/Model/VerifyEInvoiceXmlErrorResponseError.md
 docs/Model/VerifyEInvoiceXmlErrorResponseExtra.md
 docs/Model/VerifyEInvoiceXmlResponse.md
-docs/Model/VerifyEInvoiceXmlSuccessResponse.md
-docs/Model/VerifyEInvoiceXmlSuccessResponseData.md
+docs/Model/VerifyEInvoiceXmlResponseData.md
 lib/Api/ArchiveApi.php
 lib/Api/CashbookApi.php
 lib/Api/ClientsApi.php
@@ -243,6 +245,7 @@ lib/ApiException.php
 lib/Configuration.php
 lib/HeaderSelector.php
 lib/Model/ArchiveDocument.php
+lib/Model/AttachmentData.php
 lib/Model/CashbookEntry.php
 lib/Model/CashbookEntryData.php
 lib/Model/CashbookEntryDataDocument.php
@@ -286,6 +289,8 @@ lib/Model/CreateReceivedDocumentRequest.php
 lib/Model/CreateReceivedDocumentResponse.php
 lib/Model/CreateSupplierRequest.php
 lib/Model/CreateSupplierResponse.php
+lib/Model/CreateVatTypeRequest.php
+lib/Model/CreateVatTypeResponse.php
 lib/Model/Currency.php
 lib/Model/DefaultPaymentTermsType.php
 lib/Model/DocumentTemplate.php
@@ -326,6 +331,7 @@ lib/Model/GetSupplierResponse.php
 lib/Model/GetUserInfoResponse.php
 lib/Model/GetUserInfoResponseEmailConfirmationState.php
 lib/Model/GetUserInfoResponseInfo.php
+lib/Model/GetVatTypeResponse.php
 lib/Model/IssuedDocument.php
 lib/Model/IssuedDocumentEiData.php
 lib/Model/IssuedDocumentExtraData.php
@@ -401,6 +407,8 @@ lib/Model/ModifyReceivedDocumentRequest.php
 lib/Model/ModifyReceivedDocumentResponse.php
 lib/Model/ModifySupplierRequest.php
 lib/Model/ModifySupplierResponse.php
+lib/Model/ModifyVatTypeRequest.php
+lib/Model/ModifyVatTypeResponse.php
 lib/Model/MonthlyTotal.php
 lib/Model/OriginalDocumentType.php
 lib/Model/Pagination.php
@@ -438,9 +446,7 @@ lib/Model/SupplierType.php
 lib/Model/UploadArchiveAttachmentResponse.php
 lib/Model/UploadF24AttachmentResponse.php
 lib/Model/UploadIssuedDocumentAttachmentResponse.php
-lib/Model/UploadIssuedDocumentAttachmentResponseData.php
 lib/Model/UploadReceivedDocumentAttachmentResponse.php
-lib/Model/UploadReceivedDocumentAttachmentResponseData.php
 lib/Model/User.php
 lib/Model/UserCompanyRole.php
 lib/Model/VatKind.php
@@ -449,7 +455,13 @@ lib/Model/VerifyEInvoiceXmlErrorResponse.php
 lib/Model/VerifyEInvoiceXmlErrorResponseError.php
 lib/Model/VerifyEInvoiceXmlErrorResponseExtra.php
 lib/Model/VerifyEInvoiceXmlResponse.php
-lib/Model/VerifyEInvoiceXmlSuccessResponse.php
-lib/Model/VerifyEInvoiceXmlSuccessResponseData.php
+lib/Model/VerifyEInvoiceXmlResponseData.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/AttachmentDataTest.php
+test/Model/CreateVatTypeRequestTest.php
+test/Model/CreateVatTypeResponseTest.php
+test/Model/GetVatTypeResponseTest.php
+test/Model/ModifyVatTypeRequestTest.php
+test/Model/ModifyVatTypeResponseTest.php
+test/Model/VerifyEInvoiceXmlResponseDataTest.php
