@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **product_id** | **int** | Unique identifier of the product. | [optional]
 **code** | **string** | Product code. | [optional]
 **name** | **string** | Product name. | [optional]
+**category** | **string** | Product category | [optional]
 **description** | **string** | Product description. | [optional]
 **qty** | **float** | Items quantity, | [optional]
 **measure** | **string** | Item measure. | [optional]

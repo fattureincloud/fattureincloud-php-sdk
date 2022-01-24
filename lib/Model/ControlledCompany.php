@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateSupplierRequest
+ * ControlledCompany
  *
  * PHP version 7.3
  *
@@ -33,9 +33,10 @@ use \ArrayAccess;
 use \FattureInCloud\ObjectSerializer;
 
 /**
- * CreateSupplierRequest Class Doc Comment
+ * ControlledCompany Class Doc Comment
  *
  * @category Class
+ * @description 
  * @package  FattureInCloud
  * @author   Fatture In Cloud API team
  * @link     https://fattureincloud.it
@@ -43,7 +44,7 @@ use \FattureInCloud\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CreateSupplierRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class ControlledCompany implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +53,7 @@ class CreateSupplierRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateSupplierRequest';
+    protected static $openAPIModelName = 'ControlledCompany';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,7 +61,12 @@ class CreateSupplierRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\FattureInCloud\Model\Supplier'
+        'id' => 'int',
+        'name' => 'string',
+        'type' => '\FattureInCloud\Model\CompanyType',
+        'access_token' => 'string',
+        'connection_id' => 'float',
+        'tax_code' => 'string'
     ];
 
     /**
@@ -71,7 +77,12 @@ class CreateSupplierRequest implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null
+        'id' => null,
+        'name' => null,
+        'type' => null,
+        'access_token' => null,
+        'connection_id' => null,
+        'tax_code' => null
     ];
 
     /**
@@ -101,7 +112,12 @@ class CreateSupplierRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'
+        'id' => 'id',
+        'name' => 'name',
+        'type' => 'type',
+        'access_token' => 'access_token',
+        'connection_id' => 'connection_id',
+        'tax_code' => 'tax_code'
     ];
 
     /**
@@ -110,7 +126,12 @@ class CreateSupplierRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'
+        'id' => 'setId',
+        'name' => 'setName',
+        'type' => 'setType',
+        'access_token' => 'setAccessToken',
+        'connection_id' => 'setConnectionId',
+        'tax_code' => 'setTaxCode'
     ];
 
     /**
@@ -119,7 +140,12 @@ class CreateSupplierRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'
+        'id' => 'getId',
+        'name' => 'getName',
+        'type' => 'getType',
+        'access_token' => 'getAccessToken',
+        'connection_id' => 'getConnectionId',
+        'tax_code' => 'getTaxCode'
     ];
 
     /**
@@ -179,7 +205,12 @@ class CreateSupplierRequest implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = $data['data'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
+        $this->container['access_token'] = $data['access_token'] ?? null;
+        $this->container['connection_id'] = $data['connection_id'] ?? null;
+        $this->container['tax_code'] = $data['tax_code'] ?? null;
     }
 
     /**
@@ -207,25 +238,145 @@ class CreateSupplierRequest implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets data
+     * Gets id
      *
-     * @return \FattureInCloud\Model\Supplier|null
+     * @return int|null
      */
-    public function getData()
+    public function getId()
     {
-        return $this->container['data'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets data
+     * Sets id
      *
-     * @param \FattureInCloud\Model\Supplier|null $data data
+     * @param int|null $id Company unique identifier.
      *
      * @return self
      */
-    public function setData($data)
+    public function setId($id)
     {
-        $this->container['data'] = $data;
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name Company name.
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return \FattureInCloud\Model\CompanyType|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param \FattureInCloud\Model\CompanyType|null $type type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets access_token
+     *
+     * @return string|null
+     */
+    public function getAccessToken()
+    {
+        return $this->container['access_token'];
+    }
+
+    /**
+     * Sets access_token
+     *
+     * @param string|null $access_token CompanyAuthentication token for this company. [Only if type=company]
+     *
+     * @return self
+     */
+    public function setAccessToken($access_token)
+    {
+        $this->container['access_token'] = $access_token;
+
+        return $this;
+    }
+
+    /**
+     * Gets connection_id
+     *
+     * @return float|null
+     */
+    public function getConnectionId()
+    {
+        return $this->container['connection_id'];
+    }
+
+    /**
+     * Sets connection_id
+     *
+     * @param float|null $connection_id Company connection id.
+     *
+     * @return self
+     */
+    public function setConnectionId($connection_id)
+    {
+        $this->container['connection_id'] = $connection_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_code
+     *
+     * @return string|null
+     */
+    public function getTaxCode()
+    {
+        return $this->container['tax_code'];
+    }
+
+    /**
+     * Sets tax_code
+     *
+     * @param string|null $tax_code Tax code.
+     *
+     * @return self
+     */
+    public function setTaxCode($tax_code)
+    {
+        $this->container['tax_code'] = $tax_code;
 
         return $this;
     }

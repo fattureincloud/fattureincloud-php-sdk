@@ -39,6 +39,7 @@ docs/Model/CompanyInfoPlanInfoFunctions.md
 docs/Model/CompanyInfoPlanInfoFunctionsStatus.md
 docs/Model/CompanyInfoPlanInfoLimits.md
 docs/Model/CompanyType.md
+docs/Model/ControlledCompany.md
 docs/Model/CreateArchiveDocumentRequest.md
 docs/Model/CreateArchiveDocumentResponse.md
 docs/Model/CreateCashbookEntryRequest.md
@@ -267,6 +268,7 @@ lib/Model/CompanyInfoPlanInfoFunctions.php
 lib/Model/CompanyInfoPlanInfoFunctionsStatus.php
 lib/Model/CompanyInfoPlanInfoLimits.php
 lib/Model/CompanyType.php
+lib/Model/ControlledCompany.php
 lib/Model/CreateArchiveDocumentRequest.php
 lib/Model/CreateArchiveDocumentResponse.php
 lib/Model/CreateCashbookEntryRequest.php
@@ -458,10 +460,4 @@ lib/Model/VerifyEInvoiceXmlResponse.php
 lib/Model/VerifyEInvoiceXmlResponseData.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/AttachmentDataTest.php
-test/Model/CreateVatTypeRequestTest.php
-test/Model/CreateVatTypeResponseTest.php
-test/Model/GetVatTypeResponseTest.php
-test/Model/ModifyVatTypeRequestTest.php
-test/Model/ModifyVatTypeResponseTest.php
-test/Model/VerifyEInvoiceXmlResponseDataTest.php
+test/Model/ControlledCompanyTest.php
