@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 2.0.7 (2022-01-24)
+
+
+### Bug Fixes
+
+* added get xml method ([314a12d](https://github.com/fattureincloud/fattureincloud-php-sdk/commit/314a12da3f1a003eca9e93a32860b6721411d91a))
+
 ### 2.0.6 (2022-01-10)
 
 ### 2.0.5 (2021-12-02)
