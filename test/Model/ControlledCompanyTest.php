@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ControlledCompanyTest Class Doc Comment
@@ -55,6 +56,19 @@ class ControlledCompanyTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "id": 12345,
+            "name": "Studio Commercialista",
+            "tax_code": "ABCSFN94T17A794K",
+            "type": "accountant",
+            "access_token": "4ff5f0fe5abcd1d7157fa13ca72ab62b6183db0667a576a0e19164801c18c4f7362a848fa32dbb8c3a3f94c34f3df95",
+            "connection_id": 94566,
+            "access_token": "ergaegwergq53wh65je5j"
+            }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ControlledCompany');
     }
 
     /**
@@ -76,8 +90,10 @@ class ControlledCompanyTest extends TestCase
      */
     public function testControlledCompany()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +101,7 @@ class ControlledCompanyTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['id'], $this->array['id']);
     }
 
     /**
@@ -94,8 +109,7 @@ class ControlledCompanyTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['name'], $this->array['name']);
     }
 
     /**
@@ -103,8 +117,7 @@ class ControlledCompanyTest extends TestCase
      */
     public function testPropertyType()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['type'], $this->array['type']);
     }
 
     /**
@@ -112,17 +125,16 @@ class ControlledCompanyTest extends TestCase
      */
     public function testPropertyAccessToken()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['access_token'], $this->array['access_token']);
+
     }
 
-    /**
+   /**
      * Test attribute "connection_id"
      */
     public function testPropertyConnectionId()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['connection_id'], $this->array['connection_id']);
     }
 
     /**
@@ -130,7 +142,6 @@ class ControlledCompanyTest extends TestCase
      */
     public function testPropertyTaxCode()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['tax_code'], $this->array['tax_code']);
     }
 }
