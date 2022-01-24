@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** | Item unique identifier. | [optional]
+**id** | **int** | Item unique identifier. | [optional]
 **amount_net** | **float** | Item total net amount. | [optional]
 **amount_gross** | **float** | Item total gross amount. | [optional]
 **category** | **string** | Item category. | [optional]
