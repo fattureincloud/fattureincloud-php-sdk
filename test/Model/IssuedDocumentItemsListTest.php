@@ -60,6 +60,7 @@ class IssuedDocumentItemsListTest extends TestCase
             "product_id": 12345,
             "code": "cod3",
             "name": "prod 1",
+            "category": "cat5",
             "description": "product number uan",
             "qty": 44,
             "measure": "very big",
@@ -131,6 +132,14 @@ class IssuedDocumentItemsListTest extends TestCase
     public function testPropertyName()
     {
         TestCase::assertEquals($this->object['name'], $this->array['name']);
+    }
+
+    /**
+     * Test attribute "category"
+     */
+    public function testPropertyCategory()
+    {
+        TestCase::assertEquals($this->object['category'], $this->array['category']);
     }
 
     /**
