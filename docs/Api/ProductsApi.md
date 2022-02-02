@@ -39,7 +39,7 @@ $apiInstance = new FattureInCloud\Api\ProductsApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$create_product_request = {"data":{"name":"Tavolo di marmo","code":"TAVOLO003","net_price":240,"gross_price":280,"use_gross_price":false,"net_cost":0,"measure":"","description":"Tavolo in marmo pregiato","category":"arredamento","in_stock":true,"default_vat":{"id":3,"value":22,"description":"Non imponibile art. 123","notes":"IVA non imponibile ai sensi dell'articolo 123, comma 2","is_disabled":false}}}; // \FattureInCloud\Model\CreateProductRequest
+$create_product_request = {"data":{"name":"Tavolo di marmo","code":"TAVOLO003","net_price":240,"net_cost":0,"measure":"","description":"Tavolo in marmo pregiato","category":"arredamento","in_stock":true,"default_vat":{"id":3,"value":22,"description":"Non imponibile art. 123","notes":"IVA non imponibile ai sensi dell'articolo 123, comma 2","is_disabled":false}}}; // \FattureInCloud\Model\CreateProductRequest
 
 try {
     $result = $apiInstance->createProduct($company_id, $create_product_request);
@@ -299,7 +299,7 @@ $apiInstance = new FattureInCloud\Api\ProductsApi(
 );
 $company_id = 12345; // int | The ID of the company.
 $product_id = 56; // int | The ID of the product.
-$modify_product_request = {"data":{"name":"Tavolo di marmo","code":"TAVOLO003","net_price":240,"gross_price":280,"use_gross_price":false,"net_cost":0,"measure":"","description":"Tavolo in marmo pregiato","category":"arredamento","in_stock":true,"default_vat":{"id":3,"value":22,"description":"Non imponibile art. 123","notes":"IVA non imponibile ai sensi dell'articolo 123, comma 2","is_disabled":false}}}; // \FattureInCloud\Model\ModifyProductRequest | Modified product details.
+$modify_product_request = {"data":{"name":"Tavolo di marmo","code":"TAVOLO003","net_price":240,"net_cost":0,"measure":"","description":"Tavolo in marmo pregiato","category":"arredamento","in_stock":true,"default_vat":{"id":3,"value":22,"description":"Non imponibile art. 123","notes":"IVA non imponibile ai sensi dell'articolo 123, comma 2","is_disabled":false}}}; // \FattureInCloud\Model\ModifyProductRequest | Modified product details.
 
 try {
     $result = $apiInstance->modifyProduct($company_id, $product_id, $modify_product_request);

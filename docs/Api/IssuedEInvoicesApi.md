@@ -4,10 +4,73 @@ All URIs are relative to https://api-v2.fattureincloud.it.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**getEInvoiceRejectionReason()**](IssuedEInvoicesApi.md#getEInvoiceRejectionReason) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/error_reason | Get EInvoice rejection reason
 [**getEInvoiceXml()**](IssuedEInvoicesApi.md#getEInvoiceXml) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml | Get e-invoice XML
 [**sendEInvoice()**](IssuedEInvoicesApi.md#sendEInvoice) | **POST** /c/{company_id}/issued_documents/{document_id}/e_invoice/send | Send the e-invoice
 [**verifyEInvoiceXml()**](IssuedEInvoicesApi.md#verifyEInvoiceXml) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml_verify | Verify e-invoice xml
 
+
+## `getEInvoiceRejectionReason()`
+
+```php
+getEInvoiceRejectionReason($company_id, $document_id): \FattureInCloud\Model\GetEInvoiceRejectionReasonResponse
+```
+
+Get EInvoice rejection reason
+
+Get EInvoice rejection reason
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
+$config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new FattureInCloud\Api\IssuedEInvoicesApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
+
+try {
+    $result = $apiInstance->getEInvoiceRejectionReason($company_id, $document_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling IssuedEInvoicesApi->getEInvoiceRejectionReason: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **company_id** | **int**| The ID of the company. |
+ **document_id** | **int**| The ID of the document. |
+
+### Return type
+
+[**\FattureInCloud\Model\GetEInvoiceRejectionReasonResponse**](../Model/GetEInvoiceRejectionReasonResponse.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `getEInvoiceXml()`
 
