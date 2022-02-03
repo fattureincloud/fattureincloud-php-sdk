@@ -30,7 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-
+use \FattureInCloud\ObjectSerializer;
 /**
  * ReceivedDocumentPaymentsListItemPaymentTermsTest Class Doc Comment
  *
@@ -55,6 +55,14 @@ class ReceivedDocumentPaymentsListItemPaymentTermsTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "days": 0,
+            "type": "standard"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ReceivedDocumentPaymentsListItemPaymentTerms');
     }
 
     /**
@@ -72,12 +80,14 @@ class ReceivedDocumentPaymentsListItemPaymentTermsTest extends TestCase
     }
 
     /**
-     * Test "ReceivedDocumentPaymentsListItemPaymentTerms"
+     * Test "ReceivedDocumentPaymentTerms"
      */
-    public function testReceivedDocumentPaymentsListItemPaymentTerms()
+    public function testReceivedDocumentPaymentTerms()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +95,7 @@ class ReceivedDocumentPaymentsListItemPaymentTermsTest extends TestCase
      */
     public function testPropertyDays()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['days'], $this->array['days']);
     }
 
     /**
@@ -94,7 +103,6 @@ class ReceivedDocumentPaymentsListItemPaymentTermsTest extends TestCase
      */
     public function testPropertyType()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['type'], $this->array['type']);
     }
 }

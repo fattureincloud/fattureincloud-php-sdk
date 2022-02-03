@@ -30,7 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-
+use \FattureInCloud\ObjectSerializer;
 /**
  * SenderEmailTest Class Doc Comment
  *
@@ -55,6 +55,14 @@ class SenderEmailTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "id": 3,
+            "email": "email@mail.com"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\SenderEmail');
     }
 
     /**
@@ -76,8 +84,10 @@ class SenderEmailTest extends TestCase
      */
     public function testSenderEmail()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +95,7 @@ class SenderEmailTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['id'], $this->array['id']);
     }
 
     /**
@@ -94,7 +103,6 @@ class SenderEmailTest extends TestCase
      */
     public function testPropertyEmail()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['email'], $this->array['email']);
     }
 }

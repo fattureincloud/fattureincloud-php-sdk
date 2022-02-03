@@ -30,7 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-
+use \FattureInCloud\ObjectSerializer;
 /**
  * IssuedDocumentPaymentsListItemTest Class Doc Comment
  *
@@ -55,6 +55,26 @@ class IssuedDocumentPaymentsListItemTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "id": 1,
+            "due_date": "2021/12/10",
+            "amount": 333,
+            "status": "paid",
+            "paid_date": "2021/12/11",
+            "payment_account": {
+                "id": 21,
+                "name": "Indesa - Carta conto",
+                "type": "standard",
+                "virtual": false
+            },
+            "ei_raw": {
+                "prop": true
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\IssuedDocumentPaymentsListItem');
     }
 
     /**
@@ -76,8 +96,10 @@ class IssuedDocumentPaymentsListItemTest extends TestCase
      */
     public function testIssuedDocumentPaymentsListItem()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +107,7 @@ class IssuedDocumentPaymentsListItemTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['id'], $this->array['id']);
     }
 
     /**
@@ -94,8 +115,8 @@ class IssuedDocumentPaymentsListItemTest extends TestCase
      */
     public function testPropertyDueDate()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $date = new \DateTime($this->array['due_date']);
+        TestCase::assertEquals($this->object['due_date'], $date);
     }
 
     /**
@@ -103,8 +124,7 @@ class IssuedDocumentPaymentsListItemTest extends TestCase
      */
     public function testPropertyAmount()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['amount'], $this->array['amount']);
     }
 
     /**
@@ -112,8 +132,7 @@ class IssuedDocumentPaymentsListItemTest extends TestCase
      */
     public function testPropertyStatus()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['status'], $this->array['status']);
     }
 
     /**
@@ -121,8 +140,10 @@ class IssuedDocumentPaymentsListItemTest extends TestCase
      */
     public function testPropertyPaymentAccount()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['payment_account'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['payment_account']);
+        }
     }
 
     /**
@@ -130,8 +151,8 @@ class IssuedDocumentPaymentsListItemTest extends TestCase
      */
     public function testPropertyPaidDate()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $date = new \DateTime($this->array['paid_date']);
+        TestCase::assertEquals($this->object['paid_date'], $date);
     }
 
     /**
@@ -139,7 +160,9 @@ class IssuedDocumentPaymentsListItemTest extends TestCase
      */
     public function testPropertyEiRaw()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['ei_raw'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['ei_raw']);
+        }
     }
 }

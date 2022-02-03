@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * EinvoiceRejectionReasonTest Class Doc Comment
@@ -55,6 +56,17 @@ class EinvoiceRejectionReasonTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "reason": "invalid date",
+            "ei_status": "rejected",
+            "solution": "set a valid date",
+            "code": "c01",
+            "date": "2021-10-10"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\EInvoiceRejectionReason');
     }
 
     /**
@@ -76,8 +88,10 @@ class EinvoiceRejectionReasonTest extends TestCase
      */
     public function testEinvoiceRejectionReason()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +99,7 @@ class EinvoiceRejectionReasonTest extends TestCase
      */
     public function testPropertyReason()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['reason'], $this->array['reason']);
     }
 
     /**
@@ -94,8 +107,7 @@ class EinvoiceRejectionReasonTest extends TestCase
      */
     public function testPropertyEiStatus()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['ei_status'], $this->array['ei_status']);
     }
 
     /**
@@ -103,8 +115,7 @@ class EinvoiceRejectionReasonTest extends TestCase
      */
     public function testPropertySolution()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['solution'], $this->array['solution']);
     }
 
     /**
@@ -112,8 +123,7 @@ class EinvoiceRejectionReasonTest extends TestCase
      */
     public function testPropertyCode()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['code'], $this->array['code']);
     }
 
     /**
@@ -121,7 +131,7 @@ class EinvoiceRejectionReasonTest extends TestCase
      */
     public function testPropertyDate()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $date = new \DateTime($this->array['date']);
+        TestCase::assertEquals($this->object['date'], $date);
     }
 }
