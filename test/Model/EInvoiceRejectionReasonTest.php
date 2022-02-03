@@ -41,7 +41,7 @@ use \FattureInCloud\ObjectSerializer;
  * @author   Fatture In Cloud API team
  * @link     https://fattureincloud.it
  */
-class EinvoiceRejectionReasonTest extends TestCase
+class EInvoiceRejectionReasonTest extends TestCase
 {
 
     /**
