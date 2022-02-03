@@ -57,10 +57,8 @@ class ListF24ResponseAggregatedDataTest extends TestCase
     public function setUp(): void
     {
         $json = '{
-            "aggregated_data": {
-                "amount": 5
-            }
-        }';
+            "amount": 6438.96
+          }';
 
         $this->array = json_decode($json, true);
 
@@ -93,13 +91,10 @@ class ListF24ResponseAggregatedDataTest extends TestCase
     }
 
     /**
-     * Test attribute "aggregated_data"
+     * Test attribute "amount"
      */
-    public function testPropertyAggregatedData()
+    public function testPropertyAmount()
     {
-        foreach ($this->array['aggregated_data'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['aggregated_data']);
-        }
+        TestCase::assertEquals($this->object['amount'], $this->array['amount']);
     }
 }

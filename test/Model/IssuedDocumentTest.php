@@ -194,9 +194,6 @@ class IssuedDocumentTest extends TestCase
             "extra_data": {
                 "ts_status": 1
             },
-            "refers_to": {
-                "id": 7
-            },
             "acc_inv_template": {
                 "id": 4
             },
@@ -631,17 +628,6 @@ class IssuedDocumentTest extends TestCase
     public function testPropertyDnAiNotes()
     {
         TestCase::assertEquals($this->object['dn_ai_notes'], $this->array['dn_ai_notes']);
-    }
-
-    /**
-     * Test attribute "refers_to"
-     */
-    public function testPropertyRefersTo()
-    {
-        foreach ($this->array['refers_to'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['refers_to']);
-        }
     }
 
     /**

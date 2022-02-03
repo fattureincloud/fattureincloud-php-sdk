@@ -30,7 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
-
+use \FattureInCloud\ObjectSerializer;
 /**
  * EntityTypeTest Class Doc Comment
  *
@@ -55,6 +55,13 @@ class EntityTypeTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{  
+            "type": "person"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\Entity');
     }
 
     /**
@@ -76,7 +83,6 @@ class EntityTypeTest extends TestCase
      */
     public function testEntityType()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['type'], $this->array['type']);
     }
 }
