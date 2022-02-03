@@ -66,7 +66,7 @@ class EInvoiceRejectionReasonTest extends TestCase
 
         $this->array = json_decode($json, true);
 
-        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\EInvoiceRejectionReason');
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\EinvoiceRejectionReason');
     }
 
     /**
