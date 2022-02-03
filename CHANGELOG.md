@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 2.0.8 (2022-02-03)
+
+
+### Bug Fixes
+
+* added einvoice rejection reason endpoint  ([31c4358](https://github.com/fattureincloud/fattureincloud-php-sdk/commit/31c4358f8164d47d65439f2e63d3b96bfa6d6b61))
+
 ### 2.0.7 (2022-01-24)
 
 
