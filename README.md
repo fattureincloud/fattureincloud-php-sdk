@@ -112,6 +112,7 @@ Class | Method | HTTP request | Description
 *IssuedDocumentsApi* | [**modifyIssuedDocument**](docs/Api/IssuedDocumentsApi.md#modifyissueddocument) | **PUT** /c/{company_id}/issued_documents/{document_id} | Modify Issued Document
 *IssuedDocumentsApi* | [**scheduleEmail**](docs/Api/IssuedDocumentsApi.md#scheduleemail) | **POST** /c/{company_id}/issued_documents/{document_id}/email | Schedule Email
 *IssuedDocumentsApi* | [**uploadIssuedDocumentAttachment**](docs/Api/IssuedDocumentsApi.md#uploadissueddocumentattachment) | **POST** /c/{company_id}/issued_documents/attachment | Upload Issued Document Attachment
+*IssuedEInvoicesApi* | [**getEInvoiceRejectionReason**](docs/Api/IssuedEInvoicesApi.md#geteinvoicerejectionreason) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/error_reason | Get EInvoice rejection reason
 *IssuedEInvoicesApi* | [**getEInvoiceXml**](docs/Api/IssuedEInvoicesApi.md#geteinvoicexml) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml | Get e-invoice XML
 *IssuedEInvoicesApi* | [**sendEInvoice**](docs/Api/IssuedEInvoicesApi.md#sendeinvoice) | **POST** /c/{company_id}/issued_documents/{document_id}/e_invoice/send | Send the e-invoice
 *IssuedEInvoicesApi* | [**verifyEInvoiceXml**](docs/Api/IssuedEInvoicesApi.md#verifyeinvoicexml) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml_verify | Verify e-invoice xml
@@ -217,12 +218,13 @@ Class | Method | HTTP request | Description
 - [Currency](docs/Model/Currency.md)
 - [DefaultPaymentTermsType](docs/Model/DefaultPaymentTermsType.md)
 - [DocumentTemplate](docs/Model/DocumentTemplate.md)
+- [EinvoiceRejectionReason](docs/Model/EinvoiceRejectionReason.md)
 - [EmailData](docs/Model/EmailData.md)
 - [EmailDataDefaultSenderEmail](docs/Model/EmailDataDefaultSenderEmail.md)
-- [EmailDataSenderEmailsList](docs/Model/EmailDataSenderEmailsList.md)
 - [EmailSchedule](docs/Model/EmailSchedule.md)
 - [EmailScheduleInclude](docs/Model/EmailScheduleInclude.md)
 - [Entity](docs/Model/Entity.md)
+- [EntityType](docs/Model/EntityType.md)
 - [F24](docs/Model/F24.md)
 - [F24Status](docs/Model/F24Status.md)
 - [FunctionStatus](docs/Model/FunctionStatus.md)
@@ -230,6 +232,7 @@ Class | Method | HTTP request | Description
 - [GetCashbookEntryResponse](docs/Model/GetCashbookEntryResponse.md)
 - [GetClientResponse](docs/Model/GetClientResponse.md)
 - [GetCompanyInfoResponse](docs/Model/GetCompanyInfoResponse.md)
+- [GetEInvoiceRejectionReasonResponse](docs/Model/GetEInvoiceRejectionReasonResponse.md)
 - [GetEmailDataResponse](docs/Model/GetEmailDataResponse.md)
 - [GetExistingIssuedDocumentTotalsRequest](docs/Model/GetExistingIssuedDocumentTotalsRequest.md)
 - [GetExistingIssuedDocumentTotalsResponse](docs/Model/GetExistingIssuedDocumentTotalsResponse.md)
@@ -258,13 +261,12 @@ Class | Method | HTTP request | Description
 - [IssuedDocument](docs/Model/IssuedDocument.md)
 - [IssuedDocumentEiData](docs/Model/IssuedDocumentEiData.md)
 - [IssuedDocumentExtraData](docs/Model/IssuedDocumentExtraData.md)
-- [IssuedDocumentItemsList](docs/Model/IssuedDocumentItemsList.md)
-- [IssuedDocumentPaymentsList](docs/Model/IssuedDocumentPaymentsList.md)
+- [IssuedDocumentItemsListItem](docs/Model/IssuedDocumentItemsListItem.md)
+- [IssuedDocumentPaymentsListItem](docs/Model/IssuedDocumentPaymentsListItem.md)
 - [IssuedDocumentPreCreateInfo](docs/Model/IssuedDocumentPreCreateInfo.md)
 - [IssuedDocumentPreCreateInfoDefaultValues](docs/Model/IssuedDocumentPreCreateInfoDefaultValues.md)
 - [IssuedDocumentPreCreateInfoExtraDataDefaultValues](docs/Model/IssuedDocumentPreCreateInfoExtraDataDefaultValues.md)
 - [IssuedDocumentPreCreateInfoItemsDefaultValues](docs/Model/IssuedDocumentPreCreateInfoItemsDefaultValues.md)
-- [IssuedDocumentRefersTo](docs/Model/IssuedDocumentRefersTo.md)
 - [IssuedDocumentStatus](docs/Model/IssuedDocumentStatus.md)
 - [IssuedDocumentTotals](docs/Model/IssuedDocumentTotals.md)
 - [IssuedDocumentTotalsVatList](docs/Model/IssuedDocumentTotalsVatList.md)
@@ -284,7 +286,7 @@ Class | Method | HTTP request | Description
 - [ListDeliveryNotesDefaultCausalsResponse](docs/Model/ListDeliveryNotesDefaultCausalsResponse.md)
 - [ListF24Response](docs/Model/ListF24Response.md)
 - [ListF24ResponseAggregatedData](docs/Model/ListF24ResponseAggregatedData.md)
-- [ListF24ResponseAggregatedDataAggregatedData](docs/Model/ListF24ResponseAggregatedDataAggregatedData.md)
+- [ListF24ResponseAggregation](docs/Model/ListF24ResponseAggregation.md)
 - [ListF24ResponsePage](docs/Model/ListF24ResponsePage.md)
 - [ListIssuedDocumentsResponse](docs/Model/ListIssuedDocumentsResponse.md)
 - [ListIssuedDocumentsResponsePage](docs/Model/ListIssuedDocumentsResponsePage.md)
@@ -352,9 +354,9 @@ Class | Method | HTTP request | Description
 - [ReceivedDocumentInfo](docs/Model/ReceivedDocumentInfo.md)
 - [ReceivedDocumentInfoDefaultValues](docs/Model/ReceivedDocumentInfoDefaultValues.md)
 - [ReceivedDocumentInfoItemsDefaultValues](docs/Model/ReceivedDocumentInfoItemsDefaultValues.md)
-- [ReceivedDocumentItemsList](docs/Model/ReceivedDocumentItemsList.md)
-- [ReceivedDocumentPaymentTerms](docs/Model/ReceivedDocumentPaymentTerms.md)
-- [ReceivedDocumentPaymentsList](docs/Model/ReceivedDocumentPaymentsList.md)
+- [ReceivedDocumentItemsListItem](docs/Model/ReceivedDocumentItemsListItem.md)
+- [ReceivedDocumentPaymentsListItem](docs/Model/ReceivedDocumentPaymentsListItem.md)
+- [ReceivedDocumentPaymentsListItemPaymentTerms](docs/Model/ReceivedDocumentPaymentsListItemPaymentTerms.md)
 - [ReceivedDocumentTotals](docs/Model/ReceivedDocumentTotals.md)
 - [ReceivedDocumentType](docs/Model/ReceivedDocumentType.md)
 - [ScheduleEmailRequest](docs/Model/ScheduleEmailRequest.md)
@@ -362,6 +364,7 @@ Class | Method | HTTP request | Description
 - [SendEInvoiceRequestData](docs/Model/SendEInvoiceRequestData.md)
 - [SendEInvoiceResponse](docs/Model/SendEInvoiceResponse.md)
 - [SendEInvoiceResponseData](docs/Model/SendEInvoiceResponseData.md)
+- [SenderEmail](docs/Model/SenderEmail.md)
 - [ShowTotalsMode](docs/Model/ShowTotalsMode.md)
 - [Supplier](docs/Model/Supplier.md)
 - [SupplierType](docs/Model/SupplierType.md)
@@ -440,5 +443,5 @@ info@fattureincloud.it
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `2.0.9`
+- API version: `2.0.10`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

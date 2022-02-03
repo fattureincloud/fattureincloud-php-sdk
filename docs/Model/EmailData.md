@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **recipient_email** | **string** | Recipient&#39;s email |
 **default_sender_email** | [**\FattureInCloud\Model\EmailDataDefaultSenderEmail**](EmailDataDefaultSenderEmail.md) |  |
-**sender_emails_list** | [**\FattureInCloud\Model\EmailDataSenderEmailsList[]**](EmailDataSenderEmailsList.md) | List of all emails from which the document can be sent |
+**sender_emails_list** | [**\FattureInCloud\Model\SenderEmail[]**](SenderEmail.md) | List of all emails from which the document can be sent |
 **cc_email** | **string** | By default is the logged company email. This is the email address to which a copy will be sent. |
 **subject** | **string** | Email subject |
 **body** | **string** | Email body |

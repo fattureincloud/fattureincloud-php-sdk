@@ -16,6 +16,6 @@ Name | Type | Description | Notes
 **to** | **int** | Last result of the page. | [optional]
 **total** | **int** | Total number of results | [optional]
 **data** | [**\FattureInCloud\Model\F24[]**](F24.md) |  | [optional]
-**aggregated_data** | [**\FattureInCloud\Model\ListF24ResponseAggregatedDataAggregatedData**](ListF24ResponseAggregatedDataAggregatedData.md) |  | [optional]
+**aggregated_data** | [**\FattureInCloud\Model\ListF24ResponseAggregatedData**](ListF24ResponseAggregatedData.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

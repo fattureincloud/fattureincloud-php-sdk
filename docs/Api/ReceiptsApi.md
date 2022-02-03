@@ -41,7 +41,7 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$create_receipt_request = {"data":{"date":"2021-08-19","number":6,"numeration":"REC006","amount_net":8.2,"amount_vat":1.8,"amount_gross":10,"use_gross_prices":true,"type":"sales_receipt","description":"cassa 1","rc_center":"","payment_account":{"id":555,"name":"contanti"},"items_list":[{"id":888,"amount_net":8.2,"amount_vat":1.8,"amount_gross":10,"category":"altro","vat":{"id":0,"value":22,"description":"iva"}}]}}; // \FattureInCloud\Model\CreateReceiptRequest | The Receipt to create.
+$create_receipt_request = {"data":{"date":"2021-08-19","number":6,"numeration":"REC006","amount_net":8.2,"amount_vat":1.8,"type":"sales_receipt","description":"cassa 1","rc_center":"","payment_account":{"id":555,"name":"contanti"},"items_list":[{"id":888,"amount_net":8.2,"amount_vat":1.8,"category":"altro","vat":{"id":0,"value":22,"description":"iva"}}]}}; // \FattureInCloud\Model\CreateReceiptRequest | The Receipt to create.
 
 try {
     $result = $apiInstance->createReceipt($company_id, $create_receipt_request);
@@ -425,7 +425,7 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
 );
 $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
-$modify_receipt_request = {"data":{"date":"2021-08-19","number":6,"numeration":"REC006","amount_net":8.2,"amount_vat":1.8,"amount_gross":10,"use_gross_prices":true,"type":"sales_receipt","description":"cassa 1","rc_center":"","payment_account":{"id":555,"name":"contanti"},"items_list":[{"id":888,"amount_net":8.2,"amount_vat":1.8,"amount_gross":10,"category":"altro","vat":{"id":0,"value":22,"description":"iva"}}]}}; // \FattureInCloud\Model\ModifyReceiptRequest | Modified receipt.
+$modify_receipt_request = {"data":{"date":"2021-08-19","number":6,"numeration":"REC006","amount_net":8.2,"amount_vat":1.8,"type":"sales_receipt","description":"cassa 1","rc_center":"","payment_account":{"id":555,"name":"contanti"},"items_list":[{"id":888,"amount_net":8.2,"amount_vat":1.8,"category":"altro","vat":{"id":0,"value":22,"description":"iva"}}]}}; // \FattureInCloud\Model\ModifyReceiptRequest | Modified receipt.
 
 try {
     $result = $apiInstance->modifyReceipt($company_id, $document_id, $modify_receipt_request);

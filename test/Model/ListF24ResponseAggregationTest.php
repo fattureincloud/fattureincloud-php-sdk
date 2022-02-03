@@ -1,6 +1,6 @@
 <?php
 /**
- * ListF24ResponseAggregatedDataAggregatedDataTest
+ * ListF24ResponseAggregatedDataTest
  *
  * PHP version 7.3
  *
@@ -33,15 +33,15 @@ use PHPUnit\Framework\TestCase;
 use \FattureInCloud\ObjectSerializer;
 
 /**
- * ListF24ResponseAggregatedDataAggregatedDataTest Class Doc Comment
+ * ListF24ResponseAggregationTest Class Doc Comment
  *
  * @category    Class
- * @description ListF24ResponseAggregatedDataAggregatedData
+ * @description ListF24ResponseAggregation
  * @package     FattureInCloud
  * @author   Fatture In Cloud API team
  * @link     https://fattureincloud.it
  */
-class ListF24ResponseAggregatedDataAggregatedDataTest extends TestCase
+class ListF24ResponseAggregationTest extends TestCase
 {
 
     /**
@@ -57,12 +57,14 @@ class ListF24ResponseAggregatedDataAggregatedDataTest extends TestCase
     public function setUp(): void
     {
         $json = '{
-            "amount": 6438.96
-          }';
+            "aggregated_data": {
+                "amount": 5
+            }
+        }';
 
         $this->array = json_decode($json, true);
 
-        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListF24ResponseAggregatedDataAggregatedData');
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListF24ResponseAggregation');
     }
 
     /**
@@ -80,9 +82,9 @@ class ListF24ResponseAggregatedDataAggregatedDataTest extends TestCase
     }
 
     /**
-     * Test "ListF24ResponseAggregatedDataAggregatedData"
+     * Test "ListF24ResponseAggregation"
      */
-    public function testListF24ResponseAggregatedDataAggregatedData()
+    public function testListF24ResponseAggregatedData()
     {
         foreach ($this->array as $key => $value) 
         {
@@ -91,10 +93,13 @@ class ListF24ResponseAggregatedDataAggregatedDataTest extends TestCase
     }
 
     /**
-     * Test attribute "amount"
+     * Test attribute "aggregated_data"
      */
-    public function testPropertyAmount()
+    public function testPropertyAggregatedData()
     {
-        TestCase::assertEquals($this->object['amount'], $this->array['amount']);
+        foreach ($this->array['aggregated_data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['aggregated_data']);
+        }
     }
 }
