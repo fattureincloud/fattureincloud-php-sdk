@@ -62,7 +62,7 @@ class IssuedDocumentStatusTest extends TestCase
 
         $this->array = json_decode($json, true);
 
-        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\IssuedDocumentPaymentsList');
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\IssuedDocumentPaymentsListItem');
     }
 
     /**
