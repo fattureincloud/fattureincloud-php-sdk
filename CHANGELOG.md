@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 2.0.9 (2022-02-08)
+
+
+### Bug Fixes
+
+* refactored cashbook model ([34fa1c9](https://github.com/fattureincloud/fattureincloud-php-sdk/commit/34fa1c9f8dcfbfc0cfbbdd5285316825d40d0a6d))
+
 ### 2.0.8 (2022-02-03)
 
 
