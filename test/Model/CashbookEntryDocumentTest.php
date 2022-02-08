@@ -1,6 +1,6 @@
 <?php
 /**
- * ReceivedDocumentPaymentTermsTest
+ * CashbookEntryDocumentTest
  *
  * PHP version 7.3
  *
@@ -33,15 +33,15 @@ use PHPUnit\Framework\TestCase;
 use \FattureInCloud\ObjectSerializer;
 
 /**
- * ReceivedDocumentPaymentTermsTest Class Doc Comment
+ * CashbookEntryDocumentTest Class Doc Comment
  *
  * @category    Class
- * @description ReceivedDocumentPaymentTerms
+ * @description CashbookEntryDocument
  * @package     FattureInCloud
  * @author   Fatture In Cloud API team
  * @link     https://fattureincloud.it
  */
-class ReceivedDocumentPaymentTermsTest extends TestCase
+class CashbookEntryDocumentTest extends TestCase
 {
 
     /**
@@ -57,13 +57,14 @@ class ReceivedDocumentPaymentTermsTest extends TestCase
     public function setUp(): void
     {
         $json = '{
-            "days": 0,
-            "type": "standard"
+            "id": 12345,
+            "type": "issued_document",
+            "path": "/doc1.pdf"
         }';
 
         $this->array = json_decode($json, true);
 
-        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ReceivedDocumentPaymentTerms');
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CashbookEntryDocument');
     }
 
     /**
@@ -81,9 +82,9 @@ class ReceivedDocumentPaymentTermsTest extends TestCase
     }
 
     /**
-     * Test "ReceivedDocumentPaymentTerms"
+     * Test "CashbookEntryDocument"
      */
-    public function testReceivedDocumentPaymentTerms()
+    public function testCashbookEntryDocument()
     {
         foreach ($this->array as $key => $value) 
         {
@@ -92,11 +93,11 @@ class ReceivedDocumentPaymentTermsTest extends TestCase
     }
 
     /**
-     * Test attribute "days"
+     * Test attribute "id"
      */
-    public function testPropertyDays()
+    public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['days'], $this->array['days']);
+        TestCase::assertEquals($this->object['id'], $this->array['id']);
     }
 
     /**
@@ -105,5 +106,13 @@ class ReceivedDocumentPaymentTermsTest extends TestCase
     public function testPropertyType()
     {
         TestCase::assertEquals($this->object['type'], $this->array['type']);
+    }
+
+    /**
+     * Test attribute "path"
+     */
+    public function testPropertyPath()
+    {
+        TestCase::assertEquals($this->object['path'], $this->array['path']);
     }
 }
