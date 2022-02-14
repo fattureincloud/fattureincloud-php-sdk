@@ -192,9 +192,6 @@ class ListDeliveryNotesDefaultCausalsResponse implements ModelInterface, ArrayAc
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -213,7 +210,7 @@ class ListDeliveryNotesDefaultCausalsResponse implements ModelInterface, ArrayAc
     /**
      * Gets data
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getData()
     {
@@ -223,7 +220,7 @@ class ListDeliveryNotesDefaultCausalsResponse implements ModelInterface, ArrayAc
     /**
      * Sets data
      *
-     * @param string[] $data data
+     * @param string[]|null $data data
      *
      * @return self
      */

@@ -198,9 +198,6 @@ class CreateReceivedDocumentRequest implements ModelInterface, ArrayAccess, \Jso
     {
         $invalidProperties = [];
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -243,7 +240,7 @@ class CreateReceivedDocumentRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets data
      *
-     * @return \FattureInCloud\Model\ReceivedDocument
+     * @return \FattureInCloud\Model\ReceivedDocument|null
      */
     public function getData()
     {
@@ -253,7 +250,7 @@ class CreateReceivedDocumentRequest implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets data
      *
-     * @param \FattureInCloud\Model\ReceivedDocument $data data
+     * @param \FattureInCloud\Model\ReceivedDocument|null $data data
      *
      * @return self
      */

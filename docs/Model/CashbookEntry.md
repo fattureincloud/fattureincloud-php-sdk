@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** | Cashbook unique identifier. |
-**date** | **\DateTime** | Cashbook date. |
-**description** | **string** | Cashbook description. |
-**kind** | [**\FattureInCloud\Model\CashbookEntryKind**](CashbookEntryKind.md) |  |
+**id** | **string** | Cashbook unique identifier. | [optional]
+**date** | **\DateTime** | Cashbook date. | [optional]
+**description** | **string** | Cashbook description. | [optional]
+**kind** | [**\FattureInCloud\Model\CashbookEntryKind**](CashbookEntryKind.md) |  | [optional]
 **type** | [**\FattureInCloud\Model\CashbookEntryType**](CashbookEntryType.md) |  | [optional]
 **entity_name** | **string** | Entity name. | [optional]
 **document** | [**\FattureInCloud\Model\CashbookEntryDocument**](CashbookEntryDocument.md) |  | [optional]

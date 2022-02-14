@@ -251,18 +251,6 @@ class CashbookEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['date'] === null) {
-            $invalidProperties[] = "'date' can't be null";
-        }
-        if ($this->container['description'] === null) {
-            $invalidProperties[] = "'description' can't be null";
-        }
-        if ($this->container['kind'] === null) {
-            $invalidProperties[] = "'kind' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -281,7 +269,7 @@ class CashbookEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets id
      *
-     * @return string
+     * @return string|null
      */
     public function getId()
     {
@@ -291,7 +279,7 @@ class CashbookEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string $id Cashbook unique identifier.
+     * @param string|null $id Cashbook unique identifier.
      *
      * @return self
      */
@@ -305,7 +293,7 @@ class CashbookEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets date
      *
-     * @return \DateTime
+     * @return \DateTime|null
      */
     public function getDate()
     {
@@ -315,7 +303,7 @@ class CashbookEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets date
      *
-     * @param \DateTime $date Cashbook date.
+     * @param \DateTime|null $date Cashbook date.
      *
      * @return self
      */
@@ -329,7 +317,7 @@ class CashbookEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets description
      *
-     * @return string
+     * @return string|null
      */
     public function getDescription()
     {
@@ -339,7 +327,7 @@ class CashbookEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets description
      *
-     * @param string $description Cashbook description.
+     * @param string|null $description Cashbook description.
      *
      * @return self
      */
@@ -353,7 +341,7 @@ class CashbookEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets kind
      *
-     * @return \FattureInCloud\Model\CashbookEntryKind
+     * @return \FattureInCloud\Model\CashbookEntryKind|null
      */
     public function getKind()
     {
@@ -363,7 +351,7 @@ class CashbookEntry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets kind
      *
-     * @param \FattureInCloud\Model\CashbookEntryKind $kind kind
+     * @param \FattureInCloud\Model\CashbookEntryKind|null $kind kind
      *
      * @return self
      */

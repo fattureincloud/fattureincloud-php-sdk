@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Unique identifier of the document. | [optional]
 **type** | [**\FattureInCloud\Model\ReceivedDocumentType**](ReceivedDocumentType.md) |  | [optional]
-**entity** | [**\FattureInCloud\Model\ReceivedDocumentEntity**](ReceivedDocumentEntity.md) |  |
+**entity** | [**\FattureInCloud\Model\ReceivedDocumentEntity**](ReceivedDocumentEntity.md) |  | [optional]
 **date** | **\DateTime** | Date of the document [If not specified, today date is used]. | [optional]
 **category** | **string** | Document category. | [optional]
 **description** | **string** | Document description. | [optional]

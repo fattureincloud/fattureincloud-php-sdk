@@ -204,15 +204,6 @@ class MonthlyTotal implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['net'] === null) {
-            $invalidProperties[] = "'net' can't be null";
-        }
-        if ($this->container['gross'] === null) {
-            $invalidProperties[] = "'gross' can't be null";
-        }
-        if ($this->container['count'] === null) {
-            $invalidProperties[] = "'count' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -231,7 +222,7 @@ class MonthlyTotal implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets net
      *
-     * @return float
+     * @return float|null
      */
     public function getNet()
     {
@@ -241,7 +232,7 @@ class MonthlyTotal implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets net
      *
-     * @param float $net Monthly total net amount.
+     * @param float|null $net Monthly total net amount.
      *
      * @return self
      */
@@ -255,7 +246,7 @@ class MonthlyTotal implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets gross
      *
-     * @return float
+     * @return float|null
      */
     public function getGross()
     {
@@ -265,7 +256,7 @@ class MonthlyTotal implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets gross
      *
-     * @param float $gross Monthly total gross amount.
+     * @param float|null $gross Monthly total gross amount.
      *
      * @return self
      */
@@ -279,7 +270,7 @@ class MonthlyTotal implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets count
      *
-     * @return float
+     * @return float|null
      */
     public function getCount()
     {
@@ -289,7 +280,7 @@ class MonthlyTotal implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets count
      *
-     * @param float $count Monthly total receipt number.
+     * @param float|null $count Monthly total receipt number.
      *
      * @return self
      */

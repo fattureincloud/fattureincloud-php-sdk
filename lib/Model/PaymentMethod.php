@@ -245,9 +245,6 @@ class PaymentMethod implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         if (!is_null($this->container['details']) && (count($this->container['details']) > 5)) {
             $invalidProperties[] = "invalid value for 'details', number of items must be less than or equal to 5.";
         }
@@ -294,7 +291,7 @@ class PaymentMethod implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -304,7 +301,7 @@ class PaymentMethod implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string $name Name of the payment method
+     * @param string|null $name Name of the payment method
      *
      * @return self
      */

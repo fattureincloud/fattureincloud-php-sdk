@@ -221,15 +221,6 @@ class ArchiveDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['date'] === null) {
-            $invalidProperties[] = "'date' can't be null";
-        }
-        if ($this->container['description'] === null) {
-            $invalidProperties[] = "'description' can't be null";
-        }
-        if ($this->container['category'] === null) {
-            $invalidProperties[] = "'category' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -272,7 +263,7 @@ class ArchiveDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets date
      *
-     * @return \DateTime
+     * @return \DateTime|null
      */
     public function getDate()
     {
@@ -282,7 +273,7 @@ class ArchiveDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets date
      *
-     * @param \DateTime $date Archive document date.
+     * @param \DateTime|null $date Archive document date.
      *
      * @return self
      */
@@ -296,7 +287,7 @@ class ArchiveDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets description
      *
-     * @return string
+     * @return string|null
      */
     public function getDescription()
     {
@@ -306,7 +297,7 @@ class ArchiveDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets description
      *
-     * @param string $description Archive Document description.
+     * @param string|null $description Archive Document description.
      *
      * @return self
      */
@@ -344,7 +335,7 @@ class ArchiveDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets category
      *
-     * @return string
+     * @return string|null
      */
     public function getCategory()
     {
@@ -354,7 +345,7 @@ class ArchiveDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets category
      *
-     * @param string $category Archive document category.
+     * @param string|null $category Archive document category.
      *
      * @return self
      */

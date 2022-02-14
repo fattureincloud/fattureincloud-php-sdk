@@ -233,15 +233,6 @@ class F24 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['due_date'] === null) {
-            $invalidProperties[] = "'due_date' can't be null";
-        }
-        if ($this->container['amount'] === null) {
-            $invalidProperties[] = "'amount' can't be null";
-        }
-        if ($this->container['description'] === null) {
-            $invalidProperties[] = "'description' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -284,7 +275,7 @@ class F24 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets due_date
      *
-     * @return \DateTime
+     * @return \DateTime|null
      */
     public function getDueDate()
     {
@@ -294,7 +285,7 @@ class F24 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets due_date
      *
-     * @param \DateTime $due_date Due date.
+     * @param \DateTime|null $due_date Due date.
      *
      * @return self
      */
@@ -356,7 +347,7 @@ class F24 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets amount
      *
-     * @return float
+     * @return float|null
      */
     public function getAmount()
     {
@@ -366,7 +357,7 @@ class F24 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets amount
      *
-     * @param float $amount Taxes amount.
+     * @param float|null $amount Taxes amount.
      *
      * @return self
      */
@@ -428,7 +419,7 @@ class F24 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets description
      *
-     * @return string
+     * @return string|null
      */
     public function getDescription()
     {
@@ -438,7 +429,7 @@ class F24 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets description
      *
-     * @param string $description Name or brief description.
+     * @param string|null $description Name or brief description.
      *
      * @return self
      */

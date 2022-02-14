@@ -209,18 +209,6 @@ class EmailScheduleInclude implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['document'] === null) {
-            $invalidProperties[] = "'document' can't be null";
-        }
-        if ($this->container['delivery_note'] === null) {
-            $invalidProperties[] = "'delivery_note' can't be null";
-        }
-        if ($this->container['attachment'] === null) {
-            $invalidProperties[] = "'attachment' can't be null";
-        }
-        if ($this->container['accompanying_invoice'] === null) {
-            $invalidProperties[] = "'accompanying_invoice' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -239,7 +227,7 @@ class EmailScheduleInclude implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets document
      *
-     * @return bool
+     * @return bool|null
      */
     public function getDocument()
     {
@@ -249,7 +237,7 @@ class EmailScheduleInclude implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets document
      *
-     * @param bool $document If set to true, the email will have a button to view the document
+     * @param bool|null $document If set to true, the email will have a button to view the document
      *
      * @return self
      */
@@ -263,7 +251,7 @@ class EmailScheduleInclude implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets delivery_note
      *
-     * @return bool
+     * @return bool|null
      */
     public function getDeliveryNote()
     {
@@ -273,7 +261,7 @@ class EmailScheduleInclude implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets delivery_note
      *
-     * @param bool $delivery_note If set to true, the email will have a button to view the delivery note
+     * @param bool|null $delivery_note If set to true, the email will have a button to view the delivery note
      *
      * @return self
      */
@@ -287,7 +275,7 @@ class EmailScheduleInclude implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets attachment
      *
-     * @return bool
+     * @return bool|null
      */
     public function getAttachment()
     {
@@ -297,7 +285,7 @@ class EmailScheduleInclude implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets attachment
      *
-     * @param bool $attachment If set to true, the email will have a button to view the attachment
+     * @param bool|null $attachment If set to true, the email will have a button to view the attachment
      *
      * @return self
      */
@@ -311,7 +299,7 @@ class EmailScheduleInclude implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets accompanying_invoice
      *
-     * @return bool
+     * @return bool|null
      */
     public function getAccompanyingInvoice()
     {
@@ -321,7 +309,7 @@ class EmailScheduleInclude implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets accompanying_invoice
      *
-     * @param bool $accompanying_invoice If set to true, the email will have a button to view the accompanying invoice
+     * @param bool|null $accompanying_invoice If set to true, the email will have a button to view the accompanying invoice
      *
      * @return self
      */

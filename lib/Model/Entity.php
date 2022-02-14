@@ -349,7 +349,7 @@ class Entity implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['address_city'] = $data['address_city'] ?? null;
         $this->container['address_province'] = $data['address_province'] ?? null;
         $this->container['address_extra'] = $data['address_extra'] ?? null;
-        $this->container['country'] = $data['country'] ?? 'Italia';
+        $this->container['country'] = $data['country'] ?? null;
         $this->container['email'] = $data['email'] ?? null;
         $this->container['certified_email'] = $data['certified_email'] ?? null;
         $this->container['phone'] = $data['phone'] ?? null;
@@ -363,7 +363,7 @@ class Entity implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['bank_iban'] = $data['bank_iban'] ?? null;
         $this->container['bank_swift_code'] = $data['bank_swift_code'] ?? null;
         $this->container['shipping_address'] = $data['shipping_address'] ?? null;
-        $this->container['e_invoice'] = $data['e_invoice'] ?? false;
+        $this->container['e_invoice'] = $data['e_invoice'] ?? null;
         $this->container['ei_code'] = $data['ei_code'] ?? null;
         $this->container['created_at'] = $data['created_at'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
@@ -378,9 +378,6 @@ class Entity implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -447,7 +444,7 @@ class Entity implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -457,7 +454,7 @@ class Entity implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string $name Name
+     * @param string|null $name Name
      *
      * @return self
      */

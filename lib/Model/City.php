@@ -203,15 +203,6 @@ class City implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['postal_code'] === null) {
-            $invalidProperties[] = "'postal_code' can't be null";
-        }
-        if ($this->container['city'] === null) {
-            $invalidProperties[] = "'city' can't be null";
-        }
-        if ($this->container['province'] === null) {
-            $invalidProperties[] = "'province' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -230,7 +221,7 @@ class City implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets postal_code
      *
-     * @return string
+     * @return string|null
      */
     public function getPostalCode()
     {
@@ -240,7 +231,7 @@ class City implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets postal_code
      *
-     * @param string $postal_code City postal code.
+     * @param string|null $postal_code City postal code.
      *
      * @return self
      */
@@ -254,7 +245,7 @@ class City implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets city
      *
-     * @return string
+     * @return string|null
      */
     public function getCity()
     {
@@ -264,7 +255,7 @@ class City implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets city
      *
-     * @param string $city City name.
+     * @param string|null $city City name.
      *
      * @return self
      */
@@ -278,7 +269,7 @@ class City implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets province
      *
-     * @return string
+     * @return string|null
      */
     public function getProvince()
     {
@@ -288,7 +279,7 @@ class City implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets province
      *
-     * @param string $province Province.
+     * @param string|null $province Province.
      *
      * @return self
      */

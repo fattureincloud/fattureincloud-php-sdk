@@ -222,24 +222,6 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['numerations'] === null) {
-            $invalidProperties[] = "'numerations' can't be null";
-        }
-        if ($this->container['numerations_list'] === null) {
-            $invalidProperties[] = "'numerations_list' can't be null";
-        }
-        if ($this->container['rc_centers_list'] === null) {
-            $invalidProperties[] = "'rc_centers_list' can't be null";
-        }
-        if ($this->container['payment_accounts_list'] === null) {
-            $invalidProperties[] = "'payment_accounts_list' can't be null";
-        }
-        if ($this->container['categories_list'] === null) {
-            $invalidProperties[] = "'categories_list' can't be null";
-        }
-        if ($this->container['vat_types_list'] === null) {
-            $invalidProperties[] = "'vat_types_list' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -258,7 +240,7 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets numerations
      *
-     * @return object
+     * @return object|null
      */
     public function getNumerations()
     {
@@ -268,7 +250,7 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets numerations
      *
-     * @param object $numerations Next number by year, receipt type and numeration name.
+     * @param object|null $numerations Next number by year, receipt type and numeration name.
      *
      * @return self
      */
@@ -282,7 +264,7 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets numerations_list
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getNumerationsList()
     {
@@ -292,7 +274,7 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets numerations_list
      *
-     * @param string[] $numerations_list List of series used in the past.
+     * @param string[]|null $numerations_list List of series used in the past.
      *
      * @return self
      */
@@ -306,7 +288,7 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets rc_centers_list
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getRcCentersList()
     {
@@ -316,7 +298,7 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets rc_centers_list
      *
-     * @param string[] $rc_centers_list List of revenue centers used in the past.
+     * @param string[]|null $rc_centers_list List of revenue centers used in the past.
      *
      * @return self
      */
@@ -330,7 +312,7 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets payment_accounts_list
      *
-     * @return \FattureInCloud\Model\PaymentAccount[]
+     * @return \FattureInCloud\Model\PaymentAccount[]|null
      */
     public function getPaymentAccountsList()
     {
@@ -340,7 +322,7 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets payment_accounts_list
      *
-     * @param \FattureInCloud\Model\PaymentAccount[] $payment_accounts_list User payment accounts list.
+     * @param \FattureInCloud\Model\PaymentAccount[]|null $payment_accounts_list User payment accounts list.
      *
      * @return self
      */
@@ -354,7 +336,7 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets categories_list
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getCategoriesList()
     {
@@ -364,7 +346,7 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets categories_list
      *
-     * @param string[] $categories_list List of categories used in the past.
+     * @param string[]|null $categories_list List of categories used in the past.
      *
      * @return self
      */
@@ -378,7 +360,7 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets vat_types_list
      *
-     * @return \FattureInCloud\Model\VatType[]
+     * @return \FattureInCloud\Model\VatType[]|null
      */
     public function getVatTypesList()
     {
@@ -388,7 +370,7 @@ class ReceiptPreCreateInfo implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets vat_types_list
      *
-     * @param \FattureInCloud\Model\VatType[] $vat_types_list List of user vat types with the default 22%, 10%, 4% and 0% vats.
+     * @param \FattureInCloud\Model\VatType[]|null $vat_types_list List of user vat types with the default 22%, 10%, 4% and 0% vats.
      *
      * @return self
      */

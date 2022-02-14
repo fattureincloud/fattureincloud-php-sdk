@@ -287,21 +287,6 @@ class IssuedDocumentTotals implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['amount_net'] === null) {
-            $invalidProperties[] = "'amount_net' can't be null";
-        }
-        if ($this->container['amount_vat'] === null) {
-            $invalidProperties[] = "'amount_vat' can't be null";
-        }
-        if ($this->container['amount_gross'] === null) {
-            $invalidProperties[] = "'amount_gross' can't be null";
-        }
-        if ($this->container['amount_due'] === null) {
-            $invalidProperties[] = "'amount_due' can't be null";
-        }
-        if ($this->container['payments_sum'] === null) {
-            $invalidProperties[] = "'payments_sum' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -320,7 +305,7 @@ class IssuedDocumentTotals implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets amount_net
      *
-     * @return float
+     * @return float|null
      */
     public function getAmountNet()
     {
@@ -330,7 +315,7 @@ class IssuedDocumentTotals implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets amount_net
      *
-     * @param float $amount_net Total net amount.
+     * @param float|null $amount_net Total net amount.
      *
      * @return self
      */
@@ -464,7 +449,7 @@ class IssuedDocumentTotals implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets amount_vat
      *
-     * @return float
+     * @return float|null
      */
     public function getAmountVat()
     {
@@ -474,7 +459,7 @@ class IssuedDocumentTotals implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets amount_vat
      *
-     * @param float $amount_vat Total vat amount.
+     * @param float|null $amount_vat Total vat amount.
      *
      * @return self
      */
@@ -488,7 +473,7 @@ class IssuedDocumentTotals implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets amount_gross
      *
-     * @return float
+     * @return float|null
      */
     public function getAmountGross()
     {
@@ -498,7 +483,7 @@ class IssuedDocumentTotals implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets amount_gross
      *
-     * @param float $amount_gross Total grosas amount.
+     * @param float|null $amount_gross Total grosas amount.
      *
      * @return self
      */
@@ -632,7 +617,7 @@ class IssuedDocumentTotals implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets amount_due
      *
-     * @return float
+     * @return float|null
      */
     public function getAmountDue()
     {
@@ -642,7 +627,7 @@ class IssuedDocumentTotals implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets amount_due
      *
-     * @param float $amount_due Total amount due.
+     * @param float|null $amount_due Total amount due.
      *
      * @return self
      */
@@ -680,7 +665,7 @@ class IssuedDocumentTotals implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets payments_sum
      *
-     * @return float
+     * @return float|null
      */
     public function getPaymentsSum()
     {
@@ -690,7 +675,7 @@ class IssuedDocumentTotals implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets payments_sum
      *
-     * @param float $payments_sum Payments sum.
+     * @param float|null $payments_sum Payments sum.
      *
      * @return self
      */

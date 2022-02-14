@@ -191,9 +191,6 @@ class AttachmentData implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['attachment_token'] === null) {
-            $invalidProperties[] = "'attachment_token' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -212,7 +209,7 @@ class AttachmentData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets attachment_token
      *
-     * @return string
+     * @return string|null
      */
     public function getAttachmentToken()
     {
@@ -222,7 +219,7 @@ class AttachmentData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets attachment_token
      *
-     * @param string $attachment_token Uploaded attachment token.
+     * @param string|null $attachment_token Uploaded attachment token.
      *
      * @return self
      */

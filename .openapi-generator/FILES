@@ -452,5 +452,3 @@ lib/Model/VerifyEInvoiceXmlResponse.php
 lib/Model/VerifyEInvoiceXmlResponseData.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/CashbookEntryDocumentTest.php
-test/Model/EinvoiceRejectionReasonTest.php
