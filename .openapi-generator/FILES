@@ -105,6 +105,7 @@ docs/Model/IssuedDocument.md
 docs/Model/IssuedDocumentEiData.md
 docs/Model/IssuedDocumentExtraData.md
 docs/Model/IssuedDocumentItemsListItem.md
+docs/Model/IssuedDocumentOptions.md
 docs/Model/IssuedDocumentPaymentsListItem.md
 docs/Model/IssuedDocumentPreCreateInfo.md
 docs/Model/IssuedDocumentPreCreateInfoDefaultValues.md
@@ -112,8 +113,6 @@ docs/Model/IssuedDocumentPreCreateInfoExtraDataDefaultValues.md
 docs/Model/IssuedDocumentPreCreateInfoItemsDefaultValues.md
 docs/Model/IssuedDocumentStatus.md
 docs/Model/IssuedDocumentTotals.md
-docs/Model/IssuedDocumentTotalsVatList.md
-docs/Model/IssuedDocumentTotalsVatListVatItem.md
 docs/Model/IssuedDocumentType.md
 docs/Model/Language.md
 docs/Model/ListArchiveCategoriesResponse.md
@@ -217,6 +216,7 @@ docs/Model/UploadIssuedDocumentAttachmentResponse.md
 docs/Model/UploadReceivedDocumentAttachmentResponse.md
 docs/Model/User.md
 docs/Model/UserCompanyRole.md
+docs/Model/VatItem.md
 docs/Model/VatKind.md
 docs/Model/VatType.md
 docs/Model/VerifyEInvoiceXmlErrorResponse.md
@@ -330,6 +330,7 @@ lib/Model/IssuedDocument.php
 lib/Model/IssuedDocumentEiData.php
 lib/Model/IssuedDocumentExtraData.php
 lib/Model/IssuedDocumentItemsListItem.php
+lib/Model/IssuedDocumentOptions.php
 lib/Model/IssuedDocumentPaymentsListItem.php
 lib/Model/IssuedDocumentPreCreateInfo.php
 lib/Model/IssuedDocumentPreCreateInfoDefaultValues.php
@@ -337,8 +338,6 @@ lib/Model/IssuedDocumentPreCreateInfoExtraDataDefaultValues.php
 lib/Model/IssuedDocumentPreCreateInfoItemsDefaultValues.php
 lib/Model/IssuedDocumentStatus.php
 lib/Model/IssuedDocumentTotals.php
-lib/Model/IssuedDocumentTotalsVatList.php
-lib/Model/IssuedDocumentTotalsVatListVatItem.php
 lib/Model/IssuedDocumentType.php
 lib/Model/Language.php
 lib/Model/ListArchiveCategoriesResponse.php
@@ -443,6 +442,7 @@ lib/Model/UploadIssuedDocumentAttachmentResponse.php
 lib/Model/UploadReceivedDocumentAttachmentResponse.php
 lib/Model/User.php
 lib/Model/UserCompanyRole.php
+lib/Model/VatItem.php
 lib/Model/VatKind.php
 lib/Model/VatType.php
 lib/Model/VerifyEInvoiceXmlErrorResponse.php
@@ -452,5 +452,5 @@ lib/Model/VerifyEInvoiceXmlResponse.php
 lib/Model/VerifyEInvoiceXmlResponseData.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/CashbookEntryDocumentTest.php
-test/Model/EinvoiceRejectionReasonTest.php
+test/Model/IssuedDocumentOptionsTest.php
+test/Model/VatItemTest.php

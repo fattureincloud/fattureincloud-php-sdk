@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Unique identifier | [optional]
-**name** | **string** | Name of the payment method |
+**name** | **string** | Name of the payment method | [optional]
 **type** | [**\FattureInCloud\Model\PaymentMethodType**](PaymentMethodType.md) |  | [optional]
 **is_default** | **bool** | Determines if this is the default payment method. | [optional]
 **default_payment_account** | [**\FattureInCloud\Model\PaymentAccount**](PaymentAccount.md) |  | [optional]

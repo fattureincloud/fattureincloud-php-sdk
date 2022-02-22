@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Unique identifier | [optional]
-**name** | **string** | Payment account name. |
+**name** | **string** | Payment account name. | [optional]
 **type** | [**\FattureInCloud\Model\PaymentAccountType**](PaymentAccountType.md) |  | [optional]
 **iban** | **string** | Payment account iban. | [optional]
 **sia** | **string** | Payment account sia. | [optional]

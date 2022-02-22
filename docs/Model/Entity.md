@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Unique identifier | [optional]
 **code** | **string** | Code. | [optional]
-**name** | **string** | Name |
+**name** | **string** | Name | [optional]
 **type** | [**\FattureInCloud\Model\EntityType**](EntityType.md) |  | [optional]
 **first_name** | **string** | First name. | [optional]
 **last_name** | **string** | Last name. | [optional]
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **address_city** | **string** | City. | [optional]
 **address_province** | **string** | Province. | [optional]
 **address_extra** | **string** | Address extra info. | [optional]
-**country** | **string** | Country | [optional] [default to 'Italia']
+**country** | **string** | Country | [optional]
 **email** | **string** | Email. | [optional]
 **certified_email** | **string** | Certified email. | [optional]
 **phone** | **string** | Phone. | [optional]
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 **bank_iban** | **string** | [Only for client] Iban. | [optional]
 **bank_swift_code** | **string** | [Only for client] Bank swift code. | [optional]
 **shipping_address** | **string** | [Only for client] Shipping address. | [optional]
-**e_invoice** | **bool** | [Only for client] Use e-invoices. | [optional] [default to false]
+**e_invoice** | **bool** | [Only for client] Use e-invoices. | [optional]
 **ei_code** | **string** | [Only for client] E-invoices code. | [optional]
 **created_at** | **string** |  | [optional]
 **updated_at** | **string** |  | [optional]

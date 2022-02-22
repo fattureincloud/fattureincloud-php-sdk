@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**numerations** | **object** | Next numbers by year and numeration name (for the given document type). | [optional]
-**dn_numerations** | **object** | Next numbers by year and numeration name (for delivery_notes). | [optional]
+**numerations** | **array<string,array>** |  | [optional]
+**dn_numerations** | **array<string,array>** |  | [optional]
 **default_values** | [**\FattureInCloud\Model\IssuedDocumentPreCreateInfoDefaultValues**](IssuedDocumentPreCreateInfoDefaultValues.md) |  | [optional]
 **extra_data_default_values** | [**\FattureInCloud\Model\IssuedDocumentPreCreateInfoExtraDataDefaultValues**](IssuedDocumentPreCreateInfoExtraDataDefaultValues.md) |  | [optional]
 **items_default_values** | [**\FattureInCloud\Model\IssuedDocumentPreCreateInfoItemsDefaultValues**](IssuedDocumentPreCreateInfoItemsDefaultValues.md) |  | [optional]
