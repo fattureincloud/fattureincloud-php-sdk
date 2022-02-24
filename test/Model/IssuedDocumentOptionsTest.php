@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * IssuedDocumentOptionsTest Class Doc Comment
@@ -55,6 +56,13 @@ class IssuedDocumentOptionsTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "fix_payments": true
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\IssuedDocumentOptions');
     }
 
     /**
@@ -76,8 +84,10 @@ class IssuedDocumentOptionsTest extends TestCase
      */
     public function testIssuedDocumentOptions()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +95,6 @@ class IssuedDocumentOptionsTest extends TestCase
      */
     public function testPropertyFixPayments()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['fix_payments'], $this->array['fix_payments']);
     }
 }

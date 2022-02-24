@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * VatItemTest Class Doc Comment
@@ -55,6 +56,14 @@ class VatItemTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "amount_net": 10.0,
+            "amount_vat": 20.0
+          }';
+
+          $this->array = json_decode($json, true);
+
+          $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\VatItem');
     }
 
     /**
@@ -76,8 +85,10 @@ class VatItemTest extends TestCase
      */
     public function testVatItem()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +96,7 @@ class VatItemTest extends TestCase
      */
     public function testPropertyAmountNet()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['amount_net'], $this->array['amount_net']);
     }
 
     /**
@@ -94,7 +104,6 @@ class VatItemTest extends TestCase
      */
     public function testPropertyAmountVat()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['amount_vat'], $this->array['amount_vat']);
     }
 }
