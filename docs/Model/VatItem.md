@@ -1,9 +1,10 @@
-# # IssuedDocumentTotalsVatList
+# # VatItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**vat_item** | [**\FattureInCloud\Model\IssuedDocumentTotalsVatListVatItem**](IssuedDocumentTotalsVatListVatItem.md) |  | [optional]
+**amount_net** | **float** |  | [optional]
+**amount_vat** | **float** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
