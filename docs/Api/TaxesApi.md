@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 ## `listF24()`
 
 ```php
-listF24($company_id, $fields, $fieldset, $sort, $page, $per_page): \FattureInCloud\Model\ListF24Response
+listF24($company_id, $fields, $fieldset, $sort, $page, $per_page, $q): \FattureInCloud\Model\ListF24Response
 ```
 
 List F24
@@ -296,9 +296,10 @@ $fieldset = 'fieldset_example'; // string | Name of the fieldset.
 $sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
 $page = 1; // int | The page to retrieve.
 $per_page = 5; // int | The size of the page.
+$q = 'q_example'; // string | Query for filtering the results.
 
 try {
-    $result = $apiInstance->listF24($company_id, $fields, $fieldset, $sort, $page, $per_page);
+    $result = $apiInstance->listF24($company_id, $fields, $fieldset, $sort, $page, $per_page, $q);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TaxesApi->listF24: ', $e->getMessage(), PHP_EOL;
@@ -315,6 +316,7 @@ Name | Type | Description  | Notes
  **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional]
  **page** | **int**| The page to retrieve. | [optional] [default to 1]
  **per_page** | **int**| The size of the page. | [optional] [default to 5]
+ **q** | **string**| Query for filtering the results. | [optional]
 
 ### Return type
 

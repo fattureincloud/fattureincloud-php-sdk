@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**listCountries()**](InfoApi.md#listCountries) | **GET** /info/countries | List Countries
 [**listCurrencies()**](InfoApi.md#listCurrencies) | **GET** /info/currencies | List Currencies
 [**listDeliveryNotesDefaultCausals()**](InfoApi.md#listDeliveryNotesDefaultCausals) | **GET** /info/dn_causals | List Delivery Notes Default Causals
+[**listDetailedCountries()**](InfoApi.md#listDetailedCountries) | **GET** /info/detailed_countries | List Detailed Countries
 [**listLanguages()**](InfoApi.md#listLanguages) | **GET** /info/languages | List Languages
 [**listPaymentAccounts()**](InfoApi.md#listPaymentAccounts) | **GET** /c/{company_id}/info/payment_accounts | List Payment Accounts
 [**listPaymentMethods()**](InfoApi.md#listPaymentMethods) | **GET** /c/{company_id}/info/payment_methods | List Payment Methods
@@ -360,6 +361,63 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**\FattureInCloud\Model\ListDeliveryNotesDefaultCausalsResponse**](../Model/ListDeliveryNotesDefaultCausalsResponse.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `listDetailedCountries()`
+
+```php
+listDetailedCountries(): \FattureInCloud\Model\ListDetailedCountriesResponse
+```
+
+List Detailed Countries
+
+Lists the supported countries.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
+$config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new FattureInCloud\Api\InfoApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->listDetailedCountries();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InfoApi->listDetailedCountries: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\FattureInCloud\Model\ListDetailedCountriesResponse**](../Model/ListDetailedCountriesResponse.md)
 
 ### Authorization
 

@@ -1,5 +1,6 @@
 {
     "name": "fattureincloud/fattureincloud-php-sdk",
+    "version": "2.0.11",
     "description": "Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 400.000 businesses in Italy.   The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.",
     "keywords": [
         "openapitools",
@@ -31,13 +32,9 @@
         "friendsofphp/php-cs-fixer": "^2.12"
     },
     "autoload": {
-        "psr-4": {
-            "FattureInCloud\\": "lib/"
-        }
+        "psr-4": { "FattureInCloud\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": {
-            "FattureInCloud\\Test\\": "test/"
-        }
+        "psr-4": { "FattureInCloud\\Test\\" : "test/" }
     }
 }

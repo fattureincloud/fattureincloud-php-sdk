@@ -60,8 +60,9 @@ docs/Model/CreateVatTypeRequest.md
 docs/Model/CreateVatTypeResponse.md
 docs/Model/Currency.md
 docs/Model/DefaultPaymentTermsType.md
+docs/Model/DetailedCountry.md
 docs/Model/DocumentTemplate.md
-docs/Model/EinvoiceRejectionReason.md
+docs/Model/EInvoiceRejectionReason.md
 docs/Model/EmailData.md
 docs/Model/EmailDataDefaultSenderEmail.md
 docs/Model/EmailSchedule.md
@@ -126,6 +127,7 @@ docs/Model/ListCostCentersResponse.md
 docs/Model/ListCountriesResponse.md
 docs/Model/ListCurrenciesResponse.md
 docs/Model/ListDeliveryNotesDefaultCausalsResponse.md
+docs/Model/ListDetailedCountriesResponse.md
 docs/Model/ListF24Response.md
 docs/Model/ListF24ResponseAggregatedData.md
 docs/Model/ListF24ResponseAggregation.md
@@ -285,8 +287,9 @@ lib/Model/CreateVatTypeRequest.php
 lib/Model/CreateVatTypeResponse.php
 lib/Model/Currency.php
 lib/Model/DefaultPaymentTermsType.php
+lib/Model/DetailedCountry.php
 lib/Model/DocumentTemplate.php
-lib/Model/EinvoiceRejectionReason.php
+lib/Model/EInvoiceRejectionReason.php
 lib/Model/EmailData.php
 lib/Model/EmailDataDefaultSenderEmail.php
 lib/Model/EmailSchedule.php
@@ -351,6 +354,7 @@ lib/Model/ListCostCentersResponse.php
 lib/Model/ListCountriesResponse.php
 lib/Model/ListCurrenciesResponse.php
 lib/Model/ListDeliveryNotesDefaultCausalsResponse.php
+lib/Model/ListDetailedCountriesResponse.php
 lib/Model/ListF24Response.php
 lib/Model/ListF24ResponseAggregatedData.php
 lib/Model/ListF24ResponseAggregation.php
@@ -452,5 +456,6 @@ lib/Model/VerifyEInvoiceXmlResponse.php
 lib/Model/VerifyEInvoiceXmlResponseData.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/IssuedDocumentOptionsTest.php
-test/Model/VatItemTest.php
+test/Model/DetailedCountryTest.php
+test/Model/EInvoiceRejectionReasonTest.php
+test/Model/ListDetailedCountriesResponseTest.php
