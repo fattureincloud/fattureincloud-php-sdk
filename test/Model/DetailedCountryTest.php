@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * DetailedCountryTest Class Doc Comment
@@ -55,6 +56,17 @@ class DetailedCountryTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "name": "Italia",
+            "settings_name": "Italia",
+            "iso": "IT",
+            "fiscal_iso": "IT",
+            "uic": "086"
+          }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\DetailedCountry');
     }
 
     /**
@@ -76,8 +88,10 @@ class DetailedCountryTest extends TestCase
      */
     public function testDetailedCountry()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +99,7 @@ class DetailedCountryTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['name'], $this->array['name']);
     }
 
     /**
@@ -94,8 +107,7 @@ class DetailedCountryTest extends TestCase
      */
     public function testPropertySettingsName()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['settings_name'], $this->array['settings_name']);
     }
 
     /**
@@ -103,8 +115,7 @@ class DetailedCountryTest extends TestCase
      */
     public function testPropertyIso()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['iso'], $this->array['iso']);
     }
 
     /**
@@ -112,8 +123,7 @@ class DetailedCountryTest extends TestCase
      */
     public function testPropertyFiscalIso()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['fiscal_iso'], $this->array['fiscal_iso']);
     }
 
     /**
@@ -121,7 +131,6 @@ class DetailedCountryTest extends TestCase
      */
     public function testPropertyUic()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['uic'], $this->array['uic']);
     }
 }
