@@ -181,6 +181,31 @@ class InfoApiTest extends TestCase
     }
 
     /**
+     * Test case for listDetailedCountries
+     *
+     * List Countries.
+     *
+     */
+    public function testListDetailedCountries()
+    {
+        $stream = '{"data": [{"name": "Italia", "settings_name": "Italia", "iso": "IT", "fiscal_iso": "IT", "uic": "086"}, {"name": "Albania", "settings_name": "Albania", "iso": "AL", "fiscal_iso": "AL", "uic": "087"}]}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\InfoApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $result = $apiInstance->listDetailedCountries();
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListDetailedCountriesResponse');
+
+        TestCase::assertEquals($obj, $result);
+    }
+
+    /**
      * Test case for listCurrencies
      *
      * List Currencies.
