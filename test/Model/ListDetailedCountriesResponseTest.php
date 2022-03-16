@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ListDetailedCountriesResponseTest Class Doc Comment
@@ -55,6 +56,28 @@ class ListDetailedCountriesResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data":[
+                {
+                    "name": "Italia",
+                    "settings_name": "Italia",
+                    "iso": "IT",
+                    "fiscal_iso": "IT",
+                    "uic": "086"
+                },
+                {
+                    "name": "Albania",
+                    "settings_name": "ALbania",
+                    "iso": "AL",
+                    "fiscal_iso": "AL",
+                    "uic": "087"
+                }
+            ]
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListDetailedCountriesResponse');
     }
 
     /**
@@ -76,8 +99,10 @@ class ListDetailedCountriesResponseTest extends TestCase
      */
     public function testListDetailedCountriesResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +110,9 @@ class ListDetailedCountriesResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) 
+        {
+           Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }
