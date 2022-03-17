@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 2.0.11 (2022-03-17)
+
+
+### Bug Fixes
+
+* added filter parameter and detailed countries method ([#72](https://github.com/fattureincloud/fattureincloud-php-sdk/issues/72)) ([b897611](https://github.com/fattureincloud/fattureincloud-php-sdk/commit/b897611c30b261681f4b775d9fb57347f1db895f))
+
 ### 2.0.10 (2022-02-28)
 
 
