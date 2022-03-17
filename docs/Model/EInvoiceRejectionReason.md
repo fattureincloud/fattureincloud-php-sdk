@@ -1,11 +1,11 @@
-# # EinvoiceRejectionReason
+# # EInvoiceRejectionReason
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **reason** | **string** | Rejection reason. | [optional]
-**ei_status** | **string** | EInvoice status. | [optional]
+**ei_status** | **string** | E-invoice status. | [optional]
 **solution** | **string** | Error solution. | [optional]
 **code** | **string** | Error code. | [optional]
 **date** | **\DateTime** | Rejection date. | [optional]

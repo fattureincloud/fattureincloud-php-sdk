@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 ## `listReceipts()`
 
 ```php
-listReceipts($company_id, $fields, $fieldset, $page, $per_page, $sort): \FattureInCloud\Model\ListReceiptsResponse
+listReceipts($company_id, $fields, $fieldset, $page, $per_page, $sort, $q): \FattureInCloud\Model\ListReceiptsResponse
 ```
 
 List Receipts
@@ -359,9 +359,10 @@ $fieldset = 'fieldset_example'; // string | Name of the fieldset.
 $page = 1; // int | The page to retrieve.
 $per_page = 5; // int | The size of the page.
 $sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
+$q = 'q_example'; // string | Query for filtering the results.
 
 try {
-    $result = $apiInstance->listReceipts($company_id, $fields, $fieldset, $page, $per_page, $sort);
+    $result = $apiInstance->listReceipts($company_id, $fields, $fieldset, $page, $per_page, $sort, $q);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ReceiptsApi->listReceipts: ', $e->getMessage(), PHP_EOL;
@@ -378,6 +379,7 @@ Name | Type | Description  | Notes
  **page** | **int**| The page to retrieve. | [optional] [default to 1]
  **per_page** | **int**| The size of the page. | [optional] [default to 5]
  **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional]
+ **q** | **string**| Query for filtering the results. | [optional]
 
 ### Return type
 

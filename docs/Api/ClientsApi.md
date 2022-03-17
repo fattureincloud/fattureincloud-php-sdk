@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ## `listClients()`
 
 ```php
-listClients($company_id, $fields, $fieldset, $sort, $page, $per_page): \FattureInCloud\Model\ListClientsResponse
+listClients($company_id, $fields, $fieldset, $sort, $page, $per_page, $q): \FattureInCloud\Model\ListClientsResponse
 ```
 
 List Clients
@@ -233,9 +233,10 @@ $fieldset = 'fieldset_example'; // string | Name of the fieldset.
 $sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
 $page = 1; // int | The page to retrieve.
 $per_page = 5; // int | The size of the page.
+$q = 'q_example'; // string | Query for filtering the results.
 
 try {
-    $result = $apiInstance->listClients($company_id, $fields, $fieldset, $sort, $page, $per_page);
+    $result = $apiInstance->listClients($company_id, $fields, $fieldset, $sort, $page, $per_page, $q);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ClientsApi->listClients: ', $e->getMessage(), PHP_EOL;
@@ -252,6 +253,7 @@ Name | Type | Description  | Notes
  **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional]
  **page** | **int**| The page to retrieve. | [optional] [default to 1]
  **per_page** | **int**| The size of the page. | [optional] [default to 5]
+ **q** | **string**| Query for filtering the results. | [optional]
 
 ### Return type
 

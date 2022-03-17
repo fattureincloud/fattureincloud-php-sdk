@@ -1,5 +1,7 @@
 # FattureInCloud PHP SDK
 
+[![Packagist](https://img.shields.io/packagist/v/fattureincloud/fattureincloud-php-sdk?color=g)](https://packagist.org/packages/fattureincloud/fattureincloud-php-sdk) ![unit tests](https://github.com/fattureincloud/fattureincloud-php-sdk/actions/workflows/validate.yaml/badge.svg)
+
 Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 400.000 businesses in Italy. 
 
 The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
@@ -91,6 +93,7 @@ Class | Method | HTTP request | Description
 *InfoApi* | [**listCountries**](docs/Api/InfoApi.md#listcountries) | **GET** /info/countries | List Countries
 *InfoApi* | [**listCurrencies**](docs/Api/InfoApi.md#listcurrencies) | **GET** /info/currencies | List Currencies
 *InfoApi* | [**listDeliveryNotesDefaultCausals**](docs/Api/InfoApi.md#listdeliverynotesdefaultcausals) | **GET** /info/dn_causals | List Delivery Notes Default Causals
+*InfoApi* | [**listDetailedCountries**](docs/Api/InfoApi.md#listdetailedcountries) | **GET** /info/detailed_countries | List Detailed Countries
 *InfoApi* | [**listLanguages**](docs/Api/InfoApi.md#listlanguages) | **GET** /info/languages | List Languages
 *InfoApi* | [**listPaymentAccounts**](docs/Api/InfoApi.md#listpaymentaccounts) | **GET** /c/{company_id}/info/payment_accounts | List Payment Accounts
 *InfoApi* | [**listPaymentMethods**](docs/Api/InfoApi.md#listpaymentmethods) | **GET** /c/{company_id}/info/payment_methods | List Payment Methods
@@ -112,10 +115,10 @@ Class | Method | HTTP request | Description
 *IssuedDocumentsApi* | [**modifyIssuedDocument**](docs/Api/IssuedDocumentsApi.md#modifyissueddocument) | **PUT** /c/{company_id}/issued_documents/{document_id} | Modify Issued Document
 *IssuedDocumentsApi* | [**scheduleEmail**](docs/Api/IssuedDocumentsApi.md#scheduleemail) | **POST** /c/{company_id}/issued_documents/{document_id}/email | Schedule Email
 *IssuedDocumentsApi* | [**uploadIssuedDocumentAttachment**](docs/Api/IssuedDocumentsApi.md#uploadissueddocumentattachment) | **POST** /c/{company_id}/issued_documents/attachment | Upload Issued Document Attachment
-*IssuedEInvoicesApi* | [**getEInvoiceRejectionReason**](docs/Api/IssuedEInvoicesApi.md#geteinvoicerejectionreason) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/error_reason | Get EInvoice rejection reason
+*IssuedEInvoicesApi* | [**getEInvoiceRejectionReason**](docs/Api/IssuedEInvoicesApi.md#geteinvoicerejectionreason) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/error_reason | Get e-invoice rejection reason
 *IssuedEInvoicesApi* | [**getEInvoiceXml**](docs/Api/IssuedEInvoicesApi.md#geteinvoicexml) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml | Get e-invoice XML
 *IssuedEInvoicesApi* | [**sendEInvoice**](docs/Api/IssuedEInvoicesApi.md#sendeinvoice) | **POST** /c/{company_id}/issued_documents/{document_id}/e_invoice/send | Send the e-invoice
-*IssuedEInvoicesApi* | [**verifyEInvoiceXml**](docs/Api/IssuedEInvoicesApi.md#verifyeinvoicexml) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml_verify | Verify e-invoice xml
+*IssuedEInvoicesApi* | [**verifyEInvoiceXml**](docs/Api/IssuedEInvoicesApi.md#verifyeinvoicexml) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml_verify | Verify e-invoice XML
 *ProductsApi* | [**createProduct**](docs/Api/ProductsApi.md#createproduct) | **POST** /c/{company_id}/products | Create Product
 *ProductsApi* | [**deleteProduct**](docs/Api/ProductsApi.md#deleteproduct) | **DELETE** /c/{company_id}/products/{product_id} | Delete Product
 *ProductsApi* | [**getProduct**](docs/Api/ProductsApi.md#getproduct) | **GET** /c/{company_id}/products/{product_id} | Get Product
@@ -211,8 +214,9 @@ Class | Method | HTTP request | Description
 - [CreateVatTypeResponse](docs/Model/CreateVatTypeResponse.md)
 - [Currency](docs/Model/Currency.md)
 - [DefaultPaymentTermsType](docs/Model/DefaultPaymentTermsType.md)
+- [DetailedCountry](docs/Model/DetailedCountry.md)
 - [DocumentTemplate](docs/Model/DocumentTemplate.md)
-- [EinvoiceRejectionReason](docs/Model/EinvoiceRejectionReason.md)
+- [EInvoiceRejectionReason](docs/Model/EInvoiceRejectionReason.md)
 - [EmailData](docs/Model/EmailData.md)
 - [EmailDataDefaultSenderEmail](docs/Model/EmailDataDefaultSenderEmail.md)
 - [EmailSchedule](docs/Model/EmailSchedule.md)
@@ -277,6 +281,7 @@ Class | Method | HTTP request | Description
 - [ListCountriesResponse](docs/Model/ListCountriesResponse.md)
 - [ListCurrenciesResponse](docs/Model/ListCurrenciesResponse.md)
 - [ListDeliveryNotesDefaultCausalsResponse](docs/Model/ListDeliveryNotesDefaultCausalsResponse.md)
+- [ListDetailedCountriesResponse](docs/Model/ListDetailedCountriesResponse.md)
 - [ListF24Response](docs/Model/ListF24Response.md)
 - [ListF24ResponseAggregatedData](docs/Model/ListF24ResponseAggregatedData.md)
 - [ListF24ResponseAggregation](docs/Model/ListF24ResponseAggregation.md)
@@ -437,5 +442,6 @@ info@fattureincloud.it
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `2.0.13`
+- API version: `2.0.14`
+    - Package version: `2.0.11`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

@@ -31,13 +31,9 @@
         "friendsofphp/php-cs-fixer": "^2.12"
     },
     "autoload": {
-        "psr-4": {
-            "FattureInCloud\\": "lib/"
-        }
+        "psr-4": { "FattureInCloud\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": {
-            "FattureInCloud\\Test\\": "test/"
-        }
+        "psr-4": { "FattureInCloud\\Test\\" : "test/" }
     }
 }
