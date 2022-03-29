@@ -79,7 +79,7 @@ class Filter
     {
         if ($this->expression instanceof EmptyCondition)
         {
-            throw new Exception("Cannot create a conjunction for an empty filter.");
+            throw new Exception("Cannot create a conjunction for an empty expression.");
         }
 
         $left = $this->expression;
@@ -94,9 +94,9 @@ class Filter
      */
     public function andExpression(Expression $expression): Filter
     {
-        if ($this->expression instanceof EmptyCondition)
+        if (($this->expression instanceof EmptyCondition) or ($expression instanceof EmptyCondition))
         {
-            throw new Exception("Cannot create a conjunction for an empty filter.");
+            throw new Exception("Cannot create a conjunction for an empty expression.");
         }
 
         $left = $this->expression;
@@ -114,7 +114,7 @@ class Filter
 
         if (($this->expression instanceof EmptyCondition) or ($expression instanceof EmptyCondition))
         {
-            throw new Exception("Cannot create a conjunction for an empty filter.");
+            throw new Exception("Cannot create a conjunction for an empty expression.");
         }
 
         $left = $this->expression;
@@ -132,7 +132,7 @@ class Filter
     {
         if ($this->expression instanceof EmptyCondition)
         {
-            throw new Exception("Cannot create a disjunction for an empty filter.");
+            throw new Exception("Cannot create a disjunction for an empty expression.");
         }
 
         $left = $this->expression;
@@ -147,9 +147,9 @@ class Filter
      */
     public function orExpression(Expression $expression): Filter
     {
-        if ($this->expression instanceof EmptyCondition)
+        if (($this->expression instanceof EmptyCondition) or ($expression instanceof EmptyCondition))
         {
-            throw new Exception("Cannot create a disjunction for an empty filter.");
+            throw new Exception("Cannot create a disjunction for an empty expression.");
         }
 
         $left = $this->expression;
@@ -167,7 +167,7 @@ class Filter
 
         if (($this->expression instanceof EmptyCondition) or ($expression instanceof EmptyCondition))
         {
-            throw new Exception("Cannot create a disjunction for an empty filter.");
+            throw new Exception("Cannot create a disjunction for an empty expression.");
         }
 
         $left = $this->expression;
