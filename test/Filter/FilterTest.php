@@ -9,7 +9,7 @@ use FattureInCloud\Filter\EmptyCondition;
 use FattureInCloud\Filter\Filter;
 use FattureInCloud\Filter\Operator;
 use PHPUnit\Framework\TestCase;
-use PHPUnit\Util\Exception;
+use Exception;
 
 class FilterTest extends TestCase
 {

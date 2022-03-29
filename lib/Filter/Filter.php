@@ -2,7 +2,7 @@
 
 namespace FattureInCloud\Filter;
 
-use PHPUnit\Util\Exception;
+use Exception;
 
 class Filter
 {
