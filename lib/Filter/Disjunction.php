@@ -54,7 +54,7 @@ class Disjunction implements Expression
      */
     public function buildQuery(): string
     {
-        return "(" . $this->left->__toString() . " or " . $this->right->__toString() . ")";
+        return "(" . $this->left->buildQuery() . " or " . $this->right->buildQuery() . ")";
     }
 
     public function __toString(): string

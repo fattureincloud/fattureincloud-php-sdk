@@ -54,7 +54,7 @@ class Conjunction implements Expression
      */
     public function buildQuery(): string
     {
-        return "(" . $this->left->__toString() . " and " . $this->right->__toString() . ")";
+        return "(" . $this->left->buildQuery() . " and " . $this->right->buildQuery() . ")";
     }
 
     public function __toString(): string
