@@ -65,6 +65,9 @@ class Filter
      */
     public function whereExpression(Expression $expression): Filter
     {
+        if ($expression instanceof EmptyCondition) {
+            throw new Exception("Cannot initialize the filter with an empty expression.");
+        }
         $this->setExpression($expression);
         return $this;
     }
