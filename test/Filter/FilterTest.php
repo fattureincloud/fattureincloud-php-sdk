@@ -89,6 +89,16 @@ class FilterTest extends TestCase
     }
 
     /**
+     * Test empty whereExpression
+     */
+    public function testEmptyWhereExpression()
+    {
+        $filter = new Filter();
+        $this->expectException(Exception::class);
+        $filter->whereExpression(new EmptyCondition());
+    }
+
+    /**
      * Test and
      */
     public function testAnd()
@@ -125,6 +135,18 @@ class FilterTest extends TestCase
     }
 
     /**
+     * Test empty andExpression
+     */
+    public function testEmptyAndExpression()
+    {
+        $condition = new Condition("city", Operator::EQ, "Bergamo");
+        $filter = new Filter();
+        $this->expectException(Exception::class);
+        $filter->whereExpression($condition)
+            ->andExpression(new EmptyCondition());
+    }
+
+    /**
      * Test andFilter
      */
     public function testAndFilter()
@@ -146,6 +168,17 @@ class FilterTest extends TestCase
     }
 
     /**
+     * Test empty andFilter
+     */
+    public function testEmptyAndFilter()
+    {
+        $filter1 = new Filter("city", Operator::EQ, "Bergamo");
+        $filter = new Filter(new EmptyCondition());
+        $this->expectException(Exception::class);
+        $filter1->andFilter($filter);
+    }
+
+    /**
      * Test or
      */
     public function testOr()
@@ -164,7 +197,7 @@ class FilterTest extends TestCase
     }
 
     /**
-     * Test andExpression
+     * Test orExpression
      */
     public function testOrExpression()
     {
@@ -179,6 +212,18 @@ class FilterTest extends TestCase
         $filter->whereExpression($condition)
             ->orExpression($condition2);
         $this->assertEquals($disjunction, $filter->getExpression());
+    }
+
+    /**
+     * Test empty orExpression
+     */
+    public function testEmptyOrExpression()
+    {
+        $condition = new Condition("city", Operator::EQ, "Bergamo");
+        $filter = new Filter();
+        $this->expectException(Exception::class);
+        $filter->whereExpression($condition)
+            ->orExpression(new EmptyCondition());
     }
 
     /**
@@ -200,6 +245,17 @@ class FilterTest extends TestCase
 
         $filter1->orFilter($filter2);
         $this->assertEquals($disjunction, $filter1->getExpression());
+    }
+
+    /**
+     * Test empty orFilter
+     */
+    public function testEmptyOrFilter()
+    {
+        $filter1 = new Filter("city", Operator::EQ, "Bergamo");
+        $filter = new Filter(new EmptyCondition());
+        $this->expectException(Exception::class);
+        $filter1->orFilter($filter);
     }
 
     /**

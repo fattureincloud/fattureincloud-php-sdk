@@ -13,7 +13,7 @@ class Condition implements Expression
      * @param $op
      * @param $value
      */
-    public function __construct($field, $op, $value)
+    public function __construct(string $field, string $op, $value)
     {
         $this->field = $field;
         $this->op = $op;
