@@ -91,7 +91,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'FattureInCloud/2.0.11/PHP-SDK';
+    protected $userAgent = 'FattureInCloud/0.0.0/PHP-SDK';
 
     /**
      * Debug switch (default set to false)
@@ -400,7 +400,6 @@ class Configuration
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: 2.0.14' . PHP_EOL;
-        $report .= '    SDK Package Version: 2.0.11' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;
