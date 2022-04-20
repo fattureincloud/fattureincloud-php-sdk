@@ -39,7 +39,7 @@ $apiInstance = new FattureInCloud\Api\CashbookApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$create_cashbook_entry_request = {"data":{"date":"2021-08-24","amount_in":122,"payment_account_in":{"id":333},"description":"Fattura n. 201/2021","entity_name":"Rossi S.r.l.","kind":"issued_document","document":{"id":54321},"type":"in"}}; // \FattureInCloud\Model\CreateCashbookEntryRequest | Cashbook entry.
+$create_cashbook_entry_request = new \FattureInCloud\Model\CreateCashbookEntryRequest; // \FattureInCloud\Model\CreateCashbookEntryRequest | Cashbook entry.
 
 try {
     $result = $apiInstance->createCashbookEntry($company_id, $create_cashbook_entry_request);
@@ -299,7 +299,7 @@ $apiInstance = new FattureInCloud\Api\CashbookApi(
 );
 $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
-$modify_cashbook_entry_request = {"data":{"date":"2021-08-24","amount_in":122,"payment_account_in":{"id":333},"description":"Fattura n. 201/2021","entity_name":"Rossi S.r.l."}}; // \FattureInCloud\Model\ModifyCashbookEntryRequest | Cashbook Entry
+$modify_cashbook_entry_request = new \FattureInCloud\Model\ModifyCashbookEntryRequest; // \FattureInCloud\Model\ModifyCashbookEntryRequest | Cashbook Entry
 
 try {
     $result = $apiInstance->modifyCashbookEntry($company_id, $document_id, $modify_cashbook_entry_request);

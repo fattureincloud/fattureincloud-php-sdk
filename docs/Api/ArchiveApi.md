@@ -40,7 +40,7 @@ $apiInstance = new FattureInCloud\Api\ArchiveApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$create_archive_document_request = {"data":{"date":"2021-08-20","category":"Altri documenti","description":"spesa 1","attachment_token":"ibfjdbf94ey9w94g3w894qbasrga"}}; // \FattureInCloud\Model\CreateArchiveDocumentRequest | The Archive Document.
+$create_archive_document_request = new \FattureInCloud\Model\CreateArchiveDocumentRequest; // \FattureInCloud\Model\CreateArchiveDocumentRequest | The Archive Document.
 
 try {
     $result = $apiInstance->createArchiveDocument($company_id, $create_archive_document_request);
@@ -302,7 +302,7 @@ $apiInstance = new FattureInCloud\Api\ArchiveApi(
 );
 $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
-$modify_archive_document_request = {"data":{"date":"2021-08-20","category":"Altri documenti","description":"spesa 2"}}; // \FattureInCloud\Model\ModifyArchiveDocumentRequest | Modified Archive Document
+$modify_archive_document_request = new \FattureInCloud\Model\ModifyArchiveDocumentRequest; // \FattureInCloud\Model\ModifyArchiveDocumentRequest | Modified Archive Document
 
 try {
     $result = $apiInstance->modifyArchiveDocument($company_id, $document_id, $modify_archive_document_request);

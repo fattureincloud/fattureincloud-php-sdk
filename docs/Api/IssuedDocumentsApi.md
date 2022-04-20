@@ -46,7 +46,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$create_issued_document_request = {"data":{"type":"receipt","numeration":"rec123","subject":"","visible_subject":"","amount_net":68.18,"amount_vat":6.82,"amount_due_discount":0,"entity":{"id":54321,"name":"Mary Red S.r.L.","vat_number":"IT05432181211","tax_code":"IT05432181211","address_street":"Via Italia, 66","address_postal_code":"20900","address_city":"Milano","address_province":"MI","address_extra":"","country":"Italia","certified_email":"mary@pec.red.com","ei_code":"ABCXCR1"},"date":"2021-08-20","number":1,"next_due_date":"2021-12-31","attachment_token":"ypbqqe4u8w8bdabcd5fd5b1a","items_list":[{"product_id":333,"code":"SG3","name":"Soggiorno","measure":"","net_price":68.18182,"category":"","id":277875565,"gross_price":75,"apply_withholding_taxes":true,"discount":0,"discount_highlight":false,"in_dn":false,"qty":1,"vat":{"id":3,"value":10,"description":""},"stock":true,"description":"","not_taxable":false}],"payments_list":[{"amount":75,"due_date":"2020-08-23","id":444,"payment_terms":{"days":0,"type":"standard"},"status":"not_paid"}],"payment_method":{"id":4}}}; // \FattureInCloud\Model\CreateIssuedDocumentRequest | The Issued Document
+$create_issued_document_request = new \FattureInCloud\Model\CreateIssuedDocumentRequest; // \FattureInCloud\Model\CreateIssuedDocumentRequest | The Issued Document
 
 try {
     $result = $apiInstance->createIssuedDocument($company_id, $create_issued_document_request);
@@ -293,7 +293,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
 );
 $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
-$get_existing_issued_document_totals_request = {"data":{"rivalsa":20}}; // \FattureInCloud\Model\GetExistingIssuedDocumentTotalsRequest
+$get_existing_issued_document_totals_request = new \FattureInCloud\Model\GetExistingIssuedDocumentTotalsRequest; // \FattureInCloud\Model\GetExistingIssuedDocumentTotalsRequest
 
 try {
     $result = $apiInstance->getExistingIssuedDocumentTotals($company_id, $document_id, $get_existing_issued_document_totals_request);
@@ -484,7 +484,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$get_new_issued_document_totals_request = {"data":{"id":12345,"type":"receipt","year":2021,"numeration":"rec123","subject":"","visible_subject":"","rc_center":"","stamp_duty":0,"use_gross_prices":false,"delivery_note":false,"accompanying_invoice":false,"amount_net":68.18,"amount_vat":6.82,"amount_due_discount":0,"amount_rivalsa":0,"amount_cassa":0,"amount_withholding_tax":0,"amount_other_withholding_tax":0,"permanent_token":"6pzguy12h45rn9yqwertp43t7ec90vr","h_margins":15,"v_margins":16,"show_payment_method":false,"show_payments":true,"show_totals":"all","show_paypal_button":true,"show_notification_button":false,"is_marked":false,"created_at":"2021-08-13 09:30:20","updated_at":"2021-08-23 05:34:20","entity":{"id":54321,"name":"Mary Red S.r.L.","vat_number":"IT05432181211","tax_code":"IT05432181211","address_street":"Via Italia, 66","address_postal_code":"20900","address_city":"Milano","address_province":"MI","address_extra":"","country":"Italia","certified_email":"mary@pec.red.com","ei_code":"ABCXCR1"},"date":"2021-08-20","number":1,"currency":{"id":"EUR","exchange_rate":"1.00000","symbol":"€"},"language":{"code":"it","name":"Italiano"},"notes":"","rivalsa":0,"cassa":0,"withholding_tax":0,"withholding_tax_taxable":100,"other_withholding_tax":0,"payment_method":{"id":4,"name":"Credit card"},"use_split_payment":false,"items_list":[{"product_id":5432,"code":"SG3","name":"Soggiorno","measure":"","net_price":68.18182,"category":"","id":277876033,"apply_withholding_taxes":true,"discount":0,"discount_highlight":false,"in_dn":false,"qty":1,"vat":{"id":3,"value":10,"description":""},"stock":false,"description":"","not_taxable":false}],"payments_list":[{"amount":75,"due_date":"2020-08-23","id":69078013,"payment_terms":{"days":0,"type":"standard"},"status":"not_paid"}],"attachment_url":"kdijrnf893hnwkfk45f50f.pdf","next_due_date":"2020-08-23","template":{"id":2821,"name":"Light Smoke"},"url":"y12h45rn9yf2mse0p43t7ec90vr.pdf"}}; // \FattureInCloud\Model\GetNewIssuedDocumentTotalsRequest
+$get_new_issued_document_totals_request = new \FattureInCloud\Model\GetNewIssuedDocumentTotalsRequest; // \FattureInCloud\Model\GetNewIssuedDocumentTotalsRequest
 
 try {
     $result = $apiInstance->getNewIssuedDocumentTotals($company_id, $get_new_issued_document_totals_request);
@@ -621,7 +621,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
 );
 $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
-$modify_issued_document_request = {"data":{"type":"receipt","numeration":"rec123","subject":"","visible_subject":"","amount_net":68.18,"amount_vat":6.82,"amount_due_discount":0,"entity":{"id":54321,"name":"Mary Red S.r.L.","vat_number":"IT05432181211","tax_code":"IT05432181211","address_street":"Via Italia, 66","address_postal_code":"20900","address_city":"Milano","address_province":"MI","address_extra":"","country":"Italia","certified_email":"mary@pec.red.com","ei_code":"ABCXCR1"},"date":"2021-08-20","number":1,"next_due_date":"2021-12-31","attachment_token":"ypbqqe4u8w8bdabcd5fd5b1a","items_list":[{"product_id":333,"code":"SG3","name":"Soggiorno","measure":"","net_price":68.18182,"category":"","id":277875565,"gross_price":75,"apply_withholding_taxes":true,"discount":0,"discount_highlight":false,"in_dn":false,"qty":1,"vat":{"id":3,"value":10,"description":""},"stock":true,"description":"","not_taxable":false}],"payments_list":[{"amount":75,"due_date":"2020-08-23","id":444,"payment_terms":{"days":0,"type":"standard"},"status":"not_paid"}]}}; // \FattureInCloud\Model\ModifyIssuedDocumentRequest | The modified document
+$modify_issued_document_request = new \FattureInCloud\Model\ModifyIssuedDocumentRequest; // \FattureInCloud\Model\ModifyIssuedDocumentRequest | The modified document
 
 try {
     $result = $apiInstance->modifyIssuedDocument($company_id, $document_id, $modify_issued_document_request);
@@ -685,7 +685,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
 );
 $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
-$schedule_email_request = {"data":{"sender_email":"mariorossi@fattureincloud.it","recipient_email":"mary.red@example.com","subject":"Nostra pro forma nr. 1","body":"Gentile Mario Rossi,<br>per vedere la nostra pro forma di  o per scaricarne una copia in versione PDF prema sul bottone sottostante.<br><br>{{allegati}}<br><br>Cordiali saluti,<br><b>Mario Rossi</b>","include":{"document":false,"delivery_note":false,"attachment":false,"accompanying_invoice":false},"attach_pdf":true,"send_copy":false}}; // \FattureInCloud\Model\ScheduleEmailRequest | Email Schedule
+$schedule_email_request = new \FattureInCloud\Model\ScheduleEmailRequest; // \FattureInCloud\Model\ScheduleEmailRequest | Email Schedule
 
 try {
     $apiInstance->scheduleEmail($company_id, $document_id, $schedule_email_request);

@@ -41,7 +41,7 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$create_f24_request = {"data":{"amount":840.36,"description":"PAGAMENTO IVA 2021","due_date":"2021-12-31","status":"paid","payment_account":{"id":111},"attachment_token":"b19c01da9b1688fb73d0d9e8ad"}}; // \FattureInCloud\Model\CreateF24Request | The F24 to create
+$create_f24_request = new \FattureInCloud\Model\CreateF24Request; // \FattureInCloud\Model\CreateF24Request | The F24 to create
 
 try {
     $result = $apiInstance->createF24($company_id, $create_f24_request);
@@ -364,7 +364,7 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
 );
 $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
-$modify_f24_request = {"data":{"amount":840.36,"description":"PAGAMENTO IVA 2021","due_date":"2021-12-31","status":"paid","payment_account":{"id":111}}}; // \FattureInCloud\Model\ModifyF24Request | The F24
+$modify_f24_request = new \FattureInCloud\Model\ModifyF24Request; // \FattureInCloud\Model\ModifyF24Request | The F24
 
 try {
     $result = $apiInstance->modifyF24($company_id, $document_id, $modify_f24_request);

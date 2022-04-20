@@ -36,6 +36,9 @@ Name | Type | Description | Notes
 **ei_code** | **string** | E-invoice code | [optional]
 **discount_highlight** | **bool** | Discount Highlight. | [optional]
 **default_discount** | **float** | Default discount. | [optional]
+**has_intent_declaration** | **bool** | Has intent declaration. | [optional]
+**intent_declaration_protocol_number** | **\DateTime** | Intent declaration protocol number. | [optional]
+**intent_declaration_protocol_date** | **string** | Intent declaration protocol date. | [optional]
 **created_at** | **string** |  | [optional]
 **updated_at** | **string** |  | [optional]
 

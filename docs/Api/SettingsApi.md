@@ -46,7 +46,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$create_payment_account_request = {"data":{"id":12345,"name":"Indesa","type":"bank","iban":"IT17Q0051343200000003497636","sia":"T1234","virtual":false}}; // \FattureInCloud\Model\CreatePaymentAccountRequest
+$create_payment_account_request = new \FattureInCloud\Model\CreatePaymentAccountRequest; // \FattureInCloud\Model\CreatePaymentAccountRequest
 
 try {
     $result = $apiInstance->createPaymentAccount($company_id, $create_payment_account_request);
@@ -108,7 +108,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$create_payment_method_request = {"data":{"id":386683,"name":"Bonifico bancario","is_default":true,"type":"standard","details":[{"title":"Banca","description":"Sao Paulo"}],"default_payment_account":{"id":12345,"name":"conto banca SP"}}}; // \FattureInCloud\Model\CreatePaymentMethodRequest
+$create_payment_method_request = new \FattureInCloud\Model\CreatePaymentMethodRequest; // \FattureInCloud\Model\CreatePaymentMethodRequest
 
 try {
     $result = $apiInstance->createPaymentMethod($company_id, $create_payment_method_request);
@@ -170,7 +170,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$create_vat_type_request = {"data":{"id":0,"value":22,"description":"Non imponibile art. 123","notes":"IVA non imponibile ai sensi dell'articolo 123, comma 2","e_invoice":true,"ei_type":2,"ei_description":"string","editable":true,"is_disabled":true}}; // \FattureInCloud\Model\CreateVatTypeRequest
+$create_vat_type_request = new \FattureInCloud\Model\CreateVatTypeRequest; // \FattureInCloud\Model\CreateVatTypeRequest
 
 try {
     $result = $apiInstance->createVatType($company_id, $create_vat_type_request);
@@ -610,7 +610,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
 );
 $company_id = 12345; // int | The ID of the company.
 $payment_account_id = 56; // int | The Referred Payment Account Id.
-$modify_payment_account_request = {"data":{"id":0,"name":"Conto Banca Intesa","type":"standard","iban":"string","sia":"string","cuc":"string","virtual":true}}; // \FattureInCloud\Model\ModifyPaymentAccountRequest
+$modify_payment_account_request = new \FattureInCloud\Model\ModifyPaymentAccountRequest; // \FattureInCloud\Model\ModifyPaymentAccountRequest
 
 try {
     $result = $apiInstance->modifyPaymentAccount($company_id, $payment_account_id, $modify_payment_account_request);
@@ -674,7 +674,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
 );
 $company_id = 12345; // int | The ID of the company.
 $payment_method_id = 56; // int | The Referred Payment Method Id.
-$modify_payment_method_request = {"data":{"id":386683,"name":"Bonifico bancario","is_default":true,"type":"standard","details":[{"title":"Banca","description":"Sao Paulo"}],"default_payment_account":{"id":12345,"name":"conto banca SP"}}}; // \FattureInCloud\Model\ModifyPaymentMethodRequest
+$modify_payment_method_request = new \FattureInCloud\Model\ModifyPaymentMethodRequest; // \FattureInCloud\Model\ModifyPaymentMethodRequest
 
 try {
     $result = $apiInstance->modifyPaymentMethod($company_id, $payment_method_id, $modify_payment_method_request);
@@ -738,7 +738,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
 );
 $company_id = 12345; // int | The ID of the company.
 $vat_type_id = 56; // int | The Referred Vat Type Id.
-$modify_vat_type_request = {"data":{"id":0,"value":22,"description":"Non imponibile art. 123","notes":"IVA non imponibile ai sensi dell'articolo 123, comma 2","e_invoice":true,"ei_type":2,"ei_description":"string","editable":true,"is_disabled":true}}; // \FattureInCloud\Model\ModifyVatTypeRequest
+$modify_vat_type_request = new \FattureInCloud\Model\ModifyVatTypeRequest; // \FattureInCloud\Model\ModifyVatTypeRequest
 
 try {
     $result = $apiInstance->modifyVatType($company_id, $vat_type_id, $modify_vat_type_request);
