@@ -39,7 +39,7 @@ $apiInstance = new FattureInCloud\Api\ClientsApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$create_client_request = {"data":{"code":"AE86","name":"Avv. Maria Rossi","type":"person","first_name":"Maria","last_name":"Rossi","contact_person":"","vat_number":"IT12345640962","tax_code":"BLTGNI5ABCDA794E","address_street":"Via Roma, 1","address_postal_code":"20900","address_city":"Milano","address_province":"MI","address_extra":"","country":"Italia","email":"maria.rossi@example.com","certified_email":"maria.rossi@pec.example.com","phone":"1234567890","fax":"","notes":"","default_payment_terms":1,"default_payment_terms_type":"standard","bank_name":"Indesa","bank_iban":"IT40P123456781000000123456","bank_swift_code":"AK86PCT","shipping_address":"Corso Magellano 4","e_invoice":true,"ei_code":"111111","default_vat":{"id":54321,"value":45,"description":"","is_disabled":false}}}; // \FattureInCloud\Model\CreateClientRequest | The client to create
+$create_client_request = new \FattureInCloud\Model\CreateClientRequest; // \FattureInCloud\Model\CreateClientRequest | The client to create
 
 try {
     $result = $apiInstance->createClient($company_id, $create_client_request);
@@ -301,7 +301,7 @@ $apiInstance = new FattureInCloud\Api\ClientsApi(
 );
 $company_id = 12345; // int | The ID of the company.
 $client_id = 56; // int | The ID of the client.
-$modify_client_request = {"data":{"code":"AE86","name":"Avv. Maria Rossi","type":"person","first_name":"Maria","last_name":"Rossi","contact_person":"","vat_number":"IT12345640962","tax_code":"BLTGNI5ABCDA794E","address_street":"Via Roma, 1","address_postal_code":"20900","address_city":"Milano","address_province":"MI","address_extra":"","country":"Italia","email":"maria.rossi@example.com","certified_email":"maria.rossi@pec.example.com","phone":"1234567890","fax":"","notes":"","default_payment_terms":1,"default_payment_terms_type":"standard","bank_name":"Indesa","bank_iban":"IT40P123456781000000123456","bank_swift_code":"AK86PCT","shipping_address":"Corso Magellano 4","e_invoice":true,"ei_code":"111111","default_vat":{"id":54321,"value":45,"description":"","is_disabled":false}}}; // \FattureInCloud\Model\ModifyClientRequest | The modified Client. First level parameters are managed in delta mode.
+$modify_client_request = new \FattureInCloud\Model\ModifyClientRequest; // \FattureInCloud\Model\ModifyClientRequest | The modified Client. First level parameters are managed in delta mode.
 
 try {
     $result = $apiInstance->modifyClient($company_id, $client_id, $modify_client_request);

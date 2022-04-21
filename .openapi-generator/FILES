@@ -456,6 +456,3 @@ lib/Model/VerifyEInvoiceXmlResponse.php
 lib/Model/VerifyEInvoiceXmlResponseData.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/DetailedCountryTest.php
-test/Model/EInvoiceRejectionReasonTest.php
-test/Model/ListDetailedCountriesResponseTest.php

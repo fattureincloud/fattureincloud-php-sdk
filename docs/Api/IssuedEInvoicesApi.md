@@ -165,7 +165,7 @@ $apiInstance = new FattureInCloud\Api\IssuedEInvoicesApi(
 );
 $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
-$send_e_invoice_request = {"data":{"withholding_tax_causal":"causale"}}; // \FattureInCloud\Model\SendEInvoiceRequest
+$send_e_invoice_request = new \FattureInCloud\Model\SendEInvoiceRequest; // \FattureInCloud\Model\SendEInvoiceRequest
 
 try {
     $result = $apiInstance->sendEInvoice($company_id, $document_id, $send_e_invoice_request);

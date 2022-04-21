@@ -39,7 +39,7 @@ $apiInstance = new FattureInCloud\Api\SuppliersApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$create_supplier_request = {"data":{"id":12345,"code":"AE86","name":"Mario Rossi S.R.L.","type":"company","first_name":"Mario","last_name":"Rossi","contact_person":"","vat_number":"111222333","tax_code":"111122233","address_street":"Corso Magellano, 46","address_postal_code":"20146","address_city":"Milano","address_province":"MI","address_extra":"","country":"Italia","email":"mario.rossi@example.com","certified_email":"mario.rossi@pec.example.com","phone":"1234567890","fax":"123456789","notes":""}}; // \FattureInCloud\Model\CreateSupplierRequest | The supplier to create
+$create_supplier_request = new \FattureInCloud\Model\CreateSupplierRequest; // \FattureInCloud\Model\CreateSupplierRequest | The supplier to create
 
 try {
     $result = $apiInstance->createSupplier($company_id, $create_supplier_request);
@@ -301,7 +301,7 @@ $apiInstance = new FattureInCloud\Api\SuppliersApi(
 );
 $company_id = 12345; // int | The ID of the company.
 $supplier_id = 56; // int | The ID of the supplier.
-$modify_supplier_request = {"data":{"id":12345,"code":"AE86","name":"Mario Rossi S.R.L.","type":"company","first_name":"Mario","last_name":"Rossi","contact_person":"","vat_number":"111222333","tax_code":"111122233","address_street":"Corso Magellano, 46","address_postal_code":"20146","address_city":"Milano","address_province":"MI","address_extra":"","country":"Italia","email":"mario.rossi@example.com","certified_email":"mario.rossi@pec.example.com","phone":"1234567890","fax":"123456789","notes":""}}; // \FattureInCloud\Model\ModifySupplierRequest | The modified Supplier. First level parameters are managed in delta mode.
+$modify_supplier_request = new \FattureInCloud\Model\ModifySupplierRequest; // \FattureInCloud\Model\ModifySupplierRequest | The modified Supplier. First level parameters are managed in delta mode.
 
 try {
     $result = $apiInstance->modifySupplier($company_id, $supplier_id, $modify_supplier_request);
