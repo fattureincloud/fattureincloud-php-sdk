@@ -64,6 +64,5 @@ jobs:
             github.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: "refs/tags/v${{ env.sdk_version }}",
-              sha: context.sha
+              ref: "refs/tags/v${{ env.sdk_version }}"
             })
