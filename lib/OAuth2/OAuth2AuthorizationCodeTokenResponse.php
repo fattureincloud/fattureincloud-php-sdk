@@ -123,7 +123,7 @@ class OAuth2AuthorizationCodeTokenResponse
      */
     public static function fromJson(string $json): OAuth2AuthorizationCodeTokenResponse
     {
-        $arr = json_decode($json);
+        $arr = json_decode($json, true);
 
         $tokenType = $arr["token_type"];
         $accessToken = $arr["access_token"];

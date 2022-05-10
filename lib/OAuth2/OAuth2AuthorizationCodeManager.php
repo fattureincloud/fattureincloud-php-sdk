@@ -33,13 +33,13 @@ class OAuth2AuthorizationCodeManager
     private $baseUri;
 
     /**
-     * @param Client|null $client
      * @param string $clientId
      * @param string $clientSecret
      * @param string $redirectUri
      * @param string|null $baseUri
+     * @param Client|null $client
      */
-    public function __construct(string $clientId, string $clientSecret, string $redirectUri, ?string $baseUri, Client $client = null)
+    public function __construct(string $clientId, string $clientSecret, string $redirectUri, string $baseUri = self::DEFAULT_BASE_URI, Client $client = null)
     {
         if ($client == null) {
             $this->client = new Client();
@@ -204,9 +204,10 @@ class OAuth2AuthorizationCodeManager
 
     private function executePost(string $uri, array $body)
     {
-        $r = $this->client->post($uri, ["json" => $body]);
+        $r = $this->client->post($uri, $body);
         $statusCode = $r->getStatusCode();
-        $resBody = $r->getBody();
+        $resBodyJson = $r->getBody()->getContents();
+        $resBody = json_decode($resBodyJson, true);
         if ($statusCode == 200) {
             return new OAuth2AuthorizationCodeTokenResponse($resBody["token_type"], $resBody["access_token"], $resBody["refresh_token"], $resBody["expires_in"]);
         } else {

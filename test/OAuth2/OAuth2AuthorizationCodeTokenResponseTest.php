@@ -41,7 +41,7 @@ class OAuth2AuthorizationCodeTokenResponseTest extends TestCase
     public function testToJson()
     {
         $e = new OAuth2AuthorizationCodeTokenResponse("bearer", "a/ACCESS", "r/REFRESH", 86400);
-        $this->assertEquals("{\"token_type\":\"bearer\",\"access_token\":\"a/ACCESS\",\"refresh_token\":\"r/REFRESH\",\"expires_in\":86400}", $e->toJson());
+        $this->assertEquals("{\"token_type\":\"bearer\",\"access_token\":\"a\/ACCESS\",\"refresh_token\":\"r\/REFRESH\",\"expires_in\":86400}", $e->toJson());
     }
 
     /**
@@ -49,7 +49,7 @@ class OAuth2AuthorizationCodeTokenResponseTest extends TestCase
      */
     public function testFromJson()
     {
-        $e = OAuth2AuthorizationCodeTokenResponse::fromJson("{\"token_type\":\"bearer\",\"access_token\":\"a/ACCESS\",\"refresh_token\":\"r/REFRESH\",\"expires_in\":86400}");
+        $e = OAuth2AuthorizationCodeTokenResponse::fromJson("{\"token_type\":\"bearer\",\"access_token\":\"a\/ACCESS\",\"refresh_token\":\"r\/REFRESH\",\"expires_in\":86400}");
         $this->assertEquals("bearer", $e->getTokenType());
         $this->assertEquals("a/ACCESS", $e->getAccessToken());
         $this->assertEquals("r/REFRESH", $e->getRefreshToken());

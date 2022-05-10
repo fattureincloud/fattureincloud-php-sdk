@@ -100,7 +100,7 @@ class OAuth2AuthorizationCodeError
      */
     public static function fromJson(string $json): OAuth2AuthorizationCodeError
     {
-        $arr = json_decode($json);
+        $arr = json_decode($json, true);
 
         $code = $arr["code"];
         $error = $arr["error"];

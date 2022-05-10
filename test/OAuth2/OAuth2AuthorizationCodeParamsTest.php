@@ -41,7 +41,7 @@ class OAuth2AuthorizationCodeParamsTest extends TestCase
     public function testToJson()
     {
         $params = new OAuth2AuthorizationCodeParams("a/AUTH_CODE", "OMG");
-        $this->assertEquals("{\"code\":\"a/AUTH_CODE\",\"state\":\"OMG\"}", $params->toJson());
+        $this->assertEquals("{\"code\":\"a\/AUTH_CODE\",\"state\":\"OMG\"}", $params->toJson());
     }
 
     /**

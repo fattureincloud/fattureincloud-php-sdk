@@ -14,7 +14,7 @@ class OAuth2AuthorizationCodeParams
     /**
      * @var string
      */
-    private $status;
+    private $state;
 
     /**
      * @param string $authorizationCode
@@ -78,7 +78,7 @@ class OAuth2AuthorizationCodeParams
      */
     public static function fromJson(string $json): OAuth2AuthorizationCodeParams
     {
-        $arr = json_decode($json);
+        $arr = json_decode($json, true);
 
         $authorizarionCode = $arr["code"];
         $state = $arr["state"];
