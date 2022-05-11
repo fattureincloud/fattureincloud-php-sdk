@@ -168,7 +168,7 @@ class OAuth2AuthorizationCodeManager
     {
         $components = parse_url($url);
         parse_str($components["query"], $qs);
-        return new OAuth2AuthorizationCodeParams($qs["code"], $qs["code"]);
+        return new OAuth2AuthorizationCodeParams($qs["code"], $qs["state"]);
     }
 
     /**
@@ -197,7 +197,7 @@ class OAuth2AuthorizationCodeManager
             "grant_type" => "refresh_token",
             "client_id" => $this->clientId,
             "client_secret" => $this->clientSecret,
-            "redirect_uri" => $refreshToken,
+            "refresh_token" => $refreshToken,
         );
         return $this->executePost($tokenUri, $body);
     }
