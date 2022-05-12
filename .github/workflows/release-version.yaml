@@ -54,6 +54,12 @@ jobs:
         run: |
           git push origin
 
+      - id: save-commit-sha
+        name: Save latest commit sha
+        run: |
+          COMMIT_SHA=$(git rev-parse HEAD)
+          echo "commit_sha=$COMMIT_SHA" >> $GITHUB_ENV
+
       - id: create-tag
         name: Create tag
         if: ${{ !env.ACT }}
@@ -65,5 +71,5 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               ref: "refs/tags/v${{ env.sdk_version }}",
-              sha: context.sha
+              sha: "${{ env.commit_sha }}"
             })
