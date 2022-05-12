@@ -1,5 +1,4 @@
 <?php
-
 namespace FattureInCloud\Test\OAuth2;
 
 use FattureInCloud\OAuth2\OAuth2AuthorizationCodeTokenResponse;
@@ -47,20 +46,20 @@ class OAuth2AuthorizationCodeManagerTest extends TestCase
      */
     public function testOAuth2AuthorizationCodeManager()
     {
-        $e = new OAuth2AuthorizationCodeManager("CLIENT_ID", "CLIENT_SECRET", "REDIRECT_URI");
-        $this->assertEquals("CLIENT_ID", $e->getClientId());
-        $this->assertEquals("CLIENT_SECRET", $e->getClientSecret());
-        $this->assertEquals("REDIRECT_URI", $e->getRedirectUri());
-        $this->assertEquals("https://api-v2.fattureincloud.it", $e->getBaseUri());
-        
-        $e->setClientId("CLIENT_ID_2");
-        $e->setClientSecret("CLIENT_SECRET_2");
-        $e->setRedirectUri("REDIRECT_URI_2");
-        $e->setBaseUri("https://api-v2.fattureincloud.it/2");
-        $this->assertEquals("CLIENT_ID_2", $e->getClientId());
-        $this->assertEquals("CLIENT_SECRET_2", $e->getClientSecret());
-        $this->assertEquals("REDIRECT_URI_2", $e->getRedirectUri());
-        $this->assertEquals("https://api-v2.fattureincloud.it/2", $e->getBaseUri());
+        $e = new OAuth2AuthorizationCodeManager('CLIENT_ID', 'CLIENT_SECRET', 'REDIRECT_URI');
+        $this->assertEquals('CLIENT_ID', $e->getClientId());
+        $this->assertEquals('CLIENT_SECRET', $e->getClientSecret());
+        $this->assertEquals('REDIRECT_URI', $e->getRedirectUri());
+        $this->assertEquals('https://api-v2.fattureincloud.it', $e->getBaseUri());
+
+        $e->setClientId('CLIENT_ID_2');
+        $e->setClientSecret('CLIENT_SECRET_2');
+        $e->setRedirectUri('REDIRECT_URI_2');
+        $e->setBaseUri('https://api-v2.fattureincloud.it/2');
+        $this->assertEquals('CLIENT_ID_2', $e->getClientId());
+        $this->assertEquals('CLIENT_SECRET_2', $e->getClientSecret());
+        $this->assertEquals('REDIRECT_URI_2', $e->getRedirectUri());
+        $this->assertEquals('https://api-v2.fattureincloud.it/2', $e->getBaseUri());
     }
 
     /**
@@ -68,14 +67,14 @@ class OAuth2AuthorizationCodeManagerTest extends TestCase
      */
     public function testOAuth2AuthorizationCodeParams()
     {
-        $params = new OAuth2AuthorizationCodeParams("a/AUTH_CODE", "OMG");
-        $this->assertEquals("a/AUTH_CODE", $params->getAuthorizationCode());
-        $this->assertEquals("OMG", $params->getState());
-        
-        $params->setAuthorizationCode("a/AUTH_CODE_2");
-        $params->setState("OMG2");
-        $this->assertEquals("a/AUTH_CODE_2", $params->getAuthorizationCode());
-        $this->assertEquals("OMG2", $params->getState());
+        $params = new OAuth2AuthorizationCodeParams('a/AUTH_CODE', 'OMG');
+        $this->assertEquals('a/AUTH_CODE', $params->getAuthorizationCode());
+        $this->assertEquals('OMG', $params->getState());
+
+        $params->setAuthorizationCode('a/AUTH_CODE_2');
+        $params->setState('OMG2');
+        $this->assertEquals('a/AUTH_CODE_2', $params->getAuthorizationCode());
+        $this->assertEquals('OMG2', $params->getState());
     }
 
     /**
@@ -83,19 +82,19 @@ class OAuth2AuthorizationCodeManagerTest extends TestCase
      */
     public function testOAuth2AuthorizationCodeTokenResponse()
     {
-        $params = new OAuth2AuthorizationCodeTokenResponse("bearer", "EXAMPLE_ACCESS_TOKEN", "EXAMPLE_REFRESH_TOKEN", 86400);
-        $this->assertEquals("bearer", $params->getTokenType());
-        $this->assertEquals("EXAMPLE_ACCESS_TOKEN", $params->getAccessToken());
-        $this->assertEquals("EXAMPLE_REFRESH_TOKEN", $params->getRefreshToken());
+        $params = new OAuth2AuthorizationCodeTokenResponse('bearer', 'EXAMPLE_ACCESS_TOKEN', 'EXAMPLE_REFRESH_TOKEN', 86400);
+        $this->assertEquals('bearer', $params->getTokenType());
+        $this->assertEquals('EXAMPLE_ACCESS_TOKEN', $params->getAccessToken());
+        $this->assertEquals('EXAMPLE_REFRESH_TOKEN', $params->getRefreshToken());
         $this->assertEquals(86400, $params->getExpiresIn());
 
-        $params->setTokenType("basic");
-        $params->setAccessToken("EXAMPLE_ACCESS_TOKEN_2");
-        $params->setRefreshToken("EXAMPLE_REFRESH_TOKEN_2");
+        $params->setTokenType('basic');
+        $params->setAccessToken('EXAMPLE_ACCESS_TOKEN_2');
+        $params->setRefreshToken('EXAMPLE_REFRESH_TOKEN_2');
         $params->setExpiresIn(7200);
-        $this->assertEquals("basic", $params->getTokenType());
-        $this->assertEquals("EXAMPLE_ACCESS_TOKEN_2", $params->getAccessToken());
-        $this->assertEquals("EXAMPLE_REFRESH_TOKEN_2", $params->getRefreshToken());
+        $this->assertEquals('basic', $params->getTokenType());
+        $this->assertEquals('EXAMPLE_ACCESS_TOKEN_2', $params->getAccessToken());
+        $this->assertEquals('EXAMPLE_REFRESH_TOKEN_2', $params->getRefreshToken());
         $this->assertEquals(7200, $params->getExpiresIn());
     }
 
@@ -105,9 +104,9 @@ class OAuth2AuthorizationCodeManagerTest extends TestCase
     public function testGetAuthorizationUrl()
     {
         $scopes = [Scope::SETTINGS_ALL, Scope::ISSUED_DOCUMENTS_INVOICES_READ];
-        $e = new OAuth2AuthorizationCodeManager("CLIENT_ID", "CLIENT_SECRET", "http://localhost:3000/redirect");
+        $e = new OAuth2AuthorizationCodeManager('CLIENT_ID', 'CLIENT_SECRET', 'http://localhost:3000/redirect');
 
-        $this->assertEquals("https://api-v2.fattureincloud.it/oauth/authorize?response_type=code&client_id=CLIENT_ID&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fredirect&scope=settings%3Aa+issued_documents.invoices%3Ar&state=EXAMPLE_STATE", $e->getAuthorizationUrl($scopes, "EXAMPLE_STATE"));
+        $this->assertEquals('https://api-v2.fattureincloud.it/oauth/authorize?response_type=code&client_id=CLIENT_ID&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fredirect&scope=settings%3Aa+issued_documents.invoices%3Ar&state=EXAMPLE_STATE', $e->getAuthorizationUrl($scopes, 'EXAMPLE_STATE'));
     }
 
     /**
@@ -125,11 +124,11 @@ class OAuth2AuthorizationCodeManagerTest extends TestCase
         $handler = HandlerStack::create($mock);
         $customClient = new Client(['handler' => $handler]);
 
-        $e = new OAuth2AuthorizationCodeManager("CLIENT_ID", "CLIENT_SECRET", "http://localhost:3000/redirect", 'http://fic.api.test', $customClient);
-        $token = $e->fetchToken("test_code");
-        $this->assertEquals("bearer", $token->getTokenType());
-        $this->assertEquals("a/ACCESS_TOKEN", $token->getAccessToken());
-        $this->assertEquals("r/REFRESH_TOKEN", $token->getRefreshToken());
+        $e = new OAuth2AuthorizationCodeManager('CLIENT_ID', 'CLIENT_SECRET', 'http://localhost:3000/redirect', 'http://fic.api.test', $customClient);
+        $token = $e->fetchToken('test_code');
+        $this->assertEquals('bearer', $token->getTokenType());
+        $this->assertEquals('a/ACCESS_TOKEN', $token->getAccessToken());
+        $this->assertEquals('r/REFRESH_TOKEN', $token->getRefreshToken());
         $this->assertEquals(86400, $token->getExpiresIn());
     }
 
@@ -148,12 +147,11 @@ class OAuth2AuthorizationCodeManagerTest extends TestCase
         $handler = HandlerStack::create($mock);
         $customClient = new Client(['handler' => $handler]);
 
-        $e = new OAuth2AuthorizationCodeManager("CLIENT_ID", "CLIENT_SECRET", "http://localhost:3000/redirect", 'http://fic.api.test', $customClient);
-        $token = $e->refreshToken("refresh_token");
-        $this->assertEquals("bearer", $token->getTokenType());
-        $this->assertEquals("a/ACCESS_TOKEN", $token->getAccessToken());
-        $this->assertEquals("r/REFRESH_TOKEN", $token->getRefreshToken());
+        $e = new OAuth2AuthorizationCodeManager('CLIENT_ID', 'CLIENT_SECRET', 'http://localhost:3000/redirect', 'http://fic.api.test', $customClient);
+        $token = $e->refreshToken('refresh_token');
+        $this->assertEquals('bearer', $token->getTokenType());
+        $this->assertEquals('a/ACCESS_TOKEN', $token->getAccessToken());
+        $this->assertEquals('r/REFRESH_TOKEN', $token->getRefreshToken());
         $this->assertEquals(86400, $token->getExpiresIn());
     }
-    
 }

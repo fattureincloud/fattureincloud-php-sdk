@@ -26,11 +26,11 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 use \FattureInCloud\ObjectSerializer;
+
 /**
  * EntityTypeTest Class Doc Comment
  *
@@ -42,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class EntityTypeTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */

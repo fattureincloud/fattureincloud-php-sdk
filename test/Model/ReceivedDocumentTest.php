@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -43,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class ReceivedDocumentTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -150,9 +148,8 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testReceivedDocument()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
@@ -177,9 +174,8 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyEntity()
     {
-        foreach ($this->array['entity'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['entity']);
+        foreach ($this->array['entity'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['entity']);
         }
     }
 
@@ -310,9 +306,8 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyCurrency()
     {
-        foreach ($this->array['currency'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['currency']);
+        foreach ($this->array['currency'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['currency']);
         }
     }
 
@@ -337,9 +332,8 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyItemsList()
     {
-        foreach ($this->array['items_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['items_list']);
+        foreach ($this->array['items_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['items_list']);
         }
     }
 
@@ -348,9 +342,8 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyPaymentsList()
     {
-        foreach ($this->array['payments_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['payments_list']);
+        foreach ($this->array['payments_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['payments_list']);
         }
     }
 

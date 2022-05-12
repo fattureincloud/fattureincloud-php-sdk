@@ -25,20 +25,19 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the endpoint.
  */
-
 namespace FattureInCloud\Test\Api;
 
 use \FattureInCloud\Configuration;
 use \FattureInCloud\ApiException;
 use \FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
-
 use \GuzzleHttp\Client;
 use \GuzzleHttp\Handler\MockHandler;
 use \GuzzleHttp\HandlerStack;
 use \GuzzleHttp\Psr7\Response;
 use \GuzzleHttp\Psr7\Request;
 use \GuzzleHttp\Exception\RequestException;
+
 /**
  * ArchiveApiTest Class Doc Comment
  *
@@ -49,7 +48,6 @@ use \GuzzleHttp\Exception\RequestException;
  */
 class ArchiveApiTest extends TestCase
 {
-
     /**
      * Setup before running any test cases
      */
@@ -98,7 +96,7 @@ class ArchiveApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $create_archive_document_request = "json";
+        $create_archive_document_request = 'json';
         $result = $apiInstance->createArchiveDocument($company_id, $create_archive_document_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreateArchiveDocumentResponse');
 
@@ -190,7 +188,7 @@ class ArchiveApiTest extends TestCase
         );
         $company_id = 2;
         $archive_document_id = 12345;
-        $modify_archive_document_request = "json";
+        $modify_archive_document_request = 'json';
         $result = $apiInstance->modifyArchiveDocument($company_id, $archive_document_id, $modify_archive_document_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyArchiveDocumentResponse');
 
@@ -217,7 +215,7 @@ class ArchiveApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $upload_archive_document_attachment = "json";
+        $upload_archive_document_attachment = 'json';
         $result = $apiInstance->uploadArchiveDocumentAttachment($company_id, $upload_archive_document_attachment);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\UploadArchiveAttachmentResponse');
 

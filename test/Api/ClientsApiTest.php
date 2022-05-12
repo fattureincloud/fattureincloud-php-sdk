@@ -25,20 +25,19 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the endpoint.
  */
-
 namespace FattureInCloud\Test\Api;
 
 use \FattureInCloud\Configuration;
 use \FattureInCloud\ApiException;
 use \FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
-
 use \GuzzleHttp\Client;
 use \GuzzleHttp\Handler\MockHandler;
 use \GuzzleHttp\HandlerStack;
 use \GuzzleHttp\Psr7\Response;
 use \GuzzleHttp\Psr7\Request;
 use \GuzzleHttp\Exception\RequestException;
+
 /**
  * ClientsApiTest Class Doc Comment
  *
@@ -49,7 +48,6 @@ use \GuzzleHttp\Exception\RequestException;
  */
 class ClientsApiTest extends TestCase
 {
-
     /**
      * Setup before running any test cases
      */
@@ -98,7 +96,7 @@ class ClientsApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $create_client_request = "json";
+        $create_client_request = 'json';
         $result = $apiInstance->createClient($company_id, $create_client_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreateClientResponse');
 
@@ -190,7 +188,7 @@ class ClientsApiTest extends TestCase
         );
         $company_id = 2;
         $client_id = 16451;
-        $modify_client_request = "json";
+        $modify_client_request = 'json';
         $result = $apiInstance->modifyClient($company_id, $client_id, $modify_client_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyClientResponse');
 

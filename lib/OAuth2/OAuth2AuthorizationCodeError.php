@@ -1,5 +1,4 @@
 <?php
-
 namespace FattureInCloud\OAuth2;
 
 /**
@@ -85,11 +84,11 @@ class OAuth2AuthorizationCodeError
      */
     public function toJson(): string
     {
-        $arr = array(
-            "code" => $this->code,
-            "error" => $this->error,
-            "error_description" => $this->errorDescription,
-        );
+        $arr = [
+            'code' => $this->code,
+            'error' => $this->error,
+            'error_description' => $this->errorDescription,
+        ];
 
         return json_encode($arr);
     }
@@ -102,9 +101,9 @@ class OAuth2AuthorizationCodeError
     {
         $arr = json_decode($json, true);
 
-        $code = $arr["code"];
-        $error = $arr["error"];
-        $errorDescription = $arr["error_description"];
+        $code = $arr['code'];
+        $error = $arr['error'];
+        $errorDescription = $arr['error_description'];
 
         return new OAuth2AuthorizationCodeError($code, $error, $errorDescription);
     }

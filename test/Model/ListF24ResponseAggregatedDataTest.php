@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -43,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class ListF24ResponseAggregatedDataTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -84,9 +82,8 @@ class ListF24ResponseAggregatedDataTest extends TestCase
      */
     public function testListF24ResponseAggregatedData()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 

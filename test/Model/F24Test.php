@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -43,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class F24Test extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -70,9 +68,9 @@ class F24Test extends TestCase
             "attachment_token": "Adfqregwthwrt6whrtghsrgbsdthyeruerur6u6676e5879"
           }';
 
-          $this->array = json_decode($json, true);
+        $this->array = json_decode($json, true);
 
-          $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\F24');
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\F24');
     }
 
     /**
@@ -94,9 +92,8 @@ class F24Test extends TestCase
      */
     public function testF24()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
@@ -130,9 +127,8 @@ class F24Test extends TestCase
      */
     public function testPropertyPaymentAccount()
     {
-        foreach ($this->array['payment_account'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['payment_account']);
+        foreach ($this->array['payment_account'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['payment_account']);
         }
     }
 

@@ -25,20 +25,19 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the endpoint.
  */
-
 namespace FattureInCloud\Test\Api;
 
 use \FattureInCloud\Configuration;
 use \FattureInCloud\ApiException;
 use \FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
-
 use \GuzzleHttp\Client;
 use \GuzzleHttp\Handler\MockHandler;
 use \GuzzleHttp\HandlerStack;
 use \GuzzleHttp\Psr7\Response;
 use \GuzzleHttp\Psr7\Request;
 use \GuzzleHttp\Exception\RequestException;
+
 /**
  * ReceivedDocumentsApiTest Class Doc Comment
  *
@@ -49,7 +48,6 @@ use \GuzzleHttp\Exception\RequestException;
  */
 class ReceivedDocumentsApiTest extends TestCase
 {
-
     /**
      * Setup before running any test cases
      */
@@ -98,7 +96,7 @@ class ReceivedDocumentsApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $create_received_document_request = "json";
+        $create_received_document_request = 'json';
         $result = $apiInstance->createReceivedDocument($company_id, $create_received_document_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreateReceivedDocumentResponse');
 
@@ -148,7 +146,7 @@ class ReceivedDocumentsApiTest extends TestCase
         );
         $company_id = 2;
         $received_document_id = 12345;
-        $get_existing_received_document_totals_request = "json";
+        $get_existing_received_document_totals_request = 'json';
         $result = $apiInstance->getExistingReceivedDocumentTotals($company_id, $received_document_id, $get_existing_received_document_totals_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetExistingReceivedDocumentTotalsResponse');
 
@@ -175,7 +173,7 @@ class ReceivedDocumentsApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $get_new_received_document_totals_request = "json";
+        $get_new_received_document_totals_request = 'json';
         $result = $apiInstance->getNewReceivedDocumentTotals($company_id, $get_new_received_document_totals_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetNewReceivedDocumentTotalsResponse');
 
@@ -284,7 +282,7 @@ class ReceivedDocumentsApiTest extends TestCase
         );
         $company_id = 2;
         $received_document_id = 12345;
-        $modify_received_document_request = "json";
+        $modify_received_document_request = 'json';
         $result = $apiInstance->modifyReceivedDocument($company_id, $received_document_id, $modify_received_document_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyReceivedDocumentResponse');
 
@@ -311,7 +309,7 @@ class ReceivedDocumentsApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $upload_received_document_attachment = "json";
+        $upload_received_document_attachment = 'json';
         $result = $apiInstance->uploadReceivedDocumentAttachment($company_id, $upload_received_document_attachment);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\UploadReceivedDocumentAttachmentResponse');
 

@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -43,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class CompanyInfoTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -129,9 +127,8 @@ class CompanyInfoTest extends TestCase
      */
     public function testCompanyInfo()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
@@ -172,9 +169,8 @@ class CompanyInfoTest extends TestCase
      */
     public function testPropertyAccessInfo()
     {
-        foreach ($this->array['access_info'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['access_info']);
+        foreach ($this->array['access_info'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['access_info']);
         }
     }
 
@@ -183,9 +179,8 @@ class CompanyInfoTest extends TestCase
      */
     public function testPropertyPlanInfo()
     {
-        foreach ($this->array['plan_info'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['plan_info']);
+        foreach ($this->array['plan_info'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['plan_info']);
         }
     }
 
@@ -196,5 +191,4 @@ class CompanyInfoTest extends TestCase
     {
         TestCase::assertEquals($this->object['accountant_id'], $this->array['accountant_id']);
     }
-    
 }

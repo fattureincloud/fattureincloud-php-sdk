@@ -1,5 +1,4 @@
 <?php
-
 namespace FattureInCloud\Test\Filter;
 
 use PHPUnit\Framework\TestCase;
@@ -8,7 +7,6 @@ use \FattureInCloud\Filter\Operator;
 
 class ConditionTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -42,11 +40,11 @@ class ConditionTest extends TestCase
      */
     public function testValue()
     {
-        $condition = new Condition("city", Operator::EQ, "Bergamo");
-        $this->assertEquals("Bergamo", $condition->getValue());
+        $condition = new Condition('city', Operator::EQ, 'Bergamo');
+        $this->assertEquals('Bergamo', $condition->getValue());
 
-        $condition->setValue("Rio de Janeiro");
-        $this->assertEquals("Rio de Janeiro", $condition->getValue());
+        $condition->setValue('Rio de Janeiro');
+        $this->assertEquals('Rio de Janeiro', $condition->getValue());
 
         $condition->setValue(5);
         $this->assertEquals(5, (int)$condition->getValue());
@@ -69,11 +67,11 @@ class ConditionTest extends TestCase
      */
     public function testField()
     {
-        $condition = new Condition("name", Operator::EQ, "Bergamo");
-        $this->assertEquals("name", $condition->getField());
+        $condition = new Condition('name', Operator::EQ, 'Bergamo');
+        $this->assertEquals('name', $condition->getField());
 
-        $condition->setField("city");
-        $this->assertEquals("city", $condition->getField());
+        $condition->setField('city');
+        $this->assertEquals('city', $condition->getField());
     }
 
     /**
@@ -81,7 +79,7 @@ class ConditionTest extends TestCase
      */
     public function testOperator()
     {
-        $condition = new Condition("city", Operator::EQ, "Bergamo");
+        $condition = new Condition('city', Operator::EQ, 'Bergamo');
         $this->assertEquals(Operator::EQ, $condition->getOp());
 
         $condition->setOp(Operator::GT);
@@ -123,41 +121,41 @@ class ConditionTest extends TestCase
      */
     public function testBuildQuery()
     {
-        $condition = new Condition("city", Operator::EQ, "Bergamo");
+        $condition = new Condition('city', Operator::EQ, 'Bergamo');
         $this->assertEquals("city = 'Bergamo'", $condition->buildQuery());
 
-        $condition = new Condition("city", Operator::NEQ, null);
-        $this->assertEquals("city <> null", $condition->buildQuery());
+        $condition = new Condition('city', Operator::NEQ, null);
+        $this->assertEquals('city <> null', $condition->buildQuery());
 
-        $condition = new Condition("city", Operator::IS, null);
-        $this->assertEquals("city is null", $condition->buildQuery());
+        $condition = new Condition('city', Operator::IS, null);
+        $this->assertEquals('city is null', $condition->buildQuery());
 
-        $condition = new Condition("city", Operator::IS_NOT, null);
-        $this->assertEquals("city is not null", $condition->buildQuery());
+        $condition = new Condition('city', Operator::IS_NOT, null);
+        $this->assertEquals('city is not null', $condition->buildQuery());
 
-        $condition = new Condition("city", Operator::LIKE, "%aco");
+        $condition = new Condition('city', Operator::LIKE, '%aco');
         $this->assertEquals("city like '%aco'", $condition->buildQuery());
 
-        $condition = new Condition("city", Operator::CONTAINS, "ila");
+        $condition = new Condition('city', Operator::CONTAINS, 'ila');
         $this->assertEquals("city contains 'ila'", $condition->buildQuery());
 
-        $condition = new Condition("city", Operator::STARTS_WITH, "Mariano");
+        $condition = new Condition('city', Operator::STARTS_WITH, 'Mariano');
         $this->assertEquals("city starts with 'Mariano'", $condition->buildQuery());
 
-        $condition = new Condition("city", Operator::ENDS_WITH, "al Brembo");
+        $condition = new Condition('city', Operator::ENDS_WITH, 'al Brembo');
         $this->assertEquals("city ends with 'al Brembo'", $condition->buildQuery());
 
-        $condition = new Condition("employees", Operator::GT, 10);
-        $this->assertEquals("employees > 10", $condition->buildQuery());
+        $condition = new Condition('employees', Operator::GT, 10);
+        $this->assertEquals('employees > 10', $condition->buildQuery());
 
-        $condition = new Condition("employees", Operator::LT, 10);
-        $this->assertEquals("employees < 10", $condition->buildQuery());
+        $condition = new Condition('employees', Operator::LT, 10);
+        $this->assertEquals('employees < 10', $condition->buildQuery());
 
-        $condition = new Condition("convertion_ratio", Operator::GTE, 0.01);
-        $this->assertEquals("convertion_ratio >= 0.01", $condition->buildQuery());
+        $condition = new Condition('convertion_ratio', Operator::GTE, 0.01);
+        $this->assertEquals('convertion_ratio >= 0.01', $condition->buildQuery());
 
-        $condition = new Condition("convertion_ratio", Operator::LTE, 10.83);
-        $this->assertEquals("convertion_ratio <= 10.83", $condition->buildQuery());
+        $condition = new Condition('convertion_ratio', Operator::LTE, 10.83);
+        $this->assertEquals('convertion_ratio <= 10.83', $condition->buildQuery());
     }
 
     /**
@@ -165,40 +163,40 @@ class ConditionTest extends TestCase
      */
     public function testToString()
     {
-        $condition = new Condition("city", Operator::EQ, "Bergamo");
+        $condition = new Condition('city', Operator::EQ, 'Bergamo');
         $this->assertEquals("city = 'Bergamo'", (string)$condition);
 
-        $condition = new Condition("city", Operator::NEQ, null);
-        $this->assertEquals("city <> null", (string)$condition);
+        $condition = new Condition('city', Operator::NEQ, null);
+        $this->assertEquals('city <> null', (string)$condition);
 
-        $condition = new Condition("city", Operator::IS, null);
-        $this->assertEquals("city is null", (string)$condition);
+        $condition = new Condition('city', Operator::IS, null);
+        $this->assertEquals('city is null', (string)$condition);
 
-        $condition = new Condition("city", Operator::IS_NOT, null);
-        $this->assertEquals("city is not null", (string)$condition);
+        $condition = new Condition('city', Operator::IS_NOT, null);
+        $this->assertEquals('city is not null', (string)$condition);
 
-        $condition = new Condition("city", Operator::LIKE, "%aco");
+        $condition = new Condition('city', Operator::LIKE, '%aco');
         $this->assertEquals("city like '%aco'", (string)$condition);
 
-        $condition = new Condition("city", Operator::CONTAINS, "ila");
+        $condition = new Condition('city', Operator::CONTAINS, 'ila');
         $this->assertEquals("city contains 'ila'", (string)$condition);
 
-        $condition = new Condition("city", Operator::STARTS_WITH, "Mariano");
+        $condition = new Condition('city', Operator::STARTS_WITH, 'Mariano');
         $this->assertEquals("city starts with 'Mariano'", (string)$condition);
 
-        $condition = new Condition("city", Operator::ENDS_WITH, "al Brembo");
+        $condition = new Condition('city', Operator::ENDS_WITH, 'al Brembo');
         $this->assertEquals("city ends with 'al Brembo'", (string)$condition);
 
-        $condition = new Condition("employees", Operator::GT, 10);
-        $this->assertEquals("employees > 10", (string)$condition);
+        $condition = new Condition('employees', Operator::GT, 10);
+        $this->assertEquals('employees > 10', (string)$condition);
 
-        $condition = new Condition("employees", Operator::LT, 10);
-        $this->assertEquals("employees < 10", (string)$condition);
+        $condition = new Condition('employees', Operator::LT, 10);
+        $this->assertEquals('employees < 10', (string)$condition);
 
-        $condition = new Condition("convertion_ratio", Operator::GTE, 0.01);
-        $this->assertEquals("convertion_ratio >= 0.01", (string)$condition);
+        $condition = new Condition('convertion_ratio', Operator::GTE, 0.01);
+        $this->assertEquals('convertion_ratio >= 0.01', (string)$condition);
 
-        $condition = new Condition("convertion_ratio", Operator::LTE, 10.83);
-        $this->assertEquals("convertion_ratio <= 10.83", (string)$condition);
+        $condition = new Condition('convertion_ratio', Operator::LTE, 10.83);
+        $this->assertEquals('convertion_ratio <= 10.83', (string)$condition);
     }
 }

@@ -26,11 +26,11 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 use \FattureInCloud\ObjectSerializer;
+
 /**
  * CompanyInfoPlanInfoFunctionsTest Class Doc Comment
  *
@@ -42,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class CompanyInfoPlanInfoFunctionsTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -100,9 +99,8 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testCompanyInfoPlanInfoFunctions()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 

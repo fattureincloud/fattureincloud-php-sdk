@@ -1,5 +1,4 @@
 <?php
-
 namespace FattureInCloud\Filter;
 
 class Disjunction implements Expression
@@ -54,7 +53,7 @@ class Disjunction implements Expression
      */
     public function buildQuery(): string
     {
-        return "(" . $this->left->buildQuery() . " or " . $this->right->buildQuery() . ")";
+        return '(' . $this->left->buildQuery() . ' or ' . $this->right->buildQuery() . ')';
     }
 
     public function __toString(): string

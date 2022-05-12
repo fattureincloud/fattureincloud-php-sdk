@@ -1,5 +1,4 @@
 <?php
-
 namespace FattureInCloud\Filter;
 
 use Exception;
@@ -13,8 +12,8 @@ class Filter
         $arguments = func_get_args();
         $numberOfArguments = func_num_args();
 
-        if (method_exists($this, $function = '__construct'.$numberOfArguments)) {
-            call_user_func_array(array($this, $function), $arguments);
+        if (method_exists($this, $function = '__construct' . $numberOfArguments)) {
+            call_user_func_array([$this, $function], $arguments);
         }
     }
 
@@ -66,7 +65,7 @@ class Filter
     public function whereExpression(Expression $expression): Filter
     {
         if ($expression instanceof EmptyCondition) {
-            throw new Exception("Cannot initialize the filter with an empty expression.");
+            throw new Exception('Cannot initialize the filter with an empty expression.');
         }
         $this->setExpression($expression);
         return $this;
@@ -80,9 +79,8 @@ class Filter
      */
     public function and(string $field, string $op, $value): Filter
     {
-        if ($this->expression instanceof EmptyCondition)
-        {
-            throw new Exception("Cannot create a conjunction for an empty expression.");
+        if ($this->expression instanceof EmptyCondition) {
+            throw new Exception('Cannot create a conjunction for an empty expression.');
         }
 
         $left = $this->expression;
@@ -97,9 +95,8 @@ class Filter
      */
     public function andExpression(Expression $expression): Filter
     {
-        if (($this->expression instanceof EmptyCondition) or ($expression instanceof EmptyCondition))
-        {
-            throw new Exception("Cannot create a conjunction for an empty expression.");
+        if (($this->expression instanceof EmptyCondition) or ($expression instanceof EmptyCondition)) {
+            throw new Exception('Cannot create a conjunction for an empty expression.');
         }
 
         $left = $this->expression;
@@ -115,9 +112,8 @@ class Filter
     {
         $expression = $filter->getExpression();
 
-        if (($this->expression instanceof EmptyCondition) or ($expression instanceof EmptyCondition))
-        {
-            throw new Exception("Cannot create a conjunction for an empty expression.");
+        if (($this->expression instanceof EmptyCondition) or ($expression instanceof EmptyCondition)) {
+            throw new Exception('Cannot create a conjunction for an empty expression.');
         }
 
         $left = $this->expression;
@@ -133,9 +129,8 @@ class Filter
      */
     public function or(string $field, string $op, $value): Filter
     {
-        if ($this->expression instanceof EmptyCondition)
-        {
-            throw new Exception("Cannot create a disjunction for an empty expression.");
+        if ($this->expression instanceof EmptyCondition) {
+            throw new Exception('Cannot create a disjunction for an empty expression.');
         }
 
         $left = $this->expression;
@@ -150,9 +145,8 @@ class Filter
      */
     public function orExpression(Expression $expression): Filter
     {
-        if (($this->expression instanceof EmptyCondition) or ($expression instanceof EmptyCondition))
-        {
-            throw new Exception("Cannot create a disjunction for an empty expression.");
+        if (($this->expression instanceof EmptyCondition) or ($expression instanceof EmptyCondition)) {
+            throw new Exception('Cannot create a disjunction for an empty expression.');
         }
 
         $left = $this->expression;
@@ -168,9 +162,8 @@ class Filter
     {
         $expression = $filter->getExpression();
 
-        if (($this->expression instanceof EmptyCondition) or ($expression instanceof EmptyCondition))
-        {
-            throw new Exception("Cannot create a disjunction for an empty expression.");
+        if (($this->expression instanceof EmptyCondition) or ($expression instanceof EmptyCondition)) {
+            throw new Exception('Cannot create a disjunction for an empty expression.');
         }
 
         $left = $this->expression;

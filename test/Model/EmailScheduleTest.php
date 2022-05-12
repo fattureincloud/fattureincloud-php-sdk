@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -43,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class EmailScheduleTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -96,9 +94,8 @@ class EmailScheduleTest extends TestCase
      */
     public function testEmailSchedule()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
@@ -147,9 +144,8 @@ class EmailScheduleTest extends TestCase
      */
     public function testPropertyInclude()
     {
-        foreach ($this->array['include'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['include']);
+        foreach ($this->array['include'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['include']);
         }
     }
 

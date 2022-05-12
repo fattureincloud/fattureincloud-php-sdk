@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -43,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class IssuedDocumentTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -232,9 +230,8 @@ class IssuedDocumentTest extends TestCase
      */
     public function testIssuedDocument()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
@@ -251,9 +248,8 @@ class IssuedDocumentTest extends TestCase
      */
     public function testPropertyEntity()
     {
-        foreach ($this->array['entity'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['entity']);
+        foreach ($this->array['entity'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['entity']);
         }
     }
 
@@ -295,9 +291,8 @@ class IssuedDocumentTest extends TestCase
      */
     public function testPropertyCurrency()
     {
-        foreach ($this->array['currency'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['currency']);
+        foreach ($this->array['currency'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['currency']);
         }
     }
 
@@ -306,9 +301,8 @@ class IssuedDocumentTest extends TestCase
      */
     public function testPropertyLanguage()
     {
-        foreach ($this->array['language'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['language']);
+        foreach ($this->array['language'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['language']);
         }
     }
 
@@ -397,9 +391,8 @@ class IssuedDocumentTest extends TestCase
      */
     public function testPropertyPaymentMethod()
     {
-        foreach ($this->array['payment_method'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['payment_method']);
+        foreach ($this->array['payment_method'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['payment_method']);
         }
     }
 
@@ -432,9 +425,8 @@ class IssuedDocumentTest extends TestCase
      */
     public function testPropertyEiData()
     {
-        foreach ($this->array['ei_data'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['ei_data']);
+        foreach ($this->array['ei_data'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['ei_data']);
         }
     }
 
@@ -443,9 +435,8 @@ class IssuedDocumentTest extends TestCase
      */
     public function testPropertyItemsList()
     {
-        foreach ($this->array['items_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['items_list']);
+        foreach ($this->array['items_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['items_list']);
         }
     }
 
@@ -454,9 +445,8 @@ class IssuedDocumentTest extends TestCase
      */
     public function testPropertyPaymentsList()
     {
-        foreach ($this->array['payments_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['payments_list']);
+        foreach ($this->array['payments_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['payments_list']);
         }
     }
 
@@ -465,9 +455,8 @@ class IssuedDocumentTest extends TestCase
      */
     public function testPropertyTemplate()
     {
-        foreach ($this->array['template'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['template']);
+        foreach ($this->array['template'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['template']);
         }
     }
 
@@ -476,9 +465,8 @@ class IssuedDocumentTest extends TestCase
      */
     public function testPropertyDeliveryNoteTemplate()
     {
-        foreach ($this->array['delivery_note_template'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['delivery_note_template']);
+        foreach ($this->array['delivery_note_template'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['delivery_note_template']);
         }
     }
 
@@ -487,9 +475,8 @@ class IssuedDocumentTest extends TestCase
      */
     public function testPropertyAccInvTemplate()
     {
-        foreach ($this->array['acc_inv_template'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['acc_inv_template']);
+        foreach ($this->array['acc_inv_template'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['acc_inv_template']);
         }
     }
 
@@ -699,9 +686,8 @@ class IssuedDocumentTest extends TestCase
      */
     public function testPropertyExtraData()
     {
-        foreach ($this->array['extra_data'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['extra_data']);
+        foreach ($this->array['extra_data'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['extra_data']);
         }
     }
 
@@ -752,9 +738,8 @@ class IssuedDocumentTest extends TestCase
      */
     public function testPropertyEiRaw()
     {
-        foreach ($this->array['ei_raw'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['ei_raw']);
+        foreach ($this->array['ei_raw'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['ei_raw']);
         }
     }
 

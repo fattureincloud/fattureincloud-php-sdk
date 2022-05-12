@@ -25,20 +25,19 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the endpoint.
  */
-
 namespace FattureInCloud\Test\Api;
 
 use \FattureInCloud\Configuration;
 use \FattureInCloud\ApiException;
 use \FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
-
 use \GuzzleHttp\Client;
 use \GuzzleHttp\Handler\MockHandler;
 use \GuzzleHttp\HandlerStack;
 use \GuzzleHttp\Psr7\Response;
 use \GuzzleHttp\Psr7\Request;
 use \GuzzleHttp\Exception\RequestException;
+
 /**
  * ReceiptsApiTest Class Doc Comment
  *
@@ -49,7 +48,6 @@ use \GuzzleHttp\Exception\RequestException;
  */
 class ReceiptsApiTest extends TestCase
 {
-
     /**
      * Setup before running any test cases
      */
@@ -98,7 +96,7 @@ class ReceiptsApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $create_receipt_request = "json";
+        $create_receipt_request = 'json';
         $result = $apiInstance->createReceipt($company_id, $create_receipt_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreateReceiptResponse');
 
@@ -168,7 +166,6 @@ class ReceiptsApiTest extends TestCase
 
         //TestCase::assertEquals($obj, $result);
         TestCase::assertEquals(1, 1);
-
     }
 
     /**
@@ -191,7 +188,7 @@ class ReceiptsApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $type = "till_receipt";
+        $type = 'till_receipt';
         $year = 2020;
         $result = $apiInstance->getReceiptPreCreateInfo($company_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetReceiptPreCreateInfoResponse');
@@ -247,7 +244,7 @@ class ReceiptsApiTest extends TestCase
         );
         $company_id = 2;
         $receipt_id = 12345;
-        $modify_receipt_request = "json";
+        $modify_receipt_request = 'json';
         $result = $apiInstance->modifyReceipt($company_id, $receipt_id, $modify_receipt_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyReceiptResponse');
 

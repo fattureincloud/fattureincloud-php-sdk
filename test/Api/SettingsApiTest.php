@@ -25,14 +25,12 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the endpoint.
  */
-
 namespace FattureInCloud\Test\Api;
 
 use \FattureInCloud\Configuration;
 use \FattureInCloud\ApiException;
 use \FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
-
 use \GuzzleHttp\Client;
 use \GuzzleHttp\Handler\MockHandler;
 use \GuzzleHttp\HandlerStack;
@@ -50,7 +48,6 @@ use \GuzzleHttp\Exception\RequestException;
  */
 class SettingsApiTest extends TestCase
 {
-
     /**
      * Setup before running any test cases
      */
@@ -99,7 +96,7 @@ class SettingsApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $create_payment_account_request = "json";
+        $create_payment_account_request = 'json';
         $result = $apiInstance->createPaymentAccount($company_id, $create_payment_account_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreatePaymentAccountResponse');
 
@@ -126,7 +123,7 @@ class SettingsApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $create_payment_method_request = "json";
+        $create_payment_method_request = 'json';
         $result = $apiInstance->createPaymentMethod($company_id, $create_payment_method_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreatePaymentMethodResponse');
 
@@ -229,7 +226,7 @@ class SettingsApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $modify_payment_account_request = "json";
+        $modify_payment_account_request = 'json';
         $result = $apiInstance->modifyPaymentAccount($company_id, $modify_payment_account_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyPaymentAccountResponse');
 
@@ -256,7 +253,7 @@ class SettingsApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $modify_payment_method_request = "json";
+        $modify_payment_method_request = 'json';
         $result = $apiInstance->modifyPaymentMethod($company_id, $modify_payment_method_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyPaymentMethodResponse');
 

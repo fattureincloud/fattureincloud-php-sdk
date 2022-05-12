@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -43,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class ModifyPaymentAccountRequestTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -67,9 +65,9 @@ class ModifyPaymentAccountRequestTest extends TestCase
             }
         }';
 
-    $this->array = json_decode($json, true);
+        $this->array = json_decode($json, true);
 
-    $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ModifyPaymentAccountRequest');
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ModifyPaymentAccountRequest');
     }
 
     /**
@@ -91,9 +89,8 @@ class ModifyPaymentAccountRequestTest extends TestCase
      */
     public function testModifyPaymentAccountRequest()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
@@ -102,9 +99,8 @@ class ModifyPaymentAccountRequestTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['data']);
+        foreach ($this->array['data'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['data']);
         }
     }
 }

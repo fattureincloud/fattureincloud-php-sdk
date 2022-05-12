@@ -1,5 +1,4 @@
 <?php
-
 namespace FattureInCloud\OAuth2;
 
 /**
@@ -58,16 +57,15 @@ class OAuth2AuthorizationCodeParams
         $this->state = $state;
     }
 
-
     /**
      * @return string
      */
     public function toJson(): string
     {
-        $arr = array(
-            "code" => $this->authorizationCode,
-            "state" => $this->state,
-        );
+        $arr = [
+            'code' => $this->authorizationCode,
+            'state' => $this->state,
+        ];
 
         return json_encode($arr);
     }
@@ -80,8 +78,8 @@ class OAuth2AuthorizationCodeParams
     {
         $arr = json_decode($json, true);
 
-        $authorizarionCode = $arr["code"];
-        $state = $arr["state"];
+        $authorizarionCode = $arr['code'];
+        $state = $arr['state'];
 
         return new OAuth2AuthorizationCodeParams($authorizarionCode, $state);
     }

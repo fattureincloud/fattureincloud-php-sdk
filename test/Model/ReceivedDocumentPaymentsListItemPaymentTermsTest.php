@@ -26,11 +26,11 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 use \FattureInCloud\ObjectSerializer;
+
 /**
  * ReceivedDocumentPaymentsListItemPaymentTermsTest Class Doc Comment
  *
@@ -42,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class ReceivedDocumentPaymentsListItemPaymentTermsTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -84,9 +83,8 @@ class ReceivedDocumentPaymentsListItemPaymentTermsTest extends TestCase
      */
     public function testReceivedDocumentPaymentTerms()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 

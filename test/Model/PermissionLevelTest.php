@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -43,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class PermissionLevelTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -56,7 +54,6 @@ class PermissionLevelTest extends TestCase
      */
     public function setUp(): void
     {
-
     }
 
     /**
@@ -78,6 +75,6 @@ class PermissionLevelTest extends TestCase
      */
     public function testPermissionLevel()
     {
-        TestCase::AssertEquals(1,1);
+        TestCase::AssertEquals(1, 1);
     }
 }

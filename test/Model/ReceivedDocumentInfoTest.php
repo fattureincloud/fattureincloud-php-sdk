@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -36,14 +35,13 @@ use \FattureInCloud\ObjectSerializer;
  * ReceivedDocumentInfoTest Class Doc Comment
  *
  * @category    Class
- * @description 
+ * @description
  * @package     FattureInCloud
  * @author   Fatture In Cloud API team
  * @link     https://fattureincloud.it
  */
 class ReceivedDocumentInfoTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -132,9 +130,8 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testReceivedDocumentInfo()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
@@ -143,9 +140,8 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testPropertyDefaultValues()
     {
-        foreach ($this->array['default_values'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['default_values']);
+        foreach ($this->array['default_values'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['default_values']);
         }
     }
 
@@ -154,9 +150,8 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testPropertyItemsDefaultValues()
     {
-        foreach ($this->array['items_default_values'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['items_default_values']);
+        foreach ($this->array['items_default_values'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['items_default_values']);
         }
     }
 
@@ -165,9 +160,8 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testPropertyCountriesList()
     {
-        foreach ($this->array['countries_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['countries_list']);
+        foreach ($this->array['countries_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['countries_list']);
         }
     }
 
@@ -176,9 +170,8 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testPropertyCurrenciesList()
     {
-        foreach ($this->array['currencies_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['currencies_list']);
+        foreach ($this->array['currencies_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['currencies_list']);
         }
     }
 
@@ -187,9 +180,8 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testPropertyCategoriesList()
     {
-        foreach ($this->array['categories_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['categories_list']);
+        foreach ($this->array['categories_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['categories_list']);
         }
     }
 
@@ -198,9 +190,8 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testPropertyPaymentAccountsList()
     {
-        foreach ($this->array['payment_accounts_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['payment_accounts_list']);
+        foreach ($this->array['payment_accounts_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['payment_accounts_list']);
         }
     }
 
@@ -209,9 +200,8 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testPropertyVatTypesList()
     {
-        foreach ($this->array['vat_types_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['vat_types_list']);
+        foreach ($this->array['vat_types_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['vat_types_list']);
         }
     }
 }

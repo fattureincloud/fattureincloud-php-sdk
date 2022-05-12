@@ -25,20 +25,19 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the endpoint.
  */
-
 namespace FattureInCloud\Test\Api;
 
 use \FattureInCloud\Configuration;
 use \FattureInCloud\ApiException;
 use \FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
-
 use \GuzzleHttp\Client;
 use \GuzzleHttp\Handler\MockHandler;
 use \GuzzleHttp\HandlerStack;
 use \GuzzleHttp\Psr7\Response;
 use \GuzzleHttp\Psr7\Request;
 use \GuzzleHttp\Exception\RequestException;
+
 /**
  * IssuedDocumentsApiTest Class Doc Comment
  *
@@ -49,7 +48,6 @@ use \GuzzleHttp\Exception\RequestException;
  */
 class IssuedDocumentsApiTest extends TestCase
 {
-
     /**
      * Setup before running any test cases
      */
@@ -98,7 +96,7 @@ class IssuedDocumentsApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $create_issued_document_request = "json";
+        $create_issued_document_request = 'json';
         $result = $apiInstance->createIssuedDocument($company_id, $create_issued_document_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreateIssuedDocumentResponse');
 
@@ -188,7 +186,7 @@ class IssuedDocumentsApiTest extends TestCase
      *
      */
     public function testGetIssuedDocument()
-    {        
+    {
         $stream = '{"data":{"id":12345,"type":"receipt","year":2021,"numeration":"rec123","subject":"","visible_subject":"","rc_center":"","ei_cassa_type":null,"ei_withholding_tax_causal":null,"ei_other_withholding_tax_type":null,"ei_other_withholding_tax_causal":null,"stamp_duty":0,"use_gross_prices":false,"e_invoice":false,"agyo_company_id":null,"agyo_id":null,"agyo_sent_at":null,"delivery_note":false,"accompanying_invoice":false,"amount_net":68.18,"amount_vat":6.82,"amount_gross":75,"amount_due_discount":0,"amount_rivalsa":0,"amount_cassa":0,"amount_withholding_tax":0,"amount_other_withholding_tax":0,"permanent_token":"6pzguy12h45rn9yqwertp43t7ec90vr","h_margins":15,"v_margins":16,"show_payment_method":false,"show_payments":true,"show_totals":"all","show_paypal_button":true,"show_notification_button":false,"is_marked":false,"created_at":"2021-08-13 09:30:20","updated_at":"2021-08-23 05:34:20","entity":{"id":54321,"name":"Mary Red S.r.L.","vat_number":"IT05432181211","tax_code":"IT05432181211","address_street":"Corso impero, 66","address_postal_code":"20900","address_city":"Milano","address_province":"MI","address_extra":"","country":"Italia","certified_email":"mary@pec.red.com","ei_code":"ABCXCR1"},"date":"2021-08-20","number":1,"currency":{"id":"EUR","exchange_rate":"1.00000","symbol":"\u20ac"},"language":{"code":"it","name":"Italiano"},"notes":"","rivalsa":0,"cassa":0,"withholding_tax":0,"withholding_tax_taxable":100,"other_withholding_tax":0,"payment_method":{"id":4,"name":"Credit card"},"use_split_payment":false,"merged_in":null,"original_document":null,"items_list":[{"product_id":5432,"code":"SG3","name":"Soggiorno","measure":"","net_price":68.18182,"category":"","id":277876033,"gross_price":75,"apply_withholding_taxes":true,"discount":0,"discount_highlight":false,"in_dn":false,"qty":1,"vat":{"id":3,"value":10,"description":""},"stock":false,"description":"","not_taxable":false}],"payments_list":[{"amount":75,"due_date":"2020-08-23","paid_date":null,"id":69078013,"payment_terms":{"days":0,"type":"standard"},"status":"not_paid","payment_account":null}],"attachment_url":"kdijrnf893hnwkfk45f50f.pdf","seen_date":null,"next_due_date":"2020-08-23","template":{"id":2821,"name":"Light Smoke"},"extra_data":null,"url":"y12h45rn9yf2mse0p43t7ec90vr.pdf","locked":false,"has_ts_pay_pending_payment":false,"show_tspay_button":false,"pay_with_tspay_url":null}}';
         $mock = new MockHandler([new Response(
             200,
@@ -256,7 +254,7 @@ class IssuedDocumentsApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $get_new_issued_document_request = "json";
+        $get_new_issued_document_request = 'json';
         $result = $apiInstance->getNewIssuedDocumentTotals($company_id, $get_new_issued_document_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetNewIssuedDocumentTotalsResponse');
 
@@ -311,7 +309,7 @@ class IssuedDocumentsApiTest extends TestCase
         );
         $company_id = 2;
         $issued_document_id = 12345;
-        $modify_issued_document_request = "json";
+        $modify_issued_document_request = 'json';
         $result = $apiInstance->modifyIssuedDocument($company_id, $issued_document_id, $modify_issued_document_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyIssuedDocumentResponse');
 
@@ -349,7 +347,7 @@ class IssuedDocumentsApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $upload_issued_document_attachment = "json";
+        $upload_issued_document_attachment = 'json';
         $result = $apiInstance->uploadIssuedDocumentAttachment($company_id, $upload_issued_document_attachment);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\UploadIssuedDocumentAttachmentResponse');
 

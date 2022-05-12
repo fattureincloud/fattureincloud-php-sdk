@@ -25,14 +25,12 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the endpoint.
  */
-
 namespace FattureInCloud\Test\Api;
 
 use \FattureInCloud\Configuration;
 use \FattureInCloud\ApiException;
 use \FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
-
 use \GuzzleHttp\Client;
 use \GuzzleHttp\Handler\MockHandler;
 use \GuzzleHttp\HandlerStack;
@@ -50,7 +48,6 @@ use \GuzzleHttp\Exception\RequestException;
  */
 class SuppliersApiTest extends TestCase
 {
-
     /**
      * Setup before running any test cases
      */
@@ -99,7 +96,7 @@ class SuppliersApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $create_supplier_request = "json";
+        $create_supplier_request = 'json';
         $result = $apiInstance->createSupplier($company_id, $create_supplier_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreateSupplierResponse');
 
@@ -191,7 +188,7 @@ class SuppliersApiTest extends TestCase
         );
         $company_id = 2;
         $supplier_id = 12345;
-        $modify_supplier_request = "json";
+        $modify_supplier_request = 'json';
         $result = $apiInstance->modifySupplier($company_id, $supplier_id, $modify_supplier_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifySupplierResponse');
 

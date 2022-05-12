@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -36,14 +35,13 @@ use \FattureInCloud\ObjectSerializer;
  * CurrencyTest Class Doc Comment
  *
  * @category    Class
- * @description 
+ * @description
  * @package     FattureInCloud
  * @author   Fatture In Cloud API team
  * @link     https://fattureincloud.it
  */
 class CurrencyTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -87,9 +85,8 @@ class CurrencyTest extends TestCase
      */
     public function testCurrency()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 

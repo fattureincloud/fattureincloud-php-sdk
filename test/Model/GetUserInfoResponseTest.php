@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -43,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class GetUserInfoResponseTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -100,9 +98,8 @@ class GetUserInfoResponseTest extends TestCase
      */
     public function testGetUserInfoResponse()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
@@ -111,9 +108,8 @@ class GetUserInfoResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['data']);
+        foreach ($this->array['data'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['data']);
         }
     }
 
@@ -122,9 +118,8 @@ class GetUserInfoResponseTest extends TestCase
      */
     public function testPropertyInfo()
     {
-        foreach ($this->array['info'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['info']);
+        foreach ($this->array['info'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['info']);
         }
     }
 
@@ -133,9 +128,8 @@ class GetUserInfoResponseTest extends TestCase
      */
     public function testPropertyEmailConfirmationState()
     {
-        foreach ($this->array['email_confirmation_state'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['email_confirmation_state']);
+        foreach ($this->array['email_confirmation_state'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['email_confirmation_state']);
         }
     }
 }

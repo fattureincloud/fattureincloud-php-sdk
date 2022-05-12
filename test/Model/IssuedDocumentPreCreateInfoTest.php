@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -43,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class IssuedDocumentPreCreateInfoTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -262,9 +260,8 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testIssuedDocumentPreCreateInfo()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
@@ -274,7 +271,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
     public function testPropertyNumerations()
     {
         /*
-        foreach ($this->array['numerations'] as $key => $value) 
+        foreach ($this->array['numerations'] as $key => $value)
         {
            Testcase::assertArrayHasKey($key, $this->object['numerations']);
         }
@@ -288,7 +285,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
     public function testPropertyDnNumerations()
     {
         /*
-        foreach ($this->array['dn_numerations'] as $key => $value) 
+        foreach ($this->array['dn_numerations'] as $key => $value)
         {
            Testcase::assertArrayHasKey($key, $this->object['dn_numerations']);
         }
@@ -301,9 +298,8 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyDefaultValues()
     {
-        foreach ($this->array['default_values'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['default_values']);
+        foreach ($this->array['default_values'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['default_values']);
         }
     }
 
@@ -312,9 +308,8 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyExtraDataDefaultValues()
     {
-        foreach ($this->array['extra_data_default_values'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['extra_data_default_values']);
+        foreach ($this->array['extra_data_default_values'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['extra_data_default_values']);
         }
     }
 
@@ -323,9 +318,8 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyItemsDefaultValues()
     {
-        foreach ($this->array['items_default_values'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['items_default_values']);
+        foreach ($this->array['items_default_values'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['items_default_values']);
         }
     }
 
@@ -334,9 +328,8 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyCountriesList()
     {
-        foreach ($this->array['countries_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['countries_list']);
+        foreach ($this->array['countries_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['countries_list']);
         }
     }
 
@@ -345,9 +338,8 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyCurrenciesList()
     {
-        foreach ($this->array['currencies_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['currencies_list']);
+        foreach ($this->array['currencies_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['currencies_list']);
         }
     }
 
@@ -356,9 +348,8 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyTemplatesList()
     {
-        foreach ($this->array['templates_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['templates_list']);
+        foreach ($this->array['templates_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['templates_list']);
         }
     }
 
@@ -367,9 +358,8 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyDnTemplatesList()
     {
-        foreach ($this->array['dn_templates_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['dn_templates_list']);
+        foreach ($this->array['dn_templates_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['dn_templates_list']);
         }
     }
 
@@ -378,9 +368,8 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyAiTemplatesList()
     {
-        foreach ($this->array['ai_templates_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['ai_templates_list']);
+        foreach ($this->array['ai_templates_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['ai_templates_list']);
         }
     }
 
@@ -389,9 +378,8 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyPaymentMethodsList()
     {
-        foreach ($this->array['payment_methods_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['payment_methods_list']);
+        foreach ($this->array['payment_methods_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['payment_methods_list']);
         }
     }
 
@@ -400,9 +388,8 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyPaymentAccountsList()
     {
-        foreach ($this->array['payment_accounts_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['payment_accounts_list']);
+        foreach ($this->array['payment_accounts_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['payment_accounts_list']);
         }
     }
 
@@ -411,9 +398,8 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyVatTypesList()
     {
-        foreach ($this->array['vat_types_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['vat_types_list']);
+        foreach ($this->array['vat_types_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['vat_types_list']);
         }
     }
 }

@@ -25,20 +25,19 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the endpoint.
  */
-
 namespace FattureInCloud\Test\Api;
 
 use \FattureInCloud\Configuration;
 use \FattureInCloud\ApiException;
 use \FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
-
 use \GuzzleHttp\Client;
 use \GuzzleHttp\Handler\MockHandler;
 use \GuzzleHttp\HandlerStack;
 use \GuzzleHttp\Psr7\Response;
 use \GuzzleHttp\Psr7\Request;
 use \GuzzleHttp\Exception\RequestException;
+
 /**
  * CashbookApiTest Class Doc Comment
  *
@@ -49,7 +48,6 @@ use \GuzzleHttp\Exception\RequestException;
  */
 class CashbookApiTest extends TestCase
 {
-
     /**
      * Setup before running any test cases
      */
@@ -98,10 +96,10 @@ class CashbookApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $create_cashbook_entry_request = "json";
+        $create_cashbook_entry_request = 'json';
         $result = $apiInstance->createCashbookEntry($company_id, $create_cashbook_entry_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreateCashbookEntryResponse');
-        
+
         TestCase::assertEquals($obj, $result);
     }
 
@@ -113,7 +111,7 @@ class CashbookApiTest extends TestCase
      */
     public function testDeleteCashbookEntry()
     {
-        TestCase::assertEquals(1,1);
+        TestCase::assertEquals(1, 1);
     }
 
     /**
@@ -139,7 +137,7 @@ class CashbookApiTest extends TestCase
         $cashbook_id = 12345;
         $result = $apiInstance->getCashbookEntry($company_id, $cashbook_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetCashbookEntryResponse');
-        
+
         TestCase::assertEquals($obj, $result);
     }
 
@@ -163,11 +161,11 @@ class CashbookApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $date_to = "2017-10-10";
-        $date_from = "2020-10-10";
+        $date_to = '2017-10-10';
+        $date_from = '2020-10-10';
         $result = $apiInstance->listCashbookEntries($company_id, $date_from, $date_to);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListCashbookEntriesResponse');
-        
+
         TestCase::assertEquals($obj, $result);
     }
 
@@ -191,10 +189,10 @@ class CashbookApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $modify_cashbook_entry_request = "json";
+        $modify_cashbook_entry_request = 'json';
         $result = $apiInstance->modifyCashbookEntry($company_id, $modify_cashbook_entry_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyCashbookEntryResponse');
-        
+
         TestCase::assertEquals($obj, $result);
     }
 }

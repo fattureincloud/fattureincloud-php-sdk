@@ -1,5 +1,4 @@
 <?php
-
 namespace FattureInCloud\Filter;
 
 class Condition implements Expression
@@ -74,14 +73,13 @@ class Condition implements Expression
     public function buildQuery(): string
     {
         if (is_null($this->value)) {
-            return $this->field . " " . $this->op . " null";
+            return $this->field . ' ' . $this->op . ' null';
         } else {
             $valueType = gettype($this->value);
-            if ($valueType == "string")
-            {
-                return $this->field . " " . $this->op . " '" . $this->value . "'";
+            if ($valueType == 'string') {
+                return $this->field . ' ' . $this->op . " '" . $this->value . "'";
             }
-            return $this->field . " " . $this->op . " " . $this->value;
+            return $this->field . ' ' . $this->op . ' ' . $this->value;
         }
     }
 

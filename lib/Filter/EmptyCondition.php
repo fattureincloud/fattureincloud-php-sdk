@@ -1,5 +1,4 @@
 <?php
-
 namespace FattureInCloud\Filter;
 
 class EmptyCondition implements Expression
@@ -9,7 +8,7 @@ class EmptyCondition implements Expression
      */
     public function buildQuery(): string
     {
-        return "";
+        return '';
     }
 
     public function __toString(): string

@@ -26,11 +26,11 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 use \FattureInCloud\ObjectSerializer;
+
 /**
  * ReceivedDocumentItemsListItemTest Class Doc Comment
  *
@@ -42,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class ReceivedDocumentItemsListItemTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -97,9 +96,8 @@ class ReceivedDocumentItemsListItemTest extends TestCase
      */
     public function testReceivedDocumentItemsList()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
@@ -172,9 +170,8 @@ class ReceivedDocumentItemsListItemTest extends TestCase
      */
     public function testPropertyVat()
     {
-        foreach ($this->array['vat'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['vat']);
+        foreach ($this->array['vat'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['vat']);
         }
     }
 

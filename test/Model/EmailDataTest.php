@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -43,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class EmailDataTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -106,9 +104,8 @@ class EmailDataTest extends TestCase
      */
     public function testEmailData()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
@@ -125,9 +122,8 @@ class EmailDataTest extends TestCase
      */
     public function testPropertyDefaultSenderEmail()
     {
-        foreach ($this->array['default_sender_email'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['default_sender_email']);
+        foreach ($this->array['default_sender_email'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['default_sender_email']);
         }
     }
 
@@ -136,9 +132,8 @@ class EmailDataTest extends TestCase
      */
     public function testPropertySenderEmailsList()
     {
-        foreach ($this->array['sender_emails_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['sender_emails_list']);
+        foreach ($this->array['sender_emails_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['sender_emails_list']);
         }
     }
 

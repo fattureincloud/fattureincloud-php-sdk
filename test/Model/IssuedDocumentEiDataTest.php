@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -43,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class IssuedDocumentEiDataTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -70,7 +68,7 @@ class IssuedDocumentEiDataTest extends TestCase
             "invoice_number": " ",
             "invoice_date": "2020-12-12" 
         }';
-        
+
         $this->array = json_decode($json, true);
 
         $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\IssuedDocumentEiData');
@@ -95,9 +93,8 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testIssuedDocumentEiData()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 

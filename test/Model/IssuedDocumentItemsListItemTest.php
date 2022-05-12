@@ -26,11 +26,11 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 use \FattureInCloud\ObjectSerializer;
+
 /**
  * IssuedDocumentItemsListItemTest Class Doc Comment
  *
@@ -42,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class IssuedDocumentItemsListItemTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -78,7 +77,7 @@ class IssuedDocumentItemsListItemTest extends TestCase
                 "prop": true
             }
         }';
-        
+
         $this->array = json_decode($json, true);
 
         $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\IssuedDocumentItemsListItem');
@@ -103,15 +102,14 @@ class IssuedDocumentItemsListItemTest extends TestCase
      */
     public function testIssuedDocumentItemsListItem()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
-   /**
-     * Test attribute "product_id"
-     */
+    /**
+      * Test attribute "product_id"
+      */
     public function testPropertyProductId()
     {
         TestCase::assertEquals($this->object['product_id'], $this->array['product_id']);
@@ -186,9 +184,8 @@ class IssuedDocumentItemsListItemTest extends TestCase
      */
     public function testPropertyVat()
     {
-        foreach ($this->array['vat'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['vat']);
+        foreach ($this->array['vat'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['vat']);
         }
     }
 
@@ -245,9 +242,8 @@ class IssuedDocumentItemsListItemTest extends TestCase
      */
     public function testPropertyEiRaw()
     {
-        foreach ($this->array['ei_raw'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['ei_raw']);
+        foreach ($this->array['ei_raw'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['ei_raw']);
         }
     }
 }
