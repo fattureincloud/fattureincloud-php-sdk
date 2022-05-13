@@ -1,5 +1,4 @@
 <?php
-
 namespace FattureInCloud\OAuth2;
 
 use GuzzleHttp\Client;
@@ -9,7 +8,7 @@ use GuzzleHttp\Client;
  */
 class OAuth2AuthorizationCodeManager
 {
-    private const DEFAULT_BASE_URI = "https://api-v2.fattureincloud.it";
+    private const DEFAULT_BASE_URI = 'https://api-v2.fattureincloud.it';
 
     /**
      * @var Client
@@ -147,17 +146,17 @@ class OAuth2AuthorizationCodeManager
      */
     public function getAuthorizationUrl(array $scopes, string $state): string
     {
-        $scopeStr = implode(" ", $scopes);
-        $params = array(
-            "response_type" => "code",
-            "client_id" => $this->clientId,
-            "redirect_uri" => $this->redirectUri,
-            "scope" => $scopeStr,
-            "state" => $state,
-        );
+        $scopeStr = implode(' ', $scopes);
+        $params = [
+            'response_type' => 'code',
+            'client_id' => $this->clientId,
+            'redirect_uri' => $this->redirectUri,
+            'scope' => $scopeStr,
+            'state' => $state,
+        ];
 
         $qs = http_build_query($params);
-        return $this->getBaseUri() . "/oauth/authorize?" . $qs;
+        return $this->getBaseUri() . '/oauth/authorize?' . $qs;
     }
 
     /**
@@ -167,8 +166,8 @@ class OAuth2AuthorizationCodeManager
     public function getParamsFromUrl(string $url): OAuth2AuthorizationCodeParams
     {
         $components = parse_url($url);
-        parse_str($components["query"], $qs);
-        return new OAuth2AuthorizationCodeParams($qs["code"], $qs["state"]);
+        parse_str($components['query'], $qs);
+        return new OAuth2AuthorizationCodeParams($qs['code'], $qs['state']);
     }
 
     /**
@@ -176,14 +175,14 @@ class OAuth2AuthorizationCodeManager
      */
     public function fetchToken(string $code)
     {
-        $tokenUri = $this->getBaseUri() . "/oauth/token";
-        $body = array(
-            "grant_type" => "authorization_code",
-            "client_id" => $this->clientId,
-            "client_secret" => $this->clientSecret,
-            "redirect_uri" => $this->redirectUri,
-            "code" => $code
-        );
+        $tokenUri = $this->getBaseUri() . '/oauth/token';
+        $body = [
+            'grant_type' => 'authorization_code',
+            'client_id' => $this->clientId,
+            'client_secret' => $this->clientSecret,
+            'redirect_uri' => $this->redirectUri,
+            'code' => $code
+        ];
         return $this->executePost($tokenUri, $body);
     }
 
@@ -192,13 +191,13 @@ class OAuth2AuthorizationCodeManager
      */
     public function refreshToken(string $refreshToken)
     {
-        $tokenUri = $this->getBaseUri() . "/oauth/token";
-        $body = array(
-            "grant_type" => "refresh_token",
-            "client_id" => $this->clientId,
-            "client_secret" => $this->clientSecret,
-            "refresh_token" => $refreshToken,
-        );
+        $tokenUri = $this->getBaseUri() . '/oauth/token';
+        $body = [
+            'grant_type' => 'refresh_token',
+            'client_id' => $this->clientId,
+            'client_secret' => $this->clientSecret,
+            'refresh_token' => $refreshToken,
+        ];
         return $this->executePost($tokenUri, $body);
     }
 
@@ -209,9 +208,9 @@ class OAuth2AuthorizationCodeManager
         $resBodyJson = $r->getBody()->getContents();
         $resBody = json_decode($resBodyJson, true);
         if ($statusCode == 200) {
-            return new OAuth2AuthorizationCodeTokenResponse($resBody["token_type"], $resBody["access_token"], $resBody["refresh_token"], $resBody["expires_in"]);
+            return new OAuth2AuthorizationCodeTokenResponse($resBody['token_type'], $resBody['access_token'], $resBody['refresh_token'], $resBody['expires_in']);
         } else {
-            return new OAuth2AuthorizationCodeError($statusCode, $resBody["error"], $resBody["error_description"]);
+            return new OAuth2AuthorizationCodeError($statusCode, $resBody['error'], $resBody['error_description']);
         }
     }
 }

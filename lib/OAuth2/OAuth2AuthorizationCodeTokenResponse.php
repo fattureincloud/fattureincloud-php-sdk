@@ -1,5 +1,4 @@
 <?php
-
 namespace FattureInCloud\OAuth2;
 
 /**
@@ -107,12 +106,12 @@ class OAuth2AuthorizationCodeTokenResponse
      */
     public function toJson(): string
     {
-        $arr = array(
-            "token_type" => $this->tokenType,
-            "access_token" => $this->accessToken,
-            "refresh_token" => $this->refreshToken,
-            "expires_in" => $this->expiresIn,
-        );
+        $arr = [
+            'token_type' => $this->tokenType,
+            'access_token' => $this->accessToken,
+            'refresh_token' => $this->refreshToken,
+            'expires_in' => $this->expiresIn,
+        ];
 
         return json_encode($arr);
     }
@@ -125,10 +124,10 @@ class OAuth2AuthorizationCodeTokenResponse
     {
         $arr = json_decode($json, true);
 
-        $tokenType = $arr["token_type"];
-        $accessToken = $arr["access_token"];
-        $refreshToken = $arr["refresh_token"];
-        $expiresIn = $arr["expires_in"];
+        $tokenType = $arr['token_type'];
+        $accessToken = $arr['access_token'];
+        $refreshToken = $arr['refresh_token'];
+        $expiresIn = $arr['expires_in'];
 
         return new OAuth2AuthorizationCodeTokenResponse($tokenType, $accessToken, $refreshToken, $expiresIn);
     }

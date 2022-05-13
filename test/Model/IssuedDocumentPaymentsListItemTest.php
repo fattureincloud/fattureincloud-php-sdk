@@ -26,11 +26,11 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 use \FattureInCloud\ObjectSerializer;
+
 /**
  * IssuedDocumentPaymentsListItemTest Class Doc Comment
  *
@@ -42,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class IssuedDocumentPaymentsListItemTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -96,9 +95,8 @@ class IssuedDocumentPaymentsListItemTest extends TestCase
      */
     public function testIssuedDocumentPaymentsListItem()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
@@ -140,9 +138,8 @@ class IssuedDocumentPaymentsListItemTest extends TestCase
      */
     public function testPropertyPaymentAccount()
     {
-        foreach ($this->array['payment_account'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['payment_account']);
+        foreach ($this->array['payment_account'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['payment_account']);
         }
     }
 
@@ -160,9 +157,8 @@ class IssuedDocumentPaymentsListItemTest extends TestCase
      */
     public function testPropertyEiRaw()
     {
-        foreach ($this->array['ei_raw'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['ei_raw']);
+        foreach ($this->array['ei_raw'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['ei_raw']);
         }
     }
 }

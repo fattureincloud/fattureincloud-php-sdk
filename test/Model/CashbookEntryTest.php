@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -43,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class CashbookEntryTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -91,10 +89,10 @@ class CashbookEntryTest extends TestCase
             }
           }';
 
-          $this->array = json_decode($json, true);
+        $this->array = json_decode($json, true);
 
-          $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CashbookEntry');
-      }
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CashbookEntry');
+    }
 
     /**
      * Clean up after running each test case
@@ -115,9 +113,8 @@ class CashbookEntryTest extends TestCase
      */
     public function testCashbookEntry()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
@@ -175,9 +172,8 @@ class CashbookEntryTest extends TestCase
      */
     public function testPropertyDocument()
     {
-        foreach ($this->array['document'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['document']);
+        foreach ($this->array['document'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['document']);
         }
     }
 
@@ -194,9 +190,8 @@ class CashbookEntryTest extends TestCase
      */
     public function testPropertyPaymentAccountOut()
     {
-        foreach ($this->array['payment_account_out'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['payment_account_out']);
+        foreach ($this->array['payment_account_out'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['payment_account_out']);
         }
     }
 
@@ -213,9 +208,8 @@ class CashbookEntryTest extends TestCase
      */
     public function testPropertyPaymentAccountIn()
     {
-        foreach ($this->array['payment_account_in'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['payment_account_in']);
+        foreach ($this->array['payment_account_in'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['payment_account_in']);
         }
     }
 }

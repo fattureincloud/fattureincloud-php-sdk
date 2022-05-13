@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -43,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class VerifyEInvoiceXmlErrorResponseTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -94,9 +92,8 @@ class VerifyEInvoiceXmlErrorResponseTest extends TestCase
      */
     public function testVerifyEInvoiceXmlErrorResponse()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
@@ -105,9 +102,8 @@ class VerifyEInvoiceXmlErrorResponseTest extends TestCase
      */
     public function testPropertyError()
     {
-        foreach ($this->array['error'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['error']);
+        foreach ($this->array['error'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['error']);
         }
     }
 
@@ -116,9 +112,8 @@ class VerifyEInvoiceXmlErrorResponseTest extends TestCase
      */
     public function testPropertyExtra()
     {
-        foreach ($this->array['extra'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['extra']);
+        foreach ($this->array['extra'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['extra']);
         }
     }
 }

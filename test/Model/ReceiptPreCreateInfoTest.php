@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -43,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class ReceiptPreCreateInfoTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -139,9 +137,8 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function testReceiptPreCreateInfo()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
@@ -151,7 +148,7 @@ class ReceiptPreCreateInfoTest extends TestCase
     public function testPropertyNumerations()
     {
         /*
-        foreach ($this->array['numerations'] as $key => $value) 
+        foreach ($this->array['numerations'] as $key => $value)
         {
            Testcase::assertArrayHasKey($key, $this->object['numerations']);
         }
@@ -164,9 +161,8 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function testPropertyNumerationsList()
     {
-        foreach ($this->array['numerations_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['numerations_list']);
+        foreach ($this->array['numerations_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['numerations_list']);
         }
     }
 
@@ -175,9 +171,8 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function testPropertyRcCentersList()
     {
-        foreach ($this->array['rc_centers_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['rc_centers_list']);
+        foreach ($this->array['rc_centers_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['rc_centers_list']);
         }
     }
 
@@ -186,9 +181,8 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function testPropertyPaymentAccountsList()
     {
-        foreach ($this->array['payment_accounts_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['payment_accounts_list']);
+        foreach ($this->array['payment_accounts_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['payment_accounts_list']);
         }
     }
 
@@ -197,9 +191,8 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function testPropertyCategoriesList()
     {
-        foreach ($this->array['categories_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['categories_list']);
+        foreach ($this->array['categories_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['categories_list']);
         }
     }
 
@@ -208,9 +201,8 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function testPropertyVatTypesList()
     {
-        foreach ($this->array['vat_types_list'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['vat_types_list']);
+        foreach ($this->array['vat_types_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['vat_types_list']);
         }
     }
 }

@@ -25,20 +25,19 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the endpoint.
  */
-
 namespace FattureInCloud\Test\Api;
 
 use \FattureInCloud\Configuration;
 use \FattureInCloud\ApiException;
 use \FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
-
 use \GuzzleHttp\Client;
 use \GuzzleHttp\Handler\MockHandler;
 use \GuzzleHttp\HandlerStack;
 use \GuzzleHttp\Psr7\Response;
 use \GuzzleHttp\Psr7\Request;
 use \GuzzleHttp\Exception\RequestException;
+
 /**
  * TaxesApiTest Class Doc Comment
  *
@@ -49,7 +48,6 @@ use \GuzzleHttp\Exception\RequestException;
  */
 class TaxesApiTest extends TestCase
 {
-
     /**
      * Setup before running any test cases
      */
@@ -98,7 +96,7 @@ class TaxesApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $create_f24_request = "json";
+        $create_f24_request = 'json';
         $result = $apiInstance->createF24($company_id, $create_f24_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreateF24Response');
 
@@ -201,7 +199,7 @@ class TaxesApiTest extends TestCase
         );
         $company_id = 2;
         $f24_id = 12345;
-        $modify_f24_request = "json";
+        $modify_f24_request = 'json';
         $result = $apiInstance->modifyF24($company_id, $f24_id, $modify_f24_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyF24Response');
 
@@ -228,7 +226,7 @@ class TaxesApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $upload_f24_attachment = "json";
+        $upload_f24_attachment = 'json';
         $result = $apiInstance->uploadF24Attachment($company_id, $upload_f24_attachment);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\UploadF24AttachmentResponse');
 

@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -43,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -124,9 +122,8 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testIssuedDocumentPreCreateInfoDefaultValues()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
@@ -135,9 +132,8 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyDefaultTemplate()
     {
-        foreach ($this->array['default_template'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['default_template']);
+        foreach ($this->array['default_template'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['default_template']);
         }
     }
 
@@ -146,9 +142,8 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyDnTemplate()
     {
-        foreach ($this->array['dn_template'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['dn_template']);
+        foreach ($this->array['dn_template'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['dn_template']);
         }
     }
 
@@ -157,9 +152,8 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyAiTemplate()
     {
-        foreach ($this->array['ai_template'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['ai_template']);
+        foreach ($this->array['ai_template'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['ai_template']);
         }
     }
 
@@ -224,9 +218,8 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyPaymentMethod()
     {
-        foreach ($this->array['payment_method'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['payment_method']);
+        foreach ($this->array['payment_method'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['payment_method']);
         }
     }
 }

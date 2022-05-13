@@ -25,20 +25,19 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the endpoint.
  */
-
 namespace FattureInCloud\Test\Api;
 
 use \FattureInCloud\Configuration;
 use \FattureInCloud\ApiException;
 use \FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
-
 use \GuzzleHttp\Client;
 use \GuzzleHttp\Handler\MockHandler;
 use \GuzzleHttp\HandlerStack;
 use \GuzzleHttp\Psr7\Response;
 use \GuzzleHttp\Psr7\Request;
 use \GuzzleHttp\Exception\RequestException;
+
 /**
  * IssuedEInvoicesApiTest Class Doc Comment
  *
@@ -49,7 +48,6 @@ use \GuzzleHttp\Exception\RequestException;
  */
 class IssuedEInvoicesApiTest extends TestCase
 {
-
     /**
      * Setup before running any test cases
      */
@@ -98,7 +96,7 @@ class IssuedEInvoicesApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $send_einvoice_request = "json";
+        $send_einvoice_request = 'json';
         $document_id = 12345;
         $result = $apiInstance->sendEInvoice($company_id, $send_einvoice_request, $document_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\SendEInvoiceResponse');

@@ -1,5 +1,4 @@
 <?php
-
 namespace FattureInCloud\Filter;
 
 class Conjunction implements Expression
@@ -54,7 +53,7 @@ class Conjunction implements Expression
      */
     public function buildQuery(): string
     {
-        return "(" . $this->left->buildQuery() . " and " . $this->right->buildQuery() . ")";
+        return '(' . $this->left->buildQuery() . ' and ' . $this->right->buildQuery() . ')';
     }
 
     public function __toString(): string

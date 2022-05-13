@@ -26,11 +26,11 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 use \FattureInCloud\ObjectSerializer;
+
 /**
  * SenderEmailTest Class Doc Comment
  *
@@ -42,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class SenderEmailTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -84,9 +83,8 @@ class SenderEmailTest extends TestCase
      */
     public function testSenderEmail()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 

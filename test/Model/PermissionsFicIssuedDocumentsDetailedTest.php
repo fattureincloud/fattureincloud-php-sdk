@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -43,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -93,9 +91,8 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPermissionsFicIssuedDocumentsDetailed()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 

@@ -25,20 +25,19 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the endpoint.
  */
-
 namespace FattureInCloud\Test\Api;
 
 use \FattureInCloud\Configuration;
 use \FattureInCloud\ApiException;
 use \FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
-
 use \GuzzleHttp\Client;
 use \GuzzleHttp\Handler\MockHandler;
 use \GuzzleHttp\HandlerStack;
 use \GuzzleHttp\Psr7\Response;
 use \GuzzleHttp\Psr7\Request;
 use \GuzzleHttp\Exception\RequestException;
+
 /**
  * ProductsApiTest Class Doc Comment
  *
@@ -49,7 +48,6 @@ use \GuzzleHttp\Exception\RequestException;
  */
 class ProductsApiTest extends TestCase
 {
-
     /**
      * Setup before running any test cases
      */
@@ -98,7 +96,7 @@ class ProductsApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $create_product_request = "json";
+        $create_product_request = 'json';
         $result = $apiInstance->createProduct($company_id, $create_product_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreateProductResponse');
 
@@ -190,7 +188,7 @@ class ProductsApiTest extends TestCase
         );
         $company_id = 2;
         $product_id = 123345;
-        $modify_product_response = "json";
+        $modify_product_response = 'json';
         $result = $apiInstance->modifyProduct($company_id, $product_id, $modify_product_response);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyProductResponse');
 

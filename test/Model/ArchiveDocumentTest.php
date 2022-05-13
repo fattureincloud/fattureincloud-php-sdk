@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -45,11 +44,12 @@ class ArchiveDocumentTest extends TestCase
 {
     public $array = [];
     public $object;
+
     /**
      * Setup before running any test case
      */
     public static function setUpBeforeClass(): void
-    {  
+    {
     }
 
     /**
@@ -91,9 +91,8 @@ class ArchiveDocumentTest extends TestCase
      */
     public function testArchiveDocument()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 

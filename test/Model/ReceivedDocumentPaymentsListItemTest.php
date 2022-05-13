@@ -26,11 +26,11 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
 use \FattureInCloud\ObjectSerializer;
+
 /**
  * ReceivedDocumentPaymentsListItemTest Class Doc Comment
  *
@@ -42,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class ReceivedDocumentPaymentsListItemTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -96,9 +95,8 @@ class ReceivedDocumentPaymentsListItemTest extends TestCase
      */
     public function testReceivedDocumentPaymentsList()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
@@ -131,7 +129,8 @@ class ReceivedDocumentPaymentsListItemTest extends TestCase
      * Test attribute "paid_date"
      */
     public function testPropertyPaidDate()
-    {;
+    {
+        ;
         $date = new \DateTime($this->array['paid_date']);
         TestCase::assertEquals($this->object['paid_date'], $date);
     }
@@ -141,9 +140,8 @@ class ReceivedDocumentPaymentsListItemTest extends TestCase
      */
     public function testPropertyPaymentTerms()
     {
-        foreach ($this->array['payment_terms'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['payment_terms']);
+        foreach ($this->array['payment_terms'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['payment_terms']);
         }
     }
 
@@ -160,9 +158,8 @@ class ReceivedDocumentPaymentsListItemTest extends TestCase
      */
     public function testPropertyPaymentAccount()
     {
-        foreach ($this->array['payment_account'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['payment_account']);
+        foreach ($this->array['payment_account'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['payment_account']);
         }
     }
 }

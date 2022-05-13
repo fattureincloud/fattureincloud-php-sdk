@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -43,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class PaymentMethodTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -94,9 +92,8 @@ class PaymentMethodTest extends TestCase
      */
     public function testPaymentMethod()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
@@ -137,9 +134,8 @@ class PaymentMethodTest extends TestCase
      */
     public function testPropertyDefaultPaymentAccount()
     {
-        foreach ($this->array['default_payment_account'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['default_payment_account']);
+        foreach ($this->array['default_payment_account'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['default_payment_account']);
         }
     }
 
@@ -148,9 +144,8 @@ class PaymentMethodTest extends TestCase
      */
     public function testPropertyDetails()
     {
-        foreach ($this->array['details'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['details']);
+        foreach ($this->array['details'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['details']);
         }
     }
 }

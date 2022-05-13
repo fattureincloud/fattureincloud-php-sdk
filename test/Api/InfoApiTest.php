@@ -25,20 +25,19 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the endpoint.
  */
-
 namespace FattureInCloud\Test\Api;
 
 use \FattureInCloud\Configuration;
 use \FattureInCloud\ApiException;
 use \FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
-
 use \GuzzleHttp\Client;
 use \GuzzleHttp\Handler\MockHandler;
 use \GuzzleHttp\HandlerStack;
 use \GuzzleHttp\Psr7\Response;
 use \GuzzleHttp\Psr7\Request;
 use \GuzzleHttp\Exception\RequestException;
+
 /**
  * InfoApiTest Class Doc Comment
  *
@@ -49,7 +48,6 @@ use \GuzzleHttp\Exception\RequestException;
  */
 class InfoApiTest extends TestCase
 {
-
     /**
      * Setup before running any test cases
      */
@@ -352,7 +350,7 @@ class InfoApiTest extends TestCase
             new \GuzzleHttp\Client(['handler' => $handler])
         );
         $company_id = 2;
-        $context = "products";
+        $context = 'products';
         $result = $apiInstance->listProductCategories($company_id, $context);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListProductCategoriesResponse');
 

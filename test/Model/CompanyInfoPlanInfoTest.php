@@ -26,10 +26,9 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
-use \FattureInCloud\ObjectSerializer;
 
+use \FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -43,7 +42,6 @@ use PHPUnit\Framework\TestCase;
  */
 class CompanyInfoPlanInfoTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -117,9 +115,8 @@ class CompanyInfoPlanInfoTest extends TestCase
      */
     public function testCompanyInfoPlanInfo()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
@@ -128,9 +125,8 @@ class CompanyInfoPlanInfoTest extends TestCase
      */
     public function testPropertyLimits()
     {
-        foreach ($this->array['limits'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['limits']);
+        foreach ($this->array['limits'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['limits']);
         }
     }
 
@@ -139,9 +135,8 @@ class CompanyInfoPlanInfoTest extends TestCase
      */
     public function testPropertyFunctions()
     {
-        foreach ($this->array['functions'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['functions']);
+        foreach ($this->array['functions'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['functions']);
         }
     }
 
@@ -150,9 +145,8 @@ class CompanyInfoPlanInfoTest extends TestCase
      */
     public function testPropertyFunctionsStatus()
     {
-        foreach ($this->array['functions_status'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['functions_status']);
+        foreach ($this->array['functions_status'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['functions_status']);
         }
     }
 }

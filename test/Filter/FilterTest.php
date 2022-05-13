@@ -1,5 +1,4 @@
 <?php
-
 namespace FattureInCloud\Test\Filter;
 
 use FattureInCloud\Filter\Condition;
@@ -49,11 +48,11 @@ class FilterTest extends TestCase
         $filter = new Filter();
         $this->assertEquals(new EmptyCondition(), $filter->getExpression());
 
-        $condition = new Condition("city", Operator::EQ, "Bergamo");
+        $condition = new Condition('city', Operator::EQ, 'Bergamo');
         $filter = new Filter($condition);
         $this->assertEquals($condition, $filter->getExpression());
 
-        $condition2 = new Condition("vacation", Operator::EQ, "Martinica");
+        $condition2 = new Condition('vacation', Operator::EQ, 'Martinica');
         $filter->setExpression($condition2);
         $this->assertEquals($condition2, $filter->getExpression());
     }
@@ -63,13 +62,13 @@ class FilterTest extends TestCase
      */
     public function testWhere()
     {
-        $condition = new Condition("city", Operator::EQ, "Bergamo");
+        $condition = new Condition('city', Operator::EQ, 'Bergamo');
         $filter = new Filter();
-        $filter->where("city", Operator::EQ, "Bergamo");
+        $filter->where('city', Operator::EQ, 'Bergamo');
         $this->assertEquals($condition, $filter->getExpression());
 
-        $condition2 = new Condition("vacation", Operator::EQ, "Martinica");
-        $filter->where("vacation", Operator::EQ, "Martinica");
+        $condition2 = new Condition('vacation', Operator::EQ, 'Martinica');
+        $filter->where('vacation', Operator::EQ, 'Martinica');
         $this->assertEquals($condition2, $filter->getExpression());
     }
 
@@ -78,12 +77,12 @@ class FilterTest extends TestCase
      */
     public function testWhereExpression()
     {
-        $condition = new Condition("city", Operator::EQ, "Bergamo");
+        $condition = new Condition('city', Operator::EQ, 'Bergamo');
         $filter = new Filter();
         $filter->whereExpression($condition);
         $this->assertEquals($condition, $filter->getExpression());
 
-        $condition2 = new Condition("vacation", Operator::EQ, "Martinica");
+        $condition2 = new Condition('vacation', Operator::EQ, 'Martinica');
         $filter->whereExpression($condition2);
         $this->assertEquals($condition2, $filter->getExpression());
     }
@@ -103,16 +102,16 @@ class FilterTest extends TestCase
      */
     public function testAnd()
     {
-        $condition = new Condition("city", Operator::EQ, "Bergamo");
-        $condition2 = new Condition("vacation", Operator::EQ, "Martinica");
+        $condition = new Condition('city', Operator::EQ, 'Bergamo');
+        $condition2 = new Condition('vacation', Operator::EQ, 'Martinica');
         $conjunction = new Conjunction($condition, $condition2);
 
         $filter = new Filter();
         $this->expectException(Exception::class);
-        $filter->and("vacation", Operator::EQ, "Martinica");
+        $filter->and('vacation', Operator::EQ, 'Martinica');
 
-        $filter->where("city", Operator::EQ, "Bergamo")
-            ->and("vacation", Operator::EQ, "Martinica");
+        $filter->where('city', Operator::EQ, 'Bergamo')
+            ->and('vacation', Operator::EQ, 'Martinica');
         $this->assertEquals($conjunction, $filter->getExpression());
     }
 
@@ -121,8 +120,8 @@ class FilterTest extends TestCase
      */
     public function testAndExpression()
     {
-        $condition = new Condition("city", Operator::EQ, "Bergamo");
-        $condition2 = new Condition("vacation", Operator::EQ, "Martinica");
+        $condition = new Condition('city', Operator::EQ, 'Bergamo');
+        $condition2 = new Condition('vacation', Operator::EQ, 'Martinica');
         $conjunction = new Conjunction($condition, $condition2);
 
         $filter = new Filter();
@@ -139,7 +138,7 @@ class FilterTest extends TestCase
      */
     public function testEmptyAndExpression()
     {
-        $condition = new Condition("city", Operator::EQ, "Bergamo");
+        $condition = new Condition('city', Operator::EQ, 'Bergamo');
         $filter = new Filter();
         $this->expectException(Exception::class);
         $filter->whereExpression($condition)
@@ -151,13 +150,13 @@ class FilterTest extends TestCase
      */
     public function testAndFilter()
     {
-        $condition = new Condition("city", Operator::EQ, "Bergamo");
-        $condition2 = new Condition("vacation", Operator::EQ, "Martinica");
+        $condition = new Condition('city', Operator::EQ, 'Bergamo');
+        $condition2 = new Condition('vacation', Operator::EQ, 'Martinica');
         $conjunction = new Conjunction($condition, $condition2);
 
         $emptyFilter = new Filter();
-        $filter1 = new Filter("city", Operator::EQ, "Bergamo");
-        $filter2 = new Filter("vacation", Operator::EQ, "Martinica");
+        $filter1 = new Filter('city', Operator::EQ, 'Bergamo');
+        $filter2 = new Filter('vacation', Operator::EQ, 'Martinica');
 
         $this->expectException(Exception::class);
         $emptyFilter->andFilter($filter2);
@@ -172,7 +171,7 @@ class FilterTest extends TestCase
      */
     public function testEmptyAndFilter()
     {
-        $filter1 = new Filter("city", Operator::EQ, "Bergamo");
+        $filter1 = new Filter('city', Operator::EQ, 'Bergamo');
         $filter = new Filter(new EmptyCondition());
         $this->expectException(Exception::class);
         $filter1->andFilter($filter);
@@ -183,16 +182,16 @@ class FilterTest extends TestCase
      */
     public function testOr()
     {
-        $condition = new Condition("city", Operator::EQ, "Bergamo");
-        $condition2 = new Condition("vacation", Operator::EQ, "Martinica");
+        $condition = new Condition('city', Operator::EQ, 'Bergamo');
+        $condition2 = new Condition('vacation', Operator::EQ, 'Martinica');
         $disjunction = new Disjunction($condition, $condition2);
 
         $filter = new Filter();
         $this->expectException(Exception::class);
-        $filter->or("vacation", Operator::EQ, "Martinica");
+        $filter->or('vacation', Operator::EQ, 'Martinica');
 
-        $filter->where("city", Operator::EQ, "Bergamo")
-            ->or("vacation", Operator::EQ, "Martinica");
+        $filter->where('city', Operator::EQ, 'Bergamo')
+            ->or('vacation', Operator::EQ, 'Martinica');
         $this->assertEquals($disjunction, $filter->getExpression());
     }
 
@@ -201,8 +200,8 @@ class FilterTest extends TestCase
      */
     public function testOrExpression()
     {
-        $condition = new Condition("city", Operator::EQ, "Bergamo");
-        $condition2 = new Condition("vacation", Operator::EQ, "Martinica");
+        $condition = new Condition('city', Operator::EQ, 'Bergamo');
+        $condition2 = new Condition('vacation', Operator::EQ, 'Martinica');
         $disjunction = new Disjunction($condition, $condition2);
 
         $filter = new Filter();
@@ -219,7 +218,7 @@ class FilterTest extends TestCase
      */
     public function testEmptyOrExpression()
     {
-        $condition = new Condition("city", Operator::EQ, "Bergamo");
+        $condition = new Condition('city', Operator::EQ, 'Bergamo');
         $filter = new Filter();
         $this->expectException(Exception::class);
         $filter->whereExpression($condition)
@@ -231,13 +230,13 @@ class FilterTest extends TestCase
      */
     public function testOrFilter()
     {
-        $condition = new Condition("city", Operator::EQ, "Bergamo");
-        $condition2 = new Condition("vacation", Operator::EQ, "Martinica");
+        $condition = new Condition('city', Operator::EQ, 'Bergamo');
+        $condition2 = new Condition('vacation', Operator::EQ, 'Martinica');
         $disjunction = new Disjunction($condition, $condition2);
 
         $emptyFilter = new Filter();
-        $filter1 = new Filter("city", Operator::EQ, "Bergamo");
-        $filter2 = new Filter("vacation", Operator::EQ, "Martinica");
+        $filter1 = new Filter('city', Operator::EQ, 'Bergamo');
+        $filter2 = new Filter('vacation', Operator::EQ, 'Martinica');
 
         $this->expectException(Exception::class);
         $emptyFilter->orFilter($filter2);
@@ -252,7 +251,7 @@ class FilterTest extends TestCase
      */
     public function testEmptyOrFilter()
     {
-        $filter1 = new Filter("city", Operator::EQ, "Bergamo");
+        $filter1 = new Filter('city', Operator::EQ, 'Bergamo');
         $filter = new Filter(new EmptyCondition());
         $this->expectException(Exception::class);
         $filter1->orFilter($filter);
@@ -264,9 +263,9 @@ class FilterTest extends TestCase
     public function testBuildQuery()
     {
         $filter = new Filter();
-        $this->assertEquals("", $filter->buildQuery());
+        $this->assertEquals('', $filter->buildQuery());
 
-        $condition = new Condition("city", Operator::EQ, "Bergamo");
+        $condition = new Condition('city', Operator::EQ, 'Bergamo');
         $filter = new Filter($condition);
         $this->assertEquals("city = 'Bergamo'", $filter->buildQuery());
     }
@@ -276,9 +275,9 @@ class FilterTest extends TestCase
      */
     public function testBuildUrlEncodedQuery()
     {
-        $condition = new Condition("city", Operator::EQ, "Bergamo");
+        $condition = new Condition('city', Operator::EQ, 'Bergamo');
         $filter = new Filter($condition);
-        $this->assertEquals("city+%3D+%27Bergamo%27", $filter->buildUrlEncodedQuery());
+        $this->assertEquals('city+%3D+%27Bergamo%27', $filter->buildUrlEncodedQuery());
     }
 
     /**
@@ -286,9 +285,8 @@ class FilterTest extends TestCase
      */
     public function testToString()
     {
-        $condition = new Condition("city", Operator::EQ, "Bergamo");
+        $condition = new Condition('city', Operator::EQ, 'Bergamo');
         $filter = new Filter($condition);
         $this->assertEquals("city = 'Bergamo'", (string)$filter);
     }
-
 }

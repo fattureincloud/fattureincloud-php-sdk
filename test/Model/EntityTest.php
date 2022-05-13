@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -43,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class EntityTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -99,9 +97,9 @@ class EntityTest extends TestCase
             }
           }';
 
-          $this->array = json_decode($json, true);
+        $this->array = json_decode($json, true);
 
-          $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\Entity');
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\Entity');
     }
 
     /**
@@ -123,9 +121,8 @@ class EntityTest extends TestCase
      */
     public function testEntity()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
@@ -294,9 +291,8 @@ class EntityTest extends TestCase
      */
     public function testPropertyDefaultVat()
     {
-        foreach ($this->array['default_vat'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['default_vat']);
+        foreach ($this->array['default_vat'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['default_vat']);
         }
     }
 
@@ -321,9 +317,8 @@ class EntityTest extends TestCase
      */
     public function testPropertyDefaultPaymentMethod()
     {
-        foreach ($this->array['default_payment_method'] as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object['default_payment_method']);
+        foreach ($this->array['default_payment_method'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['default_payment_method']);
         }
     }
 

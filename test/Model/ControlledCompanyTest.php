@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -36,14 +35,13 @@ use \FattureInCloud\ObjectSerializer;
  * ControlledCompanyTest Class Doc Comment
  *
  * @category    Class
- * @description 
+ * @description
  * @package     FattureInCloud
  * @author   Fatture In Cloud API team
  * @link     https://fattureincloud.it
  */
 class ControlledCompanyTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -90,9 +88,8 @@ class ControlledCompanyTest extends TestCase
      */
     public function testControlledCompany()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 
@@ -126,12 +123,11 @@ class ControlledCompanyTest extends TestCase
     public function testPropertyAccessToken()
     {
         TestCase::assertEquals($this->object['access_token'], $this->array['access_token']);
-
     }
 
-   /**
-     * Test attribute "connection_id"
-     */
+    /**
+      * Test attribute "connection_id"
+      */
     public function testPropertyConnectionId()
     {
         TestCase::assertEquals($this->object['connection_id'], $this->array['connection_id']);

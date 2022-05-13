@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -43,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class GetUserInfoResponseInfoTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -61,10 +59,10 @@ class GetUserInfoResponseInfoTest extends TestCase
             "need_password_change": false,
             "need_terms_of_service_confirmation": false
          }';
- 
-         $this->array = json_decode($json, true);
- 
-         $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\GetUserInfoResponseInfo');
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\GetUserInfoResponseInfo');
     }
 
     /**
@@ -86,9 +84,8 @@ class GetUserInfoResponseInfoTest extends TestCase
      */
     public function testGetUserInfoResponseInfo()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 

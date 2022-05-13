@@ -26,7 +26,6 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the model.
  */
-
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
@@ -43,7 +42,6 @@ use \FattureInCloud\ObjectSerializer;
  */
 class VatItemTest extends TestCase
 {
-
     /**
      * Setup before running any test case
      */
@@ -61,9 +59,9 @@ class VatItemTest extends TestCase
             "amount_vat": 20.0
           }';
 
-          $this->array = json_decode($json, true);
+        $this->array = json_decode($json, true);
 
-          $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\VatItem');
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\VatItem');
     }
 
     /**
@@ -85,9 +83,8 @@ class VatItemTest extends TestCase
      */
     public function testVatItem()
     {
-        foreach ($this->array as $key => $value) 
-        {
-           Testcase::assertArrayHasKey($key, $this->object);
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
         }
     }
 

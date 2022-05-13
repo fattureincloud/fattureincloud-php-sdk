@@ -1,5 +1,4 @@
 <?php
-
 namespace FattureInCloud\Test\OAuth2;
 
 use FattureInCloud\OAuth2\OAuth2AuthorizationCodeParams;
@@ -40,7 +39,7 @@ class OAuth2AuthorizationCodeParamsTest extends TestCase
      */
     public function testToJson()
     {
-        $params = new OAuth2AuthorizationCodeParams("a/AUTH_CODE", "OMG");
+        $params = new OAuth2AuthorizationCodeParams('a/AUTH_CODE', 'OMG');
         $this->assertEquals("{\"code\":\"a\/AUTH_CODE\",\"state\":\"OMG\"}", $params->toJson());
     }
 
@@ -49,8 +48,8 @@ class OAuth2AuthorizationCodeParamsTest extends TestCase
      */
     public function testFromJson()
     {
-        $params = OAuth2AuthorizationCodeParams::fromJson("{\"code\":\"a/AUTH_CODE\",\"state\":\"OMG\"}");
-        $this->assertEquals("a/AUTH_CODE", $params->getAuthorizationCode());
-        $this->assertEquals("OMG", $params->getState());
+        $params = OAuth2AuthorizationCodeParams::fromJson('{"code":"a/AUTH_CODE","state":"OMG"}');
+        $this->assertEquals('a/AUTH_CODE', $params->getAuthorizationCode());
+        $this->assertEquals('OMG', $params->getState());
     }
 }
