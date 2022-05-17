@@ -203,7 +203,7 @@ class OAuth2AuthorizationCodeManager
 
     private function executePost(string $uri, array $body)
     {
-        $r = $this->client->post($uri, $body);
+        $r = $this->client->post($uri, ['json' => $body]);
         $statusCode = $r->getStatusCode();
         $resBodyJson = $r->getBody()->getContents();
         $resBody = json_decode($resBodyJson, true);
