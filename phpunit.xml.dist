@@ -4,6 +4,7 @@
     <include>
       <directory suffix=".php">./lib/Api</directory>
       <directory suffix=".php">./lib/Filter</directory>
+      <directory suffix=".php">./lib/OAuth2</directory>
       <directory suffix=".php">./lib/Model</directory>
     </include>
   </coverage>
@@ -11,6 +12,7 @@
     <testsuite name="tests">
       <directory>./test/Api</directory>
       <directory>./test/Filter</directory>
+      <directory>./test/OAuth2</directory>
       <directory>./test/Model</directory>
     </testsuite>
   </testsuites>

@@ -1,4 +1,5 @@
 <?php
+
 namespace FattureInCloud\Test\Filter;
 
 use PHPUnit\Framework\TestCase;
@@ -50,7 +51,7 @@ class ConditionTest extends TestCase
         $this->assertEquals(5, (int)$condition->getValue());
 
         $condition->setValue(5.5);
-        $this->assertEquals(5.5, (double)$condition->getValue());
+        $this->assertEquals(5.5, (float)$condition->getValue());
 
         $condition->setValue(true);
         $this->assertEquals(true, (bool)$condition->getValue());

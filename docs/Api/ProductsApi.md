@@ -39,7 +39,7 @@ $apiInstance = new FattureInCloud\Api\ProductsApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$create_product_request = new \FattureInCloud\Model\CreateProductRequest; // \FattureInCloud\Model\CreateProductRequest
+$create_product_request = new \FattureInCloud\Model\CreateProductRequest; // \FattureInCloud\Model\CreateProductRequest | 
 
 try {
     $result = $apiInstance->createProduct($company_id, $create_product_request);

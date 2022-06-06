@@ -1,4 +1,5 @@
 <?php
+
 namespace FattureInCloud\Filter;
 
 class EmptyCondition implements Expression
