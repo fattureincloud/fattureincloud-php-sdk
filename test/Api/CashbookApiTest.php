@@ -123,7 +123,7 @@ class CashbookApiTest extends TestCase
      */
     public function testGetCashbookEntry()
     {
-        $stream = '{"data":{"date":"2021-10-10”,”amount_out":122,"payment_account_out":{"id”:21},”description":"Fattura n. 201\/2021","entity_name":"Rossi S.r.l.","kind":"issued_document","document":{"id":54321},"type":"out"}}';
+        $stream = '{"data":{"date":"2021-10-10","amount_out":122,"payment_account_out":{"id":21},"description":"Fattura n. 201\/2021","entity_name":"Rossi S.r.l.","kind":"issued_document","document":{"id":54321},"type":"out"}}';
         $mock = new MockHandler([new Response(
             200,
             ['Content-Type' => 'application/json'],
@@ -138,6 +138,8 @@ class CashbookApiTest extends TestCase
         $cashbook_id = 12345;
         $result = $apiInstance->getCashbookEntry($company_id, $cashbook_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetCashbookEntryResponse');
+
+var_dump($obj);
 
         TestCase::assertEquals($obj, $result);
     }
