@@ -25,6 +25,7 @@
  * https://openapi-generator.tech
  * Please update the test case below to test the endpoint.
  */
+
 namespace FattureInCloud\Test\Api;
 
 use \FattureInCloud\Configuration;

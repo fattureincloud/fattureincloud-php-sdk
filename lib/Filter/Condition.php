@@ -1,4 +1,5 @@
 <?php
+
 namespace FattureInCloud\Filter;
 
 class Condition implements Expression
@@ -76,7 +77,7 @@ class Condition implements Expression
             return $this->field . ' ' . $this->op . ' null';
         } else {
             $valueType = gettype($this->value);
-            if ($valueType == 'string') {
+            if ($valueType === 'string') {
                 return $this->field . ' ' . $this->op . " '" . $this->value . "'";
             }
             return $this->field . ' ' . $this->op . ' ' . $this->value;

@@ -1,4 +1,5 @@
 <?php
+
 namespace FattureInCloud\Filter;
 
 class Conjunction implements Expression

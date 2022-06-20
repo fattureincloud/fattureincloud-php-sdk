@@ -1,4 +1,5 @@
 <?php
+
 namespace FattureInCloud\Test\Filter;
 
 use FattureInCloud\Filter\Condition;

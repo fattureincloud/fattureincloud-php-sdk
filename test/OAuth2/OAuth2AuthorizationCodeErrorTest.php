@@ -1,4 +1,5 @@
 <?php
+
 namespace FattureInCloud\Test\OAuth2;
 
 use FattureInCloud\OAuth2\OAuth2AuthorizationCodeError;

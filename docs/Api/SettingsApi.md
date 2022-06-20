@@ -170,7 +170,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$create_vat_type_request = new \FattureInCloud\Model\CreateVatTypeRequest; // \FattureInCloud\Model\CreateVatTypeRequest
+$create_vat_type_request = new \FattureInCloud\Model\CreateVatTypeRequest; // \FattureInCloud\Model\CreateVatTypeRequest | 
 
 try {
     $result = $apiInstance->createVatType($company_id, $create_vat_type_request);
@@ -674,7 +674,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
 );
 $company_id = 12345; // int | The ID of the company.
 $payment_method_id = 56; // int | The Referred Payment Method Id.
-$modify_payment_method_request = new \FattureInCloud\Model\ModifyPaymentMethodRequest; // \FattureInCloud\Model\ModifyPaymentMethodRequest
+$modify_payment_method_request = new \FattureInCloud\Model\ModifyPaymentMethodRequest; // \FattureInCloud\Model\ModifyPaymentMethodRequest | 
 
 try {
     $result = $apiInstance->modifyPaymentMethod($company_id, $payment_method_id, $modify_payment_method_request);

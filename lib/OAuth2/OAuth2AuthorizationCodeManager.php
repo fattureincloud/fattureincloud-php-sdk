@@ -1,4 +1,5 @@
 <?php
+
 namespace FattureInCloud\OAuth2;
 
 use GuzzleHttp\Client;
@@ -40,7 +41,7 @@ class OAuth2AuthorizationCodeManager
      */
     public function __construct(string $clientId, string $clientSecret, string $redirectUri, string $baseUri = self::DEFAULT_BASE_URI, Client $client = null)
     {
-        if ($client == null) {
+        if ($client === null) {
             $this->client = new Client();
         } else {
             $this->client = $client;
@@ -64,7 +65,7 @@ class OAuth2AuthorizationCodeManager
      */
     public function setClient(Client $client = null): void
     {
-        if ($client == null) {
+        if ($client === null) {
             $this->client = new Client();
         } else {
             $this->client = $client;
@@ -124,7 +125,7 @@ class OAuth2AuthorizationCodeManager
      */
     public function getBaseUri(): ?string
     {
-        if ($this->baseUri == null) {
+        if ($this->baseUri === null) {
             return self::DEFAULT_BASE_URI;
         } else {
             return $this->baseUri;
@@ -207,7 +208,7 @@ class OAuth2AuthorizationCodeManager
         $statusCode = $r->getStatusCode();
         $resBodyJson = $r->getBody()->getContents();
         $resBody = json_decode($resBodyJson, true);
-        if ($statusCode == 200) {
+        if ($statusCode === 200) {
             return new OAuth2AuthorizationCodeTokenResponse($resBody['token_type'], $resBody['access_token'], $resBody['refresh_token'], $resBody['expires_in']);
         } else {
             return new OAuth2AuthorizationCodeError($statusCode, $resBody['error'], $resBody['error_description']);
