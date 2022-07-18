@@ -1,6 +1,6 @@
 <?php
 /**
- * PaymentMethodDetails
+ * IssuedDocumentPaymentsListItemPaymentTerms
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \FattureInCloud\ObjectSerializer;
 
 /**
- * PaymentMethodDetails Class Doc Comment
+ * IssuedDocumentPaymentsListItemPaymentTerms Class Doc Comment
  *
  * @category Class
  * @package  FattureInCloud
@@ -41,7 +41,7 @@ use \FattureInCloud\ObjectSerializer;
  * @link     https://fattureincloud.it
  * @implements \ArrayAccess<string, mixed>
  */
-class PaymentMethodDetails implements ModelInterface, ArrayAccess, \JsonSerializable
+class IssuedDocumentPaymentsListItemPaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class PaymentMethodDetails implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PaymentMethodDetails';
+    protected static $openAPIModelName = 'IssuedDocumentPaymentsListItem_payment_terms';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,8 @@ class PaymentMethodDetails implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'title' => 'string',
-        'description' => 'string'
+        'days' => 'int',
+        'type' => 'string'
     ];
 
     /**
@@ -70,8 +70,8 @@ class PaymentMethodDetails implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'title' => null,
-        'description' => null
+        'days' => null,
+        'type' => null
     ];
 
     /**
@@ -101,8 +101,8 @@ class PaymentMethodDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'title' => 'title',
-        'description' => 'description'
+        'days' => 'days',
+        'type' => 'type'
     ];
 
     /**
@@ -111,8 +111,8 @@ class PaymentMethodDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'title' => 'setTitle',
-        'description' => 'setDescription'
+        'days' => 'setDays',
+        'type' => 'setType'
     ];
 
     /**
@@ -121,8 +121,8 @@ class PaymentMethodDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'title' => 'getTitle',
-        'description' => 'getDescription'
+        'days' => 'getDays',
+        'type' => 'getType'
     ];
 
     /**
@@ -166,6 +166,21 @@ class PaymentMethodDetails implements ModelInterface, ArrayAccess, \JsonSerializ
         return self::$openAPIModelName;
     }
 
+    public const TYPE_STANDARD = 'standard';
+    public const TYPE_END_OF_MONTH = 'end_of_month';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_STANDARD,
+            self::TYPE_END_OF_MONTH,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -182,8 +197,8 @@ class PaymentMethodDetails implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->container['title'] = $data['title'] ?? null;
-        $this->container['description'] = $data['description'] ?? null;
+        $this->container['days'] = $data['days'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
     }
 
     /**
@@ -194,6 +209,15 @@ class PaymentMethodDetails implements ModelInterface, ArrayAccess, \JsonSerializ
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'type', must be one of '%s'",
+                $this->container['type'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -211,49 +235,59 @@ class PaymentMethodDetails implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets title
+     * Gets days
      *
-     * @return string|null
+     * @return int|null
      */
-    public function getTitle()
+    public function getDays()
     {
-        return $this->container['title'];
+        return $this->container['days'];
     }
 
     /**
-     * Sets title
+     * Sets days
      *
-     * @param string|null $title Details title.
+     * @param int|null $days The number of days by which the payment must be made.
      *
      * @return self
      */
-    public function setTitle($title)
+    public function setDays($days)
     {
-        $this->container['title'] = $title;
+        $this->container['days'] = $days;
 
         return $this;
     }
 
     /**
-     * Gets description
+     * Gets type
      *
      * @return string|null
      */
-    public function getDescription()
+    public function getType()
     {
-        return $this->container['description'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets description
+     * Sets type, the accepted values are available in string
      *
-     * @param string|null $description Details description.
+     * @param string|null $type Payment terms type.
      *
      * @return self
      */
-    public function setDescription($description)
+    public function setType($type)
     {
-        $this->container['description'] = $description;
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
 
         return $this;
     }

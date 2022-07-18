@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **payment_account** | [**\FattureInCloud\Model\PaymentAccount**](PaymentAccount.md) |  | [optional]
 **paid_date** | **\DateTime** | Payment date. [Only if status is paid] | [optional]
 **ei_raw** | **object** | Advanced raw attributes for e-invoices. | [optional]
+**payment_terms** | [**\FattureInCloud\Model\IssuedDocumentPaymentsListItemPaymentTerms**](IssuedDocumentPaymentsListItemPaymentTerms.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

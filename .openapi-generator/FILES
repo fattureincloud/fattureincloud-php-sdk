@@ -108,6 +108,7 @@ docs/Model/IssuedDocumentExtraData.md
 docs/Model/IssuedDocumentItemsListItem.md
 docs/Model/IssuedDocumentOptions.md
 docs/Model/IssuedDocumentPaymentsListItem.md
+docs/Model/IssuedDocumentPaymentsListItemPaymentTerms.md
 docs/Model/IssuedDocumentPreCreateInfo.md
 docs/Model/IssuedDocumentPreCreateInfoDefaultValues.md
 docs/Model/IssuedDocumentPreCreateInfoExtraDataDefaultValues.md
@@ -335,6 +336,7 @@ lib/Model/IssuedDocumentExtraData.php
 lib/Model/IssuedDocumentItemsListItem.php
 lib/Model/IssuedDocumentOptions.php
 lib/Model/IssuedDocumentPaymentsListItem.php
+lib/Model/IssuedDocumentPaymentsListItemPaymentTerms.php
 lib/Model/IssuedDocumentPreCreateInfo.php
 lib/Model/IssuedDocumentPreCreateInfoDefaultValues.php
 lib/Model/IssuedDocumentPreCreateInfoExtraDataDefaultValues.php
@@ -456,3 +458,4 @@ lib/Model/VerifyEInvoiceXmlResponse.php
 lib/Model/VerifyEInvoiceXmlResponseData.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/IssuedDocumentPaymentsListItemPaymentTermsTest.php

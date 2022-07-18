@@ -101,7 +101,7 @@ $apiInstance = new FattureInCloud\Api\CashbookApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$document_id = 56; // int | The ID of the document.
+$document_id = 'document_id_example'; // string | The ID of the document.
 
 try {
     $apiInstance->deleteCashbookEntry($company_id, $document_id);
@@ -115,7 +115,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| The ID of the company. |
- **document_id** | **int**| The ID of the document. |
+ **document_id** | **string**| The ID of the document. |
 
 ### Return type
 
@@ -162,7 +162,7 @@ $apiInstance = new FattureInCloud\Api\CashbookApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$document_id = 56; // int | The ID of the document.
+$document_id = 'document_id_example'; // string | The ID of the document.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
 
@@ -179,7 +179,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| The ID of the company. |
- **document_id** | **int**| The ID of the document. |
+ **document_id** | **string**| The ID of the document. |
  **fields** | **string**| List of comma-separated fields. | [optional]
  **fieldset** | **string**| Name of the fieldset. | [optional]
 
@@ -298,7 +298,7 @@ $apiInstance = new FattureInCloud\Api\CashbookApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$document_id = 56; // int | The ID of the document.
+$document_id = 'document_id_example'; // string | The ID of the document.
 $modify_cashbook_entry_request = new \FattureInCloud\Model\ModifyCashbookEntryRequest; // \FattureInCloud\Model\ModifyCashbookEntryRequest | Cashbook Entry
 
 try {
@@ -314,7 +314,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **company_id** | **int**| The ID of the company. |
- **document_id** | **int**| The ID of the document. |
+ **document_id** | **string**| The ID of the document. |
  **modify_cashbook_entry_request** | [**\FattureInCloud\Model\ModifyCashbookEntryRequest**](../Model/ModifyCashbookEntryRequest.md)| Cashbook Entry | [optional]
 
 ### Return type
