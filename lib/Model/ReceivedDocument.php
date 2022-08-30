@@ -75,6 +75,8 @@ class ReceivedDocument implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_marked' => 'bool',
         'is_detailed' => 'bool',
         'e_invoice' => 'bool',
+        'created_at' => '\DateTime',
+		'updated_at' => '\DateTime',
         'next_due_date' => '\DateTime',
         'currency' => '\FattureInCloud\Model\Currency',
         'tax_deductibility' => 'float',
@@ -111,6 +113,8 @@ class ReceivedDocument implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_marked' => null,
         'is_detailed' => null,
         'e_invoice' => null,
+        'created_at' => 'date',
+        'updated_at' => 'date',
         'next_due_date' => 'date',
         'currency' => null,
         'tax_deductibility' => null,
@@ -166,6 +170,8 @@ class ReceivedDocument implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_marked' => 'is_marked',
         'is_detailed' => 'is_detailed',
         'e_invoice' => 'e_invoice',
+        'created_at' => 'created_at',
+        'updated_at' => 'updated_at',
         'next_due_date' => 'next_due_date',
         'currency' => 'currency',
         'tax_deductibility' => 'tax_deductibility',
@@ -200,6 +206,8 @@ class ReceivedDocument implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_marked' => 'setIsMarked',
         'is_detailed' => 'setIsDetailed',
         'e_invoice' => 'setEInvoice',
+        'created_at' => 'setCreatedAt',
+        'updated_at' => 'setUpdatedAt',
         'next_due_date' => 'setNextDueDate',
         'currency' => 'setCurrency',
         'tax_deductibility' => 'setTaxDeductibility',
@@ -234,6 +242,8 @@ class ReceivedDocument implements ModelInterface, ArrayAccess, \JsonSerializable
         'is_marked' => 'getIsMarked',
         'is_detailed' => 'getIsDetailed',
         'e_invoice' => 'getEInvoice',
+        'created_at' => 'getCreatedAt',
+        'updated_at' => 'getUpdatedAt',
         'next_due_date' => 'getNextDueDate',
         'currency' => 'getCurrency',
         'tax_deductibility' => 'getTaxDeductibility',
@@ -319,6 +329,8 @@ class ReceivedDocument implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['is_marked'] = $data['is_marked'] ?? null;
         $this->container['is_detailed'] = $data['is_detailed'] ?? null;
         $this->container['e_invoice'] = $data['e_invoice'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
         $this->container['next_due_date'] = $data['next_due_date'] ?? null;
         $this->container['currency'] = $data['currency'] ?? null;
         $this->container['tax_deductibility'] = $data['tax_deductibility'] ?? null;
@@ -760,6 +772,54 @@ class ReceivedDocument implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['e_invoice'] = $e_invoice;
 
         return $this;
+    }
+    
+    /**
+     * Gets created_at
+     *
+     * @return \DateTime|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['created_at'];
+    }
+
+    /**
+     * Sets created_at
+     *
+     * @param \DateTime|null $created_at [Read Only] Created At.
+     *
+     * @return self
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->container['created_at'] = $created_at;
+
+        return $this;
+    }
+	
+	 /**
+     * Sets updated_at
+     *
+     * @param \DateTime|null $updated_at [Read Only] Updated At.
+     *
+     * @return self
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        $this->container['updated_at'] = $updated_at;
+
+        return $this;
+    }
+	
+	/**
+     * Gets updated_at
+     *
+     * @return \DateTime|null
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updated_at'];
     }
 
     /**
