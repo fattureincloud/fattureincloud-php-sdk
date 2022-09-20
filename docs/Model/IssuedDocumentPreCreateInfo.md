@@ -17,5 +17,6 @@ Name | Type | Description | Notes
 **payment_methods_list** | [**\FattureInCloud\Model\PaymentMethod[]**](PaymentMethod.md) | Payment methods list. | [optional]
 **payment_accounts_list** | [**\FattureInCloud\Model\PaymentAccount[]**](PaymentAccount.md) | Payment accounts list. | [optional]
 **vat_types_list** | [**\FattureInCloud\Model\VatType[]**](VatType.md) | Vat types list. | [optional]
+**languages_list** | [**\FattureInCloud\Model\Language[]**](Language.md) | Languages list. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

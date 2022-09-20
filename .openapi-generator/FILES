@@ -59,7 +59,6 @@ docs/Model/CreateSupplierResponse.md
 docs/Model/CreateVatTypeRequest.md
 docs/Model/CreateVatTypeResponse.md
 docs/Model/Currency.md
-docs/Model/DefaultPaymentTermsType.md
 docs/Model/DetailedCountry.md
 docs/Model/DocumentTemplate.md
 docs/Model/EInvoiceRejectionReason.md
@@ -186,6 +185,7 @@ docs/Model/PaymentAccountType.md
 docs/Model/PaymentMethod.md
 docs/Model/PaymentMethodDetails.md
 docs/Model/PaymentMethodType.md
+docs/Model/PaymentTermsType.md
 docs/Model/PermissionLevel.md
 docs/Model/Permissions.md
 docs/Model/PermissionsFicIssuedDocumentsDetailed.md
@@ -287,7 +287,6 @@ lib/Model/CreateSupplierResponse.php
 lib/Model/CreateVatTypeRequest.php
 lib/Model/CreateVatTypeResponse.php
 lib/Model/Currency.php
-lib/Model/DefaultPaymentTermsType.php
 lib/Model/DetailedCountry.php
 lib/Model/DocumentTemplate.php
 lib/Model/EInvoiceRejectionReason.php
@@ -415,6 +414,7 @@ lib/Model/PaymentAccountType.php
 lib/Model/PaymentMethod.php
 lib/Model/PaymentMethodDetails.php
 lib/Model/PaymentMethodType.php
+lib/Model/PaymentTermsType.php
 lib/Model/PermissionLevel.php
 lib/Model/Permissions.php
 lib/Model/PermissionsFicIssuedDocumentsDetailed.php
@@ -458,4 +458,4 @@ lib/Model/VerifyEInvoiceXmlResponse.php
 lib/Model/VerifyEInvoiceXmlResponseData.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/IssuedDocumentPaymentsListItemPaymentTermsTest.php
+test/Model/PaymentTermsTypeTest.php
