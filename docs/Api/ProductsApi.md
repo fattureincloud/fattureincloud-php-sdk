@@ -1,14 +1,14 @@
 # FattureInCloud\ProductsApi
 
-All URIs are relative to https://api-v2.fattureincloud.it.
+All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createProduct()**](ProductsApi.md#createProduct) | **POST** /c/{company_id}/products | Create Product
-[**deleteProduct()**](ProductsApi.md#deleteProduct) | **DELETE** /c/{company_id}/products/{product_id} | Delete Product
-[**getProduct()**](ProductsApi.md#getProduct) | **GET** /c/{company_id}/products/{product_id} | Get Product
-[**listProducts()**](ProductsApi.md#listProducts) | **GET** /c/{company_id}/products | List Products
-[**modifyProduct()**](ProductsApi.md#modifyProduct) | **PUT** /c/{company_id}/products/{product_id} | Modify Product
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createProduct()**](ProductsApi.md#createProduct) | **POST** /c/{company_id}/products | Create Product |
+| [**deleteProduct()**](ProductsApi.md#deleteProduct) | **DELETE** /c/{company_id}/products/{product_id} | Delete Product |
+| [**getProduct()**](ProductsApi.md#getProduct) | **GET** /c/{company_id}/products/{product_id} | Get Product |
+| [**listProducts()**](ProductsApi.md#listProducts) | **GET** /c/{company_id}/products | List Products |
+| [**modifyProduct()**](ProductsApi.md#modifyProduct) | **PUT** /c/{company_id}/products/{product_id} | Modify Product |
 
 
 ## `createProduct()`
@@ -51,10 +51,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **create_product_request** | [**\FattureInCloud\Model\CreateProductRequest**](../Model/CreateProductRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **create_product_request** | [**\FattureInCloud\Model\CreateProductRequest**](../Model/CreateProductRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -112,10 +112,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **product_id** | **int**| The ID of the product. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **product_id** | **int**| The ID of the product. | |
 
 ### Return type
 
@@ -176,12 +176,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **product_id** | **int**| The ID of the product. |
- **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **product_id** | **int**| The ID of the product. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
 
 ### Return type
 
@@ -245,15 +245,15 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset. | [optional]
- **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional]
- **page** | **int**| The page to retrieve. | [optional] [default to 1]
- **per_page** | **int**| The size of the page. | [optional] [default to 5]
- **q** | **string**| Query for filtering the results. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
+| **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
+| **page** | **int**| The page to retrieve. | [optional] [default to 1] |
+| **per_page** | **int**| The size of the page. | [optional] [default to 5] |
+| **q** | **string**| Query for filtering the results. | [optional] |
 
 ### Return type
 
@@ -313,11 +313,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **product_id** | **int**| The ID of the product. |
- **modify_product_request** | [**\FattureInCloud\Model\ModifyProductRequest**](../Model/ModifyProductRequest.md)| Modified product details. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **product_id** | **int**| The ID of the product. | |
+| **modify_product_request** | [**\FattureInCloud\Model\ModifyProductRequest**](../Model/ModifyProductRequest.md)| Modified product details. | [optional] |
 
 ### Return type
 

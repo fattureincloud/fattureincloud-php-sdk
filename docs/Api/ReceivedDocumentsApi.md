@@ -1,19 +1,19 @@
 # FattureInCloud\ReceivedDocumentsApi
 
-All URIs are relative to https://api-v2.fattureincloud.it.
+All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createReceivedDocument()**](ReceivedDocumentsApi.md#createReceivedDocument) | **POST** /c/{company_id}/received_documents | Create Received Document
-[**deleteReceivedDocument()**](ReceivedDocumentsApi.md#deleteReceivedDocument) | **DELETE** /c/{company_id}/received_documents/{document_id} | Delete Received Document
-[**deleteReceivedDocumentAttachment()**](ReceivedDocumentsApi.md#deleteReceivedDocumentAttachment) | **DELETE** /c/{company_id}/received_documents/{document_id}/attachment | Delete Received Document Attachment
-[**getExistingReceivedDocumentTotals()**](ReceivedDocumentsApi.md#getExistingReceivedDocumentTotals) | **POST** /c/{company_id}/received_documents/{document_id}/totals | Get Existing Received Document Totals
-[**getNewReceivedDocumentTotals()**](ReceivedDocumentsApi.md#getNewReceivedDocumentTotals) | **POST** /c/{company_id}/received_documents/totals | Get New Received Document Totals
-[**getReceivedDocument()**](ReceivedDocumentsApi.md#getReceivedDocument) | **GET** /c/{company_id}/received_documents/{document_id} | Get Received Document
-[**getReceivedDocumentPreCreateInfo()**](ReceivedDocumentsApi.md#getReceivedDocumentPreCreateInfo) | **GET** /c/{company_id}/received_documents/info | Get Received Document Pre-Create Info
-[**listReceivedDocuments()**](ReceivedDocumentsApi.md#listReceivedDocuments) | **GET** /c/{company_id}/received_documents | List Received Documents
-[**modifyReceivedDocument()**](ReceivedDocumentsApi.md#modifyReceivedDocument) | **PUT** /c/{company_id}/received_documents/{document_id} | Modify Received Document
-[**uploadReceivedDocumentAttachment()**](ReceivedDocumentsApi.md#uploadReceivedDocumentAttachment) | **POST** /c/{company_id}/received_documents/attachment | Upload Received Document Attachment
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createReceivedDocument()**](ReceivedDocumentsApi.md#createReceivedDocument) | **POST** /c/{company_id}/received_documents | Create Received Document |
+| [**deleteReceivedDocument()**](ReceivedDocumentsApi.md#deleteReceivedDocument) | **DELETE** /c/{company_id}/received_documents/{document_id} | Delete Received Document |
+| [**deleteReceivedDocumentAttachment()**](ReceivedDocumentsApi.md#deleteReceivedDocumentAttachment) | **DELETE** /c/{company_id}/received_documents/{document_id}/attachment | Delete Received Document Attachment |
+| [**getExistingReceivedDocumentTotals()**](ReceivedDocumentsApi.md#getExistingReceivedDocumentTotals) | **POST** /c/{company_id}/received_documents/{document_id}/totals | Get Existing Received Document Totals |
+| [**getNewReceivedDocumentTotals()**](ReceivedDocumentsApi.md#getNewReceivedDocumentTotals) | **POST** /c/{company_id}/received_documents/totals | Get New Received Document Totals |
+| [**getReceivedDocument()**](ReceivedDocumentsApi.md#getReceivedDocument) | **GET** /c/{company_id}/received_documents/{document_id} | Get Received Document |
+| [**getReceivedDocumentPreCreateInfo()**](ReceivedDocumentsApi.md#getReceivedDocumentPreCreateInfo) | **GET** /c/{company_id}/received_documents/info | Get Received Document Pre-Create Info |
+| [**listReceivedDocuments()**](ReceivedDocumentsApi.md#listReceivedDocuments) | **GET** /c/{company_id}/received_documents | List Received Documents |
+| [**modifyReceivedDocument()**](ReceivedDocumentsApi.md#modifyReceivedDocument) | **PUT** /c/{company_id}/received_documents/{document_id} | Modify Received Document |
+| [**uploadReceivedDocumentAttachment()**](ReceivedDocumentsApi.md#uploadReceivedDocumentAttachment) | **POST** /c/{company_id}/received_documents/attachment | Upload Received Document Attachment |
 
 
 ## `createReceivedDocument()`
@@ -56,10 +56,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **create_received_document_request** | [**\FattureInCloud\Model\CreateReceivedDocumentRequest**](../Model/CreateReceivedDocumentRequest.md)| Document to create | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **create_received_document_request** | [**\FattureInCloud\Model\CreateReceivedDocumentRequest**](../Model/CreateReceivedDocumentRequest.md)| Document to create | [optional] |
 
 ### Return type
 
@@ -117,10 +117,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **document_id** | **int**| The ID of the document. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
 
 ### Return type
 
@@ -178,10 +178,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **document_id** | **int**| The ID of the document. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
 
 ### Return type
 
@@ -241,11 +241,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **document_id** | **int**| The ID of the document. |
- **get_existing_received_document_totals_request** | [**\FattureInCloud\Model\GetExistingReceivedDocumentTotalsRequest**](../Model/GetExistingReceivedDocumentTotalsRequest.md)| Received document. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
+| **get_existing_received_document_totals_request** | [**\FattureInCloud\Model\GetExistingReceivedDocumentTotalsRequest**](../Model/GetExistingReceivedDocumentTotalsRequest.md)| Received document. | [optional] |
 
 ### Return type
 
@@ -304,10 +304,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **get_new_received_document_totals_request** | [**\FattureInCloud\Model\GetNewReceivedDocumentTotalsRequest**](../Model/GetNewReceivedDocumentTotalsRequest.md)| Received document. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **get_new_received_document_totals_request** | [**\FattureInCloud\Model\GetNewReceivedDocumentTotalsRequest**](../Model/GetNewReceivedDocumentTotalsRequest.md)| Received document. | [optional] |
 
 ### Return type
 
@@ -368,12 +368,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **document_id** | **int**| The ID of the document. |
- **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
 
 ### Return type
 
@@ -432,10 +432,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **type** | **string**| The type of the received document. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **type** | **string**| The type of the received document. | |
 
 ### Return type
 
@@ -500,16 +500,16 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **type** | **string**| The type of the received document. |
- **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset. | [optional]
- **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional]
- **page** | **int**| The page to retrieve. | [optional] [default to 1]
- **per_page** | **int**| The size of the page. | [optional] [default to 5]
- **q** | **string**| Query for filtering the results. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **type** | **string**| The type of the received document. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
+| **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
+| **page** | **int**| The page to retrieve. | [optional] [default to 1] |
+| **per_page** | **int**| The size of the page. | [optional] [default to 5] |
+| **q** | **string**| Query for filtering the results. | [optional] |
 
 ### Return type
 
@@ -569,11 +569,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **document_id** | **int**| The ID of the document. |
- **modify_received_document_request** | [**\FattureInCloud\Model\ModifyReceivedDocumentRequest**](../Model/ModifyReceivedDocumentRequest.md)| Modified document. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
+| **modify_received_document_request** | [**\FattureInCloud\Model\ModifyReceivedDocumentRequest**](../Model/ModifyReceivedDocumentRequest.md)| Modified document. | [optional] |
 
 ### Return type
 
@@ -633,11 +633,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **filename** | **string**| Name of the file. | [optional]
- **attachment** | **\SplFileObject****\SplFileObject**| Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **filename** | **string**| Name of the file. | [optional] |
+| **attachment** | **\SplFileObject****\SplFileObject**| Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx | [optional] |
 
 ### Return type
 

@@ -1,25 +1,25 @@
 # FattureInCloud\InfoApi
 
-All URIs are relative to https://api-v2.fattureincloud.it.
+All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**listArchiveCategories()**](InfoApi.md#listArchiveCategories) | **GET** /c/{company_id}/info/archive_categories | List Archive Categories
-[**listCities()**](InfoApi.md#listCities) | **GET** /info/cities | List Cities
-[**listCostCenters()**](InfoApi.md#listCostCenters) | **GET** /c/{company_id}/info/cost_centers | List Cost Centers
-[**listCountries()**](InfoApi.md#listCountries) | **GET** /info/countries | List Countries
-[**listCurrencies()**](InfoApi.md#listCurrencies) | **GET** /info/currencies | List Currencies
-[**listDeliveryNotesDefaultCausals()**](InfoApi.md#listDeliveryNotesDefaultCausals) | **GET** /info/dn_causals | List Delivery Notes Default Causals
-[**listDetailedCountries()**](InfoApi.md#listDetailedCountries) | **GET** /info/detailed_countries | List Detailed Countries
-[**listLanguages()**](InfoApi.md#listLanguages) | **GET** /info/languages | List Languages
-[**listPaymentAccounts()**](InfoApi.md#listPaymentAccounts) | **GET** /c/{company_id}/info/payment_accounts | List Payment Accounts
-[**listPaymentMethods()**](InfoApi.md#listPaymentMethods) | **GET** /c/{company_id}/info/payment_methods | List Payment Methods
-[**listProductCategories()**](InfoApi.md#listProductCategories) | **GET** /c/{company_id}/info/product_categories | List Product Categories
-[**listReceivedDocumentCategories()**](InfoApi.md#listReceivedDocumentCategories) | **GET** /c/{company_id}/info/received_document_categories | List Received Document Categories
-[**listRevenueCenters()**](InfoApi.md#listRevenueCenters) | **GET** /c/{company_id}/info/revenue_centers | List Revenue Centers
-[**listTemplates()**](InfoApi.md#listTemplates) | **GET** /info/templates | List Templates
-[**listUnitsOfMeasure()**](InfoApi.md#listUnitsOfMeasure) | **GET** /info/measures | List Units of Measure
-[**listVatTypes()**](InfoApi.md#listVatTypes) | **GET** /c/{company_id}/info/vat_types | List Vat Types
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**listArchiveCategories()**](InfoApi.md#listArchiveCategories) | **GET** /c/{company_id}/info/archive_categories | List Archive Categories |
+| [**listCities()**](InfoApi.md#listCities) | **GET** /info/cities | List Cities |
+| [**listCostCenters()**](InfoApi.md#listCostCenters) | **GET** /c/{company_id}/info/cost_centers | List Cost Centers |
+| [**listCountries()**](InfoApi.md#listCountries) | **GET** /info/countries | List Countries |
+| [**listCurrencies()**](InfoApi.md#listCurrencies) | **GET** /info/currencies | List Currencies |
+| [**listDeliveryNotesDefaultCausals()**](InfoApi.md#listDeliveryNotesDefaultCausals) | **GET** /info/dn_causals | List Delivery Notes Default Causals |
+| [**listDetailedCountries()**](InfoApi.md#listDetailedCountries) | **GET** /info/detailed_countries | List Detailed Countries |
+| [**listLanguages()**](InfoApi.md#listLanguages) | **GET** /info/languages | List Languages |
+| [**listPaymentAccounts()**](InfoApi.md#listPaymentAccounts) | **GET** /c/{company_id}/info/payment_accounts | List Payment Accounts |
+| [**listPaymentMethods()**](InfoApi.md#listPaymentMethods) | **GET** /c/{company_id}/info/payment_methods | List Payment Methods |
+| [**listProductCategories()**](InfoApi.md#listProductCategories) | **GET** /c/{company_id}/info/product_categories | List Product Categories |
+| [**listReceivedDocumentCategories()**](InfoApi.md#listReceivedDocumentCategories) | **GET** /c/{company_id}/info/received_document_categories | List Received Document Categories |
+| [**listRevenueCenters()**](InfoApi.md#listRevenueCenters) | **GET** /c/{company_id}/info/revenue_centers | List Revenue Centers |
+| [**listTemplates()**](InfoApi.md#listTemplates) | **GET** /info/templates | List Templates |
+| [**listUnitsOfMeasure()**](InfoApi.md#listUnitsOfMeasure) | **GET** /info/measures | List Units of Measure |
+| [**listVatTypes()**](InfoApi.md#listVatTypes) | **GET** /c/{company_id}/info/vat_types | List Vat Types |
 
 
 ## `listArchiveCategories()`
@@ -61,9 +61,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
 
 ### Return type
 
@@ -122,10 +122,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **postal_code** | **string**| Postal code for filtering. | [optional]
- **city** | **string**| City for filtering (ignored if postal_code is passed). | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **postal_code** | **string**| Postal code for filtering. | [optional] |
+| **city** | **string**| City for filtering (ignored if postal_code is passed). | [optional] |
 
 ### Return type
 
@@ -183,9 +183,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
 
 ### Return type
 
@@ -531,12 +531,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset. | [optional]
- **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
+| **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
 
 ### Return type
 
@@ -597,12 +597,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset. | [optional]
- **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
+| **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
 
 ### Return type
 
@@ -661,10 +661,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **context** | **string**|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **context** | **string**|  | |
 
 ### Return type
 
@@ -722,9 +722,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
 
 ### Return type
 
@@ -782,9 +782,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
 
 ### Return type
 
@@ -843,10 +843,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | **string**| Type of the templates. | [optional] [default to &#39;all&#39;]
- **by_type** | **bool**| [Only if type&#x3D;all] If true, splits the list in objects, grouping templates by type. | [optional] [default to false]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **type** | **string**| Type of the templates. | [optional] [default to &#39;all&#39;] |
+| **by_type** | **bool**| [Only if type&#x3D;all] If true, splits the list in objects, grouping templates by type. | [optional] [default to false] |
 
 ### Return type
 
@@ -962,10 +962,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **fieldset** | **string**| Name of the fieldset. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
 
 ### Return type
 

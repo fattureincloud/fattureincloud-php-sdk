@@ -43,6 +43,15 @@ class Scope
     // Read permission to the issued Delivery Notes
     public const ISSUED_DOCUMENTS_DELIVERY_NOTES_READ = "issued_documents.delivery_notes:r";
 
+    // Read permission to the issued Work Reports
+    public const ISSUED_DOCUMENTS_WORK_REPORTS_READ = "issued_documents.work_reports:r";
+
+    // Read permission to the issued Supplier Orders
+    public const ISSUED_DOCUMENTS_SUPPLIER_ORDERS_READ = "issued_documents.supplier_orders:r";
+
+    // Read permission to the issued Self Invoices
+    public const ISSUED_DOCUMENTS_SELF_INVOICES_READ = "issued_documents.self_invoices:r";
+
     // Write permission to the issued Invoices
     public const ISSUED_DOCUMENTS_INVOICES_ALL = "issued_documents.invoices:a";
 
@@ -63,6 +72,15 @@ class Scope
 
     // Write permission to the issued Delivery Notes
     public const ISSUED_DOCUMENTS_DELIVERY_NOTES_ALL = "issued_documents.delivery_notes:a";
+
+    // Write permission to the issued Work Reports
+    public const ISSUED_DOCUMENTS_WORK_REPORTS_ALL = "issued_documents.work_reports:a";
+
+    // Write permission to the issued Supplier Orders
+    public const ISSUED_DOCUMENTS_SUPPLIER_ORDERS_ALL = "issued_documents.supplier_orders:a";
+
+    // Write permission to the issued Self Invoices
+    public const ISSUED_DOCUMENTS_SELF_INVOICES_ALL = "issued_documents.self_invoices:a";
 
     // Read permission to the Received Documents
     public const RECEIVED_DOCUMENTS_READ = "received_documents:r";
@@ -144,6 +162,12 @@ class Scope
 
             self::ISSUED_DOCUMENTS_DELIVERY_NOTES_READ,
 
+            self::ISSUED_DOCUMENTS_WORK_REPORTS_READ,
+
+            self::ISSUED_DOCUMENTS_SUPPLIER_ORDERS_READ,
+
+            self::ISSUED_DOCUMENTS_SELF_INVOICES_READ,
+
             self::ISSUED_DOCUMENTS_INVOICES_ALL,
 
             self::ISSUED_DOCUMENTS_CREDIT_NOTES_ALL,
@@ -157,6 +181,12 @@ class Scope
             self::ISSUED_DOCUMENTS_PROFORMAS_ALL,
 
             self::ISSUED_DOCUMENTS_DELIVERY_NOTES_ALL,
+
+            self::ISSUED_DOCUMENTS_WORK_REPORTS_ALL,
+
+            self::ISSUED_DOCUMENTS_SUPPLIER_ORDERS_ALL,
+
+            self::ISSUED_DOCUMENTS_SELF_INVOICES_ALL,
 
             self::RECEIVED_DOCUMENTS_READ,
 

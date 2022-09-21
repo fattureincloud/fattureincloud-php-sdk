@@ -1,21 +1,21 @@
 # FattureInCloud\IssuedDocumentsApi
 
-All URIs are relative to https://api-v2.fattureincloud.it.
+All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createIssuedDocument()**](IssuedDocumentsApi.md#createIssuedDocument) | **POST** /c/{company_id}/issued_documents | Create Issued Document
-[**deleteIssuedDocument()**](IssuedDocumentsApi.md#deleteIssuedDocument) | **DELETE** /c/{company_id}/issued_documents/{document_id} | Delete Issued Document
-[**deleteIssuedDocumentAttachment()**](IssuedDocumentsApi.md#deleteIssuedDocumentAttachment) | **DELETE** /c/{company_id}/issued_documents/{document_id}/attachment | Delete Issued Document Attachment
-[**getEmailData()**](IssuedDocumentsApi.md#getEmailData) | **GET** /c/{company_id}/issued_documents/{document_id}/email | Get Email Data
-[**getExistingIssuedDocumentTotals()**](IssuedDocumentsApi.md#getExistingIssuedDocumentTotals) | **POST** /c/{company_id}/issued_documents/{document_id}/totals | Get Existing Issued Document Totals
-[**getIssuedDocument()**](IssuedDocumentsApi.md#getIssuedDocument) | **GET** /c/{company_id}/issued_documents/{document_id} | Get Issued Document
-[**getIssuedDocumentPreCreateInfo()**](IssuedDocumentsApi.md#getIssuedDocumentPreCreateInfo) | **GET** /c/{company_id}/issued_documents/info | Get Issued Document Pre-create info
-[**getNewIssuedDocumentTotals()**](IssuedDocumentsApi.md#getNewIssuedDocumentTotals) | **POST** /c/{company_id}/issued_documents/totals | Get New Issued Document Totals
-[**listIssuedDocuments()**](IssuedDocumentsApi.md#listIssuedDocuments) | **GET** /c/{company_id}/issued_documents | List Issued Documents
-[**modifyIssuedDocument()**](IssuedDocumentsApi.md#modifyIssuedDocument) | **PUT** /c/{company_id}/issued_documents/{document_id} | Modify Issued Document
-[**scheduleEmail()**](IssuedDocumentsApi.md#scheduleEmail) | **POST** /c/{company_id}/issued_documents/{document_id}/email | Schedule Email
-[**uploadIssuedDocumentAttachment()**](IssuedDocumentsApi.md#uploadIssuedDocumentAttachment) | **POST** /c/{company_id}/issued_documents/attachment | Upload Issued Document Attachment
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createIssuedDocument()**](IssuedDocumentsApi.md#createIssuedDocument) | **POST** /c/{company_id}/issued_documents | Create Issued Document |
+| [**deleteIssuedDocument()**](IssuedDocumentsApi.md#deleteIssuedDocument) | **DELETE** /c/{company_id}/issued_documents/{document_id} | Delete Issued Document |
+| [**deleteIssuedDocumentAttachment()**](IssuedDocumentsApi.md#deleteIssuedDocumentAttachment) | **DELETE** /c/{company_id}/issued_documents/{document_id}/attachment | Delete Issued Document Attachment |
+| [**getEmailData()**](IssuedDocumentsApi.md#getEmailData) | **GET** /c/{company_id}/issued_documents/{document_id}/email | Get Email Data |
+| [**getExistingIssuedDocumentTotals()**](IssuedDocumentsApi.md#getExistingIssuedDocumentTotals) | **POST** /c/{company_id}/issued_documents/{document_id}/totals | Get Existing Issued Document Totals |
+| [**getIssuedDocument()**](IssuedDocumentsApi.md#getIssuedDocument) | **GET** /c/{company_id}/issued_documents/{document_id} | Get Issued Document |
+| [**getIssuedDocumentPreCreateInfo()**](IssuedDocumentsApi.md#getIssuedDocumentPreCreateInfo) | **GET** /c/{company_id}/issued_documents/info | Get Issued Document Pre-create info |
+| [**getNewIssuedDocumentTotals()**](IssuedDocumentsApi.md#getNewIssuedDocumentTotals) | **POST** /c/{company_id}/issued_documents/totals | Get New Issued Document Totals |
+| [**listIssuedDocuments()**](IssuedDocumentsApi.md#listIssuedDocuments) | **GET** /c/{company_id}/issued_documents | List Issued Documents |
+| [**modifyIssuedDocument()**](IssuedDocumentsApi.md#modifyIssuedDocument) | **PUT** /c/{company_id}/issued_documents/{document_id} | Modify Issued Document |
+| [**scheduleEmail()**](IssuedDocumentsApi.md#scheduleEmail) | **POST** /c/{company_id}/issued_documents/{document_id}/email | Schedule Email |
+| [**uploadIssuedDocumentAttachment()**](IssuedDocumentsApi.md#uploadIssuedDocumentAttachment) | **POST** /c/{company_id}/issued_documents/attachment | Upload Issued Document Attachment |
 
 
 ## `createIssuedDocument()`
@@ -58,10 +58,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **create_issued_document_request** | [**\FattureInCloud\Model\CreateIssuedDocumentRequest**](../Model/CreateIssuedDocumentRequest.md)| The Issued Document | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **create_issued_document_request** | [**\FattureInCloud\Model\CreateIssuedDocumentRequest**](../Model/CreateIssuedDocumentRequest.md)| The Issued Document | [optional] |
 
 ### Return type
 
@@ -119,10 +119,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **document_id** | **int**| The ID of the document. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
 
 ### Return type
 
@@ -180,10 +180,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **document_id** | **int**| The ID of the document. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
 
 ### Return type
 
@@ -242,10 +242,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **document_id** | **int**| The ID of the document. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
 
 ### Return type
 
@@ -305,11 +305,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **document_id** | **int**| The ID of the document. |
- **get_existing_issued_document_totals_request** | [**\FattureInCloud\Model\GetExistingIssuedDocumentTotalsRequest**](../Model/GetExistingIssuedDocumentTotalsRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
+| **get_existing_issued_document_totals_request** | [**\FattureInCloud\Model\GetExistingIssuedDocumentTotalsRequest**](../Model/GetExistingIssuedDocumentTotalsRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -370,12 +370,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **document_id** | **int**| The ID of the document. |
- **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
 
 ### Return type
 
@@ -434,10 +434,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **type** | **string**| The type of the issued document. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **type** | **string**| The type of the issued document. | |
 
 ### Return type
 
@@ -496,10 +496,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **get_new_issued_document_totals_request** | [**\FattureInCloud\Model\GetNewIssuedDocumentTotalsRequest**](../Model/GetNewIssuedDocumentTotalsRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **get_new_issued_document_totals_request** | [**\FattureInCloud\Model\GetNewIssuedDocumentTotalsRequest**](../Model/GetNewIssuedDocumentTotalsRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -564,16 +564,16 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **type** | **string**| The type of the issued document. |
- **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset. | [optional]
- **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional]
- **page** | **int**| The page to retrieve. | [optional] [default to 1]
- **per_page** | **int**| The size of the page. | [optional] [default to 5]
- **q** | **string**| Query for filtering the results. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **type** | **string**| The type of the issued document. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
+| **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
+| **page** | **int**| The page to retrieve. | [optional] [default to 1] |
+| **per_page** | **int**| The size of the page. | [optional] [default to 5] |
+| **q** | **string**| Query for filtering the results. | [optional] |
 
 ### Return type
 
@@ -633,11 +633,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **document_id** | **int**| The ID of the document. |
- **modify_issued_document_request** | [**\FattureInCloud\Model\ModifyIssuedDocumentRequest**](../Model/ModifyIssuedDocumentRequest.md)| The modified document | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
+| **modify_issued_document_request** | [**\FattureInCloud\Model\ModifyIssuedDocumentRequest**](../Model/ModifyIssuedDocumentRequest.md)| The modified document | [optional] |
 
 ### Return type
 
@@ -696,11 +696,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **document_id** | **int**| The ID of the document. |
- **schedule_email_request** | [**\FattureInCloud\Model\ScheduleEmailRequest**](../Model/ScheduleEmailRequest.md)| Email Schedule | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
+| **schedule_email_request** | [**\FattureInCloud\Model\ScheduleEmailRequest**](../Model/ScheduleEmailRequest.md)| Email Schedule | [optional] |
 
 ### Return type
 
@@ -760,11 +760,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **filename** | **string**| Name of the file. | [optional]
- **attachment** | **\SplFileObject****\SplFileObject**| Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **filename** | **string**| Name of the file. | [optional] |
+| **attachment** | **\SplFileObject****\SplFileObject**| Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx | [optional] |
 
 ### Return type
 

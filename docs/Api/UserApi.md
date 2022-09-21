@@ -1,11 +1,11 @@
 # FattureInCloud\UserApi
 
-All URIs are relative to https://api-v2.fattureincloud.it.
+All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getUserInfo()**](UserApi.md#getUserInfo) | **GET** /user/info | Get User Info
-[**listUserCompanies()**](UserApi.md#listUserCompanies) | **GET** /user/companies | List User Companies
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getUserInfo()**](UserApi.md#getUserInfo) | **GET** /user/info | Get User Info |
+| [**listUserCompanies()**](UserApi.md#listUserCompanies) | **GET** /user/companies | List User Companies |
 
 
 ## `getUserInfo()`
