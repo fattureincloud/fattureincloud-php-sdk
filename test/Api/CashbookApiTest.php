@@ -139,8 +139,6 @@ class CashbookApiTest extends TestCase
         $result = $apiInstance->getCashbookEntry($company_id, $cashbook_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetCashbookEntryResponse');
 
-var_dump($obj);
-
         TestCase::assertEquals($obj, $result);
     }
 

@@ -1,21 +1,21 @@
 # FattureInCloud\SettingsApi
 
-All URIs are relative to https://api-v2.fattureincloud.it.
+All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createPaymentAccount()**](SettingsApi.md#createPaymentAccount) | **POST** /c/{company_id}/settings/payment_accounts | Create Payment Account
-[**createPaymentMethod()**](SettingsApi.md#createPaymentMethod) | **POST** /c/{company_id}/settings/payment_methods | Create Payment Method
-[**createVatType()**](SettingsApi.md#createVatType) | **POST** /c/{company_id}/settings/vat_types | Create Vat Type
-[**deletePaymentAccount()**](SettingsApi.md#deletePaymentAccount) | **DELETE** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Delete Payment Account
-[**deletePaymentMethod()**](SettingsApi.md#deletePaymentMethod) | **DELETE** /c/{company_id}/settings/payment_methods/{payment_method_id} | Delete Payment Method
-[**deleteVatType()**](SettingsApi.md#deleteVatType) | **DELETE** /c/{company_id}/settings/vat_types/{vat_type_id} | Delete Vat Type
-[**getPaymentAccount()**](SettingsApi.md#getPaymentAccount) | **GET** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Get Payment Account
-[**getPaymentMethod()**](SettingsApi.md#getPaymentMethod) | **GET** /c/{company_id}/settings/payment_methods/{payment_method_id} | Get Payment Method
-[**getVatType()**](SettingsApi.md#getVatType) | **GET** /c/{company_id}/settings/vat_types/{vat_type_id} | Get Vat Type
-[**modifyPaymentAccount()**](SettingsApi.md#modifyPaymentAccount) | **PUT** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Modify Payment Account
-[**modifyPaymentMethod()**](SettingsApi.md#modifyPaymentMethod) | **PUT** /c/{company_id}/settings/payment_methods/{payment_method_id} | Modify Payment Method
-[**modifyVatType()**](SettingsApi.md#modifyVatType) | **PUT** /c/{company_id}/settings/vat_types/{vat_type_id} | Modify Vat Type
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createPaymentAccount()**](SettingsApi.md#createPaymentAccount) | **POST** /c/{company_id}/settings/payment_accounts | Create Payment Account |
+| [**createPaymentMethod()**](SettingsApi.md#createPaymentMethod) | **POST** /c/{company_id}/settings/payment_methods | Create Payment Method |
+| [**createVatType()**](SettingsApi.md#createVatType) | **POST** /c/{company_id}/settings/vat_types | Create Vat Type |
+| [**deletePaymentAccount()**](SettingsApi.md#deletePaymentAccount) | **DELETE** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Delete Payment Account |
+| [**deletePaymentMethod()**](SettingsApi.md#deletePaymentMethod) | **DELETE** /c/{company_id}/settings/payment_methods/{payment_method_id} | Delete Payment Method |
+| [**deleteVatType()**](SettingsApi.md#deleteVatType) | **DELETE** /c/{company_id}/settings/vat_types/{vat_type_id} | Delete Vat Type |
+| [**getPaymentAccount()**](SettingsApi.md#getPaymentAccount) | **GET** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Get Payment Account |
+| [**getPaymentMethod()**](SettingsApi.md#getPaymentMethod) | **GET** /c/{company_id}/settings/payment_methods/{payment_method_id} | Get Payment Method |
+| [**getVatType()**](SettingsApi.md#getVatType) | **GET** /c/{company_id}/settings/vat_types/{vat_type_id} | Get Vat Type |
+| [**modifyPaymentAccount()**](SettingsApi.md#modifyPaymentAccount) | **PUT** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Modify Payment Account |
+| [**modifyPaymentMethod()**](SettingsApi.md#modifyPaymentMethod) | **PUT** /c/{company_id}/settings/payment_methods/{payment_method_id} | Modify Payment Method |
+| [**modifyVatType()**](SettingsApi.md#modifyVatType) | **PUT** /c/{company_id}/settings/vat_types/{vat_type_id} | Modify Vat Type |
 
 
 ## `createPaymentAccount()`
@@ -58,10 +58,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **create_payment_account_request** | [**\FattureInCloud\Model\CreatePaymentAccountRequest**](../Model/CreatePaymentAccountRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **create_payment_account_request** | [**\FattureInCloud\Model\CreatePaymentAccountRequest**](../Model/CreatePaymentAccountRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -120,10 +120,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **create_payment_method_request** | [**\FattureInCloud\Model\CreatePaymentMethodRequest**](../Model/CreatePaymentMethodRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **create_payment_method_request** | [**\FattureInCloud\Model\CreatePaymentMethodRequest**](../Model/CreatePaymentMethodRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -182,10 +182,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **create_vat_type_request** | [**\FattureInCloud\Model\CreateVatTypeRequest**](../Model/CreateVatTypeRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **create_vat_type_request** | [**\FattureInCloud\Model\CreateVatTypeRequest**](../Model/CreateVatTypeRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -243,10 +243,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **payment_account_id** | **int**| The Referred Payment Account Id. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **payment_account_id** | **int**| The Referred Payment Account Id. | |
 
 ### Return type
 
@@ -304,10 +304,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **payment_method_id** | **int**| The Referred Payment Method Id. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **payment_method_id** | **int**| The Referred Payment Method Id. | |
 
 ### Return type
 
@@ -365,10 +365,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **vat_type_id** | **int**| The Referred Vat Type Id. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **vat_type_id** | **int**| The Referred Vat Type Id. | |
 
 ### Return type
 
@@ -429,12 +429,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **payment_account_id** | **int**| The Referred Payment Account Id. |
- **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **payment_account_id** | **int**| The Referred Payment Account Id. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
 
 ### Return type
 
@@ -495,12 +495,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **payment_method_id** | **int**| The Referred Payment Method Id. |
- **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **payment_method_id** | **int**| The Referred Payment Method Id. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
 
 ### Return type
 
@@ -559,10 +559,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **vat_type_id** | **int**| The Referred Vat Type Id. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **vat_type_id** | **int**| The Referred Vat Type Id. | |
 
 ### Return type
 
@@ -622,11 +622,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **payment_account_id** | **int**| The Referred Payment Account Id. |
- **modify_payment_account_request** | [**\FattureInCloud\Model\ModifyPaymentAccountRequest**](../Model/ModifyPaymentAccountRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **payment_account_id** | **int**| The Referred Payment Account Id. | |
+| **modify_payment_account_request** | [**\FattureInCloud\Model\ModifyPaymentAccountRequest**](../Model/ModifyPaymentAccountRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -686,11 +686,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **payment_method_id** | **int**| The Referred Payment Method Id. |
- **modify_payment_method_request** | [**\FattureInCloud\Model\ModifyPaymentMethodRequest**](../Model/ModifyPaymentMethodRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **payment_method_id** | **int**| The Referred Payment Method Id. | |
+| **modify_payment_method_request** | [**\FattureInCloud\Model\ModifyPaymentMethodRequest**](../Model/ModifyPaymentMethodRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -750,11 +750,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **vat_type_id** | **int**| The Referred Vat Type Id. |
- **modify_vat_type_request** | [**\FattureInCloud\Model\ModifyVatTypeRequest**](../Model/ModifyVatTypeRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **vat_type_id** | **int**| The Referred Vat Type Id. | |
+| **modify_vat_type_request** | [**\FattureInCloud\Model\ModifyVatTypeRequest**](../Model/ModifyVatTypeRequest.md)|  | [optional] |
 
 ### Return type
 

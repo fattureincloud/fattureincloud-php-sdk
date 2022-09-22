@@ -1,4 +1,4 @@
-# # DefaultPaymentTermsType
+# # PaymentTermsType
 
 ## Properties
 

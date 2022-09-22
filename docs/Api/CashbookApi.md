@@ -1,14 +1,14 @@
 # FattureInCloud\CashbookApi
 
-All URIs are relative to https://api-v2.fattureincloud.it.
+All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createCashbookEntry()**](CashbookApi.md#createCashbookEntry) | **POST** /c/{company_id}/cashbook | Create Cashbook Entry
-[**deleteCashbookEntry()**](CashbookApi.md#deleteCashbookEntry) | **DELETE** /c/{company_id}/cashbook/{document_id} | Delete Cashbook Entry
-[**getCashbookEntry()**](CashbookApi.md#getCashbookEntry) | **GET** /c/{company_id}/cashbook/{document_id} | Get Cashbook Entry
-[**listCashbookEntries()**](CashbookApi.md#listCashbookEntries) | **GET** /c/{company_id}/cashbook | List Cashbook Entries
-[**modifyCashbookEntry()**](CashbookApi.md#modifyCashbookEntry) | **PUT** /c/{company_id}/cashbook/{document_id} | Modify Cashbook Entry
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createCashbookEntry()**](CashbookApi.md#createCashbookEntry) | **POST** /c/{company_id}/cashbook | Create Cashbook Entry |
+| [**deleteCashbookEntry()**](CashbookApi.md#deleteCashbookEntry) | **DELETE** /c/{company_id}/cashbook/{document_id} | Delete Cashbook Entry |
+| [**getCashbookEntry()**](CashbookApi.md#getCashbookEntry) | **GET** /c/{company_id}/cashbook/{document_id} | Get Cashbook Entry |
+| [**listCashbookEntries()**](CashbookApi.md#listCashbookEntries) | **GET** /c/{company_id}/cashbook | List Cashbook Entries |
+| [**modifyCashbookEntry()**](CashbookApi.md#modifyCashbookEntry) | **PUT** /c/{company_id}/cashbook/{document_id} | Modify Cashbook Entry |
 
 
 ## `createCashbookEntry()`
@@ -51,10 +51,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **create_cashbook_entry_request** | [**\FattureInCloud\Model\CreateCashbookEntryRequest**](../Model/CreateCashbookEntryRequest.md)| Cashbook entry. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **create_cashbook_entry_request** | [**\FattureInCloud\Model\CreateCashbookEntryRequest**](../Model/CreateCashbookEntryRequest.md)| Cashbook entry. | [optional] |
 
 ### Return type
 
@@ -112,10 +112,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **document_id** | **string**| The ID of the document. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **string**| The ID of the document. | |
 
 ### Return type
 
@@ -176,12 +176,12 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **document_id** | **string**| The ID of the document. |
- **fields** | **string**| List of comma-separated fields. | [optional]
- **fieldset** | **string**| Name of the fieldset. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **string**| The ID of the document. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
 
 ### Return type
 
@@ -244,14 +244,14 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **date_from** | **string**| Start date. |
- **date_to** | **string**| End date. |
- **year** | **int**| Filter cashbook by year. | [optional]
- **type** | **string**| Filter cashbook by type. | [optional]
- **payment_account_id** | **int**| Filter by payment account. | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **date_from** | **string**| Start date. | |
+| **date_to** | **string**| End date. | |
+| **year** | **int**| Filter cashbook by year. | [optional] |
+| **type** | **string**| Filter cashbook by type. | [optional] |
+| **payment_account_id** | **int**| Filter by payment account. | [optional] |
 
 ### Return type
 
@@ -311,11 +311,11 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **company_id** | **int**| The ID of the company. |
- **document_id** | **string**| The ID of the document. |
- **modify_cashbook_entry_request** | [**\FattureInCloud\Model\ModifyCashbookEntryRequest**](../Model/ModifyCashbookEntryRequest.md)| Cashbook Entry | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **string**| The ID of the document. | |
+| **modify_cashbook_entry_request** | [**\FattureInCloud\Model\ModifyCashbookEntryRequest**](../Model/ModifyCashbookEntryRequest.md)| Cashbook Entry | [optional] |
 
 ### Return type
 
