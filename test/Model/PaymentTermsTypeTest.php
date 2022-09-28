@@ -1,6 +1,6 @@
 <?php
 /**
- * DefaultPaymentTermsTypeTest
+ * PaymentTermsTypeTest
  *
  * PHP version 7.3
  *
@@ -33,15 +33,15 @@ use PHPUnit\Framework\TestCase;
 use \FattureInCloud\ObjectSerializer;
 
 /**
- * DefaultPaymentTermsTypeTest Class Doc Comment
+ * PaymentTermsTypeTest Class Doc Comment
  *
  * @category    Class
- * @description Default payment terms.
+ * @description Payment terms.
  * @package     FattureInCloud
  * @author   Fatture In Cloud API team
  * @link     https://fattureincloud.it
  */
-class DefaultPaymentTermsTypeTest extends TestCase
+class PaymentTermsTypeTest extends TestCase
 {
     /**
      * Setup before running any test case
@@ -79,9 +79,9 @@ class DefaultPaymentTermsTypeTest extends TestCase
     }
 
     /**
-     * Test "DefaultPaymentTermsType"
+     * Test "PaymentTermsType"
      */
-    public function testDefaultPaymentTermsType()
+    public function testPaymentTermsType()
     {
         TestCase::assertEquals($this->object['default_payment_terms_type'], $this->array['default_payment_terms_type']);
     }

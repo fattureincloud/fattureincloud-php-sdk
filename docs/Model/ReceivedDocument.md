@@ -30,5 +30,7 @@ Name | Type | Description | Notes
 **attachment_url** | **string** | [Read Only] Attachment url. | [optional] [readonly]
 **attachment_preview_url** | **string** | [Read Only] Attachment preview url. | [optional] [readonly]
 **attachment_token** | **string** | Uploaded attachement token. | [optional]
+**created_at** | **string** |  | [optional]
+**updated_at** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
