@@ -19,8 +19,8 @@ Should also work with PHP 8.0 but has not been tested.
 
 To install the bindings via [Composer](https://getcomposer.org/), run the following command:
 
-```sh
-$ composer require fattureincloud/fattureincloud-php-sdk
+```shell
+composer require fattureincloud/fattureincloud-php-sdk
 ```
 
 ### Manual Installation
@@ -433,7 +433,7 @@ Class | Method | HTTP request | Description
 
 To run the tests, use:
 
-```bash
+```shell
 composer install
 vendor/bin/phpunit
 ```
