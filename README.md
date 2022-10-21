@@ -26,7 +26,10 @@ $ composer require fattureincloud/fattureincloud-php-sdk
 ### Manual Installation
 
 There are two options:
-- [recommended] download our sdk using [php-download](https://php-download.com/package/fattureincloud/fattureincloud-php-sdk) and simply include it in your project.
+- [recommended] download the latest release of the fattureincloud-php-sdk [Phar Archive](https://github.com/fattureincloud/fattureincloud-php-sdk/releases) and simply include it in your project.
+```php
+require_once('./fattureincloud-php-sdk.phar');
+```
 - create your own custom autoloader and download all the dependencies (transitive included) as explained [here](https://ehikioya.com/how-to-install-php-packages-without-composer/).
 
 ## Getting Started

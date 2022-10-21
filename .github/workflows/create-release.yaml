@@ -1,0 +1,44 @@
+name: Release PHP SDK Phar Archive
+on:
+  repository_dispatch:
+    types: [create-version]
+    
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    steps: 
+    - id: setup-php
+      name: Setup PHP with PECL extension
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: 8.1.0
+        ini-values: phar.readonly=Off
+
+    - id: setup-composer
+      name: Setup Composer
+      run: |
+        php -v
+        wget -O composer-setup.php https://getcomposer.org/installer
+        sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+    - id: create-phar
+      name: Create binaries
+      run: |
+        mkdir workfolder
+        cd workfolder
+        echo "{\"name\":\"gen/binaries\",\"require\":{\"fattureincloud/fattureincloud-php-sdk\":\"^2.0\"}}" > composer.json
+        composer install
+        mv vendor/autoload.php vendor/index.php
+        rm vendor/autoload.php
+        echo "<?php \$pharFile = 'fattureincloud-php-sdk.phar'; \$p = new Phar(\$pharFile); \$p->buildFromDirectory('./vendor/'); \$p->createDefaultStub('./vendor/index.php');" > file.php
+        php file.php
+
+    - id: release-phar
+      name: Release phar
+      if: ${{ !env.ACT }}
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ github.token }}
+        file: workfolder/fattureincloud-php-sdk.phar
+        asset_name: fattureincloud-php-sdk.phar
+        tag: "refs/tags/v${{ github.event.client_payload.version }}"

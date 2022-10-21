@@ -73,3 +73,11 @@ jobs:
               ref: "refs/tags/v${{ env.sdk_version }}",
               sha: "${{ env.commit_sha }}"
             })
+      
+      - id: trigger-create-version
+        name: Trigger Create Version Event
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ github.token }}
+          event-type: create-release
+          client-payload: '{"version": "${{ env.sdk_version }}"}'
