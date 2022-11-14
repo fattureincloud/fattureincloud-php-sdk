@@ -2,7 +2,7 @@
 
 [![Packagist](https://img.shields.io/packagist/v/fattureincloud/fattureincloud-php-sdk?color=g)](https://packagist.org/packages/fattureincloud/fattureincloud-php-sdk) ![unit tests](https://github.com/fattureincloud/fattureincloud-php-sdk/actions/workflows/validate.yaml/badge.svg)
 
-Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 400.000 businesses in Italy. 
+Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy. 
 
 The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
@@ -19,17 +19,18 @@ Should also work with PHP 8.0 but has not been tested.
 
 To install the bindings via [Composer](https://getcomposer.org/), run the following command:
 
-```sh
+```bash
 $ composer require fattureincloud/fattureincloud-php-sdk
 ```
 
 ### Manual Installation
 
-There are two options:
+There are three options:
 - [recommended] download the latest release of the fattureincloud-php-sdk [Phar Archive](https://github.com/fattureincloud/fattureincloud-php-sdk/releases) and simply include it in your project.
 ```php
 require_once('./fattureincloud-php-sdk.phar');
 ```
+- download our sdk using [php-download](https://php-download.com/package/fattureincloud/fattureincloud-php-sdk) and simply include it in your project.
 - create your own custom autoloader and download all the dependencies (transitive included) as explained [here](https://ehikioya.com/how-to-install-php-packages-without-composer/).
 
 ## Getting Started
@@ -87,6 +88,7 @@ Class | Method | HTTP request | Description
 *ClientsApi* | [**listClients**](docs/Api/ClientsApi.md#listclients) | **GET** /c/{company_id}/entities/clients | List Clients
 *ClientsApi* | [**modifyClient**](docs/Api/ClientsApi.md#modifyclient) | **PUT** /c/{company_id}/entities/clients/{client_id} | Modify Client
 *CompaniesApi* | [**getCompanyInfo**](docs/Api/CompaniesApi.md#getcompanyinfo) | **GET** /c/{company_id}/company/info | Get Company Info
+*EmailsApi* | [**listEmails**](docs/Api/EmailsApi.md#listemails) | **GET** /c/{company_id}/emails | List emails
 *InfoApi* | [**listArchiveCategories**](docs/Api/InfoApi.md#listarchivecategories) | **GET** /c/{company_id}/info/archive_categories | List Archive Categories
 *InfoApi* | [**listCities**](docs/Api/InfoApi.md#listcities) | **GET** /info/cities | List Cities
 *InfoApi* | [**listCostCenters**](docs/Api/InfoApi.md#listcostcenters) | **GET** /c/{company_id}/info/cost_centers | List Cost Centers
@@ -111,9 +113,11 @@ Class | Method | HTTP request | Description
 *IssuedDocumentsApi* | [**getIssuedDocument**](docs/Api/IssuedDocumentsApi.md#getissueddocument) | **GET** /c/{company_id}/issued_documents/{document_id} | Get Issued Document
 *IssuedDocumentsApi* | [**getIssuedDocumentPreCreateInfo**](docs/Api/IssuedDocumentsApi.md#getissueddocumentprecreateinfo) | **GET** /c/{company_id}/issued_documents/info | Get Issued Document Pre-create info
 *IssuedDocumentsApi* | [**getNewIssuedDocumentTotals**](docs/Api/IssuedDocumentsApi.md#getnewissueddocumenttotals) | **POST** /c/{company_id}/issued_documents/totals | Get New Issued Document Totals
+*IssuedDocumentsApi* | [**joinIssuedDocuments**](docs/Api/IssuedDocumentsApi.md#joinissueddocuments) | **GET** /c/{company_id}/issued_documents/join | Join issued documents
 *IssuedDocumentsApi* | [**listIssuedDocuments**](docs/Api/IssuedDocumentsApi.md#listissueddocuments) | **GET** /c/{company_id}/issued_documents | List Issued Documents
 *IssuedDocumentsApi* | [**modifyIssuedDocument**](docs/Api/IssuedDocumentsApi.md#modifyissueddocument) | **PUT** /c/{company_id}/issued_documents/{document_id} | Modify Issued Document
 *IssuedDocumentsApi* | [**scheduleEmail**](docs/Api/IssuedDocumentsApi.md#scheduleemail) | **POST** /c/{company_id}/issued_documents/{document_id}/email | Schedule Email
+*IssuedDocumentsApi* | [**transformIssuedDocument**](docs/Api/IssuedDocumentsApi.md#transformissueddocument) | **GET** /c/{company_id}/issued_documents/transform | Transform issued document
 *IssuedDocumentsApi* | [**uploadIssuedDocumentAttachment**](docs/Api/IssuedDocumentsApi.md#uploadissueddocumentattachment) | **POST** /c/{company_id}/issued_documents/attachment | Upload Issued Document Attachment
 *IssuedEInvoicesApi* | [**getEInvoiceRejectionReason**](docs/Api/IssuedEInvoicesApi.md#geteinvoicerejectionreason) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/error_reason | Get e-invoice rejection reason
 *IssuedEInvoicesApi* | [**getEInvoiceXml**](docs/Api/IssuedEInvoicesApi.md#geteinvoicexml) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml | Get e-invoice XML
@@ -216,10 +220,14 @@ Class | Method | HTTP request | Description
 - [DetailedCountry](docs/Model/DetailedCountry.md)
 - [DocumentTemplate](docs/Model/DocumentTemplate.md)
 - [EInvoiceRejectionReason](docs/Model/EInvoiceRejectionReason.md)
+- [Email](docs/Model/Email.md)
+- [EmailAttachment](docs/Model/EmailAttachment.md)
 - [EmailData](docs/Model/EmailData.md)
 - [EmailDataDefaultSenderEmail](docs/Model/EmailDataDefaultSenderEmail.md)
+- [EmailRecipientStatus](docs/Model/EmailRecipientStatus.md)
 - [EmailSchedule](docs/Model/EmailSchedule.md)
 - [EmailScheduleInclude](docs/Model/EmailScheduleInclude.md)
+- [EmailStatus](docs/Model/EmailStatus.md)
 - [Entity](docs/Model/Entity.md)
 - [EntityType](docs/Model/EntityType.md)
 - [F24](docs/Model/F24.md)
@@ -269,6 +277,7 @@ Class | Method | HTTP request | Description
 - [IssuedDocumentStatus](docs/Model/IssuedDocumentStatus.md)
 - [IssuedDocumentTotals](docs/Model/IssuedDocumentTotals.md)
 - [IssuedDocumentType](docs/Model/IssuedDocumentType.md)
+- [JoinIssuedDocumentsResponse](docs/Model/JoinIssuedDocumentsResponse.md)
 - [Language](docs/Model/Language.md)
 - [ListArchiveCategoriesResponse](docs/Model/ListArchiveCategoriesResponse.md)
 - [ListArchiveDocumentsResponse](docs/Model/ListArchiveDocumentsResponse.md)
@@ -282,6 +291,8 @@ Class | Method | HTTP request | Description
 - [ListCurrenciesResponse](docs/Model/ListCurrenciesResponse.md)
 - [ListDeliveryNotesDefaultCausalsResponse](docs/Model/ListDeliveryNotesDefaultCausalsResponse.md)
 - [ListDetailedCountriesResponse](docs/Model/ListDetailedCountriesResponse.md)
+- [ListEmailsResponse](docs/Model/ListEmailsResponse.md)
+- [ListEmailsResponsePage](docs/Model/ListEmailsResponsePage.md)
 - [ListF24Response](docs/Model/ListF24Response.md)
 - [ListF24ResponseAggregatedData](docs/Model/ListF24ResponseAggregatedData.md)
 - [ListF24ResponseAggregation](docs/Model/ListF24ResponseAggregation.md)
@@ -367,6 +378,7 @@ Class | Method | HTTP request | Description
 - [ShowTotalsMode](docs/Model/ShowTotalsMode.md)
 - [Supplier](docs/Model/Supplier.md)
 - [SupplierType](docs/Model/SupplierType.md)
+- [TransformIssuedDocumentResponse](docs/Model/TransformIssuedDocumentResponse.md)
 - [UploadArchiveAttachmentResponse](docs/Model/UploadArchiveAttachmentResponse.md)
 - [UploadF24AttachmentResponse](docs/Model/UploadF24AttachmentResponse.md)
 - [UploadIssuedDocumentAttachmentResponse](docs/Model/UploadIssuedDocumentAttachmentResponse.md)
@@ -378,6 +390,7 @@ Class | Method | HTTP request | Description
 - [VatType](docs/Model/VatType.md)
 - [VerifyEInvoiceXmlErrorResponse](docs/Model/VerifyEInvoiceXmlErrorResponse.md)
 - [VerifyEInvoiceXmlErrorResponseError](docs/Model/VerifyEInvoiceXmlErrorResponseError.md)
+- [VerifyEInvoiceXmlErrorResponseErrorValidationResult](docs/Model/VerifyEInvoiceXmlErrorResponseErrorValidationResult.md)
 - [VerifyEInvoiceXmlErrorResponseExtra](docs/Model/VerifyEInvoiceXmlErrorResponseExtra.md)
 - [VerifyEInvoiceXmlResponse](docs/Model/VerifyEInvoiceXmlResponse.md)
 - [VerifyEInvoiceXmlResponseData](docs/Model/VerifyEInvoiceXmlResponseData.md)
@@ -449,5 +462,5 @@ info@fattureincloud.it
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `2.0.20`
+- API version: `2.0.22`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
