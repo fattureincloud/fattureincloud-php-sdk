@@ -128,7 +128,7 @@ class EmailsApi
      *
      * List emails
      *
-     * @param  string $company_id company_id (required)
+     * @param  int  $company_id company_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listEmails'] to see the possible values for this operation
      *
      * @throws \FattureInCloud\ApiException on non-2xx response
@@ -146,7 +146,7 @@ class EmailsApi
      *
      * List emails
      *
-     * @param  string $company_id (required)
+     * @param  int  $company_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listEmails'] to see the possible values for this operation
      *
      * @throws \FattureInCloud\ApiException on non-2xx response
@@ -246,7 +246,7 @@ class EmailsApi
      *
      * List emails
      *
-     * @param  string $company_id (required)
+     * @param  int  $company_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listEmails'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -267,7 +267,7 @@ class EmailsApi
      *
      * List emails
      *
-     * @param  string $company_id (required)
+     * @param  int  $company_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listEmails'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -317,7 +317,7 @@ class EmailsApi
     /**
      * Create request for operation 'listEmails'
      *
-     * @param  string $company_id (required)
+     * @param  int  $company_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listEmails'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
