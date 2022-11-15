@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * EmailStatusTest Class Doc Comment
@@ -54,6 +55,13 @@ class EmailStatusTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{  
+            "status": "sent"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\Email');
     }
 
     /**
@@ -75,7 +83,6 @@ class EmailStatusTest extends TestCase
      */
     public function testEmailStatus()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['status'], $this->array['status']);
     }
 }

@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * EmailTest Class Doc Comment
@@ -54,6 +55,28 @@ class EmailTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "id": 1,
+            "status": "sent",
+            "sent_date": "2022-07-17 13:53:12",
+            "errors_count": 0,
+            "error_log": "",
+            "from_email": "test@mail.it",
+            "from_name": "Test mail",
+            "to_email": "mail@test.it",
+            "to_name": "Mario",
+            "subject": "Test",
+            "content": "Test send email",
+            "copy_to": "",
+            "recipient_status": "unknown",
+            "recipient_date": "2022-07-17 13:53:12",
+            "kind": "Fatture",
+            "attachments": [ ]
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\Email');
     }
 
     /**
@@ -75,8 +98,9 @@ class EmailTest extends TestCase
      */
     public function testEmail()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -84,8 +108,7 @@ class EmailTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['id'], $this->array['id']);
     }
 
     /**
@@ -93,8 +116,7 @@ class EmailTest extends TestCase
      */
     public function testPropertyStatus()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['status'], $this->array['status']);
     }
 
     /**
@@ -102,8 +124,8 @@ class EmailTest extends TestCase
      */
     public function testPropertySentDate()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $date = new \DateTime($this->array['sent_date']);
+        TestCase::assertEquals($this->object['sent_date'], $date);
     }
 
     /**
@@ -111,8 +133,7 @@ class EmailTest extends TestCase
      */
     public function testPropertyErrorsCount()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['errors_count'], $this->array['errors_count']);
     }
 
     /**
@@ -120,8 +141,7 @@ class EmailTest extends TestCase
      */
     public function testPropertyErrorLog()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['error_log'], $this->array['error_log']);
     }
 
     /**
@@ -129,8 +149,7 @@ class EmailTest extends TestCase
      */
     public function testPropertyFromEmail()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['from_email'], $this->array['from_email']);
     }
 
     /**
@@ -138,8 +157,7 @@ class EmailTest extends TestCase
      */
     public function testPropertyFromName()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['from_name'], $this->array['from_name']);
     }
 
     /**
@@ -147,8 +165,7 @@ class EmailTest extends TestCase
      */
     public function testPropertyToEmail()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['to_email'], $this->array['to_email']);
     }
 
     /**
@@ -156,8 +173,7 @@ class EmailTest extends TestCase
      */
     public function testPropertyToName()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['to_name'], $this->array['to_name']);
     }
 
     /**
@@ -165,8 +181,7 @@ class EmailTest extends TestCase
      */
     public function testPropertySubject()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['subject'], $this->array['subject']);
     }
 
     /**
@@ -174,8 +189,7 @@ class EmailTest extends TestCase
      */
     public function testPropertyContent()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['content'], $this->array['content']);
     }
 
     /**
@@ -183,8 +197,7 @@ class EmailTest extends TestCase
      */
     public function testPropertyCopyTo()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['copy_to'], $this->array['copy_to']);
     }
 
     /**
@@ -192,8 +205,7 @@ class EmailTest extends TestCase
      */
     public function testPropertyRecipientStatus()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['recipient_status'], $this->array['recipient_status']);
     }
 
     /**
@@ -201,8 +213,8 @@ class EmailTest extends TestCase
      */
     public function testPropertyRecipientDate()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $date = new \DateTime($this->array['recipient_date']);
+        TestCase::assertEquals($this->object['recipient_date'], $date);
     }
 
     /**
@@ -210,8 +222,7 @@ class EmailTest extends TestCase
      */
     public function testPropertyKind()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['kind'], $this->array['kind']);
     }
 
     /**
@@ -219,7 +230,6 @@ class EmailTest extends TestCase
      */
     public function testPropertyAttachments()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['attachments'], $this->array['attachments']);
     }
 }

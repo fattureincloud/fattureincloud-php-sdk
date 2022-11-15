@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * VerifyEInvoiceXmlErrorResponseErrorValidationResultTest Class Doc Comment
@@ -54,6 +55,13 @@ class VerifyEInvoiceXmlErrorResponseErrorValidationResultTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "xml_errors": ["err", "or"]
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\VerifyEInvoiceXmlErrorResponseErrorValidationResult');
     }
 
     /**
@@ -75,8 +83,9 @@ class VerifyEInvoiceXmlErrorResponseErrorValidationResultTest extends TestCase
      */
     public function testVerifyEInvoiceXmlErrorResponseErrorValidationResult()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -84,7 +93,6 @@ class VerifyEInvoiceXmlErrorResponseErrorValidationResultTest extends TestCase
      */
     public function testPropertyXmlErrors()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['xml_errors'], $this->array['xml_errors']);
     }
 }

@@ -58,7 +58,7 @@ class VerifyEInvoiceXmlErrorResponseErrorTest extends TestCase
         $json = '{
             "message": "validato",
             "validation_result": {
-                "prop": true
+                "xml_errors": ["err", "or"]
             }
         }';
 

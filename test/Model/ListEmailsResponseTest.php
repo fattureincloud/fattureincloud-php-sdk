@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ListEmailsResponseTest Class Doc Comment
@@ -54,6 +55,61 @@ class ListEmailsResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "current_page": 1,
+            "data": [
+              {
+                "id": 1,
+                "status": "sent",
+                "sent_date": "2022-07-17 13:53:12",
+                "errors_count": 0,
+                "error_log": "",
+                "from_email": "test@mail.it",
+                "from_name": "Test mail",
+                "to_email": "mail@test.it",
+                "to_name": "Mario",
+                "subject": "Test",
+                "content": "Test send email",
+                "copy_to": "",
+                "recipient_status": "unknown",
+                "recipient_date": null,
+                "kind": "Fatture",
+                "attachments": []
+              },
+              {
+                "id": 2,
+                "status": "sent",
+                "sent_date": "2022-07-18 13:53:12",
+                "errors_count": 0,
+                "error_log": "",
+                "from_email": "test@mail.it",
+                "from_name": "Test mail",
+                "to_email": "mail@test.it",
+                "to_name": "Maria",
+                "subject": "Test",
+                "content": "Test send email",
+                "copy_to": "",
+                "recipient_status": "unknown",
+                "recipient_date": null,
+                "kind": "Fatture",
+                "attachments": []
+              }
+            ],
+            "first_page_url": "emails?page=1",
+            "next_page_url": "emails?page=1",
+            "from": 1,
+            "last_page": 1,
+            "last_page_url": "emails?page=1",
+            "path": "emails",
+            "per_page": 50,
+            "prev_page_url": "emails?page=1",
+            "to": 2,
+            "total": 2
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListEmailsResponse');
     }
 
     /**
@@ -75,8 +131,9 @@ class ListEmailsResponseTest extends TestCase
      */
     public function testListEmailsResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -84,8 +141,7 @@ class ListEmailsResponseTest extends TestCase
      */
     public function testPropertyCurrentPage()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['current_page'], $this->array['current_page']);
     }
 
     /**
@@ -93,8 +149,7 @@ class ListEmailsResponseTest extends TestCase
      */
     public function testPropertyFirstPageUrl()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['first_page_url'], $this->array['first_page_url']);
     }
 
     /**
@@ -102,8 +157,7 @@ class ListEmailsResponseTest extends TestCase
      */
     public function testPropertyFrom()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['from'], $this->array['from']);
     }
 
     /**
@@ -111,8 +165,7 @@ class ListEmailsResponseTest extends TestCase
      */
     public function testPropertyLastPage()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['last_page'], $this->array['last_page']);
     }
 
     /**
@@ -120,8 +173,7 @@ class ListEmailsResponseTest extends TestCase
      */
     public function testPropertyLastPageUrl()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['last_page_url'], $this->array['last_page_url']);
     }
 
     /**
@@ -129,8 +181,7 @@ class ListEmailsResponseTest extends TestCase
      */
     public function testPropertyNextPageUrl()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['next_page_url'], $this->array['next_page_url']);
     }
 
     /**
@@ -138,8 +189,7 @@ class ListEmailsResponseTest extends TestCase
      */
     public function testPropertyPath()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['path'], $this->array['path']);
     }
 
     /**
@@ -147,8 +197,7 @@ class ListEmailsResponseTest extends TestCase
      */
     public function testPropertyPerPage()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['per_page'], $this->array['per_page']);
     }
 
     /**
@@ -156,8 +205,7 @@ class ListEmailsResponseTest extends TestCase
      */
     public function testPropertyPrevPageUrl()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['prev_page_url'], $this->array['prev_page_url']);
     }
 
     /**
@@ -165,8 +213,7 @@ class ListEmailsResponseTest extends TestCase
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['to'], $this->array['to']);
     }
 
     /**
@@ -174,8 +221,7 @@ class ListEmailsResponseTest extends TestCase
      */
     public function testPropertyTotal()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['total'], $this->array['total']);
     }
 
     /**
@@ -183,7 +229,8 @@ class ListEmailsResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

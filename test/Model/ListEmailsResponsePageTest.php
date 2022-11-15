@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * ListEmailsResponsePageTest Class Doc Comment
@@ -54,6 +55,50 @@ class ListEmailsResponsePageTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": [
+                {
+                "id": 1,
+                "status": "sent",
+                "sent_date": "2022-07-17 13:53:12",
+                "errors_count": 0,
+                "error_log": "",
+                "from_email": "test@mail.it",
+                "from_name": "Test mail",
+                "to_email": "mail@test.it",
+                "to_name": "Mario",
+                "subject": "Test",
+                "content": "Test send email",
+                "copy_to": "",
+                "recipient_status": "unknown",
+                "recipient_date": null,
+                "kind": "Fatture",
+                "attachments": []
+                },
+                {
+                "id": 2,
+                "status": "sent",
+                "sent_date": "2022-07-18 13:53:12",
+                "errors_count": 0,
+                "error_log": "",
+                "from_email": "test@mail.it",
+                "from_name": "Test mail",
+                "to_email": "mail@test.it",
+                "to_name": "Maria",
+                "subject": "Test",
+                "content": "Test send email",
+                "copy_to": "",
+                "recipient_status": "unknown",
+                "recipient_date": null,
+                "kind": "Fatture",
+                "attachments": []
+                }
+            ]
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListEmailsResponsePage');
     }
 
     /**
@@ -75,8 +120,9 @@ class ListEmailsResponsePageTest extends TestCase
      */
     public function testListEmailsResponsePage()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -84,7 +130,8 @@ class ListEmailsResponsePageTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

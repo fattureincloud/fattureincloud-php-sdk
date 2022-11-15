@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * EmailAttachmentTest Class Doc Comment
@@ -54,6 +55,14 @@ class EmailAttachmentTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "filename": "nomone",
+            "url": "www.af.com"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\EmailAttachment');
     }
 
     /**
@@ -75,8 +84,9 @@ class EmailAttachmentTest extends TestCase
      */
     public function testEmailAttachment()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -84,8 +94,7 @@ class EmailAttachmentTest extends TestCase
      */
     public function testPropertyFilename()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['filename'], $this->array['filename']);
     }
 
     /**
@@ -93,7 +102,6 @@ class EmailAttachmentTest extends TestCase
      */
     public function testPropertyUrl()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['url'], $this->array['url']);
     }
 }
