@@ -12,9 +12,11 @@ All URIs are relative to https://api-v2.fattureincloud.it, except if the operati
 | [**getIssuedDocument()**](IssuedDocumentsApi.md#getIssuedDocument) | **GET** /c/{company_id}/issued_documents/{document_id} | Get Issued Document |
 | [**getIssuedDocumentPreCreateInfo()**](IssuedDocumentsApi.md#getIssuedDocumentPreCreateInfo) | **GET** /c/{company_id}/issued_documents/info | Get Issued Document Pre-create info |
 | [**getNewIssuedDocumentTotals()**](IssuedDocumentsApi.md#getNewIssuedDocumentTotals) | **POST** /c/{company_id}/issued_documents/totals | Get New Issued Document Totals |
+| [**joinIssuedDocuments()**](IssuedDocumentsApi.md#joinIssuedDocuments) | **GET** /c/{company_id}/issued_documents/join | Join issued documents |
 | [**listIssuedDocuments()**](IssuedDocumentsApi.md#listIssuedDocuments) | **GET** /c/{company_id}/issued_documents | List Issued Documents |
 | [**modifyIssuedDocument()**](IssuedDocumentsApi.md#modifyIssuedDocument) | **PUT** /c/{company_id}/issued_documents/{document_id} | Modify Issued Document |
 | [**scheduleEmail()**](IssuedDocumentsApi.md#scheduleEmail) | **POST** /c/{company_id}/issued_documents/{document_id}/email | Schedule Email |
+| [**transformIssuedDocument()**](IssuedDocumentsApi.md#transformIssuedDocument) | **GET** /c/{company_id}/issued_documents/transform | Transform issued document |
 | [**uploadIssuedDocumentAttachment()**](IssuedDocumentsApi.md#uploadIssuedDocumentAttachment) | **POST** /c/{company_id}/issued_documents/attachment | Upload Issued Document Attachment |
 
 
@@ -518,6 +520,72 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `joinIssuedDocuments()`
+
+```php
+joinIssuedDocuments($company_id, $ids, $group, $e_invoice): \FattureInCloud\Model\JoinIssuedDocumentsResponse
+```
+
+Join issued documents
+
+Joins issued documents.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
+$config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 12345; // int | The ID of the company.
+$ids = 1,2,3,4; // string | Ids of the documents.
+$group = 56; // int | Group items.
+$e_invoice = 56; // int | New document e_invoice.
+
+try {
+    $result = $apiInstance->joinIssuedDocuments($company_id, $ids, $group, $e_invoice);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling IssuedDocumentsApi->joinIssuedDocuments: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **ids** | **string**| Ids of the documents. | |
+| **group** | **int**| Group items. | [optional] |
+| **e_invoice** | **int**| New document e_invoice. | [optional] |
+
+### Return type
+
+[**\FattureInCloud\Model\JoinIssuedDocumentsResponse**](../Model/JoinIssuedDocumentsResponse.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `listIssuedDocuments()`
 
 ```php
@@ -714,6 +782,74 @@ void (empty response body)
 
 - **Content-Type**: `application/json`
 - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `transformIssuedDocument()`
+
+```php
+transformIssuedDocument($company_id, $original_document_id, $new_type, $e_invoice, $transform_keep_copy): \FattureInCloud\Model\TransformIssuedDocumentResponse
+```
+
+Transform issued document
+
+Transforms the document.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
+$config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 12345; // int | The ID of the company.
+$original_document_id = 'original_document_id_example'; // string | Original document id.
+$new_type = 'new_type_example'; // string | New document type.
+$e_invoice = 56; // int | New document e_invoice.
+$transform_keep_copy = 56; // int | Keep the old document.
+
+try {
+    $result = $apiInstance->transformIssuedDocument($company_id, $original_document_id, $new_type, $e_invoice, $transform_keep_copy);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling IssuedDocumentsApi->transformIssuedDocument: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **original_document_id** | **string**| Original document id. | |
+| **new_type** | **string**| New document type. | |
+| **e_invoice** | **int**| New document e_invoice. | [optional] |
+| **transform_keep_copy** | **int**| Keep the old document. | [optional] |
+
+### Return type
+
+[**\FattureInCloud\Model\TransformIssuedDocumentResponse**](../Model/TransformIssuedDocumentResponse.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

@@ -6,6 +6,7 @@ docs/Api/ArchiveApi.md
 docs/Api/CashbookApi.md
 docs/Api/ClientsApi.md
 docs/Api/CompaniesApi.md
+docs/Api/EmailsApi.md
 docs/Api/InfoApi.md
 docs/Api/IssuedDocumentsApi.md
 docs/Api/IssuedEInvoicesApi.md
@@ -62,10 +63,14 @@ docs/Model/Currency.md
 docs/Model/DetailedCountry.md
 docs/Model/DocumentTemplate.md
 docs/Model/EInvoiceRejectionReason.md
+docs/Model/Email.md
+docs/Model/EmailAttachment.md
 docs/Model/EmailData.md
 docs/Model/EmailDataDefaultSenderEmail.md
+docs/Model/EmailRecipientStatus.md
 docs/Model/EmailSchedule.md
 docs/Model/EmailScheduleInclude.md
+docs/Model/EmailStatus.md
 docs/Model/Entity.md
 docs/Model/EntityType.md
 docs/Model/F24.md
@@ -115,6 +120,7 @@ docs/Model/IssuedDocumentPreCreateInfoItemsDefaultValues.md
 docs/Model/IssuedDocumentStatus.md
 docs/Model/IssuedDocumentTotals.md
 docs/Model/IssuedDocumentType.md
+docs/Model/JoinIssuedDocumentsResponse.md
 docs/Model/Language.md
 docs/Model/ListArchiveCategoriesResponse.md
 docs/Model/ListArchiveDocumentsResponse.md
@@ -128,6 +134,8 @@ docs/Model/ListCountriesResponse.md
 docs/Model/ListCurrenciesResponse.md
 docs/Model/ListDeliveryNotesDefaultCausalsResponse.md
 docs/Model/ListDetailedCountriesResponse.md
+docs/Model/ListEmailsResponse.md
+docs/Model/ListEmailsResponsePage.md
 docs/Model/ListF24Response.md
 docs/Model/ListF24ResponseAggregatedData.md
 docs/Model/ListF24ResponseAggregation.md
@@ -213,6 +221,7 @@ docs/Model/SenderEmail.md
 docs/Model/ShowTotalsMode.md
 docs/Model/Supplier.md
 docs/Model/SupplierType.md
+docs/Model/TransformIssuedDocumentResponse.md
 docs/Model/UploadArchiveAttachmentResponse.md
 docs/Model/UploadF24AttachmentResponse.md
 docs/Model/UploadIssuedDocumentAttachmentResponse.md
@@ -224,6 +233,7 @@ docs/Model/VatKind.md
 docs/Model/VatType.md
 docs/Model/VerifyEInvoiceXmlErrorResponse.md
 docs/Model/VerifyEInvoiceXmlErrorResponseError.md
+docs/Model/VerifyEInvoiceXmlErrorResponseErrorValidationResult.md
 docs/Model/VerifyEInvoiceXmlErrorResponseExtra.md
 docs/Model/VerifyEInvoiceXmlResponse.md
 docs/Model/VerifyEInvoiceXmlResponseData.md
@@ -231,6 +241,7 @@ lib/Api/ArchiveApi.php
 lib/Api/CashbookApi.php
 lib/Api/ClientsApi.php
 lib/Api/CompaniesApi.php
+lib/Api/EmailsApi.php
 lib/Api/InfoApi.php
 lib/Api/IssuedDocumentsApi.php
 lib/Api/IssuedEInvoicesApi.php
@@ -290,10 +301,14 @@ lib/Model/Currency.php
 lib/Model/DetailedCountry.php
 lib/Model/DocumentTemplate.php
 lib/Model/EInvoiceRejectionReason.php
+lib/Model/Email.php
+lib/Model/EmailAttachment.php
 lib/Model/EmailData.php
 lib/Model/EmailDataDefaultSenderEmail.php
+lib/Model/EmailRecipientStatus.php
 lib/Model/EmailSchedule.php
 lib/Model/EmailScheduleInclude.php
+lib/Model/EmailStatus.php
 lib/Model/Entity.php
 lib/Model/EntityType.php
 lib/Model/F24.php
@@ -343,6 +358,7 @@ lib/Model/IssuedDocumentPreCreateInfoItemsDefaultValues.php
 lib/Model/IssuedDocumentStatus.php
 lib/Model/IssuedDocumentTotals.php
 lib/Model/IssuedDocumentType.php
+lib/Model/JoinIssuedDocumentsResponse.php
 lib/Model/Language.php
 lib/Model/ListArchiveCategoriesResponse.php
 lib/Model/ListArchiveDocumentsResponse.php
@@ -356,6 +372,8 @@ lib/Model/ListCountriesResponse.php
 lib/Model/ListCurrenciesResponse.php
 lib/Model/ListDeliveryNotesDefaultCausalsResponse.php
 lib/Model/ListDetailedCountriesResponse.php
+lib/Model/ListEmailsResponse.php
+lib/Model/ListEmailsResponsePage.php
 lib/Model/ListF24Response.php
 lib/Model/ListF24ResponseAggregatedData.php
 lib/Model/ListF24ResponseAggregation.php
@@ -442,6 +460,7 @@ lib/Model/SenderEmail.php
 lib/Model/ShowTotalsMode.php
 lib/Model/Supplier.php
 lib/Model/SupplierType.php
+lib/Model/TransformIssuedDocumentResponse.php
 lib/Model/UploadArchiveAttachmentResponse.php
 lib/Model/UploadF24AttachmentResponse.php
 lib/Model/UploadIssuedDocumentAttachmentResponse.php
@@ -453,9 +472,19 @@ lib/Model/VatKind.php
 lib/Model/VatType.php
 lib/Model/VerifyEInvoiceXmlErrorResponse.php
 lib/Model/VerifyEInvoiceXmlErrorResponseError.php
+lib/Model/VerifyEInvoiceXmlErrorResponseErrorValidationResult.php
 lib/Model/VerifyEInvoiceXmlErrorResponseExtra.php
 lib/Model/VerifyEInvoiceXmlResponse.php
 lib/Model/VerifyEInvoiceXmlResponseData.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/PaymentTermsTypeTest.php
+test/Api/EmailsApiTest.php
+test/Model/EmailAttachmentTest.php
+test/Model/EmailRecipientStatusTest.php
+test/Model/EmailStatusTest.php
+test/Model/EmailTest.php
+test/Model/JoinIssuedDocumentsResponseTest.php
+test/Model/ListEmailsResponsePageTest.php
+test/Model/ListEmailsResponseTest.php
+test/Model/TransformIssuedDocumentResponseTest.php
+test/Model/VerifyEInvoiceXmlErrorResponseErrorValidationResultTest.php

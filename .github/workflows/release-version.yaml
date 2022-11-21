@@ -8,7 +8,7 @@ jobs:
 
       - id: checkout
         name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           token: ${{ secrets.FATTUREINCLOUD_BOT_TOKEN }}
       
@@ -20,7 +20,7 @@ jobs:
       
       - id: setup-node
         name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
 
       - id: setup-libraries
         name: Install libraries
@@ -76,7 +76,7 @@ jobs:
       
       - id: trigger-create-version
         name: Trigger Create Version Event
-        uses: peter-evans/repository-dispatch@v1
+        uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ github.token }}
           event-type: create-release

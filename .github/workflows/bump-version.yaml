@@ -14,12 +14,13 @@ jobs:
         name: Checkout OpenAPI repo
         env:
           GIT_OPENAPI_REPO_PATH: '${{ env.GIT_USER_ID }}/${{ env.GIT_OPENAPI_REPO_ID }}'
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           path: ./openapi
           ref: master
           repository: ${{ env.GIT_OPENAPI_REPO_PATH }}
           token: ${{ secrets.FATTUREINCLOUD_BOT_TOKEN }}
+
       - id: setup-libraries
         name: Install libraries
         run: |
@@ -38,7 +39,7 @@ jobs:
         name: Trigger Event
         env:
           GIT_OPENAPI_REPO_PATH: '${{ env.GIT_USER_ID }}/${{ env.GIT_OPENAPI_REPO_ID }}'
-        uses: peter-evans/repository-dispatch@v1
+        uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.FATTUREINCLOUD_BOT_TOKEN }}
           repository: ${{ env.GIT_OPENAPI_REPO_PATH }}
