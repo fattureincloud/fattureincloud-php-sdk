@@ -69,7 +69,7 @@ class IssuedDocumentItemsListItemTest extends TestCase
             "apply_withholding_taxes": true,
             "discount": 0,
             "discount_highlight": true,
-            "in_ddt": false,
+            "in_dn": false,
             "stock": 89,
             "vat": {
                 "id": 21
@@ -223,11 +223,11 @@ class IssuedDocumentItemsListItemTest extends TestCase
     }
 
     /**
-     * Test attribute "in_ddt"
+     * Test attribute "in_dn"
      */
-    public function testPropertyInDdt()
+    public function testPropertyInDn()
     {
-        TestCase::assertEquals($this->object['in_ddt'], $this->array['in_ddt']);
+        TestCase::assertEquals($this->object['in_dn'], $this->array['in_dn']);
     }
 
     /**

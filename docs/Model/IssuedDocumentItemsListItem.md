@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **apply_withholding_taxes** | **bool** | Apply withholding taxes, rivalsa and cassa. | [optional]
 **discount** | **float** | Discount percentual value. | [optional]
 **discount_highlight** | **bool** |  | [optional]
-**in_ddt** | **bool** |  | [optional]
+**in_dn** | **bool** |  | [optional]
 **stock** | **bool** |  | [optional]
 **ei_raw** | **object** | Advanced raw attributes for e-invoices. | [optional]
 
