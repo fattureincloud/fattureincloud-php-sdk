@@ -73,7 +73,7 @@ class IssuedDocumentItemsListItem implements ModelInterface, ArrayAccess, \JsonS
         'apply_withholding_taxes' => 'bool',
         'discount' => 'float',
         'discount_highlight' => 'bool',
-        'in_ddt' => 'bool',
+        'in_dn' => 'bool',
         'stock' => 'bool',
         'ei_raw' => 'object'
     ];
@@ -101,7 +101,7 @@ class IssuedDocumentItemsListItem implements ModelInterface, ArrayAccess, \JsonS
         'apply_withholding_taxes' => null,
         'discount' => null,
         'discount_highlight' => null,
-        'in_ddt' => null,
+        'in_dn' => null,
         'stock' => null,
         'ei_raw' => null
     ];
@@ -127,7 +127,7 @@ class IssuedDocumentItemsListItem implements ModelInterface, ArrayAccess, \JsonS
             'apply_withholding_taxes' => true,
             'discount' => true,
             'discount_highlight' => true,
-            'in_ddt' => true,
+            'in_dn' => true,
             'stock' => true,
             'ei_raw' => true
     ];
@@ -236,7 +236,7 @@ class IssuedDocumentItemsListItem implements ModelInterface, ArrayAccess, \JsonS
         'apply_withholding_taxes' => 'apply_withholding_taxes',
         'discount' => 'discount',
         'discount_highlight' => 'discount_highlight',
-        'in_ddt' => 'in_ddt',
+        'in_dn' => 'in_dn',
         'stock' => 'stock',
         'ei_raw' => 'ei_raw'
     ];
@@ -262,7 +262,7 @@ class IssuedDocumentItemsListItem implements ModelInterface, ArrayAccess, \JsonS
         'apply_withholding_taxes' => 'setApplyWithholdingTaxes',
         'discount' => 'setDiscount',
         'discount_highlight' => 'setDiscountHighlight',
-        'in_ddt' => 'setInDdt',
+        'in_dn' => 'setInDn',
         'stock' => 'setStock',
         'ei_raw' => 'setEiRaw'
     ];
@@ -288,7 +288,7 @@ class IssuedDocumentItemsListItem implements ModelInterface, ArrayAccess, \JsonS
         'apply_withholding_taxes' => 'getApplyWithholdingTaxes',
         'discount' => 'getDiscount',
         'discount_highlight' => 'getDiscountHighlight',
-        'in_ddt' => 'getInDdt',
+        'in_dn' => 'getInDn',
         'stock' => 'getStock',
         'ei_raw' => 'getEiRaw'
     ];
@@ -365,7 +365,7 @@ class IssuedDocumentItemsListItem implements ModelInterface, ArrayAccess, \JsonS
         $this->setIfExists('apply_withholding_taxes', $data ?? [], null);
         $this->setIfExists('discount', $data ?? [], null);
         $this->setIfExists('discount_highlight', $data ?? [], null);
-        $this->setIfExists('in_ddt', $data ?? [], null);
+        $this->setIfExists('in_dn', $data ?? [], null);
         $this->setIfExists('stock', $data ?? [], null);
         $this->setIfExists('ei_raw', $data ?? [], null);
     }
@@ -953,37 +953,37 @@ class IssuedDocumentItemsListItem implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets in_ddt
+     * Gets in_dn
      *
      * @return bool|null
      */
-    public function getInDdt()
+    public function getInDn()
     {
-        return $this->container['in_ddt'];
+        return $this->container['in_dn'];
     }
 
     /**
-     * Sets in_ddt
+     * Sets in_dn
      *
-     * @param bool|null $in_ddt in_ddt
+     * @param bool|null $in_dn in_dn
      *
      * @return self
      */
-    public function setInDdt($in_ddt)
+    public function setInDn($in_dn)
     {
 
-        if (is_null($in_ddt)) {
-            array_push($this->openAPINullablesSetToNull, 'in_ddt');
+        if (is_null($in_dn)) {
+            array_push($this->openAPINullablesSetToNull, 'in_dn');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('in_ddt', $nullablesSetToNull, true);
+            $index = array_search('in_dn', $nullablesSetToNull, true);
             if ($index !== false) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
 
-        $this->container['in_ddt'] = $in_ddt;
+        $this->container['in_dn'] = $in_dn;
 
         return $this;
     }
