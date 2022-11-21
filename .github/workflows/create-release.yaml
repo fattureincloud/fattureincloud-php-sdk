@@ -1,7 +1,7 @@
 name: Release PHP SDK Phar Archive
 on:
   repository_dispatch:
-    types: [create-version]
+    types: [create-release]
     
 jobs:
   create-release:
