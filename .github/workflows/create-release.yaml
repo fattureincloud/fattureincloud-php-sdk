@@ -29,7 +29,6 @@ jobs:
         echo "{\"name\":\"gen/binaries\",\"require\":{\"fattureincloud/fattureincloud-php-sdk\":\"^2.0\"},\"config\":{\"platform\":{\"php\":\"7.1\"}}}" > composer.json
         composer install
         mv vendor/autoload.php vendor/index.php
-        rm vendor/autoload.php
         echo "<?php \$pharFile = 'fattureincloud-php-sdk.phar'; \$p = new Phar(\$pharFile); \$p->buildFromDirectory('./vendor/'); \$p->createDefaultStub('./vendor/index.php');" > file.php
         php file.php
 
