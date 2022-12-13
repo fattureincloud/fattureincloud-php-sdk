@@ -11,7 +11,7 @@ jobs:
       name: Setup PHP with PECL extension
       uses: shivammathur/setup-php@v2
       with:
-        php-version: 7.1.0
+        php-version: 8.1.0
         ini-values: phar.readonly=Off
 
     - id: setup-composer
@@ -26,7 +26,7 @@ jobs:
       run: |
         mkdir workfolder
         cd workfolder
-        echo "{\"name\":\"gen/binaries\",\"require\":{\"fattureincloud/fattureincloud-php-sdk\":\"^2.0\"}}" > composer.json
+        echo "{\"name\":\"gen/binaries\",\"require\":{\"fattureincloud/fattureincloud-php-sdk\":\"^2.0\"},\"config\":{\"platform\":{\"php\":\"7.1\"}}}" > composer.json
         composer install
         mv vendor/autoload.php vendor/index.php
         rm vendor/autoload.php
