@@ -55,7 +55,7 @@ jobs:
     - id: psalm-validation
       name: Psalm Validation
       run: |
-        composer require --dev vimeo/psalm
+        composer require --dev vimeo/psalm "4.30"
         ./vendor/bin/psalm --init
         composer require --dev alexeyshockov/guzzle-psalm-plugin && vendor/bin/psalm-plugin enable alexeyshockov/guzzle-psalm-plugin
         ./vendor/bin/psalm
