@@ -1,0 +1,19 @@
+name: Trigger Phar generation
+on: [ workflow_dispatch ]
+
+jobs:
+  trigger-create-release:
+    runs-on: ubuntu-latest
+    steps:
+      - id: checkout
+        name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.FATTUREINCLOUD_BOT_TOKEN }}
+
+      - id: trigger-event
+        name: Trigger Event
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.FATTUREINCLOUD_BOT_TOKEN }}
+          event-type: create-release
