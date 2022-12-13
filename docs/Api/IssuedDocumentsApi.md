@@ -815,7 +815,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$original_document_id = 'original_document_id_example'; // string | Original document id.
+$original_document_id = 56; // int | Original document id.
 $new_type = 'new_type_example'; // string | New document type.
 $e_invoice = 56; // int | New document e_invoice.
 $transform_keep_copy = 56; // int | Keep the old document.
@@ -833,7 +833,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **company_id** | **int**| The ID of the company. | |
-| **original_document_id** | **string**| Original document id. | |
+| **original_document_id** | **int**| Original document id. | |
 | **new_type** | **string**| New document type. | |
 | **e_invoice** | **int**| New document e_invoice. | [optional] |
 | **transform_keep_copy** | **int**| Keep the old document. | [optional] |

@@ -478,13 +478,3 @@ lib/Model/VerifyEInvoiceXmlResponse.php
 lib/Model/VerifyEInvoiceXmlResponseData.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/EmailsApiTest.php
-test/Model/EmailAttachmentTest.php
-test/Model/EmailRecipientStatusTest.php
-test/Model/EmailStatusTest.php
-test/Model/EmailTest.php
-test/Model/JoinIssuedDocumentsResponseTest.php
-test/Model/ListEmailsResponsePageTest.php
-test/Model/ListEmailsResponseTest.php
-test/Model/TransformIssuedDocumentResponseTest.php
-test/Model/VerifyEInvoiceXmlErrorResponseErrorValidationResultTest.php

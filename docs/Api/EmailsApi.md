@@ -34,7 +34,7 @@ $apiInstance = new FattureInCloud\Api\EmailsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 'company_id_example'; // string
+$company_id = 12345; // int | The ID of the company.
 
 try {
     $result = $apiInstance->listEmails($company_id);
@@ -48,7 +48,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **string**|  | |
+| **company_id** | **int**| The ID of the company. | |
 
 ### Return type
 
