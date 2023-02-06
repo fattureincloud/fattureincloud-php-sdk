@@ -1,6 +1,6 @@
 <?php
 /**
- * CreatePaymentMethodResponse
+ * SendEInvoiceRequestOptions
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \FattureInCloud\ObjectSerializer;
 
 /**
- * CreatePaymentMethodResponse Class Doc Comment
+ * SendEInvoiceRequestOptions Class Doc Comment
  *
  * @category Class
  * @package  FattureInCloud
@@ -41,7 +41,7 @@ use \FattureInCloud\ObjectSerializer;
  * @link     https://fattureincloud.it
  * @implements \ArrayAccess<string, mixed>
  */
-class CreatePaymentMethodResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class SendEInvoiceRequestOptions implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class CreatePaymentMethodResponse implements ModelInterface, ArrayAccess, \JsonS
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreatePaymentMethodResponse';
+    protected static $openAPIModelName = 'SendEInvoiceRequest_options';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,7 @@ class CreatePaymentMethodResponse implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\FattureInCloud\Model\PaymentMethod'
+        'dry_run' => 'bool'
     ];
 
     /**
@@ -69,7 +69,7 @@ class CreatePaymentMethodResponse implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null
+        'dry_run' => null
     ];
 
     /**
@@ -78,7 +78,7 @@ class CreatePaymentMethodResponse implements ModelInterface, ArrayAccess, \JsonS
      * @var boolean[]
      */
     protected static $openAPINullables = [
-        'data' => false
+        'dry_run' => true
     ];
 
     /**
@@ -170,7 +170,7 @@ class CreatePaymentMethodResponse implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'
+        'dry_run' => 'dry_run'
     ];
 
     /**
@@ -179,7 +179,7 @@ class CreatePaymentMethodResponse implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'
+        'dry_run' => 'setDryRun'
     ];
 
     /**
@@ -188,7 +188,7 @@ class CreatePaymentMethodResponse implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'
+        'dry_run' => 'getDryRun'
     ];
 
     /**
@@ -248,7 +248,7 @@ class CreatePaymentMethodResponse implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('data', $data ?? [], null);
+        $this->setIfExists('dry_run', $data ?? [], null);
     }
 
     /**
@@ -294,30 +294,37 @@ class CreatePaymentMethodResponse implements ModelInterface, ArrayAccess, \JsonS
 
 
     /**
-     * Gets data
+     * Gets dry_run
      *
-     * @return \FattureInCloud\Model\PaymentMethod|null
+     * @return bool|null
      */
-    public function getData()
+    public function getDryRun()
     {
-        return $this->container['data'];
+        return $this->container['dry_run'];
     }
 
     /**
-     * Sets data
+     * Sets dry_run
      *
-     * @param \FattureInCloud\Model\PaymentMethod|null $data data
+     * @param bool|null $dry_run If set to true the e-invoice will not be sent to the SDI.
      *
      * @return self
      */
-    public function setData($data)
+    public function setDryRun($dry_run)
     {
 
-        if (is_null($data)) {
-            throw new \InvalidArgumentException('non-nullable data cannot be null');
+        if (is_null($dry_run)) {
+            array_push($this->openAPINullablesSetToNull, 'dry_run');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('dry_run', $nullablesSetToNull, true);
+            if ($index !== false) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
 
-        $this->container['data'] = $data;
+        $this->container['dry_run'] = $dry_run;
 
         return $this;
     }

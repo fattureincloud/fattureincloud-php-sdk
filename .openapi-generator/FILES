@@ -215,6 +215,7 @@ docs/Model/ReceivedDocumentType.md
 docs/Model/ScheduleEmailRequest.md
 docs/Model/SendEInvoiceRequest.md
 docs/Model/SendEInvoiceRequestData.md
+docs/Model/SendEInvoiceRequestOptions.md
 docs/Model/SendEInvoiceResponse.md
 docs/Model/SendEInvoiceResponseData.md
 docs/Model/SenderEmail.md
@@ -454,6 +455,7 @@ lib/Model/ReceivedDocumentType.php
 lib/Model/ScheduleEmailRequest.php
 lib/Model/SendEInvoiceRequest.php
 lib/Model/SendEInvoiceRequestData.php
+lib/Model/SendEInvoiceRequestOptions.php
 lib/Model/SendEInvoiceResponse.php
 lib/Model/SendEInvoiceResponseData.php
 lib/Model/SenderEmail.php
@@ -478,3 +480,4 @@ lib/Model/VerifyEInvoiceXmlResponse.php
 lib/Model/VerifyEInvoiceXmlResponseData.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/SendEInvoiceRequestOptionsTest.php

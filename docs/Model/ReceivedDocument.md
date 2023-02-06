@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **payments_list** | [**\FattureInCloud\Model\ReceivedDocumentPaymentsListItem[]**](ReceivedDocumentPaymentsListItem.md) |  | [optional]
 **attachment_url** | **string** | [Temporary] [Read Only]  Public url of the attached file. Authomatically set if a valid attachment token is passed via POST /received_documents or PUT /received_documents/{documentId}. | [optional] [readonly]
 **attachment_preview_url** | **string** | [Temporary] [Read Only]  Attachment preview url. | [optional] [readonly]
+**auto_calculate** | **bool** | If set to false total items amount and total payments amount can be different. | [optional]
 **attachment_token** | **string** | Uploaded attachement token. | [optional]
 **created_at** | **string** |  | [optional]
 **updated_at** | **string** |  | [optional]
