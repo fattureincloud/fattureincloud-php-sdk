@@ -43,6 +43,9 @@ use \FattureInCloud\ObjectSerializer;
  */
 class PaymentAccountTest extends TestCase
 {
+    public $array = [];
+    public $object;
+
     /**
      * Setup before running any test case
      */

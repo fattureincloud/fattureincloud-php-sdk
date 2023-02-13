@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * SendEInvoiceRequestOptionsTest Class Doc Comment
@@ -42,6 +43,9 @@ use PHPUnit\Framework\TestCase;
  */
 class SendEInvoiceRequestOptionsTest extends TestCase
 {
+    public $array = [];
+    public $object;
+
     /**
      * Setup before running any test case
      */
@@ -54,6 +58,13 @@ class SendEInvoiceRequestOptionsTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "dry_run": true
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\SendEInvoiceRequestOptions');
     }
 
     /**
@@ -75,8 +86,9 @@ class SendEInvoiceRequestOptionsTest extends TestCase
      */
     public function testSendEInvoiceRequestOptions()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -84,7 +96,6 @@ class SendEInvoiceRequestOptionsTest extends TestCase
      */
     public function testPropertyDryRun()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['dry_run'], $this->array['dry_run']);
     }
 }

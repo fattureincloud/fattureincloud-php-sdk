@@ -43,6 +43,9 @@ use \FattureInCloud\ObjectSerializer;
  */
 class ListClientsResponseTest extends TestCase
 {
+    public $array = [];
+    public $object;
+
     /**
      * Setup before running any test case
      */
