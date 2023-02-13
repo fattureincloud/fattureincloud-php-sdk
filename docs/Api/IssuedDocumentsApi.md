@@ -589,7 +589,7 @@ try {
 ## `listIssuedDocuments()`
 
 ```php
-listIssuedDocuments($company_id, $type, $fields, $fieldset, $sort, $page, $per_page, $q): \FattureInCloud\Model\ListIssuedDocumentsResponse
+listIssuedDocuments($company_id, $type, $fields, $fieldset, $sort, $page, $per_page, $q, $inclusive): \FattureInCloud\Model\ListIssuedDocumentsResponse
 ```
 
 List Issued Documents
@@ -621,9 +621,10 @@ $sort = 'sort_example'; // string | List of comma-separated fields for result so
 $page = 1; // int | The page to retrieve.
 $per_page = 5; // int | The size of the page.
 $q = 'q_example'; // string | Query for filtering the results.
+$inclusive = 56; // int | (Only for type = delivery_notes) Include invoices delivery notes.
 
 try {
-    $result = $apiInstance->listIssuedDocuments($company_id, $type, $fields, $fieldset, $sort, $page, $per_page, $q);
+    $result = $apiInstance->listIssuedDocuments($company_id, $type, $fields, $fieldset, $sort, $page, $per_page, $q, $inclusive);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IssuedDocumentsApi->listIssuedDocuments: ', $e->getMessage(), PHP_EOL;
@@ -642,6 +643,7 @@ try {
 | **page** | **int**| The page to retrieve. | [optional] [default to 1] |
 | **per_page** | **int**| The size of the page. | [optional] [default to 5] |
 | **q** | **string**| Query for filtering the results. | [optional] |
+| **inclusive** | **int**| (Only for type &#x3D; delivery_notes) Include invoices delivery notes. | [optional] |
 
 ### Return type
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * EmailDataDefaultSenderEmail
+ * SendEInvoiceRequestOptions
  *
  * PHP version 7.4
  *
@@ -33,16 +33,15 @@ use \ArrayAccess;
 use \FattureInCloud\ObjectSerializer;
 
 /**
- * EmailDataDefaultSenderEmail Class Doc Comment
+ * SendEInvoiceRequestOptions Class Doc Comment
  *
  * @category Class
- * @description Default sender email. (Other emails can be found in &#x60;sender_emails_list&#x60;)
  * @package  FattureInCloud
  * @author   Fatture In Cloud API team
  * @link     https://fattureincloud.it
  * @implements \ArrayAccess<string, mixed>
  */
-class EmailDataDefaultSenderEmail implements ModelInterface, ArrayAccess, \JsonSerializable
+class SendEInvoiceRequestOptions implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class EmailDataDefaultSenderEmail implements ModelInterface, ArrayAccess, \JsonS
       *
       * @var string
       */
-    protected static $openAPIModelName = 'EmailData_default_sender_email';
+    protected static $openAPIModelName = 'SendEInvoiceRequest_options';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,8 +58,7 @@ class EmailDataDefaultSenderEmail implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'email' => 'string'
+        'dry_run' => 'bool'
     ];
 
     /**
@@ -71,8 +69,7 @@ class EmailDataDefaultSenderEmail implements ModelInterface, ArrayAccess, \JsonS
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'email' => null
+        'dry_run' => null
     ];
 
     /**
@@ -81,8 +78,7 @@ class EmailDataDefaultSenderEmail implements ModelInterface, ArrayAccess, \JsonS
      * @var boolean[]
      */
     protected static $openAPINullables = [
-        'id' => true,
-            'email' => true
+        'dry_run' => true
     ];
 
     /**
@@ -171,8 +167,7 @@ class EmailDataDefaultSenderEmail implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'email' => 'email'
+        'dry_run' => 'dry_run'
     ];
 
     /**
@@ -181,8 +176,7 @@ class EmailDataDefaultSenderEmail implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'email' => 'setEmail'
+        'dry_run' => 'setDryRun'
     ];
 
     /**
@@ -191,8 +185,7 @@ class EmailDataDefaultSenderEmail implements ModelInterface, ArrayAccess, \JsonS
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'email' => 'getEmail'
+        'dry_run' => 'getDryRun'
     ];
 
     /**
@@ -252,8 +245,7 @@ class EmailDataDefaultSenderEmail implements ModelInterface, ArrayAccess, \JsonS
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('email', $data ?? [], null);
+        $this->setIfExists('dry_run', $data ?? [], null);
     }
 
     /**
@@ -299,69 +291,35 @@ class EmailDataDefaultSenderEmail implements ModelInterface, ArrayAccess, \JsonS
 
 
     /**
-     * Gets id
+     * Gets dry_run
      *
-     * @return int|null
+     * @return bool|null
      */
-    public function getId()
+    public function getDryRun()
     {
-        return $this->container['id'];
+        return $this->container['dry_run'];
     }
 
     /**
-     * Sets id
+     * Sets dry_run
      *
-     * @param int|null $id Id
+     * @param bool|null $dry_run If set to true the e-invoice will not be sent to the SDI.
      *
      * @return self
      */
-    public function setId($id)
+    public function setDryRun($dry_run)
     {
-        if (is_null($id)) {
-            array_push($this->openAPINullablesSetToNull, 'id');
+        if (is_null($dry_run)) {
+            array_push($this->openAPINullablesSetToNull, 'dry_run');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('id', $nullablesSetToNull, true);
+            $index = array_search('dry_run', $nullablesSetToNull, true);
             if ($index !== false) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     *
-     * @return string|null
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     *
-     * @param string|null $email Email address
-     *
-     * @return self
-     */
-    public function setEmail($email)
-    {
-        if (is_null($email)) {
-            array_push($this->openAPINullablesSetToNull, 'email');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('email', $nullablesSetToNull, true);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['email'] = $email;
+        $this->container['dry_run'] = $dry_run;
 
         return $this;
     }
