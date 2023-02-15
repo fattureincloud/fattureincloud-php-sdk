@@ -43,6 +43,9 @@ use PHPUnit\Framework\TestCase;
  */
 class CompanyInfoPlanInfoTest extends TestCase
 {
+    public $array = [];
+    public $object;
+
     /**
      * Setup before running any test case
      */
