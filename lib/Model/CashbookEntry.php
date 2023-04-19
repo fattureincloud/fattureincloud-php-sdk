@@ -97,7 +97,7 @@ class CashbookEntry implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var boolean[]
       */
-    protected static array $openAPINullables = [
+    protected static $openAPINullables = [
         'id' => true,
             'date' => true,
             'description' => true,
@@ -116,7 +116,7 @@ class CashbookEntry implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var boolean[]
       */
-    protected array $openAPINullablesSetToNull = [];
+    protected $openAPINullablesSetToNull = [];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -163,7 +163,7 @@ class CashbookEntry implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @param boolean[] $openAPINullablesSetToNull
      */
-    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    private function setOpenAPINullablesSetToNull($openAPINullablesSetToNull): void
     {
         $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
     }
@@ -303,7 +303,7 @@ class CashbookEntry implements ModelInterface, ArrayAccess, \JsonSerializable
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct($data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('date', $data ?? [], null);
@@ -327,7 +327,7 @@ class CashbookEntry implements ModelInterface, ArrayAccess, \JsonSerializable
       * @param array  $fields
       * @param mixed  $defaultValue
       */
-    private function setIfExists(string $variableName, array $fields, $defaultValue): void
+    private function setIfExists(string $variableName, $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
             $this->openAPINullablesSetToNull[] = $variableName;

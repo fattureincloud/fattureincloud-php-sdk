@@ -102,7 +102,7 @@ class IssuedDocumentExtraData implements ModelInterface, ArrayAccess, \JsonSeria
       *
       * @var boolean[]
       */
-    protected static array $openAPINullables = [
+    protected static $openAPINullables = [
         'show_sofort_button' => true,
             'multifatture_sent' => true,
             'ts_communication' => true,
@@ -123,7 +123,7 @@ class IssuedDocumentExtraData implements ModelInterface, ArrayAccess, \JsonSeria
       *
       * @var boolean[]
       */
-    protected array $openAPINullablesSetToNull = [];
+    protected $openAPINullablesSetToNull = [];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -170,7 +170,7 @@ class IssuedDocumentExtraData implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @param boolean[] $openAPINullablesSetToNull
      */
-    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    private function setOpenAPINullablesSetToNull($openAPINullablesSetToNull): void
     {
         $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
     }
@@ -316,7 +316,7 @@ class IssuedDocumentExtraData implements ModelInterface, ArrayAccess, \JsonSeria
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct($data = null)
     {
         $this->setIfExists('show_sofort_button', $data ?? [], null);
         $this->setIfExists('multifatture_sent', $data ?? [], null);
@@ -342,7 +342,7 @@ class IssuedDocumentExtraData implements ModelInterface, ArrayAccess, \JsonSeria
       * @param array  $fields
       * @param mixed  $defaultValue
       */
-    private function setIfExists(string $variableName, array $fields, $defaultValue): void
+    private function setIfExists(string $variableName, $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
             $this->openAPINullablesSetToNull[] = $variableName;

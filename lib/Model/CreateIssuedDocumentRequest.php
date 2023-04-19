@@ -79,7 +79,7 @@ class CreateIssuedDocumentRequest implements ModelInterface, ArrayAccess, \JsonS
       *
       * @var boolean[]
       */
-    protected static array $openAPINullables = [
+    protected static $openAPINullables = [
         'data' => false,
             'options' => false
     ];
@@ -89,7 +89,7 @@ class CreateIssuedDocumentRequest implements ModelInterface, ArrayAccess, \JsonS
       *
       * @var boolean[]
       */
-    protected array $openAPINullablesSetToNull = [];
+    protected $openAPINullablesSetToNull = [];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -136,7 +136,7 @@ class CreateIssuedDocumentRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @param boolean[] $openAPINullablesSetToNull
      */
-    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    private function setOpenAPINullablesSetToNull($openAPINullablesSetToNull): void
     {
         $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
     }
@@ -249,7 +249,7 @@ class CreateIssuedDocumentRequest implements ModelInterface, ArrayAccess, \JsonS
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct($data = null)
     {
         $this->setIfExists('data', $data ?? [], null);
         $this->setIfExists('options', $data ?? [], null);
@@ -264,7 +264,7 @@ class CreateIssuedDocumentRequest implements ModelInterface, ArrayAccess, \JsonS
       * @param array  $fields
       * @param mixed  $defaultValue
       */
-    private function setIfExists(string $variableName, array $fields, $defaultValue): void
+    private function setIfExists(string $variableName, $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
             $this->openAPINullablesSetToNull[] = $variableName;

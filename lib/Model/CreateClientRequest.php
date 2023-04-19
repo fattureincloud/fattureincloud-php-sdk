@@ -77,7 +77,7 @@ class CreateClientRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var boolean[]
       */
-    protected static array $openAPINullables = [
+    protected static $openAPINullables = [
         'data' => false
     ];
 
@@ -86,7 +86,7 @@ class CreateClientRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var boolean[]
       */
-    protected array $openAPINullablesSetToNull = [];
+    protected $openAPINullablesSetToNull = [];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -133,7 +133,7 @@ class CreateClientRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @param boolean[] $openAPINullablesSetToNull
      */
-    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    private function setOpenAPINullablesSetToNull($openAPINullablesSetToNull): void
     {
         $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
     }
@@ -243,7 +243,7 @@ class CreateClientRequest implements ModelInterface, ArrayAccess, \JsonSerializa
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct($data = null)
     {
         $this->setIfExists('data', $data ?? [], null);
     }
@@ -257,7 +257,7 @@ class CreateClientRequest implements ModelInterface, ArrayAccess, \JsonSerializa
       * @param array  $fields
       * @param mixed  $defaultValue
       */
-    private function setIfExists(string $variableName, array $fields, $defaultValue): void
+    private function setIfExists(string $variableName, $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
             $this->openAPINullablesSetToNull[] = $variableName;

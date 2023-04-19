@@ -83,7 +83,7 @@ class WebhooksSubscription implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var boolean[]
       */
-    protected static array $openAPINullables = [
+    protected static $openAPINullables = [
         'id' => true,
             'sink' => true,
             'verified' => true,
@@ -95,7 +95,7 @@ class WebhooksSubscription implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var boolean[]
       */
-    protected array $openAPINullablesSetToNull = [];
+    protected $openAPINullablesSetToNull = [];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -142,7 +142,7 @@ class WebhooksSubscription implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @param boolean[] $openAPINullablesSetToNull
      */
-    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
+    private function setOpenAPINullablesSetToNull($openAPINullablesSetToNull): void
     {
         $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
     }
@@ -261,7 +261,7 @@ class WebhooksSubscription implements ModelInterface, ArrayAccess, \JsonSerializ
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct($data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('sink', $data ?? [], null);
@@ -278,7 +278,7 @@ class WebhooksSubscription implements ModelInterface, ArrayAccess, \JsonSerializ
       * @param array  $fields
       * @param mixed  $defaultValue
       */
-    private function setIfExists(string $variableName, array $fields, $defaultValue): void
+    private function setIfExists(string $variableName, $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
             $this->openAPINullablesSetToNull[] = $variableName;
