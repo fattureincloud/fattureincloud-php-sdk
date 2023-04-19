@@ -29,7 +29,10 @@
 
 namespace FattureInCloud\Test\Model;
 
+use FattureInCloud\Model\EventType;
+
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * EventTypeTest Class Doc Comment
@@ -42,6 +45,8 @@ use PHPUnit\Framework\TestCase;
  */
 class EventTypeTest extends TestCase
 {
+    public $type;
+
     /**
      * Setup before running any test case
      */
@@ -54,6 +59,7 @@ class EventTypeTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->type = EventType::CASHBOOK_CREATE;
     }
 
     /**
@@ -75,7 +81,6 @@ class EventTypeTest extends TestCase
      */
     public function testEventType()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals('it.fattureincloud.cashbook.create', $this->type);
     }
 }

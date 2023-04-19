@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * CreateWebhooksSubscriptionResponseTest Class Doc Comment
@@ -42,6 +43,9 @@ use PHPUnit\Framework\TestCase;
  */
 class CreateWebhooksSubscriptionResponseTest extends TestCase
 {
+    public $array = [];
+    public $object;
+
     /**
      * Setup before running any test case
      */
@@ -54,6 +58,18 @@ class CreateWebhooksSubscriptionResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": {
+                "id": "SUB123",
+                "sink": "https://endpoint.test",
+                "verified": true,
+                "types": ["it.fattureincloud.cashbook.create"]
+            },
+            "warnings": ["error"]
+        }';
+
+        $this->array = json_decode($json, true);
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CreateWebhooksSubscriptionResponse');
     }
 
     /**
@@ -75,8 +91,9 @@ class CreateWebhooksSubscriptionResponseTest extends TestCase
      */
     public function testCreateWebhooksSubscriptionResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -84,8 +101,9 @@ class CreateWebhooksSubscriptionResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 
     /**
@@ -93,7 +111,8 @@ class CreateWebhooksSubscriptionResponseTest extends TestCase
      */
     public function testPropertyWarnings()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['warnings'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['warnings']);
+        }
     }
 }

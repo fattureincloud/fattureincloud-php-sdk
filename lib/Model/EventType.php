@@ -60,7 +60,7 @@ class EventType
 
     public const ISSUED_DOCUMENTS_PROFORMAS_UPDATE = 'it.fattureincloud.issued_documents.proformas.update';
 
-    public const ISSUED_DOCUMENTS_PROFORMAS_CREATE = 'it.fattureincloud.issued_documents.proformas.create';
+    public const ISSUED_DOCUMENTS_PROFORMAS_DELETE = 'it.fattureincloud.issued_documents.proformas.delete';
 
     public const ISSUED_DOCUMENTS_RECEIPTS_CREATE = 'it.fattureincloud.issued_documents.receipts.create';
 

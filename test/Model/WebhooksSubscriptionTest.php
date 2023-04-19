@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * WebhooksSubscriptionTest Class Doc Comment
@@ -42,6 +43,9 @@ use PHPUnit\Framework\TestCase;
  */
 class WebhooksSubscriptionTest extends TestCase
 {
+    public $array = [];
+    public $object;
+
     /**
      * Setup before running any test case
      */
@@ -54,6 +58,16 @@ class WebhooksSubscriptionTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "id": "SUB123",
+            "sink": "https://endpoint.test",
+            "verified": true,
+            "types": ["it.fattureincloud.cashbook.create"]
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\WebhooksSubscription');
     }
 
     /**
@@ -75,8 +89,9 @@ class WebhooksSubscriptionTest extends TestCase
      */
     public function testWebhooksSubscription()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -84,8 +99,7 @@ class WebhooksSubscriptionTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['id'], $this->array['id']);
     }
 
     /**
@@ -93,8 +107,7 @@ class WebhooksSubscriptionTest extends TestCase
      */
     public function testPropertySink()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['sink'], $this->array['sink']);
     }
 
     /**
@@ -102,8 +115,7 @@ class WebhooksSubscriptionTest extends TestCase
      */
     public function testPropertyVerified()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['verified'], $this->array['verified']);
     }
 
     /**
@@ -111,7 +123,6 @@ class WebhooksSubscriptionTest extends TestCase
      */
     public function testPropertyTypes()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['types'], $this->array['types']);
     }
 }

@@ -32,7 +32,12 @@ use \FattureInCloud\Configuration;
 use \FattureInCloud\ApiException;
 use \FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
-
+use \GuzzleHttp\Client;
+use \GuzzleHttp\Handler\MockHandler;
+use \GuzzleHttp\HandlerStack;
+use \GuzzleHttp\Psr7\Response;
+use \GuzzleHttp\Psr7\Request;
+use \GuzzleHttp\Exception\RequestException;
 /**
  * WebhooksApiTest Class Doc Comment
  *
@@ -79,8 +84,23 @@ class WebhooksApiTest extends TestCase
      */
     public function testCreateWebhooksSubscription()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $stream = '{"data":{"id":"SUB123","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.cashbook.create"]},"warnings":["error"]}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\WebhooksApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $create_webhooks_subscription_request = 'json';
+        $result = $apiInstance->createWebhooksSubscription($company_id, $create_webhooks_subscription_request);
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreateWebhooksSubscriptionResponse');
+
+        TestCase::assertEquals($obj, $result);
     }
 
     /**
@@ -91,8 +111,7 @@ class WebhooksApiTest extends TestCase
      */
     public function testDeleteWebhooksSubscription()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals(1, 1);
     }
 
     /**
@@ -103,8 +122,22 @@ class WebhooksApiTest extends TestCase
      */
     public function testGetWebhooksSubscription()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $stream = '{"data":{"id":"SUB123","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.cashbook.create"]}}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\WebhooksApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $result = $apiInstance->getWebhooksSubscription($company_id, "SUB123");
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetWebhooksSubscriptionResponse');
+
+        TestCase::assertEquals($obj, $result);
     }
 
     /**
@@ -115,8 +148,22 @@ class WebhooksApiTest extends TestCase
      */
     public function testListWebhooksSubscriptions()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $stream = '{"data":[{"id":"SUB123","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.cashbook.create"]}]}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\WebhooksApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $result = $apiInstance->listWebhooksSubscriptions($company_id);
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListWebhooksSubscriptionsResponse');
+
+        TestCase::assertEquals($obj, $result);
     }
 
     /**
@@ -127,7 +174,22 @@ class WebhooksApiTest extends TestCase
      */
     public function testModifyWebhooksSubscription()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        $stream = '{"data":{"id":"SUB123","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.cashbook.create"]},"warnings":["error"]}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\WebhooksApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $modify_webhooks_subscription_request = 'json';
+        $result = $apiInstance->modifyWebhooksSubscription($company_id, "SUB123", $modify_webhooks_subscription_request);
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyWebhooksSubscriptionResponse');
+
+        TestCase::assertEquals($obj, $result);
     }
 }

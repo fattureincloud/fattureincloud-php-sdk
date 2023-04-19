@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * GetWebhooksSubscriptionResponseTest Class Doc Comment
@@ -42,6 +43,9 @@ use PHPUnit\Framework\TestCase;
  */
 class GetWebhooksSubscriptionResponseTest extends TestCase
 {
+    public $array = [];
+    public $object;
+
     /**
      * Setup before running any test case
      */
@@ -54,6 +58,17 @@ class GetWebhooksSubscriptionResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": {
+                "id": "SUB123",
+                "sink": "https://endpoint.test",
+                "verified": true,
+                "types": ["it.fattureincloud.cashbook.create"]
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CreateWebhooksSubscriptionResponse');
     }
 
     /**
@@ -75,8 +90,9 @@ class GetWebhooksSubscriptionResponseTest extends TestCase
      */
     public function testGetWebhooksSubscriptionResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -84,7 +100,8 @@ class GetWebhooksSubscriptionResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }
