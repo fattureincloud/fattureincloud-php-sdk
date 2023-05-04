@@ -17,6 +17,7 @@ docs/Api/SettingsApi.md
 docs/Api/SuppliersApi.md
 docs/Api/TaxesApi.md
 docs/Api/UserApi.md
+docs/Api/WebhooksApi.md
 docs/Model/ArchiveDocument.md
 docs/Model/AttachmentData.md
 docs/Model/CashbookEntry.md
@@ -59,6 +60,8 @@ docs/Model/CreateSupplierRequest.md
 docs/Model/CreateSupplierResponse.md
 docs/Model/CreateVatTypeRequest.md
 docs/Model/CreateVatTypeResponse.md
+docs/Model/CreateWebhooksSubscriptionRequest.md
+docs/Model/CreateWebhooksSubscriptionResponse.md
 docs/Model/Currency.md
 docs/Model/DetailedCountry.md
 docs/Model/DocumentTemplate.md
@@ -73,6 +76,7 @@ docs/Model/EmailScheduleInclude.md
 docs/Model/EmailStatus.md
 docs/Model/Entity.md
 docs/Model/EntityType.md
+docs/Model/EventType.md
 docs/Model/F24.md
 docs/Model/F24Status.md
 docs/Model/FunctionStatus.md
@@ -106,6 +110,7 @@ docs/Model/GetUserInfoResponse.md
 docs/Model/GetUserInfoResponseEmailConfirmationState.md
 docs/Model/GetUserInfoResponseInfo.md
 docs/Model/GetVatTypeResponse.md
+docs/Model/GetWebhooksSubscriptionResponse.md
 docs/Model/IssuedDocument.md
 docs/Model/IssuedDocumentEiData.md
 docs/Model/IssuedDocumentExtraData.md
@@ -161,6 +166,7 @@ docs/Model/ListUnitsOfMeasureResponse.md
 docs/Model/ListUserCompaniesResponse.md
 docs/Model/ListUserCompaniesResponseData.md
 docs/Model/ListVatTypesResponse.md
+docs/Model/ListWebhooksSubscriptionsResponse.md
 docs/Model/ModifyArchiveDocumentRequest.md
 docs/Model/ModifyArchiveDocumentResponse.md
 docs/Model/ModifyCashbookEntryRequest.md
@@ -185,6 +191,8 @@ docs/Model/ModifySupplierRequest.md
 docs/Model/ModifySupplierResponse.md
 docs/Model/ModifyVatTypeRequest.md
 docs/Model/ModifyVatTypeResponse.md
+docs/Model/ModifyWebhooksSubscriptionRequest.md
+docs/Model/ModifyWebhooksSubscriptionResponse.md
 docs/Model/MonthlyTotal.md
 docs/Model/OriginalDocumentType.md
 docs/Model/Pagination.md
@@ -203,7 +211,6 @@ docs/Model/ReceiptItemsListItem.md
 docs/Model/ReceiptPreCreateInfo.md
 docs/Model/ReceiptType.md
 docs/Model/ReceivedDocument.md
-docs/Model/ReceivedDocumentEntity.md
 docs/Model/ReceivedDocumentInfo.md
 docs/Model/ReceivedDocumentInfoDefaultValues.md
 docs/Model/ReceivedDocumentInfoItemsDefaultValues.md
@@ -238,6 +245,7 @@ docs/Model/VerifyEInvoiceXmlErrorResponseErrorValidationResult.md
 docs/Model/VerifyEInvoiceXmlErrorResponseExtra.md
 docs/Model/VerifyEInvoiceXmlResponse.md
 docs/Model/VerifyEInvoiceXmlResponseData.md
+docs/Model/WebhooksSubscription.md
 lib/Api/ArchiveApi.php
 lib/Api/CashbookApi.php
 lib/Api/ClientsApi.php
@@ -253,6 +261,7 @@ lib/Api/SettingsApi.php
 lib/Api/SuppliersApi.php
 lib/Api/TaxesApi.php
 lib/Api/UserApi.php
+lib/Api/WebhooksApi.php
 lib/ApiException.php
 lib/Configuration.php
 lib/HeaderSelector.php
@@ -298,6 +307,8 @@ lib/Model/CreateSupplierRequest.php
 lib/Model/CreateSupplierResponse.php
 lib/Model/CreateVatTypeRequest.php
 lib/Model/CreateVatTypeResponse.php
+lib/Model/CreateWebhooksSubscriptionRequest.php
+lib/Model/CreateWebhooksSubscriptionResponse.php
 lib/Model/Currency.php
 lib/Model/DetailedCountry.php
 lib/Model/DocumentTemplate.php
@@ -312,6 +323,7 @@ lib/Model/EmailScheduleInclude.php
 lib/Model/EmailStatus.php
 lib/Model/Entity.php
 lib/Model/EntityType.php
+lib/Model/EventType.php
 lib/Model/F24.php
 lib/Model/F24Status.php
 lib/Model/FunctionStatus.php
@@ -345,6 +357,7 @@ lib/Model/GetUserInfoResponse.php
 lib/Model/GetUserInfoResponseEmailConfirmationState.php
 lib/Model/GetUserInfoResponseInfo.php
 lib/Model/GetVatTypeResponse.php
+lib/Model/GetWebhooksSubscriptionResponse.php
 lib/Model/IssuedDocument.php
 lib/Model/IssuedDocumentEiData.php
 lib/Model/IssuedDocumentExtraData.php
@@ -400,6 +413,7 @@ lib/Model/ListUnitsOfMeasureResponse.php
 lib/Model/ListUserCompaniesResponse.php
 lib/Model/ListUserCompaniesResponseData.php
 lib/Model/ListVatTypesResponse.php
+lib/Model/ListWebhooksSubscriptionsResponse.php
 lib/Model/ModelInterface.php
 lib/Model/ModifyArchiveDocumentRequest.php
 lib/Model/ModifyArchiveDocumentResponse.php
@@ -425,6 +439,8 @@ lib/Model/ModifySupplierRequest.php
 lib/Model/ModifySupplierResponse.php
 lib/Model/ModifyVatTypeRequest.php
 lib/Model/ModifyVatTypeResponse.php
+lib/Model/ModifyWebhooksSubscriptionRequest.php
+lib/Model/ModifyWebhooksSubscriptionResponse.php
 lib/Model/MonthlyTotal.php
 lib/Model/OriginalDocumentType.php
 lib/Model/Pagination.php
@@ -443,7 +459,6 @@ lib/Model/ReceiptItemsListItem.php
 lib/Model/ReceiptPreCreateInfo.php
 lib/Model/ReceiptType.php
 lib/Model/ReceivedDocument.php
-lib/Model/ReceivedDocumentEntity.php
 lib/Model/ReceivedDocumentInfo.php
 lib/Model/ReceivedDocumentInfoDefaultValues.php
 lib/Model/ReceivedDocumentInfoItemsDefaultValues.php
@@ -478,6 +493,15 @@ lib/Model/VerifyEInvoiceXmlErrorResponseErrorValidationResult.php
 lib/Model/VerifyEInvoiceXmlErrorResponseExtra.php
 lib/Model/VerifyEInvoiceXmlResponse.php
 lib/Model/VerifyEInvoiceXmlResponseData.php
+lib/Model/WebhooksSubscription.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/SendEInvoiceRequestOptionsTest.php
+test/Api/WebhooksApiTest.php
+test/Model/CreateWebhooksSubscriptionRequestTest.php
+test/Model/CreateWebhooksSubscriptionResponseTest.php
+test/Model/EventTypeTest.php
+test/Model/GetWebhooksSubscriptionResponseTest.php
+test/Model/ListWebhooksSubscriptionsResponseTest.php
+test/Model/ModifyWebhooksSubscriptionRequestTest.php
+test/Model/ModifyWebhooksSubscriptionResponseTest.php
+test/Model/WebhooksSubscriptionTest.php

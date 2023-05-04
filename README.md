@@ -12,8 +12,7 @@ For more information, please visit [https://www.fattureincloud.it](https://www.f
 
 ### Requirements
 
-PHP 7.1 and later.
-Should also work with PHP 8.0 but has not been tested.
+PHP 7.3 and later.
 
 ### Composer
 
@@ -171,6 +170,11 @@ Class | Method | HTTP request | Description
 *TaxesApi* | [**uploadF24Attachment**](docs/Api/TaxesApi.md#uploadf24attachment) | **POST** /c/{company_id}/taxes/attachment | Upload F24 Attachment
 *UserApi* | [**getUserInfo**](docs/Api/UserApi.md#getuserinfo) | **GET** /user/info | Get User Info
 *UserApi* | [**listUserCompanies**](docs/Api/UserApi.md#listusercompanies) | **GET** /user/companies | List User Companies
+*WebhooksApi* | [**createWebhooksSubscription**](docs/Api/WebhooksApi.md#createwebhookssubscription) | **POST** /c/{company_id}/subscriptions | Create a Webhook Subscription
+*WebhooksApi* | [**deleteWebhooksSubscription**](docs/Api/WebhooksApi.md#deletewebhookssubscription) | **DELETE** /c/{company_id}/subscriptions/{subscription_id} | Delete Webhooks Subscription
+*WebhooksApi* | [**getWebhooksSubscription**](docs/Api/WebhooksApi.md#getwebhookssubscription) | **GET** /c/{company_id}/subscriptions/{subscription_id} | Get Webhooks Subscription
+*WebhooksApi* | [**listWebhooksSubscriptions**](docs/Api/WebhooksApi.md#listwebhookssubscriptions) | **GET** /c/{company_id}/subscriptions | List Webhooks Subscriptions
+*WebhooksApi* | [**modifyWebhooksSubscription**](docs/Api/WebhooksApi.md#modifywebhookssubscription) | **PUT** /c/{company_id}/subscriptions/{subscription_id} | Modify Webhooks Subscription
 
 ## Models
 
@@ -216,6 +220,8 @@ Class | Method | HTTP request | Description
 - [CreateSupplierResponse](docs/Model/CreateSupplierResponse.md)
 - [CreateVatTypeRequest](docs/Model/CreateVatTypeRequest.md)
 - [CreateVatTypeResponse](docs/Model/CreateVatTypeResponse.md)
+- [CreateWebhooksSubscriptionRequest](docs/Model/CreateWebhooksSubscriptionRequest.md)
+- [CreateWebhooksSubscriptionResponse](docs/Model/CreateWebhooksSubscriptionResponse.md)
 - [Currency](docs/Model/Currency.md)
 - [DetailedCountry](docs/Model/DetailedCountry.md)
 - [DocumentTemplate](docs/Model/DocumentTemplate.md)
@@ -230,6 +236,7 @@ Class | Method | HTTP request | Description
 - [EmailStatus](docs/Model/EmailStatus.md)
 - [Entity](docs/Model/Entity.md)
 - [EntityType](docs/Model/EntityType.md)
+- [EventType](docs/Model/EventType.md)
 - [F24](docs/Model/F24.md)
 - [F24Status](docs/Model/F24Status.md)
 - [FunctionStatus](docs/Model/FunctionStatus.md)
@@ -263,6 +270,7 @@ Class | Method | HTTP request | Description
 - [GetUserInfoResponseEmailConfirmationState](docs/Model/GetUserInfoResponseEmailConfirmationState.md)
 - [GetUserInfoResponseInfo](docs/Model/GetUserInfoResponseInfo.md)
 - [GetVatTypeResponse](docs/Model/GetVatTypeResponse.md)
+- [GetWebhooksSubscriptionResponse](docs/Model/GetWebhooksSubscriptionResponse.md)
 - [IssuedDocument](docs/Model/IssuedDocument.md)
 - [IssuedDocumentEiData](docs/Model/IssuedDocumentEiData.md)
 - [IssuedDocumentExtraData](docs/Model/IssuedDocumentExtraData.md)
@@ -318,6 +326,7 @@ Class | Method | HTTP request | Description
 - [ListUserCompaniesResponse](docs/Model/ListUserCompaniesResponse.md)
 - [ListUserCompaniesResponseData](docs/Model/ListUserCompaniesResponseData.md)
 - [ListVatTypesResponse](docs/Model/ListVatTypesResponse.md)
+- [ListWebhooksSubscriptionsResponse](docs/Model/ListWebhooksSubscriptionsResponse.md)
 - [ModifyArchiveDocumentRequest](docs/Model/ModifyArchiveDocumentRequest.md)
 - [ModifyArchiveDocumentResponse](docs/Model/ModifyArchiveDocumentResponse.md)
 - [ModifyCashbookEntryRequest](docs/Model/ModifyCashbookEntryRequest.md)
@@ -342,6 +351,8 @@ Class | Method | HTTP request | Description
 - [ModifySupplierResponse](docs/Model/ModifySupplierResponse.md)
 - [ModifyVatTypeRequest](docs/Model/ModifyVatTypeRequest.md)
 - [ModifyVatTypeResponse](docs/Model/ModifyVatTypeResponse.md)
+- [ModifyWebhooksSubscriptionRequest](docs/Model/ModifyWebhooksSubscriptionRequest.md)
+- [ModifyWebhooksSubscriptionResponse](docs/Model/ModifyWebhooksSubscriptionResponse.md)
 - [MonthlyTotal](docs/Model/MonthlyTotal.md)
 - [OriginalDocumentType](docs/Model/OriginalDocumentType.md)
 - [Pagination](docs/Model/Pagination.md)
@@ -360,7 +371,6 @@ Class | Method | HTTP request | Description
 - [ReceiptPreCreateInfo](docs/Model/ReceiptPreCreateInfo.md)
 - [ReceiptType](docs/Model/ReceiptType.md)
 - [ReceivedDocument](docs/Model/ReceivedDocument.md)
-- [ReceivedDocumentEntity](docs/Model/ReceivedDocumentEntity.md)
 - [ReceivedDocumentInfo](docs/Model/ReceivedDocumentInfo.md)
 - [ReceivedDocumentInfoDefaultValues](docs/Model/ReceivedDocumentInfoDefaultValues.md)
 - [ReceivedDocumentInfoItemsDefaultValues](docs/Model/ReceivedDocumentInfoItemsDefaultValues.md)
@@ -395,6 +405,7 @@ Class | Method | HTTP request | Description
 - [VerifyEInvoiceXmlErrorResponseExtra](docs/Model/VerifyEInvoiceXmlErrorResponseExtra.md)
 - [VerifyEInvoiceXmlResponse](docs/Model/VerifyEInvoiceXmlResponse.md)
 - [VerifyEInvoiceXmlResponseData](docs/Model/VerifyEInvoiceXmlResponseData.md)
+- [WebhooksSubscription](docs/Model/WebhooksSubscription.md)
 
 ## Authorization
 
@@ -463,5 +474,5 @@ info@fattureincloud.it
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `2.0.26`
+- API version: `2.0.27`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
