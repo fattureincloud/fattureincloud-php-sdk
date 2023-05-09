@@ -496,12 +496,3 @@ lib/Model/VerifyEInvoiceXmlResponseData.php
 lib/Model/WebhooksSubscription.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/WebhooksApiTest.php
-test/Model/CreateWebhooksSubscriptionRequestTest.php
-test/Model/CreateWebhooksSubscriptionResponseTest.php
-test/Model/EventTypeTest.php
-test/Model/GetWebhooksSubscriptionResponseTest.php
-test/Model/ListWebhooksSubscriptionsResponseTest.php
-test/Model/ModifyWebhooksSubscriptionRequestTest.php
-test/Model/ModifyWebhooksSubscriptionResponseTest.php
-test/Model/WebhooksSubscriptionTest.php
