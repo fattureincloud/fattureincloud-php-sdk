@@ -61,7 +61,7 @@ class ModifyWebhooksSubscriptionRequestTest extends TestCase
         $json = '{
             "data": {
                 "sink": "https://endpoint.test",
-                "types": ["it.fattureincloud.cashbook.create"]
+                "types": ["it.fattureincloud.webhooks.cashbook.create"]
               }
         }';
 
