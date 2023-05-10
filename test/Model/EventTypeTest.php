@@ -81,6 +81,6 @@ class EventTypeTest extends TestCase
      */
     public function testEventType()
     {
-        TestCase::assertEquals('it.fattureincloud.cashbook.create', $this->type);
+        TestCase::assertEquals('it.fattureincloud.webhooks.cashbook.create', $this->type);
     }
 }

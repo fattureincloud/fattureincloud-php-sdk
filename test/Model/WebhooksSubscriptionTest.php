@@ -62,7 +62,7 @@ class WebhooksSubscriptionTest extends TestCase
             "id": "SUB123",
             "sink": "https://endpoint.test",
             "verified": true,
-            "types": ["it.fattureincloud.cashbook.create"]
+            "types": ["it.fattureincloud.webhooks.cashbook.create"]
         }';
 
         $this->array = json_decode($json, true);

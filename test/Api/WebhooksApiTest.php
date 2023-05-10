@@ -38,6 +38,7 @@ use \GuzzleHttp\HandlerStack;
 use \GuzzleHttp\Psr7\Response;
 use \GuzzleHttp\Psr7\Request;
 use \GuzzleHttp\Exception\RequestException;
+
 /**
  * WebhooksApiTest Class Doc Comment
  *
@@ -84,7 +85,7 @@ class WebhooksApiTest extends TestCase
      */
     public function testCreateWebhooksSubscription()
     {
-        $stream = '{"data":{"id":"SUB123","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.cashbook.create"]},"warnings":["error"]}';
+        $stream = '{"data":{"id":"SUB123","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.webhooks.cashbook.create"]},"warnings":["error"]}';
         $mock = new MockHandler([new Response(
             200,
             ['Content-Type' => 'application/json'],
@@ -122,7 +123,7 @@ class WebhooksApiTest extends TestCase
      */
     public function testGetWebhooksSubscription()
     {
-        $stream = '{"data":{"id":"SUB123","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.cashbook.create"]}}';
+        $stream = '{"data":{"id":"SUB123","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.webhooks.cashbook.create"]}}';
         $mock = new MockHandler([new Response(
             200,
             ['Content-Type' => 'application/json'],
@@ -148,7 +149,7 @@ class WebhooksApiTest extends TestCase
      */
     public function testListWebhooksSubscriptions()
     {
-        $stream = '{"data":[{"id":"SUB123","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.cashbook.create"]}]}';
+        $stream = '{"data":[{"id":"SUB123","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.webhooks.cashbook.create"]}]}';
         $mock = new MockHandler([new Response(
             200,
             ['Content-Type' => 'application/json'],
@@ -174,7 +175,7 @@ class WebhooksApiTest extends TestCase
      */
     public function testModifyWebhooksSubscription()
     {
-        $stream = '{"data":{"id":"SUB123","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.cashbook.create"]},"warnings":["error"]}';
+        $stream = '{"data":{"id":"SUB123","sink":"https://endpoint.test","verified":true,"types":["it.fattureincloud.webhooks.cashbook.create"]},"warnings":["error"]}';
         $mock = new MockHandler([new Response(
             200,
             ['Content-Type' => 'application/json'],
