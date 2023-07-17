@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** | Unique identifier | [optional]
+**id** | **string** | Webhooks subscription id | [optional]
 **sink** | **string** | Webhooks callback uri. | [optional]
 **verified** | **bool** | [Read Only] True if the webhooks subscription has been verified. | [optional]
 **types** | [**\FattureInCloud\Model\EventType[]**](EventType.md) | Webhooks events types. | [optional]

@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | Unique identifier | [optional]
-**value** | **float** | [Read Only] Percentual value. | [optional]
-**description** | **string** | Short description. | [optional]
-**notes** | **string** | Long description and notes shown in documents. | [optional]
-**e_invoice** | **bool** | Usable for e-invoices. | [optional]
-**ei_type** | **string** | E-invoice type (natura). | [optional]
-**ei_description** | **string** | E-invoice description. | [optional]
-**editable** | **bool** | [Read Only] Determine if this vat type is editable. | [optional] [readonly]
-**is_disabled** | **bool** | Determine if the vat type is disabled. | [optional]
+**id** | **int** | Vat type id | [optional]
+**value** | **float** | [Read Only] Vat type percentual value | [optional]
+**description** | **string** | Vat type short description | [optional]
+**notes** | **string** | Vat type notes shown in documents | [optional]
+**e_invoice** | **bool** | Vat type is usable for e-invoices | [optional]
+**ei_type** | **string** | Vat type e-invoice type (natura) | [optional]
+**ei_description** | **string** | Vat type e-invoice description | [optional]
+**editable** | **bool** | [Read Only] Is the vat type is editable. | [optional] [readonly]
+**is_disabled** | **bool** | Is the vat type disabled | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
