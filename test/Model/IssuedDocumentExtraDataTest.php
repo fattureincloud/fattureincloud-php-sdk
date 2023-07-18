@@ -70,8 +70,7 @@ class IssuedDocumentExtraDataTest extends TestCase
             "ts_file_id": "file.png",
             "ts_sent_date": "2020-10-10",
             "ts_full_amount": true,
-            "imported_by": "jss",
-            "ts_single_sending": false
+            "imported_by": "jss"
         }';
 
         $this->array = json_decode($json, true);
@@ -198,13 +197,5 @@ class IssuedDocumentExtraDataTest extends TestCase
     public function testPropertyImportedBy()
     {
         TestCase::assertEquals($this->object['imported_by'], $this->array['imported_by']);
-    }
-
-    /**
-     * Test attribute "ts_single_sending"
-     */
-    public function testPropertyTsSingleSending()
-    {
-        TestCase::assertEquals($this->object['ts_single_sending'], $this->array['ts_single_sending']);
     }
 }

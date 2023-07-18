@@ -365,8 +365,8 @@ $apiInstance = new FattureInCloud\Api\ArchiveApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$filename = 'filename_example'; // string | Name of the file.
-$attachment = "/path/to/file.txt"; // \SplFileObject | Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx
+$filename = 'filename_example'; // string | Attachment file name
+$attachment = "/path/to/file.txt"; // \SplFileObject | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx]
 
 try {
     $result = $apiInstance->uploadArchiveDocumentAttachment($company_id, $filename, $attachment);
@@ -381,8 +381,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **company_id** | **int**| The ID of the company. | |
-| **filename** | **string**| Name of the file. | [optional] |
-| **attachment** | **\SplFileObject****\SplFileObject**| Valid format: .png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx | [optional] |
+| **filename** | **string**| Attachment file name | [optional] |
+| **attachment** | **\SplFileObject****\SplFileObject**| Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx] | [optional] |
 
 ### Return type
 
