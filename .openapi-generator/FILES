@@ -246,6 +246,8 @@ docs/Model/VerifyEInvoiceXmlErrorResponseExtra.md
 docs/Model/VerifyEInvoiceXmlResponse.md
 docs/Model/VerifyEInvoiceXmlResponseData.md
 docs/Model/WebhooksSubscription.md
+docs/Model/WebhooksSubscriptionConfig.md
+docs/Model/WebhooksSubscriptionMapping.md
 lib/Api/ArchiveApi.php
 lib/Api/CashbookApi.php
 lib/Api/ClientsApi.php
@@ -494,5 +496,9 @@ lib/Model/VerifyEInvoiceXmlErrorResponseExtra.php
 lib/Model/VerifyEInvoiceXmlResponse.php
 lib/Model/VerifyEInvoiceXmlResponseData.php
 lib/Model/WebhooksSubscription.php
+lib/Model/WebhooksSubscriptionConfig.php
+lib/Model/WebhooksSubscriptionMapping.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/WebhooksSubscriptionConfigTest.php
+test/Model/WebhooksSubscriptionMappingTest.php

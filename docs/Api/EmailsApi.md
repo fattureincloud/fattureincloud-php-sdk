@@ -4,7 +4,7 @@ All URIs are relative to https://api-v2.fattureincloud.it, except if the operati
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**listEmails()**](EmailsApi.md#listEmails) | **GET** /c/{company_id}/emails | List emails |
+| [**listEmails()**](EmailsApi.md#listEmails) | **GET** /c/{company_id}/emails | List Emails |
 
 
 ## `listEmails()`
@@ -13,7 +13,7 @@ All URIs are relative to https://api-v2.fattureincloud.it, except if the operati
 listEmails($company_id): \FattureInCloud\Model\ListEmailsResponse
 ```
 
-List emails
+List Emails
 
 List Emails.
 

@@ -649,7 +649,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$context = 'context_example'; // string
+$context = 'context_example'; // string | Categories resource type.
 
 try {
     $result = $apiInstance->listProductCategories($company_id, $context);
@@ -664,7 +664,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **company_id** | **int**| The ID of the company. | |
-| **context** | **string**|  | |
+| **context** | **string**| Categories resource type. | |
 
 ### Return type
 

@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **address_province** | **string** | Client address province | [optional]
 **address_extra** | **string** | Client address extra info | [optional]
 **country** | **string** | Client country | [optional]
+**country_iso** | **string** | Client country iso code | [optional]
 **email** | **string** | Client email | [optional]
 **certified_email** | **string** | Client certified email | [optional]
 **phone** | **string** | Client phone | [optional]

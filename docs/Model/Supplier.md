@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **address_province** | **string** | Supplier province | [optional]
 **address_extra** | **string** | Supplier address extra info | [optional]
 **country** | **string** | Supplier country | [optional]
+**country_iso** | **string** | Supplier country iso code | [optional]
 **email** | **string** | Supplier email | [optional]
 **certified_email** | **string** | Supplier certified email | [optional]
 **phone** | **string** | Supplier phone | [optional]

@@ -87,7 +87,7 @@ Class | Method | HTTP request | Description
 *ClientsApi* | [**listClients**](docs/Api/ClientsApi.md#listclients) | **GET** /c/{company_id}/entities/clients | List Clients
 *ClientsApi* | [**modifyClient**](docs/Api/ClientsApi.md#modifyclient) | **PUT** /c/{company_id}/entities/clients/{client_id} | Modify Client
 *CompaniesApi* | [**getCompanyInfo**](docs/Api/CompaniesApi.md#getcompanyinfo) | **GET** /c/{company_id}/company/info | Get Company Info
-*EmailsApi* | [**listEmails**](docs/Api/EmailsApi.md#listemails) | **GET** /c/{company_id}/emails | List emails
+*EmailsApi* | [**listEmails**](docs/Api/EmailsApi.md#listemails) | **GET** /c/{company_id}/emails | List Emails
 *InfoApi* | [**listArchiveCategories**](docs/Api/InfoApi.md#listarchivecategories) | **GET** /c/{company_id}/info/archive_categories | List Archive Categories
 *InfoApi* | [**listCities**](docs/Api/InfoApi.md#listcities) | **GET** /info/cities | List Cities
 *InfoApi* | [**listCostCenters**](docs/Api/InfoApi.md#listcostcenters) | **GET** /c/{company_id}/info/cost_centers | List Cost Centers
@@ -110,18 +110,18 @@ Class | Method | HTTP request | Description
 *IssuedDocumentsApi* | [**getEmailData**](docs/Api/IssuedDocumentsApi.md#getemaildata) | **GET** /c/{company_id}/issued_documents/{document_id}/email | Get Email Data
 *IssuedDocumentsApi* | [**getExistingIssuedDocumentTotals**](docs/Api/IssuedDocumentsApi.md#getexistingissueddocumenttotals) | **POST** /c/{company_id}/issued_documents/{document_id}/totals | Get Existing Issued Document Totals
 *IssuedDocumentsApi* | [**getIssuedDocument**](docs/Api/IssuedDocumentsApi.md#getissueddocument) | **GET** /c/{company_id}/issued_documents/{document_id} | Get Issued Document
-*IssuedDocumentsApi* | [**getIssuedDocumentPreCreateInfo**](docs/Api/IssuedDocumentsApi.md#getissueddocumentprecreateinfo) | **GET** /c/{company_id}/issued_documents/info | Get Issued Document Pre-create info
+*IssuedDocumentsApi* | [**getIssuedDocumentPreCreateInfo**](docs/Api/IssuedDocumentsApi.md#getissueddocumentprecreateinfo) | **GET** /c/{company_id}/issued_documents/info | Get Issued Document Pre-Create Info
 *IssuedDocumentsApi* | [**getNewIssuedDocumentTotals**](docs/Api/IssuedDocumentsApi.md#getnewissueddocumenttotals) | **POST** /c/{company_id}/issued_documents/totals | Get New Issued Document Totals
-*IssuedDocumentsApi* | [**joinIssuedDocuments**](docs/Api/IssuedDocumentsApi.md#joinissueddocuments) | **GET** /c/{company_id}/issued_documents/join | Join issued documents
+*IssuedDocumentsApi* | [**joinIssuedDocuments**](docs/Api/IssuedDocumentsApi.md#joinissueddocuments) | **GET** /c/{company_id}/issued_documents/join | Join Issued Documents
 *IssuedDocumentsApi* | [**listIssuedDocuments**](docs/Api/IssuedDocumentsApi.md#listissueddocuments) | **GET** /c/{company_id}/issued_documents | List Issued Documents
 *IssuedDocumentsApi* | [**modifyIssuedDocument**](docs/Api/IssuedDocumentsApi.md#modifyissueddocument) | **PUT** /c/{company_id}/issued_documents/{document_id} | Modify Issued Document
 *IssuedDocumentsApi* | [**scheduleEmail**](docs/Api/IssuedDocumentsApi.md#scheduleemail) | **POST** /c/{company_id}/issued_documents/{document_id}/email | Schedule Email
-*IssuedDocumentsApi* | [**transformIssuedDocument**](docs/Api/IssuedDocumentsApi.md#transformissueddocument) | **GET** /c/{company_id}/issued_documents/transform | Transform issued document
+*IssuedDocumentsApi* | [**transformIssuedDocument**](docs/Api/IssuedDocumentsApi.md#transformissueddocument) | **GET** /c/{company_id}/issued_documents/transform | Transform Issued Document
 *IssuedDocumentsApi* | [**uploadIssuedDocumentAttachment**](docs/Api/IssuedDocumentsApi.md#uploadissueddocumentattachment) | **POST** /c/{company_id}/issued_documents/attachment | Upload Issued Document Attachment
-*IssuedEInvoicesApi* | [**getEInvoiceRejectionReason**](docs/Api/IssuedEInvoicesApi.md#geteinvoicerejectionreason) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/error_reason | Get e-invoice rejection reason
-*IssuedEInvoicesApi* | [**getEInvoiceXml**](docs/Api/IssuedEInvoicesApi.md#geteinvoicexml) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml | Get e-invoice XML
-*IssuedEInvoicesApi* | [**sendEInvoice**](docs/Api/IssuedEInvoicesApi.md#sendeinvoice) | **POST** /c/{company_id}/issued_documents/{document_id}/e_invoice/send | Send the e-invoice
-*IssuedEInvoicesApi* | [**verifyEInvoiceXml**](docs/Api/IssuedEInvoicesApi.md#verifyeinvoicexml) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml_verify | Verify e-invoice XML
+*IssuedEInvoicesApi* | [**getEInvoiceRejectionReason**](docs/Api/IssuedEInvoicesApi.md#geteinvoicerejectionreason) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/error_reason | Get E-Invoice Rejection Reason
+*IssuedEInvoicesApi* | [**getEInvoiceXml**](docs/Api/IssuedEInvoicesApi.md#geteinvoicexml) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml | Get E-Invoice XML
+*IssuedEInvoicesApi* | [**sendEInvoice**](docs/Api/IssuedEInvoicesApi.md#sendeinvoice) | **POST** /c/{company_id}/issued_documents/{document_id}/e_invoice/send | Send E-Invoice
+*IssuedEInvoicesApi* | [**verifyEInvoiceXml**](docs/Api/IssuedEInvoicesApi.md#verifyeinvoicexml) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml_verify | Verify E-Invoice XML
 *ProductsApi* | [**createProduct**](docs/Api/ProductsApi.md#createproduct) | **POST** /c/{company_id}/products | Create Product
 *ProductsApi* | [**deleteProduct**](docs/Api/ProductsApi.md#deleteproduct) | **DELETE** /c/{company_id}/products/{product_id} | Delete Product
 *ProductsApi* | [**getProduct**](docs/Api/ProductsApi.md#getproduct) | **GET** /c/{company_id}/products/{product_id} | Get Product
@@ -406,6 +406,8 @@ Class | Method | HTTP request | Description
 - [VerifyEInvoiceXmlResponse](docs/Model/VerifyEInvoiceXmlResponse.md)
 - [VerifyEInvoiceXmlResponseData](docs/Model/VerifyEInvoiceXmlResponseData.md)
 - [WebhooksSubscription](docs/Model/WebhooksSubscription.md)
+- [WebhooksSubscriptionConfig](docs/Model/WebhooksSubscriptionConfig.md)
+- [WebhooksSubscriptionMapping](docs/Model/WebhooksSubscriptionMapping.md)
 
 ## Authorization
 
@@ -474,5 +476,5 @@ info@fattureincloud.it
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `2.0.29`
+- API version: `2.0.30`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
