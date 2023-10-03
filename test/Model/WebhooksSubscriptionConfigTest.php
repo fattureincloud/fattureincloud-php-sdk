@@ -30,6 +30,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * WebhooksSubscriptionConfigTest Class Doc Comment
@@ -42,6 +43,9 @@ use PHPUnit\Framework\TestCase;
  */
 class WebhooksSubscriptionConfigTest extends TestCase
 {
+    public $array = [];
+    public $object;
+
     /**
      * Setup before running any test case
      */
@@ -54,6 +58,13 @@ class WebhooksSubscriptionConfigTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "mapping": "binary"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\WebhooksSubscriptionConfig');
     }
 
     /**
@@ -75,8 +86,9 @@ class WebhooksSubscriptionConfigTest extends TestCase
      */
     public function testWebhooksSubscriptionConfig()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -84,7 +96,6 @@ class WebhooksSubscriptionConfigTest extends TestCase
      */
     public function testPropertyMapping()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['mapping'], $this->array['mapping']);
     }
 }

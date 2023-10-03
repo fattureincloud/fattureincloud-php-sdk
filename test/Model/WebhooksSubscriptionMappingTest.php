@@ -29,6 +29,7 @@
 
 namespace FattureInCloud\Test\Model;
 
+use FattureInCloud\Model\WebhooksSubscriptionMapping;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -42,6 +43,8 @@ use PHPUnit\Framework\TestCase;
  */
 class WebhooksSubscriptionMappingTest extends TestCase
 {
+    public $type;
+
     /**
      * Setup before running any test case
      */
@@ -54,6 +57,7 @@ class WebhooksSubscriptionMappingTest extends TestCase
      */
     public function setUp(): void
     {
+        $this->type = WebhooksSubscriptionMapping::BINARY;
     }
 
     /**
@@ -75,7 +79,6 @@ class WebhooksSubscriptionMappingTest extends TestCase
      */
     public function testWebhooksSubscriptionMapping()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals('binary', $this->type);
     }
 }
