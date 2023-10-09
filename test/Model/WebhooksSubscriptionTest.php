@@ -62,7 +62,10 @@ class WebhooksSubscriptionTest extends TestCase
             "id": "SUB123",
             "sink": "https://endpoint.test",
             "verified": true,
-            "types": ["it.fattureincloud.webhooks.cashbook.create"]
+            "types": ["it.fattureincloud.webhooks.cashbook.create"],
+            "config": {
+                "mapping": "structured"
+            }
         }';
 
         $this->array = json_decode($json, true);
@@ -124,5 +127,15 @@ class WebhooksSubscriptionTest extends TestCase
     public function testPropertyTypes()
     {
         TestCase::assertEquals($this->object['types'], $this->array['types']);
+    }
+
+    /**
+     * Test attribute "config"
+     */
+    public function testPropertyConfig()
+    {
+        foreach ($this->array['config'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['config']);
+        }
     }
 }

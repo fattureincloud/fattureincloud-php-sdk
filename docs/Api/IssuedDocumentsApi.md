@@ -10,13 +10,13 @@ All URIs are relative to https://api-v2.fattureincloud.it, except if the operati
 | [**getEmailData()**](IssuedDocumentsApi.md#getEmailData) | **GET** /c/{company_id}/issued_documents/{document_id}/email | Get Email Data |
 | [**getExistingIssuedDocumentTotals()**](IssuedDocumentsApi.md#getExistingIssuedDocumentTotals) | **POST** /c/{company_id}/issued_documents/{document_id}/totals | Get Existing Issued Document Totals |
 | [**getIssuedDocument()**](IssuedDocumentsApi.md#getIssuedDocument) | **GET** /c/{company_id}/issued_documents/{document_id} | Get Issued Document |
-| [**getIssuedDocumentPreCreateInfo()**](IssuedDocumentsApi.md#getIssuedDocumentPreCreateInfo) | **GET** /c/{company_id}/issued_documents/info | Get Issued Document Pre-create info |
+| [**getIssuedDocumentPreCreateInfo()**](IssuedDocumentsApi.md#getIssuedDocumentPreCreateInfo) | **GET** /c/{company_id}/issued_documents/info | Get Issued Document Pre-Create Info |
 | [**getNewIssuedDocumentTotals()**](IssuedDocumentsApi.md#getNewIssuedDocumentTotals) | **POST** /c/{company_id}/issued_documents/totals | Get New Issued Document Totals |
-| [**joinIssuedDocuments()**](IssuedDocumentsApi.md#joinIssuedDocuments) | **GET** /c/{company_id}/issued_documents/join | Join issued documents |
+| [**joinIssuedDocuments()**](IssuedDocumentsApi.md#joinIssuedDocuments) | **GET** /c/{company_id}/issued_documents/join | Join Issued Documents |
 | [**listIssuedDocuments()**](IssuedDocumentsApi.md#listIssuedDocuments) | **GET** /c/{company_id}/issued_documents | List Issued Documents |
 | [**modifyIssuedDocument()**](IssuedDocumentsApi.md#modifyIssuedDocument) | **PUT** /c/{company_id}/issued_documents/{document_id} | Modify Issued Document |
 | [**scheduleEmail()**](IssuedDocumentsApi.md#scheduleEmail) | **POST** /c/{company_id}/issued_documents/{document_id}/email | Schedule Email |
-| [**transformIssuedDocument()**](IssuedDocumentsApi.md#transformIssuedDocument) | **GET** /c/{company_id}/issued_documents/transform | Transform issued document |
+| [**transformIssuedDocument()**](IssuedDocumentsApi.md#transformIssuedDocument) | **GET** /c/{company_id}/issued_documents/transform | Transform Issued Document |
 | [**uploadIssuedDocumentAttachment()**](IssuedDocumentsApi.md#uploadIssuedDocumentAttachment) | **POST** /c/{company_id}/issued_documents/attachment | Upload Issued Document Attachment |
 
 
@@ -402,7 +402,7 @@ try {
 getIssuedDocumentPreCreateInfo($company_id, $type): \FattureInCloud\Model\GetIssuedDocumentPreCreateInfoResponse
 ```
 
-Get Issued Document Pre-create info
+Get Issued Document Pre-Create Info
 
 Retrieves the information useful while creating a new document.
 
@@ -526,7 +526,7 @@ try {
 joinIssuedDocuments($company_id, $ids, $group, $e_invoice): \FattureInCloud\Model\JoinIssuedDocumentsResponse
 ```
 
-Join issued documents
+Join Issued Documents
 
 Joins issued documents.
 
@@ -795,7 +795,7 @@ void (empty response body)
 transformIssuedDocument($company_id, $original_document_id, $new_type, $e_invoice, $transform_keep_copy): \FattureInCloud\Model\TransformIssuedDocumentResponse
 ```
 
-Transform issued document
+Transform Issued Document
 
 Transforms the document.
 

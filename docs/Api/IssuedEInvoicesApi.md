@@ -4,10 +4,10 @@ All URIs are relative to https://api-v2.fattureincloud.it, except if the operati
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getEInvoiceRejectionReason()**](IssuedEInvoicesApi.md#getEInvoiceRejectionReason) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/error_reason | Get e-invoice rejection reason |
-| [**getEInvoiceXml()**](IssuedEInvoicesApi.md#getEInvoiceXml) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml | Get e-invoice XML |
-| [**sendEInvoice()**](IssuedEInvoicesApi.md#sendEInvoice) | **POST** /c/{company_id}/issued_documents/{document_id}/e_invoice/send | Send the e-invoice |
-| [**verifyEInvoiceXml()**](IssuedEInvoicesApi.md#verifyEInvoiceXml) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml_verify | Verify e-invoice XML |
+| [**getEInvoiceRejectionReason()**](IssuedEInvoicesApi.md#getEInvoiceRejectionReason) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/error_reason | Get E-Invoice Rejection Reason |
+| [**getEInvoiceXml()**](IssuedEInvoicesApi.md#getEInvoiceXml) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml | Get E-Invoice XML |
+| [**sendEInvoice()**](IssuedEInvoicesApi.md#sendEInvoice) | **POST** /c/{company_id}/issued_documents/{document_id}/e_invoice/send | Send E-Invoice |
+| [**verifyEInvoiceXml()**](IssuedEInvoicesApi.md#verifyEInvoiceXml) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml_verify | Verify E-Invoice XML |
 
 
 ## `getEInvoiceRejectionReason()`
@@ -16,7 +16,7 @@ All URIs are relative to https://api-v2.fattureincloud.it, except if the operati
 getEInvoiceRejectionReason($company_id, $document_id): \FattureInCloud\Model\GetEInvoiceRejectionReasonResponse
 ```
 
-Get e-invoice rejection reason
+Get E-Invoice Rejection Reason
 
 Get e-invoice rejection reason
 
@@ -78,7 +78,7 @@ try {
 getEInvoiceXml($company_id, $document_id, $include_attachment): string
 ```
 
-Get e-invoice XML
+Get E-Invoice XML
 
 Downloads the e-invoice in XML format.
 
@@ -142,7 +142,7 @@ try {
 sendEInvoice($company_id, $document_id, $send_e_invoice_request): \FattureInCloud\Model\SendEInvoiceResponse
 ```
 
-Send the e-invoice
+Send E-Invoice
 
 Sends the e-invoice to SDI.
 
@@ -206,7 +206,7 @@ try {
 verifyEInvoiceXml($company_id, $document_id): \FattureInCloud\Model\VerifyEInvoiceXmlResponse
 ```
 
-Verify e-invoice XML
+Verify E-Invoice XML
 
 Verifies the e-invoice XML format. Checks if all of the mandatory fields are filled and compliant to the right format.
 
