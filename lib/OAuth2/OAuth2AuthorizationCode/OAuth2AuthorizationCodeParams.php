@@ -1,6 +1,6 @@
 <?php
 
-namespace FattureInCloud\OAuth2;
+namespace FattureInCloud\OAuth2\OAuth2AuthorizationCode;
 
 /**
  *  The Redirect Params of the OAuth2 Authorization Code flow.

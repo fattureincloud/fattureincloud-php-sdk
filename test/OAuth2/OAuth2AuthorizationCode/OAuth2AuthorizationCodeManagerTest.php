@@ -1,16 +1,16 @@
 <?php
 
-namespace FattureInCloud\Test\OAuth2;
+namespace FattureInCloud\Test\OAuth2\OAuth2AuthorizationCode;
 
-use FattureInCloud\OAuth2\OAuth2AuthorizationCodeTokenResponse;
-use FattureInCloud\OAuth2\OAuth2AuthorizationCodeManager;
-use FattureInCloud\OAuth2\OAuth2AuthorizationCodeParams;
+use FattureInCloud\OAuth2\OAuth2AuthorizationCode\OAuth2AuthorizationCodeManager;
+use FattureInCloud\OAuth2\OAuth2AuthorizationCode\OAuth2AuthorizationCodeParams;
+use FattureInCloud\OAuth2\OAuth2TokenResponse;
 use FattureInCloud\OAuth2\Scope;
+use GuzzleHttp\Client;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
-use \GuzzleHttp\Handler\MockHandler;
-use \GuzzleHttp\HandlerStack;
-use \GuzzleHttp\Client;
-use \GuzzleHttp\Psr7\Response;
 
 class OAuth2AuthorizationCodeManagerTest extends TestCase
 {
@@ -79,11 +79,11 @@ class OAuth2AuthorizationCodeManagerTest extends TestCase
     }
 
     /**
-     * Test OAuth2AuthorizationCodeTokenResponse
+     * Test OAuth2TokenResponse
      */
-    public function testOAuth2AuthorizationCodeTokenResponse()
+    public function testOAuth2TokenResponse()
     {
-        $params = new OAuth2AuthorizationCodeTokenResponse('bearer', 'EXAMPLE_ACCESS_TOKEN', 'EXAMPLE_REFRESH_TOKEN', 86400);
+        $params = new OAuth2TokenResponse('bearer', 'EXAMPLE_ACCESS_TOKEN', 'EXAMPLE_REFRESH_TOKEN', 86400);
         $this->assertEquals('bearer', $params->getTokenType());
         $this->assertEquals('EXAMPLE_ACCESS_TOKEN', $params->getAccessToken());
         $this->assertEquals('EXAMPLE_REFRESH_TOKEN', $params->getRefreshToken());
