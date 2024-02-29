@@ -29,19 +29,23 @@
 
 namespace FattureInCloud\Test\Model;
 
+use FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
  * GetCompanyPlanUsageResponseTest Class Doc Comment
  *
  * @category    Class
- * @description 
+ * @description
  * @package     FattureInCloud
  * @author   Fatture In Cloud API team
  * @link     https://fattureincloud.it
  */
 class GetCompanyPlanUsageResponseTest extends TestCase
 {
+    public $array = [];
+    public $object;
+
     /**
      * Setup before running any test case
      */
@@ -54,6 +58,17 @@ class GetCompanyPlanUsageResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": {
+                "limit": 5,
+                "usage": 7
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\GetCompanyPlanUsageResponse');
+
     }
 
     /**
@@ -75,8 +90,9 @@ class GetCompanyPlanUsageResponseTest extends TestCase
      */
     public function testGetCompanyPlanUsageResponse()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -84,7 +100,8 @@ class GetCompanyPlanUsageResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }
