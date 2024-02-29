@@ -29,6 +29,7 @@
 
 namespace FattureInCloud\Test\Model;
 
+use FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -42,6 +43,9 @@ use PHPUnit\Framework\TestCase;
  */
 class CompanyPlanUsageTest extends TestCase
 {
+    public $array = [];
+    public $object;
+
     /**
      * Setup before running any test case
      */
@@ -54,6 +58,15 @@ class CompanyPlanUsageTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "limit": 5,
+            "usage": 7
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CompanyPlanUsage');
+
     }
 
     /**
@@ -75,8 +88,9 @@ class CompanyPlanUsageTest extends TestCase
      */
     public function testCompanyPlanUsage()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -84,8 +98,7 @@ class CompanyPlanUsageTest extends TestCase
      */
     public function testPropertyLimit()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['limit'], $this->array['limit']);
     }
 
     /**
@@ -93,7 +106,6 @@ class CompanyPlanUsageTest extends TestCase
      */
     public function testPropertyUsage()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['usage'], $this->array['usage']);
     }
 }
