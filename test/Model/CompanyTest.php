@@ -66,6 +66,8 @@ class CompanyTest extends TestCase
             "access_token": "4ff5f0fe5abcd1d7157fa13ca72ab62b6183db0667a576a0e19164801c18c4f7362a848fa32dbb8c3a3f94c34f3df95",
             "connection_id": 94566,
             "access_token": "ergaegwergq53wh65je5j",
+            "fic_license_expire": "2024-10-10",
+            "fic_plan": "standard",
               "controlled_companies": [
                 {
                   "id": 12246,
@@ -173,5 +175,22 @@ class CompanyTest extends TestCase
     public function testPropertyTaxCode()
     {
         TestCase::assertEquals($this->object['tax_code'], $this->array['tax_code']);
+    }
+
+    /**
+     * Test attribute "fic_license_expire"
+     */
+    public function testPropertyFicLicenseExpire()
+    {
+        $date = new \DateTime($this->array['fic_license_expire']);
+        TestCase::assertEquals($this->object['fic_license_expire'], $date);
+    }
+
+    /**
+     * Test attribute "fic_plan"
+     */
+    public function testPropertyFicPlan()
+    {
+        TestCase::assertEquals($this->object['fic_plan'], $this->array['fic_plan']);
     }
 }

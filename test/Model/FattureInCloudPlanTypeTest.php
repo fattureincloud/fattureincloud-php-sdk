@@ -29,6 +29,7 @@
 
 namespace FattureInCloud\Test\Model;
 
+use FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -42,6 +43,9 @@ use PHPUnit\Framework\TestCase;
  */
 class FattureInCloudPlanTypeTest extends TestCase
 {
+    public $array = [];
+    public $object;
+
     /**
      * Setup before running any test case
      */
@@ -54,6 +58,13 @@ class FattureInCloudPlanTypeTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{  
+            "fic_plan": "standard"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\Company');
     }
 
     /**
@@ -75,7 +86,6 @@ class FattureInCloudPlanTypeTest extends TestCase
      */
     public function testFattureInCloudPlanType()
     {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['fic_plan'], $this->array['fic_plan']);
     }
 }
