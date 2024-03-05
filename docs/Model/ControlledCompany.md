@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **name** | **string** | Controlled company id | [optional]
 **type** | [**\FattureInCloud\Model\CompanyType**](CompanyType.md) |  | [optional]
 **access_token** | **string** | Controlled company access token Only if type&#x3D;company] | [optional]
+**fic_license_expire** | **\DateTime** |  | [optional]
+**fic_plan** | [**\FattureInCloud\Model\FattureInCloudPlanType**](FattureInCloudPlanType.md) |  | [optional]
 **connection_id** | **float** | Controlled company connection id | [optional]
 **tax_code** | **string** | Controlled company tax code | [optional]
 

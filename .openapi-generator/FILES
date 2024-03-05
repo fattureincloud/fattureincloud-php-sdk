@@ -34,6 +34,7 @@ docs/Model/CompanyInfoPlanInfo.md
 docs/Model/CompanyInfoPlanInfoFunctions.md
 docs/Model/CompanyInfoPlanInfoFunctionsStatus.md
 docs/Model/CompanyInfoPlanInfoLimits.md
+docs/Model/CompanyPlanUsage.md
 docs/Model/CompanyType.md
 docs/Model/ControlledCompany.md
 docs/Model/CreateArchiveDocumentRequest.md
@@ -79,11 +80,13 @@ docs/Model/EntityType.md
 docs/Model/EventType.md
 docs/Model/F24.md
 docs/Model/F24Status.md
+docs/Model/FattureInCloudPlanType.md
 docs/Model/FunctionStatus.md
 docs/Model/GetArchiveDocumentResponse.md
 docs/Model/GetCashbookEntryResponse.md
 docs/Model/GetClientResponse.md
 docs/Model/GetCompanyInfoResponse.md
+docs/Model/GetCompanyPlanUsageResponse.md
 docs/Model/GetEInvoiceRejectionReasonResponse.md
 docs/Model/GetEmailDataResponse.md
 docs/Model/GetExistingIssuedDocumentTotalsRequest.md
@@ -283,6 +286,7 @@ lib/Model/CompanyInfoPlanInfo.php
 lib/Model/CompanyInfoPlanInfoFunctions.php
 lib/Model/CompanyInfoPlanInfoFunctionsStatus.php
 lib/Model/CompanyInfoPlanInfoLimits.php
+lib/Model/CompanyPlanUsage.php
 lib/Model/CompanyType.php
 lib/Model/ControlledCompany.php
 lib/Model/CreateArchiveDocumentRequest.php
@@ -328,11 +332,13 @@ lib/Model/EntityType.php
 lib/Model/EventType.php
 lib/Model/F24.php
 lib/Model/F24Status.php
+lib/Model/FattureInCloudPlanType.php
 lib/Model/FunctionStatus.php
 lib/Model/GetArchiveDocumentResponse.php
 lib/Model/GetCashbookEntryResponse.php
 lib/Model/GetClientResponse.php
 lib/Model/GetCompanyInfoResponse.php
+lib/Model/GetCompanyPlanUsageResponse.php
 lib/Model/GetEInvoiceRejectionReasonResponse.php
 lib/Model/GetEmailDataResponse.php
 lib/Model/GetExistingIssuedDocumentTotalsRequest.php
@@ -500,3 +506,6 @@ lib/Model/WebhooksSubscriptionConfig.php
 lib/Model/WebhooksSubscriptionMapping.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/CompanyPlanUsageTest.php
+test/Model/FattureInCloudPlanTypeTest.php
+test/Model/GetCompanyPlanUsageResponseTest.php
