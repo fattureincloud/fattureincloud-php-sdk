@@ -52,7 +52,6 @@ Name | Type | Description | Notes
 **show_payments** | **bool** | Show the expiration dates of the payments on the document | [optional]
 **show_payment_method** | **bool** | Show the payment method details on the document | [optional]
 **show_totals** | [**\FattureInCloud\Model\ShowTotalsMode**](ShowTotalsMode.md) |  | [optional]
-**show_paypal_button** | **bool** | Show paypal button in the PDF | [optional]
 **show_notification_button** | **bool** | Show notification button in the PDF | [optional]
 **show_tspay_button** | **bool** | Show ts pay button in the PDF | [optional]
 **delivery_note** | **bool** | Issued document has delivery note | [optional]

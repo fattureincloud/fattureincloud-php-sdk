@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **fic_plan** | [**\FattureInCloud\Model\FattureInCloudPlanType**](FattureInCloudPlanType.md) |  | [optional]
 **connection_id** | **int** | Company connection id | [optional]
 **tax_code** | **string** | Company tax code | [optional]
+**vat_number** | **string** | Company vat number | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
