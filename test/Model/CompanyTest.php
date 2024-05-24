@@ -62,6 +62,7 @@ class CompanyTest extends TestCase
             "id": 12345,
             "name": "Studio Commercialista",
             "tax_code": "ABCSFN94T17A794K",
+            "vat_number": "IT12345640961",
             "type": "accountant",
             "access_token": "4ff5f0fe5abcd1d7157fa13ca72ab62b6183db0667a576a0e19164801c18c4f7362a848fa32dbb8c3a3f94c34f3df95",
             "connection_id": 94566,
@@ -175,6 +176,14 @@ class CompanyTest extends TestCase
     public function testPropertyTaxCode()
     {
         TestCase::assertEquals($this->object['tax_code'], $this->array['tax_code']);
+    }
+
+    /**
+     * Test attribute "vat_number"
+     */
+    public function testPropertyVatNumber()
+    {
+        TestCase::assertEquals($this->object['vat_number'], $this->array['vat_number']);
     }
 
     /**
