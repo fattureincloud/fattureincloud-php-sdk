@@ -88,7 +88,6 @@ class IssuedDocumentTest extends TestCase
             "show_payment_method": false,
             "show_payments": true,
             "show_totals": "all",
-            "show_paypal_button": true,
             "show_notification_button": false,
             "is_marked": false,
             "date": "2021-08-20",
@@ -522,14 +521,6 @@ class IssuedDocumentTest extends TestCase
     public function testPropertyVMargins()
     {
         TestCase::assertEquals($this->object['v_margins'], $this->array['v_margins']);
-    }
-
-    /**
-     * Test attribute "show_paypal_button"
-     */
-    public function testPropertyShowPaypalButton()
-    {
-        TestCase::assertEquals($this->object['show_paypal_button'], $this->array['show_paypal_button']);
     }
 
     /**

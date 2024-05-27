@@ -59,7 +59,6 @@ class IssuedDocumentExtraDataTest extends TestCase
     public function setUp(): void
     {
         $json = '{
-            "show_sofort_button": true,
             "multifatture_sent": 3,
             "ts_communication": true,
             "ts_flag_tipo_spesa": 1,
@@ -100,14 +99,6 @@ class IssuedDocumentExtraDataTest extends TestCase
         foreach ($this->array as $key => $value) {
             Testcase::assertArrayHasKey($key, $this->object);
         }
-    }
-
-    /**
-     * Test attribute "show_sofort_button"
-     */
-    public function testPropertyShowSofortButton()
-    {
-        TestCase::assertEquals($this->object['show_sofort_button'], $this->array['show_sofort_button']);
     }
 
     /**
