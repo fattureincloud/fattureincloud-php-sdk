@@ -14,6 +14,8 @@ abstract class Operator
     public const IS_NOT = 'is not';
     public const LIKE = 'like';
     public const CONTAINS = 'contains';
+    public const NOT_LIKE = 'not like';
+    public const NOT_CONTAINS = 'not contains';
     public const STARTS_WITH = 'starts with';
     public const ENDS_WITH = 'ends with';
 }

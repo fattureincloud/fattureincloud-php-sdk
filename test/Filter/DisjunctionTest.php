@@ -75,9 +75,9 @@ class DisjunctionTest extends TestCase
      */
     public function testToString()
     {
-        $left = new Condition('city', Operator::EQ, 'Bergamo');
+        $left = new Condition('city', Operator::NOT_CONTAINS, 'Bergamo');
         $right = new Condition('age', Operator::LT, 30);
         $disjunction = new Disjunction($left, $right);
-        $this->assertEquals("(city = 'Bergamo' or age < 30)", (string)$disjunction);
+        $this->assertEquals("(city not contains 'Bergamo' or age < 30)", (string)$disjunction);
     }
 }
