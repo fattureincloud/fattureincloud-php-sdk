@@ -89,7 +89,6 @@ class JoinIssuedDocumentsResponseTest extends TestCase
                 "show_payment_method": false,
                 "show_payments": true,
                 "show_totals": "all",
-                "show_paypal_button": true,
                 "show_notification_button": false,
                 "is_marked": false,
                 "date": "2021-08-20",
