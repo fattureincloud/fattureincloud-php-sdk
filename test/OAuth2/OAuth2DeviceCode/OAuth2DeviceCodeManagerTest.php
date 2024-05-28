@@ -119,7 +119,7 @@ class OAuth2DeviceCodeManagerTest extends TestCase
      */
     public function testGetDeviceCode()
     {
-        $stream = '{"device_code":"d/DEVICE_CODE","user_code":"OMG","scope":{"situation":"r","settings":"a"},"verification_uri":"https://fattureincloud.it/connetti","interval":5,"expires_in":300}';
+        $stream = '{"data":{"device_code":"d/DEVICE_CODE","user_code":"OMG","scope":{"situation":"r","settings":"a"},"verification_uri":"https://fattureincloud.it/connetti","interval":5,"expires_in":300}}';
         $mock = new MockHandler([new Response(
             200,
             ['Content-Type' => 'application/json'],
