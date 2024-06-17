@@ -1,8 +1,8 @@
 <?php
 
-namespace FattureInCloud\Test\OAuth2;
+namespace FattureInCloud\Test\OAuth2\OAuth2AuthorizationCode;
 
-use FattureInCloud\OAuth2\OAuth2AuthorizationCodeParams;
+use FattureInCloud\OAuth2\OAuth2AuthorizationCode\OAuth2AuthorizationCodeParams;
 use PHPUnit\Framework\TestCase;
 
 class OAuth2AuthorizationCodeParamsTest extends TestCase

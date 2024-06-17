@@ -1,24 +1,19 @@
 <?php
 
-namespace FattureInCloud\OAuth2;
+namespace FattureInCloud\OAuth2\OAuth2AuthorizationCode;
 
+use FattureInCloud\OAuth2\OAuth2Error;
+use FattureInCloud\OAuth2\OAuth2Manager;
+use FattureInCloud\OAuth2\OAuth2TokenResponse;
 use GuzzleHttp\Client;
 
 /**
  *  The Manager for OAuth2 Authorization Code flow.
  */
-class OAuth2AuthorizationCodeManager
+class OAuth2AuthorizationCodeManager extends OAuth2Manager
 {
     private const DEFAULT_BASE_URI = 'https://api-v2.fattureincloud.it';
 
-    /**
-     * @var Client
-     */
-    private $client;
-    /**
-     * @var string
-     */
-    private $clientId;
     /**
      * @var string
      */
@@ -27,10 +22,6 @@ class OAuth2AuthorizationCodeManager
      * @var string
      */
     private $redirectUri;
-    /**
-     * @var string|null
-     */
-    private $baseUri;
 
     /**
      * @param string $clientId
@@ -41,51 +32,9 @@ class OAuth2AuthorizationCodeManager
      */
     public function __construct(string $clientId, string $clientSecret, string $redirectUri, string $baseUri = self::DEFAULT_BASE_URI, Client $client = null)
     {
-        if ($client === null) {
-            $this->client = new Client();
-        } else {
-            $this->client = $client;
-        }
-        $this->clientId = $clientId;
+        parent::__construct($clientId,$baseUri, $client);
         $this->clientSecret = $clientSecret;
         $this->redirectUri = $redirectUri;
-        $this->baseUri = $baseUri;
-    }
-
-    /**
-     * @return Client
-     */
-    public function getClient(): Client
-    {
-        return $this->client;
-    }
-
-    /**
-     * @param Client|null $client
-     */
-    public function setClient(Client $client = null): void
-    {
-        if ($client === null) {
-            $this->client = new Client();
-        } else {
-            $this->client = $client;
-        }
-    }
-
-    /**
-     * @return string
-     */
-    public function getClientId(): string
-    {
-        return $this->clientId;
-    }
-
-    /**
-     * @param string $clientId
-     */
-    public function setClientId(string $clientId): void
-    {
-        $this->clientId = $clientId;
     }
 
     /**
@@ -121,26 +70,6 @@ class OAuth2AuthorizationCodeManager
     }
 
     /**
-     * @return string
-     */
-    public function getBaseUri(): ?string
-    {
-        if ($this->baseUri === null) {
-            return self::DEFAULT_BASE_URI;
-        } else {
-            return $this->baseUri;
-        }
-    }
-
-    /**
-     * @param string|null $baseUri
-     */
-    public function setBaseUri(?string $baseUri): void
-    {
-        $this->baseUri = $baseUri;
-    }
-
-    /**
      * @param array $scopes
      * @param string $state
      * @return string
@@ -172,7 +101,8 @@ class OAuth2AuthorizationCodeManager
     }
 
     /**
-     * @param string $url
+     * @param string $code
+     * @return OAuth2Error|OAuth2TokenResponse
      */
     public function fetchToken(string $code)
     {
@@ -184,11 +114,12 @@ class OAuth2AuthorizationCodeManager
             'redirect_uri' => $this->redirectUri,
             'code' => $code
         ];
-        return $this->executePost($tokenUri, $body);
+        return $this->executeTokenPost($tokenUri, $body);
     }
 
     /**
      * @param string $refreshToken
+     * @return OAuth2Error|OAuth2TokenResponse
      */
     public function refreshToken(string $refreshToken)
     {
@@ -199,19 +130,6 @@ class OAuth2AuthorizationCodeManager
             'client_secret' => $this->clientSecret,
             'refresh_token' => $refreshToken,
         ];
-        return $this->executePost($tokenUri, $body);
-    }
-
-    private function executePost(string $uri, array $body)
-    {
-        $r = $this->client->post($uri, ['json' => $body]);
-        $statusCode = $r->getStatusCode();
-        $resBodyJson = $r->getBody()->getContents();
-        $resBody = json_decode($resBodyJson, true);
-        if ($statusCode === 200) {
-            return new OAuth2AuthorizationCodeTokenResponse($resBody['token_type'], $resBody['access_token'], $resBody['refresh_token'], $resBody['expires_in']);
-        } else {
-            return new OAuth2AuthorizationCodeError($statusCode, $resBody['error'], $resBody['error_description']);
-        }
+        return $this->executeTokenPost($tokenUri, $body);
     }
 }
