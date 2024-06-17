@@ -3,9 +3,9 @@
 namespace FattureInCloud\OAuth2;
 
 /**
- *  The Error Response of the OAuth2 Authorization Code flow.
+ *  The Error Response of the OAuth2 flow.
  */
-class OAuth2AuthorizationCodeError
+class OAuth2Error
 {
     /**
      * @var int
@@ -96,9 +96,9 @@ class OAuth2AuthorizationCodeError
 
     /**
      * @param string $json
-     * @return OAuth2AuthorizationCodeError
+     * @return OAuth2Error
      */
-    public static function fromJson(string $json): OAuth2AuthorizationCodeError
+    public static function fromJson(string $json): OAuth2Error
     {
         $arr = json_decode($json, true);
 
@@ -106,6 +106,6 @@ class OAuth2AuthorizationCodeError
         $error = $arr['error'];
         $errorDescription = $arr['error_description'];
 
-        return new OAuth2AuthorizationCodeError($code, $error, $errorDescription);
+        return new OAuth2Error($code, $error, $errorDescription);
     }
 }

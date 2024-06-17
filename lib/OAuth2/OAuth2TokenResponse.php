@@ -3,9 +3,9 @@
 namespace FattureInCloud\OAuth2;
 
 /**
- *  The Success Response of the OAuth2 Authorization Code flow.
+ *  The Success Response of the OAuth2 flow.
  */
-class OAuth2AuthorizationCodeTokenResponse
+class OAuth2TokenResponse
 {
     /**
      * @var string
@@ -119,9 +119,9 @@ class OAuth2AuthorizationCodeTokenResponse
 
     /**
      * @param string $json
-     * @return OAuth2AuthorizationCodeTokenResponse
+     * @return OAuth2TokenResponse
      */
-    public static function fromJson(string $json): OAuth2AuthorizationCodeTokenResponse
+    public static function fromJson(string $json): OAuth2TokenResponse
     {
         $arr = json_decode($json, true);
 
@@ -130,6 +130,6 @@ class OAuth2AuthorizationCodeTokenResponse
         $refreshToken = $arr['refresh_token'];
         $expiresIn = $arr['expires_in'];
 
-        return new OAuth2AuthorizationCodeTokenResponse($tokenType, $accessToken, $refreshToken, $expiresIn);
+        return new OAuth2TokenResponse($tokenType, $accessToken, $refreshToken, $expiresIn);
     }
 }
