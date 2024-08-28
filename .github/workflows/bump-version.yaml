@@ -14,7 +14,7 @@ jobs:
         name: Checkout OpenAPI repo
         env:
           GIT_OPENAPI_REPO_PATH: '${{ env.GIT_USER_ID }}/${{ env.GIT_OPENAPI_REPO_ID }}'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: ./openapi
           ref: master
@@ -39,7 +39,7 @@ jobs:
         name: Trigger Event
         env:
           GIT_OPENAPI_REPO_PATH: '${{ env.GIT_USER_ID }}/${{ env.GIT_OPENAPI_REPO_ID }}'
-        uses: peter-evans/repository-dispatch@v2
+        uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.FATTUREINCLOUD_BOT_TOKEN }}
           repository: ${{ env.GIT_OPENAPI_REPO_PATH }}

@@ -7,13 +7,13 @@ jobs:
     steps:
       - id: checkout
         name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.FATTUREINCLOUD_BOT_TOKEN }}
 
       - id: trigger-event
         name: Trigger Event
-        uses: peter-evans/repository-dispatch@v2
+        uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.FATTUREINCLOUD_BOT_TOKEN }}
           event-type: create-release
