@@ -38,7 +38,7 @@ class OAuth2DeviceCodeManager extends OAuth2Manager
             'scope' => $scopeStr,
         ];
         $res = $this->executePost($tokenUri, $body)['data'];
-        if (!$res instanceOf OAuth2Error) {
+        if (!$res instanceof OAuth2Error) {
             return new OAuth2DeviceCodeResponse($res['device_code'], $res['user_code'], $res['scope'], $res['verification_uri'], $res['interval'], $res['expires_in']);
         } else {
             return $res;
