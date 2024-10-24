@@ -127,7 +127,8 @@ class EmailTest extends TestCase
      */
     public function testPropertySentDate()
     {
-        TestCase::assertEquals($this->object['sent_date'], $this->array['sent_date']);
+        $date = new \DateTime($this->array['sent_date']);
+        TestCase::assertEquals($this->object['sent_date'], $date);
     }
 
     /**

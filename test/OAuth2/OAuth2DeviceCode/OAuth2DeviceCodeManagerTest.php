@@ -66,8 +66,7 @@ class OAuth2DeviceCodeManagerTest extends TestCase
             'situation' => 'r',
             'settings' => 'a',
         ];
-        $params = new OAuth2DeviceCodeResponse('d/DEVICE_CODE', 'OMG', $scope, 'https://fattureincloud.it/connetti', 5, 300);
-        ;
+        $params = new OAuth2DeviceCodeResponse('d/DEVICE_CODE', 'OMG', $scope, 'https://fattureincloud.it/connetti', 5, 300);;
         $this->assertEquals('d/DEVICE_CODE', $params->getDeviceCode());
         $this->assertEquals('OMG', $params->getUserCode());
         $this->assertEquals($scope, $params->getScope());
@@ -131,7 +130,7 @@ class OAuth2DeviceCodeManagerTest extends TestCase
         $customClient = new Client(['handler' => $handler]);
 
         $e = new OAuth2DeviceCodeManager('CLIENT_ID', 'http://fic.api.test', $customClient);
-        $scopes = [Scope::SITUATION_READ, Scope::SETTINGS_ALL];
+        $scopes = array(Scope::SITUATION_READ, Scope::SETTINGS_ALL);
         $res = $e->getDeviceCode($scopes);
         $this->assertEquals('d/DEVICE_CODE', $res->getDeviceCode());
         $this->assertEquals('OMG', $res->getUserCode());
