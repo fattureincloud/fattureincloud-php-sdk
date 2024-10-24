@@ -109,7 +109,6 @@ docs/Model/GetReceiptsMonthlyTotalsResponse.md
 docs/Model/GetReceivedDocumentPreCreateInfoResponse.md
 docs/Model/GetReceivedDocumentResponse.md
 docs/Model/GetSupplierResponse.md
-docs/Model/GetTaxProfileResponse.md
 docs/Model/GetUserInfoResponse.md
 docs/Model/GetUserInfoResponseEmailConfirmationState.md
 docs/Model/GetUserInfoResponseInfo.md
@@ -233,7 +232,6 @@ docs/Model/SenderEmail.md
 docs/Model/ShowTotalsMode.md
 docs/Model/Supplier.md
 docs/Model/SupplierType.md
-docs/Model/TaxProfile.md
 docs/Model/TransformIssuedDocumentResponse.md
 docs/Model/UploadArchiveAttachmentResponse.md
 docs/Model/UploadF24AttachmentResponse.md
@@ -363,7 +361,6 @@ lib/Model/GetReceiptsMonthlyTotalsResponse.php
 lib/Model/GetReceivedDocumentPreCreateInfoResponse.php
 lib/Model/GetReceivedDocumentResponse.php
 lib/Model/GetSupplierResponse.php
-lib/Model/GetTaxProfileResponse.php
 lib/Model/GetUserInfoResponse.php
 lib/Model/GetUserInfoResponseEmailConfirmationState.php
 lib/Model/GetUserInfoResponseInfo.php
@@ -488,7 +485,6 @@ lib/Model/SenderEmail.php
 lib/Model/ShowTotalsMode.php
 lib/Model/Supplier.php
 lib/Model/SupplierType.php
-lib/Model/TaxProfile.php
 lib/Model/TransformIssuedDocumentResponse.php
 lib/Model/UploadArchiveAttachmentResponse.php
 lib/Model/UploadF24AttachmentResponse.php
@@ -510,5 +506,3 @@ lib/Model/WebhooksSubscriptionConfig.php
 lib/Model/WebhooksSubscriptionMapping.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/GetTaxProfileResponseTest.php
-test/Model/TaxProfileTest.php

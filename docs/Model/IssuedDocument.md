@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **year** | **int** | Issued document year | [optional]
 **currency** | [**\FattureInCloud\Model\Currency**](Currency.md) |  | [optional]
 **language** | [**\FattureInCloud\Model\Language**](Language.md) |  | [optional]
-**subject** | **string** | Issued document subject [not shown on the PDF] | [optional]
+**subject** | **string** | Issued document subject | [optional]
 **visible_subject** | **string** | Issued document visible subject | [optional]
 **rc_center** | **string** | Issued document revenue center [or cost center if type&#x3D;supplier_order]. | [optional]
 **notes** | **string** | Issued document extra notes | [optional]
