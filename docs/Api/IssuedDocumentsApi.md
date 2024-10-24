@@ -523,7 +523,7 @@ try {
 ## `joinIssuedDocuments()`
 
 ```php
-joinIssuedDocuments($company_id, $ids, $group, $e_invoice): \FattureInCloud\Model\JoinIssuedDocumentsResponse
+joinIssuedDocuments($company_id, $ids, $group, $parameter): \FattureInCloud\Model\JoinIssuedDocumentsResponse
 ```
 
 Join Issued Documents
@@ -550,10 +550,10 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
 $company_id = 12345; // int | The ID of the company.
 $ids = 1,2,3,4; // string | Ids of the documents.
 $group = 56; // int | Group items.
-$e_invoice = 56; // int | New document e_invoice.
+$parameter = delivery_notes, orders, quotes, work_reports; // string | Type of the parameters to be joined
 
 try {
-    $result = $apiInstance->joinIssuedDocuments($company_id, $ids, $group, $e_invoice);
+    $result = $apiInstance->joinIssuedDocuments($company_id, $ids, $group, $parameter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IssuedDocumentsApi->joinIssuedDocuments: ', $e->getMessage(), PHP_EOL;
@@ -567,7 +567,7 @@ try {
 | **company_id** | **int**| The ID of the company. | |
 | **ids** | **string**| Ids of the documents. | |
 | **group** | **int**| Group items. | [optional] |
-| **e_invoice** | **int**| New document e_invoice. | [optional] |
+| **parameter** | **string**| Type of the parameters to be joined | [optional] |
 
 ### Return type
 
@@ -792,7 +792,7 @@ void (empty response body)
 ## `transformIssuedDocument()`
 
 ```php
-transformIssuedDocument($company_id, $original_document_id, $new_type, $e_invoice, $transform_keep_copy): \FattureInCloud\Model\TransformIssuedDocumentResponse
+transformIssuedDocument($company_id, $original_document_id, $new_type, $parameter, $e_invoice, $transform_keep_copy): \FattureInCloud\Model\TransformIssuedDocumentResponse
 ```
 
 Transform Issued Document
@@ -819,11 +819,12 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
 $company_id = 12345; // int | The ID of the company.
 $original_document_id = 56; // int | Original document id.
 $new_type = 'new_type_example'; // string | New document type.
+$parameter = 'parameter_example'; // string | Old document type.
 $e_invoice = 56; // int | New document e_invoice.
 $transform_keep_copy = 56; // int | Keep the old document.
 
 try {
-    $result = $apiInstance->transformIssuedDocument($company_id, $original_document_id, $new_type, $e_invoice, $transform_keep_copy);
+    $result = $apiInstance->transformIssuedDocument($company_id, $original_document_id, $new_type, $parameter, $e_invoice, $transform_keep_copy);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IssuedDocumentsApi->transformIssuedDocument: ', $e->getMessage(), PHP_EOL;
@@ -837,6 +838,7 @@ try {
 | **company_id** | **int**| The ID of the company. | |
 | **original_document_id** | **int**| Original document id. | |
 | **new_type** | **string**| New document type. | |
+| **parameter** | **string**| Old document type. | [optional] |
 | **e_invoice** | **int**| New document e_invoice. | [optional] |
 | **transform_keep_copy** | **int**| Keep the old document. | [optional] |
 

@@ -30,7 +30,6 @@
 namespace FattureInCloud\Test\Model;
 
 use FattureInCloud\Model\EventType;
-
 use PHPUnit\Framework\TestCase;
 use \FattureInCloud\ObjectSerializer;
 

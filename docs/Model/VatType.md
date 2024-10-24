@@ -13,5 +13,6 @@ Name | Type | Description | Notes
 **ei_description** | **string** | Vat type e-invoice description | [optional]
 **editable** | **bool** | [Read Only] Is the vat type is editable. | [optional] [readonly]
 **is_disabled** | **bool** | Is the vat type disabled | [optional]
+**default** | **bool** | If the vat type is default | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
