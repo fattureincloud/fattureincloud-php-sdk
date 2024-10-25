@@ -40,9 +40,7 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$create_receipt_request = new \FattureInCloud\Model\CreateReceiptRequest; // \FattureInCloud\Model\CreateReceiptRequest | The Receipt to create.
-
+    $company_id = 12345; // int | The ID of the company.$create_receipt_request = new \FattureInCloud\Model\CreateReceiptRequest; // \FattureInCloud\Model\CreateReceiptRequest | The Receipt to create.
 try {
     $result = $apiInstance->createReceipt($company_id, $create_receipt_request);
     print_r($result);
@@ -102,9 +100,7 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$document_id = 56; // int | The ID of the document.
-
+    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.
 try {
     $apiInstance->deleteReceipt($company_id, $document_id);
 } catch (Exception $e) {
@@ -163,11 +159,7 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$document_id = 56; // int | The ID of the document.
-$fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset.
-
+    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.$fields = 'fields_example'; // string | List of comma-separated fields.$fieldset = 'fieldset_example'; // string | Name of the fieldset.
 try {
     $result = $apiInstance->getReceipt($company_id, $document_id, $fields, $fieldset);
     print_r($result);
@@ -229,8 +221,7 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-
+    $company_id = 12345; // int | The ID of the company.
 try {
     $result = $apiInstance->getReceiptPreCreateInfo($company_id);
     print_r($result);
@@ -289,10 +280,7 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$type = 'type_example'; // string | Receipt Type
-$year = 'year_example'; // string | Year for which you want monthly totals
-
+    $company_id = 12345; // int | The ID of the company.$type = 'type_example'; // string | Receipt Type$year = 'year_example'; // string | Year for which you want monthly totals
 try {
     $result = $apiInstance->getReceiptsMonthlyTotals($company_id, $type, $year);
     print_r($result);
@@ -353,14 +341,7 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset.
-$page = 1; // int | The page to retrieve.
-$per_page = 5; // int | The size of the page.
-$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
-$q = 'q_example'; // string | Query for filtering the results.
-
+    $company_id = 12345; // int | The ID of the company.$fields = 'fields_example'; // string | List of comma-separated fields.$fieldset = 'fieldset_example'; // string | Name of the fieldset.$page = 1; // int | The page to retrieve.$per_page = 5; // int | The size of the page.$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).$q = 'q_example'; // string | Query for filtering the results.
 try {
     $result = $apiInstance->listReceipts($company_id, $fields, $fieldset, $page, $per_page, $sort, $q);
     print_r($result);
@@ -425,10 +406,7 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$document_id = 56; // int | The ID of the document.
-$modify_receipt_request = new \FattureInCloud\Model\ModifyReceiptRequest; // \FattureInCloud\Model\ModifyReceiptRequest | Modified receipt.
-
+    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.$modify_receipt_request = new \FattureInCloud\Model\ModifyReceiptRequest; // \FattureInCloud\Model\ModifyReceiptRequest | Modified receipt.
 try {
     $result = $apiInstance->modifyReceipt($company_id, $document_id, $modify_receipt_request);
     print_r($result);

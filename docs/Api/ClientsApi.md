@@ -38,9 +38,7 @@ $apiInstance = new FattureInCloud\Api\ClientsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$create_client_request = new \FattureInCloud\Model\CreateClientRequest; // \FattureInCloud\Model\CreateClientRequest | The client to create
-
+    $company_id = 12345; // int | The ID of the company.$create_client_request = new \FattureInCloud\Model\CreateClientRequest; // \FattureInCloud\Model\CreateClientRequest | The client to create
 try {
     $result = $apiInstance->createClient($company_id, $create_client_request);
     print_r($result);
@@ -100,9 +98,7 @@ $apiInstance = new FattureInCloud\Api\ClientsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$client_id = 56; // int | The ID of the client.
-
+    $company_id = 12345; // int | The ID of the company.$client_id = 56; // int | The ID of the client.
 try {
     $apiInstance->deleteClient($company_id, $client_id);
 } catch (Exception $e) {
@@ -161,11 +157,7 @@ $apiInstance = new FattureInCloud\Api\ClientsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$client_id = 56; // int | The ID of the client.
-$fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset.
-
+    $company_id = 12345; // int | The ID of the company.$client_id = 56; // int | The ID of the client.$fields = 'fields_example'; // string | List of comma-separated fields.$fieldset = 'fieldset_example'; // string | Name of the fieldset.
 try {
     $result = $apiInstance->getClient($company_id, $client_id, $fields, $fieldset);
     print_r($result);
@@ -227,14 +219,7 @@ $apiInstance = new FattureInCloud\Api\ClientsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset.
-$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
-$page = 1; // int | The page to retrieve.
-$per_page = 5; // int | The size of the page.
-$q = 'q_example'; // string | Query for filtering the results.
-
+    $company_id = 12345; // int | The ID of the company.$fields = 'fields_example'; // string | List of comma-separated fields.$fieldset = 'fieldset_example'; // string | Name of the fieldset.$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).$page = 1; // int | The page to retrieve.$per_page = 5; // int | The size of the page.$q = 'q_example'; // string | Query for filtering the results.
 try {
     $result = $apiInstance->listClients($company_id, $fields, $fieldset, $sort, $page, $per_page, $q);
     print_r($result);
@@ -299,10 +284,7 @@ $apiInstance = new FattureInCloud\Api\ClientsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$client_id = 56; // int | The ID of the client.
-$modify_client_request = new \FattureInCloud\Model\ModifyClientRequest; // \FattureInCloud\Model\ModifyClientRequest | The modified Client. First level parameters are managed in delta mode.
-
+    $company_id = 12345; // int | The ID of the company.$client_id = 56; // int | The ID of the client.$modify_client_request = new \FattureInCloud\Model\ModifyClientRequest; // \FattureInCloud\Model\ModifyClientRequest | The modified Client. First level parameters are managed in delta mode.
 try {
     $result = $apiInstance->modifyClient($company_id, $client_id, $modify_client_request);
     print_r($result);

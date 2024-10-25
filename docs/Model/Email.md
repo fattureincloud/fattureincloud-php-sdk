@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Email id | [optional]
 **status** | [**\FattureInCloud\Model\EmailStatus**](EmailStatus.md) |  | [optional]
-**sent_date** | **\DateTime** | Email sent date | [optional]
+**sent_date** | **string** | Email sent date | [optional]
 **errors_count** | **int** | Email errors count | [optional]
 **error_log** | **string** | Email errors log | [optional]
 **from_email** | **string** | Email sender email | [optional]

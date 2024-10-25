@@ -49,8 +49,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-
+    $company_id = 12345; // int | The ID of the company.
 try {
     $result = $apiInstance->listArchiveCategories($company_id);
     print_r($result);
@@ -109,9 +108,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$postal_code = 'postal_code_example'; // string | Postal code for filtering.
-$city = 'city_example'; // string | City for filtering (ignored if postal_code is passed).
-
+    $postal_code = 'postal_code_example'; // string | Postal code for filtering.$city = 'city_example'; // string | City for filtering (ignored if postal_code is passed).
 try {
     $result = $apiInstance->listCities($postal_code, $city);
     print_r($result);
@@ -171,8 +168,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-
+    $company_id = 12345; // int | The ID of the company.
 try {
     $result = $apiInstance->listCostCenters($company_id);
     print_r($result);
@@ -231,7 +227,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-
+    
 try {
     $result = $apiInstance->listCountries();
     print_r($result);
@@ -288,7 +284,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-
+    
 try {
     $result = $apiInstance->listCurrencies();
     print_r($result);
@@ -345,7 +341,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-
+    
 try {
     $result = $apiInstance->listDeliveryNotesDefaultCausals();
     print_r($result);
@@ -402,7 +398,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-
+    
 try {
     $result = $apiInstance->listDetailedCountries();
     print_r($result);
@@ -459,7 +455,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-
+    
 try {
     $result = $apiInstance->listLanguages();
     print_r($result);
@@ -516,11 +512,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset.
-$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
-
+    $company_id = 12345; // int | The ID of the company.$fields = 'fields_example'; // string | List of comma-separated fields.$fieldset = 'fieldset_example'; // string | Name of the fieldset.$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
 try {
     $result = $apiInstance->listPaymentAccounts($company_id, $fields, $fieldset, $sort);
     print_r($result);
@@ -582,11 +574,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset.
-$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
-
+    $company_id = 12345; // int | The ID of the company.$fields = 'fields_example'; // string | List of comma-separated fields.$fieldset = 'fieldset_example'; // string | Name of the fieldset.$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
 try {
     $result = $apiInstance->listPaymentMethods($company_id, $fields, $fieldset, $sort);
     print_r($result);
@@ -648,9 +636,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$context = 'context_example'; // string | Categories resource type.
-
+    $company_id = 12345; // int | The ID of the company.$context = 'context_example'; // string | Categories resource type.
 try {
     $result = $apiInstance->listProductCategories($company_id, $context);
     print_r($result);
@@ -710,8 +696,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-
+    $company_id = 12345; // int | The ID of the company.
 try {
     $result = $apiInstance->listReceivedDocumentCategories($company_id);
     print_r($result);
@@ -770,8 +755,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-
+    $company_id = 12345; // int | The ID of the company.
 try {
     $result = $apiInstance->listRevenueCenters($company_id);
     print_r($result);
@@ -830,9 +814,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$type = 'all'; // string | Type of the templates.
-$by_type = false; // bool | [Only if type=all] If true, splits the list in objects, grouping templates by type.
-
+    $type = 'all'; // string | Type of the templates.$by_type = false; // bool | [Only if type=all] If true, splits the list in objects, grouping templates by type.
 try {
     $result = $apiInstance->listTemplates($type, $by_type);
     print_r($result);
@@ -892,7 +874,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-
+    
 try {
     $result = $apiInstance->listUnitsOfMeasure();
     print_r($result);
@@ -949,9 +931,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset.
-
+    $company_id = 12345; // int | The ID of the company.$fieldset = 'fieldset_example'; // string | Name of the fieldset.
 try {
     $result = $apiInstance->listVatTypes($company_id, $fieldset);
     print_r($result);
