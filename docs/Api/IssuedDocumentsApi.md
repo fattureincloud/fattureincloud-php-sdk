@@ -47,9 +47,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$create_issued_document_request = new \FattureInCloud\Model\CreateIssuedDocumentRequest; // \FattureInCloud\Model\CreateIssuedDocumentRequest | The Issued Document
-
+    $company_id = 12345; // int | The ID of the company.$create_issued_document_request = new \FattureInCloud\Model\CreateIssuedDocumentRequest; // \FattureInCloud\Model\CreateIssuedDocumentRequest | The Issued Document
 try {
     $result = $apiInstance->createIssuedDocument($company_id, $create_issued_document_request);
     print_r($result);
@@ -109,9 +107,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$document_id = 56; // int | The ID of the document.
-
+    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.
 try {
     $apiInstance->deleteIssuedDocument($company_id, $document_id);
 } catch (Exception $e) {
@@ -170,9 +166,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$document_id = 56; // int | The ID of the document.
-
+    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.
 try {
     $apiInstance->deleteIssuedDocumentAttachment($company_id, $document_id);
 } catch (Exception $e) {
@@ -231,9 +225,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$document_id = 56; // int | The ID of the document.
-
+    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.
 try {
     $result = $apiInstance->getEmailData($company_id, $document_id);
     print_r($result);
@@ -293,10 +285,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$document_id = 56; // int | The ID of the document.
-$get_existing_issued_document_totals_request = new \FattureInCloud\Model\GetExistingIssuedDocumentTotalsRequest; // \FattureInCloud\Model\GetExistingIssuedDocumentTotalsRequest
-
+    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.$get_existing_issued_document_totals_request = new \FattureInCloud\Model\GetExistingIssuedDocumentTotalsRequest; // \FattureInCloud\Model\GetExistingIssuedDocumentTotalsRequest
 try {
     $result = $apiInstance->getExistingIssuedDocumentTotals($company_id, $document_id, $get_existing_issued_document_totals_request);
     print_r($result);
@@ -357,11 +346,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$document_id = 56; // int | The ID of the document.
-$fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset.
-
+    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.$fields = 'fields_example'; // string | List of comma-separated fields.$fieldset = 'fieldset_example'; // string | Name of the fieldset.
 try {
     $result = $apiInstance->getIssuedDocument($company_id, $document_id, $fields, $fieldset);
     print_r($result);
@@ -423,9 +408,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$type = 'type_example'; // string | The type of the issued document.
-
+    $company_id = 12345; // int | The ID of the company.$type = 'type_example'; // string | The type of the issued document.
 try {
     $result = $apiInstance->getIssuedDocumentPreCreateInfo($company_id, $type);
     print_r($result);
@@ -485,9 +468,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$get_new_issued_document_totals_request = new \FattureInCloud\Model\GetNewIssuedDocumentTotalsRequest; // \FattureInCloud\Model\GetNewIssuedDocumentTotalsRequest
-
+    $company_id = 12345; // int | The ID of the company.$get_new_issued_document_totals_request = new \FattureInCloud\Model\GetNewIssuedDocumentTotalsRequest; // \FattureInCloud\Model\GetNewIssuedDocumentTotalsRequest
 try {
     $result = $apiInstance->getNewIssuedDocumentTotals($company_id, $get_new_issued_document_totals_request);
     print_r($result);
@@ -523,7 +504,7 @@ try {
 ## `joinIssuedDocuments()`
 
 ```php
-joinIssuedDocuments($company_id, $ids, $group, $e_invoice): \FattureInCloud\Model\JoinIssuedDocumentsResponse
+joinIssuedDocuments($company_id, $ids, $group, $parameter): \FattureInCloud\Model\JoinIssuedDocumentsResponse
 ```
 
 Join Issued Documents
@@ -547,13 +528,9 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$ids = 1,2,3,4; // string | Ids of the documents.
-$group = 56; // int | Group items.
-$e_invoice = 56; // int | New document e_invoice.
-
+    $company_id = 12345; // int | The ID of the company.$ids = 1,2,3,4; // string | Ids of the documents.$group = 56; // int | Group items.$parameter = delivery_notes, orders, quotes, work_reports; // string | Type of the parameters to be joined
 try {
-    $result = $apiInstance->joinIssuedDocuments($company_id, $ids, $group, $e_invoice);
+    $result = $apiInstance->joinIssuedDocuments($company_id, $ids, $group, $parameter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IssuedDocumentsApi->joinIssuedDocuments: ', $e->getMessage(), PHP_EOL;
@@ -567,7 +544,7 @@ try {
 | **company_id** | **int**| The ID of the company. | |
 | **ids** | **string**| Ids of the documents. | |
 | **group** | **int**| Group items. | [optional] |
-| **e_invoice** | **int**| New document e_invoice. | [optional] |
+| **parameter** | **string**| Type of the parameters to be joined | [optional] |
 
 ### Return type
 
@@ -613,16 +590,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$type = 'type_example'; // string | The type of the issued document.
-$fields = 'fields_example'; // string | List of comma-separated fields.
-$fieldset = 'fieldset_example'; // string | Name of the fieldset.
-$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
-$page = 1; // int | The page to retrieve.
-$per_page = 5; // int | The size of the page.
-$q = 'q_example'; // string | Query for filtering the results.
-$inclusive = 56; // int | (Only for type = delivery_notes) Include invoices delivery notes.
-
+    $company_id = 12345; // int | The ID of the company.$type = 'type_example'; // string | The type of the issued document.$fields = 'fields_example'; // string | List of comma-separated fields.$fieldset = 'fieldset_example'; // string | Name of the fieldset.$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).$page = 1; // int | The page to retrieve.$per_page = 5; // int | The size of the page.$q = 'q_example'; // string | Query for filtering the results.$inclusive = 56; // int | (Only for type = delivery_notes) Include invoices delivery notes.
 try {
     $result = $apiInstance->listIssuedDocuments($company_id, $type, $fields, $fieldset, $sort, $page, $per_page, $q, $inclusive);
     print_r($result);
@@ -689,10 +657,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$document_id = 56; // int | The ID of the document.
-$modify_issued_document_request = new \FattureInCloud\Model\ModifyIssuedDocumentRequest; // \FattureInCloud\Model\ModifyIssuedDocumentRequest | The modified document
-
+    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.$modify_issued_document_request = new \FattureInCloud\Model\ModifyIssuedDocumentRequest; // \FattureInCloud\Model\ModifyIssuedDocumentRequest | The modified document
 try {
     $result = $apiInstance->modifyIssuedDocument($company_id, $document_id, $modify_issued_document_request);
     print_r($result);
@@ -753,10 +718,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$document_id = 56; // int | The ID of the document.
-$schedule_email_request = new \FattureInCloud\Model\ScheduleEmailRequest; // \FattureInCloud\Model\ScheduleEmailRequest | Email Schedule
-
+    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.$schedule_email_request = new \FattureInCloud\Model\ScheduleEmailRequest; // \FattureInCloud\Model\ScheduleEmailRequest | Email Schedule
 try {
     $apiInstance->scheduleEmail($company_id, $document_id, $schedule_email_request);
 } catch (Exception $e) {
@@ -792,7 +754,7 @@ void (empty response body)
 ## `transformIssuedDocument()`
 
 ```php
-transformIssuedDocument($company_id, $original_document_id, $new_type, $e_invoice, $transform_keep_copy): \FattureInCloud\Model\TransformIssuedDocumentResponse
+transformIssuedDocument($company_id, $original_document_id, $new_type, $parameter, $e_invoice, $transform_keep_copy): \FattureInCloud\Model\TransformIssuedDocumentResponse
 ```
 
 Transform Issued Document
@@ -816,14 +778,9 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$original_document_id = 56; // int | Original document id.
-$new_type = 'new_type_example'; // string | New document type.
-$e_invoice = 56; // int | New document e_invoice.
-$transform_keep_copy = 56; // int | Keep the old document.
-
+    $company_id = 12345; // int | The ID of the company.$original_document_id = 56; // int | Original document id.$new_type = 'new_type_example'; // string | New document type.$parameter = 'parameter_example'; // string | Old document type.$e_invoice = 56; // int | New document e_invoice.$transform_keep_copy = 56; // int | Keep the old document.
 try {
-    $result = $apiInstance->transformIssuedDocument($company_id, $original_document_id, $new_type, $e_invoice, $transform_keep_copy);
+    $result = $apiInstance->transformIssuedDocument($company_id, $original_document_id, $new_type, $parameter, $e_invoice, $transform_keep_copy);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IssuedDocumentsApi->transformIssuedDocument: ', $e->getMessage(), PHP_EOL;
@@ -837,6 +794,7 @@ try {
 | **company_id** | **int**| The ID of the company. | |
 | **original_document_id** | **int**| Original document id. | |
 | **new_type** | **string**| New document type. | |
+| **parameter** | **string**| Old document type. | [optional] |
 | **e_invoice** | **int**| New document e_invoice. | [optional] |
 | **transform_keep_copy** | **int**| Keep the old document. | [optional] |
 
@@ -884,10 +842,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$filename = 'filename_example'; // string | Attachment file name
-$attachment = "/path/to/file.txt"; // \SplFileObject | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx]
-
+    $company_id = 12345; // int | The ID of the company.$filename = 'filename_example'; // string | Attachment file name$attachment = "/path/to/file.txt"; // \SplFileObject | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx]
 try {
     $result = $apiInstance->uploadIssuedDocumentAttachment($company_id, $filename, $attachment);
     print_r($result);

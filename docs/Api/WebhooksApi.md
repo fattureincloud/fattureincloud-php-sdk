@@ -38,9 +38,7 @@ $apiInstance = new FattureInCloud\Api\WebhooksApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$create_webhooks_subscription_request = new \FattureInCloud\Model\CreateWebhooksSubscriptionRequest; // \FattureInCloud\Model\CreateWebhooksSubscriptionRequest | 
-
+    $company_id = 12345; // int | The ID of the company.$create_webhooks_subscription_request = new \FattureInCloud\Model\CreateWebhooksSubscriptionRequest; // \FattureInCloud\Model\CreateWebhooksSubscriptionRequest | 
 try {
     $result = $apiInstance->createWebhooksSubscription($company_id, $create_webhooks_subscription_request);
     print_r($result);
@@ -100,9 +98,7 @@ $apiInstance = new FattureInCloud\Api\WebhooksApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$subscription_id = SUB123; // string | The ID of the subscription.
-
+    $company_id = 12345; // int | The ID of the company.$subscription_id = SUB123; // string | The ID of the subscription.
 try {
     $apiInstance->deleteWebhooksSubscription($company_id, $subscription_id);
 } catch (Exception $e) {
@@ -161,9 +157,7 @@ $apiInstance = new FattureInCloud\Api\WebhooksApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$subscription_id = SUB123; // string | The ID of the subscription.
-
+    $company_id = 12345; // int | The ID of the company.$subscription_id = SUB123; // string | The ID of the subscription.
 try {
     $result = $apiInstance->getWebhooksSubscription($company_id, $subscription_id);
     print_r($result);
@@ -223,8 +217,7 @@ $apiInstance = new FattureInCloud\Api\WebhooksApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-
+    $company_id = 12345; // int | The ID of the company.
 try {
     $result = $apiInstance->listWebhooksSubscriptions($company_id);
     print_r($result);
@@ -283,10 +276,7 @@ $apiInstance = new FattureInCloud\Api\WebhooksApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$subscription_id = SUB123; // string | The ID of the subscription.
-$modify_webhooks_subscription_request = new \FattureInCloud\Model\ModifyWebhooksSubscriptionRequest; // \FattureInCloud\Model\ModifyWebhooksSubscriptionRequest
-
+    $company_id = 12345; // int | The ID of the company.$subscription_id = SUB123; // string | The ID of the subscription.$modify_webhooks_subscription_request = new \FattureInCloud\Model\ModifyWebhooksSubscriptionRequest; // \FattureInCloud\Model\ModifyWebhooksSubscriptionRequest
 try {
     $result = $apiInstance->modifyWebhooksSubscription($company_id, $subscription_id, $modify_webhooks_subscription_request);
     print_r($result);

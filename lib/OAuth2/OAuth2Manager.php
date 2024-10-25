@@ -99,17 +99,17 @@ abstract class OAuth2Manager
     /**
      * @param string $code
      */
-    abstract function fetchToken(string $code);
+    abstract public function fetchToken(string $code);
 
     /**
      * @param string $refreshToken
      */
-    abstract function refreshToken(string $refreshToken);
+    abstract public function refreshToken(string $refreshToken);
 
     protected function executeTokenPost(string $uri, array $body)
     {
         $res = $this->executePost($uri, $body);
-        if (!$res instanceOf OAuth2Error) {
+        if (!$res instanceof OAuth2Error) {
             return new OAuth2TokenResponse($res['token_type'], $res['access_token'], $res['refresh_token'], $res['expires_in']);
         } else {
             return $res;

@@ -35,8 +35,7 @@ $apiInstance = new FattureInCloud\Api\CompaniesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-
+    $company_id = 12345; // int | The ID of the company.
 try {
     $result = $apiInstance->getCompanyInfo($company_id);
     print_r($result);
@@ -95,9 +94,7 @@ $apiInstance = new FattureInCloud\Api\CompaniesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$category = 'category_example'; // string | Category
-
+    $company_id = 12345; // int | The ID of the company.$category = 'category_example'; // string | Category
 try {
     $result = $apiInstance->getCompanyPlanUsage($company_id, $category);
     print_r($result);
