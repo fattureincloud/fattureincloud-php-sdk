@@ -510,5 +510,3 @@ lib/Model/WebhooksSubscriptionConfig.php
 lib/Model/WebhooksSubscriptionMapping.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/GetTaxProfileResponseTest.php
-test/Model/TaxProfileTest.php
