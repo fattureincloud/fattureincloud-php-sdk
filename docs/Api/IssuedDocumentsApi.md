@@ -504,7 +504,7 @@ try {
 ## `joinIssuedDocuments()`
 
 ```php
-joinIssuedDocuments($company_id, $ids, $group, $parameter): \FattureInCloud\Model\JoinIssuedDocumentsResponse
+joinIssuedDocuments($company_id, $ids, $group, $type): \FattureInCloud\Model\JoinIssuedDocumentsResponse
 ```
 
 Join Issued Documents
@@ -528,9 +528,9 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$ids = 1,2,3,4; // string | Ids of the documents.$group = 56; // int | Group items.$parameter = delivery_notes, orders, quotes, work_reports; // string | Type of the parameters to be joined
+    $company_id = 12345; // int | The ID of the company.$ids = 1,2,3,4; // string | Ids of the documents.$group = 56; // int | Group items.$type = delivery_notes, orders, quotes, work_reports; // string | Type of the documents to be joined
 try {
-    $result = $apiInstance->joinIssuedDocuments($company_id, $ids, $group, $parameter);
+    $result = $apiInstance->joinIssuedDocuments($company_id, $ids, $group, $type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IssuedDocumentsApi->joinIssuedDocuments: ', $e->getMessage(), PHP_EOL;
@@ -544,7 +544,7 @@ try {
 | **company_id** | **int**| The ID of the company. | |
 | **ids** | **string**| Ids of the documents. | |
 | **group** | **int**| Group items. | [optional] |
-| **parameter** | **string**| Type of the parameters to be joined | [optional] |
+| **type** | **string**| Type of the documents to be joined | [optional] |
 
 ### Return type
 
@@ -754,7 +754,7 @@ void (empty response body)
 ## `transformIssuedDocument()`
 
 ```php
-transformIssuedDocument($company_id, $original_document_id, $new_type, $parameter, $e_invoice, $transform_keep_copy): \FattureInCloud\Model\TransformIssuedDocumentResponse
+transformIssuedDocument($company_id, $original_document_id, $new_type, $type, $e_invoice, $transform_keep_copy): \FattureInCloud\Model\TransformIssuedDocumentResponse
 ```
 
 Transform Issued Document
@@ -778,9 +778,9 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$original_document_id = 56; // int | Original document id.$new_type = 'new_type_example'; // string | New document type.$parameter = 'parameter_example'; // string | Old document type.$e_invoice = 56; // int | New document e_invoice.$transform_keep_copy = 56; // int | Keep the old document.
+    $company_id = 12345; // int | The ID of the company.$original_document_id = 56; // int | Original document id.$new_type = 'new_type_example'; // string | New document type.$type = 'type_example'; // string | Current document type.$e_invoice = 56; // int | New document e_invoice.$transform_keep_copy = 56; // int | Keep the old document.
 try {
-    $result = $apiInstance->transformIssuedDocument($company_id, $original_document_id, $new_type, $parameter, $e_invoice, $transform_keep_copy);
+    $result = $apiInstance->transformIssuedDocument($company_id, $original_document_id, $new_type, $type, $e_invoice, $transform_keep_copy);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling IssuedDocumentsApi->transformIssuedDocument: ', $e->getMessage(), PHP_EOL;
@@ -794,7 +794,7 @@ try {
 | **company_id** | **int**| The ID of the company. | |
 | **original_document_id** | **int**| Original document id. | |
 | **new_type** | **string**| New document type. | |
-| **parameter** | **string**| Old document type. | [optional] |
+| **type** | **string**| Current document type. | [optional] |
 | **e_invoice** | **int**| New document e_invoice. | [optional] |
 | **transform_keep_copy** | **int**| Keep the old document. | [optional] |
 
