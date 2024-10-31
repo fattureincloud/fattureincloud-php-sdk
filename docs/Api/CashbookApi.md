@@ -38,7 +38,9 @@ $apiInstance = new FattureInCloud\Api\CashbookApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$create_cashbook_entry_request = new \FattureInCloud\Model\CreateCashbookEntryRequest; // \FattureInCloud\Model\CreateCashbookEntryRequest | Cashbook entry.
+$company_id = 12345; // int | The ID of the company.
+$create_cashbook_entry_request = new \FattureInCloud\Model\CreateCashbookEntryRequest; // \FattureInCloud\Model\CreateCashbookEntryRequest | Cashbook entry.
+
 try {
     $result = $apiInstance->createCashbookEntry($company_id, $create_cashbook_entry_request);
     print_r($result);
@@ -98,7 +100,9 @@ $apiInstance = new FattureInCloud\Api\CashbookApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$document_id = 'document_id_example'; // string | The ID of the document.
+$company_id = 12345; // int | The ID of the company.
+$document_id = 'document_id_example'; // string | The ID of the document.
+
 try {
     $apiInstance->deleteCashbookEntry($company_id, $document_id);
 } catch (Exception $e) {
@@ -157,7 +161,11 @@ $apiInstance = new FattureInCloud\Api\CashbookApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$document_id = 'document_id_example'; // string | The ID of the document.$fields = 'fields_example'; // string | List of comma-separated fields.$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+$company_id = 12345; // int | The ID of the company.
+$document_id = 'document_id_example'; // string | The ID of the document.
+$fields = 'fields_example'; // string | List of comma-separated fields.
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+
 try {
     $result = $apiInstance->getCashbookEntry($company_id, $document_id, $fields, $fieldset);
     print_r($result);
@@ -219,7 +227,13 @@ $apiInstance = new FattureInCloud\Api\CashbookApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$date_from = 'date_from_example'; // string | Start date.$date_to = 'date_to_example'; // string | End date.$year = 56; // int | Filter cashbook by year.$type = 'type_example'; // string | Filter cashbook by type.$payment_account_id = 56; // int | Filter by payment account.
+$company_id = 12345; // int | The ID of the company.
+$date_from = 'date_from_example'; // string | Start date.
+$date_to = 'date_to_example'; // string | End date.
+$year = 56; // int | Filter cashbook by year.
+$type = 'type_example'; // string | Filter cashbook by type.
+$payment_account_id = 56; // int | Filter by payment account.
+
 try {
     $result = $apiInstance->listCashbookEntries($company_id, $date_from, $date_to, $year, $type, $payment_account_id);
     print_r($result);
@@ -283,7 +297,10 @@ $apiInstance = new FattureInCloud\Api\CashbookApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$document_id = 'document_id_example'; // string | The ID of the document.$modify_cashbook_entry_request = new \FattureInCloud\Model\ModifyCashbookEntryRequest; // \FattureInCloud\Model\ModifyCashbookEntryRequest | Cashbook Entry
+$company_id = 12345; // int | The ID of the company.
+$document_id = 'document_id_example'; // string | The ID of the document.
+$modify_cashbook_entry_request = new \FattureInCloud\Model\ModifyCashbookEntryRequest; // \FattureInCloud\Model\ModifyCashbookEntryRequest | Cashbook Entry
+
 try {
     $result = $apiInstance->modifyCashbookEntry($company_id, $document_id, $modify_cashbook_entry_request);
     print_r($result);

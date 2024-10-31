@@ -40,7 +40,9 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$create_f24_request = new \FattureInCloud\Model\CreateF24Request; // \FattureInCloud\Model\CreateF24Request | The F24 to create
+$company_id = 12345; // int | The ID of the company.
+$create_f24_request = new \FattureInCloud\Model\CreateF24Request; // \FattureInCloud\Model\CreateF24Request | The F24 to create
+
 try {
     $result = $apiInstance->createF24($company_id, $create_f24_request);
     print_r($result);
@@ -100,7 +102,9 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
+
 try {
     $apiInstance->deleteF24($company_id, $document_id);
 } catch (Exception $e) {
@@ -159,7 +163,9 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
+
 try {
     $apiInstance->deleteF24Attachment($company_id, $document_id);
 } catch (Exception $e) {
@@ -218,7 +224,11 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.$fields = 'fields_example'; // string | List of comma-separated fields.$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
+$fields = 'fields_example'; // string | List of comma-separated fields.
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+
 try {
     $result = $apiInstance->getF24($company_id, $document_id, $fields, $fieldset);
     print_r($result);
@@ -280,7 +290,14 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$fields = 'fields_example'; // string | List of comma-separated fields.$fieldset = 'fieldset_example'; // string | Name of the fieldset.$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).$page = 1; // int | The page to retrieve.$per_page = 5; // int | The size of the page.$q = 'q_example'; // string | Query for filtering the results.
+$company_id = 12345; // int | The ID of the company.
+$fields = 'fields_example'; // string | List of comma-separated fields.
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
+$page = 1; // int | The page to retrieve.
+$per_page = 5; // int | The size of the page.
+$q = 'q_example'; // string | Query for filtering the results.
+
 try {
     $result = $apiInstance->listF24($company_id, $fields, $fieldset, $sort, $page, $per_page, $q);
     print_r($result);
@@ -345,7 +362,10 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.$modify_f24_request = new \FattureInCloud\Model\ModifyF24Request; // \FattureInCloud\Model\ModifyF24Request | The F24
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
+$modify_f24_request = new \FattureInCloud\Model\ModifyF24Request; // \FattureInCloud\Model\ModifyF24Request | The F24
+
 try {
     $result = $apiInstance->modifyF24($company_id, $document_id, $modify_f24_request);
     print_r($result);
@@ -406,7 +426,10 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$filename = 'filename_example'; // string | Attachment file name$attachment = "/path/to/file.txt"; // \SplFileObject | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx]
+$company_id = 12345; // int | The ID of the company.
+$filename = 'filename_example'; // string | Attachment file name
+$attachment = "/path/to/file.txt"; // \SplFileObject | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx]
+
 try {
     $result = $apiInstance->uploadF24Attachment($company_id, $filename, $attachment);
     print_r($result);

@@ -38,7 +38,9 @@ $apiInstance = new FattureInCloud\Api\SuppliersApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$create_supplier_request = new \FattureInCloud\Model\CreateSupplierRequest; // \FattureInCloud\Model\CreateSupplierRequest | The supplier to create
+$company_id = 12345; // int | The ID of the company.
+$create_supplier_request = new \FattureInCloud\Model\CreateSupplierRequest; // \FattureInCloud\Model\CreateSupplierRequest | The supplier to create
+
 try {
     $result = $apiInstance->createSupplier($company_id, $create_supplier_request);
     print_r($result);
@@ -98,7 +100,9 @@ $apiInstance = new FattureInCloud\Api\SuppliersApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$supplier_id = 56; // int | The ID of the supplier.
+$company_id = 12345; // int | The ID of the company.
+$supplier_id = 56; // int | The ID of the supplier.
+
 try {
     $apiInstance->deleteSupplier($company_id, $supplier_id);
 } catch (Exception $e) {
@@ -157,7 +161,11 @@ $apiInstance = new FattureInCloud\Api\SuppliersApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$supplier_id = 56; // int | The ID of the supplier.$fields = 'fields_example'; // string | List of comma-separated fields.$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+$company_id = 12345; // int | The ID of the company.
+$supplier_id = 56; // int | The ID of the supplier.
+$fields = 'fields_example'; // string | List of comma-separated fields.
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+
 try {
     $result = $apiInstance->getSupplier($company_id, $supplier_id, $fields, $fieldset);
     print_r($result);
@@ -219,7 +227,14 @@ $apiInstance = new FattureInCloud\Api\SuppliersApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$fields = 'fields_example'; // string | List of comma-separated fields.$fieldset = 'fieldset_example'; // string | Name of the fieldset.$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).$page = 1; // int | The page to retrieve.$per_page = 5; // int | The size of the page.$q = 'q_example'; // string | Query for filtering the results.
+$company_id = 12345; // int | The ID of the company.
+$fields = 'fields_example'; // string | List of comma-separated fields.
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
+$page = 1; // int | The page to retrieve.
+$per_page = 5; // int | The size of the page.
+$q = 'q_example'; // string | Query for filtering the results.
+
 try {
     $result = $apiInstance->listSuppliers($company_id, $fields, $fieldset, $sort, $page, $per_page, $q);
     print_r($result);
@@ -284,7 +299,10 @@ $apiInstance = new FattureInCloud\Api\SuppliersApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$supplier_id = 56; // int | The ID of the supplier.$modify_supplier_request = new \FattureInCloud\Model\ModifySupplierRequest; // \FattureInCloud\Model\ModifySupplierRequest | The modified Supplier. First level parameters are managed in delta mode.
+$company_id = 12345; // int | The ID of the company.
+$supplier_id = 56; // int | The ID of the supplier.
+$modify_supplier_request = new \FattureInCloud\Model\ModifySupplierRequest; // \FattureInCloud\Model\ModifySupplierRequest | The modified Supplier. First level parameters are managed in delta mode.
+
 try {
     $result = $apiInstance->modifySupplier($company_id, $supplier_id, $modify_supplier_request);
     print_r($result);

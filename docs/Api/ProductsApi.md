@@ -38,7 +38,9 @@ $apiInstance = new FattureInCloud\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$create_product_request = new \FattureInCloud\Model\CreateProductRequest; // \FattureInCloud\Model\CreateProductRequest | 
+$company_id = 12345; // int | The ID of the company.
+$create_product_request = new \FattureInCloud\Model\CreateProductRequest; // \FattureInCloud\Model\CreateProductRequest | 
+
 try {
     $result = $apiInstance->createProduct($company_id, $create_product_request);
     print_r($result);
@@ -98,7 +100,9 @@ $apiInstance = new FattureInCloud\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$product_id = 56; // int | The ID of the product.
+$company_id = 12345; // int | The ID of the company.
+$product_id = 56; // int | The ID of the product.
+
 try {
     $apiInstance->deleteProduct($company_id, $product_id);
 } catch (Exception $e) {
@@ -157,7 +161,11 @@ $apiInstance = new FattureInCloud\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$product_id = 56; // int | The ID of the product.$fields = 'fields_example'; // string | List of comma-separated fields.$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+$company_id = 12345; // int | The ID of the company.
+$product_id = 56; // int | The ID of the product.
+$fields = 'fields_example'; // string | List of comma-separated fields.
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+
 try {
     $result = $apiInstance->getProduct($company_id, $product_id, $fields, $fieldset);
     print_r($result);
@@ -219,7 +227,14 @@ $apiInstance = new FattureInCloud\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$fields = 'fields_example'; // string | List of comma-separated fields.$fieldset = 'fieldset_example'; // string | Name of the fieldset.$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).$page = 1; // int | The page to retrieve.$per_page = 5; // int | The size of the page.$q = 'q_example'; // string | Query for filtering the results.
+$company_id = 12345; // int | The ID of the company.
+$fields = 'fields_example'; // string | List of comma-separated fields.
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
+$page = 1; // int | The page to retrieve.
+$per_page = 5; // int | The size of the page.
+$q = 'q_example'; // string | Query for filtering the results.
+
 try {
     $result = $apiInstance->listProducts($company_id, $fields, $fieldset, $sort, $page, $per_page, $q);
     print_r($result);
@@ -284,7 +299,10 @@ $apiInstance = new FattureInCloud\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$product_id = 56; // int | The ID of the product.$modify_product_request = new \FattureInCloud\Model\ModifyProductRequest; // \FattureInCloud\Model\ModifyProductRequest | Modified product details.
+$company_id = 12345; // int | The ID of the company.
+$product_id = 56; // int | The ID of the product.
+$modify_product_request = new \FattureInCloud\Model\ModifyProductRequest; // \FattureInCloud\Model\ModifyProductRequest | Modified product details.
+
 try {
     $result = $apiInstance->modifyProduct($company_id, $product_id, $modify_product_request);
     print_r($result);
