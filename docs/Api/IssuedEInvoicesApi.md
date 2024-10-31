@@ -37,7 +37,9 @@ $apiInstance = new FattureInCloud\Api\IssuedEInvoicesApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
+
 try {
     $result = $apiInstance->getEInvoiceRejectionReason($company_id, $document_id);
     print_r($result);
@@ -97,7 +99,10 @@ $apiInstance = new FattureInCloud\Api\IssuedEInvoicesApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.$include_attachment = True; // bool | Include the attachment to the XML e-invoice.
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
+$include_attachment = True; // bool | Include the attachment to the XML e-invoice.
+
 try {
     $result = $apiInstance->getEInvoiceXml($company_id, $document_id, $include_attachment);
     print_r($result);
@@ -158,7 +163,10 @@ $apiInstance = new FattureInCloud\Api\IssuedEInvoicesApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.$send_e_invoice_request = new \FattureInCloud\Model\SendEInvoiceRequest; // \FattureInCloud\Model\SendEInvoiceRequest | 
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
+$send_e_invoice_request = new \FattureInCloud\Model\SendEInvoiceRequest; // \FattureInCloud\Model\SendEInvoiceRequest | 
+
 try {
     $result = $apiInstance->sendEInvoice($company_id, $document_id, $send_e_invoice_request);
     print_r($result);
@@ -219,7 +227,9 @@ $apiInstance = new FattureInCloud\Api\IssuedEInvoicesApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
+
 try {
     $result = $apiInstance->verifyEInvoiceXml($company_id, $document_id);
     print_r($result);

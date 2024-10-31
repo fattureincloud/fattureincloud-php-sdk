@@ -35,7 +35,7 @@ $apiInstance = new FattureInCloud\Api\UserApi(
     new GuzzleHttp\Client(),
     $config
 );
-    
+
 try {
     $result = $apiInstance->getUserInfo();
     print_r($result);
@@ -92,7 +92,7 @@ $apiInstance = new FattureInCloud\Api\UserApi(
     new GuzzleHttp\Client(),
     $config
 );
-    
+
 try {
     $result = $apiInstance->listUserCompanies();
     print_r($result);

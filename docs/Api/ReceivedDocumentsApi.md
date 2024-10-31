@@ -43,7 +43,9 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$create_received_document_request = new \FattureInCloud\Model\CreateReceivedDocumentRequest; // \FattureInCloud\Model\CreateReceivedDocumentRequest | Document to create
+$company_id = 12345; // int | The ID of the company.
+$create_received_document_request = new \FattureInCloud\Model\CreateReceivedDocumentRequest; // \FattureInCloud\Model\CreateReceivedDocumentRequest | Document to create
+
 try {
     $result = $apiInstance->createReceivedDocument($company_id, $create_received_document_request);
     print_r($result);
@@ -103,7 +105,9 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
+
 try {
     $apiInstance->deleteReceivedDocument($company_id, $document_id);
 } catch (Exception $e) {
@@ -162,7 +166,9 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
+
 try {
     $apiInstance->deleteReceivedDocumentAttachment($company_id, $document_id);
 } catch (Exception $e) {
@@ -221,7 +227,10 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.$get_existing_received_document_totals_request = new \FattureInCloud\Model\GetExistingReceivedDocumentTotalsRequest; // \FattureInCloud\Model\GetExistingReceivedDocumentTotalsRequest | Received document.
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
+$get_existing_received_document_totals_request = new \FattureInCloud\Model\GetExistingReceivedDocumentTotalsRequest; // \FattureInCloud\Model\GetExistingReceivedDocumentTotalsRequest | Received document.
+
 try {
     $result = $apiInstance->getExistingReceivedDocumentTotals($company_id, $document_id, $get_existing_received_document_totals_request);
     print_r($result);
@@ -282,7 +291,9 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$get_new_received_document_totals_request = new \FattureInCloud\Model\GetNewReceivedDocumentTotalsRequest; // \FattureInCloud\Model\GetNewReceivedDocumentTotalsRequest | Received document.
+$company_id = 12345; // int | The ID of the company.
+$get_new_received_document_totals_request = new \FattureInCloud\Model\GetNewReceivedDocumentTotalsRequest; // \FattureInCloud\Model\GetNewReceivedDocumentTotalsRequest | Received document.
+
 try {
     $result = $apiInstance->getNewReceivedDocumentTotals($company_id, $get_new_received_document_totals_request);
     print_r($result);
@@ -342,7 +353,11 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.$fields = 'fields_example'; // string | List of comma-separated fields.$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
+$fields = 'fields_example'; // string | List of comma-separated fields.
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+
 try {
     $result = $apiInstance->getReceivedDocument($company_id, $document_id, $fields, $fieldset);
     print_r($result);
@@ -404,7 +419,9 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$type = 'type_example'; // string | The type of the received document.
+$company_id = 12345; // int | The ID of the company.
+$type = 'type_example'; // string | The type of the received document.
+
 try {
     $result = $apiInstance->getReceivedDocumentPreCreateInfo($company_id, $type);
     print_r($result);
@@ -464,7 +481,15 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$type = 'type_example'; // string | The type of the received document.$fields = 'fields_example'; // string | List of comma-separated fields.$fieldset = 'fieldset_example'; // string | Name of the fieldset.$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).$page = 1; // int | The page to retrieve.$per_page = 5; // int | The size of the page.$q = 'q_example'; // string | Query for filtering the results.
+$company_id = 12345; // int | The ID of the company.
+$type = 'type_example'; // string | The type of the received document.
+$fields = 'fields_example'; // string | List of comma-separated fields.
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
+$page = 1; // int | The page to retrieve.
+$per_page = 5; // int | The size of the page.
+$q = 'q_example'; // string | Query for filtering the results.
+
 try {
     $result = $apiInstance->listReceivedDocuments($company_id, $type, $fields, $fieldset, $sort, $page, $per_page, $q);
     print_r($result);
@@ -530,7 +555,10 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$document_id = 56; // int | The ID of the document.$modify_received_document_request = new \FattureInCloud\Model\ModifyReceivedDocumentRequest; // \FattureInCloud\Model\ModifyReceivedDocumentRequest | Modified document.
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
+$modify_received_document_request = new \FattureInCloud\Model\ModifyReceivedDocumentRequest; // \FattureInCloud\Model\ModifyReceivedDocumentRequest | Modified document.
+
 try {
     $result = $apiInstance->modifyReceivedDocument($company_id, $document_id, $modify_received_document_request);
     print_r($result);
@@ -591,7 +619,10 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.$filename = 'filename_example'; // string | Attachment file name$attachment = "/path/to/file.txt"; // \SplFileObject | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx]
+$company_id = 12345; // int | The ID of the company.
+$filename = 'filename_example'; // string | Attachment file name
+$attachment = "/path/to/file.txt"; // \SplFileObject | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx]
+
 try {
     $result = $apiInstance->uploadReceivedDocumentAttachment($company_id, $filename, $attachment);
     print_r($result);
