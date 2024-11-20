@@ -78,6 +78,7 @@ class TaxProfileTest extends TestCase
             "enasarco": false,
             "enasarco_type": "null",
             "contributions_percentage": 0,
+            "profit_coefficient": 0,
             "med": false,
             "default_vat": {
                 "id": 66,
@@ -265,6 +266,14 @@ class TaxProfileTest extends TestCase
     public function testPropertyContributionsPercentage()
     {
         TestCase::assertEquals($this->object['contributions_percentage'], $this->array['contributions_percentage']);
+    }
+
+    /**
+     * Test attribute "profit_coefficient"
+     */
+    public function testPropertyProfitCoefficient()
+    {
+        TestCase::assertEquals($this->object['profit_coefficient'], $this->array['profit_coefficient']);
     }
 
     /**
