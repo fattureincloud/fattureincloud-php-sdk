@@ -29,7 +29,9 @@
 
 namespace FattureInCloud\Test\Model;
 
+use FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Util\Test;
 
 /**
  * TaxProfileTest Class Doc Comment
@@ -42,6 +44,9 @@ use PHPUnit\Framework\TestCase;
  */
 class TaxProfileTest extends TestCase
 {
+    public $array = [];
+    public $object;
+
     /**
      * Setup before running any test case
      */
@@ -54,6 +59,45 @@ class TaxProfileTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "company_type": "individual",
+            "company_subtype": "artigiani",
+            "profession": "test",
+            "regime": "forfettario_5",
+            "rivalsa_name": "",
+            "default_rivalsa": 0,
+            "cassa_name": "",
+            "default_cassa": 0,
+            "default_cassa_taxable": 100,
+            "cassa2_name": "",
+            "default_cassa2": 0,
+            "default_cassa2_taxable": 0,
+            "default_withholding_tax": 0,
+            "default_withholding_tax_taxable": 100,
+            "default_other_withholding_tax": 0,
+            "enasarco": false,
+            "enasarco_type": "null",
+            "contributions_percentage": 0,
+            "profit_coefficient": 0,
+            "med": false,
+            "default_vat": {
+                "id": 66,
+                "value": 0,
+                "description": "Contribuenti forfettari",
+                "notes": "Operazione non soggetta a IVA ai sensi dell\'art. 1, commi 54-89, Legge n. 190\/2014 e succ. modifiche\/integrazioni",
+                "e_invoice": true,
+                "ei_type": "2.2",
+                "ei_description": "Non soggetta art. 1\/54-89 L. 190\/2014 e succ. modifiche\/integrazioni",
+                "editable": false,
+                "is_disabled": false,
+                "default": true
+            }
+        }';
+
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\TaxProfile');
     }
 
     /**
@@ -75,8 +119,9 @@ class TaxProfileTest extends TestCase
      */
     public function testTaxProfile()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -84,8 +129,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyCompanyType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['company_type'], $this->array['company_type']);
     }
 
     /**
@@ -93,8 +137,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyCompanySubtype()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['company_subtype'], $this->array['company_subtype']);
     }
 
     /**
@@ -102,8 +145,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyProfession()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['profession'], $this->array['profession']);
     }
 
     /**
@@ -111,8 +153,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyRegime()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['regime'], $this->array['regime']);
     }
 
     /**
@@ -120,8 +161,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyRivalsaName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['rivalsa_name'], $this->array['rivalsa_name']);
     }
 
     /**
@@ -129,8 +169,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyDefaultRivalsa()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['default_rivalsa'], $this->array['default_rivalsa']);
     }
 
     /**
@@ -138,8 +177,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyCassaName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['cassa_name'], $this->array['cassa_name']);
     }
 
     /**
@@ -147,8 +185,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyDefaultCassa()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['default_cassa'], $this->array['default_cassa']);
     }
 
     /**
@@ -156,8 +193,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyDefaultCassaTaxable()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['default_cassa_taxable'], $this->array['default_cassa_taxable']);
     }
 
     /**
@@ -165,8 +201,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyCassa2Name()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['cassa2_name'], $this->array['cassa2_name']);
     }
 
     /**
@@ -174,8 +209,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyDefaultCassa2()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['default_cassa2'], $this->array['default_cassa2']);
     }
 
     /**
@@ -183,8 +217,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyDefaultCassa2Taxable()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['default_cassa2_taxable'], $this->array['default_cassa2_taxable']);
     }
 
     /**
@@ -192,8 +225,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyDefaultWithholdingTax()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['default_withholding_tax'], $this->array['default_withholding_tax']);
     }
 
     /**
@@ -201,8 +233,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyDefaultWithholdingTaxTaxable()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['default_withholding_tax_taxable'], $this->array['default_withholding_tax_taxable']);
     }
 
     /**
@@ -210,8 +241,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyDefaultOtherWithholdingTax()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['default_other_withholding_tax'], $this->array['default_other_withholding_tax']);
     }
 
     /**
@@ -219,8 +249,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyEnasarco()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['enasarco'], $this->array['enasarco']);
     }
 
     /**
@@ -228,8 +257,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyEnasarcoType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['enasarco_type'], $this->array['enasarco_type']);
     }
 
     /**
@@ -237,8 +265,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyContributionsPercentage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['contributions_percentage'], $this->array['contributions_percentage']);
     }
 
     /**
@@ -246,8 +273,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyProfitCoefficient()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['profit_coefficient'], $this->array['profit_coefficient']);
     }
 
     /**
@@ -255,8 +281,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyMed()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['med'], $this->array['med']);
     }
 
     /**
@@ -264,7 +289,8 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyDefaultVat()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        foreach ($this->array['default_vat'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['default_vat']);
+        }
     }
 }
