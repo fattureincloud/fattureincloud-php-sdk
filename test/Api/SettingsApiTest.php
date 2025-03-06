@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SettingsApiTest
  * PHP version 7.3

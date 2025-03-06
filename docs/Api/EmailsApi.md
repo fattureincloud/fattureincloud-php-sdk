@@ -10,7 +10,7 @@ All URIs are relative to https://api-v2.fattureincloud.it, except if the operati
 ## `listEmails()`
 
 ```php
-listEmails($company_id): \FattureInCloud\Model\ListEmailsResponse
+listEmails($company_id, $fields, $fieldset, $sort, $page, $per_page, $q): \FattureInCloud\Model\ListEmailsResponse
 ```
 
 List Emails
@@ -35,9 +35,15 @@ $apiInstance = new FattureInCloud\Api\EmailsApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
+$fields = 'fields_example'; // string | List of comma-separated fields.
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+$sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
+$page = 1; // int | The page to retrieve.
+$per_page = 5; // int | The size of the page.
+$q = 'q_example'; // string | Query for filtering the results.
 
 try {
-    $result = $apiInstance->listEmails($company_id);
+    $result = $apiInstance->listEmails($company_id, $fields, $fieldset, $sort, $page, $per_page, $q);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling EmailsApi->listEmails: ', $e->getMessage(), PHP_EOL;
@@ -49,6 +55,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **company_id** | **int**| The ID of the company. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
+| **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
+| **page** | **int**| The page to retrieve. | [optional] [default to 1] |
+| **per_page** | **int**| The size of the page. | [optional] [default to 5] |
+| **q** | **string**| Query for filtering the results. | [optional] |
 
 ### Return type
 

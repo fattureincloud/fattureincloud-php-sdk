@@ -100,6 +100,12 @@ class Scope
     // Write permission to the Receipts
     public const RECEIPTS_ALL = "receipts:a";
 
+    // Read permission to the Calendar
+    public const CALENDAR_READ = "calendar:r";
+
+    // Write permission to the Calendar
+    public const CALENDAR_ALL = "calendar:a";
+
     // Read permission to the Taxes
     public const TAXES_READ = "taxes:r";
 
@@ -111,6 +117,9 @@ class Scope
 
     // Read permission to the Archive Documents
     public const ARCHIVE_ALL = "archive:a";
+
+    // Read permission to the Emails
+    public const EMAILS_READ = "emails:r";
 
     // Read permission to the Cashbook
     public const CASHBOOK_READ = "cashbook:r";
@@ -200,6 +209,10 @@ class Scope
 
             self::RECEIPTS_ALL,
 
+            self::CALENDAR_READ,
+
+            self::CALENDAR_ALL,
+
             self::TAXES_READ,
 
             self::TAXES_ALL,
@@ -207,6 +220,8 @@ class Scope
             self::ARCHIVE_READ,
 
             self::ARCHIVE_ALL,
+
+            self::EMAILS_READ,
 
             self::CASHBOOK_READ,
 

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CompaniesApiTest
  * PHP version 7.3
