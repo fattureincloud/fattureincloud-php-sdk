@@ -30,6 +30,7 @@
 
 namespace FattureInCloud\Test\Model;
 
+use FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -43,6 +44,9 @@ use PHPUnit\Framework\TestCase;
  */
 class VerifyWebhooksSubscriptionRequestTest extends TestCase
 {
+    public $array = [];
+    public $object;
+
     /**
      * Setup before running any test case
      */
@@ -55,6 +59,16 @@ class VerifyWebhooksSubscriptionRequestTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": {
+                "id": "12345",
+                "verification_method": "header"
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\VerifyWebhooksSubscriptionRequest');
     }
 
     /**
@@ -76,8 +90,9 @@ class VerifyWebhooksSubscriptionRequestTest extends TestCase
      */
     public function testVerifyWebhooksSubscriptionRequest()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +100,8 @@ class VerifyWebhooksSubscriptionRequestTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

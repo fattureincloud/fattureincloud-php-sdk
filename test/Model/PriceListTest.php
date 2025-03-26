@@ -30,6 +30,7 @@
 
 namespace FattureInCloud\Test\Model;
 
+use FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -43,6 +44,8 @@ use PHPUnit\Framework\TestCase;
  */
 class PriceListTest extends TestCase
 {
+    public $array = [];
+    public $object;
     /**
      * Setup before running any test case
      */
@@ -55,6 +58,19 @@ class PriceListTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+          "id": "10",
+          "name": "listino",
+          "prices_type": "net",
+          "is_default": true,
+          "valid_from": "2025-01-01",
+          "valid_to": "2025-12-01",
+          "type": "sell"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\PriceList');
     }
 
     /**
@@ -76,8 +92,9 @@ class PriceListTest extends TestCase
      */
     public function testPriceList()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +102,7 @@ class PriceListTest extends TestCase
      */
     public function testPropertyId()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['id'], $this->array['id']);
     }
 
     /**
@@ -94,8 +110,7 @@ class PriceListTest extends TestCase
      */
     public function testPropertyName()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['name'], $this->array['name']);
     }
 
     /**
@@ -103,8 +118,7 @@ class PriceListTest extends TestCase
      */
     public function testPropertyPricesType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['prices_type'], $this->array['prices_type']);
     }
 
     /**
@@ -112,8 +126,7 @@ class PriceListTest extends TestCase
      */
     public function testPropertyIsDefault()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['is_default'], $this->array['is_default']);
     }
 
     /**
@@ -121,8 +134,7 @@ class PriceListTest extends TestCase
      */
     public function testPropertyValidFrom()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['valid_from'], $this->array['valid_from']);
     }
 
     /**
@@ -130,8 +142,7 @@ class PriceListTest extends TestCase
      */
     public function testPropertyValidTo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['valid_to'], $this->array['valid_to']);
     }
 
     /**
@@ -139,7 +150,6 @@ class PriceListTest extends TestCase
      */
     public function testPropertyType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['type'], $this->array['type']);
     }
 }

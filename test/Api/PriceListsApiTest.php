@@ -32,6 +32,9 @@ namespace FattureInCloud\Test\Api;
 use \FattureInCloud\Configuration;
 use \FattureInCloud\ApiException;
 use \FattureInCloud\ObjectSerializer;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -80,8 +83,23 @@ class PriceListsApiTest extends TestCase
      */
     public function testGetPriceListItems()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $stream = '{"data": {"1": {"price": 3.5},"2": {"price": 5}}}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\PriceListsApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $get_price_lists_items_request = 'json';
+        $result = $apiInstance->getPriceListItems($company_id, $get_price_lists_items_request);
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetPriceListItemsResponse');
+
+        TestCase::assertEquals($obj, $result);
     }
 
     /**
@@ -92,7 +110,22 @@ class PriceListsApiTest extends TestCase
      */
     public function testGetPriceLists()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $stream = '{"data": [{"id": "10","name": "listino","prices_type": "net","is_default": true,"valid_from": "2025-01-01","valid_to": "2025-12-01","type": "sell"},{"id": "11","name": "listino-test","prices_type": "gross","is_default": true,"valid_from": "2025-01-01","valid_to": "2025-01-01","type": "purchase"}]}';
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $stream
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $apiInstance = new \FattureInCloud\Api\PriceListsApi(
+            new \GuzzleHttp\Client(['handler' => $handler])
+        );
+        $company_id = 2;
+        $get_price_lists_request = 'json';
+        $result = $apiInstance->getPriceLists($company_id, $get_price_lists_request);
+        $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListPriceListsResponse');
+
+        TestCase::assertEquals($obj, $result);
     }
 }

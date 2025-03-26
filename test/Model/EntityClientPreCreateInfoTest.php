@@ -30,6 +30,7 @@
 
 namespace FattureInCloud\Test\Model;
 
+use FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -43,6 +44,9 @@ use PHPUnit\Framework\TestCase;
  */
 class EntityClientPreCreateInfoTest extends TestCase
 {
+    public $array = [];
+    public $object;
+
     /**
      * Setup before running any test case
      */
@@ -55,6 +59,65 @@ class EntityClientPreCreateInfoTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "countries_list": [
+              "Italy"
+            ],
+            "payment_methods_list": [
+              {
+                "id": 555,
+                "name": "Rimessa diretta",
+                "is_default": false,
+                "details": [],
+                "bank_iban": null,
+                "bank_name": null,
+                "bank_beneficiary": null,
+                "ei_payment_method": null
+              }
+            ],
+            "payment_accounts_list": [
+              {
+                "id": 0,
+                "name": "Conto Banca Intesa",
+                "type": "standard",
+                "iban": "string",
+                "sia": "string",
+                "cuc": "string",
+                "virtual": true
+              }
+            ],
+            "vat_types_list": [
+              {
+                "id": 0,
+                "value": 22,
+                "description": "Non imponibile art. 123",
+                "notes": "IVA non imponibile ai sensi dell\'articolo 123, comma 2",
+                "e_invoice": true,
+                "ei_type": 2,
+                "ei_description": "string",
+                "editable": true,
+                "is_disabled": true,
+                "default": true
+              }
+            ],
+            "price_lists": [
+              {
+                "id": "string",
+                "name": "123",
+                "prices_type": "net",
+                "is_default": true,
+                "valid_from": "string",
+                "valid_to": "string",
+                "type": "sell"
+              }
+            ],
+            "limit": 0,
+            "usage": 0
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\EntityClientPreCreateInfo');
     }
 
     /**
@@ -76,8 +139,9 @@ class EntityClientPreCreateInfoTest extends TestCase
      */
     public function testEntityClientPreCreateInfo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,8 +149,9 @@ class EntityClientPreCreateInfoTest extends TestCase
      */
     public function testPropertyCountriesList()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        foreach ($this->array['countries_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['countries_list']);
+        }
     }
 
     /**
@@ -94,8 +159,9 @@ class EntityClientPreCreateInfoTest extends TestCase
      */
     public function testPropertyPaymentMethodsList()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        foreach ($this->array['payment_methods_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['payment_methods_list']);
+        }
     }
 
     /**
@@ -103,8 +169,9 @@ class EntityClientPreCreateInfoTest extends TestCase
      */
     public function testPropertyPaymentAccountsList()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        foreach ($this->array['payment_accounts_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['payment_accounts_list']);
+        }
     }
 
     /**
@@ -112,8 +179,9 @@ class EntityClientPreCreateInfoTest extends TestCase
      */
     public function testPropertyVatTypesList()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        foreach ($this->array['vat_types_list'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['vat_types_list']);
+        }
     }
 
     /**
@@ -121,8 +189,9 @@ class EntityClientPreCreateInfoTest extends TestCase
      */
     public function testPropertyPriceLists()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        foreach ($this->array['price_lists'] as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object['price_lists']);
+        }
     }
 
     /**
@@ -130,8 +199,7 @@ class EntityClientPreCreateInfoTest extends TestCase
      */
     public function testPropertyLimit()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['limit'], $this->array['limit']);
     }
 
     /**
@@ -139,7 +207,6 @@ class EntityClientPreCreateInfoTest extends TestCase
      */
     public function testPropertyUsage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['usage'], $this->array['usage']);
     }
 }
