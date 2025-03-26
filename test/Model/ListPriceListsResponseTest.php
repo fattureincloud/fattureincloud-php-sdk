@@ -30,6 +30,7 @@
 
 namespace FattureInCloud\Test\Model;
 
+use FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -43,6 +44,9 @@ use PHPUnit\Framework\TestCase;
  */
 class ListPriceListsResponseTest extends TestCase
 {
+
+    public $array = [];
+    public $object;
     /**
      * Setup before running any test case
      */
@@ -55,6 +59,30 @@ class ListPriceListsResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json ='{
+          "data": [
+            {
+              "id": "10",
+              "name": "listino",
+              "prices_type": "net",
+              "is_default": true,
+              "valid_from": "2025-01-01",
+              "valid_to": "2025-12-01",
+              "type": "sell"
+            },
+            {
+              "id": "11",
+              "name": "listino-test",
+              "prices_type": "gross",
+              "is_default": true,
+              "valid_from": "2025-01-01",
+              "valid_to": "2025-01-01",
+              "type": "purchase"
+            }
+          ]
+        }';
+        $this->array = json_decode($json, true);
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListPriceListsResponse');
     }
 
     /**
@@ -76,8 +104,9 @@ class ListPriceListsResponseTest extends TestCase
      */
     public function testListPriceListsResponse()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) {
+            TestCase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +114,8 @@ class ListPriceListsResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) {
+            TestCase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

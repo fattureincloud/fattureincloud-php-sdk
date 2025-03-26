@@ -30,6 +30,7 @@
 
 namespace FattureInCloud\Test\Model;
 
+use FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -55,6 +56,13 @@ class PriceListTypeTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{  
+            "type": "sell"
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\PriceList');
     }
 
     /**
@@ -76,7 +84,6 @@ class PriceListTypeTest extends TestCase
      */
     public function testPriceListType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        TestCase::assertEquals($this->object['type'], $this->array['type']);
     }
 }

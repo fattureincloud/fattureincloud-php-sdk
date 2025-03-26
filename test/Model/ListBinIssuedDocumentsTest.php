@@ -30,6 +30,7 @@
 
 namespace FattureInCloud\Test\Model;
 
+use FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -43,6 +44,10 @@ use PHPUnit\Framework\TestCase;
  */
 class ListBinIssuedDocumentsTest extends TestCase
 {
+
+    public $array = [];
+    public $object;
+
     /**
      * Setup before running any test case
      */
@@ -55,6 +60,76 @@ class ListBinIssuedDocumentsTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+          "data": [
+            {
+              "id": 12345,
+              "type": "receipt",
+              "numeration": "rec123",
+              "subject": "",
+              "visible_subject": "",
+              "amount_net": 68.18,
+              "amount_vat": 6.82,
+              "amount_gross": 75,
+              "amount_due_discount": 0,
+              "entity": {
+                "id": 54321,
+                "name": "Mary Red S.r.L.",
+                "vat_number": "IT05432181211",
+                "tax_code": "IT05432181211",
+                "address_street": "Via Italia, 66",
+                "address_postal_code": "20900",
+                "address_city": "Milano",
+                "address_province": "MI",
+                "address_extra": "",
+                "country": "Italia",
+                "certified_email": "mary@pec.red.com",
+                "ei_code": "ABCXCR1"
+              },
+              "date": "2021-08-20",
+              "number": 1,
+              "next_due_date": "2021-12-31",
+              "url": "ypbqqe4u8w8bdabcd5fd5b1a4gtqhlof.pdf",
+              "items_list": null,
+              "payments_list": null
+            },
+            {
+              "id": 12346,
+              "type": "receipt",
+              "numeration": "rec124",
+              "subject": "",
+              "visible_subject": "",
+              "amount_net": 168.18,
+              "amount_vat": 16.82,
+              "amount_gross": 175,
+              "amount_due_discount": 0,
+              "entity": {
+                "id": 54321,
+                "name": "Mary Red S.r.L.",
+                "vat_number": "IT05432181211",
+                "tax_code": "IT05432181211",
+                "address_street": "Via Italia, 66",
+                "address_postal_code": "20900",
+                "address_city": "Milano",
+                "address_province": "MI",
+                "address_extra": "",
+                "country": "Italia",
+                "certified_email": "mary@pec.red.com",
+                "ei_code": "ABCXCR1"
+              },
+              "date": "2021-08-28",
+              "number": 1,
+              "next_due_date": "2021-12-31",
+              "url": "qwertye4u8w8bdaqrt5fd5b1a4gtqhlof.pdf",
+              "items_list": null,
+              "payments_list": null
+            }
+          ]
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListBinIssuedDocuments');
     }
 
     /**
@@ -76,8 +151,9 @@ class ListBinIssuedDocumentsTest extends TestCase
      */
     public function testListBinIssuedDocuments()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) {
+            Testcase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +161,8 @@ class ListBinIssuedDocumentsTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) {
+            TestCase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

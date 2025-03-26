@@ -30,6 +30,7 @@
 
 namespace FattureInCloud\Test\Model;
 
+use FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -55,6 +56,67 @@ class GetEntityClientPreCreateInfoResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "data": {
+                "countries_list": [
+                  "Italy"
+                ],
+                "payment_methods_list": [
+                  {
+                    "id": 555,
+                    "name": "Rimessa diretta",
+                    "is_default": false,
+                    "details": [],
+                    "bank_iban": null,
+                    "bank_name": null,
+                    "bank_beneficiary": null,
+                    "ei_payment_method": null
+                  }
+                ],
+                "payment_accounts_list": [
+                  {
+                    "id": 0,
+                    "name": "Conto Banca Intesa",
+                    "type": "standard",
+                    "iban": "string",
+                    "sia": "string",
+                    "cuc": "string",
+                    "virtual": true
+                  }
+                ],
+                "vat_types_list": [
+                  {
+                    "id": 0,
+                    "value": 22,
+                    "description": "Non imponibile art. 123",
+                    "notes": "IVA non imponibile ai sensi dell\'articolo 123, comma 2",
+                    "e_invoice": true,
+                    "ei_type": 2,
+                    "ei_description": "string",
+                    "editable": true,
+                    "is_disabled": true,
+                    "default": true
+                  }
+                ],
+                "price_lists": [
+                  {
+                    "id": "string",
+                    "name": "123",
+                    "prices_type": "net",
+                    "is_default": true,
+                    "valid_from": "string",
+                    "valid_to": "string",
+                    "type": "sell"
+                  }
+                ],
+                "limit": 0,
+                "usage": 0
+            }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\GetEntityClientPreCreateInfoResponse');
     }
 
     /**
@@ -76,8 +138,9 @@ class GetEntityClientPreCreateInfoResponseTest extends TestCase
      */
     public function testGetEntityClientPreCreateInfoResponse()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) {
+            TestCase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +148,8 @@ class GetEntityClientPreCreateInfoResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) {
+            TestCase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }

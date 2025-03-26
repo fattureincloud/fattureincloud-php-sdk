@@ -30,6 +30,7 @@
 
 namespace FattureInCloud\Test\Model;
 
+use FattureInCloud\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -43,6 +44,9 @@ use PHPUnit\Framework\TestCase;
  */
 class GetPriceListItemsResponseTest extends TestCase
 {
+    public $array = [];
+    public $object;
+
     /**
      * Setup before running any test case
      */
@@ -55,6 +59,20 @@ class GetPriceListItemsResponseTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+          "data": {
+            "1": {
+                "price": 3
+            },
+            "2": {
+                "price": 4
+            }
+          }
+        }';
+
+        $this->array = json_decode($json, true);
+
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\GetPriceListItemsResponse');
     }
 
     /**
@@ -76,8 +94,9 @@ class GetPriceListItemsResponseTest extends TestCase
      */
     public function testGetPriceListItemsResponse()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        foreach ($this->array as $key => $value) {
+            TestCase::assertArrayHasKey($key, $this->object);
+        }
     }
 
     /**
@@ -85,7 +104,8 @@ class GetPriceListItemsResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        foreach ($this->array['data'] as $key => $value) {
+            TestCase::assertArrayHasKey($key, $this->object['data']);
+        }
     }
 }
