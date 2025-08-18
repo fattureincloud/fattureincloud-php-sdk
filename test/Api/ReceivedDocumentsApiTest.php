@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ReceivedDocumentsApiTest
  * PHP version 7.3

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * EmailsApiTest
  * PHP version 7.4

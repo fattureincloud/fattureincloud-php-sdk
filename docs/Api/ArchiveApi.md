@@ -366,7 +366,7 @@ $apiInstance = new FattureInCloud\Api\ArchiveApi(
 );
 $company_id = 12345; // int | The ID of the company.
 $filename = 'filename_example'; // string | Attachment file name
-$attachment = "/path/to/file.txt"; // \SplFileObject | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx]
+$attachment = '/path/to/file.txt'; // \SplFileObject | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx]
 
 try {
     $result = $apiInstance->uploadArchiveDocumentAttachment($company_id, $filename, $attachment);

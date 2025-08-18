@@ -18,5 +18,6 @@ Name | Type | Description | Notes
 **payment_accounts_list** | [**\FattureInCloud\Model\PaymentAccount[]**](PaymentAccount.md) | Payment accounts list | [optional]
 **vat_types_list** | [**\FattureInCloud\Model\VatType[]**](VatType.md) | Vat types list | [optional]
 **languages_list** | [**\FattureInCloud\Model\Language[]**](Language.md) | Languages list | [optional]
+**price_lists** | [**\FattureInCloud\Model\PriceList[]**](PriceList.md) | Price lists | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

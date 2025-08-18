@@ -5,14 +5,18 @@ All URIs are relative to https://api-v2.fattureincloud.it, except if the operati
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**createReceivedDocument()**](ReceivedDocumentsApi.md#createReceivedDocument) | **POST** /c/{company_id}/received_documents | Create Received Document |
+| [**deleteBinReceivedDocument()**](ReceivedDocumentsApi.md#deleteBinReceivedDocument) | **DELETE** /c/{company_id}/bin/received_documents/{document_id} |  |
 | [**deleteReceivedDocument()**](ReceivedDocumentsApi.md#deleteReceivedDocument) | **DELETE** /c/{company_id}/received_documents/{document_id} | Delete Received Document |
 | [**deleteReceivedDocumentAttachment()**](ReceivedDocumentsApi.md#deleteReceivedDocumentAttachment) | **DELETE** /c/{company_id}/received_documents/{document_id}/attachment | Delete Received Document Attachment |
+| [**getBinReceivedDocument()**](ReceivedDocumentsApi.md#getBinReceivedDocument) | **GET** /c/{company_id}/bin/received_documents/{document_id} | Get Bin Received Documents List |
 | [**getExistingReceivedDocumentTotals()**](ReceivedDocumentsApi.md#getExistingReceivedDocumentTotals) | **POST** /c/{company_id}/received_documents/{document_id}/totals | Get Existing Received Document Totals |
 | [**getNewReceivedDocumentTotals()**](ReceivedDocumentsApi.md#getNewReceivedDocumentTotals) | **POST** /c/{company_id}/received_documents/totals | Get New Received Document Totals |
 | [**getReceivedDocument()**](ReceivedDocumentsApi.md#getReceivedDocument) | **GET** /c/{company_id}/received_documents/{document_id} | Get Received Document |
 | [**getReceivedDocumentPreCreateInfo()**](ReceivedDocumentsApi.md#getReceivedDocumentPreCreateInfo) | **GET** /c/{company_id}/received_documents/info | Get Received Document Pre-Create Info |
+| [**listBinReceivedDocuments()**](ReceivedDocumentsApi.md#listBinReceivedDocuments) | **GET** /c/{company_id}/bin/received_documents | Get Bin Received Documents List |
 | [**listReceivedDocuments()**](ReceivedDocumentsApi.md#listReceivedDocuments) | **GET** /c/{company_id}/received_documents | List Received Documents |
 | [**modifyReceivedDocument()**](ReceivedDocumentsApi.md#modifyReceivedDocument) | **PUT** /c/{company_id}/received_documents/{document_id} | Modify Received Document |
+| [**recoverBinReceivedDocument()**](ReceivedDocumentsApi.md#recoverBinReceivedDocument) | **POST** /c/{company_id}/bin/received_documents/{document_id}/recover |  |
 | [**uploadReceivedDocumentAttachment()**](ReceivedDocumentsApi.md#uploadReceivedDocumentAttachment) | **POST** /c/{company_id}/received_documents/attachment | Upload Received Document Attachment |
 
 
@@ -73,6 +77,67 @@ try {
 
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteBinReceivedDocument()`
+
+```php
+deleteBinReceivedDocument($company_id, $document_id)
+```
+
+
+
+Delete Bin Received Document
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
+$config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
+
+try {
+    $apiInstance->deleteBinReceivedDocument($company_id, $document_id);
+} catch (Exception $e) {
+    echo 'Exception when calling ReceivedDocumentsApi->deleteBinReceivedDocument: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -195,6 +260,68 @@ void (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getBinReceivedDocument()`
+
+```php
+getBinReceivedDocument($company_id, $document_id): \FattureInCloud\Model\GetBinIssuedDocumentResponse
+```
+
+Get Bin Received Documents List
+
+Get bin issued documents detail
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
+$config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
+
+try {
+    $result = $apiInstance->getBinReceivedDocument($company_id, $document_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ReceivedDocumentsApi->getBinReceivedDocument: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
+
+### Return type
+
+[**\FattureInCloud\Model\GetBinIssuedDocumentResponse**](../Model/GetBinIssuedDocumentResponse.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -454,6 +581,66 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `listBinReceivedDocuments()`
+
+```php
+listBinReceivedDocuments($company_id): \FattureInCloud\Model\ListBinReceivedDocuments
+```
+
+Get Bin Received Documents List
+
+Get bin Received documents list
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
+$config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 12345; // int | The ID of the company.
+
+try {
+    $result = $apiInstance->listBinReceivedDocuments($company_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ReceivedDocumentsApi->listBinReceivedDocuments: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+
+### Return type
+
+[**\FattureInCloud\Model\ListBinReceivedDocuments**](../Model/ListBinReceivedDocuments.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `listReceivedDocuments()`
 
 ```php
@@ -592,6 +779,67 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `recoverBinReceivedDocument()`
+
+```php
+recoverBinReceivedDocument($company_id, $document_id)
+```
+
+
+
+Recover Received Document From The Bin
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
+$config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 12345; // int | The ID of the company.
+$document_id = 56; // int | The ID of the document.
+
+try {
+    $apiInstance->recoverBinReceivedDocument($company_id, $document_id);
+} catch (Exception $e) {
+    echo 'Exception when calling ReceivedDocumentsApi->recoverBinReceivedDocument: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `uploadReceivedDocumentAttachment()`
 
 ```php
@@ -621,7 +869,7 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
 );
 $company_id = 12345; // int | The ID of the company.
 $filename = 'filename_example'; // string | Attachment file name
-$attachment = "/path/to/file.txt"; // \SplFileObject | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx]
+$attachment = '/path/to/file.txt'; // \SplFileObject | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx]
 
 try {
     $result = $apiInstance->uploadReceivedDocumentAttachment($company_id, $filename, $attachment);

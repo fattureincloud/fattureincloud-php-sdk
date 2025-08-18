@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ReceiptsApiTest
  * PHP version 7.3

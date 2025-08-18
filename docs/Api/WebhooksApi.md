@@ -9,6 +9,7 @@ All URIs are relative to https://api-v2.fattureincloud.it, except if the operati
 | [**getWebhooksSubscription()**](WebhooksApi.md#getWebhooksSubscription) | **GET** /c/{company_id}/subscriptions/{subscription_id} | Get Webhooks Subscription |
 | [**listWebhooksSubscriptions()**](WebhooksApi.md#listWebhooksSubscriptions) | **GET** /c/{company_id}/subscriptions | List Webhooks Subscriptions |
 | [**modifyWebhooksSubscription()**](WebhooksApi.md#modifyWebhooksSubscription) | **PUT** /c/{company_id}/subscriptions/{subscription_id} | Modify Webhooks Subscription |
+| [**verifyWebhooksSubscription()**](WebhooksApi.md#verifyWebhooksSubscription) | **POST** /c/{company_id}/subscriptions/{subscription_id}/verify | Verify Webhooks Subscription |
 
 
 ## `createWebhooksSubscription()`
@@ -315,6 +316,69 @@ try {
 
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `verifyWebhooksSubscription()`
+
+```php
+verifyWebhooksSubscription($company_id, $subscription_id, $verify_webhooks_subscription_request)
+```
+
+Verify Webhooks Subscription
+
+Verify a webhook subscription.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
+$config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new FattureInCloud\Api\WebhooksApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 12345; // int | The ID of the company.
+$subscription_id = SUB123; // string | The ID of the subscription.
+$verify_webhooks_subscription_request = new \FattureInCloud\Model\VerifyWebhooksSubscriptionRequest; // \FattureInCloud\Model\VerifyWebhooksSubscriptionRequest
+
+try {
+    $apiInstance->verifyWebhooksSubscription($company_id, $subscription_id, $verify_webhooks_subscription_request);
+} catch (Exception $e) {
+    echo 'Exception when calling WebhooksApi->verifyWebhooksSubscription: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **subscription_id** | **string**| The ID of the subscription. | |
+| **verify_webhooks_subscription_request** | [**\FattureInCloud\Model\VerifyWebhooksSubscriptionRequest**](../Model/VerifyWebhooksSubscriptionRequest.md)|  | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
