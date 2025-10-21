@@ -5,7 +5,7 @@ All URIs are relative to https://api-v2.fattureincloud.it, except if the operati
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**createReceivedDocument()**](ReceivedDocumentsApi.md#createReceivedDocument) | **POST** /c/{company_id}/received_documents | Create Received Document |
-| [**deleteBinReceivedDocument()**](ReceivedDocumentsApi.md#deleteBinReceivedDocument) | **DELETE** /c/{company_id}/bin/received_documents/{document_id} |  |
+| [**deleteBinReceivedDocument()**](ReceivedDocumentsApi.md#deleteBinReceivedDocument) | **DELETE** /c/{company_id}/bin/received_documents/{document_id} | Delete Bin Received Document |
 | [**deleteReceivedDocument()**](ReceivedDocumentsApi.md#deleteReceivedDocument) | **DELETE** /c/{company_id}/received_documents/{document_id} | Delete Received Document |
 | [**deleteReceivedDocumentAttachment()**](ReceivedDocumentsApi.md#deleteReceivedDocumentAttachment) | **DELETE** /c/{company_id}/received_documents/{document_id}/attachment | Delete Received Document Attachment |
 | [**getBinReceivedDocument()**](ReceivedDocumentsApi.md#getBinReceivedDocument) | **GET** /c/{company_id}/bin/received_documents/{document_id} | Get Bin Received Documents List |
@@ -16,7 +16,7 @@ All URIs are relative to https://api-v2.fattureincloud.it, except if the operati
 | [**listBinReceivedDocuments()**](ReceivedDocumentsApi.md#listBinReceivedDocuments) | **GET** /c/{company_id}/bin/received_documents | Get Bin Received Documents List |
 | [**listReceivedDocuments()**](ReceivedDocumentsApi.md#listReceivedDocuments) | **GET** /c/{company_id}/received_documents | List Received Documents |
 | [**modifyReceivedDocument()**](ReceivedDocumentsApi.md#modifyReceivedDocument) | **PUT** /c/{company_id}/received_documents/{document_id} | Modify Received Document |
-| [**recoverBinReceivedDocument()**](ReceivedDocumentsApi.md#recoverBinReceivedDocument) | **POST** /c/{company_id}/bin/received_documents/{document_id}/recover |  |
+| [**recoverBinReceivedDocument()**](ReceivedDocumentsApi.md#recoverBinReceivedDocument) | **POST** /c/{company_id}/bin/received_documents/{document_id}/recover | Recover Received Document From The Bin |
 | [**uploadReceivedDocumentAttachment()**](ReceivedDocumentsApi.md#uploadReceivedDocumentAttachment) | **POST** /c/{company_id}/received_documents/attachment | Upload Received Document Attachment |
 
 
@@ -40,14 +40,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $create_received_document_request = new \FattureInCloud\Model\CreateReceivedDocumentRequest; // \FattureInCloud\Model\CreateReceivedDocumentRequest | Document to create
 
 try {
@@ -88,7 +87,7 @@ try {
 deleteBinReceivedDocument($company_id, $document_id)
 ```
 
-
+Delete Bin Received Document
 
 Delete Bin Received Document
 
@@ -102,14 +101,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 
 try {
@@ -163,14 +161,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 
 try {
@@ -224,14 +221,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 
 try {
@@ -285,14 +281,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 
 try {
@@ -347,14 +342,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 $get_existing_received_document_totals_request = new \FattureInCloud\Model\GetExistingReceivedDocumentTotalsRequest; // \FattureInCloud\Model\GetExistingReceivedDocumentTotalsRequest | Received document.
 
@@ -411,14 +405,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $get_new_received_document_totals_request = new \FattureInCloud\Model\GetNewReceivedDocumentTotalsRequest; // \FattureInCloud\Model\GetNewReceivedDocumentTotalsRequest | Received document.
 
 try {
@@ -473,14 +466,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
@@ -539,14 +531,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $type = 'type_example'; // string | The type of the received document.
 
 try {
@@ -601,14 +592,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 
 try {
     $result = $apiInstance->listBinReceivedDocuments($company_id);
@@ -661,14 +651,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $type = 'type_example'; // string | The type of the received document.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
@@ -735,14 +724,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 $modify_received_document_request = new \FattureInCloud\Model\ModifyReceivedDocumentRequest; // \FattureInCloud\Model\ModifyReceivedDocumentRequest | Modified document.
 
@@ -785,7 +773,7 @@ try {
 recoverBinReceivedDocument($company_id, $document_id)
 ```
 
-
+Recover Received Document From The Bin
 
 Recover Received Document From The Bin
 
@@ -799,14 +787,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 
 try {
@@ -860,14 +847,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $filename = 'filename_example'; // string | Attachment file name
 $attachment = '/path/to/file.txt'; // \SplFileObject | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx]
 
