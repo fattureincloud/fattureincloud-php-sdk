@@ -44,7 +44,6 @@ use PHPUnit\Framework\TestCase;
  */
 class ListPriceListsResponseTest extends TestCase
 {
-
     public $array = [];
     public $object;
     /**
@@ -59,7 +58,7 @@ class ListPriceListsResponseTest extends TestCase
      */
     public function setUp(): void
     {
-        $json ='{
+        $json = '{
           "data": [
             {
               "id": "10",

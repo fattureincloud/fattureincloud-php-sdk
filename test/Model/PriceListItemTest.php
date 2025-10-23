@@ -44,7 +44,6 @@ use PHPUnit\Framework\TestCase;
  */
 class PriceListItemTest extends TestCase
 {
-
     public $array = [];
     public $object;
     /**

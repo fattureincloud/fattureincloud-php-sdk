@@ -288,6 +288,7 @@ lib/Api/UserApi.php
 lib/Api/WebhooksApi.php
 lib/ApiException.php
 lib/Configuration.php
+lib/FormDataProcessor.php
 lib/HeaderSelector.php
 lib/Model/ArchiveDocument.php
 lib/Model/AttachmentData.php
@@ -542,19 +543,3 @@ lib/Model/WebhooksSubscriptionMapping.php
 lib/Model/WebhooksSubscriptionVerificationMethod.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/PriceListsApiTest.php
-test/Model/EntityClientPreCreateInfoTest.php
-test/Model/GetBinIssuedDocumentResponseTest.php
-test/Model/GetBinReceivedDocumentResponseTest.php
-test/Model/GetEntityClientPreCreateInfoResponseTest.php
-test/Model/GetPriceListItemsResponseTest.php
-test/Model/ListBinIssuedDocumentsTest.php
-test/Model/ListBinReceivedDocumentsTest.php
-test/Model/ListPriceListsResponseTest.php
-test/Model/PriceListItemTest.php
-test/Model/PriceListPricesTypeTest.php
-test/Model/PriceListTest.php
-test/Model/PriceListTypeTest.php
-test/Model/VerifyWebhooksSubscriptionRequestTest.php
-test/Model/VerifyWebhooksSubscriptionTest.php
-test/Model/WebhooksSubscriptionVerificationMethodTest.php
