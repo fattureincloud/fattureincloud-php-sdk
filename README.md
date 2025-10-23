@@ -1,11 +1,11 @@
 # FattureInCloud PHP SDK
 
 [![Packagist](https://img.shields.io/packagist/v/fattureincloud/fattureincloud-php-sdk?color=g)](https://packagist.org/packages/fattureincloud/fattureincloud-php-sdk) ![unit tests](https://github.com/fattureincloud/fattureincloud-php-sdk/actions/workflows/validate.yaml/badge.svg)
-Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy. 
+    Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy. 
 
 The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
-For more information, please visit [https://www.fattureincloud.it](https://www.fattureincloud.it).
+    For more information, please visit [https://www.fattureincloud.it](https://www.fattureincloud.it).
 
 ## Installation & Usage
 
@@ -36,15 +36,14 @@ require_once('./fattureincloud-php-sdk.phar');
 Please follow the [installation procedure](#installation--usage) and then run the following:
 
 ```php
-<?php
+        <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-// Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
-$config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
+    
+            // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
+    $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+    
 $apiInstance = new FattureInCloud\Api\ArchiveApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -56,10 +55,10 @@ $create_archive_document_request = new \FattureInCloud\Model\CreateArchiveDocume
 
 try {
     $result = $apiInstance->createArchiveDocument($company_id, $create_archive_document_request);
-    print_r($result);
-} catch (Exception $e) {
+        print_r($result);
+    } catch (Exception $e) {
     echo 'Exception when calling ArchiveApi->createArchiveDocument: ', $e->getMessage(), PHP_EOL;
-}
+    }
 
 ```
 
@@ -106,7 +105,7 @@ Class | Method | HTTP request | Description
 *InfoApi* | [**listUnitsOfMeasure**](docs/Api/InfoApi.md#listunitsofmeasure) | **GET** /info/measures | List Units of Measure
 *InfoApi* | [**listVatTypes**](docs/Api/InfoApi.md#listvattypes) | **GET** /c/{company_id}/info/vat_types | List Vat Types
 *IssuedDocumentsApi* | [**createIssuedDocument**](docs/Api/IssuedDocumentsApi.md#createissueddocument) | **POST** /c/{company_id}/issued_documents | Create Issued Document
-*IssuedDocumentsApi* | [**deleteBinIssuedDocument**](docs/Api/IssuedDocumentsApi.md#deletebinissueddocument) | **DELETE** /c/{company_id}/bin/issued_documents/{document_id} | 
+*IssuedDocumentsApi* | [**deleteBinIssuedDocument**](docs/Api/IssuedDocumentsApi.md#deletebinissueddocument) | **DELETE** /c/{company_id}/bin/issued_documents/{document_id} | Delete Bin Issued Document
 *IssuedDocumentsApi* | [**deleteIssuedDocument**](docs/Api/IssuedDocumentsApi.md#deleteissueddocument) | **DELETE** /c/{company_id}/issued_documents/{document_id} | Delete Issued Document
 *IssuedDocumentsApi* | [**deleteIssuedDocumentAttachment**](docs/Api/IssuedDocumentsApi.md#deleteissueddocumentattachment) | **DELETE** /c/{company_id}/issued_documents/{document_id}/attachment | Delete Issued Document Attachment
 *IssuedDocumentsApi* | [**getBinIssuedDocument**](docs/Api/IssuedDocumentsApi.md#getbinissueddocument) | **GET** /c/{company_id}/bin/issued_documents/{document_id} | Get Bin Issued Documents List
@@ -119,7 +118,7 @@ Class | Method | HTTP request | Description
 *IssuedDocumentsApi* | [**listBinIssuedDocuments**](docs/Api/IssuedDocumentsApi.md#listbinissueddocuments) | **GET** /c/{company_id}/bin/issued_documents | Get Bin Issued Documents List
 *IssuedDocumentsApi* | [**listIssuedDocuments**](docs/Api/IssuedDocumentsApi.md#listissueddocuments) | **GET** /c/{company_id}/issued_documents | List Issued Documents
 *IssuedDocumentsApi* | [**modifyIssuedDocument**](docs/Api/IssuedDocumentsApi.md#modifyissueddocument) | **PUT** /c/{company_id}/issued_documents/{document_id} | Modify Issued Document
-*IssuedDocumentsApi* | [**recoverBinIssuedDocument**](docs/Api/IssuedDocumentsApi.md#recoverbinissueddocument) | **POST** /c/{company_id}/bin/issued_documents/{document_id}/recover | 
+*IssuedDocumentsApi* | [**recoverBinIssuedDocument**](docs/Api/IssuedDocumentsApi.md#recoverbinissueddocument) | **POST** /c/{company_id}/bin/issued_documents/{document_id}/recover | Recover Issued Document From The Bin
 *IssuedDocumentsApi* | [**scheduleEmail**](docs/Api/IssuedDocumentsApi.md#scheduleemail) | **POST** /c/{company_id}/issued_documents/{document_id}/email | Schedule Email
 *IssuedDocumentsApi* | [**transformIssuedDocument**](docs/Api/IssuedDocumentsApi.md#transformissueddocument) | **GET** /c/{company_id}/issued_documents/transform | Transform Issued Document
 *IssuedDocumentsApi* | [**uploadIssuedDocumentAttachment**](docs/Api/IssuedDocumentsApi.md#uploadissueddocumentattachment) | **POST** /c/{company_id}/issued_documents/attachment | Upload Issued Document Attachment
@@ -142,7 +141,7 @@ Class | Method | HTTP request | Description
 *ReceiptsApi* | [**listReceipts**](docs/Api/ReceiptsApi.md#listreceipts) | **GET** /c/{company_id}/receipts | List Receipts
 *ReceiptsApi* | [**modifyReceipt**](docs/Api/ReceiptsApi.md#modifyreceipt) | **PUT** /c/{company_id}/receipts/{document_id} | Modify Receipt
 *ReceivedDocumentsApi* | [**createReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#createreceiveddocument) | **POST** /c/{company_id}/received_documents | Create Received Document
-*ReceivedDocumentsApi* | [**deleteBinReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#deletebinreceiveddocument) | **DELETE** /c/{company_id}/bin/received_documents/{document_id} | 
+*ReceivedDocumentsApi* | [**deleteBinReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#deletebinreceiveddocument) | **DELETE** /c/{company_id}/bin/received_documents/{document_id} | Delete Bin Received Document
 *ReceivedDocumentsApi* | [**deleteReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#deletereceiveddocument) | **DELETE** /c/{company_id}/received_documents/{document_id} | Delete Received Document
 *ReceivedDocumentsApi* | [**deleteReceivedDocumentAttachment**](docs/Api/ReceivedDocumentsApi.md#deletereceiveddocumentattachment) | **DELETE** /c/{company_id}/received_documents/{document_id}/attachment | Delete Received Document Attachment
 *ReceivedDocumentsApi* | [**getBinReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#getbinreceiveddocument) | **GET** /c/{company_id}/bin/received_documents/{document_id} | Get Bin Received Documents List
@@ -153,7 +152,7 @@ Class | Method | HTTP request | Description
 *ReceivedDocumentsApi* | [**listBinReceivedDocuments**](docs/Api/ReceivedDocumentsApi.md#listbinreceiveddocuments) | **GET** /c/{company_id}/bin/received_documents | Get Bin Received Documents List
 *ReceivedDocumentsApi* | [**listReceivedDocuments**](docs/Api/ReceivedDocumentsApi.md#listreceiveddocuments) | **GET** /c/{company_id}/received_documents | List Received Documents
 *ReceivedDocumentsApi* | [**modifyReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#modifyreceiveddocument) | **PUT** /c/{company_id}/received_documents/{document_id} | Modify Received Document
-*ReceivedDocumentsApi* | [**recoverBinReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#recoverbinreceiveddocument) | **POST** /c/{company_id}/bin/received_documents/{document_id}/recover | 
+*ReceivedDocumentsApi* | [**recoverBinReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#recoverbinreceiveddocument) | **POST** /c/{company_id}/bin/received_documents/{document_id}/recover | Recover Received Document From The Bin
 *ReceivedDocumentsApi* | [**uploadReceivedDocumentAttachment**](docs/Api/ReceivedDocumentsApi.md#uploadreceiveddocumentattachment) | **POST** /c/{company_id}/received_documents/attachment | Upload Received Document Attachment
 *SettingsApi* | [**createPaymentAccount**](docs/Api/SettingsApi.md#createpaymentaccount) | **POST** /c/{company_id}/settings/payment_accounts | Create Payment Account
 *SettingsApi* | [**createPaymentMethod**](docs/Api/SettingsApi.md#createpaymentmethod) | **POST** /c/{company_id}/settings/payment_methods | Create Payment Method
@@ -443,57 +442,57 @@ Class | Method | HTTP request | Description
 - [WebhooksSubscriptionVerificationMethod](docs/Model/WebhooksSubscriptionVerificationMethod.md)
 
 ## Authorization
+    
+    ### OAuth2AuthenticationCodeFlow
 
-### OAuth2AuthenticationCodeFlow
-
-- **Type**: `OAuth`
-- **Flow**: `accessCode`
-- **Authorization URL**: `https://api-v2.fattureincloud.it/oauth/authorize`
-- **Scopes**: 
-    - **entity.clients:r**: Read permission to the Clients registry
-    - **entity.clients:a**: Write permission to the Clients registry
-    - **entity.suppliers:r**: Read permission to the Suppliers registry
-    - **entity.suppliers:a**: Write permission to the Suppliers registry
-    - **products:r**: Read permission to the Products
-    - **products:a**: Write permission to the Products
-    - **issued_documents.invoices:r**: Read permission to the issued Invoices
-    - **issued_documents.credit_notes:r**: Read permission to the issued Credit Notes
-    - **issued_documents.receipts:r**: Read permission to the issued Receipts
-    - **issued_documents.orders:r**: Read permission to the issued Orders
-    - **issued_documents.quotes:r**: Read permission to the issued Quotes
-    - **issued_documents.proformas:r**: Read permission to the issued Proformas
-    - **issued_documents.delivery_notes:r**: Read permission to the issued Delivery Notes
-    - **issued_documents.work_reports:r**: Read permission to the issued Work Reports
-    - **issued_documents.supplier_orders:r**: Read permission to the issued Supplier Orders
-    - **issued_documents.self_invoices:r**: Read permission to the issued Self Invoices
-    - **issued_documents.invoices:a**: Write permission to the issued Invoices
-    - **issued_documents.credit_notes:a**: Write permission to the issued Credit Notes
-    - **issued_documents.receipts:a**: Write permission to the issued issued Receipts
-    - **issued_documents.orders:a**: Write permission to the issued Orders
-    - **issued_documents.quotes:a**: Write permission to the issued Quotes
-    - **issued_documents.proformas:a**: Write permission to the issued Proformas
-    - **issued_documents.delivery_notes:a**: Write permission to the issued Delivery Notes
-    - **issued_documents.work_reports:a**: Write permission to the issued Work Reports
-    - **issued_documents.supplier_orders:a**: Write permission to the issued Supplier Orders
-    - **issued_documents.self_invoices:a**: Write permission to the issued Self Invoices
-    - **received_documents:r**: Read permission to the Received Documents
-    - **received_documents:a**: Write permission to the Received Documents
-    - **stock:r**: Read permission to the Stock movements
-    - **stock:a**: Write permission to the Stock movements
-    - **receipts:r**: Read permission to the Receipts
-    - **receipts:a**: Write permission to the Receipts
-    - **calendar:r**: Read permission to the Calendar
-    - **calendar:a**: Write permission to the Calendar
-    - **taxes:r**: Read permission to the Taxes
-    - **taxes:a**: Write permission to the Taxes
-    - **archive:r**: Read permission to the Archive Documents
-    - **archive:a**: Read permission to the Archive Documents
-    - **emails:r**: Read permission to the Emails
-    - **cashbook:r**: Read permission to the Cashbook
-    - **cashbook:a**: Write permission to the Cashbook
-    - **settings:r**: Read permission to the Settings
-    - **settings:a**: Write permission to the Settings
-    - **situation:r**: Read permission to the company Situation
+        - **Type**: `OAuth`
+        - **Flow**: `accessCode`
+        - **Authorization URL**: `https://api-v2.fattureincloud.it/oauth/authorize`
+        - **Scopes**: 
+            - **entity.clients:r**: Read permission to the Clients registry
+            - **entity.clients:a**: Write permission to the Clients registry
+            - **entity.suppliers:r**: Read permission to the Suppliers registry
+            - **entity.suppliers:a**: Write permission to the Suppliers registry
+            - **products:r**: Read permission to the Products
+            - **products:a**: Write permission to the Products
+            - **issued_documents.invoices:r**: Read permission to the issued Invoices
+            - **issued_documents.credit_notes:r**: Read permission to the issued Credit Notes
+            - **issued_documents.receipts:r**: Read permission to the issued Receipts
+            - **issued_documents.orders:r**: Read permission to the issued Orders
+            - **issued_documents.quotes:r**: Read permission to the issued Quotes
+            - **issued_documents.proformas:r**: Read permission to the issued Proformas
+            - **issued_documents.delivery_notes:r**: Read permission to the issued Delivery Notes
+            - **issued_documents.work_reports:r**: Read permission to the issued Work Reports
+            - **issued_documents.supplier_orders:r**: Read permission to the issued Supplier Orders
+            - **issued_documents.self_invoices:r**: Read permission to the issued Self Invoices
+            - **issued_documents.invoices:a**: Write permission to the issued Invoices
+            - **issued_documents.credit_notes:a**: Write permission to the issued Credit Notes
+            - **issued_documents.receipts:a**: Write permission to the issued issued Receipts
+            - **issued_documents.orders:a**: Write permission to the issued Orders
+            - **issued_documents.quotes:a**: Write permission to the issued Quotes
+            - **issued_documents.proformas:a**: Write permission to the issued Proformas
+            - **issued_documents.delivery_notes:a**: Write permission to the issued Delivery Notes
+            - **issued_documents.work_reports:a**: Write permission to the issued Work Reports
+            - **issued_documents.supplier_orders:a**: Write permission to the issued Supplier Orders
+            - **issued_documents.self_invoices:a**: Write permission to the issued Self Invoices
+            - **received_documents:r**: Read permission to the Received Documents
+            - **received_documents:a**: Write permission to the Received Documents
+            - **stock:r**: Read permission to the Stock movements
+            - **stock:a**: Write permission to the Stock movements
+            - **receipts:r**: Read permission to the Receipts
+            - **receipts:a**: Write permission to the Receipts
+            - **calendar:r**: Read permission to the Calendar
+            - **calendar:a**: Write permission to the Calendar
+            - **taxes:r**: Read permission to the Taxes
+            - **taxes:a**: Write permission to the Taxes
+            - **archive:r**: Read permission to the Archive Documents
+            - **archive:a**: Read permission to the Archive Documents
+            - **emails:r**: Read permission to the Emails
+            - **cashbook:r**: Read permission to the Cashbook
+            - **cashbook:a**: Write permission to the Cashbook
+            - **settings:r**: Read permission to the Settings
+            - **settings:a**: Write permission to the Settings
+            - **situation:r**: Read permission to the company Situation
 
 ## Tests
 
@@ -512,5 +511,5 @@ info@fattureincloud.it
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `2.1.5`
+- API version: `2.1.7`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
