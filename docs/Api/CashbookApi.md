@@ -31,14 +31,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\CashbookApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $create_cashbook_entry_request = new \FattureInCloud\Model\CreateCashbookEntryRequest; // \FattureInCloud\Model\CreateCashbookEntryRequest | Cashbook entry.
 
 try {
@@ -93,14 +92,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\CashbookApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 'document_id_example'; // string | The ID of the document.
 
 try {
@@ -154,14 +152,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\CashbookApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 'document_id_example'; // string | The ID of the document.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
@@ -220,14 +217,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\CashbookApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $date_from = 'date_from_example'; // string | Start date.
 $date_to = 'date_to_example'; // string | End date.
 $year = 56; // int | Filter cashbook by year.
@@ -290,14 +286,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\CashbookApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 'document_id_example'; // string | The ID of the document.
 $modify_cashbook_entry_request = new \FattureInCloud\Model\ModifyCashbookEntryRequest; // \FattureInCloud\Model\ModifyCashbookEntryRequest | Cashbook Entry
 

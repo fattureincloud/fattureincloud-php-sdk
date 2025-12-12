@@ -13,7 +13,9 @@ All URIs are relative to https://api-v2.fattureincloud.it, except if the operati
 | [**getPaymentAccount()**](SettingsApi.md#getPaymentAccount) | **GET** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Get Payment Account |
 | [**getPaymentMethod()**](SettingsApi.md#getPaymentMethod) | **GET** /c/{company_id}/settings/payment_methods/{payment_method_id} | Get Payment Method |
 | [**getTaxProfile()**](SettingsApi.md#getTaxProfile) | **GET** /c/{company_id}/settings/tax_profile | Get Tax Profile |
+| [**getTemplate()**](SettingsApi.md#getTemplate) | **GET** /c/{company_id}/settings/templates/{template_id} | Get Template |
 | [**getVatType()**](SettingsApi.md#getVatType) | **GET** /c/{company_id}/settings/vat_types/{vat_type_id} | Get Vat Type |
+| [**listTemplates()**](SettingsApi.md#listTemplates) | **GET** /c/{company_id}/settings/templates | List Templates |
 | [**modifyPaymentAccount()**](SettingsApi.md#modifyPaymentAccount) | **PUT** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Modify Payment Account |
 | [**modifyPaymentMethod()**](SettingsApi.md#modifyPaymentMethod) | **PUT** /c/{company_id}/settings/payment_methods/{payment_method_id} | Modify Payment Method |
 | [**modifyVatType()**](SettingsApi.md#modifyVatType) | **PUT** /c/{company_id}/settings/vat_types/{vat_type_id} | Modify Vat Type |
@@ -39,14 +41,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\SettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $create_payment_account_request = new \FattureInCloud\Model\CreatePaymentAccountRequest; // \FattureInCloud\Model\CreatePaymentAccountRequest
 
 try {
@@ -101,14 +102,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\SettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $create_payment_method_request = new \FattureInCloud\Model\CreatePaymentMethodRequest; // \FattureInCloud\Model\CreatePaymentMethodRequest
 
 try {
@@ -163,14 +163,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\SettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $create_vat_type_request = new \FattureInCloud\Model\CreateVatTypeRequest; // \FattureInCloud\Model\CreateVatTypeRequest | 
 
 try {
@@ -225,14 +224,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\SettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $payment_account_id = 56; // int | The Referred Payment Account Id.
 
 try {
@@ -286,14 +284,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\SettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $payment_method_id = 56; // int | The Referred Payment Method Id.
 
 try {
@@ -347,14 +344,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\SettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $vat_type_id = 56; // int | The Referred Vat Type Id.
 
 try {
@@ -408,14 +404,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\SettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $payment_account_id = 56; // int | The Referred Payment Account Id.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
@@ -474,14 +469,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\SettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $payment_method_id = 56; // int | The Referred Payment Method Id.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
@@ -540,14 +534,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\SettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 
 try {
     $result = $apiInstance->getTaxProfile($company_id);
@@ -566,6 +559,71 @@ try {
 ### Return type
 
 [**\FattureInCloud\Model\GetTaxProfileResponse**](../Model/GetTaxProfileResponse.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getTemplate()`
+
+```php
+getTemplate($company_id, $template_id, $fields, $fieldset): \FattureInCloud\Model\GetTemplatesResponse
+```
+
+Get Template
+
+Gets a specified template.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
+$config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$apiInstance = new FattureInCloud\Api\SettingsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+    $company_id = 12345; // int | The ID of the company.
+$template_id = 56; // int | The Referred Template Id.
+$fields = 'fields_example'; // string | List of comma-separated fields.
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+
+try {
+    $result = $apiInstance->getTemplate($company_id, $template_id, $fields, $fieldset);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SettingsApi->getTemplate: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **template_id** | **int**| The Referred Template Id. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
+
+### Return type
+
+[**\FattureInCloud\Model\GetTemplatesResponse**](../Model/GetTemplatesResponse.md)
 
 ### Authorization
 
@@ -600,14 +658,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\SettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $vat_type_id = 56; // int | The Referred Vat Type Id.
 
 try {
@@ -642,6 +699,69 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `listTemplates()`
+
+```php
+listTemplates($company_id, $fields, $fieldset): \FattureInCloud\Model\ListTemplatesResponse
+```
+
+List Templates
+
+Gets all the standard and private templates.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
+$config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$apiInstance = new FattureInCloud\Api\SettingsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+    $company_id = 12345; // int | The ID of the company.
+$fields = 'fields_example'; // string | List of comma-separated fields.
+$fieldset = 'fieldset_example'; // string | Name of the fieldset.
+
+try {
+    $result = $apiInstance->listTemplates($company_id, $fields, $fieldset);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SettingsApi->listTemplates: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
+
+### Return type
+
+[**\FattureInCloud\Model\ListTemplatesResponse**](../Model/ListTemplatesResponse.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `modifyPaymentAccount()`
 
 ```php
@@ -662,14 +782,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\SettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $payment_account_id = 56; // int | The Referred Payment Account Id.
 $modify_payment_account_request = new \FattureInCloud\Model\ModifyPaymentAccountRequest; // \FattureInCloud\Model\ModifyPaymentAccountRequest
 
@@ -726,14 +845,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\SettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $payment_method_id = 56; // int | The Referred Payment Method Id.
 $modify_payment_method_request = new \FattureInCloud\Model\ModifyPaymentMethodRequest; // \FattureInCloud\Model\ModifyPaymentMethodRequest | 
 
@@ -790,14 +908,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\SettingsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $vat_type_id = 56; // int | The Referred Vat Type Id.
 $modify_vat_type_request = new \FattureInCloud\Model\ModifyVatTypeRequest; // \FattureInCloud\Model\ModifyVatTypeRequest
 

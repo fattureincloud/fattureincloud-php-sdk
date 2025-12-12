@@ -32,14 +32,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ArchiveApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $create_archive_document_request = new \FattureInCloud\Model\CreateArchiveDocumentRequest; // \FattureInCloud\Model\CreateArchiveDocumentRequest | The Archive Document.
 
 try {
@@ -94,14 +93,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ArchiveApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 
 try {
@@ -155,14 +153,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ArchiveApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
@@ -221,14 +218,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ArchiveApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
 $sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
@@ -293,14 +289,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ArchiveApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 $modify_archive_document_request = new \FattureInCloud\Model\ModifyArchiveDocumentRequest; // \FattureInCloud\Model\ModifyArchiveDocumentRequest | Modified Archive Document
 
@@ -357,14 +352,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ArchiveApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $filename = 'filename_example'; // string | Attachment file name
 $attachment = '/path/to/file.txt'; // \SplFileObject | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx]
 
