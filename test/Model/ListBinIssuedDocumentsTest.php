@@ -44,7 +44,6 @@ use PHPUnit\Framework\TestCase;
  */
 class ListBinIssuedDocumentsTest extends TestCase
 {
-
     public $array = [];
     public $object;
 
