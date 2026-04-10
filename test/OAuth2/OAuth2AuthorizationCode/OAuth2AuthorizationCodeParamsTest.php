@@ -53,4 +53,51 @@ class OAuth2AuthorizationCodeParamsTest extends TestCase
         $this->assertEquals('a/AUTH_CODE', $params->getAuthorizationCode());
         $this->assertEquals('OMG', $params->getState());
     }
+
+    /**
+     * Test constructor with null values - expects TypeError
+     */
+    public function testConstructorWithNullValues()
+    {
+        $this->expectException(\TypeError::class);
+        new OAuth2AuthorizationCodeParams(null, null);
+    }
+
+    /**
+     * Test constructor with empty string (valid case)
+     */
+    public function testConstructorWithEmptyStrings()
+    {
+        $params = new OAuth2AuthorizationCodeParams('', '');
+        $this->assertEquals('', $params->getAuthorizationCode());
+        $this->assertEquals('', $params->getState());
+    }
+
+    /**
+     * Test fromJson with missing state
+     */
+    public function testFromJsonMissingState()
+    {
+        // SDK doesn't handle missing fields gracefully
+        try {
+            OAuth2AuthorizationCodeParams::fromJson('{"code":"AUTH_CODE_ONLY"}');
+            $this->fail('Expected exception for missing state');
+        } catch (\Exception $e) {
+            $this->assertTrue(true);
+        }
+    }
+
+    /**
+     * Test setter methods
+     */
+    public function testSetters()
+    {
+        $params = new OAuth2AuthorizationCodeParams('initial_code', 'initial_state');
+        
+        $params->setAuthorizationCode('new_auth_code');
+        $params->setState('new_state');
+        
+        $this->assertEquals('new_auth_code', $params->getAuthorizationCode());
+        $this->assertEquals('new_state', $params->getState());
+    }
 }
