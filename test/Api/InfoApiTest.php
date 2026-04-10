@@ -430,7 +430,7 @@ class InfoApiTest extends TestCase
         $apiInstance = new \FattureInCloud\Api\InfoApi(
             new \GuzzleHttp\Client(['handler' => $handler])
         );
-        $result = $apiInstance->listTemplates();
+        $result = $apiInstance->listDefaultTemplates();
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListTemplatesResponse');
 
         TestCase::assertEquals($obj, $result);

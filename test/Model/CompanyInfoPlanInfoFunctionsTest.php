@@ -73,7 +73,6 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
             "subaccounts": true,
             "tessera_sanitaria": true,
             "recurring": true,
-            "sofort": false,
             "cerved": true,
             "ts_digital": true,
             "ts_pay": true,
@@ -195,14 +194,6 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
     public function testPropertySmtp()
     {
         TestCase::assertEquals($this->object['smtp'], $this->array['smtp']);
-    }
-
-    /**
-     * Test attribute "sofort"
-     */
-    public function testPropertySofort()
-    {
-        TestCase::assertEquals($this->object['sofort'], $this->array['sofort']);
     }
 
     /**

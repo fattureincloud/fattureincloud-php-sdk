@@ -62,7 +62,7 @@ class DocumentTemplateTest extends TestCase
         $json = '{
             "id": 10,
             "name": "New Standard S1",
-            "type": ""
+            "type": "standard"
           }';
 
         $this->array = json_decode($json, true);
