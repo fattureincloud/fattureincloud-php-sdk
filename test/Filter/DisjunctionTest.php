@@ -80,4 +80,31 @@ class DisjunctionTest extends TestCase
         $disjunction = new Disjunction($left, $right);
         $this->assertEquals("(city not contains 'Bergamo' or age < 30)", (string)$disjunction);
     }
+
+    /**
+     * Test with nested expressions
+     */
+    public function testNestedConditions()
+    {
+        $left = new Condition('category', Operator::EQ, 'premium');
+        $right = new Condition('score', Operator::GT, 85);
+        $inner = new Disjunction($left, $right);
+        
+        $outer = new Condition('active', Operator::EQ, true);
+        $nested = new Disjunction($inner, $outer);
+        
+        $expected = "((category = 'premium' or score > 85) or active = 1)";
+        $this->assertEquals($expected, $nested->buildQuery());
+    }
+
+    /**
+     * Test with null values
+     */
+    public function testWithNullValues()
+    {
+        $left = new Condition('notes', Operator::IS, null);
+        $right = new Condition('description', Operator::IS_NOT, null);
+        $disjunction = new Disjunction($left, $right);
+        $this->assertEquals("(notes is null or description is not null)", $disjunction->buildQuery());
+    }
 }

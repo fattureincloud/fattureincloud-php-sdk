@@ -118,6 +118,12 @@ class ConditionTest extends TestCase
 
         $condition->setOp(Operator::ENDS_WITH);
         $this->assertEquals(Operator::ENDS_WITH, $condition->getOp());
+
+        $condition->setOp(Operator::NOT_LIKE);
+        $this->assertEquals(Operator::NOT_LIKE, $condition->getOp());
+
+        $condition->setOp(Operator::NOT_CONTAINS);
+        $this->assertEquals(Operator::NOT_CONTAINS, $condition->getOp());
     }
 
     /**
@@ -160,6 +166,12 @@ class ConditionTest extends TestCase
 
         $condition = new Condition('convertion_ratio', Operator::LTE, 10.83);
         $this->assertEquals('convertion_ratio <= 10.83', $condition->buildQuery());
+
+        $condition = new Condition('city', Operator::NOT_LIKE, '%aco');
+        $this->assertEquals("city not like '%aco'", $condition->buildQuery());
+
+        $condition = new Condition('city', Operator::NOT_CONTAINS, 'ila');
+        $this->assertEquals("city not contains 'ila'", $condition->buildQuery());
     }
 
     /**
@@ -202,5 +214,11 @@ class ConditionTest extends TestCase
 
         $condition = new Condition('convertion_ratio', Operator::LTE, 10.83);
         $this->assertEquals('convertion_ratio <= 10.83', (string)$condition);
+
+        $condition = new Condition('city', Operator::NOT_LIKE, '%aco');
+        $this->assertEquals("city not like '%aco'", (string)$condition);
+
+        $condition = new Condition('city', Operator::NOT_CONTAINS, 'ila');
+        $this->assertEquals("city not contains 'ila'", (string)$condition);
     }
 }
