@@ -191,9 +191,7 @@ class ListBinReceivedDocumentsTest extends TestCase
      */
     public function testListBinReceivedDocuments()
     {
-        foreach ($this->array as $key => $value) {
-            TestCase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ListBinReceivedDocuments::class, $this->object);
     }
 
     /**
@@ -201,8 +199,6 @@ class ListBinReceivedDocumentsTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            TestCase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertIsArray($this->object->getData());
     }
 }

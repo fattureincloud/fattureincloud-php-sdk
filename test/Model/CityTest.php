@@ -89,9 +89,7 @@ class CityTest extends TestCase
      */
     public function testCity()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\City', $this->object);
     }
 
     /**
@@ -99,7 +97,7 @@ class CityTest extends TestCase
      */
     public function testPropertyPostalCode()
     {
-        TestCase::assertEquals($this->object['postal_code'], $this->array['postal_code']);
+        $this->assertEquals($this->array['postal_code'], $this->object->getPostalCode());
     }
 
     /**
@@ -107,7 +105,7 @@ class CityTest extends TestCase
      */
     public function testPropertyCity()
     {
-        TestCase::assertEquals($this->object['province'], $this->array['province']);
+        $this->assertEquals($this->array['city'], $this->object->getCity());
     }
 
     /**
@@ -115,6 +113,42 @@ class CityTest extends TestCase
      */
     public function testPropertyProvince()
     {
-        TestCase::assertEquals($this->object['province'], $this->array['province']);
+        $this->assertEquals($this->array['province'], $this->object->getProvince());
+    }
+
+    /**
+     * Test setter for "postal_code"
+     */
+    public function testSetPostalCode()
+    {
+        $object = new \FattureInCloud\Model\City();
+        $testValue = '12345';
+        
+        $object->setPostalCode($testValue);
+        $this->assertEquals($testValue, $object->getPostalCode());
+    }
+
+    /**
+     * Test setter for "city"
+     */
+    public function testSetCity()
+    {
+        $object = new \FattureInCloud\Model\City();
+        $testValue = 'test-city';
+        
+        $object->setCity($testValue);
+        $this->assertEquals($testValue, $object->getCity());
+    }
+
+    /**
+     * Test setter for "province"
+     */
+    public function testSetProvince()
+    {
+        $object = new \FattureInCloud\Model\City();
+        $testValue = 'RM';
+        
+        $object->setProvince($testValue);
+        $this->assertEquals($testValue, $object->getProvince());
     }
 }

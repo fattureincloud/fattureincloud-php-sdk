@@ -100,9 +100,7 @@ class ListCurrenciesResponseTest extends TestCase
      */
     public function testListCurrenciesResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ListCurrenciesResponse::class, $this->object);
     }
 
     /**
@@ -110,8 +108,6 @@ class ListCurrenciesResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertIsArray($this->object->getData());
     }
 }

@@ -87,6 +87,6 @@ class VatKindTest extends TestCase
      */
     public function testVatKind()
     {
-        TestCase::assertEquals($this->object['vat_kind'], $this->array['vat_kind']);
+        $this->assertEquals($this->array['vat_kind'], $this->object->getVatKind());
     }
 }

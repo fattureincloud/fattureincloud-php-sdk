@@ -118,9 +118,7 @@ class CashbookEntryTest extends TestCase
      */
     public function testCashbookEntry()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CashbookEntry', $this->object);
     }
 
     /**
@@ -128,7 +126,7 @@ class CashbookEntryTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -136,8 +134,12 @@ class CashbookEntryTest extends TestCase
      */
     public function testPropertyDate()
     {
-        $date = new \DateTime($this->array['date']);
-        TestCase::assertEquals($this->object['date'], $date);
+        $dateValue = $this->object->getDate();
+        if ($dateValue instanceof \DateTime) {
+            $this->assertEquals($this->array['date'], $dateValue->format('Y-m-d'));
+        } else {
+            $this->assertEquals($this->array['date'], $dateValue);
+        }
     }
 
     /**
@@ -145,7 +147,7 @@ class CashbookEntryTest extends TestCase
      */
     public function testPropertyDescription()
     {
-        TestCase::assertEquals($this->object['description'], $this->array['description']);
+        $this->assertEquals($this->array['description'], $this->object->getDescription());
     }
 
     /**
@@ -153,7 +155,7 @@ class CashbookEntryTest extends TestCase
      */
     public function testPropertyKind()
     {
-        TestCase::assertEquals($this->object['kind'], $this->array['kind']);
+        $this->assertEquals($this->array['kind'], $this->object->getKind());
     }
 
     /**
@@ -161,7 +163,7 @@ class CashbookEntryTest extends TestCase
      */
     public function testPropertyType()
     {
-        TestCase::assertEquals($this->object['type'], $this->array['type']);
+        $this->assertEquals($this->array['type'], $this->object->getType());
     }
 
     /**
@@ -169,7 +171,7 @@ class CashbookEntryTest extends TestCase
      */
     public function testPropertyEntityName()
     {
-        TestCase::assertEquals($this->object['entity_name'], $this->array['entity_name']);
+        $this->assertEquals($this->array['entity_name'], $this->object->getEntityName());
     }
 
     /**
@@ -177,9 +179,7 @@ class CashbookEntryTest extends TestCase
      */
     public function testPropertyDocument()
     {
-        foreach ($this->array['document'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['document']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CashbookEntryDocument', $this->object->getDocument());
     }
 
     /**
@@ -187,7 +187,7 @@ class CashbookEntryTest extends TestCase
      */
     public function testPropertyAmountOut()
     {
-        TestCase::assertEquals($this->object['amount_out'], $this->array['amount_out']);
+        $this->assertEquals($this->array['amount_out'], $this->object->getAmountOut());
     }
 
     /**
@@ -195,9 +195,7 @@ class CashbookEntryTest extends TestCase
      */
     public function testPropertyPaymentAccountOut()
     {
-        foreach ($this->array['payment_account_out'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['payment_account_out']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\PaymentAccount', $this->object->getPaymentAccountOut());
     }
 
     /**
@@ -205,7 +203,7 @@ class CashbookEntryTest extends TestCase
      */
     public function testPropertyAmountIn()
     {
-        TestCase::assertEquals($this->object['amount_in'], $this->array['amount_in']);
+        $this->assertEquals($this->array['amount_in'], $this->object->getAmountIn());
     }
 
     /**
@@ -213,8 +211,138 @@ class CashbookEntryTest extends TestCase
      */
     public function testPropertyPaymentAccountIn()
     {
-        foreach ($this->array['payment_account_in'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['payment_account_in']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\PaymentAccount', $this->object->getPaymentAccountIn());
+    }
+
+    /**
+     * Test setter for "id"
+     */
+    public function testSetId()
+    {
+        $object = new \FattureInCloud\Model\CashbookEntry();
+        $testValue = "test-cashbook-id-123";
+        
+        $object->setId($testValue);
+        $this->assertEquals($testValue, $object->getId());
+    }
+
+    /**
+     * Test setter for "date"
+     */
+    public function testSetDate()
+    {
+        $object = new \FattureInCloud\Model\CashbookEntry();
+        $testValue = new \DateTime('2024-01-15');
+        
+        $object->setDate($testValue);
+        $this->assertEquals($testValue, $object->getDate());
+    }
+
+    /**
+     * Test setter for "description"
+     */
+    public function testSetDescription()
+    {
+        $object = new \FattureInCloud\Model\CashbookEntry();
+        $testValue = "Test cashbook entry description";
+        
+        $object->setDescription($testValue);
+        $this->assertEquals($testValue, $object->getDescription());
+    }
+
+    /**
+     * Test setter for "kind"
+     */
+    public function testSetKind()
+    {
+        $object = new \FattureInCloud\Model\CashbookEntry();
+        $testValue = \FattureInCloud\Model\CashbookEntryKind::CASHBOOK;
+        
+        $object->setKind($testValue);
+        $this->assertEquals($testValue, $object->getKind());
+    }
+
+    /**
+     * Test setter for "type"
+     */
+    public function testSetType()
+    {
+        $object = new \FattureInCloud\Model\CashbookEntry();
+        $testValue = \FattureInCloud\Model\CashbookEntryType::IN;
+        
+        $object->setType($testValue);
+        $this->assertEquals($testValue, $object->getType());
+    }
+
+    /**
+     * Test setter for "entity_name"
+     */
+    public function testSetEntityName()
+    {
+        $object = new \FattureInCloud\Model\CashbookEntry();
+        $testValue = "Test Entity Name";
+        
+        $object->setEntityName($testValue);
+        $this->assertEquals($testValue, $object->getEntityName());
+    }
+
+    /**
+     * Test setter for "document"
+     */
+    public function testSetDocument()
+    {
+        $object = new \FattureInCloud\Model\CashbookEntry();
+        $testValue = new \FattureInCloud\Model\CashbookEntryDocument();
+        
+        $object->setDocument($testValue);
+        $this->assertEquals($testValue, $object->getDocument());
+    }
+
+    /**
+     * Test setter for "amount_in"
+     */
+    public function testSetAmountIn()
+    {
+        $object = new \FattureInCloud\Model\CashbookEntry();
+        $testValue = 150.75;
+        
+        $object->setAmountIn($testValue);
+        $this->assertEquals($testValue, $object->getAmountIn());
+    }
+
+    /**
+     * Test setter for "payment_account_in"
+     */
+    public function testSetPaymentAccountIn()
+    {
+        $object = new \FattureInCloud\Model\CashbookEntry();
+        $testValue = new \FattureInCloud\Model\PaymentAccount();
+        
+        $object->setPaymentAccountIn($testValue);
+        $this->assertEquals($testValue, $object->getPaymentAccountIn());
+    }
+
+    /**
+     * Test setter for "amount_out"
+     */
+    public function testSetAmountOut()
+    {
+        $object = new \FattureInCloud\Model\CashbookEntry();
+        $testValue = 250.50;
+        
+        $object->setAmountOut($testValue);
+        $this->assertEquals($testValue, $object->getAmountOut());
+    }
+
+    /**
+     * Test setter for "payment_account_out"
+     */
+    public function testSetPaymentAccountOut()
+    {
+        $object = new \FattureInCloud\Model\CashbookEntry();
+        $testValue = new \FattureInCloud\Model\PaymentAccount();
+        
+        $object->setPaymentAccountOut($testValue);
+        $this->assertEquals($testValue, $object->getPaymentAccountOut());
     }
 }

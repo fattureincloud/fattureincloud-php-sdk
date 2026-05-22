@@ -87,6 +87,6 @@ class ReceiptTypeTest extends TestCase
      */
     public function testReceiptType()
     {
-        TestCase::AssertEquals($this->array['type'], $this->object['type']);
+        $this->assertEquals($this->array['type'], $this->object->getType());
     }
 }

@@ -76,8 +76,25 @@ class ListPendingReceivedDocumentsResponsePageTest extends TestCase
      */
     public function testListPendingReceivedDocumentsResponsePage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponsePage();
+        $this->assertInstanceOf(\FattureInCloud\Model\ListPendingReceivedDocumentsResponsePage::class, $object);
+        
+        // Test that object can be created with valid data
+        $testData = [new \FattureInCloud\Model\PendingReceivedDocument()];
+        $object->setData($testData);
+        $this->assertEquals($testData, $object->getData());
+    }
+
+    /**
+     * Test setter for "data"
+     */
+    public function testSetData()
+    {
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponsePage();
+        $testValue = [new \FattureInCloud\Model\PendingReceivedDocument()];
+        
+        $object->setData($testValue);
+        $this->assertEquals($testValue, $object->getData());
     }
 
     /**
@@ -85,7 +102,10 @@ class ListPendingReceivedDocumentsResponsePageTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponsePage();
+        $testValue = [new \FattureInCloud\Model\PendingReceivedDocument()];
+        
+        $object->setData($testValue);
+        $this->assertEquals($testValue, $object->getData());
     }
 }

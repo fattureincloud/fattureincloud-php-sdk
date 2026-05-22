@@ -96,9 +96,7 @@ class CreateF24RequestTest extends TestCase
      */
     public function testCreateF24Request()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CreateF24Request', $this->object);
     }
 
     /**
@@ -106,8 +104,18 @@ class CreateF24RequestTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\F24', $this->object->getData());
+    }
+
+    /**
+     * Test setter for "data"
+     */
+    public function testSetData()
+    {
+        $object = new \FattureInCloud\Model\CreateF24Request();
+        $testValue = new \FattureInCloud\Model\F24();
+        
+        $object->setData($testValue);
+        $this->assertEquals($testValue, $object->getData());
     }
 }

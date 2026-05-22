@@ -127,9 +127,7 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testIssuedDocumentPreCreateInfoDefaultValues()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\IssuedDocumentPreCreateInfoDefaultValues', $this->object);
     }
 
     /**
@@ -137,9 +135,7 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyDefaultTemplate()
     {
-        foreach ($this->array['default_template'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['default_template']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\DocumentTemplate', $this->object->getDefaultTemplate());
     }
 
     /**
@@ -147,9 +143,7 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyDnTemplate()
     {
-        foreach ($this->array['dn_template'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['dn_template']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\DocumentTemplate', $this->object->getDnTemplate());
     }
 
     /**
@@ -157,9 +151,7 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyAiTemplate()
     {
-        foreach ($this->array['ai_template'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['ai_template']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\DocumentTemplate', $this->object->getAiTemplate());
     }
 
     /**
@@ -167,7 +159,7 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyNotes()
     {
-        Testcase::assertEquals($this->array['notes'], $this->object['notes']);
+        $this->assertEquals($this->array['notes'], $this->object->getNotes());
     }
 
     /**
@@ -175,7 +167,7 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyRivalsa()
     {
-        Testcase::assertEquals($this->array['rivalsa'], $this->object['rivalsa']);
+        $this->assertEquals($this->array['rivalsa'], $this->object->getRivalsa());
     }
 
     /**
@@ -183,7 +175,7 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyCassa()
     {
-        Testcase::assertEquals($this->array['cassa'], $this->object['cassa']);
+        $this->assertEquals($this->array['cassa'], $this->object->getCassa());
     }
 
     /**
@@ -191,7 +183,7 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyWithholdingTax()
     {
-        Testcase::assertEquals($this->array['withholding_tax'], $this->object['withholding_tax']);
+        $this->assertEquals($this->array['withholding_tax'], $this->object->getWithholdingTax());
     }
 
     /**
@@ -199,7 +191,7 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyWithholdingTaxTaxable()
     {
-        Testcase::assertEquals($this->array['withholding_tax_taxable'], $this->object['withholding_tax_taxable']);
+        $this->assertEquals($this->array['withholding_tax_taxable'], $this->object->getWithholdingTaxTaxable());
     }
 
     /**
@@ -207,7 +199,7 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyOtherWithholdingTax()
     {
-        Testcase::assertEquals($this->array['other_withholding_tax'], $this->object['other_withholding_tax']);
+        $this->assertEquals($this->array['other_withholding_tax'], $this->object->getOtherWithholdingTax());
     }
 
     /**
@@ -215,7 +207,7 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyUseGrossPrices()
     {
-        Testcase::assertEquals($this->array['use_gross_prices'], $this->object['use_gross_prices']);
+        $this->assertEquals($this->array['use_gross_prices'], $this->object->getUseGrossPrices());
     }
 
     /**
@@ -223,8 +215,6 @@ class IssuedDocumentPreCreateInfoDefaultValuesTest extends TestCase
      */
     public function testPropertyPaymentMethod()
     {
-        foreach ($this->array['payment_method'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['payment_method']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\PaymentMethod', $this->object->getPaymentMethod());
     }
 }

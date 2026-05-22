@@ -89,9 +89,7 @@ class ListF24ResponseAggregationTest extends TestCase
      */
     public function testListF24ResponseAggregatedData()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ListF24ResponseAggregation::class, $this->object);
     }
 
     /**
@@ -99,8 +97,6 @@ class ListF24ResponseAggregationTest extends TestCase
      */
     public function testPropertyAggregatedData()
     {
-        foreach ($this->array['aggregated_data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['aggregated_data']);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ListF24ResponseAggregatedData::class, $this->object->getAggregatedData());
     }
 }

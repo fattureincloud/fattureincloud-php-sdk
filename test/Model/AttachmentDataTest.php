@@ -87,9 +87,7 @@ class AttachmentDataTest extends TestCase
      */
     public function testAttachmentData()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\AttachmentData', $this->object);
     }
 
     /**
@@ -97,6 +95,18 @@ class AttachmentDataTest extends TestCase
      */
     public function testPropertyAttachmentToken()
     {
-        TestCase::assertEquals($this->object['attachment_token'], $this->array['attachment_token']);
+        $this->assertEquals($this->array['attachment_token'], $this->object->getAttachmentToken());
+    }
+
+    /**
+     * Test setter for "attachment_token"
+     */
+    public function testSetAttachmentToken()
+    {
+        $object = new \FattureInCloud\Model\AttachmentData();
+        $testValue = 'tkn_abc123def456';
+        
+        $object->setAttachmentToken($testValue);
+        $this->assertEquals($testValue, $object->getAttachmentToken());
     }
 }

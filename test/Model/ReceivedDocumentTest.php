@@ -153,9 +153,7 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testReceivedDocument()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ReceivedDocument::class, $this->object);
     }
 
     /**
@@ -163,7 +161,7 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -171,7 +169,7 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyType()
     {
-        TestCase::assertEquals($this->object['type'], $this->array['type']);
+        $this->assertEquals($this->array['type'], $this->object->getType());
     }
 
     /**
@@ -179,9 +177,10 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyEntity()
     {
-        foreach ($this->array['entity'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['entity']);
-        }
+        $entity = $this->object->getEntity();
+        $this->assertInstanceOf(\FattureInCloud\Model\Entity::class, $entity);
+        $this->assertEquals($this->array['entity']['id'], $entity->getId());
+        $this->assertEquals($this->array['entity']['name'], $entity->getName());
     }
 
     /**
@@ -190,7 +189,7 @@ class ReceivedDocumentTest extends TestCase
     public function testPropertyDate()
     {
         $date = new \DateTime($this->array['date']);
-        TestCase::assertEquals($this->object['date'], $date);
+        $this->assertEquals($date, $this->object->getDate());
     }
 
     /**
@@ -198,7 +197,7 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyCategory()
     {
-        TestCase::assertEquals($this->object['category'], $this->array['category']);
+        $this->assertEquals($this->array['category'], $this->object->getCategory());
     }
 
     /**
@@ -206,7 +205,7 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyDescription()
     {
-        TestCase::assertEquals($this->object['description'], $this->array['description']);
+        $this->assertEquals($this->array['description'], $this->object->getDescription());
     }
 
     /**
@@ -214,7 +213,7 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyAmountNet()
     {
-        TestCase::assertEquals($this->object['amount_net'], $this->array['amount_net']);
+        $this->assertEquals($this->array['amount_net'], $this->object->getAmountNet());
     }
 
     /**
@@ -222,7 +221,7 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyAmountVat()
     {
-        TestCase::assertEquals($this->object['amount_vat'], $this->array['amount_vat']);
+        $this->assertEquals($this->array['amount_vat'], $this->object->getAmountVat());
     }
 
     /**
@@ -230,7 +229,7 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyAmountWithholdingTax()
     {
-        TestCase::assertEquals($this->object['amount_withholding_tax'], $this->array['amount_withholding_tax']);
+        $this->assertEquals($this->array['amount_withholding_tax'], $this->object->getAmountWithholdingTax());
     }
 
     /**
@@ -238,7 +237,7 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyAmountOtherWithholdingTax()
     {
-        TestCase::assertEquals($this->object['amount_other_withholding_tax'], $this->array['amount_other_withholding_tax']);
+        $this->assertEquals($this->array['amount_other_withholding_tax'], $this->object->getAmountOtherWithholdingTax());
     }
 
     /**
@@ -246,7 +245,7 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyAmountGross()
     {
-        TestCase::assertEquals($this->object['amount_gross'], $this->array['amount_gross']);
+        $this->assertEquals($this->array['amount_gross'], $this->object->getAmountGross());
     }
 
     /**
@@ -254,7 +253,7 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyAmortization()
     {
-        TestCase::assertEquals($this->object['amortization'], $this->array['amortization']);
+        $this->assertEquals($this->array['amortization'], $this->object->getAmortization());
     }
 
     /**
@@ -262,7 +261,7 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyRcCenter()
     {
-        TestCase::assertEquals($this->object['rc_center'], $this->array['rc_center']);
+        $this->assertEquals($this->array['rc_center'], $this->object->getRcCenter());
     }
 
     /**
@@ -270,7 +269,7 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyInvoiceNumber()
     {
-        TestCase::assertEquals($this->object['invoice_number'], $this->array['invoice_number']);
+        $this->assertEquals($this->array['invoice_number'], $this->object->getInvoiceNumber());
     }
 
     /**
@@ -278,7 +277,7 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyIsMarked()
     {
-        TestCase::assertEquals($this->object['is_marked'], $this->array['is_marked']);
+        $this->assertEquals($this->array['is_marked'], $this->object->getIsMarked());
     }
 
     /**
@@ -286,7 +285,7 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyIsDetailed()
     {
-        TestCase::assertEquals($this->object['is_detailed'], $this->array['is_detailed']);
+        $this->assertEquals($this->array['is_detailed'], $this->object->getIsDetailed());
     }
 
     /**
@@ -294,7 +293,7 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyEInvoice()
     {
-        TestCase::assertEquals($this->object['e_invoice'], $this->array['e_invoice']);
+        $this->assertEquals($this->array['e_invoice'], $this->object->getEInvoice());
     }
 
     /**
@@ -303,7 +302,7 @@ class ReceivedDocumentTest extends TestCase
     public function testPropertyNextDueDate()
     {
         $date = new \DateTime($this->array['next_due_date']);
-        TestCase::assertEquals($this->object['next_due_date'], $date);
+        $this->assertEquals($date, $this->object->getNextDueDate());
     }
 
     /**
@@ -311,9 +310,11 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyCurrency()
     {
-        foreach ($this->array['currency'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['currency']);
-        }
+        $currency = $this->object->getCurrency();
+        $this->assertInstanceOf(\FattureInCloud\Model\Currency::class, $currency);
+        $this->assertEquals($this->array['currency']['id'], $currency->getId());
+        $this->assertEquals($this->array['currency']['exchange_rate'], $currency->getExchangeRate());
+        $this->assertEquals($this->array['currency']['symbol'], $currency->getSymbol());
     }
 
     /**
@@ -321,7 +322,7 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyTaxDeductibility()
     {
-        TestCase::assertEquals($this->object['tax_deductibility'], $this->array['tax_deductibility']);
+        $this->assertEquals($this->array['tax_deductibility'], $this->object->getTaxDeductibility());
     }
 
     /**
@@ -329,7 +330,7 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyVatDeductibility()
     {
-        TestCase::assertEquals($this->object['vat_deductibility'], $this->array['vat_deductibility']);
+        $this->assertEquals($this->array['vat_deductibility'], $this->object->getVatDeductibility());
     }
 
     /**
@@ -337,9 +338,14 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyItemsList()
     {
-        foreach ($this->array['items_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['items_list']);
-        }
+        $itemsList = $this->object->getItemsList();
+        $this->assertIsArray($itemsList);
+        $this->assertCount(1, $itemsList);
+        
+        $item = $itemsList[0];
+        $this->assertInstanceOf(\FattureInCloud\Model\ReceivedDocumentItemsListItem::class, $item);
+        $this->assertEquals($this->array['items_list'][0]['id'], $item->getId());
+        $this->assertEquals($this->array['items_list'][0]['name'], $item->getName());
     }
 
     /**
@@ -347,9 +353,14 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyPaymentsList()
     {
-        foreach ($this->array['payments_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['payments_list']);
-        }
+        $paymentsList = $this->object->getPaymentsList();
+        $this->assertIsArray($paymentsList);
+        $this->assertCount(1, $paymentsList);
+        
+        $payment = $paymentsList[0];
+        $this->assertInstanceOf(\FattureInCloud\Model\ReceivedDocumentPaymentsListItem::class, $payment);
+        $this->assertEquals($this->array['payments_list'][0]['amount'], $payment->getAmount());
+        $this->assertEquals($this->array['payments_list'][0]['id'], $payment->getId());
     }
 
     /**
@@ -357,7 +368,7 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyAttachmentUrl()
     {
-        TestCase::assertEquals($this->object['attachment_url'], $this->array['attachment_url']);
+        $this->assertEquals($this->array['attachment_url'], $this->object->getAttachmentUrl());
     }
 
     /**
@@ -365,7 +376,7 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyAttachmentPreviewUrl()
     {
-        TestCase::assertEquals($this->object['attachment_preview_url'], $this->array['attachment_preview_url']);
+        $this->assertEquals($this->array['attachment_preview_url'], $this->object->getAttachmentPreviewUrl());
     }
 
     /**
@@ -373,6 +384,6 @@ class ReceivedDocumentTest extends TestCase
      */
     public function testPropertyAttachmentToken()
     {
-        TestCase::assertEquals($this->object['attachment_token'], $this->array['attachment_token']);
+        $this->assertEquals($this->array['attachment_token'], $this->object->getAttachmentToken());
     }
 }

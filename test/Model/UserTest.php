@@ -93,9 +93,10 @@ class UserTest extends TestCase
      */
     public function testUser()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(
+            \FattureInCloud\Model\User::class,
+            $this->object
+        );
     }
 
     /**
@@ -103,7 +104,7 @@ class UserTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -111,7 +112,7 @@ class UserTest extends TestCase
      */
     public function testPropertyName()
     {
-        TestCase::assertEquals($this->object['name'], $this->array['name']);
+        $this->assertEquals($this->array['name'], $this->object->getName());
     }
 
     /**
@@ -119,7 +120,7 @@ class UserTest extends TestCase
      */
     public function testPropertyFirstName()
     {
-        TestCase::assertEquals($this->object['first_name'], $this->array['first_name']);
+        $this->assertEquals($this->array['first_name'], $this->object->getFirstName());
     }
 
     /**
@@ -127,7 +128,7 @@ class UserTest extends TestCase
      */
     public function testPropertyLastName()
     {
-        TestCase::assertEquals($this->object['last_name'], $this->array['last_name']);
+        $this->assertEquals($this->array['last_name'], $this->object->getLastName());
     }
 
     /**
@@ -135,7 +136,7 @@ class UserTest extends TestCase
      */
     public function testPropertyEmail()
     {
-        TestCase::assertEquals($this->object['email'], $this->array['email']);
+        $this->assertEquals($this->array['email'], $this->object->getEmail());
     }
 
     /**
@@ -143,7 +144,7 @@ class UserTest extends TestCase
      */
     public function testPropertyHash()
     {
-        TestCase::assertEquals($this->object['hash'], $this->array['hash']);
+        $this->assertEquals($this->array['hash'], $this->object->getHash());
     }
 
     /**
@@ -151,6 +152,90 @@ class UserTest extends TestCase
      */
     public function testPropertyPicture()
     {
-        TestCase::assertEquals($this->object['picture'], $this->array['picture']);
+        $this->assertEquals($this->array['picture'], $this->object->getPicture());
+    }
+
+    /**
+     * Test setter for "id"
+     */
+    public function testSetId()
+    {
+        $user = new \FattureInCloud\Model\User();
+        $testValue = 98765;
+        
+        $user->setId($testValue);
+        $this->assertEquals($testValue, $user->getId());
+    }
+
+    /**
+     * Test setter for "name"
+     */
+    public function testSetName()
+    {
+        $user = new \FattureInCloud\Model\User();
+        $testValue = 'Test User Name';
+        
+        $user->setName($testValue);
+        $this->assertEquals($testValue, $user->getName());
+    }
+
+    /**
+     * Test setter for "first_name"
+     */
+    public function testSetFirstName()
+    {
+        $user = new \FattureInCloud\Model\User();
+        $testValue = 'TestFirstName';
+        
+        $user->setFirstName($testValue);
+        $this->assertEquals($testValue, $user->getFirstName());
+    }
+
+    /**
+     * Test setter for "last_name"
+     */
+    public function testSetLastName()
+    {
+        $user = new \FattureInCloud\Model\User();
+        $testValue = 'TestLastName';
+        
+        $user->setLastName($testValue);
+        $this->assertEquals($testValue, $user->getLastName());
+    }
+
+    /**
+     * Test setter for "email"
+     */
+    public function testSetEmail()
+    {
+        $user = new \FattureInCloud\Model\User();
+        $testValue = 'test@example.com';
+        
+        $user->setEmail($testValue);
+        $this->assertEquals($testValue, $user->getEmail());
+    }
+
+    /**
+     * Test setter for "hash"
+     */
+    public function testSetHash()
+    {
+        $user = new \FattureInCloud\Model\User();
+        $testValue = 'testhash123456789abcdef';
+        
+        $user->setHash($testValue);
+        $this->assertEquals($testValue, $user->getHash());
+    }
+
+    /**
+     * Test setter for "picture"
+     */
+    public function testSetPicture()
+    {
+        $user = new \FattureInCloud\Model\User();
+        $testValue = 'test-picture.jpg';
+        
+        $user->setPicture($testValue);
+        $this->assertEquals($testValue, $user->getPicture());
     }
 }

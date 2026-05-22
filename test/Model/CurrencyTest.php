@@ -90,9 +90,7 @@ class CurrencyTest extends TestCase
      */
     public function testCurrency()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\Currency', $this->object);
     }
 
     /**
@@ -100,7 +98,7 @@ class CurrencyTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -108,7 +106,7 @@ class CurrencyTest extends TestCase
      */
     public function testPropertySymbol()
     {
-        TestCase::assertEquals($this->object['symbol'], $this->array['symbol']);
+        $this->assertEquals($this->array['symbol'], $this->object->getSymbol());
     }
 
     /**
@@ -116,7 +114,7 @@ class CurrencyTest extends TestCase
      */
     public function testPropertyExchangeRate()
     {
-        TestCase::assertEquals($this->object['exchange_rate'], $this->array['exchange_rate']);
+        $this->assertEquals($this->array['exchange_rate'], $this->object->getExchangeRate());
     }
 
     /**
@@ -124,6 +122,54 @@ class CurrencyTest extends TestCase
      */
     public function testPropertyHtmlSymbol()
     {
-        TestCase::assertEquals($this->object['html_symbol'], $this->array['html_symbol']);
+        $this->assertEquals($this->array['html_symbol'], $this->object->getHtmlSymbol());
+    }
+
+    /**
+     * Test setter for "id"
+     */
+    public function testSetId()
+    {
+        $object = new \FattureInCloud\Model\Currency();
+        $testValue = 'USD';
+        
+        $object->setId($testValue);
+        $this->assertEquals($testValue, $object->getId());
+    }
+
+    /**
+     * Test setter for "symbol"
+     */
+    public function testSetSymbol()
+    {
+        $object = new \FattureInCloud\Model\Currency();
+        $testValue = '$';
+        
+        $object->setSymbol($testValue);
+        $this->assertEquals($testValue, $object->getSymbol());
+    }
+
+    /**
+     * Test setter for "exchange_rate"
+     */
+    public function testSetExchangeRate()
+    {
+        $object = new \FattureInCloud\Model\Currency();
+        $testValue = '1.05000';
+        
+        $object->setExchangeRate($testValue);
+        $this->assertEquals($testValue, $object->getExchangeRate());
+    }
+
+    /**
+     * Test setter for "html_symbol"
+     */
+    public function testSetHtmlSymbol()
+    {
+        $object = new \FattureInCloud\Model\Currency();
+        $testValue = '&dollar;';
+        
+        $object->setHtmlSymbol($testValue);
+        $this->assertEquals($testValue, $object->getHtmlSymbol());
     }
 }

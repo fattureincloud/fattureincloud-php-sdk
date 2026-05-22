@@ -101,6 +101,6 @@ class EmailsApiTest extends TestCase
         $result = $apiInstance->listEmails($company_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListEmailsResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 }

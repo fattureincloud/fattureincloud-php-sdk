@@ -90,9 +90,7 @@ class EmailScheduleIncludeTest extends TestCase
      */
     public function testEmailScheduleInclude()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\EmailScheduleInclude', $this->object);
     }
 
     /**
@@ -100,7 +98,7 @@ class EmailScheduleIncludeTest extends TestCase
      */
     public function testPropertyDocument()
     {
-        TestCase::assertEquals($this->object['document'], $this->array['document']);
+        $this->assertEquals($this->array['document'], $this->object->getDocument());
     }
 
     /**
@@ -108,7 +106,7 @@ class EmailScheduleIncludeTest extends TestCase
      */
     public function testPropertyDeliveryNote()
     {
-        TestCase::assertEquals($this->object['delivery_note'], $this->array['delivery_note']);
+        $this->assertEquals($this->array['delivery_note'], $this->object->getDeliveryNote());
     }
 
     /**
@@ -116,7 +114,7 @@ class EmailScheduleIncludeTest extends TestCase
      */
     public function testPropertyAttachment()
     {
-        TestCase::assertEquals($this->object['attachment'], $this->array['attachment']);
+        $this->assertEquals($this->array['attachment'], $this->object->getAttachment());
     }
 
     /**
@@ -124,6 +122,6 @@ class EmailScheduleIncludeTest extends TestCase
      */
     public function testPropertyAccompanyingInvoice()
     {
-        TestCase::assertEquals($this->object['accompanying_invoice'], $this->array['accompanying_invoice']);
+        $this->assertEquals($this->array['accompanying_invoice'], $this->object->getAccompanyingInvoice());
     }
 }

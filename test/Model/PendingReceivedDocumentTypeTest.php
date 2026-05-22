@@ -72,11 +72,41 @@ class PendingReceivedDocumentTypeTest extends TestCase
     }
 
     /**
-     * Test "PendingReceivedDocumentType"
+     * Test "PendingReceivedDocumentType" enum constants
      */
     public function testPendingReceivedDocumentType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        // Test that all expected enum constants are defined
+        $this->assertEquals('agyo', \FattureInCloud\Model\PendingReceivedDocumentType::AGYO);
+        $this->assertEquals('mail', \FattureInCloud\Model\PendingReceivedDocumentType::MAIL);
+    }
+
+    /**
+     * Test getAllowableEnumValues method
+     */
+    public function testGetAllowableEnumValues()
+    {
+        $expectedValues = [
+            'agyo',
+            'mail',
+            'browser'
+        ];
+        
+        $actualValues = \FattureInCloud\Model\PendingReceivedDocumentType::getAllowableEnumValues();
+        
+        $this->assertEquals($expectedValues, $actualValues);
+        $this->assertCount(3, $actualValues);
+    }
+
+    /**
+     * Test that enum values are strings
+     */
+    public function testEnumValuesAreStrings()
+    {
+        $values = \FattureInCloud\Model\PendingReceivedDocumentType::getAllowableEnumValues();
+        
+        foreach ($values as $value) {
+            $this->assertIsString($value);
+        }
     }
 }

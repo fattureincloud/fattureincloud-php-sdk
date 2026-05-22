@@ -97,9 +97,7 @@ class IssuedDocumentExtraDataTest extends TestCase
      */
     public function testIssuedDocumentExtraData()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\\FattureInCloud\\Model\\IssuedDocumentExtraData', $this->object);
     }
 
     /**
@@ -107,7 +105,7 @@ class IssuedDocumentExtraDataTest extends TestCase
      */
     public function testPropertyMultifattureSent()
     {
-        TestCase::assertEquals($this->object['multifatture_sent'], $this->array['multifatture_sent']);
+        $this->assertEquals($this->array['multifatture_sent'], $this->object->getMultifattureSent());
     }
 
     /**
@@ -115,7 +113,7 @@ class IssuedDocumentExtraDataTest extends TestCase
      */
     public function testPropertyTsCommunication()
     {
-        TestCase::assertEquals($this->object['ts_communication'], $this->array['ts_communication']);
+        $this->assertEquals($this->array['ts_communication'], $this->object->getTsCommunication());
     }
 
     /**
@@ -123,7 +121,7 @@ class IssuedDocumentExtraDataTest extends TestCase
      */
     public function testPropertyTsFlagTipoSpesa()
     {
-        TestCase::assertEquals($this->object['ts_flag_tipo_spesa'], $this->array['ts_flag_tipo_spesa']);
+        $this->assertEquals($this->array['ts_flag_tipo_spesa'], $this->object->getTsFlagTipoSpesa());
     }
 
     /**
@@ -131,7 +129,7 @@ class IssuedDocumentExtraDataTest extends TestCase
      */
     public function testPropertyTsPagamentoTracciato()
     {
-        TestCase::assertEquals($this->object['ts_pagamento_tracciato'], $this->array['ts_pagamento_tracciato']);
+        $this->assertEquals($this->array['ts_pagamento_tracciato'], $this->object->getTsPagamentoTracciato());
     }
 
     /**
@@ -139,7 +137,7 @@ class IssuedDocumentExtraDataTest extends TestCase
      */
     public function testPropertyTsTipoSpesa()
     {
-        TestCase::assertEquals($this->object['ts_tipo_spesa'], $this->array['ts_tipo_spesa']);
+        $this->assertEquals($this->array['ts_tipo_spesa'], $this->object->getTsTipoSpesa());
     }
 
     /**
@@ -147,7 +145,7 @@ class IssuedDocumentExtraDataTest extends TestCase
      */
     public function testPropertyTsOpposizione()
     {
-        TestCase::assertEquals($this->object['ts_opposizione'], $this->array['ts_opposizione']);
+        $this->assertEquals($this->array['ts_opposizione'], $this->object->getTsOpposizione());
     }
 
     /**
@@ -155,7 +153,7 @@ class IssuedDocumentExtraDataTest extends TestCase
      */
     public function testPropertyTsStatus()
     {
-        TestCase::assertEquals($this->object['ts_status'], $this->array['ts_status']);
+        $this->assertEquals($this->array['ts_status'], $this->object->getTsStatus());
     }
 
     /**
@@ -163,7 +161,7 @@ class IssuedDocumentExtraDataTest extends TestCase
      */
     public function testPropertyTsFileId()
     {
-        TestCase::assertEquals($this->object['ts_file_id'], $this->array['ts_file_id']);
+        $this->assertEquals($this->array['ts_file_id'], $this->object->getTsFileId());
     }
 
     /**
@@ -172,7 +170,7 @@ class IssuedDocumentExtraDataTest extends TestCase
     public function testPropertyTsSentDate()
     {
         $date = new \DateTime($this->array['ts_sent_date']);
-        TestCase::assertEquals($this->object['ts_sent_date'], $date);
+        $this->assertEquals($date, $this->object->getTsSentDate());
     }
 
     /**
@@ -180,7 +178,7 @@ class IssuedDocumentExtraDataTest extends TestCase
      */
     public function testPropertyTsFullAmount()
     {
-        TestCase::assertEquals($this->object['ts_full_amount'], $this->array['ts_full_amount']);
+        $this->assertEquals($this->array['ts_full_amount'], $this->object->getTsFullAmount());
     }
 
     /**
@@ -188,6 +186,180 @@ class IssuedDocumentExtraDataTest extends TestCase
      */
     public function testPropertyImportedBy()
     {
-        TestCase::assertEquals($this->object['imported_by'], $this->array['imported_by']);
+        $this->assertEquals($this->array['imported_by'], $this->object->getImportedBy());
+    }
+
+    /**
+     * Test attribute "debt_vat_detect"
+     */
+    public function testPropertyDebtVatDetect()
+    {
+        // Note: property not in initial JSON, testing nullable behavior
+        $this->assertNull($this->object->getDebtVatDetect());
+    }
+
+    /**
+     * Test attribute "revenue_detect"
+     */
+    public function testPropertyRevenueDetect()
+    {
+        // Note: property not in initial JSON, testing nullable behavior
+        $this->assertNull($this->object->getRevenueDetect());
+    }
+
+    /**
+     * Test setter for "multifatture_sent"
+     */
+    public function testSetMultifattureSent()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
+        $testValue = 5;
+        
+        $object->setMultifattureSent($testValue);
+        $this->assertEquals($testValue, $object->getMultifattureSent());
+    }
+
+    /**
+     * Test setter for "ts_communication"
+     */
+    public function testSetTsCommunication()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
+        $testValue = false;
+        
+        $object->setTsCommunication($testValue);
+        $this->assertEquals($testValue, $object->getTsCommunication());
+    }
+
+    /**
+     * Test setter for "ts_flag_tipo_spesa"
+     */
+    public function testSetTsFlagTipoSpesa()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
+        $testValue = 2.5;
+        
+        $object->setTsFlagTipoSpesa($testValue);
+        $this->assertEquals($testValue, $object->getTsFlagTipoSpesa());
+    }
+
+    /**
+     * Test setter for "ts_pagamento_tracciato"
+     */
+    public function testSetTsPagamentoTracciato()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
+        $testValue = false;
+        
+        $object->setTsPagamentoTracciato($testValue);
+        $this->assertEquals($testValue, $object->getTsPagamentoTracciato());
+    }
+
+    /**
+     * Test setter for "ts_tipo_spesa"
+     */
+    public function testSetTsTipoSpesa()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
+        $testValue = "SM";
+        
+        $object->setTsTipoSpesa($testValue);
+        $this->assertEquals($testValue, $object->getTsTipoSpesa());
+    }
+
+    /**
+     * Test setter for "ts_opposizione"
+     */
+    public function testSetTsOpposizione()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
+        $testValue = false;
+        
+        $object->setTsOpposizione($testValue);
+        $this->assertEquals($testValue, $object->getTsOpposizione());
+    }
+
+    /**
+     * Test setter for "ts_status"
+     */
+    public function testSetTsStatus()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
+        $testValue = 2;
+        
+        $object->setTsStatus($testValue);
+        $this->assertEquals($testValue, $object->getTsStatus());
+    }
+
+    /**
+     * Test setter for "ts_file_id"
+     */
+    public function testSetTsFileId()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
+        $testValue = "document.pdf";
+        
+        $object->setTsFileId($testValue);
+        $this->assertEquals($testValue, $object->getTsFileId());
+    }
+
+    /**
+     * Test setter for "ts_sent_date"
+     */
+    public function testSetTsSentDate()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
+        $testValue = new \DateTime('2024-02-15');
+        
+        $object->setTsSentDate($testValue);
+        $this->assertEquals($testValue, $object->getTsSentDate());
+    }
+
+    /**
+     * Test setter for "ts_full_amount"
+     */
+    public function testSetTsFullAmount()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
+        $testValue = false;
+        
+        $object->setTsFullAmount($testValue);
+        $this->assertEquals($testValue, $object->getTsFullAmount());
+    }
+
+    /**
+     * Test setter for "imported_by"
+     */
+    public function testSetImportedBy()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
+        $testValue = "api_import";
+        
+        $object->setImportedBy($testValue);
+        $this->assertEquals($testValue, $object->getImportedBy());
+    }
+
+    /**
+     * Test setter for "debt_vat_detect"
+     */
+    public function testSetDebtVatDetect()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
+        $testValue = true;
+        
+        $object->setDebtVatDetect($testValue);
+        $this->assertEquals($testValue, $object->getDebtVatDetect());
+    }
+
+    /**
+     * Test setter for "revenue_detect"
+     */
+    public function testSetRevenueDetect()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
+        $testValue = true;
+        
+        $object->setRevenueDetect($testValue);
+        $this->assertEquals($testValue, $object->getRevenueDetect());
     }
 }

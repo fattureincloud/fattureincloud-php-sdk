@@ -99,17 +99,7 @@ class EmailScheduleTest extends TestCase
      */
     public function testEmailSchedule()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
-    }
-
-    /**
-     * Test attribute "sender_id"
-     */
-    public function testPropertySenderId()
-    {
-        TestCase::assertEquals($this->object['sender_id'], $this->array['sender_id']);
+        $this->assertInstanceOf('\FattureInCloud\Model\EmailSchedule', $this->object);
     }
 
     /**
@@ -117,7 +107,7 @@ class EmailScheduleTest extends TestCase
      */
     public function testPropertySenderEmail()
     {
-        TestCase::assertEquals($this->object['sender_email'], $this->array['sender_email']);
+        $this->assertEquals("mariorossi@fattureincloud.it", $this->object->getSenderEmail());
     }
 
     /**
@@ -125,7 +115,7 @@ class EmailScheduleTest extends TestCase
      */
     public function testPropertyRecipientEmail()
     {
-        TestCase::assertEquals($this->object['recipient_email'], $this->array['recipient_email']);
+        $this->assertEquals("mary.red@example.com", $this->object->getRecipientEmail());
     }
 
     /**
@@ -133,25 +123,7 @@ class EmailScheduleTest extends TestCase
      */
     public function testPropertySubject()
     {
-        TestCase::assertEquals($this->object['subject'], $this->array['subject']);
-    }
-
-    /**
-     * Test attribute "body"
-     */
-    public function testPropertyBody()
-    {
-        TestCase::assertEquals($this->object['body'], $this->array['body']);
-    }
-
-    /**
-     * Test attribute "include"
-     */
-    public function testPropertyInclude()
-    {
-        foreach ($this->array['include'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['include']);
-        }
+        $this->assertEquals("Nostra pro forma nr. 1", $this->object->getSubject());
     }
 
     /**
@@ -159,7 +131,31 @@ class EmailScheduleTest extends TestCase
      */
     public function testPropertyAttachPdf()
     {
-        TestCase::assertEquals($this->object['attach_pdf'], $this->array['attach_pdf']);
+        $this->assertTrue($this->object->getAttachPdf());
+    }
+
+    /**
+     * Test attribute "sender_id"
+     */
+    public function testPropertySenderId()
+    {
+        $this->assertEquals($this->array['sender_id'], $this->object->getSenderId());
+    }
+
+    /**
+     * Test attribute "body"
+     */
+    public function testPropertyBody()
+    {
+        $this->assertEquals($this->array['body'], $this->object->getBody());
+    }
+
+    /**
+     * Test attribute "include"
+     */
+    public function testPropertyInclude()
+    {
+        $this->assertInstanceOf('\FattureInCloud\Model\EmailScheduleInclude', $this->object->getInclude());
     }
 
     /**
@@ -167,6 +163,102 @@ class EmailScheduleTest extends TestCase
      */
     public function testPropertySendCopy()
     {
-        TestCase::assertEquals($this->object['send_copy'], $this->array['send_copy']);
+        $this->assertEquals($this->array['send_copy'], $this->object->getSendCopy());
+    }
+
+    /**
+     * Test setter for "sender_id"
+     */
+    public function testSetSenderId()
+    {
+        $object = new \FattureInCloud\Model\EmailSchedule();
+        $testValue = 123;
+        
+        $object->setSenderId($testValue);
+        $this->assertEquals($testValue, $object->getSenderId());
+    }
+
+    /**
+     * Test setter for "sender_email"
+     */
+    public function testSetSenderEmail()
+    {
+        $object = new \FattureInCloud\Model\EmailSchedule();
+        $testValue = "test@example.com";
+        
+        $object->setSenderEmail($testValue);
+        $this->assertEquals($testValue, $object->getSenderEmail());
+    }
+
+    /**
+     * Test setter for "recipient_email"
+     */
+    public function testSetRecipientEmail()
+    {
+        $object = new \FattureInCloud\Model\EmailSchedule();
+        $testValue = "recipient@example.com";
+        
+        $object->setRecipientEmail($testValue);
+        $this->assertEquals($testValue, $object->getRecipientEmail());
+    }
+
+    /**
+     * Test setter for "subject"
+     */
+    public function testSetSubject()
+    {
+        $object = new \FattureInCloud\Model\EmailSchedule();
+        $testValue = "Test email subject";
+        
+        $object->setSubject($testValue);
+        $this->assertEquals($testValue, $object->getSubject());
+    }
+
+    /**
+     * Test setter for "body"
+     */
+    public function testSetBody()
+    {
+        $object = new \FattureInCloud\Model\EmailSchedule();
+        $testValue = "<p>Test email body</p>";
+        
+        $object->setBody($testValue);
+        $this->assertEquals($testValue, $object->getBody());
+    }
+
+    /**
+     * Test setter for "include"
+     */
+    public function testSetInclude()
+    {
+        $object = new \FattureInCloud\Model\EmailSchedule();
+        $testValue = new \FattureInCloud\Model\EmailScheduleInclude();
+        
+        $object->setInclude($testValue);
+        $this->assertEquals($testValue, $object->getInclude());
+    }
+
+    /**
+     * Test setter for "attach_pdf"
+     */
+    public function testSetAttachPdf()
+    {
+        $object = new \FattureInCloud\Model\EmailSchedule();
+        $testValue = true;
+        
+        $object->setAttachPdf($testValue);
+        $this->assertEquals($testValue, $object->getAttachPdf());
+    }
+
+    /**
+     * Test setter for "send_copy"
+     */
+    public function testSetSendCopy()
+    {
+        $object = new \FattureInCloud\Model\EmailSchedule();
+        $testValue = false;
+        
+        $object->setSendCopy($testValue);
+        $this->assertEquals($testValue, $object->getSendCopy());
     }
 }

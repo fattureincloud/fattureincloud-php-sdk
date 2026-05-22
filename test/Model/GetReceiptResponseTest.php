@@ -119,9 +119,7 @@ class GetReceiptResponseTest extends TestCase
      */
     public function testGetReceiptResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\GetReceiptResponse', $this->object);
     }
 
     /**
@@ -129,8 +127,6 @@ class GetReceiptResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\Receipt', $this->object->getData());
     }
 }

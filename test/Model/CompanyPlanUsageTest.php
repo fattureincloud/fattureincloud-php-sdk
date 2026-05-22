@@ -89,9 +89,7 @@ class CompanyPlanUsageTest extends TestCase
      */
     public function testCompanyPlanUsage()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CompanyPlanUsage', $this->object);
     }
 
     /**
@@ -99,7 +97,7 @@ class CompanyPlanUsageTest extends TestCase
      */
     public function testPropertyLimit()
     {
-        TestCase::assertEquals($this->object['limit'], $this->array['limit']);
+        $this->assertEquals($this->array['limit'], $this->object->getLimit());
     }
 
     /**
@@ -107,6 +105,26 @@ class CompanyPlanUsageTest extends TestCase
      */
     public function testPropertyUsage()
     {
-        TestCase::assertEquals($this->object['usage'], $this->array['usage']);
+        $this->assertEquals($this->array['usage'], $this->object->getUsage());
+    }
+
+    /**
+     * Test setter for "limit"
+     */
+    public function testSetLimit()
+    {
+        $testValue = 100;
+        $this->object->setLimit($testValue);
+        $this->assertEquals($testValue, $this->object->getLimit());
+    }
+
+    /**
+     * Test setter for "usage"
+     */
+    public function testSetUsage()
+    {
+        $testValue = 50;
+        $this->object->setUsage($testValue);
+        $this->assertEquals($testValue, $this->object->getUsage());
     }
 }

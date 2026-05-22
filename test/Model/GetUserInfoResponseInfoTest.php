@@ -89,9 +89,7 @@ class GetUserInfoResponseInfoTest extends TestCase
      */
     public function testGetUserInfoResponseInfo()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\GetUserInfoResponseInfo', $this->object);
     }
 
     /**
@@ -99,7 +97,7 @@ class GetUserInfoResponseInfoTest extends TestCase
      */
     public function testPropertyNeedMarketingConsentsConfirmation()
     {
-        TestCase::assertEquals($this->object['need_marketing_consents_confirmation'], $this->array['need_marketing_consents_confirmation']);
+        $this->assertEquals($this->array['need_marketing_consents_confirmation'], $this->object->getNeedMarketingConsentsConfirmation());
     }
 
     /**
@@ -107,7 +105,7 @@ class GetUserInfoResponseInfoTest extends TestCase
      */
     public function testPropertyNeedPasswordChange()
     {
-        TestCase::assertEquals($this->object['need_password_change'], $this->array['need_password_change']);
+        $this->assertEquals($this->array['need_password_change'], $this->object->getNeedPasswordChange());
     }
 
     /**
@@ -115,6 +113,6 @@ class GetUserInfoResponseInfoTest extends TestCase
      */
     public function testPropertyNeedTermsOfServiceConfirmation()
     {
-        TestCase::assertEquals($this->object['need_terms_of_service_confirmation'], $this->array['need_terms_of_service_confirmation']);
+        $this->assertEquals($this->array['need_terms_of_service_confirmation'], $this->object->getNeedTermsOfServiceConfirmation());
     }
 }

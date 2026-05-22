@@ -76,8 +76,25 @@ class GetTemplatesResponseTest extends TestCase
      */
     public function testGetTemplatesResponse()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $object = new \FattureInCloud\Model\GetTemplatesResponse();
+        $this->assertInstanceOf(\FattureInCloud\Model\GetTemplatesResponse::class, $object);
+        
+        // Test that object can be created with valid data
+        $testData = [new \FattureInCloud\Model\DocumentTemplate()];
+        $object->setData($testData);
+        $this->assertEquals($testData, $object->getData());
+    }
+
+    /**
+     * Test setter for "data"
+     */
+    public function testSetData()
+    {
+        $object = new \FattureInCloud\Model\GetTemplatesResponse();
+        $testValue = [new \FattureInCloud\Model\DocumentTemplate()];
+        
+        $object->setData($testValue);
+        $this->assertEquals($testValue, $object->getData());
     }
 
     /**
@@ -85,7 +102,10 @@ class GetTemplatesResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $object = new \FattureInCloud\Model\GetTemplatesResponse();
+        $testValue = [new \FattureInCloud\Model\DocumentTemplate()];
+        
+        $object->setData($testValue);
+        $this->assertEquals($testValue, $object->getData());
     }
 }

@@ -96,9 +96,7 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPermissionsFicIssuedDocumentsDetailed()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\PermissionsFicIssuedDocumentsDetailed::class, $this->object);
     }
 
     /**
@@ -106,7 +104,7 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPropertyQuotes()
     {
-        TestCase::assertEquals($this->object['quotes'], $this->array['quotes']);
+        $this->assertEquals($this->array['quotes'], $this->object->getQuotes());
     }
 
     /**
@@ -114,7 +112,7 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPropertyProformas()
     {
-        TestCase::assertEquals($this->object['proformas'], $this->array['proformas']);
+        $this->assertEquals($this->array['proformas'], $this->object->getProformas());
     }
 
     /**
@@ -122,7 +120,7 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPropertyInvoices()
     {
-        TestCase::assertEquals($this->object['invoices'], $this->array['invoices']);
+        $this->assertEquals($this->array['invoices'], $this->object->getInvoices());
     }
 
     /**
@@ -130,7 +128,7 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPropertyReceipts()
     {
-        TestCase::assertEquals($this->object['receipts'], $this->array['receipts']);
+        $this->assertEquals($this->array['receipts'], $this->object->getReceipts());
     }
 
     /**
@@ -138,7 +136,7 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPropertyDeliveryNotes()
     {
-        TestCase::assertEquals($this->object['delivery_notes'], $this->array['delivery_notes']);
+        $this->assertEquals($this->array['delivery_notes'], $this->object->getDeliveryNotes());
     }
 
     /**
@@ -146,7 +144,7 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPropertyCreditNotes()
     {
-        TestCase::assertEquals($this->object['credit_notes'], $this->array['credit_notes']);
+        $this->assertEquals($this->array['credit_notes'], $this->object->getCreditNotes());
     }
 
     /**
@@ -154,7 +152,7 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPropertyOrders()
     {
-        TestCase::assertEquals($this->object['orders'], $this->array['orders']);
+        $this->assertEquals($this->array['orders'], $this->object->getOrders());
     }
 
     /**
@@ -162,7 +160,7 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPropertyWorkReports()
     {
-        TestCase::assertEquals($this->object['work_reports'], $this->array['work_reports']);
+        $this->assertEquals($this->array['work_reports'], $this->object->getWorkReports());
     }
 
     /**
@@ -170,7 +168,7 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPropertySupplierOrders()
     {
-        TestCase::assertEquals($this->object['supplier_orders'], $this->array['supplier_orders']);
+        $this->assertEquals($this->array['supplier_orders'], $this->object->getSupplierOrders());
     }
 
     /**
@@ -178,6 +176,6 @@ class PermissionsFicIssuedDocumentsDetailedTest extends TestCase
      */
     public function testPropertySelfInvoices()
     {
-        TestCase::assertEquals($this->object['self_invoices'], $this->array['self_invoices']);
+        $this->assertEquals($this->array['self_invoices'], $this->object->getSelfInvoices());
     }
 }

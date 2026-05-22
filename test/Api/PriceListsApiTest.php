@@ -99,7 +99,7 @@ class PriceListsApiTest extends TestCase
         $result = $apiInstance->getPriceListItems($company_id, $get_price_lists_items_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetPriceListItemsResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -126,6 +126,6 @@ class PriceListsApiTest extends TestCase
         $result = $apiInstance->getPriceLists($company_id, $get_price_lists_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListPriceListsResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 }

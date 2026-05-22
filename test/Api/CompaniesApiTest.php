@@ -101,6 +101,6 @@ class CompaniesApiTest extends TestCase
         $result = $apiInstance->getCompanyInfo($company_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetCompanyInfoResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 }

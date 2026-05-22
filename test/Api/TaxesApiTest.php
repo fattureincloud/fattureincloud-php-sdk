@@ -102,7 +102,7 @@ class TaxesApiTest extends TestCase
         $result = $apiInstance->createF24($company_id, $create_f24_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreateF24Response');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -113,7 +113,7 @@ class TaxesApiTest extends TestCase
      */
     public function testDeleteF24()
     {
-        TestCase::assertEquals(1, 1);
+        $this->assertEquals(1, 1);
     }
 
     /**
@@ -124,7 +124,7 @@ class TaxesApiTest extends TestCase
      */
     public function testDeleteF24Attachment()
     {
-        TestCase::assertEquals(1, 1);
+        $this->assertEquals(1, 1);
     }
 
     /**
@@ -151,7 +151,7 @@ class TaxesApiTest extends TestCase
         $result = $apiInstance->getF24($company_id, $f24_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetF24Response');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -177,7 +177,7 @@ class TaxesApiTest extends TestCase
         $result = $apiInstance->listF24($company_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListF24Response');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -205,7 +205,7 @@ class TaxesApiTest extends TestCase
         $result = $apiInstance->modifyF24($company_id, $f24_id, $modify_f24_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyF24Response');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -232,6 +232,6 @@ class TaxesApiTest extends TestCase
         $result = $apiInstance->uploadF24Attachment($company_id, $upload_f24_attachment);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\UploadF24AttachmentResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 }

@@ -102,7 +102,7 @@ class CashbookApiTest extends TestCase
         $result = $apiInstance->createCashbookEntry($company_id, $create_cashbook_entry_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreateCashbookEntryResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -113,7 +113,7 @@ class CashbookApiTest extends TestCase
      */
     public function testDeleteCashbookEntry()
     {
-        TestCase::assertEquals(1, 1);
+        $this->assertEquals(1, 1);
     }
 
     /**
@@ -140,7 +140,7 @@ class CashbookApiTest extends TestCase
         $result = $apiInstance->getCashbookEntry($company_id, $cashbook_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetCashbookEntryResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -168,7 +168,7 @@ class CashbookApiTest extends TestCase
         $result = $apiInstance->listCashbookEntries($company_id, $date_from, $date_to);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListCashbookEntriesResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -195,6 +195,6 @@ class CashbookApiTest extends TestCase
         $result = $apiInstance->modifyCashbookEntry($company_id, $modify_cashbook_entry_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyCashbookEntryResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 }

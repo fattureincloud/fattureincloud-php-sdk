@@ -59,13 +59,6 @@ class EntityTypeTest extends TestCase
      */
     public function setUp(): void
     {
-        $json = '{  
-            "type": "person"
-        }';
-
-        $this->array = json_decode($json, true);
-
-        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\Entity');
     }
 
     /**
@@ -83,10 +76,25 @@ class EntityTypeTest extends TestCase
     }
 
     /**
-     * Test "EntityType"
+     * Test EntityType enum values
      */
-    public function testEntityType()
+    public function testEntityTypeValues()
     {
-        TestCase::assertEquals($this->object['type'], $this->array['type']);
+        $allowableValues = \FattureInCloud\Model\EntityType::getAllowableEnumValues();
+        $this->assertContains('company', $allowableValues);
+        $this->assertContains('person', $allowableValues);
+        $this->assertContains('pa', $allowableValues);
+        $this->assertContains('condo', $allowableValues);
+    }
+
+    /**
+     * Test EntityType constants
+     */
+    public function testEntityTypeConstants()
+    {
+        $this->assertEquals('company', \FattureInCloud\Model\EntityType::COMPANY);
+        $this->assertEquals('person', \FattureInCloud\Model\EntityType::PERSON);
+        $this->assertEquals('pa', \FattureInCloud\Model\EntityType::PA);
+        $this->assertEquals('condo', \FattureInCloud\Model\EntityType::CONDO);
     }
 }

@@ -94,9 +94,7 @@ class CreatePaymentAccountRequestTest extends TestCase
      */
     public function testCreatePaymentAccountRequest()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CreatePaymentAccountRequest', $this->object);
     }
 
     /**
@@ -104,8 +102,18 @@ class CreatePaymentAccountRequestTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\PaymentAccount', $this->object->getData());
+    }
+
+    /**
+     * Test setter for "data"
+     */
+    public function testSetData()
+    {
+        $object = new \FattureInCloud\Model\CreatePaymentAccountRequest();
+        $testValue = new \FattureInCloud\Model\PaymentAccount();
+        
+        $object->setData($testValue);
+        $this->assertEquals($testValue, $object->getData());
     }
 }

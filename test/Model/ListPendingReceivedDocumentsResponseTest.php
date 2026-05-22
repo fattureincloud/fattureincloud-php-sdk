@@ -76,8 +76,161 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
      */
     public function testListPendingReceivedDocumentsResponse()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $this->assertInstanceOf(\FattureInCloud\Model\ListPendingReceivedDocumentsResponse::class, $object);
+        
+        // Test that object can be created with valid data
+        $object->setCurrentPage(2);
+        $object->setTotal(500);
+        $object->setPerPage(50);
+        
+        $this->assertEquals(2, $object->getCurrentPage());
+        $this->assertEquals(500, $object->getTotal());
+        $this->assertEquals(50, $object->getPerPage());
+    }
+
+    /**
+     * Test setter for "current_page"
+     */
+    public function testSetCurrentPage()
+    {
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 2;
+        
+        $object->setCurrentPage($testValue);
+        $this->assertEquals($testValue, $object->getCurrentPage());
+    }
+
+    /**
+     * Test setter for "first_page_url"
+     */
+    public function testSetFirstPageUrl()
+    {
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 'https://api.fattureincloud.it/v2/documents?page=1';
+        
+        $object->setFirstPageUrl($testValue);
+        $this->assertEquals($testValue, $object->getFirstPageUrl());
+    }
+
+    /**
+     * Test setter for "from"
+     */
+    public function testSetFrom()
+    {
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 1;
+        
+        $object->setFrom($testValue);
+        $this->assertEquals($testValue, $object->getFrom());
+    }
+
+    /**
+     * Test setter for "last_page"
+     */
+    public function testSetLastPage()
+    {
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 10;
+        
+        $object->setLastPage($testValue);
+        $this->assertEquals($testValue, $object->getLastPage());
+    }
+
+    /**
+     * Test setter for "last_page_url"
+     */
+    public function testSetLastPageUrl()
+    {
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 'https://api.fattureincloud.it/v2/documents?page=10';
+        
+        $object->setLastPageUrl($testValue);
+        $this->assertEquals($testValue, $object->getLastPageUrl());
+    }
+
+    /**
+     * Test setter for "next_page_url"
+     */
+    public function testSetNextPageUrl()
+    {
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 'https://api.fattureincloud.it/v2/documents?page=3';
+        
+        $object->setNextPageUrl($testValue);
+        $this->assertEquals($testValue, $object->getNextPageUrl());
+    }
+
+    /**
+     * Test setter for "path"
+     */
+    public function testSetPath()
+    {
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 'https://api.fattureincloud.it/v2/documents';
+        
+        $object->setPath($testValue);
+        $this->assertEquals($testValue, $object->getPath());
+    }
+
+    /**
+     * Test setter for "per_page"
+     */
+    public function testSetPerPage()
+    {
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 50;
+        
+        $object->setPerPage($testValue);
+        $this->assertEquals($testValue, $object->getPerPage());
+    }
+
+    /**
+     * Test setter for "prev_page_url"
+     */
+    public function testSetPrevPageUrl()
+    {
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 'https://api.fattureincloud.it/v2/documents?page=1';
+        
+        $object->setPrevPageUrl($testValue);
+        $this->assertEquals($testValue, $object->getPrevPageUrl());
+    }
+
+    /**
+     * Test setter for "to"
+     */
+    public function testSetTo()
+    {
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 50;
+        
+        $object->setTo($testValue);
+        $this->assertEquals($testValue, $object->getTo());
+    }
+
+    /**
+     * Test setter for "total"
+     */
+    public function testSetTotal()
+    {
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 500;
+        
+        $object->setTotal($testValue);
+        $this->assertEquals($testValue, $object->getTotal());
+    }
+
+    /**
+     * Test setter for "data"
+     */
+    public function testSetData()
+    {
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = [new \FattureInCloud\Model\PendingReceivedDocument()];
+        
+        $object->setData($testValue);
+        $this->assertEquals($testValue, $object->getData());
     }
 
     /**
@@ -85,8 +238,11 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
      */
     public function testPropertyCurrentPage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 2;
+        
+        $object->setCurrentPage($testValue);
+        $this->assertEquals($testValue, $object->getCurrentPage());
     }
 
     /**
@@ -94,8 +250,11 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
      */
     public function testPropertyFirstPageUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 'https://api.fattureincloud.it/v2/documents?page=1';
+        
+        $object->setFirstPageUrl($testValue);
+        $this->assertEquals($testValue, $object->getFirstPageUrl());
     }
 
     /**
@@ -103,8 +262,11 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
      */
     public function testPropertyFrom()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 1;
+        
+        $object->setFrom($testValue);
+        $this->assertEquals($testValue, $object->getFrom());
     }
 
     /**
@@ -112,8 +274,11 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
      */
     public function testPropertyLastPage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 10;
+        
+        $object->setLastPage($testValue);
+        $this->assertEquals($testValue, $object->getLastPage());
     }
 
     /**
@@ -121,8 +286,11 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
      */
     public function testPropertyLastPageUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 'https://api.fattureincloud.it/v2/documents?page=10';
+        
+        $object->setLastPageUrl($testValue);
+        $this->assertEquals($testValue, $object->getLastPageUrl());
     }
 
     /**
@@ -130,8 +298,11 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
      */
     public function testPropertyNextPageUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 'https://api.fattureincloud.it/v2/documents?page=3';
+        
+        $object->setNextPageUrl($testValue);
+        $this->assertEquals($testValue, $object->getNextPageUrl());
     }
 
     /**
@@ -139,8 +310,11 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
      */
     public function testPropertyPath()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 'https://api.fattureincloud.it/v2/documents';
+        
+        $object->setPath($testValue);
+        $this->assertEquals($testValue, $object->getPath());
     }
 
     /**
@@ -148,8 +322,11 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
      */
     public function testPropertyPerPage()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 50;
+        
+        $object->setPerPage($testValue);
+        $this->assertEquals($testValue, $object->getPerPage());
     }
 
     /**
@@ -157,8 +334,11 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
      */
     public function testPropertyPrevPageUrl()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 'https://api.fattureincloud.it/v2/documents?page=1';
+        
+        $object->setPrevPageUrl($testValue);
+        $this->assertEquals($testValue, $object->getPrevPageUrl());
     }
 
     /**
@@ -166,8 +346,11 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
      */
     public function testPropertyTo()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 50;
+        
+        $object->setTo($testValue);
+        $this->assertEquals($testValue, $object->getTo());
     }
 
     /**
@@ -175,8 +358,11 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
      */
     public function testPropertyTotal()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = 500;
+        
+        $object->setTotal($testValue);
+        $this->assertEquals($testValue, $object->getTotal());
     }
 
     /**
@@ -184,7 +370,10 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
+        $testValue = [new \FattureInCloud\Model\PendingReceivedDocument()];
+        
+        $object->setData($testValue);
+        $this->assertEquals($testValue, $object->getData());
     }
 }

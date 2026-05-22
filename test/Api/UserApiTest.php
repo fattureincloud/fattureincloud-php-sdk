@@ -101,7 +101,7 @@ class UserApiTest extends TestCase
         $result = $apiInstance->getUserInfo();
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetUserInfoResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -127,6 +127,6 @@ class UserApiTest extends TestCase
         $result = $apiInstance->listUserCompanies();
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListUserCompaniesResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 }

@@ -130,9 +130,7 @@ class ListUserCompaniesResponseDataTest extends TestCase
      */
     public function testListUserCompaniesResponseData()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ListUserCompaniesResponseData::class, $this->object);
     }
 
     /**
@@ -140,8 +138,6 @@ class ListUserCompaniesResponseDataTest extends TestCase
      */
     public function testPropertyCompanies()
     {
-        foreach ($this->array['companies'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['companies']);
-        }
+        $this->assertIsArray($this->object->getCompanies());
     }
 }

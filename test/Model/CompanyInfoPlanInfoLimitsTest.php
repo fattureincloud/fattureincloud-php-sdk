@@ -90,9 +90,7 @@ class CompanyInfoPlanInfoLimitsTest extends TestCase
      */
     public function testCompanyInfoPlanInfoLimits()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CompanyInfoPlanInfoLimits', $this->object);
     }
 
     /**
@@ -100,7 +98,7 @@ class CompanyInfoPlanInfoLimitsTest extends TestCase
      */
     public function testPropertyClients()
     {
-        TestCase::assertEquals($this->object['clients'], $this->array['clients']);
+        $this->assertEquals($this->array['clients'], $this->object->getClients());
     }
 
     /**
@@ -108,7 +106,7 @@ class CompanyInfoPlanInfoLimitsTest extends TestCase
      */
     public function testPropertySuppliers()
     {
-        TestCase::assertEquals($this->object['suppliers'], $this->array['suppliers']);
+        $this->assertEquals($this->array['suppliers'], $this->object->getSuppliers());
     }
 
     /**
@@ -116,7 +114,7 @@ class CompanyInfoPlanInfoLimitsTest extends TestCase
      */
     public function testPropertyProducts()
     {
-        TestCase::assertEquals($this->object['products'], $this->array['products']);
+        $this->assertEquals($this->array['products'], $this->object->getProducts());
     }
 
     /**
@@ -124,6 +122,54 @@ class CompanyInfoPlanInfoLimitsTest extends TestCase
      */
     public function testPropertyDocuments()
     {
-        TestCase::assertEquals($this->object['documents'], $this->array['documents']);
+        $this->assertEquals($this->array['documents'], $this->object->getDocuments());
+    }
+
+    /**
+     * Test setter for "clients"
+     */
+    public function testSetClients()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfoPlanInfoLimits();
+        $testValue = 1000;
+        
+        $object->setClients($testValue);
+        $this->assertEquals($testValue, $object->getClients());
+    }
+
+    /**
+     * Test setter for "suppliers"
+     */
+    public function testSetSuppliers()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfoPlanInfoLimits();
+        $testValue = 2000;
+        
+        $object->setSuppliers($testValue);
+        $this->assertEquals($testValue, $object->getSuppliers());
+    }
+
+    /**
+     * Test setter for "products"
+     */
+    public function testSetProducts()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfoPlanInfoLimits();
+        $testValue = 3000;
+        
+        $object->setProducts($testValue);
+        $this->assertEquals($testValue, $object->getProducts());
+    }
+
+    /**
+     * Test setter for "documents"
+     */
+    public function testSetDocuments()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfoPlanInfoLimits();
+        $testValue = 4000;
+        
+        $object->setDocuments($testValue);
+        $this->assertEquals($testValue, $object->getDocuments());
     }
 }

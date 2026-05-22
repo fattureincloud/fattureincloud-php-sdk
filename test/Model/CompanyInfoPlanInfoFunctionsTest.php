@@ -103,9 +103,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testCompanyInfoPlanInfoFunctions()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CompanyInfoPlanInfoFunctions', $this->object);
     }
 
     /**
@@ -113,7 +111,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyArchive()
     {
-        TestCase::assertEquals($this->object['archive'], $this->array['archive']);
+        $this->assertEquals($this->array['archive'], $this->object->getArchive());
     }
 
     /**
@@ -121,7 +119,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyCerved()
     {
-        TestCase::assertEquals($this->object['cerved'], $this->array['cerved']);
+        $this->assertEquals($this->array['cerved'], $this->object->getCerved());
     }
 
     /**
@@ -129,7 +127,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyDocumentAttachments()
     {
-        TestCase::assertEquals($this->object['document_attachments'], $this->array['document_attachments']);
+        $this->assertEquals($this->array['document_attachments'], $this->object->getDocumentAttachments());
     }
 
     /**
@@ -137,7 +135,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyEInvoice()
     {
-        TestCase::assertEquals($this->object['e_invoice'], $this->array['e_invoice']);
+        $this->assertEquals($this->array['e_invoice'], $this->object->getEInvoice());
     }
 
     /**
@@ -145,7 +143,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyGenius()
     {
-        TestCase::assertEquals($this->object['genius'], $this->array['genius']);
+        $this->assertEquals($this->array['genius'], $this->object->getGenius());
     }
 
     /**
@@ -153,7 +151,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyMailTracking()
     {
-        TestCase::assertEquals($this->object['mail_tracking'], $this->array['mail_tracking']);
+        $this->assertEquals($this->array['mail_tracking'], $this->object->getMailTracking());
     }
 
     /**
@@ -161,7 +159,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyPaymentNotifications()
     {
-        TestCase::assertEquals($this->object['payment_notifications'], $this->array['payment_notifications']);
+        $this->assertEquals($this->array['payment_notifications'], $this->object->getPaymentNotifications());
     }
 
     /**
@@ -169,7 +167,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyPaypal()
     {
-        TestCase::assertEquals($this->object['paypal'], $this->array['paypal']);
+        $this->assertEquals($this->array['paypal'], $this->object->getPaypal());
     }
 
     /**
@@ -177,7 +175,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyReceipts()
     {
-        TestCase::assertEquals($this->object['receipts'], $this->array['receipts']);
+        $this->assertEquals($this->array['receipts'], $this->object->getReceipts());
     }
 
     /**
@@ -185,7 +183,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyRecurring()
     {
-        TestCase::assertEquals($this->object['recurring'], $this->array['recurring']);
+        $this->assertEquals($this->array['recurring'], $this->object->getRecurring());
     }
 
     /**
@@ -193,7 +191,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertySmtp()
     {
-        TestCase::assertEquals($this->object['smtp'], $this->array['smtp']);
+        $this->assertEquals($this->array['smtp'], $this->object->getSmtp());
     }
 
     /**
@@ -201,7 +199,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyStock()
     {
-        TestCase::assertEquals($this->object['stock'], $this->array['stock']);
+        $this->assertEquals($this->array['stock'], $this->object->getStock());
     }
 
     /**
@@ -209,7 +207,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertySubaccounts()
     {
-        TestCase::assertEquals($this->object['subaccounts'], $this->array['subaccounts']);
+        $this->assertEquals($this->array['subaccounts'], $this->object->getSubaccounts());
     }
 
     /**
@@ -217,7 +215,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyTesseraSanitaria()
     {
-        TestCase::assertEquals($this->object['tessera_sanitaria'], $this->array['tessera_sanitaria']);
+        $this->assertEquals($this->array['tessera_sanitaria'], $this->object->getTesseraSanitaria());
     }
 
     /**
@@ -225,7 +223,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyTsDigital()
     {
-        TestCase::assertEquals($this->object['ts_digital'], $this->array['ts_digital']);
+        $this->assertEquals($this->array['ts_digital'], $this->object->getTsDigital());
     }
 
     /**
@@ -233,7 +231,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyTsInvoiceTrading()
     {
-        TestCase::assertEquals($this->object['ts_invoice_trading'], $this->array['ts_invoice_trading']);
+        $this->assertEquals($this->array['ts_invoice_trading'], $this->object->getTsInvoiceTrading());
     }
 
     /**
@@ -241,6 +239,210 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
      */
     public function testPropertyTsPay()
     {
-        TestCase::assertEquals($this->object['ts_pay'], $this->array['ts_pay']);
+        $this->assertEquals($this->array['ts_pay'], $this->object->getTsPay());
+    }
+
+    /**
+     * Test setter for "archive"
+     */
+    public function testSetArchive()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
+        $testValue = false;
+        
+        $object->setArchive($testValue);
+        $this->assertEquals($testValue, $object->getArchive());
+    }
+
+    /**
+     * Test setter for "cerved"
+     */
+    public function testSetCerved()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
+        $testValue = false;
+        
+        $object->setCerved($testValue);
+        $this->assertEquals($testValue, $object->getCerved());
+    }
+
+    /**
+     * Test setter for "document_attachments"
+     */
+    public function testSetDocumentAttachments()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
+        $testValue = false;
+        
+        $object->setDocumentAttachments($testValue);
+        $this->assertEquals($testValue, $object->getDocumentAttachments());
+    }
+
+    /**
+     * Test setter for "e_invoice"
+     */
+    public function testSetEInvoice()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
+        $testValue = false;
+        
+        $object->setEInvoice($testValue);
+        $this->assertEquals($testValue, $object->getEInvoice());
+    }
+
+    /**
+     * Test setter for "genius"
+     */
+    public function testSetGenius()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
+        $testValue = false;
+        
+        $object->setGenius($testValue);
+        $this->assertEquals($testValue, $object->getGenius());
+    }
+
+    /**
+     * Test setter for "mail_tracking"
+     */
+    public function testSetMailTracking()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
+        $testValue = false;
+        
+        $object->setMailTracking($testValue);
+        $this->assertEquals($testValue, $object->getMailTracking());
+    }
+
+    /**
+     * Test setter for "payment_notifications"
+     */
+    public function testSetPaymentNotifications()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
+        $testValue = false;
+        
+        $object->setPaymentNotifications($testValue);
+        $this->assertEquals($testValue, $object->getPaymentNotifications());
+    }
+
+    /**
+     * Test setter for "paypal"
+     */
+    public function testSetPaypal()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
+        $testValue = false;
+        
+        $object->setPaypal($testValue);
+        $this->assertEquals($testValue, $object->getPaypal());
+    }
+
+    /**
+     * Test setter for "receipts"
+     */
+    public function testSetReceipts()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
+        $testValue = false;
+        
+        $object->setReceipts($testValue);
+        $this->assertEquals($testValue, $object->getReceipts());
+    }
+
+    /**
+     * Test setter for "recurring"
+     */
+    public function testSetRecurring()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
+        $testValue = false;
+        
+        $object->setRecurring($testValue);
+        $this->assertEquals($testValue, $object->getRecurring());
+    }
+
+    /**
+     * Test setter for "smtp"
+     */
+    public function testSetSmtp()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
+        $testValue = false;
+        
+        $object->setSmtp($testValue);
+        $this->assertEquals($testValue, $object->getSmtp());
+    }
+
+    /**
+     * Test setter for "stock"
+     */
+    public function testSetStock()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
+        $testValue = false;
+        
+        $object->setStock($testValue);
+        $this->assertEquals($testValue, $object->getStock());
+    }
+
+    /**
+     * Test setter for "subaccounts"
+     */
+    public function testSetSubaccounts()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
+        $testValue = false;
+        
+        $object->setSubaccounts($testValue);
+        $this->assertEquals($testValue, $object->getSubaccounts());
+    }
+
+    /**
+     * Test setter for "tessera_sanitaria"
+     */
+    public function testSetTesseraSanitaria()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
+        $testValue = false;
+        
+        $object->setTesseraSanitaria($testValue);
+        $this->assertEquals($testValue, $object->getTesseraSanitaria());
+    }
+
+    /**
+     * Test setter for "ts_digital"
+     */
+    public function testSetTsDigital()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
+        $testValue = false;
+        
+        $object->setTsDigital($testValue);
+        $this->assertEquals($testValue, $object->getTsDigital());
+    }
+
+    /**
+     * Test setter for "ts_invoice_trading"
+     */
+    public function testSetTsInvoiceTrading()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
+        $testValue = false;
+        
+        $object->setTsInvoiceTrading($testValue);
+        $this->assertEquals($testValue, $object->getTsInvoiceTrading());
+    }
+
+    /**
+     * Test setter for "ts_pay"
+     */
+    public function testSetTsPay()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
+        $testValue = false;
+        
+        $object->setTsPay($testValue);
+        $this->assertEquals($testValue, $object->getTsPay());
     }
 }

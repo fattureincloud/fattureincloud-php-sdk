@@ -88,9 +88,7 @@ class SenderEmailTest extends TestCase
      */
     public function testSenderEmail()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\SenderEmail::class, $this->object);
     }
 
     /**
@@ -98,7 +96,7 @@ class SenderEmailTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -106,6 +104,6 @@ class SenderEmailTest extends TestCase
      */
     public function testPropertyEmail()
     {
-        TestCase::assertEquals($this->object['email'], $this->array['email']);
+        $this->assertEquals($this->array['email'], $this->object->getEmail());
     }
 }

@@ -31,6 +31,7 @@
 namespace FattureInCloud\Test\Model;
 
 use PHPUnit\Framework\TestCase;
+use \FattureInCloud\ObjectSerializer;
 
 /**
  * AttachmentTest Class Doc Comment
@@ -43,6 +44,9 @@ use PHPUnit\Framework\TestCase;
  */
 class AttachmentTest extends TestCase
 {
+    public $array = [];
+    public $object;
+
     /**
      * Setup before running any test case
      */
@@ -55,6 +59,13 @@ class AttachmentTest extends TestCase
      */
     public function setUp(): void
     {
+        $json = '{
+            "filename": "document.pdf",
+            "attachment": "JVBERi0xLjQKJdPr6eEKMSAwIG9iag"
+        }';
+
+        $this->array = json_decode($json, true);
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\Attachment');
     }
 
     /**
@@ -76,8 +87,7 @@ class AttachmentTest extends TestCase
      */
     public function testAttachment()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->assertInstanceOf('\FattureInCloud\Model\Attachment', $this->object);
     }
 
     /**
@@ -85,8 +95,7 @@ class AttachmentTest extends TestCase
      */
     public function testPropertyFilename()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->assertEquals($this->array['filename'], $this->object->getFilename());
     }
 
     /**
@@ -94,7 +103,30 @@ class AttachmentTest extends TestCase
      */
     public function testPropertyAttachment()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $this->assertEquals($this->array['attachment'], $this->object->getAttachment());
+    }
+
+    /**
+     * Test setter for "filename"
+     */
+    public function testSetFilename()
+    {
+        $attachment = new \FattureInCloud\Model\Attachment();
+        $testValue = 'test-filename.pdf';
+        
+        $attachment->setFilename($testValue);
+        $this->assertEquals($testValue, $attachment->getFilename());
+    }
+
+    /**
+     * Test setter for "attachment"
+     */
+    public function testSetAttachment()
+    {
+        $attachment = new \FattureInCloud\Model\Attachment();
+        $testValue = 'JVBERi0xLjQKJdPr6eEKMSAwIG9iatest';
+        
+        $attachment->setAttachment($testValue);
+        $this->assertEquals($testValue, $attachment->getAttachment());
     }
 }

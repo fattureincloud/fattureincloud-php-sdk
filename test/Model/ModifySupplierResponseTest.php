@@ -110,9 +110,7 @@ class ModifySupplierResponseTest extends TestCase
      */
     public function testModifySupplierResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ModifySupplierResponse::class, $this->object);
     }
 
     /**
@@ -120,8 +118,6 @@ class ModifySupplierResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\Supplier::class, $this->object->getData());
     }
 }

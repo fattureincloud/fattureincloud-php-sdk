@@ -59,13 +59,9 @@ class FattureInCloudPlanTypeTest extends TestCase
      */
     public function setUp(): void
     {
-        $json = '{  
-            "fic_plan": "standard"
-        }';
-
-        $this->array = json_decode($json, true);
-
-        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\Company');
+        // FattureInCloudPlanType is an enum class, set the value directly
+        $this->array = ['plan' => 'standard'];
+        $this->object = \FattureInCloud\Model\FattureInCloudPlanType::STANDARD;
     }
 
     /**
@@ -87,6 +83,17 @@ class FattureInCloudPlanTypeTest extends TestCase
      */
     public function testFattureInCloudPlanType()
     {
-        TestCase::assertEquals($this->object['fic_plan'], $this->array['fic_plan']);
+        // Test that the constant exists and has the expected value
+        $this->assertEquals('standard', \FattureInCloud\Model\FattureInCloudPlanType::STANDARD);
+        $this->assertEquals('standard', $this->object);
+    }
+
+    /**
+     * Test allowable values
+     */
+    public function testAllowableValues()
+    {
+        $allowableValues = \FattureInCloud\Model\FattureInCloudPlanType::getAllowableEnumValues();
+        $this->assertContains($this->array['plan'], $allowableValues);
     }
 }

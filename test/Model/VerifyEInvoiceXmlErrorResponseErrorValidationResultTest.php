@@ -87,9 +87,10 @@ class VerifyEInvoiceXmlErrorResponseErrorValidationResultTest extends TestCase
      */
     public function testVerifyEInvoiceXmlErrorResponseErrorValidationResult()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(
+            \FattureInCloud\Model\VerifyEInvoiceXmlErrorResponseErrorValidationResult::class,
+            $this->object
+        );
     }
 
     /**
@@ -97,6 +98,6 @@ class VerifyEInvoiceXmlErrorResponseErrorValidationResultTest extends TestCase
      */
     public function testPropertyXmlErrors()
     {
-        TestCase::assertEquals($this->object['xml_errors'], $this->array['xml_errors']);
+        $this->assertEquals($this->array['xml_errors'], $this->object->getXmlErrors());
     }
 }

@@ -88,9 +88,7 @@ class PaymentMethodDetailsTest extends TestCase
      */
     public function testPaymentMethodDetails()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\PaymentMethodDetails::class, $this->object);
     }
 
     /**
@@ -98,7 +96,7 @@ class PaymentMethodDetailsTest extends TestCase
      */
     public function testPropertyTitle()
     {
-        TestCase::assertEquals($this->object['title'], $this->array['title']);
+        $this->assertEquals($this->array['title'], $this->object->getTitle());
     }
 
     /**
@@ -106,6 +104,30 @@ class PaymentMethodDetailsTest extends TestCase
      */
     public function testPropertyDescription()
     {
-        TestCase::assertEquals($this->object['description'], $this->array['description']);
+        $this->assertEquals($this->array['description'], $this->object->getDescription());
+    }
+
+    /**
+     * Test setter for "title"
+     */
+    public function testSetTitle()
+    {
+        $object = new \FattureInCloud\Model\PaymentMethodDetails();
+        $testValue = "Test Title";
+        
+        $object->setTitle($testValue);
+        $this->assertEquals($testValue, $object->getTitle());
+    }
+
+    /**
+     * Test setter for "description"
+     */
+    public function testSetDescription()
+    {
+        $object = new \FattureInCloud\Model\PaymentMethodDetails();
+        $testValue = "Test Description";
+        
+        $object->setDescription($testValue);
+        $this->assertEquals($testValue, $object->getDescription());
     }
 }

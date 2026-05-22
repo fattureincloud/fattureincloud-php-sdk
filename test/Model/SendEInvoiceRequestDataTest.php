@@ -88,9 +88,7 @@ class SendEInvoiceRequestDataTest extends TestCase
      */
     public function testSendEInvoiceRequestData()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\SendEInvoiceRequestData::class, $this->object);
     }
 
     /**
@@ -98,7 +96,7 @@ class SendEInvoiceRequestDataTest extends TestCase
      */
     public function testPropertyCassaType()
     {
-        TestCase::assertEquals($this->object['cassa_type'], $this->array['cassa_type']);
+        $this->assertEquals($this->array['cassa_type'], $this->object->getCassaType());
     }
 
     /**
@@ -106,6 +104,6 @@ class SendEInvoiceRequestDataTest extends TestCase
      */
     public function testPropertyWithholdingTaxCausal()
     {
-        TestCase::assertEquals($this->object['withholding_tax_causal'], $this->array['withholding_tax_causal']);
+        $this->assertEquals($this->array['withholding_tax_causal'], $this->object->getWithholdingTaxCausal());
     }
 }

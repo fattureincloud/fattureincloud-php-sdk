@@ -88,9 +88,7 @@ class ReceivedDocumentPaymentsListItemPaymentTermsTest extends TestCase
      */
     public function testReceivedDocumentPaymentTerms()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ReceivedDocumentPaymentsListItemPaymentTerms::class, $this->object);
     }
 
     /**
@@ -98,7 +96,7 @@ class ReceivedDocumentPaymentsListItemPaymentTermsTest extends TestCase
      */
     public function testPropertyDays()
     {
-        TestCase::assertEquals($this->object['days'], $this->array['days']);
+        $this->assertEquals($this->array['days'], $this->object->getDays());
     }
 
     /**
@@ -106,6 +104,6 @@ class ReceivedDocumentPaymentsListItemPaymentTermsTest extends TestCase
      */
     public function testPropertyType()
     {
-        TestCase::assertEquals($this->object['type'], $this->array['type']);
+        $this->assertEquals($this->array['type'], $this->object->getType());
     }
 }

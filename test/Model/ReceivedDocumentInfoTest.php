@@ -135,9 +135,7 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testReceivedDocumentInfo()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ReceivedDocumentInfo::class, $this->object);
     }
 
     /**
@@ -145,9 +143,9 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testPropertyDefaultValues()
     {
-        foreach ($this->array['default_values'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['default_values']);
-        }
+        $defaultValues = $this->object->getDefaultValues();
+        $this->assertInstanceOf(\FattureInCloud\Model\ReceivedDocumentInfoDefaultValues::class, $defaultValues);
+        $this->assertEquals($this->array['default_values']['detailed'], $defaultValues->getDetailed());
     }
 
     /**
@@ -155,9 +153,9 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testPropertyItemsDefaultValues()
     {
-        foreach ($this->array['items_default_values'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['items_default_values']);
-        }
+        $itemsDefaultValues = $this->object->getItemsDefaultValues();
+        $this->assertInstanceOf(\FattureInCloud\Model\ReceivedDocumentInfoItemsDefaultValues::class, $itemsDefaultValues);
+        $this->assertEquals($this->array['items_default_values']['vat'], $itemsDefaultValues->getVat());
     }
 
     /**
@@ -165,9 +163,7 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testPropertyCountriesList()
     {
-        foreach ($this->array['countries_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['countries_list']);
-        }
+        $this->assertEquals($this->array['countries_list'], $this->object->getCountriesList());
     }
 
     /**
@@ -175,9 +171,14 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testPropertyCurrenciesList()
     {
-        foreach ($this->array['currencies_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['currencies_list']);
-        }
+        $currenciesList = $this->object->getCurrenciesList();
+        $this->assertIsArray($currenciesList);
+        $this->assertCount(2, $currenciesList);
+        
+        $currency = $currenciesList[0];
+        $this->assertInstanceOf(\FattureInCloud\Model\Currency::class, $currency);
+        $this->assertEquals($this->array['currencies_list'][0]['id'], $currency->getId());
+        $this->assertEquals($this->array['currencies_list'][0]['symbol'], $currency->getSymbol());
     }
 
     /**
@@ -185,9 +186,7 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testPropertyCategoriesList()
     {
-        foreach ($this->array['categories_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['categories_list']);
-        }
+        $this->assertEquals($this->array['categories_list'], $this->object->getCategoriesList());
     }
 
     /**
@@ -195,9 +194,14 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testPropertyPaymentAccountsList()
     {
-        foreach ($this->array['payment_accounts_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['payment_accounts_list']);
-        }
+        $paymentAccountsList = $this->object->getPaymentAccountsList();
+        $this->assertIsArray($paymentAccountsList);
+        $this->assertCount(1, $paymentAccountsList);
+        
+        $paymentAccount = $paymentAccountsList[0];
+        $this->assertInstanceOf(\FattureInCloud\Model\PaymentAccount::class, $paymentAccount);
+        $this->assertEquals($this->array['payment_accounts_list'][0]['id'], $paymentAccount->getId());
+        $this->assertEquals($this->array['payment_accounts_list'][0]['name'], $paymentAccount->getName());
     }
 
     /**
@@ -205,8 +209,14 @@ class ReceivedDocumentInfoTest extends TestCase
      */
     public function testPropertyVatTypesList()
     {
-        foreach ($this->array['vat_types_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['vat_types_list']);
-        }
+        $vatTypesList = $this->object->getVatTypesList();
+        $this->assertIsArray($vatTypesList);
+        $this->assertCount(2, $vatTypesList);
+        
+        $vatType = $vatTypesList[0];
+        $this->assertInstanceOf(\FattureInCloud\Model\VatType::class, $vatType);
+        $this->assertEquals($this->array['vat_types_list'][0]['id'], $vatType->getId());
+        $this->assertEquals($this->array['vat_types_list'][0]['value'], $vatType->getValue());
+        $this->assertEquals($this->array['vat_types_list'][0]['description'], $vatType->getDescription());
     }
 }

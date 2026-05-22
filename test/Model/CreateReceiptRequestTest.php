@@ -117,9 +117,9 @@ class CreateReceiptRequestTest extends TestCase
      */
     public function testCreateReceiptRequest()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CreateReceiptRequest', $this->object);
+        $this->assertNotNull($this->object->getData());
+        $this->assertEquals(true, $this->object->getAutocompleteNumber());
     }
 
     /**
@@ -127,9 +127,18 @@ class CreateReceiptRequestTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $data = $this->object->getData();
+        $this->assertInstanceOf('\FattureInCloud\Model\Receipt', $data);
+
+        // Test date as DateTime object
+        $this->assertInstanceOf('\DateTime', $data->getDate());
+        $this->assertEquals("2021-08-19", $data->getDate()->format('Y-m-d'));
+
+        $this->assertEquals(6, $data->getNumber());
+        $this->assertEquals("REC006", $data->getNumeration());
+        $this->assertEquals(8.2, $data->getAmountNet());
+        $this->assertEquals(1.8, $data->getAmountVat());
+        $this->assertEquals(10, $data->getAmountGross());
     }
 
     /**
@@ -137,6 +146,26 @@ class CreateReceiptRequestTest extends TestCase
      */
     public function testPropertyAutocompleteNumber()
     {
-        Testcase::assertEquals($this->array['autocomplete_number'], $this->object['autocomplete_number']);
+        $this->assertTrue($this->object->getAutocompleteNumber());
+    }
+
+    /**
+     * Test setter for "data"
+     */
+    public function testSetData()
+    {
+        $testValue = new \FattureInCloud\Model\Receipt();
+        $this->object->setData($testValue);
+        $this->assertEquals($testValue, $this->object->getData());
+    }
+
+    /**
+     * Test setter for "autocomplete_number"
+     */
+    public function testSetAutocompleteNumber()
+    {
+        $testValue = false;
+        $this->object->setAutocompleteNumber($testValue);
+        $this->assertEquals($testValue, $this->object->getAutocompleteNumber());
     }
 }

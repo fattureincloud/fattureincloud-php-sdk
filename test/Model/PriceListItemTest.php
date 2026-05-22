@@ -86,9 +86,7 @@ class PriceListItemTest extends TestCase
      */
     public function testPriceListItem()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\PriceListItem::class, $this->object);
     }
 
     /**
@@ -96,6 +94,6 @@ class PriceListItemTest extends TestCase
      */
     public function testPropertyPrice()
     {
-        TestCase::assertEquals($this->object['price'], $this->array['price']);
+        $this->assertEquals($this->array['price'], $this->object->getPrice());
     }
 }

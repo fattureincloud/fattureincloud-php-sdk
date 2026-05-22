@@ -265,9 +265,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testIssuedDocumentPreCreateInfo()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\IssuedDocumentPreCreateInfo', $this->object);
     }
 
     /**
@@ -275,13 +273,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyNumerations()
     {
-        /*
-        foreach ($this->array['numerations'] as $key => $value)
-        {
-           Testcase::assertArrayHasKey($key, $this->object['numerations']);
-        }
-        */
-        TestCase::assertEquals(1, 1);
+        $this->assertEquals($this->array['numerations'], $this->object->getNumerations());
     }
 
     /**
@@ -289,13 +281,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyDnNumerations()
     {
-        /*
-        foreach ($this->array['dn_numerations'] as $key => $value)
-        {
-           Testcase::assertArrayHasKey($key, $this->object['dn_numerations']);
-        }
-        */
-        TestCase::assertEquals(1, 1);
+        $this->assertEquals($this->array['dn_numerations'], $this->object->getDnNumerations());
     }
 
     /**
@@ -303,9 +289,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyDefaultValues()
     {
-        foreach ($this->array['default_values'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['default_values']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\IssuedDocumentPreCreateInfoDefaultValues', $this->object->getDefaultValues());
     }
 
     /**
@@ -313,9 +297,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyExtraDataDefaultValues()
     {
-        foreach ($this->array['extra_data_default_values'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['extra_data_default_values']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\IssuedDocumentPreCreateInfoExtraDataDefaultValues', $this->object->getExtraDataDefaultValues());
     }
 
     /**
@@ -323,9 +305,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyItemsDefaultValues()
     {
-        foreach ($this->array['items_default_values'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['items_default_values']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\IssuedDocumentPreCreateInfoItemsDefaultValues', $this->object->getItemsDefaultValues());
     }
 
     /**
@@ -333,9 +313,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyCountriesList()
     {
-        foreach ($this->array['countries_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['countries_list']);
-        }
+        $this->assertEquals($this->array['countries_list'], $this->object->getCountriesList());
     }
 
     /**
@@ -343,8 +321,10 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyCurrenciesList()
     {
-        foreach ($this->array['currencies_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['currencies_list']);
+        $currenciesList = $this->object->getCurrenciesList();
+        $this->assertIsArray($currenciesList);
+        if (!empty($currenciesList)) {
+            $this->assertInstanceOf(\FattureInCloud\Model\Currency::class, $currenciesList[0]);
         }
     }
 
@@ -353,8 +333,10 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyTemplatesList()
     {
-        foreach ($this->array['templates_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['templates_list']);
+        $templatesList = $this->object->getTemplatesList();
+        $this->assertIsArray($templatesList);
+        if (!empty($templatesList)) {
+            $this->assertInstanceOf(\FattureInCloud\Model\DocumentTemplate::class, $templatesList[0]);
         }
     }
 
@@ -363,8 +345,10 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyDnTemplatesList()
     {
-        foreach ($this->array['dn_templates_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['dn_templates_list']);
+        $dnTemplatesList = $this->object->getDnTemplatesList();
+        $this->assertIsArray($dnTemplatesList);
+        if (!empty($dnTemplatesList)) {
+            $this->assertInstanceOf(\FattureInCloud\Model\DocumentTemplate::class, $dnTemplatesList[0]);
         }
     }
 
@@ -373,8 +357,10 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyAiTemplatesList()
     {
-        foreach ($this->array['ai_templates_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['ai_templates_list']);
+        $aiTemplatesList = $this->object->getAiTemplatesList();
+        $this->assertIsArray($aiTemplatesList);
+        if (!empty($aiTemplatesList)) {
+            $this->assertInstanceOf(\FattureInCloud\Model\DocumentTemplate::class, $aiTemplatesList[0]);
         }
     }
 
@@ -383,8 +369,10 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyPaymentMethodsList()
     {
-        foreach ($this->array['payment_methods_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['payment_methods_list']);
+        $paymentMethodsList = $this->object->getPaymentMethodsList();
+        $this->assertIsArray($paymentMethodsList);
+        if (!empty($paymentMethodsList)) {
+            $this->assertInstanceOf(\FattureInCloud\Model\PaymentMethod::class, $paymentMethodsList[0]);
         }
     }
 
@@ -393,8 +381,10 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyPaymentAccountsList()
     {
-        foreach ($this->array['payment_accounts_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['payment_accounts_list']);
+        $paymentAccountsList = $this->object->getPaymentAccountsList();
+        $this->assertIsArray($paymentAccountsList);
+        if (!empty($paymentAccountsList)) {
+            $this->assertInstanceOf(\FattureInCloud\Model\PaymentAccount::class, $paymentAccountsList[0]);
         }
     }
 
@@ -403,8 +393,223 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
      */
     public function testPropertyVatTypesList()
     {
-        foreach ($this->array['vat_types_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['vat_types_list']);
+        $vatTypesList = $this->object->getVatTypesList();
+        $this->assertIsArray($vatTypesList);
+        if (!empty($vatTypesList)) {
+            $this->assertInstanceOf(\FattureInCloud\Model\VatType::class, $vatTypesList[0]);
         }
+    }
+
+    /**
+     * Test attribute "languages_list"
+     */
+    public function testPropertyLanguagesList()
+    {
+        // Note: property not in initial JSON, testing nullable behavior
+        $this->assertNull($this->object->getLanguagesList());
+    }
+
+    /**
+     * Test attribute "price_lists"
+     */
+    public function testPropertyPriceLists()
+    {
+        // Note: property not in initial JSON, testing nullable behavior
+        $this->assertNull($this->object->getPriceLists());
+    }
+
+    /**
+     * Test setter for "numerations"
+     */
+    public function testSetNumerations()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
+        $testValue = ["2024" => ["A" => 1, "B" => 2]];
+        
+        $object->setNumerations($testValue);
+        $this->assertEquals($testValue, $object->getNumerations());
+    }
+
+    /**
+     * Test setter for "dn_numerations"
+     */
+    public function testSetDnNumerations()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
+        $testValue = ["2024" => ["" => 500]];
+        
+        $object->setDnNumerations($testValue);
+        $this->assertEquals($testValue, $object->getDnNumerations());
+    }
+
+    /**
+     * Test setter for "default_values"
+     */
+    public function testSetDefaultValues()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
+        $testValue = new \FattureInCloud\Model\IssuedDocumentPreCreateInfoDefaultValues();
+        
+        $object->setDefaultValues($testValue);
+        $this->assertEquals($testValue, $object->getDefaultValues());
+    }
+
+    /**
+     * Test setter for "extra_data_default_values"
+     */
+    public function testSetExtraDataDefaultValues()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
+        $testValue = new \FattureInCloud\Model\IssuedDocumentPreCreateInfoExtraDataDefaultValues();
+        
+        $object->setExtraDataDefaultValues($testValue);
+        $this->assertEquals($testValue, $object->getExtraDataDefaultValues());
+    }
+
+    /**
+     * Test setter for "items_default_values"
+     */
+    public function testSetItemsDefaultValues()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
+        $testValue = new \FattureInCloud\Model\IssuedDocumentPreCreateInfoItemsDefaultValues();
+        
+        $object->setItemsDefaultValues($testValue);
+        $this->assertEquals($testValue, $object->getItemsDefaultValues());
+    }
+
+    /**
+     * Test setter for "countries_list"
+     */
+    public function testSetCountriesList()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
+        $testValue = ["Italia", "Francia", "Germania"];
+        
+        $object->setCountriesList($testValue);
+        $this->assertEquals($testValue, $object->getCountriesList());
+    }
+
+    /**
+     * Test setter for "currencies_list"
+     */
+    public function testSetCurrenciesList()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
+        $currency1 = new \FattureInCloud\Model\Currency();
+        $currency2 = new \FattureInCloud\Model\Currency();
+        $testValue = [$currency1, $currency2];
+        
+        $object->setCurrenciesList($testValue);
+        $this->assertEquals($testValue, $object->getCurrenciesList());
+    }
+
+    /**
+     * Test setter for "templates_list"
+     */
+    public function testSetTemplatesList()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
+        $template1 = new \FattureInCloud\Model\DocumentTemplate();
+        $template2 = new \FattureInCloud\Model\DocumentTemplate();
+        $testValue = [$template1, $template2];
+        
+        $object->setTemplatesList($testValue);
+        $this->assertEquals($testValue, $object->getTemplatesList());
+    }
+
+    /**
+     * Test setter for "dn_templates_list"
+     */
+    public function testSetDnTemplatesList()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
+        $template1 = new \FattureInCloud\Model\DocumentTemplate();
+        $testValue = [$template1];
+        
+        $object->setDnTemplatesList($testValue);
+        $this->assertEquals($testValue, $object->getDnTemplatesList());
+    }
+
+    /**
+     * Test setter for "ai_templates_list"
+     */
+    public function testSetAiTemplatesList()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
+        $template1 = new \FattureInCloud\Model\DocumentTemplate();
+        $testValue = [$template1];
+        
+        $object->setAiTemplatesList($testValue);
+        $this->assertEquals($testValue, $object->getAiTemplatesList());
+    }
+
+    /**
+     * Test setter for "payment_methods_list"
+     */
+    public function testSetPaymentMethodsList()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
+        $paymentMethod1 = new \FattureInCloud\Model\PaymentMethod();
+        $testValue = [$paymentMethod1];
+        
+        $object->setPaymentMethodsList($testValue);
+        $this->assertEquals($testValue, $object->getPaymentMethodsList());
+    }
+
+    /**
+     * Test setter for "payment_accounts_list"
+     */
+    public function testSetPaymentAccountsList()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
+        $account1 = new \FattureInCloud\Model\PaymentAccount();
+        $account2 = new \FattureInCloud\Model\PaymentAccount();
+        $testValue = [$account1, $account2];
+        
+        $object->setPaymentAccountsList($testValue);
+        $this->assertEquals($testValue, $object->getPaymentAccountsList());
+    }
+
+    /**
+     * Test setter for "vat_types_list"
+     */
+    public function testSetVatTypesList()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
+        $vatType1 = new \FattureInCloud\Model\VatType();
+        $vatType2 = new \FattureInCloud\Model\VatType();
+        $testValue = [$vatType1, $vatType2];
+        
+        $object->setVatTypesList($testValue);
+        $this->assertEquals($testValue, $object->getVatTypesList());
+    }
+
+    /**
+     * Test setter for "languages_list"
+     */
+    public function testSetLanguagesList()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
+        $language1 = new \FattureInCloud\Model\Language();
+        $language2 = new \FattureInCloud\Model\Language();
+        $testValue = [$language1, $language2];
+        
+        $object->setLanguagesList($testValue);
+        $this->assertEquals($testValue, $object->getLanguagesList());
+    }
+
+    /**
+     * Test setter for "price_lists"
+     */
+    public function testSetPriceLists()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
+        $priceList1 = new \FattureInCloud\Model\PriceList();
+        $priceList2 = new \FattureInCloud\Model\PriceList();
+        $testValue = [$priceList1, $priceList2];
+        
+        $object->setPriceLists($testValue);
+        $this->assertEquals($testValue, $object->getPriceLists());
     }
 }

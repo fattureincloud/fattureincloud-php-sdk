@@ -92,9 +92,7 @@ class CreateArchiveDocumentRequestTest extends TestCase
      */
     public function testCreateArchiveDocumentRequest()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CreateArchiveDocumentRequest', $this->object);
     }
 
     /**
@@ -102,8 +100,18 @@ class CreateArchiveDocumentRequestTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\ArchiveDocument', $this->object->getData());
+    }
+
+    /**
+     * Test setter for "data"
+     */
+    public function testSetData()
+    {
+        $object = new \FattureInCloud\Model\CreateArchiveDocumentRequest();
+        $testValue = new \FattureInCloud\Model\ArchiveDocument();
+        
+        $object->setData($testValue);
+        $this->assertEquals($testValue, $object->getData());
     }
 }

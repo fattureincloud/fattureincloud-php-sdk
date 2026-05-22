@@ -111,7 +111,7 @@ class CreateReceivedDocumentResponseTest extends TestCase
         }';
 
         $this->array = json_decode($json, true);
-
+        
         $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CreateReceivedDocumentResponse');
     }
 
@@ -134,9 +134,8 @@ class CreateReceivedDocumentResponseTest extends TestCase
      */
     public function testCreateReceivedDocumentResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CreateReceivedDocumentResponse', $this->object);
+        $this->assertNotNull($this->object->getData());
     }
 
     /**
@@ -144,8 +143,30 @@ class CreateReceivedDocumentResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $data = $this->object->getData();
+        $this->assertInstanceOf('\FattureInCloud\Model\ReceivedDocument', $data);
+        $this->assertEquals(12345, $data->getId());
+        $this->assertEquals("expense", $data->getType());
+        $this->assertEquals("Soggiorno di lavoro", $data->getDescription());
+        
+        // Test date as DateTime object
+        $this->assertInstanceOf('\DateTime', $data->getDate());
+        $this->assertEquals("2021-08-15", $data->getDate()->format('Y-m-d'));
+        
+        $this->assertEquals(592, $data->getAmountNet());
+        $this->assertEquals(0, $data->getAmountVat());
+        $this->assertEquals(592, $data->getAmountGross());
+    }
+
+    /**
+     * Test setter for "data"
+     */
+    public function testSetData()
+    {
+        $object = new \FattureInCloud\Model\CreateReceivedDocumentResponse();
+        $testValue = new \FattureInCloud\Model\ReceivedDocument();
+        
+        $object->setData($testValue);
+        $this->assertEquals($testValue, $object->getData());
     }
 }

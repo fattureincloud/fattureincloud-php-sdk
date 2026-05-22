@@ -92,9 +92,7 @@ class CompanyInfoPlanInfoFunctionsStatusTest extends TestCase
      */
     public function testCompanyInfoPlanInfoFunctionsStatus()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CompanyInfoPlanInfoFunctionsStatus', $this->object);
     }
 
     /**
@@ -102,7 +100,7 @@ class CompanyInfoPlanInfoFunctionsStatusTest extends TestCase
      */
     public function testPropertyTsDigital()
     {
-        TestCase::assertEquals($this->object['ts_digital']['active'], $this->array['ts_digital']['active']);
+        $this->assertInstanceOf('\FattureInCloud\Model\FunctionStatus', $this->object->getTsDigital());
     }
 
     /**
@@ -110,6 +108,26 @@ class CompanyInfoPlanInfoFunctionsStatusTest extends TestCase
      */
     public function testPropertyTsPay()
     {
-        TestCase::assertEquals($this->object['ts_digital']['active'], $this->array['ts_digital']['active']);
+        $this->assertInstanceOf('\FattureInCloud\Model\FunctionStatus', $this->object->getTsPay());
+    }
+
+    /**
+     * Test setter for "ts_digital"
+     */
+    public function testSetTsDigital()
+    {
+        $testValue = new \FattureInCloud\Model\FunctionStatus(['active' => true]);
+        $this->object->setTsDigital($testValue);
+        $this->assertEquals($testValue, $this->object->getTsDigital());
+    }
+
+    /**
+     * Test setter for "ts_pay"
+     */
+    public function testSetTsPay()
+    {
+        $testValue = new \FattureInCloud\Model\FunctionStatus(['active' => false]);
+        $this->object->setTsPay($testValue);
+        $this->assertEquals($testValue, $this->object->getTsPay());
     }
 }

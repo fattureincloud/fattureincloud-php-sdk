@@ -97,9 +97,7 @@ class ModifyVatTypeResponseTest extends TestCase
      */
     public function testModifyVatTypeResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ModifyVatTypeResponse::class, $this->object);
     }
 
     /**
@@ -107,8 +105,6 @@ class ModifyVatTypeResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\VatType::class, $this->object->getData());
     }
 }

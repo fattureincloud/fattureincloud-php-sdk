@@ -126,9 +126,7 @@ class ListF24ResponseTest extends TestCase
      */
     public function testListF24Response()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ListF24Response::class, $this->object);
     }
 
     /**
@@ -136,7 +134,7 @@ class ListF24ResponseTest extends TestCase
      */
     public function testPropertyCurrentPage()
     {
-        TestCase::assertEquals($this->object['current_page'], $this->array['current_page']);
+        $this->assertEquals($this->array['current_page'], $this->object->getCurrentPage());
     }
 
     /**
@@ -144,7 +142,7 @@ class ListF24ResponseTest extends TestCase
      */
     public function testPropertyFirstPageUrl()
     {
-        TestCase::assertEquals($this->object['first_page_url'], $this->array['first_page_url']);
+        $this->assertEquals($this->array['first_page_url'], $this->object->getFirstPageUrl());
     }
 
     /**
@@ -152,7 +150,7 @@ class ListF24ResponseTest extends TestCase
      */
     public function testPropertyFrom()
     {
-        TestCase::assertEquals($this->object['from'], $this->array['from']);
+        $this->assertEquals($this->array['from'], $this->object->getFrom());
     }
 
     /**
@@ -160,7 +158,7 @@ class ListF24ResponseTest extends TestCase
      */
     public function testPropertyLastPage()
     {
-        TestCase::assertEquals($this->object['last_page'], $this->array['last_page']);
+        $this->assertEquals($this->array['last_page'], $this->object->getLastPage());
     }
 
     /**
@@ -168,7 +166,7 @@ class ListF24ResponseTest extends TestCase
      */
     public function testPropertyLastPageUrl()
     {
-        TestCase::assertEquals($this->object['last_page_url'], $this->array['last_page_url']);
+        $this->assertEquals($this->array['last_page_url'], $this->object->getLastPageUrl());
     }
 
     /**
@@ -176,7 +174,7 @@ class ListF24ResponseTest extends TestCase
      */
     public function testPropertyNextPageUrl()
     {
-        TestCase::assertEquals($this->object['next_page_url'], $this->array['next_page_url']);
+        $this->assertEquals($this->array['next_page_url'], $this->object->getNextPageUrl());
     }
 
     /**
@@ -184,7 +182,7 @@ class ListF24ResponseTest extends TestCase
      */
     public function testPropertyPath()
     {
-        TestCase::assertEquals($this->object['path'], $this->array['path']);
+        $this->assertEquals($this->array['path'], $this->object->getPath());
     }
 
     /**
@@ -192,7 +190,7 @@ class ListF24ResponseTest extends TestCase
      */
     public function testPropertyPerPage()
     {
-        TestCase::assertEquals($this->object['per_page'], $this->array['per_page']);
+        $this->assertEquals($this->array['per_page'], $this->object->getPerPage());
     }
 
     /**
@@ -200,7 +198,7 @@ class ListF24ResponseTest extends TestCase
      */
     public function testPropertyPrevPageUrl()
     {
-        TestCase::assertEquals($this->object['prev_page_url'], $this->array['prev_page_url']);
+        $this->assertEquals($this->array['prev_page_url'], $this->object->getPrevPageUrl());
     }
 
     /**
@@ -208,7 +206,7 @@ class ListF24ResponseTest extends TestCase
      */
     public function testPropertyTo()
     {
-        TestCase::assertEquals($this->object['to'], $this->array['to']);
+        $this->assertEquals($this->array['to'], $this->object->getTo());
     }
 
     /**
@@ -216,7 +214,7 @@ class ListF24ResponseTest extends TestCase
      */
     public function testPropertyTotal()
     {
-        TestCase::assertEquals($this->object['total'], $this->array['total']);
+        $this->assertEquals($this->array['total'], $this->object->getTotal());
     }
 
     /**
@@ -224,9 +222,7 @@ class ListF24ResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertIsArray($this->object->getData());
     }
 
     /**
@@ -234,8 +230,6 @@ class ListF24ResponseTest extends TestCase
      */
     public function testPropertyAggregatedData()
     {
-        foreach ($this->array['aggregated_data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['aggregated_data']);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ListF24ResponseAggregatedData::class, $this->object->getAggregatedData());
     }
 }

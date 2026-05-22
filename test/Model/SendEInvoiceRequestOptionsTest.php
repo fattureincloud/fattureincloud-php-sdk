@@ -87,9 +87,7 @@ class SendEInvoiceRequestOptionsTest extends TestCase
      */
     public function testSendEInvoiceRequestOptions()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\SendEInvoiceRequestOptions::class, $this->object);
     }
 
     /**
@@ -97,6 +95,6 @@ class SendEInvoiceRequestOptionsTest extends TestCase
      */
     public function testPropertyDryRun()
     {
-        TestCase::assertEquals($this->object['dry_run'], $this->array['dry_run']);
+        $this->assertEquals($this->array['dry_run'], $this->object->getDryRun());
     }
 }

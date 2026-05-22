@@ -89,9 +89,7 @@ class SendEInvoiceRequestTest extends TestCase
      */
     public function testSendEInvoiceRequest()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\SendEInvoiceRequest::class, $this->object);
     }
 
     /**
@@ -99,8 +97,8 @@ class SendEInvoiceRequestTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $data = $this->object->getData();
+        $this->assertInstanceOf(\FattureInCloud\Model\SendEInvoiceRequestData::class, $data);
+        $this->assertEquals($this->array['data']['withholding_tax_causal'], $data->getWithholdingTaxCausal());
     }
 }

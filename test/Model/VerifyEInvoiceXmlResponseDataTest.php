@@ -87,9 +87,10 @@ class VerifyEInvoiceXmlResponseDataTest extends TestCase
      */
     public function testVerifyEInvoiceXmlResponseData()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(
+            \FattureInCloud\Model\VerifyEInvoiceXmlResponseData::class,
+            $this->object
+        );
     }
 
     /**
@@ -97,6 +98,6 @@ class VerifyEInvoiceXmlResponseDataTest extends TestCase
      */
     public function testPropertySuccess()
     {
-        TestCase::assertEquals($this->object['success'], $this->array['success']);
+        $this->assertEquals($this->array['success'], $this->object->getSuccess());
     }
 }

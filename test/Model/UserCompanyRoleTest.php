@@ -87,6 +87,6 @@ class UserCompanyRoleTest extends TestCase
      */
     public function testUserCompanyRole()
     {
-        TestCase::assertEquals($this->object['role'], $this->array['role']);
+        $this->assertEquals($this->array['role'], $this->object->getRole());
     }
 }

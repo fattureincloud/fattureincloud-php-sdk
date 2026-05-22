@@ -126,9 +126,7 @@ class EntityTest extends TestCase
      */
     public function testEntity()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\Entity', $this->object);
     }
 
     /**
@@ -136,7 +134,7 @@ class EntityTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals(16451, $this->object->getId());
     }
 
     /**
@@ -144,7 +142,7 @@ class EntityTest extends TestCase
      */
     public function testPropertyCode()
     {
-        TestCase::assertEquals($this->object['code'], $this->array['code']);
+        $this->assertEquals("AE86", $this->object->getCode());
     }
 
     /**
@@ -152,7 +150,7 @@ class EntityTest extends TestCase
      */
     public function testPropertyName()
     {
-        TestCase::assertEquals($this->object['name'], $this->array['name']);
+        $this->assertEquals("Avv. Maria Rossi", $this->object->getName());
     }
 
     /**
@@ -160,95 +158,7 @@ class EntityTest extends TestCase
      */
     public function testPropertyType()
     {
-        TestCase::assertEquals($this->object['type'], $this->array['type']);
-    }
-
-    /**
-     * Test attribute "first_name"
-     */
-    public function testPropertyFirstName()
-    {
-        TestCase::assertEquals($this->object['first_name'], $this->array['first_name']);
-    }
-
-    /**
-     * Test attribute "last_name"
-     */
-    public function testPropertyLastName()
-    {
-        TestCase::assertEquals($this->object['last_name'], $this->array['last_name']);
-    }
-
-    /**
-     * Test attribute "contact_person"
-     */
-    public function testPropertyContactPerson()
-    {
-        TestCase::assertEquals($this->object['contact_person'], $this->array['contact_person']);
-    }
-
-    /**
-     * Test attribute "vat_number"
-     */
-    public function testPropertyVatNumber()
-    {
-        TestCase::assertEquals($this->object['vat_number'], $this->array['vat_number']);
-    }
-
-    /**
-     * Test attribute "tax_code"
-     */
-    public function testPropertyTaxCode()
-    {
-        TestCase::assertEquals($this->object['tax_code'], $this->array['tax_code']);
-    }
-
-    /**
-     * Test attribute "address_street"
-     */
-    public function testPropertyAddressStreet()
-    {
-        TestCase::assertEquals($this->object['address_street'], $this->array['address_street']);
-    }
-
-    /**
-     * Test attribute "address_postal_code"
-     */
-    public function testPropertyAddressPostalCode()
-    {
-        TestCase::assertEquals($this->object['address_postal_code'], $this->array['address_postal_code']);
-    }
-
-    /**
-     * Test attribute "address_city"
-     */
-    public function testPropertyAddressCity()
-    {
-        TestCase::assertEquals($this->object['address_city'], $this->array['address_city']);
-    }
-
-    /**
-     * Test attribute "address_province"
-     */
-    public function testPropertyAddressProvince()
-    {
-        TestCase::assertEquals($this->object['address_province'], $this->array['address_province']);
-    }
-
-    /**
-     * Test attribute "address_extra"
-     */
-    public function testPropertyAddressExtra()
-    {
-        TestCase::assertEquals($this->object['address_extra'], $this->array['address_extra']);
-    }
-
-    /**
-     * Test attribute "country"
-     */
-    public function testPropertyCountry()
-    {
-        TestCase::assertEquals($this->object['country'], $this->array['country']);
+        $this->assertEquals("company", $this->object->getType());
     }
 
     /**
@@ -256,7 +166,70 @@ class EntityTest extends TestCase
      */
     public function testPropertyEmail()
     {
-        TestCase::assertEquals($this->object['email'], $this->array['email']);
+        $this->assertEquals("maria.rossi@example.com", $this->object->getEmail());
+    }
+
+    /**
+     * Test attribute "vat_number"
+     */
+    public function testPropertyVatNumber()
+    {
+        $this->assertEquals("IT12345640962", $this->object->getVatNumber());
+    }
+    /**
+     * Test attribute "tax_code"
+     */
+    public function testPropertyTaxCode()
+    {
+        $this->assertEquals($this->array['tax_code'], $this->object->getTaxCode());
+    }
+
+    /**
+     * Test attribute "address_street"
+     */
+    public function testPropertyAddressStreet()
+    {
+        $this->assertEquals($this->array['address_street'], $this->object->getAddressStreet());
+    }
+
+    /**
+     * Test attribute "address_postal_code"
+     */
+    public function testPropertyAddressPostalCode()
+    {
+        $this->assertEquals($this->array['address_postal_code'], $this->object->getAddressPostalCode());
+    }
+
+    /**
+     * Test attribute "address_city"
+     */
+    public function testPropertyAddressCity()
+    {
+        $this->assertEquals($this->array['address_city'], $this->object->getAddressCity());
+    }
+
+    /**
+     * Test attribute "address_province"
+     */
+    public function testPropertyAddressProvince()
+    {
+        $this->assertEquals($this->array['address_province'], $this->object->getAddressProvince());
+    }
+
+    /**
+     * Test attribute "address_extra"
+     */
+    public function testPropertyAddressExtra()
+    {
+        $this->assertEquals($this->array['address_extra'], $this->object->getAddressExtra());
+    }
+
+    /**
+     * Test attribute "country"
+     */
+    public function testPropertyCountry()
+    {
+        $this->assertEquals($this->array['country'], $this->object->getCountry());
     }
 
     /**
@@ -264,7 +237,7 @@ class EntityTest extends TestCase
      */
     public function testPropertyCertifiedEmail()
     {
-        TestCase::assertEquals($this->object['certified_email'], $this->array['certified_email']);
+        $this->assertEquals($this->array['certified_email'], $this->object->getCertifiedEmail());
     }
 
     /**
@@ -272,7 +245,7 @@ class EntityTest extends TestCase
      */
     public function testPropertyPhone()
     {
-        TestCase::assertEquals($this->object['phone'], $this->array['phone']);
+        $this->assertEquals($this->array['phone'], $this->object->getPhone());
     }
 
     /**
@@ -280,7 +253,7 @@ class EntityTest extends TestCase
      */
     public function testPropertyFax()
     {
-        TestCase::assertEquals($this->object['fax'], $this->array['fax']);
+        $this->assertEquals($this->array['fax'], $this->object->getFax());
     }
 
     /**
@@ -288,7 +261,7 @@ class EntityTest extends TestCase
      */
     public function testPropertyNotes()
     {
-        TestCase::assertEquals($this->object['notes'], $this->array['notes']);
+        $this->assertEquals($this->array['notes'], $this->object->getNotes());
     }
 
     /**
@@ -296,9 +269,7 @@ class EntityTest extends TestCase
      */
     public function testPropertyDefaultVat()
     {
-        foreach ($this->array['default_vat'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['default_vat']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\VatType', $this->object->getDefaultVat());
     }
 
     /**
@@ -306,7 +277,7 @@ class EntityTest extends TestCase
      */
     public function testPropertyDefaultPaymentTerms()
     {
-        TestCase::assertEquals($this->object['default_payment_terms'], $this->array['default_payment_terms']);
+        $this->assertEquals($this->array['default_payment_terms'], $this->object->getDefaultPaymentTerms());
     }
 
     /**
@@ -314,7 +285,7 @@ class EntityTest extends TestCase
      */
     public function testPropertyDefaultPaymentTermsType()
     {
-        TestCase::assertEquals($this->object['default_payment_terms_type'], $this->array['default_payment_terms_type']);
+        $this->assertEquals($this->array['default_payment_terms_type'], $this->object->getDefaultPaymentTermsType());
     }
 
     /**
@@ -322,9 +293,7 @@ class EntityTest extends TestCase
      */
     public function testPropertyDefaultPaymentMethod()
     {
-        foreach ($this->array['default_payment_method'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['default_payment_method']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\PaymentMethod', $this->object->getDefaultPaymentMethod());
     }
 
     /**
@@ -332,7 +301,7 @@ class EntityTest extends TestCase
      */
     public function testPropertyBankName()
     {
-        TestCase::assertEquals($this->object['bank_name'], $this->array['bank_name']);
+        $this->assertEquals($this->array['bank_name'], $this->object->getBankName());
     }
 
     /**
@@ -340,7 +309,7 @@ class EntityTest extends TestCase
      */
     public function testPropertyBankIban()
     {
-        TestCase::assertEquals($this->object['bank_iban'], $this->array['bank_iban']);
+        $this->assertEquals($this->array['bank_iban'], $this->object->getBankIban());
     }
 
     /**
@@ -348,7 +317,7 @@ class EntityTest extends TestCase
      */
     public function testPropertyBankSwiftCode()
     {
-        TestCase::assertEquals($this->object['bank_swift_code'], $this->array['bank_swift_code']);
+        $this->assertEquals($this->array['bank_swift_code'], $this->object->getBankSwiftCode());
     }
 
     /**
@@ -356,7 +325,7 @@ class EntityTest extends TestCase
      */
     public function testPropertyShippingAddress()
     {
-        TestCase::assertEquals($this->object['shipping_address'], $this->array['shipping_address']);
+        $this->assertEquals($this->array['shipping_address'], $this->object->getShippingAddress());
     }
 
     /**
@@ -364,7 +333,7 @@ class EntityTest extends TestCase
      */
     public function testPropertyEInvoice()
     {
-        TestCase::assertEquals($this->object['e_invoice'], $this->array['e_invoice']);
+        $this->assertEquals($this->array['e_invoice'], $this->object->getEInvoice());
     }
 
     /**
@@ -372,7 +341,7 @@ class EntityTest extends TestCase
      */
     public function testPropertyEiCode()
     {
-        TestCase::assertEquals($this->object['ei_code'], $this->array['ei_code']);
+        $this->assertEquals($this->array['ei_code'], $this->object->getEiCode());
     }
 
     /**
@@ -380,7 +349,7 @@ class EntityTest extends TestCase
      */
     public function testPropertyCreatedAt()
     {
-        TestCase::assertEquals($this->object['created_at'], $this->array['created_at']);
+        $this->assertEquals($this->array['created_at'], $this->object->getCreatedAt());
     }
 
     /**
@@ -388,6 +357,6 @@ class EntityTest extends TestCase
      */
     public function testPropertyUpdatedAt()
     {
-        TestCase::assertEquals($this->object['updated_at'], $this->array['updated_at']);
+        $this->assertEquals($this->array['updated_at'], $this->object->getUpdatedAt());
     }
 }

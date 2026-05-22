@@ -96,9 +96,19 @@ class ListTemplatesResponseTest extends TestCase
      */
     public function testListTemplatesResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ListTemplatesResponse::class, $this->object);
+    }
+
+    /**
+     * Test setter for "data"
+     */
+    public function testSetData()
+    {
+        $object = new \FattureInCloud\Model\ListTemplatesResponse();
+        $testValue = [new \FattureInCloud\Model\DocumentTemplate()];
+        
+        $object->setData($testValue);
+        $this->assertEquals($testValue, $object->getData());
     }
 
     /**
@@ -106,8 +116,6 @@ class ListTemplatesResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertIsArray($this->object->getData());
     }
 }

@@ -87,9 +87,7 @@ class GetUserInfoResponseEmailConfirmationStateTest extends TestCase
      */
     public function testGetUserInfoResponseEmailConfirmationState()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\GetUserInfoResponseEmailConfirmationState', $this->object);
     }
 
     /**
@@ -97,6 +95,6 @@ class GetUserInfoResponseEmailConfirmationStateTest extends TestCase
      */
     public function testPropertyNeedConfirmation()
     {
-        TestCase::assertEquals($this->object['need_confirmation'], $this->array['need_confirmation']);
+        $this->assertEquals($this->array['need_confirmation'], $this->object->getNeedConfirmation());
     }
 }

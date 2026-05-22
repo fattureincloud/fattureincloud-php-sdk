@@ -87,6 +87,6 @@ class ReceivedDocumentTypeTest extends TestCase
      */
     public function testReceivedDocumentType()
     {
-        Testcase::assertEquals($this->array['type'], $this->object['type']);
+        $this->assertEquals($this->array['type'], $this->object->getType());
     }
 }

@@ -102,7 +102,7 @@ class ClientsApiTest extends TestCase
         $result = $apiInstance->createClient($company_id, $create_client_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreateClientResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -113,7 +113,7 @@ class ClientsApiTest extends TestCase
      */
     public function testDeleteClient()
     {
-        TestCase::assertEquals(1, 1);
+        $this->assertEquals(1, 1);
     }
 
     /**
@@ -140,7 +140,7 @@ class ClientsApiTest extends TestCase
         $result = $apiInstance->getClient($company_id, $client_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetClientResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -166,7 +166,7 @@ class ClientsApiTest extends TestCase
         $result = $apiInstance->listClients($company_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListClientsResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -194,6 +194,6 @@ class ClientsApiTest extends TestCase
         $result = $apiInstance->modifyClient($company_id, $client_id, $modify_client_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyClientResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 }

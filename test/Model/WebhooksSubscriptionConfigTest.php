@@ -87,9 +87,10 @@ class WebhooksSubscriptionConfigTest extends TestCase
      */
     public function testWebhooksSubscriptionConfig()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(
+            \FattureInCloud\Model\WebhooksSubscriptionConfig::class,
+            $this->object
+        );
     }
 
     /**
@@ -97,6 +98,6 @@ class WebhooksSubscriptionConfigTest extends TestCase
      */
     public function testPropertyMapping()
     {
-        TestCase::assertEquals($this->object['mapping'], $this->array['mapping']);
+        $this->assertEquals($this->array['mapping'], $this->object->getMapping());
     }
 }

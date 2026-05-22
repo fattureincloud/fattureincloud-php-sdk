@@ -95,9 +95,7 @@ class CompanyInfoAccessInfoTest extends TestCase
      */
     public function testCompanyInfoAccessInfo()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CompanyInfoAccessInfo', $this->object);
     }
 
     /**
@@ -105,7 +103,7 @@ class CompanyInfoAccessInfoTest extends TestCase
      */
     public function testPropertyRole()
     {
-        TestCase::assertEquals($this->object['role'], $this->array['role']);
+        $this->assertEquals($this->array['role'], $this->object->getRole());
     }
 
     /**
@@ -113,9 +111,7 @@ class CompanyInfoAccessInfoTest extends TestCase
      */
     public function testPropertyPermissions()
     {
-        foreach ($this->array['permissions'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['permissions']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\Permissions', $this->object->getPermissions());
     }
 
     /**
@@ -123,6 +119,36 @@ class CompanyInfoAccessInfoTest extends TestCase
      */
     public function testPropertyThroughAccountant()
     {
-        TestCase::assertEquals($this->object['through_accountant'], $this->array['through_accountant']);
+        $this->assertEquals($this->array['through_accountant'], $this->object->getThroughAccountant());
+    }
+
+    /**
+     * Test setter for "role"
+     */
+    public function testSetRole()
+    {
+        $testValue = 'admin';
+        $this->object->setRole($testValue);
+        $this->assertEquals($testValue, $this->object->getRole());
+    }
+
+    /**
+     * Test setter for "permissions"
+     */
+    public function testSetPermissions()
+    {
+        $testValue = new \FattureInCloud\Model\Permissions();
+        $this->object->setPermissions($testValue);
+        $this->assertEquals($testValue, $this->object->getPermissions());
+    }
+
+    /**
+     * Test setter for "through_accountant"
+     */
+    public function testSetThroughAccountant()
+    {
+        $testValue = true;
+        $this->object->setThroughAccountant($testValue);
+        $this->assertEquals($testValue, $this->object->getThroughAccountant());
     }
 }

@@ -59,13 +59,9 @@ class IssuedDocumentStatusTest extends TestCase
      */
     public function setUp(): void
     {
-        $json = '{  
-            "status": "paid"
-        }';
-
-        $this->array = json_decode($json, true);
-
-        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\IssuedDocumentPaymentsListItem');
+        // IssuedDocumentStatus is an enum class, set the value directly
+        $this->array = ['status' => 'paid'];
+        $this->object = \FattureInCloud\Model\IssuedDocumentStatus::PAID;
     }
 
     /**
@@ -87,6 +83,8 @@ class IssuedDocumentStatusTest extends TestCase
      */
     public function testIssuedDocumentStatus()
     {
-        TestCase::assertEquals($this->object['status'], $this->array['status']);
+        // Test that the constant exists and has the expected value
+        $this->assertEquals('paid', \FattureInCloud\Model\IssuedDocumentStatus::PAID);
+        $this->assertEquals('paid', $this->object);
     }
 }

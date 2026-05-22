@@ -103,7 +103,7 @@ class IssuedEInvoicesApiTest extends TestCase
         $result = $apiInstance->sendEInvoice($company_id, $send_einvoice_request, $document_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\SendEInvoiceResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -130,7 +130,7 @@ class IssuedEInvoicesApiTest extends TestCase
         $result = $apiInstance->verifyEInvoiceXml($company_id, $document_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\VerifyEInvoiceXmlResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -156,6 +156,6 @@ class IssuedEInvoicesApiTest extends TestCase
         $document_id = 12345;
         $result = $apiInstance->getEInvoiceXml($company_id, $document_id);
 
-        TestCase::assertEquals($stream, $result);
+        $this->assertEquals($stream, $result);
     }
 }

@@ -102,7 +102,7 @@ class IssuedDocumentsApiTest extends TestCase
         $result = $apiInstance->createIssuedDocument($company_id, $create_issued_document_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreateIssuedDocumentResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -113,7 +113,7 @@ class IssuedDocumentsApiTest extends TestCase
      */
     public function testDeleteIssuedDocument()
     {
-        TestCase::assertEquals(1, 1);
+        $this->assertEquals(1, 1);
     }
 
     /**
@@ -124,7 +124,7 @@ class IssuedDocumentsApiTest extends TestCase
      */
     public function testDeleteIssuedDocumentAttachment()
     {
-        TestCase::assertEquals(1, 1);
+        $this->assertEquals(1, 1);
     }
 
     /**
@@ -151,7 +151,7 @@ class IssuedDocumentsApiTest extends TestCase
         $result = $apiInstance->getEmailData($company_id, $issued_document_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetEmailDataResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -178,7 +178,7 @@ class IssuedDocumentsApiTest extends TestCase
         $result = $apiInstance->getExistingIssuedDocumentTotals($company_id, $issued_document_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetExistingIssuedDocumentTotalsResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -205,7 +205,7 @@ class IssuedDocumentsApiTest extends TestCase
         $result = $apiInstance->getIssuedDocument($company_id, $issued_document_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetIssuedDocumentResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -232,8 +232,8 @@ class IssuedDocumentsApiTest extends TestCase
         $result = $apiInstance->getIssuedDocumentPreCreateInfo($company_id, $type);
         //$obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetIssuedDocumentPreCreateInfoResponse');
 
-        //TestCase::assertEquals($obj, $result);
-        TestCase::assertEquals(1, 1);
+        //$this->assertEquals($obj, $result);
+        $this->assertEquals(1, 1);
     }
 
     /**
@@ -260,7 +260,7 @@ class IssuedDocumentsApiTest extends TestCase
         $result = $apiInstance->getNewIssuedDocumentTotals($company_id, $get_new_issued_document_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetNewIssuedDocumentTotalsResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -287,7 +287,7 @@ class IssuedDocumentsApiTest extends TestCase
         $result = $apiInstance->listIssuedDocuments($company_id, $type);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListIssuedDocumentsResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -315,7 +315,7 @@ class IssuedDocumentsApiTest extends TestCase
         $result = $apiInstance->modifyIssuedDocument($company_id, $issued_document_id, $modify_issued_document_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyIssuedDocumentResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -326,7 +326,7 @@ class IssuedDocumentsApiTest extends TestCase
      */
     public function testScheduleEmail()
     {
-        TestCase::assertEquals(1, 1);
+        $this->assertEquals(1, 1);
     }
 
     /**
@@ -353,7 +353,7 @@ class IssuedDocumentsApiTest extends TestCase
         $result = $apiInstance->uploadIssuedDocumentAttachment($company_id, $upload_issued_document_attachment);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\UploadIssuedDocumentAttachmentResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -380,7 +380,7 @@ class IssuedDocumentsApiTest extends TestCase
         $result = $apiInstance->transformIssuedDocument($company_id, $issued_document_id, 'proforma');
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\TransformIssuedDocumentResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -407,6 +407,6 @@ class IssuedDocumentsApiTest extends TestCase
         $result = $apiInstance->joinIssuedDocuments($company_id, [$issued_document_id, 54321], 'proforma');
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\JoinIssuedDocumentsResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 }

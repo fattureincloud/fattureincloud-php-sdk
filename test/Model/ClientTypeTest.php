@@ -59,13 +59,9 @@ class ClientTypeTest extends TestCase
      */
     public function setUp(): void
     {
-        $json = '{  
-            "type": "company"
-        }';
-
-        $this->array = json_decode($json, true);
-
-        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\Client');
+        // ClientType is an enum class, set the value directly
+        $this->array = ['type' => 'company'];
+        $this->object = \FattureInCloud\Model\ClientType::COMPANY;
     }
 
     /**
@@ -87,6 +83,17 @@ class ClientTypeTest extends TestCase
      */
     public function testClientType()
     {
-        TestCase::assertEquals($this->object['type'], $this->array['type']);
+        // Test that the constant exists and has the expected value
+        $this->assertEquals('company', \FattureInCloud\Model\ClientType::COMPANY);
+        $this->assertEquals('company', $this->object);
+    }
+
+    /**
+     * Test allowable values
+     */
+    public function testAllowableValues()
+    {
+        $allowableValues = \FattureInCloud\Model\ClientType::getAllowableEnumValues();
+        $this->assertContains($this->array['type'], $allowableValues);
     }
 }

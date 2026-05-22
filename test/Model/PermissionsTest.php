@@ -122,9 +122,7 @@ class PermissionsTest extends TestCase
      */
     public function testPermissions()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\Permissions::class, $this->object);
     }
 
     /**
@@ -132,7 +130,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicSituation()
     {
-        TestCase::assertEquals($this->object['fic_situation'], $this->array['fic_situation']);
+        $this->assertEquals($this->array['fic_situation'], $this->object->getFicSituation());
     }
 
     /**
@@ -140,7 +138,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicClients()
     {
-        TestCase::assertEquals($this->object['fic_clients'], $this->array['fic_clients']);
+        $this->assertEquals($this->array['fic_clients'], $this->object->getFicClients());
     }
 
     /**
@@ -148,7 +146,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicSuppliers()
     {
-        TestCase::assertEquals($this->object['fic_suppliers'], $this->array['fic_suppliers']);
+        $this->assertEquals($this->array['fic_suppliers'], $this->object->getFicSuppliers());
     }
 
     /**
@@ -156,7 +154,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicProducts()
     {
-        TestCase::assertEquals($this->object['fic_products'], $this->array['fic_products']);
+        $this->assertEquals($this->array['fic_products'], $this->object->getFicProducts());
     }
 
     /**
@@ -164,7 +162,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicIssuedDocuments()
     {
-        TestCase::assertEquals($this->object['fic_issued_documents'], $this->array['fic_issued_documents']);
+        $this->assertEquals($this->array['fic_issued_documents'], $this->object->getFicIssuedDocuments());
     }
 
     /**
@@ -172,7 +170,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicReceivedDocuments()
     {
-        TestCase::assertEquals($this->object['fic_received_documents'], $this->array['fic_received_documents']);
+        $this->assertEquals($this->array['fic_received_documents'], $this->object->getFicReceivedDocuments());
     }
 
     /**
@@ -180,7 +178,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicReceipts()
     {
-        TestCase::assertEquals($this->object['fic_receipts'], $this->array['fic_receipts']);
+        $this->assertEquals($this->array['fic_receipts'], $this->object->getFicReceipts());
     }
 
     /**
@@ -188,7 +186,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicCalendar()
     {
-        TestCase::assertEquals($this->object['fic_calendar'], $this->array['fic_calendar']);
+        $this->assertEquals($this->array['fic_calendar'], $this->object->getFicCalendar());
     }
 
     /**
@@ -196,7 +194,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicArchive()
     {
-        TestCase::assertEquals($this->object['fic_archive'], $this->array['fic_archive']);
+        $this->assertEquals($this->array['fic_archive'], $this->object->getFicArchive());
     }
 
     /**
@@ -204,7 +202,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicTaxes()
     {
-        TestCase::assertEquals($this->object['fic_taxes'], $this->array['fic_taxes']);
+        $this->assertEquals($this->array['fic_taxes'], $this->object->getFicTaxes());
     }
 
     /**
@@ -212,7 +210,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicStock()
     {
-        TestCase::assertEquals($this->object['fic_stock'], $this->array['fic_stock']);
+        $this->assertEquals($this->array['fic_stock'], $this->object->getFicStock());
     }
 
     /**
@@ -220,7 +218,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicCashbook()
     {
-        TestCase::assertEquals($this->object['fic_cashbook'], $this->array['fic_cashbook']);
+        $this->assertEquals($this->array['fic_cashbook'], $this->object->getFicCashbook());
     }
 
     /**
@@ -228,7 +226,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicSettings()
     {
-        TestCase::assertEquals($this->object['fic_settings'], $this->array['fic_settings']);
+        $this->assertEquals($this->array['fic_settings'], $this->object->getFicSettings());
     }
 
     /**
@@ -236,7 +234,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicEmails()
     {
-        TestCase::assertEquals($this->object['fic_emails'], $this->array['fic_emails']);
+        $this->assertEquals($this->array['fic_emails'], $this->object->getFicEmails());
     }
 
     /**
@@ -244,7 +242,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicExport()
     {
-        TestCase::assertEquals($this->object['fic_export'], $this->array['fic_export']);
+        $this->assertEquals($this->array['fic_export'], $this->object->getFicExport());
     }
 
     /**
@@ -252,7 +250,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicImportBankstatements()
     {
-        TestCase::assertEquals($this->object['fic_import_bankstatements'], $this->array['fic_import_bankstatements']);
+        $this->assertEquals($this->array['fic_import_bankstatements'], $this->object->getFicImportBankstatements());
     }
 
     /**
@@ -260,7 +258,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicImportClientsSuppliers()
     {
-        TestCase::assertEquals($this->object['fic_import_clients_suppliers'], $this->array['fic_import_clients_suppliers']);
+        $this->assertEquals($this->array['fic_import_clients_suppliers'], $this->object->getFicImportClientsSuppliers());
     }
 
     /**
@@ -268,7 +266,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicImportIssuedDocuments()
     {
-        TestCase::assertEquals($this->object['fic_import_issued_documents'], $this->array['fic_import_issued_documents']);
+        $this->assertEquals($this->array['fic_import_issued_documents'], $this->object->getFicImportIssuedDocuments());
     }
 
     /**
@@ -276,7 +274,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicImportProducts()
     {
-        TestCase::assertEquals($this->object['fic_import_products'], $this->array['fic_import_products']);
+        $this->assertEquals($this->array['fic_import_products'], $this->object->getFicImportProducts());
     }
 
     /**
@@ -284,7 +282,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicRecurring()
     {
-        TestCase::assertEquals($this->object['fic_recurring'], $this->array['fic_recurring']);
+        $this->assertEquals($this->array['fic_recurring'], $this->object->getFicRecurring());
     }
 
     /**
@@ -292,7 +290,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicRiba()
     {
-        TestCase::assertEquals($this->object['fic_riba'], $this->array['fic_riba']);
+        $this->assertEquals($this->array['fic_riba'], $this->object->getFicRiba());
     }
 
     /**
@@ -300,7 +298,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyDicEmployees()
     {
-        TestCase::assertEquals($this->object['dic_employees'], $this->array['dic_employees']);
+        $this->assertEquals($this->array['dic_employees'], $this->object->getDicEmployees());
     }
 
     /**
@@ -308,7 +306,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyDicSettings()
     {
-        TestCase::assertEquals($this->object['dic_settings'], $this->array['dic_settings']);
+        $this->assertEquals($this->array['dic_settings'], $this->object->getDicSettings());
     }
 
     /**
@@ -316,7 +314,7 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyDicTimesheet()
     {
-        TestCase::assertEquals($this->object['dic_timesheet'], $this->array['dic_timesheet']);
+        $this->assertEquals($this->array['dic_timesheet'], $this->object->getDicTimesheet());
     }
 
     /**
@@ -324,8 +322,6 @@ class PermissionsTest extends TestCase
      */
     public function testPropertyFicIssuedDocumentsDetailed()
     {
-        foreach ($this->array['fic_issued_documents_detailed'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['fic_issued_documents_detailed']);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\PermissionsFicIssuedDocumentsDetailed::class, $this->object->getFicIssuedDocumentsDetailed());
     }
 }

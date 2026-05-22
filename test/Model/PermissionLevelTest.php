@@ -59,6 +59,9 @@ class PermissionLevelTest extends TestCase
      */
     public function setUp(): void
     {
+        // PermissionLevel is an enum class, set the value directly
+        $this->array = ['level' => 'read'];
+        $this->object = \FattureInCloud\Model\PermissionLevel::READ;
     }
 
     /**
@@ -80,6 +83,8 @@ class PermissionLevelTest extends TestCase
      */
     public function testPermissionLevel()
     {
-        TestCase::AssertEquals(1, 1);
+        // Test that the constant exists and has the expected value
+        $this->assertEquals('read', \FattureInCloud\Model\PermissionLevel::READ);
+        $this->assertEquals('read', $this->object);
     }
 }

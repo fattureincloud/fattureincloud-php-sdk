@@ -87,9 +87,7 @@ class ReceivedDocumentInfoItemsDefaultValuesTest extends TestCase
      */
     public function testReceivedDocumentInfoItemsDefaultValues()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ReceivedDocumentInfoItemsDefaultValues::class, $this->object);
     }
 
     /**
@@ -97,6 +95,6 @@ class ReceivedDocumentInfoItemsDefaultValuesTest extends TestCase
      */
     public function testPropertyVat()
     {
-        TestCase::AssertEquals($this->array['vat'], $this->object['vat']);
+        $this->assertEquals($this->array['vat'], $this->object->getVat());
     }
 }

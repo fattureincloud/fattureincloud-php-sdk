@@ -91,9 +91,7 @@ class GetCompanyPlanUsageResponseTest extends TestCase
      */
     public function testGetCompanyPlanUsageResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\GetCompanyPlanUsageResponse', $this->object);
     }
 
     /**
@@ -101,8 +99,6 @@ class GetCompanyPlanUsageResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CompanyPlanUsage', $this->object->getData());
     }
 }

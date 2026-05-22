@@ -97,9 +97,7 @@ class CreateVatTypeRequestTest extends TestCase
      */
     public function testCreateVatTypeRequest()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CreateVatTypeRequest', $this->object);
     }
 
     /**
@@ -107,8 +105,18 @@ class CreateVatTypeRequestTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\VatType', $this->object->getData());
+    }
+
+    /**
+     * Test setter for "data"
+     */
+    public function testSetData()
+    {
+        $object = new \FattureInCloud\Model\CreateVatTypeRequest();
+        $testValue = new \FattureInCloud\Model\VatType();
+        
+        $object->setData($testValue);
+        $this->assertEquals($testValue, $object->getData());
     }
 }

@@ -132,9 +132,7 @@ class CompanyInfoTest extends TestCase
      */
     public function testCompanyInfo()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CompanyInfo', $this->object);
     }
 
     /**
@@ -142,7 +140,7 @@ class CompanyInfoTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -150,7 +148,7 @@ class CompanyInfoTest extends TestCase
      */
     public function testPropertyName()
     {
-        TestCase::assertEquals($this->object['name'], $this->array['name']);
+        $this->assertEquals($this->array['name'], $this->object->getName());
     }
 
     /**
@@ -158,7 +156,7 @@ class CompanyInfoTest extends TestCase
      */
     public function testPropertyEmail()
     {
-        TestCase::assertEquals($this->object['email'], $this->array['email']);
+        $this->assertEquals($this->array['email'], $this->object->getEmail());
     }
 
     /**
@@ -166,7 +164,7 @@ class CompanyInfoTest extends TestCase
      */
     public function testPropertyType()
     {
-        TestCase::assertEquals($this->object['type'], $this->array['type']);
+        $this->assertEquals($this->array['type'], $this->object->getType());
     }
 
     /**
@@ -174,9 +172,7 @@ class CompanyInfoTest extends TestCase
      */
     public function testPropertyAccessInfo()
     {
-        foreach ($this->array['access_info'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['access_info']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CompanyInfoAccessInfo', $this->object->getAccessInfo());
     }
 
     /**
@@ -184,9 +180,7 @@ class CompanyInfoTest extends TestCase
      */
     public function testPropertyPlanInfo()
     {
-        foreach ($this->array['plan_info'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['plan_info']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CompanyInfoPlanInfo', $this->object->getPlanInfo());
     }
 
     /**
@@ -194,6 +188,110 @@ class CompanyInfoTest extends TestCase
      */
     public function testPropertyAccountantId()
     {
-        TestCase::assertEquals($this->object['accountant_id'], $this->array['accountant_id']);
+        $this->assertEquals($this->array['accountant_id'], $this->object->getAccountantId());
+    }
+
+    /**
+     * Test attribute "is_accountant"
+     */
+    public function testPropertyIsAccountant()
+    {
+        $this->assertEquals($this->array['is_accountant'], $this->object->getIsAccountant());
+    }
+
+    /**
+     * Test setter for "id"
+     */
+    public function testSetId()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfo();
+        $testValue = 12345;
+        
+        $object->setId($testValue);
+        $this->assertEquals($testValue, $object->getId());
+    }
+
+    /**
+     * Test setter for "name"
+     */
+    public function testSetName()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfo();
+        $testValue = 'Test Company S.r.l.';
+        
+        $object->setName($testValue);
+        $this->assertEquals($testValue, $object->getName());
+    }
+
+    /**
+     * Test setter for "email"
+     */
+    public function testSetEmail()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfo();
+        $testValue = 'test@company.com';
+        
+        $object->setEmail($testValue);
+        $this->assertEquals($testValue, $object->getEmail());
+    }
+
+    /**
+     * Test setter for "type"
+     */
+    public function testSetType()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfo();
+        $testValue = 'company';
+        
+        $object->setType($testValue);
+        $this->assertEquals($testValue, $object->getType());
+    }
+
+    /**
+     * Test setter for "access_info"
+     */
+    public function testSetAccessInfo()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfo();
+        $testValue = new \FattureInCloud\Model\CompanyInfoAccessInfo();
+        
+        $object->setAccessInfo($testValue);
+        $this->assertEquals($testValue, $object->getAccessInfo());
+    }
+
+    /**
+     * Test setter for "plan_info"
+     */
+    public function testSetPlanInfo()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfo();
+        $testValue = new \FattureInCloud\Model\CompanyInfoPlanInfo();
+        
+        $object->setPlanInfo($testValue);
+        $this->assertEquals($testValue, $object->getPlanInfo());
+    }
+
+    /**
+     * Test setter for "accountant_id"
+     */
+    public function testSetAccountantId()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfo();
+        $testValue = 9876;
+        
+        $object->setAccountantId($testValue);
+        $this->assertEquals($testValue, $object->getAccountantId());
+    }
+
+    /**
+     * Test setter for "is_accountant"
+     */
+    public function testSetIsAccountant()
+    {
+        $object = new \FattureInCloud\Model\CompanyInfo();
+        $testValue = false;
+        
+        $object->setIsAccountant($testValue);
+        $this->assertEquals($testValue, $object->getIsAccountant());
     }
 }

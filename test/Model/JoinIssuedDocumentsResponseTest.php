@@ -242,9 +242,7 @@ class JoinIssuedDocumentsResponseTest extends TestCase
      */
     public function testJoinIssuedDocumentsResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\JoinIssuedDocumentsResponse', $this->object);
     }
 
     /**
@@ -252,9 +250,7 @@ class JoinIssuedDocumentsResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\IssuedDocument', $this->object->getData());
     }
 
     /**
@@ -262,8 +258,6 @@ class JoinIssuedDocumentsResponseTest extends TestCase
      */
     public function testPropertyOptions()
     {
-        foreach ($this->array['options'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['options']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\IssuedDocumentOptions', $this->object->getOptions());
     }
 }

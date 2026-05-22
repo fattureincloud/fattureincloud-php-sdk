@@ -76,8 +76,13 @@ class PendingReceivedDocumentExtractedDataTest extends TestCase
      */
     public function testPendingReceivedDocumentExtractedData()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $object = new \FattureInCloud\Model\PendingReceivedDocumentExtractedData();
+        $this->assertInstanceOf(\FattureInCloud\Model\PendingReceivedDocumentExtractedData::class, $object);
+        
+        // Test that object can be created with valid data
+        $testMining = new \FattureInCloud\Model\PendingReceivedDocumentExtractedDataMining();
+        $object->setMining($testMining);
+        $this->assertEquals($testMining, $object->getMining());
     }
 
     /**
@@ -85,7 +90,22 @@ class PendingReceivedDocumentExtractedDataTest extends TestCase
      */
     public function testPropertyMining()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        $object = new \FattureInCloud\Model\PendingReceivedDocumentExtractedData();
+        $testValue = new \FattureInCloud\Model\PendingReceivedDocumentExtractedDataMining();
+        
+        $object->setMining($testValue);
+        $this->assertEquals($testValue, $object->getMining());
+    }
+
+    /**
+     * Test setter for "mining"
+     */
+    public function testSetMining()
+    {
+        $object = new \FattureInCloud\Model\PendingReceivedDocumentExtractedData();
+        $testValue = new \FattureInCloud\Model\PendingReceivedDocumentExtractedDataMining();
+        
+        $object->setMining($testValue);
+        $this->assertEquals($testValue, $object->getMining());
     }
 }

@@ -139,9 +139,7 @@ class EntityClientPreCreateInfoTest extends TestCase
      */
     public function testEntityClientPreCreateInfo()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\EntityClientPreCreateInfo', $this->object);
     }
 
     /**
@@ -149,9 +147,9 @@ class EntityClientPreCreateInfoTest extends TestCase
      */
     public function testPropertyCountriesList()
     {
-        foreach ($this->array['countries_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['countries_list']);
-        }
+        $countries = $this->object->getCountriesList();
+        $this->assertIsArray($countries);
+        $this->assertContains("Italy", $countries);
     }
 
     /**
@@ -159,9 +157,11 @@ class EntityClientPreCreateInfoTest extends TestCase
      */
     public function testPropertyPaymentMethodsList()
     {
-        foreach ($this->array['payment_methods_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['payment_methods_list']);
-        }
+        $methods = $this->object->getPaymentMethodsList();
+        $this->assertIsArray($methods);
+        $this->assertNotEmpty($methods);
+        $this->assertEquals(555, $methods[0]->getId());
+        $this->assertEquals("Rimessa diretta", $methods[0]->getName());
     }
 
     /**
@@ -169,9 +169,10 @@ class EntityClientPreCreateInfoTest extends TestCase
      */
     public function testPropertyPaymentAccountsList()
     {
-        foreach ($this->array['payment_accounts_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['payment_accounts_list']);
-        }
+        $accounts = $this->object->getPaymentAccountsList();
+        $this->assertIsArray($accounts);
+        $this->assertNotEmpty($accounts);
+        $this->assertEquals("Conto Banca Intesa", $accounts[0]->getName());
     }
 
     /**
@@ -179,9 +180,10 @@ class EntityClientPreCreateInfoTest extends TestCase
      */
     public function testPropertyVatTypesList()
     {
-        foreach ($this->array['vat_types_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['vat_types_list']);
-        }
+        $vatTypes = $this->object->getVatTypesList();
+        $this->assertIsArray($vatTypes);
+        $this->assertNotEmpty($vatTypes);
+        $this->assertEquals(22, $vatTypes[0]->getValue());
     }
 
     /**
@@ -189,9 +191,10 @@ class EntityClientPreCreateInfoTest extends TestCase
      */
     public function testPropertyPriceLists()
     {
-        foreach ($this->array['price_lists'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['price_lists']);
-        }
+        $priceLists = $this->object->getPriceLists();
+        $this->assertIsArray($priceLists);
+        $this->assertNotEmpty($priceLists);
+        $this->assertEquals("123", $priceLists[0]->getName());
     }
 
     /**
@@ -199,7 +202,7 @@ class EntityClientPreCreateInfoTest extends TestCase
      */
     public function testPropertyLimit()
     {
-        TestCase::assertEquals($this->object['limit'], $this->array['limit']);
+        $this->assertEquals(0, $this->object->getLimit());
     }
 
     /**
@@ -207,6 +210,106 @@ class EntityClientPreCreateInfoTest extends TestCase
      */
     public function testPropertyUsage()
     {
-        TestCase::assertEquals($this->object['usage'], $this->array['usage']);
+        $this->assertEquals(0, $this->object->getUsage());
+    }
+
+    /**
+     * Test setter for "countries_list"
+     */
+    public function testSetCountriesList()
+    {
+        $object = new \FattureInCloud\Model\EntityClientPreCreateInfo();
+        $testValue = ["Germany", "France", "Spain"];
+        
+        $object->setCountriesList($testValue);
+        $this->assertEquals($testValue, $object->getCountriesList());
+    }
+
+    /**
+     * Test setter for "payment_methods_list"
+     */
+    public function testSetPaymentMethodsList()
+    {
+        $object = new \FattureInCloud\Model\EntityClientPreCreateInfo();
+        $testMethod = new \FattureInCloud\Model\PaymentMethod([
+            'id' => 777,
+            'name' => 'Test Payment Method'
+        ]);
+        $testValue = [$testMethod];
+        
+        $object->setPaymentMethodsList($testValue);
+        $this->assertEquals($testValue, $object->getPaymentMethodsList());
+    }
+
+    /**
+     * Test setter for "payment_accounts_list"
+     */
+    public function testSetPaymentAccountsList()
+    {
+        $object = new \FattureInCloud\Model\EntityClientPreCreateInfo();
+        $testAccount = new \FattureInCloud\Model\PaymentAccount([
+            'id' => 888,
+            'name' => 'Test Payment Account'
+        ]);
+        $testValue = [$testAccount];
+        
+        $object->setPaymentAccountsList($testValue);
+        $this->assertEquals($testValue, $object->getPaymentAccountsList());
+    }
+
+    /**
+     * Test setter for "vat_types_list"
+     */
+    public function testSetVatTypesList()
+    {
+        $object = new \FattureInCloud\Model\EntityClientPreCreateInfo();
+        $testVatType = new \FattureInCloud\Model\VatType([
+            'id' => 33,
+            'value' => 10
+        ]);
+        $testValue = [$testVatType];
+        
+        $object->setVatTypesList($testValue);
+        $this->assertEquals($testValue, $object->getVatTypesList());
+    }
+
+    /**
+     * Test setter for "price_lists"
+     */
+    public function testSetPriceLists()
+    {
+        $object = new \FattureInCloud\Model\EntityClientPreCreateInfo();
+        $testPriceList = new \FattureInCloud\Model\PriceList([
+            'id' => 'test_id',
+            'name' => 'Test Price List'
+        ]);
+        $testValue = [$testPriceList];
+        
+        $object->setPriceLists($testValue);
+        $this->assertEquals($testValue, $object->getPriceLists());
+    }
+
+    /**
+     * Test setter for "limit"
+     */
+    public function testSetLimit()
+    {
+        $object = new \FattureInCloud\Model\EntityClientPreCreateInfo();
+        $testValue = 100.0;
+        
+        $object->setLimit($testValue);
+        $this->assertEquals($testValue, $object->getLimit());
+    }
+
+    /**
+     * Test setter for "usage"
+     */
+    public function testSetUsage()
+    {
+        $object = new \FattureInCloud\Model\EntityClientPreCreateInfo();
+        $testValue = 25.5;
+        
+        $object->setUsage($testValue);
+        $this->assertEquals($testValue, $object->getUsage());
     }
 }

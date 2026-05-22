@@ -72,11 +72,42 @@ class TemplateTypeTest extends TestCase
     }
 
     /**
-     * Test "TemplateType"
+     * Test "TemplateType" enum constants
      */
     public function testTemplateType()
     {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
+        // Test that all expected enum constants are defined
+        $this->assertEquals('standard', \FattureInCloud\Model\TemplateType::STANDARD);
+        $this->assertEquals('delivery_note', \FattureInCloud\Model\TemplateType::DELIVERY_NOTE);
+        $this->assertEquals('accompanying_invoice', \FattureInCloud\Model\TemplateType::ACCOMPANYING_INVOICE);
+    }
+
+    /**
+     * Test getAllowableEnumValues method
+     */
+    public function testGetAllowableEnumValues()
+    {
+        $expectedValues = [
+            'standard',
+            'delivery_note', 
+            'accompanying_invoice'
+        ];
+        
+        $actualValues = \FattureInCloud\Model\TemplateType::getAllowableEnumValues();
+        
+        $this->assertEquals($expectedValues, $actualValues);
+        $this->assertCount(3, $actualValues);
+    }
+
+    /**
+     * Test that enum values are strings
+     */
+    public function testEnumValuesAreStrings()
+    {
+        $values = \FattureInCloud\Model\TemplateType::getAllowableEnumValues();
+        
+        foreach ($values as $value) {
+            $this->assertIsString($value);
+        }
     }
 }
