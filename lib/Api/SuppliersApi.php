@@ -150,7 +150,7 @@ class SuppliersApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\CreateSupplierResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\CreateSupplierResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
      */
     public function createSupplier($company_id, $create_supplier_request = null, string $contentType = self::contentTypes['createSupplier'][0])
     {
@@ -169,7 +169,7 @@ class SuppliersApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\CreateSupplierResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\CreateSupplierResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSupplierWithHttpInfo($company_id, $create_supplier_request = null, string $contentType = self::contentTypes['createSupplier'][0])
     {
@@ -877,7 +877,7 @@ class SuppliersApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetSupplierResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetSupplierResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
      */
     public function getSupplier($company_id, $supplier_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getSupplier'][0])
     {
@@ -898,7 +898,7 @@ class SuppliersApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetSupplierResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetSupplierResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSupplierWithHttpInfo($company_id, $supplier_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getSupplier'][0])
     {
@@ -1328,7 +1328,7 @@ class SuppliersApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListSuppliersResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListSuppliersResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
      */
     public function listSuppliers($company_id, $fields = null, $fieldset = null, $sort = null, $page = 1, $per_page = 5, $q = null, string $contentType = self::contentTypes['listSuppliers'][0])
     {
@@ -1352,7 +1352,7 @@ class SuppliersApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListSuppliersResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListSuppliersResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listSuppliersWithHttpInfo($company_id, $fields = null, $fieldset = null, $sort = null, $page = 1, $per_page = 5, $q = null, string $contentType = self::contentTypes['listSuppliers'][0])
     {
@@ -1818,7 +1818,7 @@ class SuppliersApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ModifySupplierResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ModifySupplierResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
      */
     public function modifySupplier($company_id, $supplier_id, $modify_supplier_request = null, string $contentType = self::contentTypes['modifySupplier'][0])
     {
@@ -1838,7 +1838,7 @@ class SuppliersApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ModifySupplierResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ModifySupplierResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function modifySupplierWithHttpInfo($company_id, $supplier_id, $modify_supplier_request = null, string $contentType = self::contentTypes['modifySupplier'][0])
     {

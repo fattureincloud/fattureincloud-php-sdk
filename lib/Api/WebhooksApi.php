@@ -153,7 +153,7 @@ class WebhooksApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\CreateWebhooksSubscriptionResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\CreateWebhooksSubscriptionResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
      */
     public function createWebhooksSubscription($company_id, $create_webhooks_subscription_request = null, string $contentType = self::contentTypes['createWebhooksSubscription'][0])
     {
@@ -172,7 +172,7 @@ class WebhooksApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\CreateWebhooksSubscriptionResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\CreateWebhooksSubscriptionResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWebhooksSubscriptionWithHttpInfo($company_id, $create_webhooks_subscription_request = null, string $contentType = self::contentTypes['createWebhooksSubscription'][0])
     {
@@ -878,7 +878,7 @@ class WebhooksApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetWebhooksSubscriptionResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetWebhooksSubscriptionResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
      */
     public function getWebhooksSubscription($company_id, $subscription_id, string $contentType = self::contentTypes['getWebhooksSubscription'][0])
     {
@@ -897,7 +897,7 @@ class WebhooksApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetWebhooksSubscriptionResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetWebhooksSubscriptionResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebhooksSubscriptionWithHttpInfo($company_id, $subscription_id, string $contentType = self::contentTypes['getWebhooksSubscription'][0])
     {
@@ -1295,7 +1295,7 @@ class WebhooksApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListWebhooksSubscriptionsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListWebhooksSubscriptionsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
      */
     public function listWebhooksSubscriptions($company_id, string $contentType = self::contentTypes['listWebhooksSubscriptions'][0])
     {
@@ -1313,7 +1313,7 @@ class WebhooksApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListWebhooksSubscriptionsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListWebhooksSubscriptionsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listWebhooksSubscriptionsWithHttpInfo($company_id, string $contentType = self::contentTypes['listWebhooksSubscriptions'][0])
     {
@@ -1695,7 +1695,7 @@ class WebhooksApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ModifyWebhooksSubscriptionResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ModifyWebhooksSubscriptionResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
      */
     public function modifyWebhooksSubscription($company_id, $subscription_id, $modify_webhooks_subscription_request = null, string $contentType = self::contentTypes['modifyWebhooksSubscription'][0])
     {
@@ -1715,7 +1715,7 @@ class WebhooksApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ModifyWebhooksSubscriptionResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ModifyWebhooksSubscriptionResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function modifyWebhooksSubscriptionWithHttpInfo($company_id, $subscription_id, $modify_webhooks_subscription_request = null, string $contentType = self::contentTypes['modifyWebhooksSubscription'][0])
     {
