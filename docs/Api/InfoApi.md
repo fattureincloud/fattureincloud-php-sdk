@@ -106,7 +106,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $postal_code = 'postal_code_example'; // string | Postal code for filtering.
+$postal_code = 'postal_code_example'; // string | Postal code for filtering.
 $city = 'city_example'; // string | City for filtering (ignored if postal_code is passed).
 
 try {
@@ -338,7 +338,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $type = 'all'; // string | Type of the templates.
+$type = 'all'; // string | Type of the templates.
 $by_type = false; // bool | [Only if type=all] If true, splits the list in objects, grouping templates by type.
 
 try {
