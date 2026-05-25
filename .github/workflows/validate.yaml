@@ -58,7 +58,9 @@ jobs:
             composer require --dev vimeo/psalm -W
           else
             composer require --dev vimeo/psalm "4.30" -W
+            rm psalm.xml
+            ./vendor/bin/psalm --init
+            composer require --dev alexeyshockov/guzzle-psalm-plugin && vendor/bin/psalm-plugin enable alexeyshockov/guzzle-psalm-plugin
           fi
-          # composer require --dev alexeyshockov/guzzle-psalm-plugin && vendor/bin/psalm-plugin enable alexeyshockov/guzzle-psalm-plugin
           ./vendor/bin/psalm
           ./vendor/bin/psalm --taint-analysis
