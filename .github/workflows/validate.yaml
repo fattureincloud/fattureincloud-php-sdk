@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: [7.4, 8.0, 8.1, 8.2, 8.3, 8.4]
+        php: [7.4, 8.0, 8.1, 8.2, 8.3, 8.4, 8.5]
 
     steps:
       - id: checkout
@@ -54,8 +54,12 @@ jobs:
       - id: psalm-validation
         name: Psalm Validation
         run: |
-          composer require --dev vimeo/psalm "4.30" -W
+          if php -r 'exit(version_compare(PHP_VERSION, "8.2.0", ">=") ? 0 : 1);'; then
+            composer require --dev vimeo/psalm -W
+          else
+            composer require --dev vimeo/psalm "4.30" -W
+          fi
           ./vendor/bin/psalm --init
-          composer require --dev alexeyshockov/guzzle-psalm-plugin && vendor/bin/psalm-plugin enable alexeyshockov/guzzle-psalm-plugin
+          # composer require --dev alexeyshockov/guzzle-psalm-plugin && vendor/bin/psalm-plugin enable alexeyshockov/guzzle-psalm-plugin
           ./vendor/bin/psalm
           ./vendor/bin/psalm --taint-analysis
