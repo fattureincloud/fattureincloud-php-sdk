@@ -2,16 +2,15 @@
 
 All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createF24()**](TaxesApi.md#createF24) | **POST** /c/{company_id}/taxes | Create F24 |
-| [**deleteF24()**](TaxesApi.md#deleteF24) | **DELETE** /c/{company_id}/taxes/{document_id} | Delete F24 |
+| Method                                                       | HTTP request                                              | Description           |
+| ------------------------------------------------------------ | --------------------------------------------------------- | --------------------- |
+| [**createF24()**](TaxesApi.md#createF24)                     | **POST** /c/{company_id}/taxes                            | Create F24            |
+| [**deleteF24()**](TaxesApi.md#deleteF24)                     | **DELETE** /c/{company_id}/taxes/{document_id}            | Delete F24            |
 | [**deleteF24Attachment()**](TaxesApi.md#deleteF24Attachment) | **DELETE** /c/{company_id}/taxes/{document_id}/attachment | Delete F24 Attachment |
-| [**getF24()**](TaxesApi.md#getF24) | **GET** /c/{company_id}/taxes/{document_id} | Get F24 |
-| [**listF24()**](TaxesApi.md#listF24) | **GET** /c/{company_id}/taxes | List F24 |
-| [**modifyF24()**](TaxesApi.md#modifyF24) | **PUT** /c/{company_id}/taxes/{document_id} | Modify F24 |
-| [**uploadF24Attachment()**](TaxesApi.md#uploadF24Attachment) | **POST** /c/{company_id}/taxes/attachment | Upload F24 Attachment |
-
+| [**getF24()**](TaxesApi.md#getF24)                           | **GET** /c/{company_id}/taxes/{document_id}               | Get F24               |
+| [**listF24()**](TaxesApi.md#listF24)                         | **GET** /c/{company_id}/taxes                             | List F24              |
+| [**modifyF24()**](TaxesApi.md#modifyF24)                     | **PUT** /c/{company_id}/taxes/{document_id}               | Modify F24            |
+| [**uploadF24Attachment()**](TaxesApi.md#uploadF24Attachment) | **POST** /c/{company_id}/taxes/attachment                 | Upload F24 Attachment |
 
 ## `createF24()`
 
@@ -39,7 +38,7 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $create_f24_request = new \FattureInCloud\Model\CreateF24Request; // \FattureInCloud\Model\CreateF24Request | The F24 to create
 
 try {
@@ -52,10 +51,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **create_f24_request** | [**\FattureInCloud\Model\CreateF24Request**](../Model/CreateF24Request.md)| The F24 to create | [optional] |
+| Name                   | Type                                                                       | Description            | Notes      |
+| ---------------------- | -------------------------------------------------------------------------- | ---------------------- | ---------- |
+| **company_id**         | **int**                                                                    | The ID of the company. |            |
+| **create_f24_request** | [**\FattureInCloud\Model\CreateF24Request**](../Model/CreateF24Request.md) | The F24 to create      | [optional] |
 
 ### Return type
 
@@ -100,7 +99,7 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 
 try {
@@ -112,10 +111,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **document_id** | **int**| The ID of the document. | |
+| Name            | Type    | Description             | Notes |
+| --------------- | ------- | ----------------------- | ----- |
+| **company_id**  | **int** | The ID of the company.  |       |
+| **document_id** | **int** | The ID of the document. |       |
 
 ### Return type
 
@@ -160,7 +159,7 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 
 try {
@@ -172,10 +171,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **document_id** | **int**| The ID of the document. | |
+| Name            | Type    | Description             | Notes |
+| --------------- | ------- | ----------------------- | ----- |
+| **company_id**  | **int** | The ID of the company.  |       |
+| **document_id** | **int** | The ID of the document. |       |
 
 ### Return type
 
@@ -220,7 +219,7 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
@@ -235,12 +234,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **document_id** | **int**| The ID of the document. | |
-| **fields** | **string**| List of comma-separated fields. | [optional] |
-| **fieldset** | **string**| Name of the fieldset. | [optional] |
+| Name            | Type       | Description                     | Notes      |
+| --------------- | ---------- | ------------------------------- | ---------- |
+| **company_id**  | **int**    | The ID of the company.          |            |
+| **document_id** | **int**    | The ID of the document.         |            |
+| **fields**      | **string** | List of comma-separated fields. | [optional] |
+| **fieldset**    | **string** | Name of the fieldset.           | [optional] |
 
 ### Return type
 
@@ -285,7 +284,7 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
 $sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
@@ -303,15 +302,15 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **fields** | **string**| List of comma-separated fields. | [optional] |
-| **fieldset** | **string**| Name of the fieldset. | [optional] |
-| **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
-| **page** | **int**| The page to retrieve. | [optional] [default to 1] |
-| **per_page** | **int**| The size of the page. | [optional] [default to 5] |
-| **q** | **string**| Query for filtering the results. | [optional] |
+| Name           | Type       | Description                                                                 | Notes                     |
+| -------------- | ---------- | --------------------------------------------------------------------------- | ------------------------- |
+| **company_id** | **int**    | The ID of the company.                                                      |                           |
+| **fields**     | **string** | List of comma-separated fields.                                             | [optional]                |
+| **fieldset**   | **string** | Name of the fieldset.                                                       | [optional]                |
+| **sort**       | **string** | List of comma-separated fields for result sorting (minus for desc sorting). | [optional]                |
+| **page**       | **int**    | The page to retrieve.                                                       | [optional] [default to 1] |
+| **per_page**   | **int**    | The size of the page.                                                       | [optional] [default to 5] |
+| **q**          | **string** | Query for filtering the results.                                            | [optional]                |
 
 ### Return type
 
@@ -356,7 +355,7 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 $modify_f24_request = new \FattureInCloud\Model\ModifyF24Request; // \FattureInCloud\Model\ModifyF24Request | The F24
 
@@ -370,11 +369,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **document_id** | **int**| The ID of the document. | |
-| **modify_f24_request** | [**\FattureInCloud\Model\ModifyF24Request**](../Model/ModifyF24Request.md)| The F24 | [optional] |
+| Name                   | Type                                                                       | Description             | Notes      |
+| ---------------------- | -------------------------------------------------------------------------- | ----------------------- | ---------- |
+| **company_id**         | **int**                                                                    | The ID of the company.  |            |
+| **document_id**        | **int**                                                                    | The ID of the document. |            |
+| **modify_f24_request** | [**\FattureInCloud\Model\ModifyF24Request**](../Model/ModifyF24Request.md) | The F24                 | [optional] |
 
 ### Return type
 
@@ -419,7 +418,7 @@ $apiInstance = new FattureInCloud\Api\TaxesApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $filename = 'filename_example'; // string | Attachment file name
 $attachment = '/path/to/file.txt'; // \SplFileObject | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx]
 
@@ -433,11 +432,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **filename** | **string**| Attachment file name | [optional] |
-| **attachment** | **\SplFileObject****\SplFileObject**| Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx] | [optional] |
+| Name           | Type                                     | Description                                                              | Notes      |
+| -------------- | ---------------------------------------- | ------------------------------------------------------------------------ | ---------- |
+| **company_id** | **int**                                  | The ID of the company.                                                   |            |
+| **filename**   | **string**                               | Attachment file name                                                     | [optional] |
+| **attachment** | **\SplFileObject\*\***\SplFileObject\*\* | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx] | [optional] |
 
 ### Return type
 

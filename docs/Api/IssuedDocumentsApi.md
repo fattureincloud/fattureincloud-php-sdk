@@ -2,27 +2,26 @@
 
 All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createIssuedDocument()**](IssuedDocumentsApi.md#createIssuedDocument) | **POST** /c/{company_id}/issued_documents | Create Issued Document |
-| [**deleteBinIssuedDocument()**](IssuedDocumentsApi.md#deleteBinIssuedDocument) | **DELETE** /c/{company_id}/bin/issued_documents/{document_id} | Delete Bin Issued Document |
-| [**deleteIssuedDocument()**](IssuedDocumentsApi.md#deleteIssuedDocument) | **DELETE** /c/{company_id}/issued_documents/{document_id} | Delete Issued Document |
-| [**deleteIssuedDocumentAttachment()**](IssuedDocumentsApi.md#deleteIssuedDocumentAttachment) | **DELETE** /c/{company_id}/issued_documents/{document_id}/attachment | Delete Issued Document Attachment |
-| [**getBinIssuedDocument()**](IssuedDocumentsApi.md#getBinIssuedDocument) | **GET** /c/{company_id}/bin/issued_documents/{document_id} | Get Bin Issued Documents List |
-| [**getEmailData()**](IssuedDocumentsApi.md#getEmailData) | **GET** /c/{company_id}/issued_documents/{document_id}/email | Get Email Data |
-| [**getExistingIssuedDocumentTotals()**](IssuedDocumentsApi.md#getExistingIssuedDocumentTotals) | **POST** /c/{company_id}/issued_documents/{document_id}/totals | Get Existing Issued Document Totals |
-| [**getIssuedDocument()**](IssuedDocumentsApi.md#getIssuedDocument) | **GET** /c/{company_id}/issued_documents/{document_id} | Get Issued Document |
-| [**getIssuedDocumentPreCreateInfo()**](IssuedDocumentsApi.md#getIssuedDocumentPreCreateInfo) | **GET** /c/{company_id}/issued_documents/info | Get Issued Document Pre-Create Info |
-| [**getNewIssuedDocumentTotals()**](IssuedDocumentsApi.md#getNewIssuedDocumentTotals) | **POST** /c/{company_id}/issued_documents/totals | Get New Issued Document Totals |
-| [**joinIssuedDocuments()**](IssuedDocumentsApi.md#joinIssuedDocuments) | **GET** /c/{company_id}/issued_documents/join | Join Issued Documents |
-| [**listBinIssuedDocuments()**](IssuedDocumentsApi.md#listBinIssuedDocuments) | **GET** /c/{company_id}/bin/issued_documents | Get Bin Issued Documents List |
-| [**listIssuedDocuments()**](IssuedDocumentsApi.md#listIssuedDocuments) | **GET** /c/{company_id}/issued_documents | List Issued Documents |
-| [**modifyIssuedDocument()**](IssuedDocumentsApi.md#modifyIssuedDocument) | **PUT** /c/{company_id}/issued_documents/{document_id} | Modify Issued Document |
-| [**recoverBinIssuedDocument()**](IssuedDocumentsApi.md#recoverBinIssuedDocument) | **POST** /c/{company_id}/bin/issued_documents/{document_id}/recover | Recover Issued Document From The Bin |
-| [**scheduleEmail()**](IssuedDocumentsApi.md#scheduleEmail) | **POST** /c/{company_id}/issued_documents/{document_id}/email | Schedule Email |
-| [**transformIssuedDocument()**](IssuedDocumentsApi.md#transformIssuedDocument) | **GET** /c/{company_id}/issued_documents/transform | Transform Issued Document |
-| [**uploadIssuedDocumentAttachment()**](IssuedDocumentsApi.md#uploadIssuedDocumentAttachment) | **POST** /c/{company_id}/issued_documents/attachment | Upload Issued Document Attachment |
-
+| Method                                                                                         | HTTP request                                                         | Description                          |
+| ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------ |
+| [**createIssuedDocument()**](IssuedDocumentsApi.md#createIssuedDocument)                       | **POST** /c/{company_id}/issued_documents                            | Create Issued Document               |
+| [**deleteBinIssuedDocument()**](IssuedDocumentsApi.md#deleteBinIssuedDocument)                 | **DELETE** /c/{company_id}/bin/issued_documents/{document_id}        | Delete Bin Issued Document           |
+| [**deleteIssuedDocument()**](IssuedDocumentsApi.md#deleteIssuedDocument)                       | **DELETE** /c/{company_id}/issued_documents/{document_id}            | Delete Issued Document               |
+| [**deleteIssuedDocumentAttachment()**](IssuedDocumentsApi.md#deleteIssuedDocumentAttachment)   | **DELETE** /c/{company_id}/issued_documents/{document_id}/attachment | Delete Issued Document Attachment    |
+| [**getBinIssuedDocument()**](IssuedDocumentsApi.md#getBinIssuedDocument)                       | **GET** /c/{company_id}/bin/issued_documents/{document_id}           | Get Bin Issued Documents List        |
+| [**getEmailData()**](IssuedDocumentsApi.md#getEmailData)                                       | **GET** /c/{company_id}/issued_documents/{document_id}/email         | Get Email Data                       |
+| [**getExistingIssuedDocumentTotals()**](IssuedDocumentsApi.md#getExistingIssuedDocumentTotals) | **POST** /c/{company_id}/issued_documents/{document_id}/totals       | Get Existing Issued Document Totals  |
+| [**getIssuedDocument()**](IssuedDocumentsApi.md#getIssuedDocument)                             | **GET** /c/{company_id}/issued_documents/{document_id}               | Get Issued Document                  |
+| [**getIssuedDocumentPreCreateInfo()**](IssuedDocumentsApi.md#getIssuedDocumentPreCreateInfo)   | **GET** /c/{company_id}/issued_documents/info                        | Get Issued Document Pre-Create Info  |
+| [**getNewIssuedDocumentTotals()**](IssuedDocumentsApi.md#getNewIssuedDocumentTotals)           | **POST** /c/{company_id}/issued_documents/totals                     | Get New Issued Document Totals       |
+| [**joinIssuedDocuments()**](IssuedDocumentsApi.md#joinIssuedDocuments)                         | **GET** /c/{company_id}/issued_documents/join                        | Join Issued Documents                |
+| [**listBinIssuedDocuments()**](IssuedDocumentsApi.md#listBinIssuedDocuments)                   | **GET** /c/{company_id}/bin/issued_documents                         | Get Bin Issued Documents List        |
+| [**listIssuedDocuments()**](IssuedDocumentsApi.md#listIssuedDocuments)                         | **GET** /c/{company_id}/issued_documents                             | List Issued Documents                |
+| [**modifyIssuedDocument()**](IssuedDocumentsApi.md#modifyIssuedDocument)                       | **PUT** /c/{company_id}/issued_documents/{document_id}               | Modify Issued Document               |
+| [**recoverBinIssuedDocument()**](IssuedDocumentsApi.md#recoverBinIssuedDocument)               | **POST** /c/{company_id}/bin/issued_documents/{document_id}/recover  | Recover Issued Document From The Bin |
+| [**scheduleEmail()**](IssuedDocumentsApi.md#scheduleEmail)                                     | **POST** /c/{company_id}/issued_documents/{document_id}/email        | Schedule Email                       |
+| [**transformIssuedDocument()**](IssuedDocumentsApi.md#transformIssuedDocument)                 | **GET** /c/{company_id}/issued_documents/transform                   | Transform Issued Document            |
+| [**uploadIssuedDocumentAttachment()**](IssuedDocumentsApi.md#uploadIssuedDocumentAttachment)   | **POST** /c/{company_id}/issued_documents/attachment                 | Upload Issued Document Attachment    |
 
 ## `createIssuedDocument()`
 
@@ -50,7 +49,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $create_issued_document_request = new \FattureInCloud\Model\CreateIssuedDocumentRequest; // \FattureInCloud\Model\CreateIssuedDocumentRequest | The Issued Document
 
 try {
@@ -63,10 +62,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **create_issued_document_request** | [**\FattureInCloud\Model\CreateIssuedDocumentRequest**](../Model/CreateIssuedDocumentRequest.md)| The Issued Document | [optional] |
+| Name                               | Type                                                                                             | Description            | Notes      |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------ | ---------------------- | ---------- |
+| **company_id**                     | **int**                                                                                          | The ID of the company. |            |
+| **create_issued_document_request** | [**\FattureInCloud\Model\CreateIssuedDocumentRequest**](../Model/CreateIssuedDocumentRequest.md) | The Issued Document    | [optional] |
 
 ### Return type
 
@@ -111,7 +110,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 
 try {
@@ -123,10 +122,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **document_id** | **int**| The ID of the document. | |
+| Name            | Type    | Description             | Notes |
+| --------------- | ------- | ----------------------- | ----- |
+| **company_id**  | **int** | The ID of the company.  |       |
+| **document_id** | **int** | The ID of the document. |       |
 
 ### Return type
 
@@ -171,7 +170,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 
 try {
@@ -183,10 +182,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **document_id** | **int**| The ID of the document. | |
+| Name            | Type    | Description             | Notes |
+| --------------- | ------- | ----------------------- | ----- |
+| **company_id**  | **int** | The ID of the company.  |       |
+| **document_id** | **int** | The ID of the document. |       |
 
 ### Return type
 
@@ -231,7 +230,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 
 try {
@@ -243,10 +242,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **document_id** | **int**| The ID of the document. | |
+| Name            | Type    | Description             | Notes |
+| --------------- | ------- | ----------------------- | ----- |
+| **company_id**  | **int** | The ID of the company.  |       |
+| **document_id** | **int** | The ID of the document. |       |
 
 ### Return type
 
@@ -291,7 +290,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 
 try {
@@ -304,10 +303,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **document_id** | **int**| The ID of the document. | |
+| Name            | Type    | Description             | Notes |
+| --------------- | ------- | ----------------------- | ----- |
+| **company_id**  | **int** | The ID of the company.  |       |
+| **document_id** | **int** | The ID of the document. |       |
 
 ### Return type
 
@@ -352,7 +351,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 
 try {
@@ -365,10 +364,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **document_id** | **int**| The ID of the document. | |
+| Name            | Type    | Description             | Notes |
+| --------------- | ------- | ----------------------- | ----- |
+| **company_id**  | **int** | The ID of the company.  |       |
+| **document_id** | **int** | The ID of the document. |       |
 
 ### Return type
 
@@ -413,7 +412,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 $get_existing_issued_document_totals_request = new \FattureInCloud\Model\GetExistingIssuedDocumentTotalsRequest; // \FattureInCloud\Model\GetExistingIssuedDocumentTotalsRequest
 
@@ -427,11 +426,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **document_id** | **int**| The ID of the document. | |
-| **get_existing_issued_document_totals_request** | [**\FattureInCloud\Model\GetExistingIssuedDocumentTotalsRequest**](../Model/GetExistingIssuedDocumentTotalsRequest.md)|  | [optional] |
+| Name                                            | Type                                                                                                                   | Description             | Notes      |
+| ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------- | ---------- |
+| **company_id**                                  | **int**                                                                                                                | The ID of the company.  |            |
+| **document_id**                                 | **int**                                                                                                                | The ID of the document. |            |
+| **get_existing_issued_document_totals_request** | [**\FattureInCloud\Model\GetExistingIssuedDocumentTotalsRequest**](../Model/GetExistingIssuedDocumentTotalsRequest.md) |                         | [optional] |
 
 ### Return type
 
@@ -476,7 +475,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
@@ -491,12 +490,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **document_id** | **int**| The ID of the document. | |
-| **fields** | **string**| List of comma-separated fields. | [optional] |
-| **fieldset** | **string**| Name of the fieldset. | [optional] |
+| Name            | Type       | Description                     | Notes      |
+| --------------- | ---------- | ------------------------------- | ---------- |
+| **company_id**  | **int**    | The ID of the company.          |            |
+| **document_id** | **int**    | The ID of the document.         |            |
+| **fields**      | **string** | List of comma-separated fields. | [optional] |
+| **fieldset**    | **string** | Name of the fieldset.           | [optional] |
 
 ### Return type
 
@@ -541,7 +540,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $type = 'type_example'; // string | The type of the issued document.
 
 try {
@@ -554,10 +553,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **type** | **string**| The type of the issued document. | |
+| Name           | Type       | Description                      | Notes |
+| -------------- | ---------- | -------------------------------- | ----- |
+| **company_id** | **int**    | The ID of the company.           |       |
+| **type**       | **string** | The type of the issued document. |       |
 
 ### Return type
 
@@ -602,7 +601,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $get_new_issued_document_totals_request = new \FattureInCloud\Model\GetNewIssuedDocumentTotalsRequest; // \FattureInCloud\Model\GetNewIssuedDocumentTotalsRequest
 
 try {
@@ -615,10 +614,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **get_new_issued_document_totals_request** | [**\FattureInCloud\Model\GetNewIssuedDocumentTotalsRequest**](../Model/GetNewIssuedDocumentTotalsRequest.md)|  | [optional] |
+| Name                                       | Type                                                                                                         | Description            | Notes      |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ---------------------- | ---------- |
+| **company_id**                             | **int**                                                                                                      | The ID of the company. |            |
+| **get_new_issued_document_totals_request** | [**\FattureInCloud\Model\GetNewIssuedDocumentTotalsRequest**](../Model/GetNewIssuedDocumentTotalsRequest.md) |                        | [optional] |
 
 ### Return type
 
@@ -663,7 +662,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $ids = 1,2,3,4; // string | Ids of the documents.
 $group = 56; // int | Group items.
 $type = delivery_notes, orders, quotes, work_reports; // string | Type of the documents to be joined
@@ -678,12 +677,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **ids** | **string**| Ids of the documents. | |
-| **group** | **int**| Group items. | [optional] |
-| **type** | **string**| Type of the documents to be joined | [optional] |
+| Name           | Type       | Description                        | Notes      |
+| -------------- | ---------- | ---------------------------------- | ---------- |
+| **company_id** | **int**    | The ID of the company.             |            |
+| **ids**        | **string** | Ids of the documents.              |            |
+| **group**      | **int**    | Group items.                       | [optional] |
+| **type**       | **string** | Type of the documents to be joined | [optional] |
 
 ### Return type
 
@@ -728,7 +727,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 
 try {
     $result = $apiInstance->listBinIssuedDocuments($company_id);
@@ -740,9 +739,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
+| Name           | Type    | Description            | Notes |
+| -------------- | ------- | ---------------------- | ----- |
+| **company_id** | **int** | The ID of the company. |       |
 
 ### Return type
 
@@ -787,7 +786,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $type = 'type_example'; // string | The type of the issued document.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
@@ -807,17 +806,17 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **type** | **string**| The type of the issued document. | |
-| **fields** | **string**| List of comma-separated fields. | [optional] |
-| **fieldset** | **string**| Name of the fieldset. | [optional] |
-| **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
-| **page** | **int**| The page to retrieve. | [optional] [default to 1] |
-| **per_page** | **int**| The size of the page. | [optional] [default to 5] |
-| **q** | **string**| Query for filtering the results. | [optional] |
-| **inclusive** | **int**| (Only for type &#x3D; delivery_notes) Include invoices delivery notes. | [optional] |
+| Name           | Type       | Description                                                                 | Notes                     |
+| -------------- | ---------- | --------------------------------------------------------------------------- | ------------------------- |
+| **company_id** | **int**    | The ID of the company.                                                      |                           |
+| **type**       | **string** | The type of the issued document.                                            |                           |
+| **fields**     | **string** | List of comma-separated fields.                                             | [optional]                |
+| **fieldset**   | **string** | Name of the fieldset.                                                       | [optional]                |
+| **sort**       | **string** | List of comma-separated fields for result sorting (minus for desc sorting). | [optional]                |
+| **page**       | **int**    | The page to retrieve.                                                       | [optional] [default to 1] |
+| **per_page**   | **int**    | The size of the page.                                                       | [optional] [default to 5] |
+| **q**          | **string** | Query for filtering the results.                                            | [optional]                |
+| **inclusive**  | **int**    | (Only for type &#x3D; delivery_notes) Include invoices delivery notes.      | [optional]                |
 
 ### Return type
 
@@ -862,7 +861,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 $modify_issued_document_request = new \FattureInCloud\Model\ModifyIssuedDocumentRequest; // \FattureInCloud\Model\ModifyIssuedDocumentRequest | The modified document
 
@@ -876,11 +875,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **document_id** | **int**| The ID of the document. | |
-| **modify_issued_document_request** | [**\FattureInCloud\Model\ModifyIssuedDocumentRequest**](../Model/ModifyIssuedDocumentRequest.md)| The modified document | [optional] |
+| Name                               | Type                                                                                             | Description             | Notes      |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------ | ----------------------- | ---------- |
+| **company_id**                     | **int**                                                                                          | The ID of the company.  |            |
+| **document_id**                    | **int**                                                                                          | The ID of the document. |            |
+| **modify_issued_document_request** | [**\FattureInCloud\Model\ModifyIssuedDocumentRequest**](../Model/ModifyIssuedDocumentRequest.md) | The modified document   | [optional] |
 
 ### Return type
 
@@ -925,7 +924,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 
 try {
@@ -937,10 +936,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **document_id** | **int**| The ID of the document. | |
+| Name            | Type    | Description             | Notes |
+| --------------- | ------- | ----------------------- | ----- |
+| **company_id**  | **int** | The ID of the company.  |       |
+| **document_id** | **int** | The ID of the document. |       |
 
 ### Return type
 
@@ -985,7 +984,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 $schedule_email_request = new \FattureInCloud\Model\ScheduleEmailRequest; // \FattureInCloud\Model\ScheduleEmailRequest | Email Schedule
 
@@ -998,11 +997,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **document_id** | **int**| The ID of the document. | |
-| **schedule_email_request** | [**\FattureInCloud\Model\ScheduleEmailRequest**](../Model/ScheduleEmailRequest.md)| Email Schedule | [optional] |
+| Name                       | Type                                                                               | Description             | Notes      |
+| -------------------------- | ---------------------------------------------------------------------------------- | ----------------------- | ---------- |
+| **company_id**             | **int**                                                                            | The ID of the company.  |            |
+| **document_id**            | **int**                                                                            | The ID of the document. |            |
+| **schedule_email_request** | [**\FattureInCloud\Model\ScheduleEmailRequest**](../Model/ScheduleEmailRequest.md) | Email Schedule          | [optional] |
 
 ### Return type
 
@@ -1047,7 +1046,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $original_document_id = 56; // int | Original document id.
 $new_type = 'new_type_example'; // string | New document type.
 $type = 'type_example'; // string | Current document type.
@@ -1064,14 +1063,14 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **original_document_id** | **int**| Original document id. | |
-| **new_type** | **string**| New document type. | |
-| **type** | **string**| Current document type. | [optional] |
-| **e_invoice** | **int**| New document e_invoice. | [optional] |
-| **transform_keep_copy** | **int**| Keep the old document. | [optional] |
+| Name                     | Type       | Description             | Notes      |
+| ------------------------ | ---------- | ----------------------- | ---------- |
+| **company_id**           | **int**    | The ID of the company.  |            |
+| **original_document_id** | **int**    | Original document id.   |            |
+| **new_type**             | **string** | New document type.      |            |
+| **type**                 | **string** | Current document type.  | [optional] |
+| **e_invoice**            | **int**    | New document e_invoice. | [optional] |
+| **transform_keep_copy**  | **int**    | Keep the old document.  | [optional] |
 
 ### Return type
 
@@ -1116,7 +1115,7 @@ $apiInstance = new FattureInCloud\Api\IssuedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $filename = 'filename_example'; // string | Attachment file name
 $attachment = '/path/to/file.txt'; // \SplFileObject | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx]
 
@@ -1130,11 +1129,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **filename** | **string**| Attachment file name | [optional] |
-| **attachment** | **\SplFileObject****\SplFileObject**| Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx] | [optional] |
+| Name           | Type                                     | Description                                                              | Notes      |
+| -------------- | ---------------------------------------- | ------------------------------------------------------------------------ | ---------- |
+| **company_id** | **int**                                  | The ID of the company.                                                   |            |
+| **filename**   | **string**                               | Attachment file name                                                     | [optional] |
+| **attachment** | **\SplFileObject\*\***\SplFileObject\*\* | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx] | [optional] |
 
 ### Return type
 

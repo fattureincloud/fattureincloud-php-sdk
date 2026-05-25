@@ -2,15 +2,14 @@
 
 All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createWebhooksSubscription()**](WebhooksApi.md#createWebhooksSubscription) | **POST** /c/{company_id}/subscriptions | Create a Webhook Subscription |
-| [**deleteWebhooksSubscription()**](WebhooksApi.md#deleteWebhooksSubscription) | **DELETE** /c/{company_id}/subscriptions/{subscription_id} | Delete Webhooks Subscription |
-| [**getWebhooksSubscription()**](WebhooksApi.md#getWebhooksSubscription) | **GET** /c/{company_id}/subscriptions/{subscription_id} | Get Webhooks Subscription |
-| [**listWebhooksSubscriptions()**](WebhooksApi.md#listWebhooksSubscriptions) | **GET** /c/{company_id}/subscriptions | List Webhooks Subscriptions |
-| [**modifyWebhooksSubscription()**](WebhooksApi.md#modifyWebhooksSubscription) | **PUT** /c/{company_id}/subscriptions/{subscription_id} | Modify Webhooks Subscription |
-| [**verifyWebhooksSubscription()**](WebhooksApi.md#verifyWebhooksSubscription) | **POST** /c/{company_id}/subscriptions/{subscription_id}/verify | Verify Webhooks Subscription |
-
+| Method                                                                        | HTTP request                                                    | Description                   |
+| ----------------------------------------------------------------------------- | --------------------------------------------------------------- | ----------------------------- |
+| [**createWebhooksSubscription()**](WebhooksApi.md#createWebhooksSubscription) | **POST** /c/{company_id}/subscriptions                          | Create a Webhook Subscription |
+| [**deleteWebhooksSubscription()**](WebhooksApi.md#deleteWebhooksSubscription) | **DELETE** /c/{company_id}/subscriptions/{subscription_id}      | Delete Webhooks Subscription  |
+| [**getWebhooksSubscription()**](WebhooksApi.md#getWebhooksSubscription)       | **GET** /c/{company_id}/subscriptions/{subscription_id}         | Get Webhooks Subscription     |
+| [**listWebhooksSubscriptions()**](WebhooksApi.md#listWebhooksSubscriptions)   | **GET** /c/{company_id}/subscriptions                           | List Webhooks Subscriptions   |
+| [**modifyWebhooksSubscription()**](WebhooksApi.md#modifyWebhooksSubscription) | **PUT** /c/{company_id}/subscriptions/{subscription_id}         | Modify Webhooks Subscription  |
+| [**verifyWebhooksSubscription()**](WebhooksApi.md#verifyWebhooksSubscription) | **POST** /c/{company_id}/subscriptions/{subscription_id}/verify | Verify Webhooks Subscription  |
 
 ## `createWebhooksSubscription()`
 
@@ -38,8 +37,8 @@ $apiInstance = new FattureInCloud\Api\WebhooksApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
-$create_webhooks_subscription_request = new \FattureInCloud\Model\CreateWebhooksSubscriptionRequest; // \FattureInCloud\Model\CreateWebhooksSubscriptionRequest | 
+$company_id = 12345; // int | The ID of the company.
+$create_webhooks_subscription_request = new \FattureInCloud\Model\CreateWebhooksSubscriptionRequest; // \FattureInCloud\Model\CreateWebhooksSubscriptionRequest |
 
 try {
     $result = $apiInstance->createWebhooksSubscription($company_id, $create_webhooks_subscription_request);
@@ -51,10 +50,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **create_webhooks_subscription_request** | [**\FattureInCloud\Model\CreateWebhooksSubscriptionRequest**](../Model/CreateWebhooksSubscriptionRequest.md)|  | [optional] |
+| Name                                     | Type                                                                                                         | Description            | Notes      |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------- | ---------- |
+| **company_id**                           | **int**                                                                                                      | The ID of the company. |            |
+| **create_webhooks_subscription_request** | [**\FattureInCloud\Model\CreateWebhooksSubscriptionRequest**](../Model/CreateWebhooksSubscriptionRequest.md) |                        | [optional] |
 
 ### Return type
 
@@ -99,7 +98,7 @@ $apiInstance = new FattureInCloud\Api\WebhooksApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $subscription_id = SUB123; // string | The ID of the subscription.
 
 try {
@@ -111,10 +110,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **subscription_id** | **string**| The ID of the subscription. | |
+| Name                | Type       | Description                 | Notes |
+| ------------------- | ---------- | --------------------------- | ----- |
+| **company_id**      | **int**    | The ID of the company.      |       |
+| **subscription_id** | **string** | The ID of the subscription. |       |
 
 ### Return type
 
@@ -159,7 +158,7 @@ $apiInstance = new FattureInCloud\Api\WebhooksApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $subscription_id = SUB123; // string | The ID of the subscription.
 
 try {
@@ -172,10 +171,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **subscription_id** | **string**| The ID of the subscription. | |
+| Name                | Type       | Description                 | Notes |
+| ------------------- | ---------- | --------------------------- | ----- |
+| **company_id**      | **int**    | The ID of the company.      |       |
+| **subscription_id** | **string** | The ID of the subscription. |       |
 
 ### Return type
 
@@ -220,7 +219,7 @@ $apiInstance = new FattureInCloud\Api\WebhooksApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 
 try {
     $result = $apiInstance->listWebhooksSubscriptions($company_id);
@@ -232,9 +231,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
+| Name           | Type    | Description            | Notes |
+| -------------- | ------- | ---------------------- | ----- |
+| **company_id** | **int** | The ID of the company. |       |
 
 ### Return type
 
@@ -279,7 +278,7 @@ $apiInstance = new FattureInCloud\Api\WebhooksApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $subscription_id = SUB123; // string | The ID of the subscription.
 $modify_webhooks_subscription_request = new \FattureInCloud\Model\ModifyWebhooksSubscriptionRequest; // \FattureInCloud\Model\ModifyWebhooksSubscriptionRequest
 
@@ -293,11 +292,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **subscription_id** | **string**| The ID of the subscription. | |
-| **modify_webhooks_subscription_request** | [**\FattureInCloud\Model\ModifyWebhooksSubscriptionRequest**](../Model/ModifyWebhooksSubscriptionRequest.md)|  | [optional] |
+| Name                                     | Type                                                                                                         | Description                 | Notes      |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------ | --------------------------- | ---------- |
+| **company_id**                           | **int**                                                                                                      | The ID of the company.      |            |
+| **subscription_id**                      | **string**                                                                                                   | The ID of the subscription. |            |
+| **modify_webhooks_subscription_request** | [**\FattureInCloud\Model\ModifyWebhooksSubscriptionRequest**](../Model/ModifyWebhooksSubscriptionRequest.md) |                             | [optional] |
 
 ### Return type
 
@@ -342,7 +341,7 @@ $apiInstance = new FattureInCloud\Api\WebhooksApi(
     new GuzzleHttp\Client(),
     $config
 );
-    $company_id = 12345; // int | The ID of the company.
+$company_id = 12345; // int | The ID of the company.
 $subscription_id = SUB123; // string | The ID of the subscription.
 $verify_webhooks_subscription_request = new \FattureInCloud\Model\VerifyWebhooksSubscriptionRequest; // \FattureInCloud\Model\VerifyWebhooksSubscriptionRequest
 
@@ -355,11 +354,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **subscription_id** | **string**| The ID of the subscription. | |
-| **verify_webhooks_subscription_request** | [**\FattureInCloud\Model\VerifyWebhooksSubscriptionRequest**](../Model/VerifyWebhooksSubscriptionRequest.md)|  | [optional] |
+| Name                                     | Type                                                                                                         | Description                 | Notes      |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------ | --------------------------- | ---------- |
+| **company_id**                           | **int**                                                                                                      | The ID of the company.      |            |
+| **subscription_id**                      | **string**                                                                                                   | The ID of the subscription. |            |
+| **verify_webhooks_subscription_request** | [**\FattureInCloud\Model\VerifyWebhooksSubscriptionRequest**](../Model/VerifyWebhooksSubscriptionRequest.md) |                             | [optional] |
 
 ### Return type
 
