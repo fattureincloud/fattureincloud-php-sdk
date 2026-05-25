@@ -147,7 +147,7 @@ class IssuedEInvoicesApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetEInvoiceRejectionReasonResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetEInvoiceRejectionReasonResponse|array<string,mixed>
      */
     public function getEInvoiceRejectionReason($company_id, $document_id, string $contentType = self::contentTypes['getEInvoiceRejectionReason'][0])
     {
@@ -166,7 +166,7 @@ class IssuedEInvoicesApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetEInvoiceRejectionReasonResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetEInvoiceRejectionReasonResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEInvoiceRejectionReasonWithHttpInfo($company_id, $document_id, string $contentType = self::contentTypes['getEInvoiceRejectionReason'][0])
     {
@@ -566,7 +566,7 @@ class IssuedEInvoicesApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return string|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return string|array<string,mixed>
      */
     public function getEInvoiceXml($company_id, $document_id, $include_attachment = null, string $contentType = self::contentTypes['getEInvoiceXml'][0])
     {
@@ -586,7 +586,7 @@ class IssuedEInvoicesApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of string|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEInvoiceXmlWithHttpInfo($company_id, $document_id, $include_attachment = null, string $contentType = self::contentTypes['getEInvoiceXml'][0])
     {
@@ -999,7 +999,7 @@ class IssuedEInvoicesApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\SendEInvoiceResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\SendEInvoiceResponse|array<string,mixed>
      */
     public function sendEInvoice($company_id, $document_id, $send_e_invoice_request = null, string $contentType = self::contentTypes['sendEInvoice'][0])
     {
@@ -1019,7 +1019,7 @@ class IssuedEInvoicesApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\SendEInvoiceResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\SendEInvoiceResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function sendEInvoiceWithHttpInfo($company_id, $document_id, $send_e_invoice_request = null, string $contentType = self::contentTypes['sendEInvoice'][0])
     {
@@ -1429,7 +1429,7 @@ class IssuedEInvoicesApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\VerifyEInvoiceXmlResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|\FattureInCloud\Model\VerifyEInvoiceXmlErrorResponse|array<string,mixed>
+     * @return \FattureInCloud\Model\VerifyEInvoiceXmlResponse|array<string,mixed>|\FattureInCloud\Model\VerifyEInvoiceXmlErrorResponse|array<string,mixed>
      */
     public function verifyEInvoiceXml($company_id, $document_id, string $contentType = self::contentTypes['verifyEInvoiceXml'][0])
     {
@@ -1448,7 +1448,7 @@ class IssuedEInvoicesApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\VerifyEInvoiceXmlResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|\FattureInCloud\Model\VerifyEInvoiceXmlErrorResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\VerifyEInvoiceXmlResponse|array<string,mixed>|\FattureInCloud\Model\VerifyEInvoiceXmlErrorResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function verifyEInvoiceXmlWithHttpInfo($company_id, $document_id, string $contentType = self::contentTypes['verifyEInvoiceXml'][0])
     {

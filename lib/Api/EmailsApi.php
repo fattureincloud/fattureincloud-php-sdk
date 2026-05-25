@@ -143,7 +143,7 @@ class EmailsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListEmailsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListEmailsResponse|array<string,mixed>
      */
     public function listEmails($company_id, $fields = null, $fieldset = null, $sort = null, $page = 1, $per_page = 5, $q = null, string $contentType = self::contentTypes['listEmails'][0])
     {
@@ -167,7 +167,7 @@ class EmailsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListEmailsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListEmailsResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listEmailsWithHttpInfo($company_id, $fields = null, $fieldset = null, $sort = null, $page = 1, $per_page = 5, $q = null, string $contentType = self::contentTypes['listEmails'][0])
     {

@@ -156,7 +156,7 @@ class TaxesApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\CreateF24Response|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\CreateF24Response|array<string,mixed>
      */
     public function createF24($company_id, $create_f24_request = null, string $contentType = self::contentTypes['createF24'][0])
     {
@@ -175,7 +175,7 @@ class TaxesApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\CreateF24Response|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\CreateF24Response|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function createF24WithHttpInfo($company_id, $create_f24_request = null, string $contentType = self::contentTypes['createF24'][0])
     {
@@ -1197,7 +1197,7 @@ class TaxesApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetF24Response|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetF24Response|array<string,mixed>
      */
     public function getF24($company_id, $document_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getF24'][0])
     {
@@ -1218,7 +1218,7 @@ class TaxesApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetF24Response|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetF24Response|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getF24WithHttpInfo($company_id, $document_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getF24'][0])
     {
@@ -1648,7 +1648,7 @@ class TaxesApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListF24Response|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListF24Response|array<string,mixed>
      */
     public function listF24($company_id, $fields = null, $fieldset = null, $sort = null, $page = 1, $per_page = 5, $q = null, string $contentType = self::contentTypes['listF24'][0])
     {
@@ -1672,7 +1672,7 @@ class TaxesApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListF24Response|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListF24Response|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listF24WithHttpInfo($company_id, $fields = null, $fieldset = null, $sort = null, $page = 1, $per_page = 5, $q = null, string $contentType = self::contentTypes['listF24'][0])
     {
@@ -2138,7 +2138,7 @@ class TaxesApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ModifyF24Response|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ModifyF24Response|array<string,mixed>
      */
     public function modifyF24($company_id, $document_id, $modify_f24_request = null, string $contentType = self::contentTypes['modifyF24'][0])
     {
@@ -2158,7 +2158,7 @@ class TaxesApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ModifyF24Response|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ModifyF24Response|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function modifyF24WithHttpInfo($company_id, $document_id, $modify_f24_request = null, string $contentType = self::contentTypes['modifyF24'][0])
     {
@@ -2569,7 +2569,7 @@ class TaxesApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\UploadF24AttachmentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\UploadF24AttachmentResponse|array<string,mixed>
      */
     public function uploadF24Attachment($company_id, $filename = null, $attachment = null, string $contentType = self::contentTypes['uploadF24Attachment'][0])
     {
@@ -2589,7 +2589,7 @@ class TaxesApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\UploadF24AttachmentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\UploadF24AttachmentResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function uploadF24AttachmentWithHttpInfo($company_id, $filename = null, $attachment = null, string $contentType = self::contentTypes['uploadF24Attachment'][0])
     {

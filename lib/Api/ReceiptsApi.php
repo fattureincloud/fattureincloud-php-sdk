@@ -156,7 +156,7 @@ class ReceiptsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\CreateReceiptResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\CreateReceiptResponse|array<string,mixed>
      */
     public function createReceipt($company_id, $create_receipt_request = null, string $contentType = self::contentTypes['createReceipt'][0])
     {
@@ -175,7 +175,7 @@ class ReceiptsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\CreateReceiptResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\CreateReceiptResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function createReceiptWithHttpInfo($company_id, $create_receipt_request = null, string $contentType = self::contentTypes['createReceipt'][0])
     {
@@ -883,7 +883,7 @@ class ReceiptsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetReceiptResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetReceiptResponse|array<string,mixed>
      */
     public function getReceipt($company_id, $document_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getReceipt'][0])
     {
@@ -904,7 +904,7 @@ class ReceiptsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetReceiptResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetReceiptResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getReceiptWithHttpInfo($company_id, $document_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getReceipt'][0])
     {
@@ -1328,7 +1328,7 @@ class ReceiptsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetReceiptPreCreateInfoResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetReceiptPreCreateInfoResponse|array<string,mixed>
      */
     public function getReceiptPreCreateInfo($company_id, string $contentType = self::contentTypes['getReceiptPreCreateInfo'][0])
     {
@@ -1346,7 +1346,7 @@ class ReceiptsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetReceiptPreCreateInfoResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetReceiptPreCreateInfoResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getReceiptPreCreateInfoWithHttpInfo($company_id, string $contentType = self::contentTypes['getReceiptPreCreateInfo'][0])
     {
@@ -1728,7 +1728,7 @@ class ReceiptsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetReceiptsMonthlyTotalsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetReceiptsMonthlyTotalsResponse|array<string,mixed>
      */
     public function getReceiptsMonthlyTotals($company_id, $type, $year, string $contentType = self::contentTypes['getReceiptsMonthlyTotals'][0])
     {
@@ -1748,7 +1748,7 @@ class ReceiptsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetReceiptsMonthlyTotalsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetReceiptsMonthlyTotalsResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getReceiptsMonthlyTotalsWithHttpInfo($company_id, $type, $year, string $contentType = self::contentTypes['getReceiptsMonthlyTotals'][0])
     {
@@ -2172,7 +2172,7 @@ class ReceiptsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListReceiptsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListReceiptsResponse|array<string,mixed>
      */
     public function listReceipts($company_id, $fields = null, $fieldset = null, $page = 1, $per_page = 5, $sort = null, $q = null, string $contentType = self::contentTypes['listReceipts'][0])
     {
@@ -2196,7 +2196,7 @@ class ReceiptsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListReceiptsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListReceiptsResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listReceiptsWithHttpInfo($company_id, $fields = null, $fieldset = null, $page = 1, $per_page = 5, $sort = null, $q = null, string $contentType = self::contentTypes['listReceipts'][0])
     {
@@ -2662,7 +2662,7 @@ class ReceiptsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ModifyReceiptResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ModifyReceiptResponse|array<string,mixed>
      */
     public function modifyReceipt($company_id, $document_id, $modify_receipt_request = null, string $contentType = self::contentTypes['modifyReceipt'][0])
     {
@@ -2682,7 +2682,7 @@ class ReceiptsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ModifyReceiptResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ModifyReceiptResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function modifyReceiptWithHttpInfo($company_id, $document_id, $modify_receipt_request = null, string $contentType = self::contentTypes['modifyReceipt'][0])
     {

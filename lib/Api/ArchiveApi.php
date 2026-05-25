@@ -153,7 +153,7 @@ class ArchiveApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\CreateArchiveDocumentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\CreateArchiveDocumentResponse|array<string,mixed>
      */
     public function createArchiveDocument($company_id, $create_archive_document_request = null, string $contentType = self::contentTypes['createArchiveDocument'][0])
     {
@@ -172,7 +172,7 @@ class ArchiveApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\CreateArchiveDocumentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\CreateArchiveDocumentResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function createArchiveDocumentWithHttpInfo($company_id, $create_archive_document_request = null, string $contentType = self::contentTypes['createArchiveDocument'][0])
     {
@@ -880,7 +880,7 @@ class ArchiveApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetArchiveDocumentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetArchiveDocumentResponse|array<string,mixed>
      */
     public function getArchiveDocument($company_id, $document_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getArchiveDocument'][0])
     {
@@ -901,7 +901,7 @@ class ArchiveApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetArchiveDocumentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetArchiveDocumentResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getArchiveDocumentWithHttpInfo($company_id, $document_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getArchiveDocument'][0])
     {
@@ -1331,7 +1331,7 @@ class ArchiveApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListArchiveDocumentsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListArchiveDocumentsResponse|array<string,mixed>
      */
     public function listArchiveDocuments($company_id, $fields = null, $fieldset = null, $sort = null, $page = 1, $per_page = 5, $q = null, string $contentType = self::contentTypes['listArchiveDocuments'][0])
     {
@@ -1355,7 +1355,7 @@ class ArchiveApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListArchiveDocumentsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListArchiveDocumentsResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listArchiveDocumentsWithHttpInfo($company_id, $fields = null, $fieldset = null, $sort = null, $page = 1, $per_page = 5, $q = null, string $contentType = self::contentTypes['listArchiveDocuments'][0])
     {
@@ -1821,7 +1821,7 @@ class ArchiveApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ModifyArchiveDocumentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ModifyArchiveDocumentResponse|array<string,mixed>
      */
     public function modifyArchiveDocument($company_id, $document_id, $modify_archive_document_request = null, string $contentType = self::contentTypes['modifyArchiveDocument'][0])
     {
@@ -1841,7 +1841,7 @@ class ArchiveApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ModifyArchiveDocumentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ModifyArchiveDocumentResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function modifyArchiveDocumentWithHttpInfo($company_id, $document_id, $modify_archive_document_request = null, string $contentType = self::contentTypes['modifyArchiveDocument'][0])
     {
@@ -2252,7 +2252,7 @@ class ArchiveApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\UploadArchiveAttachmentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\UploadArchiveAttachmentResponse|array<string,mixed>
      */
     public function uploadArchiveDocumentAttachment($company_id, $filename = null, $attachment = null, string $contentType = self::contentTypes['uploadArchiveDocumentAttachment'][0])
     {
@@ -2272,7 +2272,7 @@ class ArchiveApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\UploadArchiveAttachmentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\UploadArchiveAttachmentResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function uploadArchiveDocumentAttachmentWithHttpInfo($company_id, $filename = null, $attachment = null, string $contentType = self::contentTypes['uploadArchiveDocumentAttachment'][0])
     {

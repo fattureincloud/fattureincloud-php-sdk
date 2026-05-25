@@ -153,7 +153,7 @@ class ClientsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\CreateClientResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\CreateClientResponse|array<string,mixed>
      */
     public function createClient($company_id, $create_client_request = null, string $contentType = self::contentTypes['createClient'][0])
     {
@@ -172,7 +172,7 @@ class ClientsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\CreateClientResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\CreateClientResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function createClientWithHttpInfo($company_id, $create_client_request = null, string $contentType = self::contentTypes['createClient'][0])
     {
@@ -880,7 +880,7 @@ class ClientsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetClientResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetClientResponse|array<string,mixed>
      */
     public function getClient($company_id, $client_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getClient'][0])
     {
@@ -901,7 +901,7 @@ class ClientsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetClientResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetClientResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientWithHttpInfo($company_id, $client_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getClient'][0])
     {
@@ -1325,7 +1325,7 @@ class ClientsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetEntityClientPreCreateInfoResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetEntityClientPreCreateInfoResponse|array<string,mixed>
      */
     public function getClientInfo($company_id, string $contentType = self::contentTypes['getClientInfo'][0])
     {
@@ -1343,7 +1343,7 @@ class ClientsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetEntityClientPreCreateInfoResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetEntityClientPreCreateInfoResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientInfoWithHttpInfo($company_id, string $contentType = self::contentTypes['getClientInfo'][0])
     {
@@ -1729,7 +1729,7 @@ class ClientsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListClientsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListClientsResponse|array<string,mixed>
      */
     public function listClients($company_id, $fields = null, $fieldset = null, $sort = null, $page = 1, $per_page = 5, $q = null, string $contentType = self::contentTypes['listClients'][0])
     {
@@ -1753,7 +1753,7 @@ class ClientsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListClientsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListClientsResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listClientsWithHttpInfo($company_id, $fields = null, $fieldset = null, $sort = null, $page = 1, $per_page = 5, $q = null, string $contentType = self::contentTypes['listClients'][0])
     {
@@ -2219,7 +2219,7 @@ class ClientsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ModifyClientResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ModifyClientResponse|array<string,mixed>
      */
     public function modifyClient($company_id, $client_id, $modify_client_request = null, string $contentType = self::contentTypes['modifyClient'][0])
     {
@@ -2239,7 +2239,7 @@ class ClientsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ModifyClientResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ModifyClientResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function modifyClientWithHttpInfo($company_id, $client_id, $modify_client_request = null, string $contentType = self::contentTypes['modifyClient'][0])
     {
