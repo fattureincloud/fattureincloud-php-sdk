@@ -90,9 +90,7 @@ class IssuedDocumentPreCreateInfoExtraDataDefaultValuesTest extends TestCase
      */
     public function testIssuedDocumentPreCreateInfoExtraDataDefaultValues()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\IssuedDocumentPreCreateInfoExtraDataDefaultValues', $this->object);
     }
 
     /**
@@ -100,7 +98,7 @@ class IssuedDocumentPreCreateInfoExtraDataDefaultValuesTest extends TestCase
      */
     public function testPropertyTsCommunication()
     {
-        TestCase::assertEquals($this->object['ts_communication'], $this->array['ts_communication']);
+        $this->assertEquals($this->array['ts_communication'], $this->object->getTsCommunication());
     }
 
     /**
@@ -108,7 +106,7 @@ class IssuedDocumentPreCreateInfoExtraDataDefaultValuesTest extends TestCase
      */
     public function testPropertyTsTipoSpesa()
     {
-        TestCase::assertEquals($this->object['ts_tipo_spesa'], $this->array['ts_tipo_spesa']);
+        $this->assertEquals($this->array['ts_tipo_spesa'], $this->object->getTsTipoSpesa());
     }
 
     /**
@@ -116,7 +114,7 @@ class IssuedDocumentPreCreateInfoExtraDataDefaultValuesTest extends TestCase
      */
     public function testPropertyTsFlagTipoSpesa()
     {
-        TestCase::assertEquals($this->object['ts_flag_tipo_spesa'], $this->array['ts_flag_tipo_spesa']);
+        $this->assertEquals($this->array['ts_flag_tipo_spesa'], $this->object->getTsFlagTipoSpesa());
     }
 
     /**
@@ -124,6 +122,6 @@ class IssuedDocumentPreCreateInfoExtraDataDefaultValuesTest extends TestCase
      */
     public function testPropertyTsPagamentoTracciato()
     {
-        TestCase::assertEquals($this->object['ts_pagamento_tracciato'], $this->array['ts_pagamento_tracciato']);
+        $this->assertEquals($this->array['ts_pagamento_tracciato'], $this->object->getTsPagamentoTracciato());
     }
 }

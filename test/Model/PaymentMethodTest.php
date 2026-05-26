@@ -97,9 +97,7 @@ class PaymentMethodTest extends TestCase
      */
     public function testPaymentMethod()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\PaymentMethod::class, $this->object);
     }
 
     /**
@@ -107,7 +105,7 @@ class PaymentMethodTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -115,7 +113,7 @@ class PaymentMethodTest extends TestCase
      */
     public function testPropertyName()
     {
-        TestCase::assertEquals($this->object['name'], $this->array['name']);
+        $this->assertEquals($this->array['name'], $this->object->getName());
     }
 
     /**
@@ -123,7 +121,7 @@ class PaymentMethodTest extends TestCase
      */
     public function testPropertyType()
     {
-        TestCase::assertEquals($this->object['type'], $this->array['type']);
+        $this->assertEquals($this->array['type'], $this->object->getType());
     }
 
     /**
@@ -131,7 +129,7 @@ class PaymentMethodTest extends TestCase
      */
     public function testPropertyIsDefault()
     {
-        TestCase::assertEquals($this->object['is_default'], $this->array['is_default']);
+        $this->assertEquals($this->array['is_default'], $this->object->getIsDefault());
     }
 
     /**
@@ -139,9 +137,7 @@ class PaymentMethodTest extends TestCase
      */
     public function testPropertyDefaultPaymentAccount()
     {
-        foreach ($this->array['default_payment_account'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['default_payment_account']);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\PaymentAccount::class, $this->object->getDefaultPaymentAccount());
     }
 
     /**
@@ -149,8 +145,130 @@ class PaymentMethodTest extends TestCase
      */
     public function testPropertyDetails()
     {
-        foreach ($this->array['details'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['details']);
+        $details = $this->object->getDetails();
+        $this->assertIsArray($details);
+        foreach ($details as $detail) {
+            $this->assertInstanceOf(\FattureInCloud\Model\PaymentMethodDetails::class, $detail);
         }
+    }
+
+    /**
+     * Test setter for "id"
+     */
+    public function testSetId()
+    {
+        $object = new \FattureInCloud\Model\PaymentMethod();
+        $testValue = 12345;
+        
+        $object->setId($testValue);
+        $this->assertEquals($testValue, $object->getId());
+    }
+
+    /**
+     * Test setter for "name"
+     */
+    public function testSetName()
+    {
+        $object = new \FattureInCloud\Model\PaymentMethod();
+        $testValue = 'Test Payment Method';
+        
+        $object->setName($testValue);
+        $this->assertEquals($testValue, $object->getName());
+    }
+
+    /**
+     * Test setter for "type"
+     */
+    public function testSetType()
+    {
+        $object = new \FattureInCloud\Model\PaymentMethod();
+        $testValue = 'custom';
+        
+        $object->setType($testValue);
+        $this->assertEquals($testValue, $object->getType());
+    }
+
+    /**
+     * Test setter for "is_default"
+     */
+    public function testSetIsDefault()
+    {
+        $object = new \FattureInCloud\Model\PaymentMethod();
+        $testValue = false;
+        
+        $object->setIsDefault($testValue);
+        $this->assertEquals($testValue, $object->getIsDefault());
+    }
+
+    /**
+     * Test setter for "default_payment_account"
+     */
+    public function testSetDefaultPaymentAccount()
+    {
+        $object = new \FattureInCloud\Model\PaymentMethod();
+        $testValue = ['id' => 123, 'name' => 'Test Account'];
+        
+        $object->setDefaultPaymentAccount($testValue);
+        $this->assertEquals($testValue, $object->getDefaultPaymentAccount());
+    }
+
+    /**
+     * Test setter for "details"
+     */
+    public function testSetDetails()
+    {
+        $object = new \FattureInCloud\Model\PaymentMethod();
+        $testValue = [['title' => 'Test Detail']];
+        
+        $object->setDetails($testValue);
+        $this->assertEquals($testValue, $object->getDetails());
+    }
+
+    /**
+     * Test setter for "bank_iban"
+     */
+    public function testSetBankIban()
+    {
+        $object = new \FattureInCloud\Model\PaymentMethod();
+        $testValue = 'IT60X0542811101000000123456';
+        
+        $object->setBankIban($testValue);
+        $this->assertEquals($testValue, $object->getBankIban());
+    }
+
+    /**
+     * Test setter for "bank_name"
+     */
+    public function testSetBankName()
+    {
+        $object = new \FattureInCloud\Model\PaymentMethod();
+        $testValue = 'Test Bank';
+        
+        $object->setBankName($testValue);
+        $this->assertEquals($testValue, $object->getBankName());
+    }
+
+    /**
+     * Test setter for "bank_beneficiary"
+     */
+    public function testSetBankBeneficiary()
+    {
+        $object = new \FattureInCloud\Model\PaymentMethod();
+        $testValue = 'Test Beneficiary';
+        
+        $object->setBankBeneficiary($testValue);
+        $this->assertEquals($testValue, $object->getBankBeneficiary());
+    }
+
+    /**
+     * Test setter for "ei_payment_method"
+     */
+    public function testSetEiPaymentMethod()
+    {
+        $object = new \FattureInCloud\Model\PaymentMethod();
+        $testValue = 'MP01';
+        
+        $object->setEiPaymentMethod($testValue);
+        $this->assertEquals($testValue, $object->getEiPaymentMethod());
     }
 }

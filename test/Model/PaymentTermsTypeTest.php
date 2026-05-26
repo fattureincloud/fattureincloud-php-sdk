@@ -87,6 +87,6 @@ class PaymentTermsTypeTest extends TestCase
      */
     public function testPaymentTermsType()
     {
-        TestCase::assertEquals($this->object['default_payment_terms_type'], $this->array['default_payment_terms_type']);
+        $this->assertEquals($this->array['default_payment_terms_type'], $this->object->getDefaultPaymentTermsType());
     }
 }

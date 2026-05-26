@@ -69,7 +69,7 @@ class GetWebhooksSubscriptionResponseTest extends TestCase
         }';
 
         $this->array = json_decode($json, true);
-        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CreateWebhooksSubscriptionResponse');
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\GetWebhooksSubscriptionResponse');
     }
 
     /**
@@ -91,9 +91,7 @@ class GetWebhooksSubscriptionResponseTest extends TestCase
      */
     public function testGetWebhooksSubscriptionResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\GetWebhooksSubscriptionResponse', $this->object);
     }
 
     /**
@@ -101,8 +99,6 @@ class GetWebhooksSubscriptionResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\WebhooksSubscription', $this->object->getData());
     }
 }

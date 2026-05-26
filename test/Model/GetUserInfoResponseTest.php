@@ -103,9 +103,7 @@ class GetUserInfoResponseTest extends TestCase
      */
     public function testGetUserInfoResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\GetUserInfoResponse', $this->object);
     }
 
     /**
@@ -113,9 +111,7 @@ class GetUserInfoResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\User', $this->object->getData());
     }
 
     /**
@@ -123,9 +119,7 @@ class GetUserInfoResponseTest extends TestCase
      */
     public function testPropertyInfo()
     {
-        foreach ($this->array['info'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['info']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\GetUserInfoResponseInfo', $this->object->getInfo());
     }
 
     /**
@@ -133,8 +127,6 @@ class GetUserInfoResponseTest extends TestCase
      */
     public function testPropertyEmailConfirmationState()
     {
-        foreach ($this->array['email_confirmation_state'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['email_confirmation_state']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\GetUserInfoResponseEmailConfirmationState', $this->object->getEmailConfirmationState());
     }
 }

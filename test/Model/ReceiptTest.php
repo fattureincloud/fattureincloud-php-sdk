@@ -117,9 +117,7 @@ class ReceiptTest extends TestCase
      */
     public function testReceipt()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\Receipt::class, $this->object);
     }
 
     /**
@@ -127,7 +125,7 @@ class ReceiptTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -136,7 +134,7 @@ class ReceiptTest extends TestCase
     public function testPropertyDate()
     {
         $date = new \DateTime($this->array['date']);
-        TestCase::assertEquals($this->object['date'], $date);
+        $this->assertEquals($date, $this->object->getDate());
     }
 
     /**
@@ -144,7 +142,7 @@ class ReceiptTest extends TestCase
      */
     public function testPropertyNumber()
     {
-        TestCase::assertEquals($this->object['number'], $this->array['number']);
+        $this->assertEquals($this->array['number'], $this->object->getNumber());
     }
 
     /**
@@ -152,7 +150,7 @@ class ReceiptTest extends TestCase
      */
     public function testPropertyNumeration()
     {
-        TestCase::assertEquals($this->object['numeration'], $this->array['numeration']);
+        $this->assertEquals($this->array['numeration'], $this->object->getNumeration());
     }
 
     /**
@@ -160,7 +158,7 @@ class ReceiptTest extends TestCase
      */
     public function testPropertyAmountNet()
     {
-        TestCase::assertEquals($this->object['amount_net'], $this->array['amount_net']);
+        $this->assertEquals($this->array['amount_net'], $this->object->getAmountNet());
     }
 
     /**
@@ -168,7 +166,7 @@ class ReceiptTest extends TestCase
      */
     public function testPropertyAmountVat()
     {
-        TestCase::assertEquals($this->object['amount_vat'], $this->array['amount_vat']);
+        $this->assertEquals($this->array['amount_vat'], $this->object->getAmountVat());
     }
 
     /**
@@ -176,7 +174,7 @@ class ReceiptTest extends TestCase
      */
     public function testPropertyAmountGross()
     {
-        TestCase::assertEquals($this->object['amount_gross'], $this->array['amount_gross']);
+        $this->assertEquals($this->array['amount_gross'], $this->object->getAmountGross());
     }
 
     /**
@@ -184,7 +182,7 @@ class ReceiptTest extends TestCase
      */
     public function testPropertyUseGrossPrices()
     {
-        TestCase::assertEquals($this->object['use_gross_prices'], $this->array['use_gross_prices']);
+        $this->assertEquals($this->array['use_gross_prices'], $this->object->getUseGrossPrices());
     }
 
     /**
@@ -192,7 +190,7 @@ class ReceiptTest extends TestCase
      */
     public function testPropertyType()
     {
-        TestCase::assertEquals($this->object['type'], $this->array['type']);
+        $this->assertEquals($this->array['type'], $this->object->getType());
     }
 
     /**
@@ -200,7 +198,7 @@ class ReceiptTest extends TestCase
      */
     public function testPropertyDescription()
     {
-        TestCase::assertEquals($this->object['description'], $this->array['description']);
+        $this->assertEquals($this->array['description'], $this->object->getDescription());
     }
 
     /**
@@ -208,7 +206,7 @@ class ReceiptTest extends TestCase
      */
     public function testPropertyRcCenter()
     {
-        TestCase::assertEquals($this->object['rc_center'], $this->array['rc_center']);
+        $this->assertEquals($this->array['rc_center'], $this->object->getRcCenter());
     }
 
     /**
@@ -216,7 +214,7 @@ class ReceiptTest extends TestCase
      */
     public function testPropertyCreatedAt()
     {
-        TestCase::assertEquals($this->object['created_at'], $this->array['created_at']);
+        $this->assertEquals($this->array['created_at'], $this->object->getCreatedAt());
     }
 
     /**
@@ -224,7 +222,7 @@ class ReceiptTest extends TestCase
      */
     public function testPropertyUpdatedAt()
     {
-        TestCase::assertEquals($this->object['updated_at'], $this->array['updated_at']);
+        $this->assertEquals($this->array['updated_at'], $this->object->getUpdatedAt());
     }
 
     /**
@@ -232,9 +230,10 @@ class ReceiptTest extends TestCase
      */
     public function testPropertyPaymentAccount()
     {
-        foreach ($this->array['payment_account'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['payment_account']);
-        }
+        $paymentAccount = $this->object->getPaymentAccount();
+        $this->assertInstanceOf(\FattureInCloud\Model\PaymentAccount::class, $paymentAccount);
+        $this->assertEquals($this->array['payment_account']['id'], $paymentAccount->getId());
+        $this->assertEquals($this->array['payment_account']['name'], $paymentAccount->getName());
     }
 
     /**
@@ -242,8 +241,195 @@ class ReceiptTest extends TestCase
      */
     public function testPropertyItemsList()
     {
-        foreach ($this->array['items_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['items_list']);
-        }
+        $itemsList = $this->object->getItemsList();
+        $this->assertIsArray($itemsList);
+        $this->assertCount(1, $itemsList);
+        
+        $item = $itemsList[0];
+        $this->assertInstanceOf(\FattureInCloud\Model\ReceiptItemsListItem::class, $item);
+        $this->assertEquals($this->array['items_list'][0]['id'], $item->getId());
+        $this->assertEquals($this->array['items_list'][0]['amount_net'], $item->getAmountNet());
+        $this->assertEquals($this->array['items_list'][0]['amount_gross'], $item->getAmountGross());
+        $this->assertEquals($this->array['items_list'][0]['category'], $item->getCategory());
+    }
+
+    /**
+     * Test setter for "id"
+     */
+    public function testSetId()
+    {
+        $object = new \FattureInCloud\Model\Receipt();
+        $testValue = 12345;
+        
+        $object->setId($testValue);
+        $this->assertEquals($testValue, $object->getId());
+    }
+
+    /**
+     * Test setter for "date"
+     */
+    public function testSetDate()
+    {
+        $object = new \FattureInCloud\Model\Receipt();
+        $testValue = '2024-04-17';
+        
+        $object->setDate($testValue);
+        $this->assertEquals($testValue, $object->getDate());
+    }
+
+    /**
+     * Test setter for "number"
+     */
+    public function testSetNumber()
+    {
+        $object = new \FattureInCloud\Model\Receipt();
+        $testValue = 123;
+        
+        $object->setNumber($testValue);
+        $this->assertEquals($testValue, $object->getNumber());
+    }
+
+    /**
+     * Test setter for "numeration"
+     */
+    public function testSetNumeration()
+    {
+        $object = new \FattureInCloud\Model\Receipt();
+        $testValue = 'REC2024';
+        
+        $object->setNumeration($testValue);
+        $this->assertEquals($testValue, $object->getNumeration());
+    }
+
+    /**
+     * Test setter for "amount_net"
+     */
+    public function testSetAmountNet()
+    {
+        $object = new \FattureInCloud\Model\Receipt();
+        $testValue = 100.50;
+        
+        $object->setAmountNet($testValue);
+        $this->assertEquals($testValue, $object->getAmountNet());
+    }
+
+    /**
+     * Test setter for "amount_vat"
+     */
+    public function testSetAmountVat()
+    {
+        $object = new \FattureInCloud\Model\Receipt();
+        $testValue = 22.11;
+        
+        $object->setAmountVat($testValue);
+        $this->assertEquals($testValue, $object->getAmountVat());
+    }
+
+    /**
+     * Test setter for "amount_gross"
+     */
+    public function testSetAmountGross()
+    {
+        $object = new \FattureInCloud\Model\Receipt();
+        $testValue = 122.61;
+        
+        $object->setAmountGross($testValue);
+        $this->assertEquals($testValue, $object->getAmountGross());
+    }
+
+    /**
+     * Test setter for "use_gross_prices"
+     */
+    public function testSetUseGrossPrices()
+    {
+        $object = new \FattureInCloud\Model\Receipt();
+        $testValue = true;
+        
+        $object->setUseGrossPrices($testValue);
+        $this->assertEquals($testValue, $object->getUseGrossPrices());
+    }
+
+    /**
+     * Test setter for "type"
+     */
+    public function testSetType()
+    {
+        $object = new \FattureInCloud\Model\Receipt();
+        $testValue = 'fiscal';
+        
+        $object->setType($testValue);
+        $this->assertEquals($testValue, $object->getType());
+    }
+
+    /**
+     * Test setter for "description"
+     */
+    public function testSetDescription()
+    {
+        $object = new \FattureInCloud\Model\Receipt();
+        $testValue = 'Test receipt description';
+        
+        $object->setDescription($testValue);
+        $this->assertEquals($testValue, $object->getDescription());
+    }
+
+    /**
+     * Test setter for "rc_center"
+     */
+    public function testSetRcCenter()
+    {
+        $object = new \FattureInCloud\Model\Receipt();
+        $testValue = 'Test RC Center';
+        
+        $object->setRcCenter($testValue);
+        $this->assertEquals($testValue, $object->getRcCenter());
+    }
+
+    /**
+     * Test setter for "created_at"
+     */
+    public function testSetCreatedAt()
+    {
+        $object = new \FattureInCloud\Model\Receipt();
+        $testValue = '2024-04-17';
+        
+        $object->setCreatedAt($testValue);
+        $this->assertEquals($testValue, $object->getCreatedAt());
+    }
+
+    /**
+     * Test setter for "updated_at"
+     */
+    public function testSetUpdatedAt()
+    {
+        $object = new \FattureInCloud\Model\Receipt();
+        $testValue = '2024-04-17';
+        
+        $object->setUpdatedAt($testValue);
+        $this->assertEquals($testValue, $object->getUpdatedAt());
+    }
+
+    /**
+     * Test setter for "payment_account"
+     */
+    public function testSetPaymentAccount()
+    {
+        $object = new \FattureInCloud\Model\Receipt();
+        $testValue = ['id' => 123, 'name' => 'Test Account'];
+        
+        $object->setPaymentAccount($testValue);
+        $this->assertEquals($testValue, $object->getPaymentAccount());
+    }
+
+    /**
+     * Test setter for "items_list"
+     */
+    public function testSetItemsList()
+    {
+        $object = new \FattureInCloud\Model\Receipt();
+        $testValue = [['id' => 1, 'name' => 'Test Item']];
+        
+        $object->setItemsList($testValue);
+        $this->assertEquals($testValue, $object->getItemsList());
     }
 }

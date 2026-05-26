@@ -88,9 +88,7 @@ class EmailDataDefaultSenderEmailTest extends TestCase
      */
     public function testEmailDataDefaultSenderEmail()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\EmailDataDefaultSenderEmail', $this->object);
     }
 
     /**
@@ -98,7 +96,7 @@ class EmailDataDefaultSenderEmailTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals(0, $this->object->getId());
     }
 
     /**
@@ -106,6 +104,6 @@ class EmailDataDefaultSenderEmailTest extends TestCase
      */
     public function testPropertyEmail()
     {
-        TestCase::assertEquals($this->object['email'], $this->array['email']);
+        $this->assertEquals("no-reply@fattureincloud.it", $this->object->getEmail());
     }
 }

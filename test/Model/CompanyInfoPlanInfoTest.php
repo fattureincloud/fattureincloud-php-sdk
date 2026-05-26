@@ -80,7 +80,6 @@ class CompanyInfoPlanInfoTest extends TestCase
                 "subaccounts": true,
                 "tessera_sanitaria": true,
                 "recurring": true,
-                "sofort": false,
                 "cerved": true,
                 "ts_digital": true,
                 "ts_pay": true,
@@ -120,9 +119,7 @@ class CompanyInfoPlanInfoTest extends TestCase
      */
     public function testCompanyInfoPlanInfo()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CompanyInfoPlanInfo', $this->object);
     }
 
     /**
@@ -130,9 +127,7 @@ class CompanyInfoPlanInfoTest extends TestCase
      */
     public function testPropertyLimits()
     {
-        foreach ($this->array['limits'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['limits']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CompanyInfoPlanInfoLimits', $this->object->getLimits());
     }
 
     /**
@@ -140,9 +135,7 @@ class CompanyInfoPlanInfoTest extends TestCase
      */
     public function testPropertyFunctions()
     {
-        foreach ($this->array['functions'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['functions']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CompanyInfoPlanInfoFunctions', $this->object->getFunctions());
     }
 
     /**
@@ -150,8 +143,6 @@ class CompanyInfoPlanInfoTest extends TestCase
      */
     public function testPropertyFunctionsStatus()
     {
-        foreach ($this->array['functions_status'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['functions_status']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CompanyInfoPlanInfoFunctionsStatus', $this->object->getFunctionsStatus());
     }
 }

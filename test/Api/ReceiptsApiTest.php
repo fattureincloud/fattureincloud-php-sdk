@@ -102,7 +102,7 @@ class ReceiptsApiTest extends TestCase
         $result = $apiInstance->createReceipt($company_id, $create_receipt_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreateReceiptResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -113,7 +113,7 @@ class ReceiptsApiTest extends TestCase
      */
     public function testDeleteReceipt()
     {
-        TestCase::assertEquals(1, 1);
+        $this->assertEquals(1, 1);
     }
 
     /**
@@ -140,7 +140,7 @@ class ReceiptsApiTest extends TestCase
         $result = $apiInstance->getReceipt($company_id, $receipt_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetReceiptResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -166,8 +166,8 @@ class ReceiptsApiTest extends TestCase
         $result = $apiInstance->getReceiptPreCreateInfo($company_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetReceiptPreCreateInfoResponse');
 
-        //TestCase::assertEquals($obj, $result);
-        TestCase::assertEquals(1, 1);
+        //$this->assertEquals($obj, $result);
+        $this->assertEquals(1, 1);
     }
 
     /**
@@ -195,7 +195,7 @@ class ReceiptsApiTest extends TestCase
         $result = $apiInstance->getReceiptPreCreateInfo($company_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetReceiptPreCreateInfoResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -222,7 +222,7 @@ class ReceiptsApiTest extends TestCase
         $result = $apiInstance->listReceipts($company_id, $type);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListReceiptsResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -250,6 +250,6 @@ class ReceiptsApiTest extends TestCase
         $result = $apiInstance->modifyReceipt($company_id, $receipt_id, $modify_receipt_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyReceiptResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 }

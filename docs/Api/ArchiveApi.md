@@ -2,15 +2,14 @@
 
 All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createArchiveDocument()**](ArchiveApi.md#createArchiveDocument) | **POST** /c/{company_id}/archive | Create Archive Document |
-| [**deleteArchiveDocument()**](ArchiveApi.md#deleteArchiveDocument) | **DELETE** /c/{company_id}/archive/{document_id} | Delete Archive Document |
-| [**getArchiveDocument()**](ArchiveApi.md#getArchiveDocument) | **GET** /c/{company_id}/archive/{document_id} | Get Archive Document |
-| [**listArchiveDocuments()**](ArchiveApi.md#listArchiveDocuments) | **GET** /c/{company_id}/archive | List Archive Documents |
-| [**modifyArchiveDocument()**](ArchiveApi.md#modifyArchiveDocument) | **PUT** /c/{company_id}/archive/{document_id} | Modify Archive Document |
-| [**uploadArchiveDocumentAttachment()**](ArchiveApi.md#uploadArchiveDocumentAttachment) | **POST** /c/{company_id}/archive/attachment | Upload Archive Document Attachment |
-
+| Method                                                                                 | HTTP request                                     | Description                        |
+| -------------------------------------------------------------------------------------- | ------------------------------------------------ | ---------------------------------- |
+| [**createArchiveDocument()**](ArchiveApi.md#createArchiveDocument)                     | **POST** /c/{company_id}/archive                 | Create Archive Document            |
+| [**deleteArchiveDocument()**](ArchiveApi.md#deleteArchiveDocument)                     | **DELETE** /c/{company_id}/archive/{document_id} | Delete Archive Document            |
+| [**getArchiveDocument()**](ArchiveApi.md#getArchiveDocument)                           | **GET** /c/{company_id}/archive/{document_id}    | Get Archive Document               |
+| [**listArchiveDocuments()**](ArchiveApi.md#listArchiveDocuments)                       | **GET** /c/{company_id}/archive                  | List Archive Documents             |
+| [**modifyArchiveDocument()**](ArchiveApi.md#modifyArchiveDocument)                     | **PUT** /c/{company_id}/archive/{document_id}    | Modify Archive Document            |
+| [**uploadArchiveDocumentAttachment()**](ArchiveApi.md#uploadArchiveDocumentAttachment) | **POST** /c/{company_id}/archive/attachment      | Upload Archive Document Attachment |
 
 ## `createArchiveDocument()`
 
@@ -32,7 +31,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ArchiveApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -52,10 +50,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **create_archive_document_request** | [**\FattureInCloud\Model\CreateArchiveDocumentRequest**](../Model/CreateArchiveDocumentRequest.md)| The Archive Document. | [optional] |
+| Name                                | Type                                                                                               | Description            | Notes      |
+| ----------------------------------- | -------------------------------------------------------------------------------------------------- | ---------------------- | ---------- |
+| **company_id**                      | **int**                                                                                            | The ID of the company. |            |
+| **create_archive_document_request** | [**\FattureInCloud\Model\CreateArchiveDocumentRequest**](../Model/CreateArchiveDocumentRequest.md) | The Archive Document.  | [optional] |
 
 ### Return type
 
@@ -94,7 +92,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ArchiveApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -113,10 +110,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **document_id** | **int**| The ID of the document. | |
+| Name            | Type    | Description             | Notes |
+| --------------- | ------- | ----------------------- | ----- |
+| **company_id**  | **int** | The ID of the company.  |       |
+| **document_id** | **int** | The ID of the document. |       |
 
 ### Return type
 
@@ -129,7 +126,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -155,7 +152,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ArchiveApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -177,12 +173,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **document_id** | **int**| The ID of the document. | |
-| **fields** | **string**| List of comma-separated fields. | [optional] |
-| **fieldset** | **string**| Name of the fieldset. | [optional] |
+| Name            | Type       | Description                     | Notes      |
+| --------------- | ---------- | ------------------------------- | ---------- |
+| **company_id**  | **int**    | The ID of the company.          |            |
+| **document_id** | **int**    | The ID of the document.         |            |
+| **fields**      | **string** | List of comma-separated fields. | [optional] |
+| **fieldset**    | **string** | Name of the fieldset.           | [optional] |
 
 ### Return type
 
@@ -221,7 +217,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ArchiveApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -246,15 +241,15 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **fields** | **string**| List of comma-separated fields. | [optional] |
-| **fieldset** | **string**| Name of the fieldset. | [optional] |
-| **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
-| **page** | **int**| The page to retrieve. | [optional] [default to 1] |
-| **per_page** | **int**| The size of the page. | [optional] [default to 5] |
-| **q** | **string**| Query for filtering the results. | [optional] |
+| Name           | Type       | Description                                                                 | Notes                     |
+| -------------- | ---------- | --------------------------------------------------------------------------- | ------------------------- |
+| **company_id** | **int**    | The ID of the company.                                                      |                           |
+| **fields**     | **string** | List of comma-separated fields.                                             | [optional]                |
+| **fieldset**   | **string** | Name of the fieldset.                                                       | [optional]                |
+| **sort**       | **string** | List of comma-separated fields for result sorting (minus for desc sorting). | [optional]                |
+| **page**       | **int**    | The page to retrieve.                                                       | [optional] [default to 1] |
+| **per_page**   | **int**    | The size of the page.                                                       | [optional] [default to 5] |
+| **q**          | **string** | Query for filtering the results.                                            | [optional]                |
 
 ### Return type
 
@@ -293,7 +288,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ArchiveApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -314,11 +308,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **document_id** | **int**| The ID of the document. | |
-| **modify_archive_document_request** | [**\FattureInCloud\Model\ModifyArchiveDocumentRequest**](../Model/ModifyArchiveDocumentRequest.md)| Modified Archive Document | [optional] |
+| Name                                | Type                                                                                               | Description               | Notes      |
+| ----------------------------------- | -------------------------------------------------------------------------------------------------- | ------------------------- | ---------- |
+| **company_id**                      | **int**                                                                                            | The ID of the company.    |            |
+| **document_id**                     | **int**                                                                                            | The ID of the document.   |            |
+| **modify_archive_document_request** | [**\FattureInCloud\Model\ModifyArchiveDocumentRequest**](../Model/ModifyArchiveDocumentRequest.md) | Modified Archive Document | [optional] |
 
 ### Return type
 
@@ -357,7 +351,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ArchiveApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -378,11 +371,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **filename** | **string**| Attachment file name | [optional] |
-| **attachment** | **\SplFileObject****\SplFileObject**| Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx] | [optional] |
+| Name           | Type                                     | Description                                                              | Notes      |
+| -------------- | ---------------------------------------- | ------------------------------------------------------------------------ | ---------- |
+| **company_id** | **int**                                  | The ID of the company.                                                   |            |
+| **filename**   | **string**                               | Attachment file name                                                     | [optional] |
+| **attachment** | **\SplFileObject\*\***\SplFileObject\*\* | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx] | [optional] |
 
 ### Return type
 

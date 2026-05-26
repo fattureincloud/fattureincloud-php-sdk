@@ -100,9 +100,7 @@ class ReceivedDocumentPaymentsListItemTest extends TestCase
      */
     public function testReceivedDocumentPaymentsList()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ReceivedDocumentPaymentsListItem::class, $this->object);
     }
 
     /**
@@ -110,7 +108,7 @@ class ReceivedDocumentPaymentsListItemTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -118,7 +116,7 @@ class ReceivedDocumentPaymentsListItemTest extends TestCase
      */
     public function testPropertyAmount()
     {
-        TestCase::assertEquals($this->object['amount'], $this->array['amount']);
+        $this->assertEquals($this->array['amount'], $this->object->getAmount());
     }
 
     /**
@@ -127,7 +125,7 @@ class ReceivedDocumentPaymentsListItemTest extends TestCase
     public function testPropertyDueDate()
     {
         $date = new \DateTime($this->array['due_date']);
-        TestCase::assertEquals($this->object['due_date'], $date);
+        $this->assertEquals($date, $this->object->getDueDate());
     }
 
     /**
@@ -137,7 +135,7 @@ class ReceivedDocumentPaymentsListItemTest extends TestCase
     {
         ;
         $date = new \DateTime($this->array['paid_date']);
-        TestCase::assertEquals($this->object['paid_date'], $date);
+        $this->assertEquals($date, $this->object->getPaidDate());
     }
 
     /**
@@ -145,9 +143,10 @@ class ReceivedDocumentPaymentsListItemTest extends TestCase
      */
     public function testPropertyPaymentTerms()
     {
-        foreach ($this->array['payment_terms'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['payment_terms']);
-        }
+        $paymentTerms = $this->object->getPaymentTerms();
+        $this->assertInstanceOf(\FattureInCloud\Model\ReceivedDocumentPaymentsListItemPaymentTerms::class, $paymentTerms);
+        $this->assertEquals($this->array['payment_terms']['days'], $paymentTerms->getDays());
+        $this->assertEquals($this->array['payment_terms']['type'], $paymentTerms->getType());
     }
 
     /**
@@ -155,7 +154,7 @@ class ReceivedDocumentPaymentsListItemTest extends TestCase
      */
     public function testPropertyStatus()
     {
-        TestCase::assertEquals($this->object['status'], $this->array['status']);
+        $this->assertEquals($this->array['status'], $this->object->getStatus());
     }
 
     /**
@@ -163,8 +162,10 @@ class ReceivedDocumentPaymentsListItemTest extends TestCase
      */
     public function testPropertyPaymentAccount()
     {
-        foreach ($this->array['payment_account'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['payment_account']);
-        }
+        $paymentAccount = $this->object->getPaymentAccount();
+        $this->assertInstanceOf(\FattureInCloud\Model\PaymentAccount::class, $paymentAccount);
+        $this->assertEquals($this->array['payment_account']['id'], $paymentAccount->getId());
+        $this->assertEquals($this->array['payment_account']['name'], $paymentAccount->getName());
+        $this->assertEquals($this->array['payment_account']['virtual'], $paymentAccount->getVirtual());
     }
 }

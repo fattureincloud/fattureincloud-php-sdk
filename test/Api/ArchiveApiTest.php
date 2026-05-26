@@ -102,7 +102,7 @@ class ArchiveApiTest extends TestCase
         $result = $apiInstance->createArchiveDocument($company_id, $create_archive_document_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreateArchiveDocumentResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -113,7 +113,7 @@ class ArchiveApiTest extends TestCase
      */
     public function testDeleteArchiveDocument()
     {
-        TestCase::assertEquals(1, 1);
+        $this->assertEquals(1, 1);
     }
 
     /**
@@ -140,7 +140,7 @@ class ArchiveApiTest extends TestCase
         $result = $apiInstance->getArchiveDocument($company_id, $archive_document_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetArchiveDocumentResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -166,7 +166,7 @@ class ArchiveApiTest extends TestCase
         $result = $apiInstance->listArchiveDocuments($company_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListArchiveDocumentsResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -194,7 +194,7 @@ class ArchiveApiTest extends TestCase
         $result = $apiInstance->modifyArchiveDocument($company_id, $archive_document_id, $modify_archive_document_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyArchiveDocumentResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -221,6 +221,6 @@ class ArchiveApiTest extends TestCase
         $result = $apiInstance->uploadArchiveDocumentAttachment($company_id, $upload_archive_document_attachment);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\UploadArchiveAttachmentResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 }

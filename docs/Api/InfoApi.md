@@ -2,25 +2,24 @@
 
 All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**listArchiveCategories()**](InfoApi.md#listArchiveCategories) | **GET** /c/{company_id}/info/archive_categories | List Archive Categories |
-| [**listCities()**](InfoApi.md#listCities) | **GET** /info/cities | List Cities |
-| [**listCostCenters()**](InfoApi.md#listCostCenters) | **GET** /c/{company_id}/info/cost_centers | List Cost Centers |
-| [**listCountries()**](InfoApi.md#listCountries) | **GET** /info/countries | List Countries |
-| [**listCurrencies()**](InfoApi.md#listCurrencies) | **GET** /info/currencies | List Currencies |
-| [**listDeliveryNotesDefaultCausals()**](InfoApi.md#listDeliveryNotesDefaultCausals) | **GET** /info/dn_causals | List Delivery Notes Default Causals |
-| [**listDetailedCountries()**](InfoApi.md#listDetailedCountries) | **GET** /info/detailed_countries | List Detailed Countries |
-| [**listLanguages()**](InfoApi.md#listLanguages) | **GET** /info/languages | List Languages |
-| [**listPaymentAccounts()**](InfoApi.md#listPaymentAccounts) | **GET** /c/{company_id}/info/payment_accounts | List Payment Accounts |
-| [**listPaymentMethods()**](InfoApi.md#listPaymentMethods) | **GET** /c/{company_id}/info/payment_methods | List Payment Methods |
-| [**listProductCategories()**](InfoApi.md#listProductCategories) | **GET** /c/{company_id}/info/product_categories | List Product Categories |
-| [**listReceivedDocumentCategories()**](InfoApi.md#listReceivedDocumentCategories) | **GET** /c/{company_id}/info/received_document_categories | List Received Document Categories |
-| [**listRevenueCenters()**](InfoApi.md#listRevenueCenters) | **GET** /c/{company_id}/info/revenue_centers | List Revenue Centers |
-| [**listTemplates()**](InfoApi.md#listTemplates) | **GET** /info/templates | List Templates |
-| [**listUnitsOfMeasure()**](InfoApi.md#listUnitsOfMeasure) | **GET** /info/measures | List Units of Measure |
-| [**listVatTypes()**](InfoApi.md#listVatTypes) | **GET** /c/{company_id}/info/vat_types | List Vat Types |
-
+| Method                                                                              | HTTP request                                              | Description                         |
+| ----------------------------------------------------------------------------------- | --------------------------------------------------------- | ----------------------------------- |
+| [**listArchiveCategories()**](InfoApi.md#listArchiveCategories)                     | **GET** /c/{company_id}/info/archive_categories           | List Archive Categories             |
+| [**listCities()**](InfoApi.md#listCities)                                           | **GET** /info/cities                                      | List Cities                         |
+| [**listCostCenters()**](InfoApi.md#listCostCenters)                                 | **GET** /c/{company_id}/info/cost_centers                 | List Cost Centers                   |
+| [**listCountries()**](InfoApi.md#listCountries)                                     | **GET** /info/countries                                   | List Countries                      |
+| [**listCurrencies()**](InfoApi.md#listCurrencies)                                   | **GET** /info/currencies                                  | List Currencies                     |
+| [**listDefaultTemplates()**](InfoApi.md#listDefaultTemplates)                       | **GET** /info/templates                                   | List Default Templates              |
+| [**listDeliveryNotesDefaultCausals()**](InfoApi.md#listDeliveryNotesDefaultCausals) | **GET** /info/dn_causals                                  | List Delivery Notes Default Causals |
+| [**listDetailedCountries()**](InfoApi.md#listDetailedCountries)                     | **GET** /info/detailed_countries                          | List Detailed Countries             |
+| [**listLanguages()**](InfoApi.md#listLanguages)                                     | **GET** /info/languages                                   | List Languages                      |
+| [**listPaymentAccounts()**](InfoApi.md#listPaymentAccounts)                         | **GET** /c/{company_id}/info/payment_accounts             | List Payment Accounts               |
+| [**listPaymentMethods()**](InfoApi.md#listPaymentMethods)                           | **GET** /c/{company_id}/info/payment_methods              | List Payment Methods                |
+| [**listProductCategories()**](InfoApi.md#listProductCategories)                     | **GET** /c/{company_id}/info/product_categories           | List Product Categories             |
+| [**listReceivedDocumentCategories()**](InfoApi.md#listReceivedDocumentCategories)   | **GET** /c/{company_id}/info/received_document_categories | List Received Document Categories   |
+| [**listRevenueCenters()**](InfoApi.md#listRevenueCenters)                           | **GET** /c/{company_id}/info/revenue_centers              | List Revenue Centers                |
+| [**listUnitsOfMeasure()**](InfoApi.md#listUnitsOfMeasure)                           | **GET** /info/measures                                    | List Units of Measure               |
+| [**listVatTypes()**](InfoApi.md#listVatTypes)                                       | **GET** /c/{company_id}/info/vat_types                    | List Vat Types                      |
 
 ## `listArchiveCategories()`
 
@@ -42,7 +41,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\InfoApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -61,9 +59,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
+| Name           | Type    | Description            | Notes |
+| -------------- | ------- | ---------------------- | ----- |
+| **company_id** | **int** | The ID of the company. |       |
 
 ### Return type
 
@@ -102,7 +100,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\InfoApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -122,10 +119,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **postal_code** | **string**| Postal code for filtering. | [optional] |
-| **city** | **string**| City for filtering (ignored if postal_code is passed). | [optional] |
+| Name            | Type       | Description                                            | Notes      |
+| --------------- | ---------- | ------------------------------------------------------ | ---------- |
+| **postal_code** | **string** | Postal code for filtering.                             | [optional] |
+| **city**        | **string** | City for filtering (ignored if postal_code is passed). | [optional] |
 
 ### Return type
 
@@ -164,7 +161,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\InfoApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -183,9 +179,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
+| Name           | Type    | Description            | Notes |
+| -------------- | ------- | ---------------------- | ----- |
+| **company_id** | **int** | The ID of the company. |       |
 
 ### Return type
 
@@ -223,7 +219,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new FattureInCloud\Api\InfoApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -281,7 +276,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\InfoApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -318,6 +312,67 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `listDefaultTemplates()`
+
+```php
+listDefaultTemplates($type, $by_type): \FattureInCloud\Model\ListTemplatesResponse
+```
+
+List Default Templates
+
+Lists the default available templates.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
+$config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$apiInstance = new FattureInCloud\Api\InfoApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$type = 'all'; // string | Type of the templates.
+$by_type = false; // bool | [Only if type=all] If true, splits the list in objects, grouping templates by type.
+
+try {
+    $result = $apiInstance->listDefaultTemplates($type, $by_type);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling InfoApi->listDefaultTemplates: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name        | Type       | Description                                                                              | Notes                                 |
+| ----------- | ---------- | ---------------------------------------------------------------------------------------- | ------------------------------------- |
+| **type**    | **string** | Type of the templates.                                                                   | [optional] [default to &#39;all&#39;] |
+| **by_type** | **bool**   | [Only if type&#x3D;all] If true, splits the list in objects, grouping templates by type. | [optional] [default to false]         |
+
+### Return type
+
+[**\FattureInCloud\Model\ListTemplatesResponse**](../Model/ListTemplatesResponse.md)
+
+### Authorization
+
+[OAuth2AuthenticationCodeFlow](../../README.md#OAuth2AuthenticationCodeFlow)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `listDeliveryNotesDefaultCausals()`
 
 ```php
@@ -337,7 +392,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new FattureInCloud\Api\InfoApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -395,7 +449,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\InfoApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -451,7 +504,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new FattureInCloud\Api\InfoApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -509,7 +561,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\InfoApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -531,12 +582,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **fields** | **string**| List of comma-separated fields. | [optional] |
-| **fieldset** | **string**| Name of the fieldset. | [optional] |
-| **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
+| Name           | Type       | Description                                                                 | Notes      |
+| -------------- | ---------- | --------------------------------------------------------------------------- | ---------- |
+| **company_id** | **int**    | The ID of the company.                                                      |            |
+| **fields**     | **string** | List of comma-separated fields.                                             | [optional] |
+| **fieldset**   | **string** | Name of the fieldset.                                                       | [optional] |
+| **sort**       | **string** | List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
 
 ### Return type
 
@@ -575,7 +626,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\InfoApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -597,12 +647,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **fields** | **string**| List of comma-separated fields. | [optional] |
-| **fieldset** | **string**| Name of the fieldset. | [optional] |
-| **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
+| Name           | Type       | Description                                                                 | Notes      |
+| -------------- | ---------- | --------------------------------------------------------------------------- | ---------- |
+| **company_id** | **int**    | The ID of the company.                                                      |            |
+| **fields**     | **string** | List of comma-separated fields.                                             | [optional] |
+| **fieldset**   | **string** | Name of the fieldset.                                                       | [optional] |
+| **sort**       | **string** | List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
 
 ### Return type
 
@@ -641,7 +691,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\InfoApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -661,10 +710,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **context** | **string**| Categories resource type. | |
+| Name           | Type       | Description               | Notes |
+| -------------- | ---------- | ------------------------- | ----- |
+| **company_id** | **int**    | The ID of the company.    |       |
+| **context**    | **string** | Categories resource type. |       |
 
 ### Return type
 
@@ -703,7 +752,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\InfoApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -722,9 +770,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
+| Name           | Type    | Description            | Notes |
+| -------------- | ------- | ---------------------- | ----- |
+| **company_id** | **int** | The ID of the company. |       |
 
 ### Return type
 
@@ -763,7 +811,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\InfoApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -782,75 +829,13 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
+| Name           | Type    | Description            | Notes |
+| -------------- | ------- | ---------------------- | ----- |
+| **company_id** | **int** | The ID of the company. |       |
 
 ### Return type
 
 [**\FattureInCloud\Model\ListRevenueCentersResponse**](../Model/ListRevenueCentersResponse.md)
-
-### Authorization
-
-[OAuth2AuthenticationCodeFlow](../../README.md#OAuth2AuthenticationCodeFlow)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `listTemplates()`
-
-```php
-listTemplates($type, $by_type): \FattureInCloud\Model\ListTemplatesResponse
-```
-
-List Templates
-
-Lists the available templates.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
-$config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new FattureInCloud\Api\InfoApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$type = 'all'; // string | Type of the templates.
-$by_type = false; // bool | [Only if type=all] If true, splits the list in objects, grouping templates by type.
-
-try {
-    $result = $apiInstance->listTemplates($type, $by_type);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling InfoApi->listTemplates: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **type** | **string**| Type of the templates. | [optional] [default to &#39;all&#39;] |
-| **by_type** | **bool**| [Only if type&#x3D;all] If true, splits the list in objects, grouping templates by type. | [optional] [default to false] |
-
-### Return type
-
-[**\FattureInCloud\Model\ListTemplatesResponse**](../Model/ListTemplatesResponse.md)
 
 ### Authorization
 
@@ -884,7 +869,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new FattureInCloud\Api\InfoApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -942,7 +926,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\InfoApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -962,10 +945,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **fieldset** | **string**| Name of the fieldset. | [optional] |
+| Name           | Type       | Description            | Notes      |
+| -------------- | ---------- | ---------------------- | ---------- |
+| **company_id** | **int**    | The ID of the company. |            |
+| **fieldset**   | **string** | Name of the fieldset.  | [optional] |
 
 ### Return type
 

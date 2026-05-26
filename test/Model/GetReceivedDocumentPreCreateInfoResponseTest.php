@@ -123,9 +123,7 @@ class GetReceivedDocumentPreCreateInfoResponseTest extends TestCase
      */
     public function testGetReceivedDocumentPreCreateInfoResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\GetReceivedDocumentPreCreateInfoResponse', $this->object);
     }
 
     /**
@@ -133,8 +131,6 @@ class GetReceivedDocumentPreCreateInfoResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\ReceivedDocumentInfo', $this->object->getData());
     }
 }

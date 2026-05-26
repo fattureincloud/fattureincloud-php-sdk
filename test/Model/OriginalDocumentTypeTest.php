@@ -87,6 +87,6 @@ class OriginalDocumentTypeTest extends TestCase
      */
     public function testOriginalDocumentType()
     {
-        TestCase::assertEquals($this->object['original_document_type'], $this->array['original_document_type']);
+        $this->assertEquals($this->array['original_document_type'], $this->object->getOriginalDocumentType());
     }
 }

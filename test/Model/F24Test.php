@@ -97,9 +97,7 @@ class F24Test extends TestCase
      */
     public function testF24()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\F24', $this->object);
     }
 
     /**
@@ -107,7 +105,7 @@ class F24Test extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -115,8 +113,12 @@ class F24Test extends TestCase
      */
     public function testPropertyDueDate()
     {
-        $date = new \DateTime($this->array['due_date']);
-        TestCase::assertEquals($this->object['due_date'], $date);
+        $dateValue = $this->object->getDueDate();
+        if ($dateValue instanceof \DateTime) {
+            $this->assertEquals($this->array['due_date'], $dateValue->format('Y-m-d'));
+        } else {
+            $this->assertEquals($this->array['due_date'], $dateValue);
+        }
     }
 
     /**
@@ -124,7 +126,7 @@ class F24Test extends TestCase
      */
     public function testPropertyStatus()
     {
-        TestCase::assertEquals($this->object['status'], $this->array['status']);
+        $this->assertEquals($this->array['status'], $this->object->getStatus());
     }
 
     /**
@@ -132,9 +134,7 @@ class F24Test extends TestCase
      */
     public function testPropertyPaymentAccount()
     {
-        foreach ($this->array['payment_account'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['payment_account']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\PaymentAccount', $this->object->getPaymentAccount());
     }
 
     /**
@@ -142,7 +142,7 @@ class F24Test extends TestCase
      */
     public function testPropertyAmount()
     {
-        TestCase::assertEquals($this->object['amount'], $this->array['amount']);
+        $this->assertEquals($this->array['amount'], $this->object->getAmount());
     }
 
     /**
@@ -150,7 +150,7 @@ class F24Test extends TestCase
      */
     public function testPropertyAttachmentUrl()
     {
-        TestCase::assertEquals($this->object['attachment_url'], $this->array['attachment_url']);
+        $this->assertEquals($this->array['attachment_url'], $this->object->getAttachmentUrl());
     }
 
     /**
@@ -158,7 +158,7 @@ class F24Test extends TestCase
      */
     public function testPropertyAttachmentToken()
     {
-        TestCase::assertEquals($this->object['attachment_token'], $this->array['attachment_token']);
+        $this->assertEquals($this->array['attachment_token'], $this->object->getAttachmentToken());
     }
 
     /**
@@ -166,6 +166,102 @@ class F24Test extends TestCase
      */
     public function testPropertyDescription()
     {
-        TestCase::assertEquals($this->object['description'], $this->array['description']);
+        $this->assertEquals($this->array['description'], $this->object->getDescription());
+    }
+
+    /**
+     * Test setter for "id"
+     */
+    public function testSetId()
+    {
+        $object = new \FattureInCloud\Model\F24();
+        $testValue = 12345;
+        
+        $object->setId($testValue);
+        $this->assertEquals($testValue, $object->getId());
+    }
+
+    /**
+     * Test setter for "due_date"
+     */
+    public function testSetDueDate()
+    {
+        $object = new \FattureInCloud\Model\F24();
+        $testValue = '2024-04-17';
+        
+        $object->setDueDate($testValue);
+        $this->assertEquals($testValue, $object->getDueDate());
+    }
+
+    /**
+     * Test setter for "status"
+     */
+    public function testSetStatus()
+    {
+        $object = new \FattureInCloud\Model\F24();
+        $testValue = 'pending';
+        
+        $object->setStatus($testValue);
+        $this->assertEquals($testValue, $object->getStatus());
+    }
+
+    /**
+     * Test setter for "payment_account"
+     */
+    public function testSetPaymentAccount()
+    {
+        $object = new \FattureInCloud\Model\F24();
+        $testValue = ['id' => 123, 'name' => 'Test Account'];
+        
+        $object->setPaymentAccount($testValue);
+        $this->assertEquals($testValue, $object->getPaymentAccount());
+    }
+
+    /**
+     * Test setter for "amount"
+     */
+    public function testSetAmount()
+    {
+        $object = new \FattureInCloud\Model\F24();
+        $testValue = 1250.50;
+        
+        $object->setAmount($testValue);
+        $this->assertEquals($testValue, $object->getAmount());
+    }
+
+    /**
+     * Test setter for "attachment_url"
+     */
+    public function testSetAttachmentUrl()
+    {
+        $object = new \FattureInCloud\Model\F24();
+        $testValue = 'test-attachment-url.pdf';
+        
+        $object->setAttachmentUrl($testValue);
+        $this->assertEquals($testValue, $object->getAttachmentUrl());
+    }
+
+    /**
+     * Test setter for "attachment_token"
+     */
+    public function testSetAttachmentToken()
+    {
+        $object = new \FattureInCloud\Model\F24();
+        $testValue = 'test-attachment-token';
+        
+        $object->setAttachmentToken($testValue);
+        $this->assertEquals($testValue, $object->getAttachmentToken());
+    }
+
+    /**
+     * Test setter for "description"
+     */
+    public function testSetDescription()
+    {
+        $object = new \FattureInCloud\Model\F24();
+        $testValue = 'Test F24 Description';
+        
+        $object->setDescription($testValue);
+        $this->assertEquals($testValue, $object->getDescription());
     }
 }

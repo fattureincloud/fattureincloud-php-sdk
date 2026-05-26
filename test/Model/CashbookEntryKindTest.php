@@ -59,13 +59,9 @@ class CashbookEntryKindTest extends TestCase
      */
     public function setUp(): void
     {
-        $json = '{  
-            "kind": "cashbook"
-        }';
-
-        $this->array = json_decode($json, true);
-
-        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CashbookEntry');
+        // CashbookEntryKind is an enum class, set the value directly
+        $this->array = ['kind' => 'cashbook'];
+        $this->object = \FattureInCloud\Model\CashbookEntryKind::CASHBOOK;
     }
 
     /**
@@ -87,6 +83,17 @@ class CashbookEntryKindTest extends TestCase
      */
     public function testCashbookEntryKind()
     {
-        TestCase::assertEquals($this->object['kind'], $this->array['kind']);
+        // Test that the constant exists and has the expected value
+        $this->assertEquals('cashbook', \FattureInCloud\Model\CashbookEntryKind::CASHBOOK);
+        $this->assertEquals('cashbook', $this->object);
+    }
+
+    /**
+     * Test allowable values
+     */
+    public function testAllowableValues()
+    {
+        $allowableValues = \FattureInCloud\Model\CashbookEntryKind::getAllowableEnumValues();
+        $this->assertContains($this->array['kind'], $allowableValues);
     }
 }

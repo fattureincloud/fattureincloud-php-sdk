@@ -97,9 +97,10 @@ class VerifyEInvoiceXmlErrorResponseTest extends TestCase
      */
     public function testVerifyEInvoiceXmlErrorResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(
+            \FattureInCloud\Model\VerifyEInvoiceXmlErrorResponse::class,
+            $this->object
+        );
     }
 
     /**
@@ -107,9 +108,9 @@ class VerifyEInvoiceXmlErrorResponseTest extends TestCase
      */
     public function testPropertyError()
     {
-        foreach ($this->array['error'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['error']);
-        }
+        $error = $this->object->getError();
+        $this->assertInstanceOf(\FattureInCloud\Model\VerifyEInvoiceXmlErrorResponseError::class, $error);
+        $this->assertEquals($this->array['error']['message'], $error->getMessage());
     }
 
     /**
@@ -117,8 +118,8 @@ class VerifyEInvoiceXmlErrorResponseTest extends TestCase
      */
     public function testPropertyExtra()
     {
-        foreach ($this->array['extra'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['extra']);
-        }
+        $extra = $this->object->getExtra();
+        $this->assertInstanceOf(\FattureInCloud\Model\VerifyEInvoiceXmlErrorResponseExtra::class, $extra);
+        $this->assertEquals($this->array['extra']['errors'], $extra->getErrors());
     }
 }

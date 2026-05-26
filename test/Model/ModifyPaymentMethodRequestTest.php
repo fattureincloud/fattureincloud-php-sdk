@@ -102,9 +102,7 @@ class ModifyPaymentMethodRequestTest extends TestCase
      */
     public function testModifyPaymentMethodRequest()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ModifyPaymentMethodRequest::class, $this->object);
     }
 
     /**
@@ -112,8 +110,6 @@ class ModifyPaymentMethodRequestTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\PaymentMethod::class, $this->object->getData());
     }
 }

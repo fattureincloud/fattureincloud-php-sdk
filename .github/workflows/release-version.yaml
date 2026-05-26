@@ -1,23 +1,24 @@
 name: Release PHP SDK version
 on: [workflow_dispatch]
-    
+
 jobs:
   release-version:
     runs-on: ubuntu-latest
-    steps: 
-
+    permissions:
+      contents: write # Required to push commits and tags to the repository
+    steps:
       - id: checkout
         name: Checkout repo
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.FATTUREINCLOUD_BOT_TOKEN }}
-      
+
       - id: init-git
         name: Init GIT
         run: |
           git config --global user.email "info@fattureincloud.it"
           git config --global user.name "fattureincloud-bot"
-      
+
       - id: setup-node
         name: Setup Node.js
         uses: actions/setup-node@v4
@@ -73,7 +74,7 @@ jobs:
               ref: "refs/tags/v${{ env.sdk_version }}",
               sha: "${{ env.commit_sha }}"
             })
-      
+
       - id: trigger-create-version
         name: Trigger Create Version Event
         uses: peter-evans/repository-dispatch@v3

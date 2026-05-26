@@ -102,7 +102,7 @@ class SettingsApiTest extends TestCase
         $result = $apiInstance->createPaymentAccount($company_id, $create_payment_account_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreatePaymentAccountResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -129,7 +129,7 @@ class SettingsApiTest extends TestCase
         $result = $apiInstance->createPaymentMethod($company_id, $create_payment_method_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreatePaymentMethodResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -140,7 +140,7 @@ class SettingsApiTest extends TestCase
      */
     public function testDeletePaymentAccount()
     {
-        TestCase::assertEquals(1, 1);
+        $this->assertEquals(1, 1);
     }
 
     /**
@@ -151,7 +151,7 @@ class SettingsApiTest extends TestCase
      */
     public function testDeletePaymentMethod()
     {
-        TestCase::assertEquals(1, 1);
+        $this->assertEquals(1, 1);
     }
 
     /**
@@ -178,7 +178,7 @@ class SettingsApiTest extends TestCase
         $result = $apiInstance->getPaymentAccount($company_id, $payment_account_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetPaymentAccountResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -205,7 +205,7 @@ class SettingsApiTest extends TestCase
         $result = $apiInstance->getPaymentMethod($company_id, $payment_method_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetPaymentMethodResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -232,7 +232,7 @@ class SettingsApiTest extends TestCase
         $result = $apiInstance->modifyPaymentAccount($company_id, $modify_payment_account_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyPaymentAccountResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -259,7 +259,7 @@ class SettingsApiTest extends TestCase
         $result = $apiInstance->modifyPaymentMethod($company_id, $modify_payment_method_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyPaymentMethodResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -319,7 +319,7 @@ class SettingsApiTest extends TestCase
         $result = $apiInstance->getTaxProfile($company_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetTaxProfileResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
 

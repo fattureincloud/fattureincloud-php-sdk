@@ -88,9 +88,7 @@ class LanguageTest extends TestCase
      */
     public function testLanguage()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\Language::class, $this->object);
     }
 
     /**
@@ -98,7 +96,7 @@ class LanguageTest extends TestCase
      */
     public function testPropertyCode()
     {
-        TestCase::assertEquals($this->object['code'], $this->array['code']);
+        $this->assertEquals($this->array['code'], $this->object->getCode());
     }
 
     /**
@@ -106,6 +104,30 @@ class LanguageTest extends TestCase
      */
     public function testPropertyName()
     {
-        TestCase::assertEquals($this->object['name'], $this->array['name']);
+        $this->assertEquals($this->array['name'], $this->object->getName());
+    }
+
+    /**
+     * Test setter for "code"
+     */
+    public function testSetCode()
+    {
+        $object = new \FattureInCloud\Model\Language();
+        $testValue = 'en';
+        
+        $object->setCode($testValue);
+        $this->assertEquals($testValue, $object->getCode());
+    }
+
+    /**
+     * Test setter for "name"
+     */
+    public function testSetName()
+    {
+        $object = new \FattureInCloud\Model\Language();
+        $testValue = 'English';
+        
+        $object->setName($testValue);
+        $this->assertEquals($testValue, $object->getName());
     }
 }

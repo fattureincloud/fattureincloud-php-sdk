@@ -109,9 +109,7 @@ class EmailDataTest extends TestCase
      */
     public function testEmailData()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\EmailData', $this->object);
     }
 
     /**
@@ -119,35 +117,7 @@ class EmailDataTest extends TestCase
      */
     public function testPropertyRecipientEmail()
     {
-        TestCase::assertEquals($this->object['recipient_email'], $this->array['recipient_email']);
-    }
-
-    /**
-     * Test attribute "default_sender_email"
-     */
-    public function testPropertyDefaultSenderEmail()
-    {
-        foreach ($this->array['default_sender_email'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['default_sender_email']);
-        }
-    }
-
-    /**
-     * Test attribute "sender_emails_list"
-     */
-    public function testPropertySenderEmailsList()
-    {
-        foreach ($this->array['sender_emails_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['sender_emails_list']);
-        }
-    }
-
-    /**
-     * Test attribute "cc_email"
-     */
-    public function testPropertyCcEmail()
-    {
-        TestCase::assertEquals($this->object['cc_email'], $this->array['cc_email']);
+        $this->assertEquals("mary.red@example.com", $this->object->getRecipientEmail());
     }
 
     /**
@@ -155,15 +125,7 @@ class EmailDataTest extends TestCase
      */
     public function testPropertySubject()
     {
-        TestCase::assertEquals($this->object['subject'], $this->array['subject']);
-    }
-
-    /**
-     * Test attribute "body"
-     */
-    public function testPropertyBody()
-    {
-        TestCase::assertEquals($this->object['body'], $this->array['body']);
+        $this->assertEquals("Nostra pro forma nr. 1", $this->object->getSubject());
     }
 
     /**
@@ -171,7 +133,25 @@ class EmailDataTest extends TestCase
      */
     public function testPropertyDocumentExists()
     {
-        TestCase::assertEquals($this->object['document_exists'], $this->array['document_exists']);
+        $this->assertTrue($this->object->getDocumentExists());
+    }
+
+    /**
+     * Test attribute "default_sender_email"
+     */
+    public function testPropertyDefaultSenderEmail()
+    {
+        $defaultSender = $this->object->getDefaultSenderEmail();
+        $this->assertInstanceOf('\FattureInCloud\Model\EmailDataDefaultSenderEmail', $defaultSender);
+        $this->assertEquals("no-reply@fattureincloud.it", $defaultSender->getEmail());
+    }
+
+    /**
+     * Test attribute "body"
+     */
+    public function testPropertyBody()
+    {
+        $this->assertEquals($this->array['body'], $this->object->getBody());
     }
 
     /**
@@ -179,7 +159,7 @@ class EmailDataTest extends TestCase
      */
     public function testPropertyDeliveryNoteExists()
     {
-        TestCase::assertEquals($this->object['delivery_note_exists'], $this->array['delivery_note_exists']);
+        $this->assertEquals($this->array['delivery_note_exists'], $this->object->getDeliveryNoteExists());
     }
 
     /**
@@ -187,7 +167,7 @@ class EmailDataTest extends TestCase
      */
     public function testPropertyAttachmentExists()
     {
-        TestCase::assertEquals($this->object['attachment_exists'], $this->array['attachment_exists']);
+        $this->assertEquals($this->array['attachment_exists'], $this->object->getAttachmentExists());
     }
 
     /**
@@ -195,7 +175,7 @@ class EmailDataTest extends TestCase
      */
     public function testPropertyAccompanyingInvoiceExists()
     {
-        TestCase::assertEquals($this->object['accompanying_invoice_exists'], $this->array['accompanying_invoice_exists']);
+        $this->assertEquals($this->array['accompanying_invoice_exists'], $this->object->getAccompanyingInvoiceExists());
     }
 
     /**
@@ -203,6 +183,114 @@ class EmailDataTest extends TestCase
      */
     public function testPropertyDefaultAttachPdf()
     {
-        TestCase::assertEquals($this->object['default_attach_pdf'], $this->array['default_attach_pdf']);
+        $this->assertEquals($this->array['default_attach_pdf'], $this->object->getDefaultAttachPdf());
+    }
+
+    /**
+     * Test setter for "recipient_email"
+     */
+    public function testSetRecipientEmail()
+    {
+        $object = new \FattureInCloud\Model\EmailData();
+        $testValue = 'test@example.com';
+        
+        $object->setRecipientEmail($testValue);
+        $this->assertEquals($testValue, $object->getRecipientEmail());
+    }
+
+    /**
+     * Test setter for "subject"
+     */
+    public function testSetSubject()
+    {
+        $object = new \FattureInCloud\Model\EmailData();
+        $testValue = 'Test Email Subject';
+        
+        $object->setSubject($testValue);
+        $this->assertEquals($testValue, $object->getSubject());
+    }
+
+    /**
+     * Test setter for "document_exists"
+     */
+    public function testSetDocumentExists()
+    {
+        $object = new \FattureInCloud\Model\EmailData();
+        $testValue = true;
+        
+        $object->setDocumentExists($testValue);
+        $this->assertEquals($testValue, $object->getDocumentExists());
+    }
+
+    /**
+     * Test setter for "default_sender_email"
+     */
+    public function testSetDefaultSenderEmail()
+    {
+        $object = new \FattureInCloud\Model\EmailData();
+        $testValue = new \FattureInCloud\Model\EmailDataDefaultSenderEmail();
+        
+        $object->setDefaultSenderEmail($testValue);
+        $this->assertEquals($testValue, $object->getDefaultSenderEmail());
+    }
+
+    /**
+     * Test setter for "body"
+     */
+    public function testSetBody()
+    {
+        $object = new \FattureInCloud\Model\EmailData();
+        $testValue = 'Test email body content';
+        
+        $object->setBody($testValue);
+        $this->assertEquals($testValue, $object->getBody());
+    }
+
+    /**
+     * Test setter for "delivery_note_exists"
+     */
+    public function testSetDeliveryNoteExists()
+    {
+        $object = new \FattureInCloud\Model\EmailData();
+        $testValue = false;
+        
+        $object->setDeliveryNoteExists($testValue);
+        $this->assertEquals($testValue, $object->getDeliveryNoteExists());
+    }
+
+    /**
+     * Test setter for "attachment_exists"
+     */
+    public function testSetAttachmentExists()
+    {
+        $object = new \FattureInCloud\Model\EmailData();
+        $testValue = true;
+        
+        $object->setAttachmentExists($testValue);
+        $this->assertEquals($testValue, $object->getAttachmentExists());
+    }
+
+    /**
+     * Test setter for "accompanying_invoice_exists"
+     */
+    public function testSetAccompanyingInvoiceExists()
+    {
+        $object = new \FattureInCloud\Model\EmailData();
+        $testValue = false;
+        
+        $object->setAccompanyingInvoiceExists($testValue);
+        $this->assertEquals($testValue, $object->getAccompanyingInvoiceExists());
+    }
+
+    /**
+     * Test setter for "default_attach_pdf"
+     */
+    public function testSetDefaultAttachPdf()
+    {
+        $object = new \FattureInCloud\Model\EmailData();
+        $testValue = true;
+        
+        $object->setDefaultAttachPdf($testValue);
+        $this->assertEquals($testValue, $object->getDefaultAttachPdf());
     }
 }

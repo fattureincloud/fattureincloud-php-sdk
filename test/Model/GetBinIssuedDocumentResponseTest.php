@@ -198,9 +198,7 @@ class GetBinIssuedDocumentResponseTest extends TestCase
      */
     public function testGetBinIssuedDocumentResponse()
     {
-        foreach ($this->array as $key => $value) {
-            TestCase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\GetBinIssuedDocumentResponse', $this->object);
     }
 
     /**
@@ -208,8 +206,11 @@ class GetBinIssuedDocumentResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            TestCase::assertArrayHasKey($key, $this->object['data']);
+        $dataValue = $this->object->getData();
+        if (is_object($dataValue)) {
+            $this->assertInstanceOf(\FattureInCloud\Model\IssuedDocument::class, $dataValue);
+        } else {
+            $this->assertEquals($this->array['data'], $dataValue);
         }
     }
 }

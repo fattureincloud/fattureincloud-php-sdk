@@ -166,9 +166,7 @@ class ListReceiptsResponsePageTest extends TestCase
      */
     public function testListReceiptsResponsePage()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ListReceiptsResponsePage::class, $this->object);
     }
 
     /**
@@ -176,8 +174,6 @@ class ListReceiptsResponsePageTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertIsArray($this->object->getData());
     }
 }

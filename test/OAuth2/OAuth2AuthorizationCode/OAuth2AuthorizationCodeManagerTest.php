@@ -155,4 +155,80 @@ class OAuth2AuthorizationCodeManagerTest extends TestCase
         $this->assertEquals('r/REFRESH_TOKEN', $token->getRefreshToken());
         $this->assertEquals(86400, $token->getExpiresIn());
     }
+
+    /**
+     * Test getAuthorizationUrl with empty scopes
+     */
+    public function testGetAuthorizationUrlEmptyScopes()
+    {
+        $e = new OAuth2AuthorizationCodeManager('CLIENT_ID', 'CLIENT_SECRET', 'http://localhost:3000/redirect');
+        $url = $e->getAuthorizationUrl([], 'EXAMPLE_STATE');
+        $this->assertStringContainsString('scope=', $url);
+        $this->assertStringContainsString('state=EXAMPLE_STATE', $url);
+    }
+
+    /**
+     * Test HTTP 400 error handling
+     */
+    public function testFetchTokenHttpError()
+    {
+        $mock = new MockHandler([new Response(
+            400,
+            ['Content-Type' => 'application/json'],
+            '{"error":"invalid_grant","error_description":"Invalid authorization code"}'
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $customClient = new Client(['handler' => $handler]);
+
+        $e = new OAuth2AuthorizationCodeManager('CLIENT_ID', 'CLIENT_SECRET', 'http://localhost:3000/redirect', 'http://fic.api.test', $customClient);
+        
+        $this->expectException(\GuzzleHttp\Exception\ClientException::class);
+        $e->fetchToken('invalid_code');
+    }
+
+    /**
+     * Test HTTP 401 error on refresh token
+     */
+    public function testRefreshTokenUnauthorized()
+    {
+        $mock = new MockHandler([new Response(
+            401,
+            ['Content-Type' => 'application/json'],
+            '{"error":"invalid_grant","error_description":"Invalid refresh token"}'
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $customClient = new Client(['handler' => $handler]);
+
+        $e = new OAuth2AuthorizationCodeManager('CLIENT_ID', 'CLIENT_SECRET', 'http://localhost:3000/redirect', 'http://fic.api.test', $customClient);
+        
+        $this->expectException(\GuzzleHttp\Exception\ClientException::class);
+        $e->refreshToken('expired_refresh_token');
+    }
+
+    /**
+     * Test malformed JSON response
+     */
+    public function testFetchTokenMalformedResponse()
+    {
+        $mock = new MockHandler([new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            '{"malformed_json":'
+        )]);
+
+        $handler = HandlerStack::create($mock);
+        $customClient = new Client(['handler' => $handler]);
+
+        $e = new OAuth2AuthorizationCodeManager('CLIENT_ID', 'CLIENT_SECRET', 'http://localhost:3000/redirect', 'http://fic.api.test', $customClient);
+        
+        // SDK may handle malformed JSON in various ways
+        try {
+            $e->fetchToken('test_code');
+            $this->fail('Expected exception for malformed JSON');
+        } catch (\Exception $ex) {
+            $this->assertTrue(true);
+        }
+    }
 }

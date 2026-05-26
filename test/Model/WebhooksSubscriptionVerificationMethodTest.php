@@ -86,6 +86,6 @@ class WebhooksSubscriptionVerificationMethodTest extends TestCase
      */
     public function testWebhooksSubscriptionVerificationMethod()
     {
-        TestCase::assertEquals($this->object['verification_method'], $this->array['verification_method']);
+        $this->assertEquals($this->array['verification_method'], $this->object->getVerificationMethod());
     }
 }

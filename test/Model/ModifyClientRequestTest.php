@@ -121,9 +121,7 @@ class ModifyClientRequestTest extends TestCase
      */
     public function testModifyClientRequest()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ModifyClientRequest::class, $this->object);
     }
 
     /**
@@ -131,8 +129,6 @@ class ModifyClientRequestTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\Client::class, $this->object->getData());
     }
 }

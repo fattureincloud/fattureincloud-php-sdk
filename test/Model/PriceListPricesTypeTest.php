@@ -87,6 +87,6 @@ class PriceListPricesTypeTest extends TestCase
      */
     public function testPriceListPricesType()
     {
-        Testcase::assertEquals($this->array['prices_type'], $this->object['prices_type']);
+        $this->assertEquals($this->array['prices_type'], $this->object->getPricesType());
     }
 }

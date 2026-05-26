@@ -108,9 +108,7 @@ class SupplierTest extends TestCase
      */
     public function testSupplier()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\Supplier::class, $this->object);
     }
 
     /**
@@ -118,7 +116,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -126,7 +124,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyCode()
     {
-        TestCase::assertEquals($this->object['code'], $this->array['code']);
+        $this->assertEquals($this->array['code'], $this->object->getCode());
     }
 
     /**
@@ -134,7 +132,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyName()
     {
-        TestCase::assertEquals($this->object['name'], $this->array['name']);
+        $this->assertEquals($this->array['name'], $this->object->getName());
     }
 
     /**
@@ -142,7 +140,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyType()
     {
-        TestCase::assertEquals($this->object['type'], $this->array['type']);
+        $this->assertEquals($this->array['type'], $this->object->getType());
     }
 
     /**
@@ -150,7 +148,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyFirstName()
     {
-        TestCase::assertEquals($this->object['first_name'], $this->array['first_name']);
+        $this->assertEquals($this->array['first_name'], $this->object->getFirstName());
     }
 
     /**
@@ -158,7 +156,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyLastName()
     {
-        TestCase::assertEquals($this->object['last_name'], $this->array['last_name']);
+        $this->assertEquals($this->array['last_name'], $this->object->getLastName());
     }
 
     /**
@@ -166,7 +164,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyContactPerson()
     {
-        TestCase::assertEquals($this->object['contact_person'], $this->array['contact_person']);
+        $this->assertEquals($this->array['contact_person'], $this->object->getContactPerson());
     }
 
     /**
@@ -174,7 +172,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyVatNumber()
     {
-        TestCase::assertEquals($this->object['vat_number'], $this->array['vat_number']);
+        $this->assertEquals($this->array['vat_number'], $this->object->getVatNumber());
     }
 
     /**
@@ -182,7 +180,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyTaxCode()
     {
-        TestCase::assertEquals($this->object['tax_code'], $this->array['tax_code']);
+        $this->assertEquals($this->array['tax_code'], $this->object->getTaxCode());
     }
 
     /**
@@ -190,7 +188,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyAddressStreet()
     {
-        TestCase::assertEquals($this->object['address_street'], $this->array['address_street']);
+        $this->assertEquals($this->array['address_street'], $this->object->getAddressStreet());
     }
 
     /**
@@ -198,7 +196,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyAddressPostalCode()
     {
-        TestCase::assertEquals($this->object['address_postal_code'], $this->array['address_postal_code']);
+        $this->assertEquals($this->array['address_postal_code'], $this->object->getAddressPostalCode());
     }
 
     /**
@@ -206,7 +204,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyAddressCity()
     {
-        TestCase::assertEquals($this->object['address_city'], $this->array['address_city']);
+        $this->assertEquals($this->array['address_city'], $this->object->getAddressCity());
     }
 
     /**
@@ -214,7 +212,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyAddressProvince()
     {
-        TestCase::assertEquals($this->object['address_province'], $this->array['address_province']);
+        $this->assertEquals($this->array['address_province'], $this->object->getAddressProvince());
     }
 
     /**
@@ -222,7 +220,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyAddressExtra()
     {
-        TestCase::assertEquals($this->object['address_extra'], $this->array['address_extra']);
+        $this->assertEquals($this->array['address_extra'], $this->object->getAddressExtra());
     }
 
     /**
@@ -230,7 +228,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyCountry()
     {
-        TestCase::assertEquals($this->object['country'], $this->array['country']);
+        $this->assertEquals($this->array['country'], $this->object->getCountry());
     }
 
     /**
@@ -238,7 +236,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyEmail()
     {
-        TestCase::assertEquals($this->object['email'], $this->array['email']);
+        $this->assertEquals($this->array['email'], $this->object->getEmail());
     }
 
     /**
@@ -246,7 +244,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyCertifiedEmail()
     {
-        TestCase::assertEquals($this->object['certified_email'], $this->array['certified_email']);
+        $this->assertEquals($this->array['certified_email'], $this->object->getCertifiedEmail());
     }
 
     /**
@@ -254,7 +252,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyPhone()
     {
-        TestCase::assertEquals($this->object['phone'], $this->array['phone']);
+        $this->assertEquals($this->array['phone'], $this->object->getPhone());
     }
 
     /**
@@ -262,7 +260,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyFax()
     {
-        TestCase::assertEquals($this->object['fax'], $this->array['fax']);
+        $this->assertEquals($this->array['fax'], $this->object->getFax());
     }
 
     /**
@@ -270,7 +268,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyNotes()
     {
-        TestCase::assertEquals($this->object['notes'], $this->array['notes']);
+        $this->assertEquals($this->array['notes'], $this->object->getNotes());
     }
 
     /**
@@ -278,7 +276,7 @@ class SupplierTest extends TestCase
      */
     public function testPropertyCreatedAt()
     {
-        TestCase::assertEquals($this->object['created_at'], $this->array['created_at']);
+        $this->assertEquals($this->array['created_at'], $this->object->getCreatedAt());
     }
 
     /**
@@ -286,6 +284,6 @@ class SupplierTest extends TestCase
      */
     public function testPropertyUpdatedAt()
     {
-        TestCase::assertEquals($this->object['updated_at'], $this->array['updated_at']);
+        $this->assertEquals($this->array['updated_at'], $this->object->getUpdatedAt());
     }
 }

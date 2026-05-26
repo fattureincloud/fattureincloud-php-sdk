@@ -111,9 +111,7 @@ class ProductTest extends TestCase
      */
     public function testProduct()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\Product::class, $this->object);
     }
 
     /**
@@ -121,7 +119,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -129,7 +127,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyName()
     {
-        TestCase::assertEquals($this->object['name'], $this->array['name']);
+        $this->assertEquals($this->array['name'], $this->object->getName());
     }
 
     /**
@@ -137,7 +135,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyCode()
     {
-        TestCase::assertEquals($this->object['code'], $this->array['code']);
+        $this->assertEquals($this->array['code'], $this->object->getCode());
     }
 
     /**
@@ -145,7 +143,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyNetPrice()
     {
-        TestCase::assertEquals($this->object['net_price'], $this->array['net_price']);
+        $this->assertEquals($this->array['net_price'], $this->object->getNetPrice());
     }
 
     /**
@@ -153,7 +151,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyGrossPrice()
     {
-        TestCase::assertEquals($this->object['gross_price'], $this->array['gross_price']);
+        $this->assertEquals($this->array['gross_price'], $this->object->getGrossPrice());
     }
 
     /**
@@ -161,7 +159,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyUseGrossPrice()
     {
-        TestCase::assertEquals($this->object['use_gross_price'], $this->array['use_gross_price']);
+        $this->assertEquals($this->array['use_gross_price'], $this->object->getUseGrossPrice());
     }
 
     /**
@@ -169,9 +167,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyDefaultVat()
     {
-        foreach ($this->array['default_vat'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['default_vat']);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\VatType::class, $this->object->getDefaultVat());
     }
 
     /**
@@ -179,7 +175,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyNetCost()
     {
-        TestCase::assertEquals($this->object['net_cost'], $this->array['net_cost']);
+        $this->assertEquals($this->array['net_cost'], $this->object->getNetCost());
     }
 
     /**
@@ -187,7 +183,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyMeasure()
     {
-        TestCase::assertEquals($this->object['measure'], $this->array['measure']);
+        $this->assertEquals($this->array['measure'], $this->object->getMeasure());
     }
 
     /**
@@ -195,7 +191,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyDescription()
     {
-        TestCase::assertEquals($this->object['description'], $this->array['description']);
+        $this->assertEquals($this->array['description'], $this->object->getDescription());
     }
 
     /**
@@ -203,7 +199,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyCategory()
     {
-        TestCase::assertEquals($this->object['category'], $this->array['category']);
+        $this->assertEquals($this->array['category'], $this->object->getCategory());
     }
 
     /**
@@ -211,7 +207,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyNotes()
     {
-        TestCase::assertEquals($this->object['notes'], $this->array['notes']);
+        $this->assertEquals($this->array['notes'], $this->object->getNotes());
     }
 
     /**
@@ -219,7 +215,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyInStock()
     {
-        TestCase::assertEquals($this->object['in_stock'], $this->array['in_stock']);
+        $this->assertEquals($this->array['in_stock'], $this->object->getInStock());
     }
 
     /**
@@ -227,7 +223,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyStockInitial()
     {
-        TestCase::assertEquals($this->object['stock_initial'], $this->array['stock_initial']);
+        $this->assertEquals($this->array['stock_initial'], $this->object->getStockInitial());
     }
 
     /**
@@ -235,7 +231,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyStockCurrent()
     {
-        TestCase::assertEquals($this->object['stock_current'], $this->array['stock_current']);
+        $this->assertEquals($this->array['stock_current'], $this->object->getStockCurrent());
     }
 
     /**
@@ -243,7 +239,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyAverageCost()
     {
-        TestCase::assertEquals($this->object['average_cost'], $this->array['average_cost']);
+        $this->assertEquals($this->array['average_cost'], $this->object->getAverageCost());
     }
 
     /**
@@ -251,7 +247,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyAveragePrice()
     {
-        TestCase::assertEquals($this->object['average_price'], $this->array['average_price']);
+        $this->assertEquals($this->array['average_price'], $this->object->getAveragePrice());
     }
 
     /**
@@ -259,7 +255,7 @@ class ProductTest extends TestCase
      */
     public function testPropertyCreatedAt()
     {
-        TestCase::assertEquals($this->object['created_at'], $this->array['created_at']);
+        $this->assertEquals($this->array['created_at'], $this->object->getCreatedAt());
     }
 
     /**
@@ -267,6 +263,234 @@ class ProductTest extends TestCase
      */
     public function testPropertyUpdatedAt()
     {
-        TestCase::assertEquals($this->object['updated_at'], $this->array['updated_at']);
+        $this->assertEquals($this->array['updated_at'], $this->object->getUpdatedAt());
+    }
+
+    /**
+     * Test setter for "id"
+     */
+    public function testSetId()
+    {
+        $object = new \FattureInCloud\Model\Product();
+        $testValue = 12345;
+        
+        $object->setId($testValue);
+        $this->assertEquals($testValue, $object->getId());
+    }
+
+    /**
+     * Test setter for "name"
+     */
+    public function testSetName()
+    {
+        $object = new \FattureInCloud\Model\Product();
+        $testValue = 'Test Product';
+        
+        $object->setName($testValue);
+        $this->assertEquals($testValue, $object->getName());
+    }
+
+    /**
+     * Test setter for "code"
+     */
+    public function testSetCode()
+    {
+        $object = new \FattureInCloud\Model\Product();
+        $testValue = 'PROD-001';
+        
+        $object->setCode($testValue);
+        $this->assertEquals($testValue, $object->getCode());
+    }
+
+    /**
+     * Test setter for "net_price"
+     */
+    public function testSetNetPrice()
+    {
+        $object = new \FattureInCloud\Model\Product();
+        $testValue = 100.50;
+        
+        $object->setNetPrice($testValue);
+        $this->assertEquals($testValue, $object->getNetPrice());
+    }
+
+    /**
+     * Test setter for "gross_price"
+     */
+    public function testSetGrossPrice()
+    {
+        $object = new \FattureInCloud\Model\Product();
+        $testValue = 122.61;
+        
+        $object->setGrossPrice($testValue);
+        $this->assertEquals($testValue, $object->getGrossPrice());
+    }
+
+    /**
+     * Test setter for "use_gross_price"
+     */
+    public function testSetUseGrossPrice()
+    {
+        $object = new \FattureInCloud\Model\Product();
+        $testValue = true;
+        
+        $object->setUseGrossPrice($testValue);
+        $this->assertEquals($testValue, $object->getUseGrossPrice());
+    }
+
+    /**
+     * Test setter for "default_vat"
+     */
+    public function testSetDefaultVat()
+    {
+        $object = new \FattureInCloud\Model\Product();
+        $testValue = ['id' => 1, 'value' => 22];
+        
+        $object->setDefaultVat($testValue);
+        $this->assertEquals($testValue, $object->getDefaultVat());
+    }
+
+    /**
+     * Test setter for "net_cost"
+     */
+    public function testSetNetCost()
+    {
+        $object = new \FattureInCloud\Model\Product();
+        $testValue = 80.25;
+        
+        $object->setNetCost($testValue);
+        $this->assertEquals($testValue, $object->getNetCost());
+    }
+
+    /**
+     * Test setter for "measure"
+     */
+    public function testSetMeasure()
+    {
+        $object = new \FattureInCloud\Model\Product();
+        $testValue = 'pz';
+        
+        $object->setMeasure($testValue);
+        $this->assertEquals($testValue, $object->getMeasure());
+    }
+
+    /**
+     * Test setter for "description"
+     */
+    public function testSetDescription()
+    {
+        $object = new \FattureInCloud\Model\Product();
+        $testValue = 'Test product description';
+        
+        $object->setDescription($testValue);
+        $this->assertEquals($testValue, $object->getDescription());
+    }
+
+    /**
+     * Test setter for "category"
+     */
+    public function testSetCategory()
+    {
+        $object = new \FattureInCloud\Model\Product();
+        $testValue = 'Electronics';
+        
+        $object->setCategory($testValue);
+        $this->assertEquals($testValue, $object->getCategory());
+    }
+
+    /**
+     * Test setter for "notes"
+     */
+    public function testSetNotes()
+    {
+        $object = new \FattureInCloud\Model\Product();
+        $testValue = 'Test product notes';
+        
+        $object->setNotes($testValue);
+        $this->assertEquals($testValue, $object->getNotes());
+    }
+
+    /**
+     * Test setter for "in_stock"
+     */
+    public function testSetInStock()
+    {
+        $object = new \FattureInCloud\Model\Product();
+        $testValue = true;
+        
+        $object->setInStock($testValue);
+        $this->assertEquals($testValue, $object->getInStock());
+    }
+
+    /**
+     * Test setter for "stock_initial"
+     */
+    public function testSetStockInitial()
+    {
+        $object = new \FattureInCloud\Model\Product();
+        $testValue = 100;
+        
+        $object->setStockInitial($testValue);
+        $this->assertEquals($testValue, $object->getStockInitial());
+    }
+
+    /**
+     * Test setter for "stock_current"
+     */
+    public function testSetStockCurrent()
+    {
+        $object = new \FattureInCloud\Model\Product();
+        $testValue = 75;
+        
+        $object->setStockCurrent($testValue);
+        $this->assertEquals($testValue, $object->getStockCurrent());
+    }
+
+    /**
+     * Test setter for "average_cost"
+     */
+    public function testSetAverageCost()
+    {
+        $object = new \FattureInCloud\Model\Product();
+        $testValue = 85.30;
+        
+        $object->setAverageCost($testValue);
+        $this->assertEquals($testValue, $object->getAverageCost());
+    }
+
+    /**
+     * Test setter for "average_price"
+     */
+    public function testSetAveragePrice()
+    {
+        $object = new \FattureInCloud\Model\Product();
+        $testValue = 110.75;
+        
+        $object->setAveragePrice($testValue);
+        $this->assertEquals($testValue, $object->getAveragePrice());
+    }
+
+    /**
+     * Test setter for "created_at"
+     */
+    public function testSetCreatedAt()
+    {
+        $object = new \FattureInCloud\Model\Product();
+        $testValue = '2024-04-17';
+        
+        $object->setCreatedAt($testValue);
+        $this->assertEquals($testValue, $object->getCreatedAt());
+    }
+
+    /**
+     * Test setter for "updated_at"
+     */
+    public function testSetUpdatedAt()
+    {
+        $object = new \FattureInCloud\Model\Product();
+        $testValue = '2024-04-17';
+        
+        $object->setUpdatedAt($testValue);
+        $this->assertEquals($testValue, $object->getUpdatedAt());
     }
 }

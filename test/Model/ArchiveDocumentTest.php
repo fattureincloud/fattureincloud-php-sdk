@@ -93,9 +93,7 @@ class ArchiveDocumentTest extends TestCase
      */
     public function testArchiveDocument()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\ArchiveDocument', $this->object);
     }
 
     /**
@@ -103,7 +101,7 @@ class ArchiveDocumentTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -111,8 +109,12 @@ class ArchiveDocumentTest extends TestCase
      */
     public function testPropertyDate()
     {
-        $date = new \DateTime($this->array['date']);
-        TestCase::assertEquals($this->object['date'], $date);
+        $dateValue = $this->object->getDate();
+        if ($dateValue instanceof \DateTime) {
+            $this->assertEquals($this->array['date'], $dateValue->format('Y-m-d'));
+        } else {
+            $this->assertEquals($this->array['date'], $dateValue);
+        }
     }
 
     /**
@@ -120,7 +122,7 @@ class ArchiveDocumentTest extends TestCase
      */
     public function testPropertyDescription()
     {
-        TestCase::assertEquals($this->object['description'], $this->array['description']);
+        $this->assertEquals($this->array['description'], $this->object->getDescription());
     }
 
     /**
@@ -128,7 +130,7 @@ class ArchiveDocumentTest extends TestCase
      */
     public function testPropertyAttachmentUrl()
     {
-        TestCase::assertEquals($this->object['attachment_url'], $this->array['attachment_url']);
+        $this->assertEquals($this->array['attachment_url'], $this->object->getAttachmentUrl());
     }
 
     /**
@@ -136,7 +138,7 @@ class ArchiveDocumentTest extends TestCase
      */
     public function testPropertyCategory()
     {
-        TestCase::assertEquals($this->object['category'], $this->array['category']);
+        $this->assertEquals($this->array['category'], $this->object->getCategory());
     }
 
     /**
@@ -144,6 +146,78 @@ class ArchiveDocumentTest extends TestCase
      */
     public function testPropertyAttachmentToken()
     {
-        TestCase::assertEquals($this->object['attachment_token'], $this->array['attachment_token']);
+        $this->assertEquals($this->array['attachment_token'], $this->object->getAttachmentToken());
+    }
+
+    /**
+     * Test setter for "id"
+     */
+    public function testSetId()
+    {
+        $document = new \FattureInCloud\Model\ArchiveDocument();
+        $testValue = 54321;
+        
+        $document->setId($testValue);
+        $this->assertEquals($testValue, $document->getId());
+    }
+
+    /**
+     * Test setter for "date"
+     */
+    public function testSetDate()
+    {
+        $document = new \FattureInCloud\Model\ArchiveDocument();
+        $testValue = '2024-04-17';
+        
+        $document->setDate($testValue);
+        $this->assertEquals($testValue, $document->getDate());
+    }
+
+    /**
+     * Test setter for "description"
+     */
+    public function testSetDescription()
+    {
+        $document = new \FattureInCloud\Model\ArchiveDocument();
+        $testValue = 'Test description for archive document';
+        
+        $document->setDescription($testValue);
+        $this->assertEquals($testValue, $document->getDescription());
+    }
+
+    /**
+     * Test setter for "attachment_url"
+     */
+    public function testSetAttachmentUrl()
+    {
+        $document = new \FattureInCloud\Model\ArchiveDocument();
+        $testValue = 'https://example.com/test-document.pdf';
+        
+        $document->setAttachmentUrl($testValue);
+        $this->assertEquals($testValue, $document->getAttachmentUrl());
+    }
+
+    /**
+     * Test setter for "category"
+     */
+    public function testSetCategory()
+    {
+        $document = new \FattureInCloud\Model\ArchiveDocument();
+        $testValue = 'Test Category';
+        
+        $document->setCategory($testValue);
+        $this->assertEquals($testValue, $document->getCategory());
+    }
+
+    /**
+     * Test setter for "attachment_token"
+     */
+    public function testSetAttachmentToken()
+    {
+        $document = new \FattureInCloud\Model\ArchiveDocument();
+        $testValue = 'test_token_123456789abcdef';
+        
+        $document->setAttachmentToken($testValue);
+        $this->assertEquals($testValue, $document->getAttachmentToken());
     }
 }

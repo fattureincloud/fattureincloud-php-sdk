@@ -59,13 +59,6 @@ class EmailRecipientStatusTest extends TestCase
      */
     public function setUp(): void
     {
-        $json = '{  
-            "recipient_status": "document_opened"
-        }';
-
-        $this->array = json_decode($json, true);
-
-        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\Email');
     }
 
     /**
@@ -83,10 +76,23 @@ class EmailRecipientStatusTest extends TestCase
     }
 
     /**
-     * Test "EmailRecipientStatus"
+     * Test EmailRecipientStatus enum values
      */
-    public function testEmailRecipientStatus()
+    public function testEmailRecipientStatusValues()
     {
-        TestCase::assertEquals($this->object['recipient_status'], $this->array['recipient_status']);
+        $allowableValues = \FattureInCloud\Model\EmailRecipientStatus::getAllowableEnumValues();
+        $this->assertContains('unknown', $allowableValues);
+        $this->assertContains('document_opened', $allowableValues);
+        $this->assertContains('email_opened', $allowableValues);
+    }
+
+    /**
+     * Test EmailRecipientStatus constants
+     */
+    public function testEmailRecipientStatusConstants()
+    {
+        $this->assertEquals('unknown', \FattureInCloud\Model\EmailRecipientStatus::UNKNOWN);
+        $this->assertEquals('document_opened', \FattureInCloud\Model\EmailRecipientStatus::DOCUMENT_OPENED);
+        $this->assertEquals('email_opened', \FattureInCloud\Model\EmailRecipientStatus::EMAIL_OPENED);
     }
 }

@@ -106,9 +106,8 @@ class CreateProductResponseTest extends TestCase
      */
     public function testCreateProductResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CreateProductResponse', $this->object);
+        $this->assertNotNull($this->object->getData());
     }
 
     /**
@@ -116,8 +115,24 @@ class CreateProductResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $data = $this->object->getData();
+        $this->assertInstanceOf('\FattureInCloud\Model\Product', $data);
+        $this->assertEquals(12345, $data->getId());
+        $this->assertEquals("Tavolo di marmo", $data->getName());
+        $this->assertEquals("TAVOLO003", $data->getCode());
+        $this->assertEquals(240, $data->getNetPrice());
+        $this->assertEquals(280, $data->getGrossPrice());
+    }
+
+    /**
+     * Test setter for "data"
+     */
+    public function testSetData()
+    {
+        $object = new \FattureInCloud\Model\CreateProductResponse();
+        $testValue = new \FattureInCloud\Model\Product();
+        
+        $object->setData($testValue);
+        $this->assertEquals($testValue, $object->getData());
     }
 }

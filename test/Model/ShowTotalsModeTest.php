@@ -87,6 +87,6 @@ class ShowTotalsModeTest extends TestCase
      */
     public function testShowTotalsMode()
     {
-        TestCase::assertEquals($this->object['show_totals'], $this->array['show_totals']);
+        $this->assertEquals($this->array['show_totals'], $this->object->getShowTotals());
     }
 }

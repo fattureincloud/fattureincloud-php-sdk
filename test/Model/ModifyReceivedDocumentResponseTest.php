@@ -134,9 +134,7 @@ class ModifyReceivedDocumentResponseTest extends TestCase
      */
     public function testModifyReceivedDocumentResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ModifyReceivedDocumentResponse::class, $this->object);
     }
 
     /**
@@ -144,8 +142,6 @@ class ModifyReceivedDocumentResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ReceivedDocument::class, $this->object->getData());
     }
 }

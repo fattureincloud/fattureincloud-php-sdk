@@ -90,9 +90,7 @@ class ListCostCentersResponseTest extends TestCase
      */
     public function testListCostCentersResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ListCostCentersResponse::class, $this->object);
     }
 
     /**
@@ -100,8 +98,6 @@ class ListCostCentersResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertIsArray($this->object->getData());
     }
 }

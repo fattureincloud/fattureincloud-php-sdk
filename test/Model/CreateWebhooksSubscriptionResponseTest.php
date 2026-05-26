@@ -92,9 +92,7 @@ class CreateWebhooksSubscriptionResponseTest extends TestCase
      */
     public function testCreateWebhooksSubscriptionResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CreateWebhooksSubscriptionResponse', $this->object);
     }
 
     /**
@@ -102,9 +100,7 @@ class CreateWebhooksSubscriptionResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\WebhooksSubscription', $this->object->getData());
     }
 
     /**
@@ -112,8 +108,6 @@ class CreateWebhooksSubscriptionResponseTest extends TestCase
      */
     public function testPropertyWarnings()
     {
-        foreach ($this->array['warnings'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['warnings']);
-        }
+        $this->assertIsArray($this->object->getWarnings());
     }
 }

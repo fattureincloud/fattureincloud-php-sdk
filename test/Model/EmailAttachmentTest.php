@@ -88,9 +88,7 @@ class EmailAttachmentTest extends TestCase
      */
     public function testEmailAttachment()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\EmailAttachment', $this->object);
     }
 
     /**
@@ -98,7 +96,7 @@ class EmailAttachmentTest extends TestCase
      */
     public function testPropertyFilename()
     {
-        TestCase::assertEquals($this->object['filename'], $this->array['filename']);
+        $this->assertEquals("nomone", $this->object->getFilename());
     }
 
     /**
@@ -106,6 +104,26 @@ class EmailAttachmentTest extends TestCase
      */
     public function testPropertyUrl()
     {
-        TestCase::assertEquals($this->object['url'], $this->array['url']);
+        $this->assertEquals("www.af.com", $this->object->getUrl());
+    }
+
+    /**
+     * Test setter for "filename"
+     */
+    public function testSetFilename()
+    {
+        $testValue = 'test_filename.pdf';
+        $this->object->setFilename($testValue);
+        $this->assertEquals($testValue, $this->object->getFilename());
+    }
+
+    /**
+     * Test setter for "url"
+     */
+    public function testSetUrl()
+    {
+        $testValue = 'https://example.com/file.pdf';
+        $this->object->setUrl($testValue);
+        $this->assertEquals($testValue, $this->object->getUrl());
     }
 }

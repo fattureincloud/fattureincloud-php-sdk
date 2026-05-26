@@ -96,8 +96,7 @@ class CreateReceivedDocumentRequestTest extends TestCase
                     "paid_date": "2021-08-15",
                     "id": 777,
                     "payment_terms": {
-                      "days": 0,
-                      "type": "standard"
+                      "days": 0
                     },
                     "status": "paid",
                     "payment_account": {
@@ -112,7 +111,7 @@ class CreateReceivedDocumentRequestTest extends TestCase
         }';
 
         $this->array = json_decode($json, true);
-
+        
         $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CreateReceivedDocumentRequest');
     }
 
@@ -135,17 +134,9 @@ class CreateReceivedDocumentRequestTest extends TestCase
      */
     public function testCreateReceivedDocumentRequest()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
-    }
-
-    /**
-     * Test attribute "pending_id"
-     */
-    public function testPropertyPendingId()
-    {
-        Testcase::assertEquals($this->array['pending_id'], $this->object['pending_id']);
+        $this->assertInstanceOf('\FattureInCloud\Model\CreateReceivedDocumentRequest', $this->object);
+        $this->assertNotNull($this->object->getData());
+        $this->assertEquals(5, $this->object->getPendingId());
     }
 
     /**
@@ -153,8 +144,26 @@ class CreateReceivedDocumentRequestTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $data = $this->object->getData();
+        $this->assertInstanceOf('\FattureInCloud\Model\ReceivedDocument', $data);
+        $this->assertEquals(12345, $data->getId());
+        $this->assertEquals("expense", $data->getType());
+        $this->assertEquals("Soggiorno di lavoro", $data->getDescription());
+        
+        // Test date as DateTime object
+        $this->assertInstanceOf('\DateTime', $data->getDate());
+        $this->assertEquals("2021-08-15", $data->getDate()->format('Y-m-d'));
+        
+        $this->assertEquals(592, $data->getAmountNet());
+        $this->assertEquals(0, $data->getAmountVat());
+        $this->assertEquals(592, $data->getAmountGross());
+    }
+
+    /**
+     * Test attribute "pending_id"
+     */
+    public function testPropertyPendingId()
+    {
+        $this->assertEquals(5, $this->object->getPendingId());
     }
 }

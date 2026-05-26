@@ -68,7 +68,7 @@ class GetCashbookEntryResponseTest extends TestCase
 
         $this->array = json_decode($json, true);
 
-        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CreateArchiveDocumentRequest');
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\GetCashbookEntryResponse');
     }
 
     /**
@@ -90,9 +90,7 @@ class GetCashbookEntryResponseTest extends TestCase
      */
     public function testGetCashbookEntryResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\GetCashbookEntryResponse', $this->object);
     }
 
     /**
@@ -100,8 +98,6 @@ class GetCashbookEntryResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CashbookEntry', $this->object->getData());
     }
 }

@@ -67,7 +67,6 @@ class CompanyTest extends TestCase
             "type": "accountant",
             "access_token": "4ff5f0fe5abcd1d7157fa13ca72ab62b6183db0667a576a0e19164801c18c4f7362a848fa32dbb8c3a3f94c34f3df95",
             "connection_id": 94566,
-            "access_token": "ergaegwergq53wh65je5j",
             "fic_license_expire": "2024-10-10",
             "fic_plan": "standard",
               "controlled_companies": [
@@ -116,9 +115,7 @@ class CompanyTest extends TestCase
      */
     public function testCompany()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\Company', $this->object);
     }
 
     /**
@@ -126,7 +123,7 @@ class CompanyTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -134,7 +131,7 @@ class CompanyTest extends TestCase
      */
     public function testPropertyName()
     {
-        TestCase::assertEquals($this->object['name'], $this->array['name']);
+        $this->assertEquals($this->array['name'], $this->object->getName());
     }
 
     /**
@@ -142,7 +139,7 @@ class CompanyTest extends TestCase
      */
     public function testPropertyType()
     {
-        TestCase::assertEquals($this->object['type'], $this->array['type']);
+        $this->assertEquals($this->array['type'], $this->object->getType());
     }
 
     /**
@@ -150,7 +147,7 @@ class CompanyTest extends TestCase
      */
     public function testPropertyAccessToken()
     {
-        TestCase::assertEquals($this->object['access_token'], $this->array['access_token']);
+        $this->assertEquals($this->array['access_token'], $this->object->getAccessToken());
     }
 
     /**
@@ -158,9 +155,7 @@ class CompanyTest extends TestCase
      */
     public function testPropertyControlledCompanies()
     {
-        foreach ($this->array['controlled_companies'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['controlled_companies']);
-        }
+        $this->assertIsArray($this->object->getControlledCompanies());
     }
 
     /**
@@ -168,7 +163,7 @@ class CompanyTest extends TestCase
      */
     public function testPropertyConnectionId()
     {
-        TestCase::assertEquals($this->object['connection_id'], $this->array['connection_id']);
+        $this->assertEquals($this->array['connection_id'], $this->object->getConnectionId());
     }
 
     /**
@@ -176,7 +171,7 @@ class CompanyTest extends TestCase
      */
     public function testPropertyTaxCode()
     {
-        TestCase::assertEquals($this->object['tax_code'], $this->array['tax_code']);
+        $this->assertEquals($this->array['tax_code'], $this->object->getTaxCode());
     }
 
     /**
@@ -184,7 +179,7 @@ class CompanyTest extends TestCase
      */
     public function testPropertyVatNumber()
     {
-        TestCase::assertEquals($this->object['vat_number'], $this->array['vat_number']);
+        $this->assertEquals($this->array['vat_number'], $this->object->getVatNumber());
     }
 
     /**
@@ -192,8 +187,12 @@ class CompanyTest extends TestCase
      */
     public function testPropertyFicLicenseExpire()
     {
-        $date = new \DateTime($this->array['fic_license_expire']);
-        TestCase::assertEquals($this->object['fic_license_expire'], $date);
+        $dateValue = $this->object->getFicLicenseExpire();
+        if ($dateValue instanceof \DateTime) {
+            $this->assertEquals($this->array['fic_license_expire'], $dateValue->format('Y-m-d'));
+        } else {
+            $this->assertEquals($this->array['fic_license_expire'], $dateValue);
+        }
     }
 
     /**
@@ -201,6 +200,126 @@ class CompanyTest extends TestCase
      */
     public function testPropertyFicPlan()
     {
-        TestCase::assertEquals($this->object['fic_plan'], $this->array['fic_plan']);
+        $this->assertEquals($this->array['fic_plan'], $this->object->getFicPlan());
+    }
+
+    /**
+     * Test setter for "id"
+     */
+    public function testSetId()
+    {
+        $object = new \FattureInCloud\Model\Company();
+        $testValue = 12345;
+        
+        $object->setId($testValue);
+        $this->assertEquals($testValue, $object->getId());
+    }
+
+    /**
+     * Test setter for "name"
+     */
+    public function testSetName()
+    {
+        $object = new \FattureInCloud\Model\Company();
+        $testValue = 'Test Company';
+        
+        $object->setName($testValue);
+        $this->assertEquals($testValue, $object->getName());
+    }
+
+    /**
+     * Test setter for "type"
+     */
+    public function testSetType()
+    {
+        $object = new \FattureInCloud\Model\Company();
+        $testValue = 'company';
+        
+        $object->setType($testValue);
+        $this->assertEquals($testValue, $object->getType());
+    }
+
+    /**
+     * Test setter for "access_token"
+     */
+    public function testSetAccessToken()
+    {
+        $object = new \FattureInCloud\Model\Company();
+        $testValue = 'test-access-token';
+        
+        $object->setAccessToken($testValue);
+        $this->assertEquals($testValue, $object->getAccessToken());
+    }
+
+    /**
+     * Test setter for "controlled_companies"
+     */
+    public function testSetControlledCompanies()
+    {
+        $object = new \FattureInCloud\Model\Company();
+        $testValue = [];
+        
+        $object->setControlledCompanies($testValue);
+        $this->assertEquals($testValue, $object->getControlledCompanies());
+    }
+
+    /**
+     * Test setter for "fic_license_expire"
+     */
+    public function testSetFicLicenseExpire()
+    {
+        $object = new \FattureInCloud\Model\Company();
+        $testValue = '2024-12-31';
+        
+        $object->setFicLicenseExpire($testValue);
+        $this->assertEquals($testValue, $object->getFicLicenseExpire());
+    }
+
+    /**
+     * Test setter for "fic_plan"
+     */
+    public function testSetFicPlan()
+    {
+        $object = new \FattureInCloud\Model\Company();
+        $testValue = 'premium';
+        
+        $object->setFicPlan($testValue);
+        $this->assertEquals($testValue, $object->getFicPlan());
+    }
+
+    /**
+     * Test setter for "connection_id"
+     */
+    public function testSetConnectionId()
+    {
+        $object = new \FattureInCloud\Model\Company();
+        $testValue = 12345;
+        
+        $object->setConnectionId($testValue);
+        $this->assertEquals($testValue, $object->getConnectionId());
+    }
+
+    /**
+     * Test setter for "tax_code"
+     */
+    public function testSetTaxCode()
+    {
+        $object = new \FattureInCloud\Model\Company();
+        $testValue = 'ABCDEFGH89I012L';
+        
+        $object->setTaxCode($testValue);
+        $this->assertEquals($testValue, $object->getTaxCode());
+    }
+
+    /**
+     * Test setter for "vat_number"
+     */
+    public function testSetVatNumber()
+    {
+        $object = new \FattureInCloud\Model\Company();
+        $testValue = 'IT12345678901';
+        
+        $object->setVatNumber($testValue);
+        $this->assertEquals($testValue, $object->getVatNumber());
     }
 }

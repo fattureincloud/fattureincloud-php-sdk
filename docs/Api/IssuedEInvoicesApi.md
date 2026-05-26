@@ -2,13 +2,12 @@
 
 All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
+| Method                                                                               | HTTP request                                                                  | Description                    |
+| ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------- | ------------------------------ |
 | [**getEInvoiceRejectionReason()**](IssuedEInvoicesApi.md#getEInvoiceRejectionReason) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/error_reason | Get E-Invoice Rejection Reason |
-| [**getEInvoiceXml()**](IssuedEInvoicesApi.md#getEInvoiceXml) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml | Get E-Invoice XML |
-| [**sendEInvoice()**](IssuedEInvoicesApi.md#sendEInvoice) | **POST** /c/{company_id}/issued_documents/{document_id}/e_invoice/send | Send E-Invoice |
-| [**verifyEInvoiceXml()**](IssuedEInvoicesApi.md#verifyEInvoiceXml) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml_verify | Verify E-Invoice XML |
-
+| [**getEInvoiceXml()**](IssuedEInvoicesApi.md#getEInvoiceXml)                         | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml          | Get E-Invoice XML              |
+| [**sendEInvoice()**](IssuedEInvoicesApi.md#sendEInvoice)                             | **POST** /c/{company_id}/issued_documents/{document_id}/e_invoice/send        | Send E-Invoice                 |
+| [**verifyEInvoiceXml()**](IssuedEInvoicesApi.md#verifyEInvoiceXml)                   | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml_verify   | Verify E-Invoice XML           |
 
 ## `getEInvoiceRejectionReason()`
 
@@ -30,7 +29,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\IssuedEInvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -50,10 +48,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **document_id** | **int**| The ID of the document. | |
+| Name            | Type    | Description             | Notes |
+| --------------- | ------- | ----------------------- | ----- |
+| **company_id**  | **int** | The ID of the company.  |       |
+| **document_id** | **int** | The ID of the document. |       |
 
 ### Return type
 
@@ -92,7 +90,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\IssuedEInvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -113,11 +110,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **document_id** | **int**| The ID of the document. | |
-| **include_attachment** | **bool**| Include the attachment to the XML e-invoice. | [optional] |
+| Name                   | Type     | Description                                  | Notes      |
+| ---------------------- | -------- | -------------------------------------------- | ---------- |
+| **company_id**         | **int**  | The ID of the company.                       |            |
+| **document_id**        | **int**  | The ID of the document.                      |            |
+| **include_attachment** | **bool** | Include the attachment to the XML e-invoice. | [optional] |
 
 ### Return type
 
@@ -130,7 +127,7 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `text/xml`
+- **Accept**: `text/xml`, `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -156,7 +153,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\IssuedEInvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -165,7 +161,7 @@ $apiInstance = new FattureInCloud\Api\IssuedEInvoicesApi(
 );
 $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
-$send_e_invoice_request = new \FattureInCloud\Model\SendEInvoiceRequest; // \FattureInCloud\Model\SendEInvoiceRequest | 
+$send_e_invoice_request = new \FattureInCloud\Model\SendEInvoiceRequest; // \FattureInCloud\Model\SendEInvoiceRequest |
 
 try {
     $result = $apiInstance->sendEInvoice($company_id, $document_id, $send_e_invoice_request);
@@ -177,11 +173,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **document_id** | **int**| The ID of the document. | |
-| **send_e_invoice_request** | [**\FattureInCloud\Model\SendEInvoiceRequest**](../Model/SendEInvoiceRequest.md)|  | [optional] |
+| Name                       | Type                                                                             | Description             | Notes      |
+| -------------------------- | -------------------------------------------------------------------------------- | ----------------------- | ---------- |
+| **company_id**             | **int**                                                                          | The ID of the company.  |            |
+| **document_id**            | **int**                                                                          | The ID of the document. |            |
+| **send_e_invoice_request** | [**\FattureInCloud\Model\SendEInvoiceRequest**](../Model/SendEInvoiceRequest.md) |                         | [optional] |
 
 ### Return type
 
@@ -220,7 +216,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\IssuedEInvoicesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -240,10 +235,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **document_id** | **int**| The ID of the document. | |
+| Name            | Type    | Description             | Notes |
+| --------------- | ------- | ----------------------- | ----- |
+| **company_id**  | **int** | The ID of the company.  |       |
+| **document_id** | **int** | The ID of the document. |       |
 
 ### Return type
 

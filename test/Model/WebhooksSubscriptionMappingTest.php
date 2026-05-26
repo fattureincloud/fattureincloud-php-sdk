@@ -80,6 +80,6 @@ class WebhooksSubscriptionMappingTest extends TestCase
      */
     public function testWebhooksSubscriptionMapping()
     {
-        TestCase::assertEquals('binary', $this->type);
+        $this->assertEquals('binary', $this->type);
     }
 }

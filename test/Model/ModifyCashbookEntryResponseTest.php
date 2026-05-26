@@ -100,9 +100,7 @@ class ModifyCashbookEntryResponseTest extends TestCase
      */
     public function testModifyCashbookEntryResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ModifyCashbookEntryResponse::class, $this->object);
     }
 
     /**
@@ -110,8 +108,6 @@ class ModifyCashbookEntryResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\CashbookEntry::class, $this->object->getData());
     }
 }

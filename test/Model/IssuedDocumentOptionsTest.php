@@ -87,9 +87,7 @@ class IssuedDocumentOptionsTest extends TestCase
      */
     public function testIssuedDocumentOptions()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\IssuedDocumentOptions', $this->object);
     }
 
     /**
@@ -97,6 +95,6 @@ class IssuedDocumentOptionsTest extends TestCase
      */
     public function testPropertyFixPayments()
     {
-        TestCase::assertEquals($this->object['fix_payments'], $this->array['fix_payments']);
+        $this->assertEquals($this->array['fix_payments'], $this->object->getFixPayments());
     }
 }

@@ -243,9 +243,7 @@ class TransformIssuedDocumentResponseTest extends TestCase
      */
     public function testTransformIssuedDocumentResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\TransformIssuedDocumentResponse::class, $this->object);
     }
 
     /**
@@ -253,9 +251,11 @@ class TransformIssuedDocumentResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $data = $this->object->getData();
+        $this->assertInstanceOf(\FattureInCloud\Model\IssuedDocument::class, $data);
+        $this->assertEquals($this->array['data']['id'], $data->getId());
+        $this->assertEquals($this->array['data']['type'], $data->getType());
+        $this->assertEquals($this->array['data']['year'], $data->getYear());
     }
 
     /**
@@ -263,8 +263,9 @@ class TransformIssuedDocumentResponseTest extends TestCase
      */
     public function testPropertyOptions()
     {
-        foreach ($this->array['options'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['options']);
-        }
+        $options = $this->object->getOptions();
+        $this->assertInstanceOf(\FattureInCloud\Model\IssuedDocumentOptions::class, $options);
+        $this->assertEquals($this->array['options']['transform'], $options->getTransform());
+        $this->assertEquals($this->array['options']['keep_copy'], $options->getKeepCopy());
     }
 }

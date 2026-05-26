@@ -2,14 +2,13 @@
 
 All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createProduct()**](ProductsApi.md#createProduct) | **POST** /c/{company_id}/products | Create Product |
+| Method                                              | HTTP request                                     | Description    |
+| --------------------------------------------------- | ------------------------------------------------ | -------------- |
+| [**createProduct()**](ProductsApi.md#createProduct) | **POST** /c/{company_id}/products                | Create Product |
 | [**deleteProduct()**](ProductsApi.md#deleteProduct) | **DELETE** /c/{company_id}/products/{product_id} | Delete Product |
-| [**getProduct()**](ProductsApi.md#getProduct) | **GET** /c/{company_id}/products/{product_id} | Get Product |
-| [**listProducts()**](ProductsApi.md#listProducts) | **GET** /c/{company_id}/products | List Products |
-| [**modifyProduct()**](ProductsApi.md#modifyProduct) | **PUT** /c/{company_id}/products/{product_id} | Modify Product |
-
+| [**getProduct()**](ProductsApi.md#getProduct)       | **GET** /c/{company_id}/products/{product_id}    | Get Product    |
+| [**listProducts()**](ProductsApi.md#listProducts)   | **GET** /c/{company_id}/products                 | List Products  |
+| [**modifyProduct()**](ProductsApi.md#modifyProduct) | **PUT** /c/{company_id}/products/{product_id}    | Modify Product |
 
 ## `createProduct()`
 
@@ -31,7 +30,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ProductsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -39,7 +37,7 @@ $apiInstance = new FattureInCloud\Api\ProductsApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$create_product_request = new \FattureInCloud\Model\CreateProductRequest; // \FattureInCloud\Model\CreateProductRequest | 
+$create_product_request = new \FattureInCloud\Model\CreateProductRequest; // \FattureInCloud\Model\CreateProductRequest |
 
 try {
     $result = $apiInstance->createProduct($company_id, $create_product_request);
@@ -51,10 +49,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **create_product_request** | [**\FattureInCloud\Model\CreateProductRequest**](../Model/CreateProductRequest.md)|  | [optional] |
+| Name                       | Type                                                                               | Description            | Notes      |
+| -------------------------- | ---------------------------------------------------------------------------------- | ---------------------- | ---------- |
+| **company_id**             | **int**                                                                            | The ID of the company. |            |
+| **create_product_request** | [**\FattureInCloud\Model\CreateProductRequest**](../Model/CreateProductRequest.md) |                        | [optional] |
 
 ### Return type
 
@@ -93,7 +91,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ProductsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -112,10 +109,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **product_id** | **int**| The ID of the product. | |
+| Name           | Type    | Description            | Notes |
+| -------------- | ------- | ---------------------- | ----- |
+| **company_id** | **int** | The ID of the company. |       |
+| **product_id** | **int** | The ID of the product. |       |
 
 ### Return type
 
@@ -128,7 +125,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -154,7 +151,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ProductsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -176,12 +172,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **product_id** | **int**| The ID of the product. | |
-| **fields** | **string**| List of comma-separated fields. | [optional] |
-| **fieldset** | **string**| Name of the fieldset. | [optional] |
+| Name           | Type       | Description                     | Notes      |
+| -------------- | ---------- | ------------------------------- | ---------- |
+| **company_id** | **int**    | The ID of the company.          |            |
+| **product_id** | **int**    | The ID of the product.          |            |
+| **fields**     | **string** | List of comma-separated fields. | [optional] |
+| **fieldset**   | **string** | Name of the fieldset.           | [optional] |
 
 ### Return type
 
@@ -220,7 +216,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ProductsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -245,15 +240,15 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **fields** | **string**| List of comma-separated fields. | [optional] |
-| **fieldset** | **string**| Name of the fieldset. | [optional] |
-| **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
-| **page** | **int**| The page to retrieve. | [optional] [default to 1] |
-| **per_page** | **int**| The size of the page. | [optional] [default to 5] |
-| **q** | **string**| Query for filtering the results. | [optional] |
+| Name           | Type       | Description                                                                 | Notes                     |
+| -------------- | ---------- | --------------------------------------------------------------------------- | ------------------------- |
+| **company_id** | **int**    | The ID of the company.                                                      |                           |
+| **fields**     | **string** | List of comma-separated fields.                                             | [optional]                |
+| **fieldset**   | **string** | Name of the fieldset.                                                       | [optional]                |
+| **sort**       | **string** | List of comma-separated fields for result sorting (minus for desc sorting). | [optional]                |
+| **page**       | **int**    | The page to retrieve.                                                       | [optional] [default to 1] |
+| **per_page**   | **int**    | The size of the page.                                                       | [optional] [default to 5] |
+| **q**          | **string** | Query for filtering the results.                                            | [optional]                |
 
 ### Return type
 
@@ -292,7 +287,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ProductsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -313,11 +307,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **product_id** | **int**| The ID of the product. | |
-| **modify_product_request** | [**\FattureInCloud\Model\ModifyProductRequest**](../Model/ModifyProductRequest.md)| Modified product details. | [optional] |
+| Name                       | Type                                                                               | Description               | Notes      |
+| -------------------------- | ---------------------------------------------------------------------------------- | ------------------------- | ---------- |
+| **company_id**             | **int**                                                                            | The ID of the company.    |            |
+| **product_id**             | **int**                                                                            | The ID of the product.    |            |
+| **modify_product_request** | [**\FattureInCloud\Model\ModifyProductRequest**](../Model/ModifyProductRequest.md) | Modified product details. | [optional] |
 
 ### Return type
 

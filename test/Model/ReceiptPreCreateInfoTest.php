@@ -142,9 +142,7 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function testReceiptPreCreateInfo()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ReceiptPreCreateInfo::class, $this->object);
     }
 
     /**
@@ -152,13 +150,11 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function testPropertyNumerations()
     {
-        /*
-        foreach ($this->array['numerations'] as $key => $value)
-        {
-           Testcase::assertArrayHasKey($key, $this->object['numerations']);
-        }
-        */
-        TestCase::assertEquals(1, 1);
+        // Compare JSON representations since the deserialized object contains stdClass objects
+        // while the array contains associative arrays
+        $expected = json_encode($this->array['numerations']);
+        $actual = json_encode($this->object->getNumerations());
+        $this->assertEquals($expected, $actual);
     }
 
     /**
@@ -166,9 +162,7 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function testPropertyNumerationsList()
     {
-        foreach ($this->array['numerations_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['numerations_list']);
-        }
+        $this->assertEquals($this->array['numerations_list'], $this->object->getNumerationsList());
     }
 
     /**
@@ -176,9 +170,7 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function testPropertyRcCentersList()
     {
-        foreach ($this->array['rc_centers_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['rc_centers_list']);
-        }
+        $this->assertEquals($this->array['rc_centers_list'], $this->object->getRcCentersList());
     }
 
     /**
@@ -186,8 +178,10 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function testPropertyPaymentAccountsList()
     {
-        foreach ($this->array['payment_accounts_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['payment_accounts_list']);
+        $paymentAccounts = $this->object->getPaymentAccountsList();
+        $this->assertIsArray($paymentAccounts);
+        foreach ($paymentAccounts as $account) {
+            $this->assertInstanceOf(\FattureInCloud\Model\PaymentAccount::class, $account);
         }
     }
 
@@ -196,9 +190,7 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function testPropertyCategoriesList()
     {
-        foreach ($this->array['categories_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['categories_list']);
-        }
+        $this->assertEquals($this->array['categories_list'], $this->object->getCategoriesList());
     }
 
     /**
@@ -206,8 +198,10 @@ class ReceiptPreCreateInfoTest extends TestCase
      */
     public function testPropertyVatTypesList()
     {
-        foreach ($this->array['vat_types_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['vat_types_list']);
+        $vatTypes = $this->object->getVatTypesList();
+        $this->assertIsArray($vatTypes);
+        foreach ($vatTypes as $vatType) {
+            $this->assertInstanceOf(\FattureInCloud\Model\VatType::class, $vatType);
         }
     }
 }

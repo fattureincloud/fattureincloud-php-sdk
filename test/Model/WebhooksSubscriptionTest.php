@@ -93,9 +93,10 @@ class WebhooksSubscriptionTest extends TestCase
      */
     public function testWebhooksSubscription()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(
+            \FattureInCloud\Model\WebhooksSubscription::class,
+            $this->object
+        );
     }
 
     /**
@@ -103,7 +104,7 @@ class WebhooksSubscriptionTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -111,7 +112,7 @@ class WebhooksSubscriptionTest extends TestCase
      */
     public function testPropertySink()
     {
-        TestCase::assertEquals($this->object['sink'], $this->array['sink']);
+        $this->assertEquals($this->array['sink'], $this->object->getSink());
     }
 
     /**
@@ -119,7 +120,7 @@ class WebhooksSubscriptionTest extends TestCase
      */
     public function testPropertyVerified()
     {
-        TestCase::assertEquals($this->object['verified'], $this->array['verified']);
+        $this->assertEquals($this->array['verified'], $this->object->getVerified());
     }
 
     /**
@@ -127,7 +128,7 @@ class WebhooksSubscriptionTest extends TestCase
      */
     public function testPropertyTypes()
     {
-        TestCase::assertEquals($this->object['types'], $this->array['types']);
+        $this->assertEquals($this->array['types'], $this->object->getTypes());
     }
 
     /**
@@ -135,8 +136,70 @@ class WebhooksSubscriptionTest extends TestCase
      */
     public function testPropertyConfig()
     {
-        foreach ($this->array['config'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['config']);
-        }
+        $configObject = $this->object->getConfig();
+        $this->assertInstanceOf(\FattureInCloud\Model\WebhooksSubscriptionConfig::class, $configObject);
+        
+        // Verify the config values match the setup data
+        $this->assertEquals($this->array['config']['mapping'], $configObject->getMapping());
+    }
+
+    /**
+     * Test setter for "id"
+     */
+    public function testSetId()
+    {
+        $object = new \FattureInCloud\Model\WebhooksSubscription();
+        $testValue = 'wh_12345';
+        
+        $object->setId($testValue);
+        $this->assertEquals($testValue, $object->getId());
+    }
+
+    /**
+     * Test setter for "sink"
+     */
+    public function testSetSink()
+    {
+        $object = new \FattureInCloud\Model\WebhooksSubscription();
+        $testValue = 'https://example.com/webhook';
+        
+        $object->setSink($testValue);
+        $this->assertEquals($testValue, $object->getSink());
+    }
+
+    /**
+     * Test setter for "verified"
+     */
+    public function testSetVerified()
+    {
+        $object = new \FattureInCloud\Model\WebhooksSubscription();
+        $testValue = true;
+        
+        $object->setVerified($testValue);
+        $this->assertEquals($testValue, $object->getVerified());
+    }
+
+    /**
+     * Test setter for "types"
+     */
+    public function testSetTypes()
+    {
+        $object = new \FattureInCloud\Model\WebhooksSubscription();
+        $testValue = [];
+        
+        $object->setTypes($testValue);
+        $this->assertEquals($testValue, $object->getTypes());
+    }
+
+    /**
+     * Test setter for "config"
+     */
+    public function testSetConfig()
+    {
+        $object = new \FattureInCloud\Model\WebhooksSubscription();
+        $testValue = new \FattureInCloud\Model\WebhooksSubscriptionConfig();
+        
+        $object->setConfig($testValue);
+        $this->assertEquals($testValue, $object->getConfig());
     }
 }

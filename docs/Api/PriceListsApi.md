@@ -2,11 +2,10 @@
 
 All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
+| Method                                                        | HTTP request                                              | Description              |
+| ------------------------------------------------------------- | --------------------------------------------------------- | ------------------------ |
 | [**getPriceListItems()**](PriceListsApi.md#getPriceListItems) | **GET** /c/{company_id}/price_lists/{price_list_id}/items | Get PriceList Items List |
-| [**getPriceLists()**](PriceListsApi.md#getPriceLists) | **GET** /c/{company_id}/price_lists | Get PriceLists |
-
+| [**getPriceLists()**](PriceListsApi.md#getPriceLists)         | **GET** /c/{company_id}/price_lists                       | Get PriceLists           |
 
 ## `getPriceListItems()`
 
@@ -28,7 +27,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\PriceListsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -36,7 +34,7 @@ $apiInstance = new FattureInCloud\Api\PriceListsApi(
     $config
 );
 $company_id = 12345; // int | The ID of the company.
-$price_list_id = 'price_list_id_example'; // string
+$price_list_id = 'price_list_id_example'; // string | The ID of the price
 
 try {
     $result = $apiInstance->getPriceListItems($company_id, $price_list_id);
@@ -48,10 +46,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **price_list_id** | **string**|  | |
+| Name              | Type       | Description            | Notes |
+| ----------------- | ---------- | ---------------------- | ----- |
+| **company_id**    | **int**    | The ID of the company. |       |
+| **price_list_id** | **string** | The ID of the price    |       |
 
 ### Return type
 
@@ -90,7 +88,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\PriceListsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -109,9 +106,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
+| Name           | Type    | Description            | Notes |
+| -------------- | ------- | ---------------------- | ----- |
+| **company_id** | **int** | The ID of the company. |       |
 
 ### Return type
 

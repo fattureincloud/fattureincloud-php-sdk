@@ -93,9 +93,7 @@ class PaymentAccountTest extends TestCase
      */
     public function testPaymentAccount()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\PaymentAccount::class, $this->object);
     }
 
     /**
@@ -103,7 +101,7 @@ class PaymentAccountTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -111,7 +109,7 @@ class PaymentAccountTest extends TestCase
      */
     public function testPropertyName()
     {
-        TestCase::assertEquals($this->object['name'], $this->array['name']);
+        $this->assertEquals($this->array['name'], $this->object->getName());
     }
 
     /**
@@ -119,7 +117,7 @@ class PaymentAccountTest extends TestCase
      */
     public function testPropertyType()
     {
-        TestCase::assertEquals($this->object['type'], $this->array['type']);
+        $this->assertEquals($this->array['type'], $this->object->getType());
     }
 
     /**
@@ -127,7 +125,7 @@ class PaymentAccountTest extends TestCase
      */
     public function testPropertyIban()
     {
-        TestCase::assertEquals($this->object['iban'], $this->array['iban']);
+        $this->assertEquals($this->array['iban'], $this->object->getIban());
     }
 
     /**
@@ -135,7 +133,7 @@ class PaymentAccountTest extends TestCase
      */
     public function testPropertySia()
     {
-        TestCase::assertEquals($this->object['sia'], $this->array['sia']);
+        $this->assertEquals($this->array['sia'], $this->object->getSia());
     }
 
     /**
@@ -143,7 +141,7 @@ class PaymentAccountTest extends TestCase
      */
     public function testPropertyCuc()
     {
-        TestCase::assertEquals($this->object['cuc'], $this->array['cuc']);
+        $this->assertEquals($this->array['cuc'], $this->object->getCuc());
     }
 
     /**
@@ -151,6 +149,90 @@ class PaymentAccountTest extends TestCase
      */
     public function testPropertyVirtual()
     {
-        TestCase::assertEquals($this->object['virtual'], $this->array['virtual']);
+        $this->assertEquals($this->array['virtual'], $this->object->getVirtual());
+    }
+
+    /**
+     * Test setter for "id"
+     */
+    public function testSetId()
+    {
+        $object = new \FattureInCloud\Model\PaymentAccount();
+        $testValue = 123;
+        
+        $object->setId($testValue);
+        $this->assertEquals($testValue, $object->getId());
+    }
+
+    /**
+     * Test setter for "name"
+     */
+    public function testSetName()
+    {
+        $object = new \FattureInCloud\Model\PaymentAccount();
+        $testValue = 'Test Payment Account';
+        
+        $object->setName($testValue);
+        $this->assertEquals($testValue, $object->getName());
+    }
+
+    /**
+     * Test setter for "type"
+     */
+    public function testSetType()
+    {
+        $object = new \FattureInCloud\Model\PaymentAccount();
+        $testValue = 'bank_account';
+        
+        $object->setType($testValue);
+        $this->assertEquals($testValue, $object->getType());
+    }
+
+    /**
+     * Test setter for "iban"
+     */
+    public function testSetIban()
+    {
+        $object = new \FattureInCloud\Model\PaymentAccount();
+        $testValue = 'IT60X0542811101000000123456';
+        
+        $object->setIban($testValue);
+        $this->assertEquals($testValue, $object->getIban());
+    }
+
+    /**
+     * Test setter for "sia"
+     */
+    public function testSetSia()
+    {
+        $object = new \FattureInCloud\Model\PaymentAccount();
+        $testValue = 'SIA123456';
+        
+        $object->setSia($testValue);
+        $this->assertEquals($testValue, $object->getSia());
+    }
+
+    /**
+     * Test setter for "cuc"
+     */
+    public function testSetCuc()
+    {
+        $object = new \FattureInCloud\Model\PaymentAccount();
+        $testValue = 'CUC789012';
+        
+        $object->setCuc($testValue);
+        $this->assertEquals($testValue, $object->getCuc());
+    }
+
+    /**
+     * Test setter for "virtual"
+     */
+    public function testSetVirtual()
+    {
+        $object = new \FattureInCloud\Model\PaymentAccount();
+        $testValue = true;
+        
+        $object->setVirtual($testValue);
+        $this->assertEquals($testValue, $object->getVirtual());
     }
 }

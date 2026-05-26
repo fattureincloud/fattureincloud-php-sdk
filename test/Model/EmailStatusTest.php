@@ -59,13 +59,6 @@ class EmailStatusTest extends TestCase
      */
     public function setUp(): void
     {
-        $json = '{  
-            "status": "sent"
-        }';
-
-        $this->array = json_decode($json, true);
-
-        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\Email');
     }
 
     /**
@@ -83,10 +76,23 @@ class EmailStatusTest extends TestCase
     }
 
     /**
-     * Test "EmailStatus"
+     * Test EmailStatus enum values
      */
-    public function testEmailStatus()
+    public function testEmailStatusValues()
     {
-        TestCase::assertEquals($this->object['status'], $this->array['status']);
+        $allowableValues = \FattureInCloud\Model\EmailStatus::getAllowableEnumValues();
+        $this->assertContains('sending', $allowableValues);
+        $this->assertContains('pending', $allowableValues);
+        $this->assertContains('sent', $allowableValues);
+    }
+
+    /**
+     * Test EmailStatus constants
+     */
+    public function testEmailStatusConstants()
+    {
+        $this->assertEquals('sending', \FattureInCloud\Model\EmailStatus::SENDING);
+        $this->assertEquals('pending', \FattureInCloud\Model\EmailStatus::PENDING);
+        $this->assertEquals('sent', \FattureInCloud\Model\EmailStatus::SENT);
     }
 }

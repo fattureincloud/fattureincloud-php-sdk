@@ -100,9 +100,7 @@ class ScheduleEmailRequestTest extends TestCase
      */
     public function testScheduleEmailRequest()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ScheduleEmailRequest::class, $this->object);
     }
 
     /**
@@ -110,8 +108,11 @@ class ScheduleEmailRequestTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $data = $this->object->getData();
+        $this->assertInstanceOf(\FattureInCloud\Model\EmailSchedule::class, $data);
+        $this->assertEquals($this->array['data']['sender_email'], $data->getSenderEmail());
+        $this->assertEquals($this->array['data']['recipient_email'], $data->getRecipientEmail());
+        $this->assertEquals($this->array['data']['subject'], $data->getSubject());
+        $this->assertEquals($this->array['data']['body'], $data->getBody());
     }
 }

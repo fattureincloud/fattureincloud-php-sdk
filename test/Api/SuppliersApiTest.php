@@ -102,7 +102,7 @@ class SuppliersApiTest extends TestCase
         $result = $apiInstance->createSupplier($company_id, $create_supplier_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreateSupplierResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -113,7 +113,7 @@ class SuppliersApiTest extends TestCase
      */
     public function testDeleteSupplier()
     {
-        TestCase::assertEquals(1, 1);
+        $this->assertEquals(1, 1);
     }
 
     /**
@@ -140,7 +140,7 @@ class SuppliersApiTest extends TestCase
         $result = $apiInstance->getSupplier($company_id, $supplier_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetSupplierResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -166,7 +166,7 @@ class SuppliersApiTest extends TestCase
         $result = $apiInstance->listSuppliers($company_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListSuppliersResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -194,6 +194,6 @@ class SuppliersApiTest extends TestCase
         $result = $apiInstance->modifySupplier($company_id, $supplier_id, $modify_supplier_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifySupplierResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 }

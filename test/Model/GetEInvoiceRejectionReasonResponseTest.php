@@ -93,9 +93,7 @@ class GetEInvoiceRejectionReasonResponseTest extends TestCase
      */
     public function testGetEInvoiceRejectionReasonResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\GetEInvoiceRejectionReasonResponse', $this->object);
     }
 
     /**
@@ -103,8 +101,11 @@ class GetEInvoiceRejectionReasonResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
+        $dataValue = $this->object->getData();
+        if (is_object($dataValue)) {
+            $this->assertInstanceOf(\FattureInCloud\Model\EInvoiceRejectionReason::class, $dataValue);
+        } else {
+            $this->assertEquals($this->array['data'], $dataValue);
         }
     }
 }

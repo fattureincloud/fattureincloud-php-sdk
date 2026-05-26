@@ -90,9 +90,10 @@ class VerifyEInvoiceXmlErrorResponseErrorTest extends TestCase
      */
     public function testVerifyEInvoiceXmlErrorResponseError()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(
+            \FattureInCloud\Model\VerifyEInvoiceXmlErrorResponseError::class,
+            $this->object
+        );
     }
 
     /**
@@ -100,7 +101,7 @@ class VerifyEInvoiceXmlErrorResponseErrorTest extends TestCase
      */
     public function testPropertyMessage()
     {
-        TestCase::assertEquals($this->object['message'], $this->array['message']);
+        $this->assertEquals($this->array['message'], $this->object->getMessage());
     }
 
     /**
@@ -108,8 +109,8 @@ class VerifyEInvoiceXmlErrorResponseErrorTest extends TestCase
      */
     public function testPropertyValidationResult()
     {
-        foreach ($this->array['validation_result'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['validation_result']);
-        }
+        $validationResult = $this->object->getValidationResult();
+        $this->assertInstanceOf(\FattureInCloud\Model\VerifyEInvoiceXmlErrorResponseErrorValidationResult::class, $validationResult);
+        $this->assertEquals($this->array['validation_result']['xml_errors'], $validationResult->getXmlErrors());
     }
 }

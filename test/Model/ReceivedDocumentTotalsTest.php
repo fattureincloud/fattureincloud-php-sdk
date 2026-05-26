@@ -93,9 +93,7 @@ class ReceivedDocumentTotalsTest extends TestCase
      */
     public function testReceivedDocumentTotals()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ReceivedDocumentTotals::class, $this->object);
     }
 
     /**
@@ -103,7 +101,7 @@ class ReceivedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountNet()
     {
-        TestCase::assertEquals($this->object['amount_net'], $this->array['amount_net']);
+        $this->assertEquals($this->array['amount_net'], $this->object->getAmountNet());
     }
 
     /**
@@ -111,7 +109,7 @@ class ReceivedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountVat()
     {
-        TestCase::assertEquals($this->object['amount_vat'], $this->array['amount_vat']);
+        $this->assertEquals($this->array['amount_vat'], $this->object->getAmountVat());
     }
 
     /**
@@ -119,7 +117,7 @@ class ReceivedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountGross()
     {
-        TestCase::assertEquals($this->object['amount_gross'], $this->array['amount_gross']);
+        $this->assertEquals($this->array['amount_gross'], $this->object->getAmountGross());
     }
 
     /**
@@ -127,7 +125,7 @@ class ReceivedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountWithholdingTax()
     {
-        TestCase::assertEquals($this->object['amount_withholding_tax'], $this->array['amount_withholding_tax']);
+        $this->assertEquals($this->array['amount_withholding_tax'], $this->object->getAmountWithholdingTax());
     }
 
     /**
@@ -135,7 +133,7 @@ class ReceivedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountOtherWithholdingTax()
     {
-        TestCase::assertEquals($this->object['amount_other_withholding_tax'], $this->array['amount_other_withholding_tax']);
+        $this->assertEquals($this->array['amount_other_withholding_tax'], $this->object->getAmountOtherWithholdingTax());
     }
 
     /**
@@ -143,7 +141,7 @@ class ReceivedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountDue()
     {
-        TestCase::assertEquals($this->object['amount_due'], $this->array['amount_due']);
+        $this->assertEquals($this->array['amount_due'], $this->object->getAmountDue());
     }
 
     /**
@@ -151,6 +149,90 @@ class ReceivedDocumentTotalsTest extends TestCase
      */
     public function testPropertyPaymentsSum()
     {
-        TestCase::assertEquals($this->object['payments_sum'], $this->array['payments_sum']);
+        $this->assertEquals($this->array['payments_sum'], $this->object->getPaymentsSum());
+    }
+
+    /**
+     * Test setter for "amount_net"
+     */
+    public function testSetAmountNet()
+    {
+        $object = new \FattureInCloud\Model\ReceivedDocumentTotals();
+        $testValue = 123.45;
+        
+        $object->setAmountNet($testValue);
+        $this->assertEquals($testValue, $object->getAmountNet());
+    }
+
+    /**
+     * Test setter for "amount_vat"
+     */
+    public function testSetAmountVat()
+    {
+        $object = new \FattureInCloud\Model\ReceivedDocumentTotals();
+        $testValue = 27.36;
+        
+        $object->setAmountVat($testValue);
+        $this->assertEquals($testValue, $object->getAmountVat());
+    }
+
+    /**
+     * Test setter for "amount_gross"
+     */
+    public function testSetAmountGross()
+    {
+        $object = new \FattureInCloud\Model\ReceivedDocumentTotals();
+        $testValue = 150.81;
+        
+        $object->setAmountGross($testValue);
+        $this->assertEquals($testValue, $object->getAmountGross());
+    }
+
+    /**
+     * Test setter for "amount_withholding_tax"
+     */
+    public function testSetAmountWithholdingTax()
+    {
+        $object = new \FattureInCloud\Model\ReceivedDocumentTotals();
+        $testValue = 24.69;
+        
+        $object->setAmountWithholdingTax($testValue);
+        $this->assertEquals($testValue, $object->getAmountWithholdingTax());
+    }
+
+    /**
+     * Test setter for "amount_other_withholding_tax"
+     */
+    public function testSetAmountOtherWithholdingTax()
+    {
+        $object = new \FattureInCloud\Model\ReceivedDocumentTotals();
+        $testValue = 10.25;
+        
+        $object->setAmountOtherWithholdingTax($testValue);
+        $this->assertEquals($testValue, $object->getAmountOtherWithholdingTax());
+    }
+
+    /**
+     * Test setter for "amount_due"
+     */
+    public function testSetAmountDue()
+    {
+        $object = new \FattureInCloud\Model\ReceivedDocumentTotals();
+        $testValue = 115.87;
+        
+        $object->setAmountDue($testValue);
+        $this->assertEquals($testValue, $object->getAmountDue());
+    }
+
+    /**
+     * Test setter for "payments_sum"
+     */
+    public function testSetPaymentsSum()
+    {
+        $object = new \FattureInCloud\Model\ReceivedDocumentTotals();
+        $testValue = 50.00;
+        
+        $object->setPaymentsSum($testValue);
+        $this->assertEquals($testValue, $object->getPaymentsSum());
     }
 }

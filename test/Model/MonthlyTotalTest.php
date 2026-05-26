@@ -89,9 +89,7 @@ class MonthlyTotalTest extends TestCase
      */
     public function testMonthlyTotal()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\MonthlyTotal::class, $this->object);
     }
 
     /**
@@ -99,7 +97,7 @@ class MonthlyTotalTest extends TestCase
      */
     public function testPropertyNet()
     {
-        TestCase::assertEquals($this->object['net'], $this->array['net']);
+        $this->assertEquals($this->array['net'], $this->object->getNet());
     }
 
     /**
@@ -107,7 +105,7 @@ class MonthlyTotalTest extends TestCase
      */
     public function testPropertyGross()
     {
-        TestCase::assertEquals($this->object['gross'], $this->array['gross']);
+        $this->assertEquals($this->array['gross'], $this->object->getGross());
     }
 
     /**
@@ -115,6 +113,42 @@ class MonthlyTotalTest extends TestCase
      */
     public function testPropertyCount()
     {
-        TestCase::assertEquals($this->object['count'], $this->array['count']);
+        $this->assertEquals($this->array['count'], $this->object->getCount());
+    }
+
+    /**
+     * Test setter for "net"
+     */
+    public function testSetNet()
+    {
+        $object = new \FattureInCloud\Model\MonthlyTotal();
+        $testValue = 1250.50;
+        
+        $object->setNet($testValue);
+        $this->assertEquals($testValue, $object->getNet());
+    }
+
+    /**
+     * Test setter for "gross"
+     */
+    public function testSetGross()
+    {
+        $object = new \FattureInCloud\Model\MonthlyTotal();
+        $testValue = 1525.61;
+        
+        $object->setGross($testValue);
+        $this->assertEquals($testValue, $object->getGross());
+    }
+
+    /**
+     * Test setter for "count"
+     */
+    public function testSetCount()
+    {
+        $object = new \FattureInCloud\Model\MonthlyTotal();
+        $testValue = 42;
+        
+        $object->setCount($testValue);
+        $this->assertEquals($testValue, $object->getCount());
     }
 }

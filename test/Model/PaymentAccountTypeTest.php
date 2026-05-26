@@ -87,6 +87,6 @@ class PaymentAccountTypeTest extends TestCase
      */
     public function testPaymentAccountType()
     {
-        TestCase::assertEquals($this->object['type'], $this->array['type']);
+        $this->assertEquals($this->array['type'], $this->object->getType());
     }
 }

@@ -92,9 +92,7 @@ class PriceListTest extends TestCase
      */
     public function testPriceList()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\PriceList::class, $this->object);
     }
 
     /**
@@ -102,7 +100,7 @@ class PriceListTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -110,7 +108,7 @@ class PriceListTest extends TestCase
      */
     public function testPropertyName()
     {
-        TestCase::assertEquals($this->object['name'], $this->array['name']);
+        $this->assertEquals($this->array['name'], $this->object->getName());
     }
 
     /**
@@ -118,7 +116,7 @@ class PriceListTest extends TestCase
      */
     public function testPropertyPricesType()
     {
-        TestCase::assertEquals($this->object['prices_type'], $this->array['prices_type']);
+        $this->assertEquals($this->array['prices_type'], $this->object->getPricesType());
     }
 
     /**
@@ -126,7 +124,7 @@ class PriceListTest extends TestCase
      */
     public function testPropertyIsDefault()
     {
-        TestCase::assertEquals($this->object['is_default'], $this->array['is_default']);
+        $this->assertEquals($this->array['is_default'], $this->object->getIsDefault());
     }
 
     /**
@@ -134,7 +132,7 @@ class PriceListTest extends TestCase
      */
     public function testPropertyValidFrom()
     {
-        TestCase::assertEquals($this->object['valid_from'], $this->array['valid_from']);
+        $this->assertEquals($this->array['valid_from'], $this->object->getValidFrom());
     }
 
     /**
@@ -142,7 +140,7 @@ class PriceListTest extends TestCase
      */
     public function testPropertyValidTo()
     {
-        TestCase::assertEquals($this->object['valid_to'], $this->array['valid_to']);
+        $this->assertEquals($this->array['valid_to'], $this->object->getValidTo());
     }
 
     /**
@@ -150,6 +148,6 @@ class PriceListTest extends TestCase
      */
     public function testPropertyType()
     {
-        TestCase::assertEquals($this->object['type'], $this->array['type']);
+        $this->assertEquals($this->array['type'], $this->object->getType());
     }
 }

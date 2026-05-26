@@ -101,7 +101,7 @@ class InfoApiTest extends TestCase
         $result = $apiInstance->listArchiveCategories($company_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListArchiveCategoriesResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -126,7 +126,7 @@ class InfoApiTest extends TestCase
         $result = $apiInstance->listCities();
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListCitiesResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -152,7 +152,7 @@ class InfoApiTest extends TestCase
         $result = $apiInstance->listCostCenters($company_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListCostCentersResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -177,7 +177,7 @@ class InfoApiTest extends TestCase
         $result = $apiInstance->listCountries();
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListCountriesResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -202,7 +202,7 @@ class InfoApiTest extends TestCase
         $result = $apiInstance->listDetailedCountries();
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListDetailedCountriesResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -227,7 +227,7 @@ class InfoApiTest extends TestCase
         $result = $apiInstance->listCurrencies();
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListCurrenciesResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -252,7 +252,7 @@ class InfoApiTest extends TestCase
         $result = $apiInstance->listDeliveryNotesDefaultCausals();
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListDeliveryNotesDefaultCausalsResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -277,7 +277,7 @@ class InfoApiTest extends TestCase
         $result = $apiInstance->listLanguages();
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListLanguagesResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -303,7 +303,7 @@ class InfoApiTest extends TestCase
         $result = $apiInstance->listPaymentAccounts($company_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListPaymentAccountsResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -329,7 +329,7 @@ class InfoApiTest extends TestCase
         $result = $apiInstance->listPaymentMethods($company_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListPaymentMethodsResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -356,7 +356,7 @@ class InfoApiTest extends TestCase
         $result = $apiInstance->listProductCategories($company_id, $context);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListProductCategoriesResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -382,7 +382,7 @@ class InfoApiTest extends TestCase
         $result = $apiInstance->listReceivedDocumentCategories($company_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListReceivedDocumentCategoriesResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -408,7 +408,7 @@ class InfoApiTest extends TestCase
         $result = $apiInstance->listRevenueCenters($company_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListRevenueCentersResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -430,10 +430,10 @@ class InfoApiTest extends TestCase
         $apiInstance = new \FattureInCloud\Api\InfoApi(
             new \GuzzleHttp\Client(['handler' => $handler])
         );
-        $result = $apiInstance->listTemplates();
+        $result = $apiInstance->listDefaultTemplates();
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListTemplatesResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -458,7 +458,7 @@ class InfoApiTest extends TestCase
         $result = $apiInstance->listUnitsOfMeasure();
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListUnitsOfMeasureResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -484,6 +484,6 @@ class InfoApiTest extends TestCase
         $result = $apiInstance->listVatTypes($company_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListVatTypesResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 }

@@ -2,15 +2,14 @@
 
 All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**createClient()**](ClientsApi.md#createClient) | **POST** /c/{company_id}/entities/clients | Create Client |
-| [**deleteClient()**](ClientsApi.md#deleteClient) | **DELETE** /c/{company_id}/entities/clients/{client_id} | Delete Client |
-| [**getClient()**](ClientsApi.md#getClient) | **GET** /c/{company_id}/entities/clients/{client_id} | Get Client |
-| [**getClientInfo()**](ClientsApi.md#getClientInfo) | **GET** /c/{company_id}/entities/clients/info | Get Client info |
-| [**listClients()**](ClientsApi.md#listClients) | **GET** /c/{company_id}/entities/clients | List Clients |
-| [**modifyClient()**](ClientsApi.md#modifyClient) | **PUT** /c/{company_id}/entities/clients/{client_id} | Modify Client |
-
+| Method                                             | HTTP request                                            | Description     |
+| -------------------------------------------------- | ------------------------------------------------------- | --------------- |
+| [**createClient()**](ClientsApi.md#createClient)   | **POST** /c/{company_id}/entities/clients               | Create Client   |
+| [**deleteClient()**](ClientsApi.md#deleteClient)   | **DELETE** /c/{company_id}/entities/clients/{client_id} | Delete Client   |
+| [**getClient()**](ClientsApi.md#getClient)         | **GET** /c/{company_id}/entities/clients/{client_id}    | Get Client      |
+| [**getClientInfo()**](ClientsApi.md#getClientInfo) | **GET** /c/{company_id}/entities/clients/info           | Get Client info |
+| [**listClients()**](ClientsApi.md#listClients)     | **GET** /c/{company_id}/entities/clients                | List Clients    |
+| [**modifyClient()**](ClientsApi.md#modifyClient)   | **PUT** /c/{company_id}/entities/clients/{client_id}    | Modify Client   |
 
 ## `createClient()`
 
@@ -32,7 +31,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ClientsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -52,10 +50,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **create_client_request** | [**\FattureInCloud\Model\CreateClientRequest**](../Model/CreateClientRequest.md)| The client to create | [optional] |
+| Name                      | Type                                                                             | Description            | Notes      |
+| ------------------------- | -------------------------------------------------------------------------------- | ---------------------- | ---------- |
+| **company_id**            | **int**                                                                          | The ID of the company. |            |
+| **create_client_request** | [**\FattureInCloud\Model\CreateClientRequest**](../Model/CreateClientRequest.md) | The client to create   | [optional] |
 
 ### Return type
 
@@ -94,7 +92,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ClientsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -113,10 +110,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **client_id** | **int**| The ID of the client. | |
+| Name           | Type    | Description            | Notes |
+| -------------- | ------- | ---------------------- | ----- |
+| **company_id** | **int** | The ID of the company. |       |
+| **client_id**  | **int** | The ID of the client.  |       |
 
 ### Return type
 
@@ -129,7 +126,7 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -155,7 +152,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ClientsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -177,12 +173,12 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **client_id** | **int**| The ID of the client. | |
-| **fields** | **string**| List of comma-separated fields. | [optional] |
-| **fieldset** | **string**| Name of the fieldset. | [optional] |
+| Name           | Type       | Description                     | Notes      |
+| -------------- | ---------- | ------------------------------- | ---------- |
+| **company_id** | **int**    | The ID of the company.          |            |
+| **client_id**  | **int**    | The ID of the client.           |            |
+| **fields**     | **string** | List of comma-separated fields. | [optional] |
+| **fieldset**   | **string** | Name of the fieldset.           | [optional] |
 
 ### Return type
 
@@ -221,7 +217,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ClientsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -240,9 +235,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
+| Name           | Type    | Description            | Notes |
+| -------------- | ------- | ---------------------- | ----- |
+| **company_id** | **int** | The ID of the company. |       |
 
 ### Return type
 
@@ -281,7 +276,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ClientsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -306,15 +300,15 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **fields** | **string**| List of comma-separated fields. | [optional] |
-| **fieldset** | **string**| Name of the fieldset. | [optional] |
-| **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
-| **page** | **int**| The page to retrieve. | [optional] [default to 1] |
-| **per_page** | **int**| The size of the page. | [optional] [default to 5] |
-| **q** | **string**| Query for filtering the results. | [optional] |
+| Name           | Type       | Description                                                                 | Notes                     |
+| -------------- | ---------- | --------------------------------------------------------------------------- | ------------------------- |
+| **company_id** | **int**    | The ID of the company.                                                      |                           |
+| **fields**     | **string** | List of comma-separated fields.                                             | [optional]                |
+| **fieldset**   | **string** | Name of the fieldset.                                                       | [optional]                |
+| **sort**       | **string** | List of comma-separated fields for result sorting (minus for desc sorting). | [optional]                |
+| **page**       | **int**    | The page to retrieve.                                                       | [optional] [default to 1] |
+| **per_page**   | **int**    | The size of the page.                                                       | [optional] [default to 5] |
+| **q**          | **string** | Query for filtering the results.                                            | [optional]                |
 
 ### Return type
 
@@ -353,7 +347,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
 $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-
 $apiInstance = new FattureInCloud\Api\ClientsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -374,11 +367,11 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **int**| The ID of the company. | |
-| **client_id** | **int**| The ID of the client. | |
-| **modify_client_request** | [**\FattureInCloud\Model\ModifyClientRequest**](../Model/ModifyClientRequest.md)| The modified Client. First level parameters are managed in delta mode. | [optional] |
+| Name                      | Type                                                                             | Description                                                            | Notes      |
+| ------------------------- | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------- |
+| **company_id**            | **int**                                                                          | The ID of the company.                                                 |            |
+| **client_id**             | **int**                                                                          | The ID of the client.                                                  |            |
+| **modify_client_request** | [**\FattureInCloud\Model\ModifyClientRequest**](../Model/ModifyClientRequest.md) | The modified Client. First level parameters are managed in delta mode. | [optional] |
 
 ### Return type
 

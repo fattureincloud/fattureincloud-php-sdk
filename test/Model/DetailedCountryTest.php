@@ -91,9 +91,7 @@ class DetailedCountryTest extends TestCase
      */
     public function testDetailedCountry()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\DetailedCountry', $this->object);
     }
 
     /**
@@ -101,15 +99,7 @@ class DetailedCountryTest extends TestCase
      */
     public function testPropertyName()
     {
-        TestCase::assertEquals($this->object['name'], $this->array['name']);
-    }
-
-    /**
-     * Test attribute "settings_name"
-     */
-    public function testPropertySettingsName()
-    {
-        TestCase::assertEquals($this->object['settings_name'], $this->array['settings_name']);
+        $this->assertEquals($this->array['name'], $this->object->getName());
     }
 
     /**
@@ -117,7 +107,7 @@ class DetailedCountryTest extends TestCase
      */
     public function testPropertyIso()
     {
-        TestCase::assertEquals($this->object['iso'], $this->array['iso']);
+        $this->assertEquals($this->array['iso'], $this->object->getIso());
     }
 
     /**
@@ -125,7 +115,7 @@ class DetailedCountryTest extends TestCase
      */
     public function testPropertyFiscalIso()
     {
-        TestCase::assertEquals($this->object['fiscal_iso'], $this->array['fiscal_iso']);
+        $this->assertEquals($this->array['fiscal_iso'], $this->object->getFiscalIso());
     }
 
     /**
@@ -133,6 +123,74 @@ class DetailedCountryTest extends TestCase
      */
     public function testPropertyUic()
     {
-        TestCase::assertEquals($this->object['uic'], $this->array['uic']);
+        $this->assertEquals($this->array['uic'], $this->object->getUic());
+    }
+
+    /**
+     * Test attribute "settings_name"
+     */
+    public function testPropertySettingsName()
+    {
+        $this->assertEquals($this->array['settings_name'], $this->object->getSettingsName());
+    }
+
+    /**
+     * Test setter for "name"
+     */
+    public function testSetName()
+    {
+        $object = new \FattureInCloud\Model\DetailedCountry();
+        $testValue = "Test Country";
+        
+        $object->setName($testValue);
+        $this->assertEquals($testValue, $object->getName());
+    }
+
+    /**
+     * Test setter for "settings_name"
+     */
+    public function testSetSettingsName()
+    {
+        $object = new \FattureInCloud\Model\DetailedCountry();
+        $testValue = "Test Settings Country";
+        
+        $object->setSettingsName($testValue);
+        $this->assertEquals($testValue, $object->getSettingsName());
+    }
+
+    /**
+     * Test setter for "iso"
+     */
+    public function testSetIso()
+    {
+        $object = new \FattureInCloud\Model\DetailedCountry();
+        $testValue = "US";
+        
+        $object->setIso($testValue);
+        $this->assertEquals($testValue, $object->getIso());
+    }
+
+    /**
+     * Test setter for "fiscal_iso"
+     */
+    public function testSetFiscalIso()
+    {
+        $object = new \FattureInCloud\Model\DetailedCountry();
+        $testValue = "USD";
+        
+        $object->setFiscalIso($testValue);
+        $this->assertEquals($testValue, $object->getFiscalIso());
+    }
+
+    /**
+     * Test setter for "uic"
+     */
+    public function testSetUic()
+    {
+        $object = new \FattureInCloud\Model\DetailedCountry();
+        $testValue = "123";
+        
+        $object->setUic($testValue);
+        $this->assertEquals($testValue, $object->getUic());
     }
 }

@@ -87,9 +87,7 @@ class FunctionStatusTest extends TestCase
      */
     public function testFunctionStatus()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\FunctionStatus', $this->object);
     }
 
     /**
@@ -97,6 +95,18 @@ class FunctionStatusTest extends TestCase
      */
     public function testPropertyActive()
     {
-        TestCase::assertEquals($this->object['active'], $this->array['active']);
+        $this->assertEquals($this->array['active'], $this->object->getActive());
+    }
+
+    /**
+     * Test setter for "active"
+     */
+    public function testSetActive()
+    {
+        $object = new \FattureInCloud\Model\FunctionStatus();
+        $testValue = false;
+        
+        $object->setActive($testValue);
+        $this->assertEquals($testValue, $object->getActive());
     }
 }

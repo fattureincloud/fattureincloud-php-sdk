@@ -290,4 +290,74 @@ class FilterTest extends TestCase
         $filter = new Filter($condition);
         $this->assertEquals("city = 'Bergamo'", (string)$filter);
     }
+
+    /**
+     * Test complex chaining with mixed operators
+     */
+    public function testComplexChaining()
+    {
+        $filter = new Filter();
+        $filter->where('city', Operator::EQ, 'Milano')
+               ->and('age', Operator::GT, 18)
+               ->or('status', Operator::EQ, 'premium');
+        
+        $expected = "((city = 'Milano' and age > 18) or status = 'premium')";
+        $this->assertEquals($expected, $filter->buildQuery());
+    }
+
+    /**
+     * Test realistic invoice filtering
+     */
+    public function testInvoiceFiltering()
+    {
+        $filter = new Filter();
+        $filter->where('type', Operator::EQ, 'invoice')
+               ->and('amount', Operator::GTE, 100)
+               ->and('date', Operator::GTE, '2024-01-01')
+               ->or('status', Operator::EQ, 'paid');
+        
+        $expected = "(((type = 'invoice' and amount >= 100) and date >= '2024-01-01') or status = 'paid')";
+        $this->assertEquals($expected, $filter->buildQuery());
+    }
+
+    /**
+     * Test client search filtering with patterns
+     */
+    public function testClientSearchFiltering()
+    {
+        $filter = new Filter();
+        $filter->where('name', Operator::CONTAINS, 'SRL')
+               ->or('name', Operator::STARTS_WITH, 'Studio')
+               ->or('email', Operator::ENDS_WITH, '.edu');
+        
+        $expected = "((name contains 'SRL' or name starts with 'Studio') or email ends with '.edu')";
+        $this->assertEquals($expected, $filter->buildQuery());
+    }
+
+    /**
+     * Test filter with null checks
+     */
+    public function testFilterWithNullChecks()
+    {
+        $filter = new Filter();
+        $filter->where('deleted_at', Operator::IS, null)
+               ->and('notes', Operator::IS_NOT, null);
+        
+        $expected = "(deleted_at is null and notes is not null)";
+        $this->assertEquals($expected, $filter->buildQuery());
+    }
+
+    /**
+     * Test mixed data types
+     */
+    public function testMixedDataTypes()
+    {
+        $filter = new Filter();
+        $filter->where('active', Operator::EQ, true)
+               ->and('priority', Operator::LTE, 5)
+               ->and('score', Operator::GT, 85.5);
+        
+        $expected = "((active = 1 and priority <= 5) and score > 85.5)";
+        $this->assertEquals($expected, $filter->buildQuery());
+    }
 }

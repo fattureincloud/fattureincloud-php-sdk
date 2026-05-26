@@ -100,9 +100,7 @@ class IssuedDocumentPaymentsListItemTest extends TestCase
      */
     public function testIssuedDocumentPaymentsListItem()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\IssuedDocumentPaymentsListItem', $this->object);
     }
 
     /**
@@ -110,7 +108,7 @@ class IssuedDocumentPaymentsListItemTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -119,7 +117,7 @@ class IssuedDocumentPaymentsListItemTest extends TestCase
     public function testPropertyDueDate()
     {
         $date = new \DateTime($this->array['due_date']);
-        TestCase::assertEquals($this->object['due_date'], $date);
+        $this->assertEquals($date, $this->object->getDueDate());
     }
 
     /**
@@ -127,7 +125,7 @@ class IssuedDocumentPaymentsListItemTest extends TestCase
      */
     public function testPropertyAmount()
     {
-        TestCase::assertEquals($this->object['amount'], $this->array['amount']);
+        $this->assertEquals($this->array['amount'], $this->object->getAmount());
     }
 
     /**
@@ -135,7 +133,7 @@ class IssuedDocumentPaymentsListItemTest extends TestCase
      */
     public function testPropertyStatus()
     {
-        TestCase::assertEquals($this->object['status'], $this->array['status']);
+        $this->assertEquals($this->array['status'], $this->object->getStatus());
     }
 
     /**
@@ -143,9 +141,7 @@ class IssuedDocumentPaymentsListItemTest extends TestCase
      */
     public function testPropertyPaymentAccount()
     {
-        foreach ($this->array['payment_account'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['payment_account']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\PaymentAccount', $this->object->getPaymentAccount());
     }
 
     /**
@@ -154,7 +150,7 @@ class IssuedDocumentPaymentsListItemTest extends TestCase
     public function testPropertyPaidDate()
     {
         $date = new \DateTime($this->array['paid_date']);
-        TestCase::assertEquals($this->object['paid_date'], $date);
+        $this->assertEquals($date, $this->object->getPaidDate());
     }
 
     /**
@@ -162,8 +158,6 @@ class IssuedDocumentPaymentsListItemTest extends TestCase
      */
     public function testPropertyEiRaw()
     {
-        foreach ($this->array['ei_raw'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['ei_raw']);
-        }
+        $this->assertEquals($this->array['ei_raw'], $this->object->getEiRaw());
     }
 }

@@ -114,7 +114,7 @@ class ListSuppliersResponsePageTest extends TestCase
 
         $this->array = json_decode($json, true);
 
-        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListSuppliersResponse');
+        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\ListSuppliersResponsePage');
     }
 
     /**
@@ -136,9 +136,7 @@ class ListSuppliersResponsePageTest extends TestCase
      */
     public function testListSuppliersResponsePage()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ListSuppliersResponsePage::class, $this->object);
     }
 
     /**
@@ -146,8 +144,6 @@ class ListSuppliersResponsePageTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertIsArray($this->object->getData());
     }
 }

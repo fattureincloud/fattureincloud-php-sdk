@@ -120,9 +120,7 @@ class TaxProfileTest extends TestCase
      */
     public function testTaxProfile()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\TaxProfile::class, $this->object);
     }
 
     /**
@@ -130,7 +128,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyCompanyType()
     {
-        TestCase::assertEquals($this->object['company_type'], $this->array['company_type']);
+        $this->assertEquals($this->array['company_type'], $this->object->getCompanyType());
     }
 
     /**
@@ -138,7 +136,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyCompanySubtype()
     {
-        TestCase::assertEquals($this->object['company_subtype'], $this->array['company_subtype']);
+        $this->assertEquals($this->array['company_subtype'], $this->object->getCompanySubtype());
     }
 
     /**
@@ -146,7 +144,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyProfession()
     {
-        TestCase::assertEquals($this->object['profession'], $this->array['profession']);
+        $this->assertEquals($this->array['profession'], $this->object->getProfession());
     }
 
     /**
@@ -154,7 +152,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyRegime()
     {
-        TestCase::assertEquals($this->object['regime'], $this->array['regime']);
+        $this->assertEquals($this->array['regime'], $this->object->getRegime());
     }
 
     /**
@@ -162,7 +160,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyRivalsaName()
     {
-        TestCase::assertEquals($this->object['rivalsa_name'], $this->array['rivalsa_name']);
+        $this->assertEquals($this->array['rivalsa_name'], $this->object->getRivalsaName());
     }
 
     /**
@@ -170,7 +168,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyDefaultRivalsa()
     {
-        TestCase::assertEquals($this->object['default_rivalsa'], $this->array['default_rivalsa']);
+        $this->assertEquals($this->array['default_rivalsa'], $this->object->getDefaultRivalsa());
     }
 
     /**
@@ -178,7 +176,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyCassaName()
     {
-        TestCase::assertEquals($this->object['cassa_name'], $this->array['cassa_name']);
+        $this->assertEquals($this->array['cassa_name'], $this->object->getCassaName());
     }
 
     /**
@@ -186,7 +184,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyDefaultCassa()
     {
-        TestCase::assertEquals($this->object['default_cassa'], $this->array['default_cassa']);
+        $this->assertEquals($this->array['default_cassa'], $this->object->getDefaultCassa());
     }
 
     /**
@@ -194,7 +192,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyDefaultCassaTaxable()
     {
-        TestCase::assertEquals($this->object['default_cassa_taxable'], $this->array['default_cassa_taxable']);
+        $this->assertEquals($this->array['default_cassa_taxable'], $this->object->getDefaultCassaTaxable());
     }
 
     /**
@@ -202,7 +200,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyCassa2Name()
     {
-        TestCase::assertEquals($this->object['cassa2_name'], $this->array['cassa2_name']);
+        $this->assertEquals($this->array['cassa2_name'], $this->object->getCassa2Name());
     }
 
     /**
@@ -210,7 +208,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyDefaultCassa2()
     {
-        TestCase::assertEquals($this->object['default_cassa2'], $this->array['default_cassa2']);
+        $this->assertEquals($this->array['default_cassa2'], $this->object->getDefaultCassa2());
     }
 
     /**
@@ -218,7 +216,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyDefaultCassa2Taxable()
     {
-        TestCase::assertEquals($this->object['default_cassa2_taxable'], $this->array['default_cassa2_taxable']);
+        $this->assertEquals($this->array['default_cassa2_taxable'], $this->object->getDefaultCassa2Taxable());
     }
 
     /**
@@ -226,7 +224,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyDefaultWithholdingTax()
     {
-        TestCase::assertEquals($this->object['default_withholding_tax'], $this->array['default_withholding_tax']);
+        $this->assertEquals($this->array['default_withholding_tax'], $this->object->getDefaultWithholdingTax());
     }
 
     /**
@@ -234,7 +232,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyDefaultWithholdingTaxTaxable()
     {
-        TestCase::assertEquals($this->object['default_withholding_tax_taxable'], $this->array['default_withholding_tax_taxable']);
+        $this->assertEquals($this->array['default_withholding_tax_taxable'], $this->object->getDefaultWithholdingTaxTaxable());
     }
 
     /**
@@ -242,7 +240,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyDefaultOtherWithholdingTax()
     {
-        TestCase::assertEquals($this->object['default_other_withholding_tax'], $this->array['default_other_withholding_tax']);
+        $this->assertEquals($this->array['default_other_withholding_tax'], $this->object->getDefaultOtherWithholdingTax());
     }
 
     /**
@@ -250,7 +248,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyEnasarco()
     {
-        TestCase::assertEquals($this->object['enasarco'], $this->array['enasarco']);
+        $this->assertEquals($this->array['enasarco'], $this->object->getEnasarco());
     }
 
     /**
@@ -258,7 +256,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyEnasarcoType()
     {
-        TestCase::assertEquals($this->object['enasarco_type'], $this->array['enasarco_type']);
+        $this->assertEquals($this->array['enasarco_type'], $this->object->getEnasarcoType());
     }
 
     /**
@@ -266,7 +264,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyContributionsPercentage()
     {
-        TestCase::assertEquals($this->object['contributions_percentage'], $this->array['contributions_percentage']);
+        $this->assertEquals($this->array['contributions_percentage'], $this->object->getContributionsPercentage());
     }
 
     /**
@@ -274,7 +272,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyProfitCoefficient()
     {
-        TestCase::assertEquals($this->object['profit_coefficient'], $this->array['profit_coefficient']);
+        $this->assertEquals($this->array['profit_coefficient'], $this->object->getProfitCoefficient());
     }
 
     /**
@@ -282,7 +280,7 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyMed()
     {
-        TestCase::assertEquals($this->object['med'], $this->array['med']);
+        $this->assertEquals($this->array['med'], $this->object->getMed());
     }
 
     /**
@@ -290,8 +288,11 @@ class TaxProfileTest extends TestCase
      */
     public function testPropertyDefaultVat()
     {
-        foreach ($this->array['default_vat'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['default_vat']);
-        }
+        $defaultVat = $this->object->getDefaultVat();
+        $this->assertInstanceOf(\FattureInCloud\Model\VatType::class, $defaultVat);
+        $this->assertEquals($this->array['default_vat']['id'], $defaultVat->getId());
+        $this->assertEquals($this->array['default_vat']['value'], $defaultVat->getValue());
+        $this->assertEquals($this->array['default_vat']['description'], $defaultVat->getDescription());
+        $this->assertEquals($this->array['default_vat']['e_invoice'], $defaultVat->getEInvoice());
     }
 }

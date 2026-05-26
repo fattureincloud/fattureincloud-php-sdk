@@ -95,9 +95,10 @@ class VatTypeTest extends TestCase
      */
     public function testVatType()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(
+            \FattureInCloud\Model\VatType::class,
+            $this->object
+        );
     }
 
     /**
@@ -105,7 +106,7 @@ class VatTypeTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -113,7 +114,7 @@ class VatTypeTest extends TestCase
      */
     public function testPropertyValue()
     {
-        TestCase::assertEquals($this->object['value'], $this->array['value']);
+        $this->assertEquals($this->array['value'], $this->object->getValue());
     }
 
     /**
@@ -121,7 +122,7 @@ class VatTypeTest extends TestCase
      */
     public function testPropertyDescription()
     {
-        TestCase::assertEquals($this->object['description'], $this->array['description']);
+        $this->assertEquals($this->array['description'], $this->object->getDescription());
     }
 
     /**
@@ -129,7 +130,7 @@ class VatTypeTest extends TestCase
      */
     public function testPropertyNotes()
     {
-        TestCase::assertEquals($this->object['notes'], $this->array['notes']);
+        $this->assertEquals($this->array['notes'], $this->object->getNotes());
     }
 
     /**
@@ -137,7 +138,7 @@ class VatTypeTest extends TestCase
      */
     public function testPropertyEInvoice()
     {
-        TestCase::assertEquals($this->object['e_invoice'], $this->array['e_invoice']);
+        $this->assertEquals($this->array['e_invoice'], $this->object->getEInvoice());
     }
 
     /**
@@ -145,7 +146,7 @@ class VatTypeTest extends TestCase
      */
     public function testPropertyEiType()
     {
-        TestCase::assertEquals($this->object['ei_type'], $this->array['ei_type']);
+        $this->assertEquals($this->array['ei_type'], $this->object->getEiType());
     }
 
     /**
@@ -153,7 +154,7 @@ class VatTypeTest extends TestCase
      */
     public function testPropertyEiDescription()
     {
-        TestCase::assertEquals($this->object['ei_description'], $this->array['ei_description']);
+        $this->assertEquals($this->array['ei_description'], $this->object->getEiDescription());
     }
 
     /**
@@ -161,7 +162,7 @@ class VatTypeTest extends TestCase
      */
     public function testPropertyEditable()
     {
-        TestCase::assertEquals($this->object['editable'], $this->array['editable']);
+        $this->assertEquals($this->array['editable'], $this->object->getEditable());
     }
 
     /**
@@ -169,6 +170,126 @@ class VatTypeTest extends TestCase
      */
     public function testPropertyIsDisabled()
     {
-        TestCase::assertEquals($this->object['is_disabled'], $this->array['is_disabled']);
+        $this->assertEquals($this->array['is_disabled'], $this->object->getIsDisabled());
+    }
+
+    /**
+     * Test setter for "id"
+     */
+    public function testSetId()
+    {
+        $object = new \FattureInCloud\Model\VatType();
+        $testValue = 12345;
+        
+        $object->setId($testValue);
+        $this->assertEquals($testValue, $object->getId());
+    }
+
+    /**
+     * Test setter for "value"
+     */
+    public function testSetValue()
+    {
+        $object = new \FattureInCloud\Model\VatType();
+        $testValue = 22.5;
+        
+        $object->setValue($testValue);
+        $this->assertEquals($testValue, $object->getValue());
+    }
+
+    /**
+     * Test setter for "description"
+     */
+    public function testSetDescription()
+    {
+        $object = new \FattureInCloud\Model\VatType();
+        $testValue = 'Test VAT Description';
+        
+        $object->setDescription($testValue);
+        $this->assertEquals($testValue, $object->getDescription());
+    }
+
+    /**
+     * Test setter for "notes"
+     */
+    public function testSetNotes()
+    {
+        $object = new \FattureInCloud\Model\VatType();
+        $testValue = 'Test notes for VAT type';
+        
+        $object->setNotes($testValue);
+        $this->assertEquals($testValue, $object->getNotes());
+    }
+
+    /**
+     * Test setter for "e_invoice"
+     */
+    public function testSetEInvoice()
+    {
+        $object = new \FattureInCloud\Model\VatType();
+        $testValue = false;
+        
+        $object->setEInvoice($testValue);
+        $this->assertEquals($testValue, $object->getEInvoice());
+    }
+
+    /**
+     * Test setter for "ei_type"
+     */
+    public function testSetEiType()
+    {
+        $object = new \FattureInCloud\Model\VatType();
+        $testValue = 3;
+        
+        $object->setEiType($testValue);
+        $this->assertEquals($testValue, $object->getEiType());
+    }
+
+    /**
+     * Test setter for "ei_description"
+     */
+    public function testSetEiDescription()
+    {
+        $object = new \FattureInCloud\Model\VatType();
+        $testValue = 'Test EI Description';
+        
+        $object->setEiDescription($testValue);
+        $this->assertEquals($testValue, $object->getEiDescription());
+    }
+
+    /**
+     * Test setter for "editable"
+     */
+    public function testSetEditable()
+    {
+        $object = new \FattureInCloud\Model\VatType();
+        $testValue = false;
+        
+        $object->setEditable($testValue);
+        $this->assertEquals($testValue, $object->getEditable());
+    }
+
+    /**
+     * Test setter for "is_disabled"
+     */
+    public function testSetIsDisabled()
+    {
+        $object = new \FattureInCloud\Model\VatType();
+        $testValue = true;
+        
+        $object->setIsDisabled($testValue);
+        $this->assertEquals($testValue, $object->getIsDisabled());
+    }
+
+    /**
+     * Test setter for "default"
+     */
+    public function testSetDefault()
+    {
+        $object = new \FattureInCloud\Model\VatType();
+        $testValue = true;
+        
+        $object->setDefault($testValue);
+        $this->assertEquals($testValue, $object->getDefault());
     }
 }

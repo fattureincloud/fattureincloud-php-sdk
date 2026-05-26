@@ -88,9 +88,10 @@ class VatItemTest extends TestCase
      */
     public function testVatItem()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(
+            \FattureInCloud\Model\VatItem::class,
+            $this->object
+        );
     }
 
     /**
@@ -98,7 +99,7 @@ class VatItemTest extends TestCase
      */
     public function testPropertyAmountNet()
     {
-        TestCase::assertEquals($this->object['amount_net'], $this->array['amount_net']);
+        $this->assertEquals($this->array['amount_net'], $this->object->getAmountNet());
     }
 
     /**
@@ -106,6 +107,30 @@ class VatItemTest extends TestCase
      */
     public function testPropertyAmountVat()
     {
-        TestCase::assertEquals($this->object['amount_vat'], $this->array['amount_vat']);
+        $this->assertEquals($this->array['amount_vat'], $this->object->getAmountVat());
+    }
+
+    /**
+     * Test setter for "amount_net"
+     */
+    public function testSetAmountNet()
+    {
+        $object = new \FattureInCloud\Model\VatItem();
+        $testValue = 100.00;
+        
+        $object->setAmountNet($testValue);
+        $this->assertEquals($testValue, $object->getAmountNet());
+    }
+
+    /**
+     * Test setter for "amount_vat"
+     */
+    public function testSetAmountVat()
+    {
+        $object = new \FattureInCloud\Model\VatItem();
+        $testValue = 22.00;
+        
+        $object->setAmountVat($testValue);
+        $this->assertEquals($testValue, $object->getAmountVat());
     }
 }

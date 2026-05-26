@@ -80,4 +80,31 @@ class ConjunctionTest extends TestCase
         $conjunction = new Conjunction($left, $right);
         $this->assertEquals("(city = 'Bergamo' and age < 30)", (string)$conjunction);
     }
+
+    /**
+     * Test with nested expressions
+     */
+    public function testNestedConditions()
+    {
+        $left = new Condition('city', Operator::EQ, 'Milano');
+        $right = new Condition('age', Operator::GT, 25);
+        $inner = new Conjunction($left, $right);
+        
+        $outer = new Condition('status', Operator::EQ, 'active');
+        $nested = new Conjunction($inner, $outer);
+        
+        $expected = "((city = 'Milano' and age > 25) and status = 'active')";
+        $this->assertEquals($expected, $nested->buildQuery());
+    }
+
+    /**
+     * Test with different operators
+     */
+    public function testWithDifferentOperators()
+    {
+        $left = new Condition('name', Operator::CONTAINS, 'John');
+        $right = new Condition('salary', Operator::GTE, 50000);
+        $conjunction = new Conjunction($left, $right);
+        $this->assertEquals("(name contains 'John' and salary >= 50000)", $conjunction->buildQuery());
+    }
 }

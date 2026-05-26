@@ -2,61 +2,65 @@ name: PHP SDK Validation
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   validate:
-
     runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
       matrix:
-        php: [7.3, 7.4, 8.0, 8.1, 8.2]
+        php: [7.4, 8.0, 8.1, 8.2, 8.3, 8.4, 8.5]
 
     steps:
-    - id: checkout
-      name: Checkout repo
-      uses: actions/checkout@v4
+      - id: checkout
+        name: Checkout repo
+        uses: actions/checkout@v4
 
-    - name: Setup PHP with PECL extension
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: ${{ matrix.php }}
+      - name: Setup PHP with PECL extension
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
 
-    - id: setup-composer
-      name: Setup Composer
-      run: |
-        php -v
-        wget -O composer-setup.php https://getcomposer.org/installer
-        sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+      - id: setup-composer
+        name: Setup Composer
+        run: |
+          php -v
+          wget -O composer-setup.php https://getcomposer.org/installer
+          sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
-    - id: composer-validation
-      name: Validate composer.json and composer.lock
-      run: composer validate --strict
+      - id: composer-validation
+        name: Validate composer.json and composer.lock
+        run: composer validate --strict
 
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v4
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v4
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
 
-    - id: composer-install
-      name: Install dependencies
-      run: composer install --prefer-dist --no-progress
+      - id: composer-install
+        name: Install dependencies
+        run: composer install --prefer-dist --no-progress
 
-    - id: php-unit-tests
-      name: Run test suite
-      run: ./vendor/bin/phpunit
-    
-    - id: psalm-validation
-      name: Psalm Validation
-      run: |
-        composer require --dev vimeo/psalm "4.30" -W
-        ./vendor/bin/psalm --init
-        composer require --dev alexeyshockov/guzzle-psalm-plugin && vendor/bin/psalm-plugin enable alexeyshockov/guzzle-psalm-plugin
-        ./vendor/bin/psalm
-        ./vendor/bin/psalm --taint-analysis
+      - id: php-unit-tests
+        name: Run test suite
+        run: ./vendor/bin/phpunit
+
+      - id: psalm-validation
+        name: Psalm Validation
+        run: |
+          if php -r 'exit(version_compare(PHP_VERSION, "8.2.0", ">=") ? 0 : 1);'; then
+            composer require --dev vimeo/psalm -W
+          else
+            composer require --dev vimeo/psalm "4.30" -W
+            rm psalm.xml
+            ./vendor/bin/psalm --init
+            composer require --dev alexeyshockov/guzzle-psalm-plugin && vendor/bin/psalm-plugin enable alexeyshockov/guzzle-psalm-plugin
+          fi
+          ./vendor/bin/psalm
+          ./vendor/bin/psalm --taint-analysis

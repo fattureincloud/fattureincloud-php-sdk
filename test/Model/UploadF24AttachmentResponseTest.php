@@ -89,9 +89,10 @@ class UploadF24AttachmentResponseTest extends TestCase
      */
     public function testUploadF24AttachmentResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(
+            \FattureInCloud\Model\UploadF24AttachmentResponse::class,
+            $this->object
+        );
     }
 
     /**
@@ -99,8 +100,8 @@ class UploadF24AttachmentResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $data = $this->object->getData();
+        $this->assertInstanceOf(\FattureInCloud\Model\AttachmentData::class, $data);
+        $this->assertEquals($this->array['data']['attachment_token'], $data->getAttachmentToken());
     }
 }

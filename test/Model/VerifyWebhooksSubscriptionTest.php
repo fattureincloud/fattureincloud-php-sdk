@@ -87,9 +87,10 @@ class VerifyWebhooksSubscriptionTest extends TestCase
      */
     public function testVerifyWebhooksSubscription()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(
+            \FattureInCloud\Model\VerifyWebhooksSubscription::class,
+            $this->object
+        );
     }
 
     /**
@@ -97,7 +98,7 @@ class VerifyWebhooksSubscriptionTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -105,6 +106,6 @@ class VerifyWebhooksSubscriptionTest extends TestCase
      */
     public function testPropertyVerificationMethod()
     {
-        TestCase::assertEquals($this->object['verification_method'], $this->array['verification_method']);
+        $this->assertEquals($this->array['verification_method'], $this->object->getVerificationMethod());
     }
 }

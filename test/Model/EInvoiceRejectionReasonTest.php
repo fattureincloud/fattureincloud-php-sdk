@@ -91,9 +91,7 @@ class EInvoiceRejectionReasonTest extends TestCase
      */
     public function testEInvoiceRejectionReason()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\EInvoiceRejectionReason', $this->object);
     }
 
     /**
@@ -101,7 +99,7 @@ class EInvoiceRejectionReasonTest extends TestCase
      */
     public function testPropertyReason()
     {
-        TestCase::assertEquals($this->object['reason'], $this->array['reason']);
+        $this->assertEquals("invalid date", $this->object->getReason());
     }
 
     /**
@@ -109,7 +107,7 @@ class EInvoiceRejectionReasonTest extends TestCase
      */
     public function testPropertyEiStatus()
     {
-        TestCase::assertEquals($this->object['ei_status'], $this->array['ei_status']);
+        $this->assertEquals("rejected", $this->object->getEiStatus());
     }
 
     /**
@@ -117,23 +115,36 @@ class EInvoiceRejectionReasonTest extends TestCase
      */
     public function testPropertySolution()
     {
-        TestCase::assertEquals($this->object['solution'], $this->array['solution']);
+        $this->assertEquals("set a valid date", $this->object->getSolution());
     }
 
     /**
-     * Test attribute "code"
+     * Test setter for "reason"
      */
-    public function testPropertyCode()
+    public function testSetReason()
     {
-        TestCase::assertEquals($this->object['code'], $this->array['code']);
+        $testValue = 'missing required field';
+        $this->object->setReason($testValue);
+        $this->assertEquals($testValue, $this->object->getReason());
     }
 
     /**
-     * Test attribute "date"
+     * Test setter for "ei_status"
      */
-    public function testPropertyDate()
+    public function testSetEiStatus()
     {
-        $date = new \DateTime($this->array['date']);
-        TestCase::assertEquals($this->object['date'], $date);
+        $testValue = 'accepted';
+        $this->object->setEiStatus($testValue);
+        $this->assertEquals($testValue, $this->object->getEiStatus());
+    }
+
+    /**
+     * Test setter for "solution"
+     */
+    public function testSetSolution()
+    {
+        $testValue = 'fix the validation error';
+        $this->object->setSolution($testValue);
+        $this->assertEquals($testValue, $this->object->getSolution());
     }
 }

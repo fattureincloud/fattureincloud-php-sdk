@@ -126,9 +126,7 @@ class ClientTest extends TestCase
      */
     public function testClient()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\Client', $this->object);
     }
 
     /**
@@ -136,7 +134,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -144,7 +142,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyCode()
     {
-        TestCase::assertEquals($this->object['code'], $this->array['code']);
+        $this->assertEquals($this->array['code'], $this->object->getCode());
     }
 
     /**
@@ -152,7 +150,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyName()
     {
-        TestCase::assertEquals($this->object['name'], $this->array['name']);
+        $this->assertEquals($this->array['name'], $this->object->getName());
     }
 
     /**
@@ -160,7 +158,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyType()
     {
-        TestCase::assertEquals($this->object['type'], $this->array['type']);
+        $this->assertEquals($this->array['type'], $this->object->getType());
     }
 
     /**
@@ -168,7 +166,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyFirstName()
     {
-        TestCase::assertEquals($this->object['first_name'], $this->array['first_name']);
+        $this->assertEquals($this->array['first_name'], $this->object->getFirstName());
     }
 
     /**
@@ -176,7 +174,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyLastName()
     {
-        TestCase::assertEquals($this->object['last_name'], $this->array['last_name']);
+        $this->assertEquals($this->array['last_name'], $this->object->getLastName());
     }
 
     /**
@@ -184,7 +182,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyContactPerson()
     {
-        TestCase::assertEquals($this->object['contact_person'], $this->array['contact_person']);
+        $this->assertEquals($this->array['contact_person'], $this->object->getContactPerson());
     }
 
     /**
@@ -192,7 +190,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyVatNumber()
     {
-        TestCase::assertEquals($this->object['vat_number'], $this->array['vat_number']);
+        $this->assertEquals($this->array['vat_number'], $this->object->getVatNumber());
     }
 
     /**
@@ -200,7 +198,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyTaxCode()
     {
-        TestCase::assertEquals($this->object['tax_code'], $this->array['tax_code']);
+        $this->assertEquals($this->array['tax_code'], $this->object->getTaxCode());
     }
 
     /**
@@ -208,7 +206,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyAddressStreet()
     {
-        TestCase::assertEquals($this->object['address_street'], $this->array['address_street']);
+        $this->assertEquals($this->array['address_street'], $this->object->getAddressStreet());
     }
 
     /**
@@ -216,7 +214,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyAddressPostalCode()
     {
-        TestCase::assertEquals($this->object['address_postal_code'], $this->array['address_postal_code']);
+        $this->assertEquals($this->array['address_postal_code'], $this->object->getAddressPostalCode());
     }
 
     /**
@@ -224,7 +222,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyAddressCity()
     {
-        TestCase::assertEquals($this->object['address_city'], $this->array['address_city']);
+        $this->assertEquals($this->array['address_city'], $this->object->getAddressCity());
     }
 
     /**
@@ -232,7 +230,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyAddressProvince()
     {
-        TestCase::assertEquals($this->object['address_province'], $this->array['address_province']);
+        $this->assertEquals($this->array['address_province'], $this->object->getAddressProvince());
     }
 
     /**
@@ -240,7 +238,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyAddressExtra()
     {
-        TestCase::assertEquals($this->object['address_extra'], $this->array['address_extra']);
+        $this->assertEquals($this->array['address_extra'], $this->object->getAddressExtra());
     }
 
     /**
@@ -248,7 +246,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyCountry()
     {
-        TestCase::assertEquals($this->object['country'], $this->array['country']);
+        $this->assertEquals($this->array['country'], $this->object->getCountry());
     }
 
     /**
@@ -256,7 +254,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyEmail()
     {
-        TestCase::assertEquals($this->object['email'], $this->array['email']);
+        $this->assertEquals($this->array['email'], $this->object->getEmail());
     }
 
     /**
@@ -264,7 +262,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyCertifiedEmail()
     {
-        TestCase::assertEquals($this->object['certified_email'], $this->array['certified_email']);
+        $this->assertEquals($this->array['certified_email'], $this->object->getCertifiedEmail());
     }
 
     /**
@@ -272,7 +270,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyPhone()
     {
-        TestCase::assertEquals($this->object['phone'], $this->array['phone']);
+        $this->assertEquals($this->array['phone'], $this->object->getPhone());
     }
 
     /**
@@ -280,7 +278,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyFax()
     {
-        TestCase::assertEquals($this->object['fax'], $this->array['fax']);
+        $this->assertEquals($this->array['fax'], $this->object->getFax());
     }
 
     /**
@@ -288,7 +286,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyNotes()
     {
-        TestCase::assertEquals($this->object['notes'], $this->array['notes']);
+        $this->assertEquals($this->array['notes'], $this->object->getNotes());
     }
 
     /**
@@ -296,9 +294,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyDefaultVat()
     {
-        foreach ($this->array['default_vat'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['default_vat']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\VatType', $this->object->getDefaultVat());
     }
 
     /**
@@ -306,7 +302,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyDefaultPaymentTerms()
     {
-        TestCase::assertEquals($this->object['default_payment_terms'], $this->array['default_payment_terms']);
+        $this->assertEquals($this->array['default_payment_terms'], $this->object->getDefaultPaymentTerms());
     }
 
     /**
@@ -314,7 +310,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyDefaultPaymentTermsType()
     {
-        TestCase::assertEquals($this->object['default_payment_terms_type'], $this->array['default_payment_terms_type']);
+        $this->assertEquals($this->array['default_payment_terms_type'], $this->object->getDefaultPaymentTermsType());
     }
 
     /**
@@ -322,9 +318,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyDefaultPaymentMethod()
     {
-        foreach ($this->array['default_payment_method'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['default_payment_method']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\PaymentMethod', $this->object->getDefaultPaymentMethod());
     }
 
     /**
@@ -332,7 +326,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyBankName()
     {
-        TestCase::assertEquals($this->object['bank_name'], $this->array['bank_name']);
+        $this->assertEquals($this->array['bank_name'], $this->object->getBankName());
     }
 
     /**
@@ -340,7 +334,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyBankIban()
     {
-        TestCase::assertEquals($this->object['bank_iban'], $this->array['bank_iban']);
+        $this->assertEquals($this->array['bank_iban'], $this->object->getBankIban());
     }
 
     /**
@@ -348,7 +342,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyBankSwiftCode()
     {
-        TestCase::assertEquals($this->object['bank_swift_code'], $this->array['bank_swift_code']);
+        $this->assertEquals($this->array['bank_swift_code'], $this->object->getBankSwiftCode());
     }
 
     /**
@@ -356,7 +350,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyShippingAddress()
     {
-        TestCase::assertEquals($this->object['shipping_address'], $this->array['shipping_address']);
+        $this->assertEquals($this->array['shipping_address'], $this->object->getShippingAddress());
     }
 
     /**
@@ -364,7 +358,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyEInvoice()
     {
-        TestCase::assertEquals($this->object['e_invoice'], $this->array['e_invoice']);
+        $this->assertEquals($this->array['e_invoice'], $this->object->getEInvoice());
     }
 
     /**
@@ -372,7 +366,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyEiCode()
     {
-        TestCase::assertEquals($this->object['ei_code'], $this->array['ei_code']);
+        $this->assertEquals($this->array['ei_code'], $this->object->getEiCode());
     }
 
     /**
@@ -380,7 +374,7 @@ class ClientTest extends TestCase
      */
     public function testPropertyCreatedAt()
     {
-        TestCase::assertEquals($this->object['created_at'], $this->array['created_at']);
+        $this->assertEquals($this->array['created_at'], $this->object->getCreatedAt());
     }
 
     /**
@@ -388,6 +382,6 @@ class ClientTest extends TestCase
      */
     public function testPropertyUpdatedAt()
     {
-        TestCase::assertEquals($this->object['updated_at'], $this->array['updated_at']);
+        $this->assertEquals($this->array['updated_at'], $this->object->getUpdatedAt());
     }
 }

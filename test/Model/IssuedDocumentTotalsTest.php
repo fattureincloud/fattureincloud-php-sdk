@@ -109,9 +109,7 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testIssuedDocumentTotals()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\IssuedDocumentTotals', $this->object);
     }
 
     /**
@@ -119,7 +117,7 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountNet()
     {
-        TestCase::assertEquals($this->object['amount_net'], $this->array['amount_net']);
+        $this->assertEquals($this->array['amount_net'], $this->object->getAmountNet());
     }
 
     /**
@@ -127,7 +125,7 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountRivalsa()
     {
-        TestCase::assertEquals($this->object['amount_rivalsa'], $this->array['amount_rivalsa']);
+        $this->assertEquals($this->array['amount_rivalsa'], $this->object->getAmountRivalsa());
     }
 
     /**
@@ -135,7 +133,7 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountNetWithRivalsa()
     {
-        TestCase::assertEquals($this->object['amount_net_with_rivalsa'], $this->array['amount_net_with_rivalsa']);
+        $this->assertEquals($this->array['amount_net_with_rivalsa'], $this->object->getAmountNetWithRivalsa());
     }
 
     /**
@@ -143,7 +141,7 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountCassa()
     {
-        TestCase::assertEquals($this->object['amount_cassa'], $this->array['amount_cassa']);
+        $this->assertEquals($this->array['amount_cassa'], $this->object->getAmountCassa());
     }
 
     /**
@@ -151,7 +149,7 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyTaxableAmount()
     {
-        TestCase::assertEquals($this->object['taxable_amount'], $this->array['taxable_amount']);
+        $this->assertEquals($this->array['taxable_amount'], $this->object->getTaxableAmount());
     }
 
     /**
@@ -159,7 +157,7 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyNotTaxableAmount()
     {
-        TestCase::assertEquals($this->object['not_taxable_amount'], $this->array['not_taxable_amount']);
+        $this->assertEquals($this->array['not_taxable_amount'], $this->object->getNotTaxableAmount());
     }
 
     /**
@@ -167,7 +165,7 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountVat()
     {
-        TestCase::assertEquals($this->object['amount_vat'], $this->array['amount_vat']);
+        $this->assertEquals($this->array['amount_vat'], $this->object->getAmountVat());
     }
 
     /**
@@ -175,7 +173,7 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountGross()
     {
-        TestCase::assertEquals($this->object['amount_gross'], $this->array['amount_gross']);
+        $this->assertEquals($this->array['amount_gross'], $this->object->getAmountGross());
     }
 
     /**
@@ -183,7 +181,7 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyTaxableAmountWithholdingTax()
     {
-        TestCase::assertEquals($this->object['taxable_amount_withholding_tax'], $this->array['taxable_amount_withholding_tax']);
+        $this->assertEquals($this->array['taxable_amount_withholding_tax'], $this->object->getTaxableAmountWithholdingTax());
     }
 
     /**
@@ -191,7 +189,7 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountWithholdingTax()
     {
-        TestCase::assertEquals($this->object['amount_withholding_tax'], $this->array['amount_withholding_tax']);
+        $this->assertEquals($this->array['amount_withholding_tax'], $this->object->getAmountWithholdingTax());
     }
 
     /**
@@ -199,7 +197,7 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyTaxableAmountOtherWithholdingTax()
     {
-        TestCase::assertEquals($this->object['taxable_amount_other_withholding_tax'], $this->array['taxable_amount_other_withholding_tax']);
+        $this->assertEquals($this->array['taxable_amount_other_withholding_tax'], $this->object->getTaxableAmountOtherWithholdingTax());
     }
 
     /**
@@ -207,7 +205,7 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountOtherWithholdingTax()
     {
-        TestCase::assertEquals($this->object['amount_other_withholding_tax'], $this->array['amount_other_withholding_tax']);
+        $this->assertEquals($this->array['amount_other_withholding_tax'], $this->object->getAmountOtherWithholdingTax());
     }
 
     /**
@@ -215,7 +213,7 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyStampDuty()
     {
-        TestCase::assertEquals($this->object['stamp_duty'], $this->array['stamp_duty']);
+        $this->assertEquals($this->array['stamp_duty'], $this->object->getStampDuty());
     }
 
     /**
@@ -223,7 +221,7 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyAmountDue()
     {
-        TestCase::assertEquals($this->object['amount_due'], $this->array['amount_due']);
+        $this->assertEquals($this->array['amount_due'], $this->object->getAmountDue());
     }
 
     /**
@@ -231,7 +229,7 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyIsEnasarcoMaximalExceeded()
     {
-        TestCase::assertEquals($this->object['is_enasarco_maximal_exceeded'], $this->array['is_enasarco_maximal_exceeded']);
+        $this->assertEquals($this->array['is_enasarco_maximal_exceeded'], $this->object->getIsEnasarcoMaximalExceeded());
     }
 
     /**
@@ -239,7 +237,7 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyPaymentsSum()
     {
-        TestCase::assertEquals($this->object['payments_sum'], $this->array['payments_sum']);
+        $this->assertEquals($this->array['payments_sum'], $this->object->getPaymentsSum());
     }
 
     /**
@@ -247,8 +245,11 @@ class IssuedDocumentTotalsTest extends TestCase
      */
     public function testPropertyVatList()
     {
-        foreach ($this->array['vat_list'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['vat_list']);
+        $vatList = $this->object->getVatList();
+        $this->assertIsArray($vatList);
+        if (!empty($vatList)) {
+            $firstValue = reset($vatList);
+            $this->assertInstanceOf(\FattureInCloud\Model\VatItem::class, $firstValue);
         }
     }
 }

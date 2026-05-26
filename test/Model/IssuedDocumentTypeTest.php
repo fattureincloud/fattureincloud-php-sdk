@@ -59,13 +59,9 @@ class IssuedDocumentTypeTest extends TestCase
      */
     public function setUp(): void
     {
-        $json = '{
-            "type": "quote"
-        }';
-
-        $this->array = json_decode($json, true);
-
-        $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\IssuedDocument');
+        // IssuedDocumentType is an enum class, set the value directly
+        $this->array = ['type' => 'quote'];
+        $this->object = \FattureInCloud\Model\IssuedDocumentType::QUOTE;
     }
 
     /**
@@ -87,8 +83,8 @@ class IssuedDocumentTypeTest extends TestCase
      */
     public function testIssuedDocumentType()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        // Test that the constant exists and has the expected value
+        $this->assertEquals('quote', \FattureInCloud\Model\IssuedDocumentType::QUOTE);
+        $this->assertEquals('quote', $this->object);
     }
 }

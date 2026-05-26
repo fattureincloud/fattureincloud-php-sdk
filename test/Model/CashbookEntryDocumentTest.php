@@ -89,9 +89,7 @@ class CashbookEntryDocumentTest extends TestCase
      */
     public function testCashbookEntryDocument()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CashbookEntryDocument', $this->object);
     }
 
     /**
@@ -99,7 +97,7 @@ class CashbookEntryDocumentTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -107,7 +105,7 @@ class CashbookEntryDocumentTest extends TestCase
      */
     public function testPropertyType()
     {
-        TestCase::assertEquals($this->object['type'], $this->array['type']);
+        $this->assertEquals($this->array['type'], $this->object->getType());
     }
 
     /**
@@ -115,6 +113,36 @@ class CashbookEntryDocumentTest extends TestCase
      */
     public function testPropertyPath()
     {
-        TestCase::assertEquals($this->object['path'], $this->array['path']);
+        $this->assertEquals($this->array['path'], $this->object->getPath());
+    }
+
+    /**
+     * Test setter for "id"
+     */
+    public function testSetId()
+    {
+        $testValue = 54321;
+        $this->object->setId($testValue);
+        $this->assertEquals($testValue, $this->object->getId());
+    }
+
+    /**
+     * Test setter for "type"
+     */
+    public function testSetType()
+    {
+        $testValue = 'receipt';
+        $this->object->setType($testValue);
+        $this->assertEquals($testValue, $this->object->getType());
+    }
+
+    /**
+     * Test setter for "path"
+     */
+    public function testSetPath()
+    {
+        $testValue = '/documents/test.pdf';
+        $this->object->setPath($testValue);
+        $this->assertEquals($testValue, $this->object->getPath());
     }
 }

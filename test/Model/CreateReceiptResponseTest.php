@@ -96,7 +96,7 @@ class CreateReceiptResponseTest extends TestCase
         }';
 
         $this->array = json_decode($json, true);
-
+        
         $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CreateReceiptResponse');
     }
 
@@ -119,9 +119,8 @@ class CreateReceiptResponseTest extends TestCase
      */
     public function testCreateReceiptResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CreateReceiptResponse', $this->object);
+        $this->assertNotNull($this->object->getData());
     }
 
     /**
@@ -129,8 +128,30 @@ class CreateReceiptResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $data = $this->object->getData();
+        $this->assertInstanceOf('\FattureInCloud\Model\Receipt', $data);
+        $this->assertEquals(12346, $data->getId());
+        
+        // Test date as DateTime object
+        $this->assertInstanceOf('\DateTime', $data->getDate());
+        $this->assertEquals("2021-08-19", $data->getDate()->format('Y-m-d'));
+        
+        $this->assertEquals(6, $data->getNumber());
+        $this->assertEquals("REC006", $data->getNumeration());
+        $this->assertEquals(8.2, $data->getAmountNet());
+        $this->assertEquals(1.8, $data->getAmountVat());
+        $this->assertEquals(10, $data->getAmountGross());
+    }
+
+    /**
+     * Test setter for "data"
+     */
+    public function testSetData()
+    {
+        $object = new \FattureInCloud\Model\CreateReceiptResponse();
+        $testValue = new \FattureInCloud\Model\Receipt();
+        
+        $object->setData($testValue);
+        $this->assertEquals($testValue, $object->getData());
     }
 }

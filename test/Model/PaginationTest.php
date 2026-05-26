@@ -97,9 +97,7 @@ class PaginationTest extends TestCase
      */
     public function testPagination()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\Pagination::class, $this->object);
     }
 
     /**
@@ -107,7 +105,7 @@ class PaginationTest extends TestCase
      */
     public function testPropertyCurrentPage()
     {
-        TestCase::assertEquals($this->object['current_page'], $this->array['current_page']);
+        $this->assertEquals($this->array['current_page'], $this->object->getCurrentPage());
     }
 
     /**
@@ -115,7 +113,7 @@ class PaginationTest extends TestCase
      */
     public function testPropertyFirstPageUrl()
     {
-        TestCase::assertEquals($this->object['first_page_url'], $this->array['first_page_url']);
+        $this->assertEquals($this->array['first_page_url'], $this->object->getFirstPageUrl());
     }
 
     /**
@@ -123,7 +121,7 @@ class PaginationTest extends TestCase
      */
     public function testPropertyFrom()
     {
-        TestCase::assertEquals($this->object['from'], $this->array['from']);
+        $this->assertEquals($this->array['from'], $this->object->getFrom());
     }
 
     /**
@@ -131,7 +129,7 @@ class PaginationTest extends TestCase
      */
     public function testPropertyLastPage()
     {
-        TestCase::assertEquals($this->object['last_page'], $this->array['last_page']);
+        $this->assertEquals($this->array['last_page'], $this->object->getLastPage());
     }
 
     /**
@@ -139,7 +137,7 @@ class PaginationTest extends TestCase
      */
     public function testPropertyLastPageUrl()
     {
-        TestCase::assertEquals($this->object['last_page_url'], $this->array['last_page_url']);
+        $this->assertEquals($this->array['last_page_url'], $this->object->getLastPageUrl());
     }
 
     /**
@@ -147,7 +145,7 @@ class PaginationTest extends TestCase
      */
     public function testPropertyNextPageUrl()
     {
-        TestCase::assertEquals($this->object['next_page_url'], $this->array['next_page_url']);
+        $this->assertEquals($this->array['next_page_url'], $this->object->getNextPageUrl());
     }
 
     /**
@@ -155,7 +153,7 @@ class PaginationTest extends TestCase
      */
     public function testPropertyPath()
     {
-        TestCase::assertEquals($this->object['path'], $this->array['path']);
+        $this->assertEquals($this->array['path'], $this->object->getPath());
     }
 
     /**
@@ -163,7 +161,7 @@ class PaginationTest extends TestCase
      */
     public function testPropertyPerPage()
     {
-        TestCase::assertEquals($this->object['per_page'], $this->array['per_page']);
+        $this->assertEquals($this->array['per_page'], $this->object->getPerPage());
     }
 
     /**
@@ -171,7 +169,7 @@ class PaginationTest extends TestCase
      */
     public function testPropertyPrevPageUrl()
     {
-        TestCase::assertEquals($this->object['prev_page_url'], $this->array['prev_page_url']);
+        $this->assertEquals($this->array['prev_page_url'], $this->object->getPrevPageUrl());
     }
 
     /**
@@ -179,7 +177,7 @@ class PaginationTest extends TestCase
      */
     public function testPropertyTo()
     {
-        TestCase::assertEquals($this->object['to'], $this->array['to']);
+        $this->assertEquals($this->array['to'], $this->object->getTo());
     }
 
     /**
@@ -187,6 +185,138 @@ class PaginationTest extends TestCase
      */
     public function testPropertyTotal()
     {
-        TestCase::assertEquals($this->object['total'], $this->array['total']);
+        $this->assertEquals($this->array['total'], $this->object->getTotal());
+    }
+
+    /**
+     * Test setter for "current_page"
+     */
+    public function testSetCurrentPage()
+    {
+        $object = new \FattureInCloud\Model\Pagination();
+        $testValue = 2;
+        
+        $object->setCurrentPage($testValue);
+        $this->assertEquals($testValue, $object->getCurrentPage());
+    }
+
+    /**
+     * Test setter for "first_page_url"
+     */
+    public function testSetFirstPageUrl()
+    {
+        $object = new \FattureInCloud\Model\Pagination();
+        $testValue = 'https://api.example.com?page=1';
+        
+        $object->setFirstPageUrl($testValue);
+        $this->assertEquals($testValue, $object->getFirstPageUrl());
+    }
+
+    /**
+     * Test setter for "from"
+     */
+    public function testSetFrom()
+    {
+        $object = new \FattureInCloud\Model\Pagination();
+        $testValue = 21;
+        
+        $object->setFrom($testValue);
+        $this->assertEquals($testValue, $object->getFrom());
+    }
+
+    /**
+     * Test setter for "last_page"
+     */
+    public function testSetLastPage()
+    {
+        $object = new \FattureInCloud\Model\Pagination();
+        $testValue = 10;
+        
+        $object->setLastPage($testValue);
+        $this->assertEquals($testValue, $object->getLastPage());
+    }
+
+    /**
+     * Test setter for "last_page_url"
+     */
+    public function testSetLastPageUrl()
+    {
+        $object = new \FattureInCloud\Model\Pagination();
+        $testValue = 'https://api.example.com?page=10';
+        
+        $object->setLastPageUrl($testValue);
+        $this->assertEquals($testValue, $object->getLastPageUrl());
+    }
+
+    /**
+     * Test setter for "next_page_url"
+     */
+    public function testSetNextPageUrl()
+    {
+        $object = new \FattureInCloud\Model\Pagination();
+        $testValue = 'https://api.example.com?page=3';
+        
+        $object->setNextPageUrl($testValue);
+        $this->assertEquals($testValue, $object->getNextPageUrl());
+    }
+
+    /**
+     * Test setter for "path"
+     */
+    public function testSetPath()
+    {
+        $object = new \FattureInCloud\Model\Pagination();
+        $testValue = '/api/v2/items';
+        
+        $object->setPath($testValue);
+        $this->assertEquals($testValue, $object->getPath());
+    }
+
+    /**
+     * Test setter for "per_page"
+     */
+    public function testSetPerPage()
+    {
+        $object = new \FattureInCloud\Model\Pagination();
+        $testValue = 20;
+        
+        $object->setPerPage($testValue);
+        $this->assertEquals($testValue, $object->getPerPage());
+    }
+
+    /**
+     * Test setter for "prev_page_url"
+     */
+    public function testSetPrevPageUrl()
+    {
+        $object = new \FattureInCloud\Model\Pagination();
+        $testValue = 'https://api.example.com?page=1';
+        
+        $object->setPrevPageUrl($testValue);
+        $this->assertEquals($testValue, $object->getPrevPageUrl());
+    }
+
+    /**
+     * Test setter for "to"
+     */
+    public function testSetTo()
+    {
+        $object = new \FattureInCloud\Model\Pagination();
+        $testValue = 40;
+        
+        $object->setTo($testValue);
+        $this->assertEquals($testValue, $object->getTo());
+    }
+
+    /**
+     * Test setter for "total"
+     */
+    public function testSetTotal()
+    {
+        $object = new \FattureInCloud\Model\Pagination();
+        $testValue = 200;
+        
+        $object->setTotal($testValue);
+        $this->assertEquals($testValue, $object->getTotal());
     }
 }

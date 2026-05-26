@@ -62,7 +62,7 @@ class DocumentTemplateTest extends TestCase
         $json = '{
             "id": 10,
             "name": "New Standard S1",
-            "type": ""
+            "type": "standard"
           }';
 
         $this->array = json_decode($json, true);
@@ -89,9 +89,7 @@ class DocumentTemplateTest extends TestCase
      */
     public function testDocumentTemplate()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\DocumentTemplate', $this->object);
     }
 
     /**
@@ -99,7 +97,7 @@ class DocumentTemplateTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -107,7 +105,7 @@ class DocumentTemplateTest extends TestCase
      */
     public function testPropertyName()
     {
-        TestCase::assertEquals($this->object['name'], $this->array['name']);
+        $this->assertEquals($this->array['name'], $this->object->getName());
     }
 
     /**
@@ -115,6 +113,42 @@ class DocumentTemplateTest extends TestCase
      */
     public function testPropertyType()
     {
-        TestCase::assertEquals($this->object['type'], $this->array['type']);
+        $this->assertEquals($this->array['type'], $this->object->getType());
+    }
+
+    /**
+     * Test setter for "id"
+     */
+    public function testSetId()
+    {
+        $object = new \FattureInCloud\Model\DocumentTemplate();
+        $testValue = 123;
+        
+        $object->setId($testValue);
+        $this->assertEquals($testValue, $object->getId());
+    }
+
+    /**
+     * Test setter for "name"
+     */
+    public function testSetName()
+    {
+        $object = new \FattureInCloud\Model\DocumentTemplate();
+        $testValue = 'Test Template';
+        
+        $object->setName($testValue);
+        $this->assertEquals($testValue, $object->getName());
+    }
+
+    /**
+     * Test setter for "type"
+     */
+    public function testSetType()
+    {
+        $object = new \FattureInCloud\Model\DocumentTemplate();
+        $testValue = 'invoice';
+        
+        $object->setType($testValue);
+        $this->assertEquals($testValue, $object->getType());
     }
 }

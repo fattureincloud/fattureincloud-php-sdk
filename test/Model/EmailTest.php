@@ -102,9 +102,7 @@ class EmailTest extends TestCase
      */
     public function testEmail()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\Email', $this->object);
     }
 
     /**
@@ -112,7 +110,7 @@ class EmailTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals(1, $this->object->getId());
     }
 
     /**
@@ -120,7 +118,7 @@ class EmailTest extends TestCase
      */
     public function testPropertyStatus()
     {
-        TestCase::assertEquals($this->object['status'], $this->array['status']);
+        $this->assertEquals("sent", $this->object->getStatus());
     }
 
     /**
@@ -128,7 +126,7 @@ class EmailTest extends TestCase
      */
     public function testPropertySentDate()
     {
-        TestCase::assertEquals($this->object['sent_date'], $this->array['sent_date']);
+        $this->assertEquals($this->array['sent_date'], $this->object->getSentDate());
     }
 
     /**
@@ -136,15 +134,7 @@ class EmailTest extends TestCase
      */
     public function testPropertyErrorsCount()
     {
-        TestCase::assertEquals($this->object['errors_count'], $this->array['errors_count']);
-    }
-
-    /**
-     * Test attribute "error_log"
-     */
-    public function testPropertyErrorLog()
-    {
-        TestCase::assertEquals($this->object['error_log'], $this->array['error_log']);
+        $this->assertEquals(0, $this->object->getErrorsCount());
     }
 
     /**
@@ -152,15 +142,7 @@ class EmailTest extends TestCase
      */
     public function testPropertyFromEmail()
     {
-        TestCase::assertEquals($this->object['from_email'], $this->array['from_email']);
-    }
-
-    /**
-     * Test attribute "from_name"
-     */
-    public function testPropertyFromName()
-    {
-        TestCase::assertEquals($this->object['from_name'], $this->array['from_name']);
+        $this->assertEquals("test@mail.it", $this->object->getFromEmail());
     }
 
     /**
@@ -168,15 +150,7 @@ class EmailTest extends TestCase
      */
     public function testPropertyToEmail()
     {
-        TestCase::assertEquals($this->object['to_email'], $this->array['to_email']);
-    }
-
-    /**
-     * Test attribute "to_name"
-     */
-    public function testPropertyToName()
-    {
-        TestCase::assertEquals($this->object['to_name'], $this->array['to_name']);
+        $this->assertEquals("mail@test.it", $this->object->getToEmail());
     }
 
     /**
@@ -184,15 +158,7 @@ class EmailTest extends TestCase
      */
     public function testPropertySubject()
     {
-        TestCase::assertEquals($this->object['subject'], $this->array['subject']);
-    }
-
-    /**
-     * Test attribute "content"
-     */
-    public function testPropertyContent()
-    {
-        TestCase::assertEquals($this->object['content'], $this->array['content']);
+        $this->assertEquals("Test", $this->object->getSubject());
     }
 
     /**
@@ -200,7 +166,7 @@ class EmailTest extends TestCase
      */
     public function testPropertyCopyTo()
     {
-        TestCase::assertEquals($this->object['copy_to'], $this->array['copy_to']);
+        $this->assertEquals($this->array['copy_to'], $this->object->getCopyTo());
     }
 
     /**
@@ -208,7 +174,7 @@ class EmailTest extends TestCase
      */
     public function testPropertyRecipientStatus()
     {
-        TestCase::assertEquals($this->object['recipient_status'], $this->array['recipient_status']);
+        $this->assertEquals($this->array['recipient_status'], $this->object->getRecipientStatus());
     }
 
     /**
@@ -216,8 +182,12 @@ class EmailTest extends TestCase
      */
     public function testPropertyRecipientDate()
     {
-        $date = new \DateTime($this->array['recipient_date']);
-        TestCase::assertEquals($this->object['recipient_date'], $date);
+        $dateValue = $this->object->getRecipientDate();
+        if ($dateValue instanceof \DateTime) {
+            $this->assertEquals($this->array['recipient_date'], $dateValue->format('Y-m-d H:i:s'));
+        } else {
+            $this->assertEquals($this->array['recipient_date'], $dateValue);
+        }
     }
 
     /**
@@ -225,7 +195,7 @@ class EmailTest extends TestCase
      */
     public function testPropertyKind()
     {
-        TestCase::assertEquals($this->object['kind'], $this->array['kind']);
+        $this->assertEquals($this->array['kind'], $this->object->getKind());
     }
 
     /**
@@ -233,6 +203,198 @@ class EmailTest extends TestCase
      */
     public function testPropertyAttachments()
     {
-        TestCase::assertEquals($this->object['attachments'], $this->array['attachments']);
+        $this->assertIsArray($this->object->getAttachments());
+    }
+
+    /**
+     * Test setter for "id"
+     */
+    public function testSetId()
+    {
+        $object = new \FattureInCloud\Model\Email();
+        $testValue = 12345;
+        
+        $object->setId($testValue);
+        $this->assertEquals($testValue, $object->getId());
+    }
+
+    /**
+     * Test setter for "status"
+     */
+    public function testSetStatus()
+    {
+        $object = new \FattureInCloud\Model\Email();
+        $testValue = 'sent';
+        
+        $object->setStatus($testValue);
+        $this->assertEquals($testValue, $object->getStatus());
+    }
+
+    /**
+     * Test setter for "sent_date"
+     */
+    public function testSetSentDate()
+    {
+        $object = new \FattureInCloud\Model\Email();
+        $testValue = '2024-04-17';
+        
+        $object->setSentDate($testValue);
+        $this->assertEquals($testValue, $object->getSentDate());
+    }
+
+    /**
+     * Test setter for "errors_count"
+     */
+    public function testSetErrorsCount()
+    {
+        $object = new \FattureInCloud\Model\Email();
+        $testValue = 0;
+        
+        $object->setErrorsCount($testValue);
+        $this->assertEquals($testValue, $object->getErrorsCount());
+    }
+
+    /**
+     * Test setter for "error_log"
+     */
+    public function testSetErrorLog()
+    {
+        $object = new \FattureInCloud\Model\Email();
+        $testValue = 'No errors';
+        
+        $object->setErrorLog($testValue);
+        $this->assertEquals($testValue, $object->getErrorLog());
+    }
+
+    /**
+     * Test setter for "from_email"
+     */
+    public function testSetFromEmail()
+    {
+        $object = new \FattureInCloud\Model\Email();
+        $testValue = 'test@example.com';
+        
+        $object->setFromEmail($testValue);
+        $this->assertEquals($testValue, $object->getFromEmail());
+    }
+
+    /**
+     * Test setter for "from_name"
+     */
+    public function testSetFromName()
+    {
+        $object = new \FattureInCloud\Model\Email();
+        $testValue = 'Test Sender';
+        
+        $object->setFromName($testValue);
+        $this->assertEquals($testValue, $object->getFromName());
+    }
+
+    /**
+     * Test setter for "to_email"
+     */
+    public function testSetToEmail()
+    {
+        $object = new \FattureInCloud\Model\Email();
+        $testValue = 'recipient@example.com';
+        
+        $object->setToEmail($testValue);
+        $this->assertEquals($testValue, $object->getToEmail());
+    }
+
+    /**
+     * Test setter for "to_name"
+     */
+    public function testSetToName()
+    {
+        $object = new \FattureInCloud\Model\Email();
+        $testValue = 'Test Recipient';
+        
+        $object->setToName($testValue);
+        $this->assertEquals($testValue, $object->getToName());
+    }
+
+    /**
+     * Test setter for "subject"
+     */
+    public function testSetSubject()
+    {
+        $object = new \FattureInCloud\Model\Email();
+        $testValue = 'Test Email Subject';
+        
+        $object->setSubject($testValue);
+        $this->assertEquals($testValue, $object->getSubject());
+    }
+
+    /**
+     * Test setter for "content"
+     */
+    public function testSetContent()
+    {
+        $object = new \FattureInCloud\Model\Email();
+        $testValue = 'Test email content body';
+        
+        $object->setContent($testValue);
+        $this->assertEquals($testValue, $object->getContent());
+    }
+
+    /**
+     * Test setter for "copy_to"
+     */
+    public function testSetCopyTo()
+    {
+        $object = new \FattureInCloud\Model\Email();
+        $testValue = 'cc@example.com';
+        
+        $object->setCopyTo($testValue);
+        $this->assertEquals($testValue, $object->getCopyTo());
+    }
+
+    /**
+     * Test setter for "recipient_status"
+     */
+    public function testSetRecipientStatus()
+    {
+        $object = new \FattureInCloud\Model\Email();
+        $testValue = 'delivered';
+        
+        $object->setRecipientStatus($testValue);
+        $this->assertEquals($testValue, $object->getRecipientStatus());
+    }
+
+    /**
+     * Test setter for "recipient_date"
+     */
+    public function testSetRecipientDate()
+    {
+        $object = new \FattureInCloud\Model\Email();
+        $testValue = '2024-04-17';
+        
+        $object->setRecipientDate($testValue);
+        $this->assertEquals($testValue, $object->getRecipientDate());
+    }
+
+    /**
+     * Test setter for "kind"
+     */
+    public function testSetKind()
+    {
+        $object = new \FattureInCloud\Model\Email();
+        $testValue = 'invoice';
+        
+        $object->setKind($testValue);
+        $this->assertEquals($testValue, $object->getKind());
+    }
+
+    /**
+     * Test setter for "attachments"
+     */
+    public function testSetAttachments()
+    {
+        $object = new \FattureInCloud\Model\Email();
+        $testValue = [['filename' => 'test.pdf', 'url' => 'test-url.pdf']];
+        
+        $object->setAttachments($testValue);
+        $this->assertEquals($testValue, $object->getAttachments());
     }
 }

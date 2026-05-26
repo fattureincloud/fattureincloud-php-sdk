@@ -108,9 +108,8 @@ class CreateSupplierResponseTest extends TestCase
      */
     public function testCreateSupplierResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\CreateSupplierResponse', $this->object);
+        $this->assertNotNull($this->object->getData());
     }
 
     /**
@@ -118,8 +117,27 @@ class CreateSupplierResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $data = $this->object->getData();
+        $this->assertInstanceOf('\FattureInCloud\Model\Supplier', $data);
+        $this->assertEquals(12345, $data->getId());
+        $this->assertEquals("AE86", $data->getCode());
+        $this->assertEquals("Mario Rossi S.R.L.", $data->getName());
+        $this->assertEquals("company", $data->getType());
+        $this->assertEquals("Mario", $data->getFirstName());
+        $this->assertEquals("Rossi", $data->getLastName());
+        $this->assertEquals("111222333", $data->getVatNumber());
+        $this->assertEquals("mario.rossi@example.com", $data->getEmail());
+    }
+
+    /**
+     * Test setter for "data"
+     */
+    public function testSetData()
+    {
+        $object = new \FattureInCloud\Model\CreateSupplierResponse();
+        $testValue = new \FattureInCloud\Model\Supplier();
+        
+        $object->setData($testValue);
+        $this->assertEquals($testValue, $object->getData());
     }
 }

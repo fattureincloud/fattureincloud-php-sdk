@@ -102,7 +102,7 @@ class WebhooksApiTest extends TestCase
         $result = $apiInstance->createWebhooksSubscription($company_id, $create_webhooks_subscription_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\CreateWebhooksSubscriptionResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -113,7 +113,7 @@ class WebhooksApiTest extends TestCase
      */
     public function testDeleteWebhooksSubscription()
     {
-        TestCase::assertEquals(1, 1);
+        $this->assertEquals(1, 1);
     }
 
     /**
@@ -139,7 +139,7 @@ class WebhooksApiTest extends TestCase
         $result = $apiInstance->getWebhooksSubscription($company_id, "SUB123");
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\GetWebhooksSubscriptionResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -165,7 +165,7 @@ class WebhooksApiTest extends TestCase
         $result = $apiInstance->listWebhooksSubscriptions($company_id);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ListWebhooksSubscriptionsResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 
     /**
@@ -192,6 +192,6 @@ class WebhooksApiTest extends TestCase
         $result = $apiInstance->modifyWebhooksSubscription($company_id, "SUB123", $modify_webhooks_subscription_request);
         $obj = ObjectSerializer::deserialize($stream, '\FattureInCloud\Model\ModifyWebhooksSubscriptionResponse');
 
-        TestCase::assertEquals($obj, $result);
+        $this->assertEquals($obj, $result);
     }
 }

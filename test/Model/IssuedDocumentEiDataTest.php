@@ -98,9 +98,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testIssuedDocumentEiData()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\\FattureInCloud\\Model\\IssuedDocumentEiData', $this->object);
     }
 
     /**
@@ -108,7 +106,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyVatKind()
     {
-        TestCase::assertEquals($this->object['vat_kind'], $this->array['vat_kind']);
+        $this->assertEquals($this->array['vat_kind'], $this->object->getVatKind());
     }
 
     /**
@@ -116,7 +114,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyOriginalDocumentType()
     {
-        TestCase::assertEquals($this->object['original_document_type'], $this->array['original_document_type']);
+        $this->assertEquals($this->array['original_document_type'], $this->object->getOriginalDocumentType());
     }
 
     /**
@@ -124,7 +122,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyOdNumber()
     {
-        TestCase::assertEquals($this->object['od_number'], $this->array['od_number']);
+        $this->assertEquals($this->array['od_number'], $this->object->getOdNumber());
     }
 
     /**
@@ -133,7 +131,7 @@ class IssuedDocumentEiDataTest extends TestCase
     public function testPropertyOdDate()
     {
         $date = new \DateTime($this->array['od_date']);
-        TestCase::assertEquals($this->object['od_date'], $date);
+        $this->assertEquals($date, $this->object->getOdDate());
     }
 
     /**
@@ -141,7 +139,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyCig()
     {
-        TestCase::assertEquals($this->object['cig'], $this->array['cig']);
+        $this->assertEquals($this->array['cig'], $this->object->getCig());
     }
 
     /**
@@ -149,7 +147,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyCup()
     {
-        TestCase::assertEquals($this->object['cup'], $this->array['cup']);
+        $this->assertEquals($this->array['cup'], $this->object->getCup());
     }
 
     /**
@@ -157,7 +155,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyPaymentMethod()
     {
-        TestCase::assertEquals($this->object['payment_method'], $this->array['payment_method']);
+        $this->assertEquals($this->array['payment_method'], $this->object->getPaymentMethod());
     }
 
     /**
@@ -165,7 +163,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyBankName()
     {
-        TestCase::assertEquals($this->object['bank_name'], $this->array['bank_name']);
+        $this->assertEquals($this->array['bank_name'], $this->object->getBankName());
     }
 
     /**
@@ -173,7 +171,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyBankIban()
     {
-        TestCase::assertEquals($this->object['bank_iban'], $this->array['bank_iban']);
+        $this->assertEquals($this->array['bank_iban'], $this->object->getBankIban());
     }
 
     /**
@@ -181,7 +179,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyBankBeneficiary()
     {
-        TestCase::assertEquals($this->object['bank_beneficiary'], $this->array['bank_beneficiary']);
+        $this->assertEquals($this->array['bank_beneficiary'], $this->object->getBankBeneficiary());
     }
 
     /**
@@ -189,7 +187,7 @@ class IssuedDocumentEiDataTest extends TestCase
      */
     public function testPropertyInvoiceNumber()
     {
-        TestCase::assertEquals($this->object['invoice_number'], $this->array['invoice_number']);
+        $this->assertEquals($this->array['invoice_number'], $this->object->getInvoiceNumber());
     }
 
     /**
@@ -198,6 +196,150 @@ class IssuedDocumentEiDataTest extends TestCase
     public function testPropertyInvoiceDate()
     {
         $date = new \DateTime($this->array['invoice_date']);
-        TestCase::assertEquals($this->object['invoice_date'], $date);
+        $this->assertEquals($date, $this->object->getInvoiceDate());
+    }
+
+    /**
+     * Test setter for "vat_kind"
+     */
+    public function testSetVatKind()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentEiData();
+        $testValue = \FattureInCloud\Model\VatKind::D;
+        
+        $object->setVatKind($testValue);
+        $this->assertEquals($testValue, $object->getVatKind());
+    }
+
+    /**
+     * Test setter for "original_document_type"
+     */
+    public function testSetOriginalDocumentType()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentEiData();
+        $testValue = \FattureInCloud\Model\OriginalDocumentType::CONTRATTO;
+        
+        $object->setOriginalDocumentType($testValue);
+        $this->assertEquals($testValue, $object->getOriginalDocumentType());
+    }
+
+    /**
+     * Test setter for "od_number"
+     */
+    public function testSetOdNumber()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentEiData();
+        $testValue = "ORD-2024-001";
+        
+        $object->setOdNumber($testValue);
+        $this->assertEquals($testValue, $object->getOdNumber());
+    }
+
+    /**
+     * Test setter for "od_date"
+     */
+    public function testSetOdDate()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentEiData();
+        $testValue = new \DateTime('2024-03-15');
+        
+        $object->setOdDate($testValue);
+        $this->assertEquals($testValue, $object->getOdDate());
+    }
+
+    /**
+     * Test setter for "cig"
+     */
+    public function testSetCig()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentEiData();
+        $testValue = "CIG123456789";
+        
+        $object->setCig($testValue);
+        $this->assertEquals($testValue, $object->getCig());
+    }
+
+    /**
+     * Test setter for "cup"
+     */
+    public function testSetCup()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentEiData();
+        $testValue = "CUP123456789";
+        
+        $object->setCup($testValue);
+        $this->assertEquals($testValue, $object->getCup());
+    }
+
+    /**
+     * Test setter for "payment_method"
+     */
+    public function testSetPaymentMethod()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentEiData();
+        $testValue = "MP05";
+        
+        $object->setPaymentMethod($testValue);
+        $this->assertEquals($testValue, $object->getPaymentMethod());
+    }
+
+    /**
+     * Test setter for "bank_name"
+     */
+    public function testSetBankName()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentEiData();
+        $testValue = "Banca Test";
+        
+        $object->setBankName($testValue);
+        $this->assertEquals($testValue, $object->getBankName());
+    }
+
+    /**
+     * Test setter for "bank_iban"
+     */
+    public function testSetBankIban()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentEiData();
+        $testValue = "IT12A1234567890123456789012";
+        
+        $object->setBankIban($testValue);
+        $this->assertEquals($testValue, $object->getBankIban());
+    }
+
+    /**
+     * Test setter for "bank_beneficiary"
+     */
+    public function testSetBankBeneficiary()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentEiData();
+        $testValue = "Test Beneficiary";
+        
+        $object->setBankBeneficiary($testValue);
+        $this->assertEquals($testValue, $object->getBankBeneficiary());
+    }
+
+    /**
+     * Test setter for "invoice_number"
+     */
+    public function testSetInvoiceNumber()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentEiData();
+        $testValue = "INV-2024-001";
+        
+        $object->setInvoiceNumber($testValue);
+        $this->assertEquals($testValue, $object->getInvoiceNumber());
+    }
+
+    /**
+     * Test setter for "invoice_date"
+     */
+    public function testSetInvoiceDate()
+    {
+        $object = new \FattureInCloud\Model\IssuedDocumentEiData();
+        $testValue = new \DateTime('2024-03-20');
+        
+        $object->setInvoiceDate($testValue);
+        $this->assertEquals($testValue, $object->getInvoiceDate());
     }
 }

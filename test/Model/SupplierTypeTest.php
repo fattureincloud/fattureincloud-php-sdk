@@ -87,6 +87,6 @@ class SupplierTypeTest extends TestCase
      */
     public function testSupplierType()
     {
-        TestCase::assertEquals($this->object['type'], $this->array['type']);
+        $this->assertEquals($this->array['type'], $this->object->getType());
     }
 }

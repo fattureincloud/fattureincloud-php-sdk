@@ -101,9 +101,7 @@ class ReceivedDocumentItemsListItemTest extends TestCase
      */
     public function testReceivedDocumentItemsList()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\ReceivedDocumentItemsListItem::class, $this->object);
     }
 
     /**
@@ -111,7 +109,7 @@ class ReceivedDocumentItemsListItemTest extends TestCase
      */
     public function testPropertyId()
     {
-        TestCase::assertEquals($this->object['id'], $this->array['id']);
+        $this->assertEquals($this->array['id'], $this->object->getId());
     }
 
     /**
@@ -119,7 +117,7 @@ class ReceivedDocumentItemsListItemTest extends TestCase
      */
     public function testPropertyProductId()
     {
-        TestCase::assertEquals($this->object['product_id'], $this->array['product_id']);
+        $this->assertEquals($this->array['product_id'], $this->object->getProductId());
     }
 
     /**
@@ -127,7 +125,7 @@ class ReceivedDocumentItemsListItemTest extends TestCase
      */
     public function testPropertyCode()
     {
-        TestCase::assertEquals($this->object['code'], $this->array['code']);
+        $this->assertEquals($this->array['code'], $this->object->getCode());
     }
 
     /**
@@ -135,7 +133,7 @@ class ReceivedDocumentItemsListItemTest extends TestCase
      */
     public function testPropertyName()
     {
-        TestCase::assertEquals($this->object['name'], $this->array['name']);
+        $this->assertEquals($this->array['name'], $this->object->getName());
     }
 
     /**
@@ -143,7 +141,7 @@ class ReceivedDocumentItemsListItemTest extends TestCase
      */
     public function testPropertyMeasure()
     {
-        TestCase::assertEquals($this->object['measure'], $this->array['measure']);
+        $this->assertEquals($this->array['measure'], $this->object->getMeasure());
     }
 
     /**
@@ -151,7 +149,7 @@ class ReceivedDocumentItemsListItemTest extends TestCase
      */
     public function testPropertyNetPrice()
     {
-        TestCase::assertEquals($this->object['net_price'], $this->array['net_price']);
+        $this->assertEquals($this->array['net_price'], $this->object->getNetPrice());
     }
 
     /**
@@ -159,7 +157,7 @@ class ReceivedDocumentItemsListItemTest extends TestCase
      */
     public function testPropertyCategory()
     {
-        TestCase::assertEquals($this->object['category'], $this->array['category']);
+        $this->assertEquals($this->array['category'], $this->object->getCategory());
     }
 
     /**
@@ -167,7 +165,7 @@ class ReceivedDocumentItemsListItemTest extends TestCase
      */
     public function testPropertyQty()
     {
-        TestCase::assertEquals($this->object['qty'], $this->array['qty']);
+        $this->assertEquals($this->array['qty'], $this->object->getQty());
     }
 
     /**
@@ -175,9 +173,12 @@ class ReceivedDocumentItemsListItemTest extends TestCase
      */
     public function testPropertyVat()
     {
-        foreach ($this->array['vat'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['vat']);
-        }
+        $vat = $this->object->getVat();
+        $this->assertInstanceOf(\FattureInCloud\Model\VatType::class, $vat);
+        $this->assertEquals($this->array['vat']['id'], $vat->getId());
+        $this->assertEquals($this->array['vat']['value'], $vat->getValue());
+        $this->assertEquals($this->array['vat']['description'], $vat->getDescription());
+        $this->assertEquals($this->array['vat']['is_disabled'], $vat->getIsDisabled());
     }
 
     /**
@@ -185,6 +186,138 @@ class ReceivedDocumentItemsListItemTest extends TestCase
      */
     public function testPropertyStock()
     {
-        TestCase::assertEquals($this->object['stock'], $this->array['stock']);
+        $this->assertEquals($this->array['stock'], $this->object->getStock());
+    }
+
+    /**
+     * Test setter for "id"
+     */
+    public function testSetId()
+    {
+        $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
+        $testValue = 123;
+        
+        $object->setId($testValue);
+        $this->assertEquals($testValue, $object->getId());
+    }
+
+    /**
+     * Test setter for "product_id"
+     */
+    public function testSetProductId()
+    {
+        $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
+        $testValue = 456;
+        
+        $object->setProductId($testValue);
+        $this->assertEquals($testValue, $object->getProductId());
+    }
+
+    /**
+     * Test setter for "code"
+     */
+    public function testSetCode()
+    {
+        $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
+        $testValue = "TEST123";
+        
+        $object->setCode($testValue);
+        $this->assertEquals($testValue, $object->getCode());
+    }
+
+    /**
+     * Test setter for "name"
+     */
+    public function testSetName()
+    {
+        $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
+        $testValue = "Test Product Name";
+        
+        $object->setName($testValue);
+        $this->assertEquals($testValue, $object->getName());
+    }
+
+    /**
+     * Test setter for "measure"
+     */
+    public function testSetMeasure()
+    {
+        $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
+        $testValue = "kg";
+        
+        $object->setMeasure($testValue);
+        $this->assertEquals($testValue, $object->getMeasure());
+    }
+
+    /**
+     * Test setter for "net_price"
+     */
+    public function testSetNetPrice()
+    {
+        $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
+        $testValue = 99.99;
+        
+        $object->setNetPrice($testValue);
+        $this->assertEquals($testValue, $object->getNetPrice());
+    }
+
+    /**
+     * Test setter for "category"
+     */
+    public function testSetCategory()
+    {
+        $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
+        $testValue = "electronics";
+        
+        $object->setCategory($testValue);
+        $this->assertEquals($testValue, $object->getCategory());
+    }
+
+    /**
+     * Test setter for "qty"
+     */
+    public function testSetQty()
+    {
+        $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
+        $testValue = 5.0;
+        
+        $object->setQty($testValue);
+        $this->assertEquals($testValue, $object->getQty());
+    }
+
+    /**
+     * Test setter for "vat"
+     */
+    public function testSetVat()
+    {
+        $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
+        $testValue = new \FattureInCloud\Model\VatType();
+        
+        $object->setVat($testValue);
+        $this->assertEquals($testValue, $object->getVat());
+    }
+
+    /**
+     * Test setter for "stock"
+     */
+    public function testSetStock()
+    {
+        $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
+        $testValue = 50.0;
+        
+        $object->setStock($testValue);
+        $this->assertEquals($testValue, $object->getStock());
+    }
+
+    /**
+     * Test setter for "deductibility_vat_percentage"
+     */
+    public function testSetDeductibilityVatPercentage()
+    {
+        $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
+        $testValue = 22.0;
+        
+        $object->setDeductibilityVatPercentage($testValue);
+        $this->assertEquals($testValue, $object->getDeductibilityVatPercentage());
     }
 }

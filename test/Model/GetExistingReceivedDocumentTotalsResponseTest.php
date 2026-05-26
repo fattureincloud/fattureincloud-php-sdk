@@ -95,9 +95,7 @@ class GetExistingReceivedDocumentTotalsResponseTest extends TestCase
      */
     public function testGetExistingReceivedDocumentTotalsResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\GetExistingReceivedDocumentTotalsResponse', $this->object);
     }
 
     /**
@@ -105,8 +103,6 @@ class GetExistingReceivedDocumentTotalsResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $this->assertInstanceOf('\FattureInCloud\Model\ReceivedDocumentTotals', $this->object->getData());
     }
 }

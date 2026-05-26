@@ -90,9 +90,7 @@ class SendEInvoiceResponseTest extends TestCase
      */
     public function testSendEInvoiceResponse()
     {
-        foreach ($this->array as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object);
-        }
+        $this->assertInstanceOf(\FattureInCloud\Model\SendEInvoiceResponse::class, $this->object);
     }
 
     /**
@@ -100,8 +98,9 @@ class SendEInvoiceResponseTest extends TestCase
      */
     public function testPropertyData()
     {
-        foreach ($this->array['data'] as $key => $value) {
-            Testcase::assertArrayHasKey($key, $this->object['data']);
-        }
+        $data = $this->object->getData();
+        $this->assertInstanceOf(\FattureInCloud\Model\SendEInvoiceResponseData::class, $data);
+        $this->assertEquals($this->array['data']['name'], $data->getName());
+        $this->assertEquals($this->array['data']['date'], $data->getDate());
     }
 }
