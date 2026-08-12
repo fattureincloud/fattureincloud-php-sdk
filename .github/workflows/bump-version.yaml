@@ -1,20 +1,18 @@
 name: Bump PHP SDK version
 on: [workflow_dispatch]
-    
+
 jobs:
-  
   bump-version:
     runs-on: ubuntu-latest
     env:
       GIT_OPENAPI_REPO_ID: openapi-fattureincloud
       GIT_USER_ID: fattureincloud
-    steps: 
-
+    steps:
       - id: checkout-openapi
         name: Checkout OpenAPI repo
         env:
-          GIT_OPENAPI_REPO_PATH: '${{ env.GIT_USER_ID }}/${{ env.GIT_OPENAPI_REPO_ID }}'
-        uses: actions/checkout@v4
+          GIT_OPENAPI_REPO_PATH: "${{ env.GIT_USER_ID }}/${{ env.GIT_OPENAPI_REPO_ID }}"
+        uses: actions/checkout@v7
         with:
           path: ./openapi
           ref: master
@@ -38,8 +36,8 @@ jobs:
       - id: trigger-event
         name: Trigger Event
         env:
-          GIT_OPENAPI_REPO_PATH: '${{ env.GIT_USER_ID }}/${{ env.GIT_OPENAPI_REPO_ID }}'
-        uses: peter-evans/repository-dispatch@v3
+          GIT_OPENAPI_REPO_PATH: "${{ env.GIT_USER_ID }}/${{ env.GIT_OPENAPI_REPO_ID }}"
+        uses: peter-evans/repository-dispatch@v4
         with:
           token: ${{ secrets.FATTUREINCLOUD_BOT_TOKEN }}
           repository: ${{ env.GIT_OPENAPI_REPO_PATH }}
