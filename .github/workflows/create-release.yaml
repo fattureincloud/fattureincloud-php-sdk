@@ -29,8 +29,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PAYLOAD_VERSION: ${{ github.event.client_payload.version }}
         run: |
-          VERSION="$PAYLOAD_VERSION"
-          # the event can be dispatched without payload: fall back to the latest release
+          VERSION="${PAYLOAD_VERSION#v}"
+          # the event can be dispatched with an empty payload: fall back to the latest release
           if [ -z "$VERSION" ]; then
             VERSION=$(gh api "repos/$GITHUB_REPOSITORY/releases/latest" --jq '.tag_name' | sed 's/^v//')
           fi

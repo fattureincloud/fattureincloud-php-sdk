@@ -1,19 +1,20 @@
 name: Trigger Phar generation
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "SDK version to build, without the leading v (e.g. 2.1.5). Leave empty to use the latest release."
+        required: false
+        type: string
 
 jobs:
   trigger-create-release:
     runs-on: ubuntu-latest
     steps:
-      - id: checkout
-        name: Checkout repo
-        uses: actions/checkout@v7
-        with:
-          token: ${{ secrets.FATTUREINCLOUD_BOT_TOKEN }}
-
       - id: trigger-event
         name: Trigger Event
         uses: peter-evans/repository-dispatch@v4
         with:
           token: ${{ secrets.FATTUREINCLOUD_BOT_TOKEN }}
           event-type: create-release
+          client-payload: '{"version": "${{ inputs.version }}"}'
