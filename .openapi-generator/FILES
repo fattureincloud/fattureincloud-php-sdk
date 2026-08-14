@@ -567,15 +567,3 @@ lib/Model/WebhooksSubscriptionMapping.php
 lib/Model/WebhooksSubscriptionVerificationMethod.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/AttachmentTest.php
-test/Model/GetPendingReceivedDocumentResponseTest.php
-test/Model/GetTemplatesResponseTest.php
-test/Model/ListPendingReceivedDocumentsResponsePageTest.php
-test/Model/ListPendingReceivedDocumentsResponseTest.php
-test/Model/PendingReceivedDocumentExtractedDataMiningTest.php
-test/Model/PendingReceivedDocumentExtractedDataTest.php
-test/Model/PendingReceivedDocumentPaymentsListItemPaymentTermsTest.php
-test/Model/PendingReceivedDocumentPaymentsListItemTest.php
-test/Model/PendingReceivedDocumentTest.php
-test/Model/PendingReceivedDocumentTypeTest.php
-test/Model/TemplateTypeTest.php

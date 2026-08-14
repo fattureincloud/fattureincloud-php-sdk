@@ -1,4 +1,4 @@
-# # ListPaymentAccountsResponse
+# ListPaymentAccountsResponse
 
 ## Properties
 

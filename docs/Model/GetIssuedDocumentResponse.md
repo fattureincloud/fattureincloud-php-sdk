@@ -1,4 +1,4 @@
-# # GetIssuedDocumentResponse
+# GetIssuedDocumentResponse
 
 ## Properties
 

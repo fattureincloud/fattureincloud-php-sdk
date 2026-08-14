@@ -1,4 +1,4 @@
-# # CreateArchiveDocumentResponse
+# CreateArchiveDocumentResponse
 
 ## Properties
 

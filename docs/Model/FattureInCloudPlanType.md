@@ -1,4 +1,4 @@
-# # FattureInCloudPlanType
+# FattureInCloudPlanType
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # UploadIssuedDocumentAttachmentResponse
+# UploadIssuedDocumentAttachmentResponse
 
 ## Properties
 

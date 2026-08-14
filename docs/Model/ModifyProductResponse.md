@@ -1,4 +1,4 @@
-# # ModifyProductResponse
+# ModifyProductResponse
 
 ## Properties
 

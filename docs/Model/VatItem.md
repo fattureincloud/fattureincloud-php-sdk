@@ -1,4 +1,4 @@
-# # VatItem
+# VatItem
 
 ## Properties
 

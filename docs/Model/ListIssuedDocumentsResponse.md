@@ -1,4 +1,4 @@
-# # ListIssuedDocumentsResponse
+# ListIssuedDocumentsResponse
 
 ## Properties
 

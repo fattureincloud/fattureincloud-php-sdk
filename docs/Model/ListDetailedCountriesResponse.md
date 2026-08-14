@@ -1,4 +1,4 @@
-# # ListDetailedCountriesResponse
+# ListDetailedCountriesResponse
 
 ## Properties
 

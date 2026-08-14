@@ -1,4 +1,4 @@
-# # Attachment
+# Attachment
 
 ## Properties
 

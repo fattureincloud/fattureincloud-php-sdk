@@ -1,4 +1,4 @@
-# # ClientType
+# ClientType
 
 ## Properties
 

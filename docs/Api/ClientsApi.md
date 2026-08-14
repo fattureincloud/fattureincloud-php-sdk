@@ -2,14 +2,15 @@
 
 All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-| Method                                             | HTTP request                                            | Description     |
-| -------------------------------------------------- | ------------------------------------------------------- | --------------- |
-| [**createClient()**](ClientsApi.md#createClient)   | **POST** /c/{company_id}/entities/clients               | Create Client   |
-| [**deleteClient()**](ClientsApi.md#deleteClient)   | **DELETE** /c/{company_id}/entities/clients/{client_id} | Delete Client   |
-| [**getClient()**](ClientsApi.md#getClient)         | **GET** /c/{company_id}/entities/clients/{client_id}    | Get Client      |
-| [**getClientInfo()**](ClientsApi.md#getClientInfo) | **GET** /c/{company_id}/entities/clients/info           | Get Client info |
-| [**listClients()**](ClientsApi.md#listClients)     | **GET** /c/{company_id}/entities/clients                | List Clients    |
-| [**modifyClient()**](ClientsApi.md#modifyClient)   | **PUT** /c/{company_id}/entities/clients/{client_id}    | Modify Client   |
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createClient()**](ClientsApi.md#createClient) | **POST** /c/{company_id}/entities/clients | Create Client |
+| [**deleteClient()**](ClientsApi.md#deleteClient) | **DELETE** /c/{company_id}/entities/clients/{client_id} | Delete Client |
+| [**getClient()**](ClientsApi.md#getClient) | **GET** /c/{company_id}/entities/clients/{client_id} | Get Client |
+| [**getClientInfo()**](ClientsApi.md#getClientInfo) | **GET** /c/{company_id}/entities/clients/info | Get Client info |
+| [**listClients()**](ClientsApi.md#listClients) | **GET** /c/{company_id}/entities/clients | List Clients |
+| [**modifyClient()**](ClientsApi.md#modifyClient) | **PUT** /c/{company_id}/entities/clients/{client_id} | Modify Client |
+
 
 ## `createClient()`
 
@@ -37,7 +38,7 @@ $apiInstance = new FattureInCloud\Api\ClientsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $create_client_request = new \FattureInCloud\Model\CreateClientRequest; // \FattureInCloud\Model\CreateClientRequest | The client to create
 
 try {
@@ -50,10 +51,10 @@ try {
 
 ### Parameters
 
-| Name                      | Type                                                                             | Description            | Notes      |
-| ------------------------- | -------------------------------------------------------------------------------- | ---------------------- | ---------- |
-| **company_id**            | **int**                                                                          | The ID of the company. |            |
-| **create_client_request** | [**\FattureInCloud\Model\CreateClientRequest**](../Model/CreateClientRequest.md) | The client to create   | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **create_client_request** | [**\FattureInCloud\Model\CreateClientRequest**](../Model/CreateClientRequest.md)| The client to create | [optional] |
 
 ### Return type
 
@@ -98,7 +99,7 @@ $apiInstance = new FattureInCloud\Api\ClientsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $client_id = 56; // int | The ID of the client.
 
 try {
@@ -110,10 +111,10 @@ try {
 
 ### Parameters
 
-| Name           | Type    | Description            | Notes |
-| -------------- | ------- | ---------------------- | ----- |
-| **company_id** | **int** | The ID of the company. |       |
-| **client_id**  | **int** | The ID of the client.  |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **client_id** | **int**| The ID of the client. | |
 
 ### Return type
 
@@ -158,7 +159,7 @@ $apiInstance = new FattureInCloud\Api\ClientsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $client_id = 56; // int | The ID of the client.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
@@ -173,12 +174,12 @@ try {
 
 ### Parameters
 
-| Name           | Type       | Description                     | Notes      |
-| -------------- | ---------- | ------------------------------- | ---------- |
-| **company_id** | **int**    | The ID of the company.          |            |
-| **client_id**  | **int**    | The ID of the client.           |            |
-| **fields**     | **string** | List of comma-separated fields. | [optional] |
-| **fieldset**   | **string** | Name of the fieldset.           | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **client_id** | **int**| The ID of the client. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
 
 ### Return type
 
@@ -223,7 +224,7 @@ $apiInstance = new FattureInCloud\Api\ClientsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 
 try {
     $result = $apiInstance->getClientInfo($company_id);
@@ -235,9 +236,9 @@ try {
 
 ### Parameters
 
-| Name           | Type    | Description            | Notes |
-| -------------- | ------- | ---------------------- | ----- |
-| **company_id** | **int** | The ID of the company. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
 
 ### Return type
 
@@ -282,7 +283,7 @@ $apiInstance = new FattureInCloud\Api\ClientsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
 $sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
@@ -300,15 +301,15 @@ try {
 
 ### Parameters
 
-| Name           | Type       | Description                                                                 | Notes                     |
-| -------------- | ---------- | --------------------------------------------------------------------------- | ------------------------- |
-| **company_id** | **int**    | The ID of the company.                                                      |                           |
-| **fields**     | **string** | List of comma-separated fields.                                             | [optional]                |
-| **fieldset**   | **string** | Name of the fieldset.                                                       | [optional]                |
-| **sort**       | **string** | List of comma-separated fields for result sorting (minus for desc sorting). | [optional]                |
-| **page**       | **int**    | The page to retrieve.                                                       | [optional] [default to 1] |
-| **per_page**   | **int**    | The size of the page.                                                       | [optional] [default to 5] |
-| **q**          | **string** | Query for filtering the results.                                            | [optional]                |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
+| **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
+| **page** | **int**| The page to retrieve. | [optional] [default to 1] |
+| **per_page** | **int**| The size of the page. | [optional] [default to 5] |
+| **q** | **string**| Query for filtering the results. | [optional] |
 
 ### Return type
 
@@ -353,7 +354,7 @@ $apiInstance = new FattureInCloud\Api\ClientsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $client_id = 56; // int | The ID of the client.
 $modify_client_request = new \FattureInCloud\Model\ModifyClientRequest; // \FattureInCloud\Model\ModifyClientRequest | The modified Client. First level parameters are managed in delta mode.
 
@@ -367,11 +368,11 @@ try {
 
 ### Parameters
 
-| Name                      | Type                                                                             | Description                                                            | Notes      |
-| ------------------------- | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------- |
-| **company_id**            | **int**                                                                          | The ID of the company.                                                 |            |
-| **client_id**             | **int**                                                                          | The ID of the client.                                                  |            |
-| **modify_client_request** | [**\FattureInCloud\Model\ModifyClientRequest**](../Model/ModifyClientRequest.md) | The modified Client. First level parameters are managed in delta mode. | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **client_id** | **int**| The ID of the client. | |
+| **modify_client_request** | [**\FattureInCloud\Model\ModifyClientRequest**](../Model/ModifyClientRequest.md)| The modified Client. First level parameters are managed in delta mode. | [optional] |
 
 ### Return type
 

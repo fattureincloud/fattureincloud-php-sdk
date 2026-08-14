@@ -1,4 +1,4 @@
-# # GetEInvoiceRejectionReasonResponse
+# GetEInvoiceRejectionReasonResponse
 
 ## Properties
 

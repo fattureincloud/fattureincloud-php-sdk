@@ -2,10 +2,11 @@
 
 All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-| Method                                                        | HTTP request                                              | Description              |
-| ------------------------------------------------------------- | --------------------------------------------------------- | ------------------------ |
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
 | [**getPriceListItems()**](PriceListsApi.md#getPriceListItems) | **GET** /c/{company_id}/price_lists/{price_list_id}/items | Get PriceList Items List |
-| [**getPriceLists()**](PriceListsApi.md#getPriceLists)         | **GET** /c/{company_id}/price_lists                       | Get PriceLists           |
+| [**getPriceLists()**](PriceListsApi.md#getPriceLists) | **GET** /c/{company_id}/price_lists | Get PriceLists |
+
 
 ## `getPriceListItems()`
 
@@ -33,8 +34,8 @@ $apiInstance = new FattureInCloud\Api\PriceListsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$price_list_id = 'price_list_id_example'; // string | The ID of the price
+    $company_id = 12345; // int | The ID of the company.
+$price_list_id = 'price_list_id_example'; // string | The price list ID
 
 try {
     $result = $apiInstance->getPriceListItems($company_id, $price_list_id);
@@ -46,10 +47,10 @@ try {
 
 ### Parameters
 
-| Name              | Type       | Description            | Notes |
-| ----------------- | ---------- | ---------------------- | ----- |
-| **company_id**    | **int**    | The ID of the company. |       |
-| **price_list_id** | **string** | The ID of the price    |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **price_list_id** | **string**| The price list ID | |
 
 ### Return type
 
@@ -94,7 +95,7 @@ $apiInstance = new FattureInCloud\Api\PriceListsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 
 try {
     $result = $apiInstance->getPriceLists($company_id);
@@ -106,9 +107,9 @@ try {
 
 ### Parameters
 
-| Name           | Type    | Description            | Notes |
-| -------------- | ------- | ---------------------- | ----- |
-| **company_id** | **int** | The ID of the company. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
 
 ### Return type
 

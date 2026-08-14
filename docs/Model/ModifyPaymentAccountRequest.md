@@ -1,4 +1,4 @@
-# # ModifyPaymentAccountRequest
+# ModifyPaymentAccountRequest
 
 ## Properties
 

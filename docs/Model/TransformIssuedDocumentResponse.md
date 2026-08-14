@@ -1,4 +1,4 @@
-# # TransformIssuedDocumentResponse
+# TransformIssuedDocumentResponse
 
 ## Properties
 

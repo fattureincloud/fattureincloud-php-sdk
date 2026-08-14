@@ -1,4 +1,4 @@
-# # CashbookEntryKind
+# CashbookEntryKind
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # ListProductsResponsePage
+# ListProductsResponsePage
 
 ## Properties
 

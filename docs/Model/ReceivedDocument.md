@@ -1,4 +1,4 @@
-# # ReceivedDocument
+# ReceivedDocument
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # ListSuppliersResponsePage
+# ListSuppliersResponsePage
 
 ## Properties
 

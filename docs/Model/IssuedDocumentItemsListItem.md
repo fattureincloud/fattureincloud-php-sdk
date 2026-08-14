@@ -1,4 +1,4 @@
-# # IssuedDocumentItemsListItem
+# IssuedDocumentItemsListItem
 
 ## Properties
 

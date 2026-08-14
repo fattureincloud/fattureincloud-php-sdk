@@ -1,4 +1,4 @@
-# # CompanyInfoPlanInfo
+# CompanyInfoPlanInfo
 
 ## Properties
 

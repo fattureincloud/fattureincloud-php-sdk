@@ -1,4 +1,4 @@
-# # PaymentMethodType
+# PaymentMethodType
 
 ## Properties
 

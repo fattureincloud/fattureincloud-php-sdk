@@ -1,4 +1,4 @@
-# # ModifyCashbookEntryResponse
+# ModifyCashbookEntryResponse
 
 ## Properties
 

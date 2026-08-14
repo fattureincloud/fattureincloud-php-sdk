@@ -1,4 +1,4 @@
-# # IssuedDocumentPreCreateInfoExtraDataDefaultValues
+# IssuedDocumentPreCreateInfoExtraDataDefaultValues
 
 ## Properties
 

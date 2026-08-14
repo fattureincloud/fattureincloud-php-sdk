@@ -1,4 +1,4 @@
-# # ListLanguagesResponse
+# ListLanguagesResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # SenderEmail
+# SenderEmail
 
 ## Properties
 

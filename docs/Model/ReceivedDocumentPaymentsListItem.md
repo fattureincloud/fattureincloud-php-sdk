@@ -1,4 +1,4 @@
-# # ReceivedDocumentPaymentsListItem
+# ReceivedDocumentPaymentsListItem
 
 ## Properties
 

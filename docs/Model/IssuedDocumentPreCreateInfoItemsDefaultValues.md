@@ -1,4 +1,4 @@
-# # IssuedDocumentPreCreateInfoItemsDefaultValues
+# IssuedDocumentPreCreateInfoItemsDefaultValues
 
 ## Properties
 

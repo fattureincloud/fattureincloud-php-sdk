@@ -1,4 +1,4 @@
-# # ListWebhooksSubscriptionsResponse
+# ListWebhooksSubscriptionsResponse
 
 ## Properties
 

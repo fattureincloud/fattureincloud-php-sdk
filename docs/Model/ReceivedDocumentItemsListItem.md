@@ -1,4 +1,4 @@
-# # ReceivedDocumentItemsListItem
+# ReceivedDocumentItemsListItem
 
 ## Properties
 

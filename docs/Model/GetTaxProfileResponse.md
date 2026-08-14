@@ -1,4 +1,4 @@
-# # GetTaxProfileResponse
+# GetTaxProfileResponse
 
 ## Properties
 

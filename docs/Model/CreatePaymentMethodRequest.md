@@ -1,4 +1,4 @@
-# # CreatePaymentMethodRequest
+# CreatePaymentMethodRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # WebhooksSubscriptionConfig
+# WebhooksSubscriptionConfig
 
 ## Properties
 

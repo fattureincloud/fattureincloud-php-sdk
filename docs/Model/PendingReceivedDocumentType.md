@@ -1,4 +1,4 @@
-# # PendingReceivedDocumentType
+# PendingReceivedDocumentType
 
 ## Properties
 

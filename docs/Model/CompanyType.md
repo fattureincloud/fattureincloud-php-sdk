@@ -1,4 +1,4 @@
-# # CompanyType
+# CompanyType
 
 ## Properties
 

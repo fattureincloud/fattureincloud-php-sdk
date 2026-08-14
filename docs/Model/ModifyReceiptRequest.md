@@ -1,4 +1,4 @@
-# # ModifyReceiptRequest
+# ModifyReceiptRequest
 
 ## Properties
 

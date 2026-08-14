@@ -1,4 +1,4 @@
-# # CreatePaymentAccountResponse
+# CreatePaymentAccountResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetReceiptResponse
+# GetReceiptResponse
 
 ## Properties
 

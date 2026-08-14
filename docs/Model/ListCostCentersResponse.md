@@ -1,4 +1,4 @@
-# # ListCostCentersResponse
+# ListCostCentersResponse
 
 ## Properties
 

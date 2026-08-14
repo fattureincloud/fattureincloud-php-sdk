@@ -1,4 +1,4 @@
-# # EmailScheduleInclude
+# EmailScheduleInclude
 
 ## Properties
 

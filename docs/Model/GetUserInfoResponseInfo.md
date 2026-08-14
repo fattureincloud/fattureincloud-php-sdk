@@ -1,4 +1,4 @@
-# # GetUserInfoResponseInfo
+# GetUserInfoResponseInfo
 
 ## Properties
 

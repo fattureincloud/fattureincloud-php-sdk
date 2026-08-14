@@ -1,4 +1,4 @@
-# # Supplier
+# Supplier
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # ListBinReceivedDocuments
+# ListBinReceivedDocuments
 
 ## Properties
 

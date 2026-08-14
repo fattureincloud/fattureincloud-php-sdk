@@ -1,4 +1,4 @@
-# # PriceListPricesType
+# PriceListPricesType
 
 ## Properties
 

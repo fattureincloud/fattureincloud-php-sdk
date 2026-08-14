@@ -1,4 +1,4 @@
-# # PendingReceivedDocumentExtractedDataMining
+# PendingReceivedDocumentExtractedDataMining
 
 ## Properties
 

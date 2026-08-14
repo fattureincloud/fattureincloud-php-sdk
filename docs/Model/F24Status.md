@@ -1,4 +1,4 @@
-# # F24Status
+# F24Status
 
 ## Properties
 

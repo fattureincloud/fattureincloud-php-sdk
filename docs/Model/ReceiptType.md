@@ -1,4 +1,4 @@
-# # ReceiptType
+# ReceiptType
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetPriceListItemsResponse
+# GetPriceListItemsResponse
 
 ## Properties
 

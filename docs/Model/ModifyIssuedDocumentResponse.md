@@ -1,4 +1,4 @@
-# # ModifyIssuedDocumentResponse
+# ModifyIssuedDocumentResponse
 
 ## Properties
 
