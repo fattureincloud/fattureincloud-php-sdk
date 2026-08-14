@@ -1,4 +1,4 @@
-# # ReceivedDocumentInfoDefaultValues
+# ReceivedDocumentInfoDefaultValues
 
 ## Properties
 

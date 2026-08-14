@@ -1,4 +1,4 @@
-# # IssuedDocumentExtraData
+# IssuedDocumentExtraData
 
 ## Properties
 

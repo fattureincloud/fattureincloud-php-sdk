@@ -1,4 +1,4 @@
-# # ReceiptPreCreateInfo
+# ReceiptPreCreateInfo
 
 ## Properties
 

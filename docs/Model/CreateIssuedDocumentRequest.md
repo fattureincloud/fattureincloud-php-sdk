@@ -1,4 +1,4 @@
-# # CreateIssuedDocumentRequest
+# CreateIssuedDocumentRequest
 
 ## Properties
 

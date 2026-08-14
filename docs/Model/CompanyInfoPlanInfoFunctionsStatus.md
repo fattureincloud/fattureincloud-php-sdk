@@ -1,4 +1,4 @@
-# # CompanyInfoPlanInfoFunctionsStatus
+# CompanyInfoPlanInfoFunctionsStatus
 
 ## Properties
 

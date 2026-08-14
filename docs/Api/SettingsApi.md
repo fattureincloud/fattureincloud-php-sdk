@@ -2,23 +2,24 @@
 
 All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-| Method                                                            | HTTP request                                                              | Description            |
-| ----------------------------------------------------------------- | ------------------------------------------------------------------------- | ---------------------- |
-| [**createPaymentAccount()**](SettingsApi.md#createPaymentAccount) | **POST** /c/{company_id}/settings/payment_accounts                        | Create Payment Account |
-| [**createPaymentMethod()**](SettingsApi.md#createPaymentMethod)   | **POST** /c/{company_id}/settings/payment_methods                         | Create Payment Method  |
-| [**createVatType()**](SettingsApi.md#createVatType)               | **POST** /c/{company_id}/settings/vat_types                               | Create Vat Type        |
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createPaymentAccount()**](SettingsApi.md#createPaymentAccount) | **POST** /c/{company_id}/settings/payment_accounts | Create Payment Account |
+| [**createPaymentMethod()**](SettingsApi.md#createPaymentMethod) | **POST** /c/{company_id}/settings/payment_methods | Create Payment Method |
+| [**createVatType()**](SettingsApi.md#createVatType) | **POST** /c/{company_id}/settings/vat_types | Create Vat Type |
 | [**deletePaymentAccount()**](SettingsApi.md#deletePaymentAccount) | **DELETE** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Delete Payment Account |
-| [**deletePaymentMethod()**](SettingsApi.md#deletePaymentMethod)   | **DELETE** /c/{company_id}/settings/payment_methods/{payment_method_id}   | Delete Payment Method  |
-| [**deleteVatType()**](SettingsApi.md#deleteVatType)               | **DELETE** /c/{company_id}/settings/vat_types/{vat_type_id}               | Delete Vat Type        |
-| [**getPaymentAccount()**](SettingsApi.md#getPaymentAccount)       | **GET** /c/{company_id}/settings/payment_accounts/{payment_account_id}    | Get Payment Account    |
-| [**getPaymentMethod()**](SettingsApi.md#getPaymentMethod)         | **GET** /c/{company_id}/settings/payment_methods/{payment_method_id}      | Get Payment Method     |
-| [**getTaxProfile()**](SettingsApi.md#getTaxProfile)               | **GET** /c/{company_id}/settings/tax_profile                              | Get Tax Profile        |
-| [**getTemplate()**](SettingsApi.md#getTemplate)                   | **GET** /c/{company_id}/settings/templates/{template_id}                  | Get Template           |
-| [**getVatType()**](SettingsApi.md#getVatType)                     | **GET** /c/{company_id}/settings/vat_types/{vat_type_id}                  | Get Vat Type           |
-| [**listTemplates()**](SettingsApi.md#listTemplates)               | **GET** /c/{company_id}/settings/templates                                | List Templates         |
-| [**modifyPaymentAccount()**](SettingsApi.md#modifyPaymentAccount) | **PUT** /c/{company_id}/settings/payment_accounts/{payment_account_id}    | Modify Payment Account |
-| [**modifyPaymentMethod()**](SettingsApi.md#modifyPaymentMethod)   | **PUT** /c/{company_id}/settings/payment_methods/{payment_method_id}      | Modify Payment Method  |
-| [**modifyVatType()**](SettingsApi.md#modifyVatType)               | **PUT** /c/{company_id}/settings/vat_types/{vat_type_id}                  | Modify Vat Type        |
+| [**deletePaymentMethod()**](SettingsApi.md#deletePaymentMethod) | **DELETE** /c/{company_id}/settings/payment_methods/{payment_method_id} | Delete Payment Method |
+| [**deleteVatType()**](SettingsApi.md#deleteVatType) | **DELETE** /c/{company_id}/settings/vat_types/{vat_type_id} | Delete Vat Type |
+| [**getPaymentAccount()**](SettingsApi.md#getPaymentAccount) | **GET** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Get Payment Account |
+| [**getPaymentMethod()**](SettingsApi.md#getPaymentMethod) | **GET** /c/{company_id}/settings/payment_methods/{payment_method_id} | Get Payment Method |
+| [**getTaxProfile()**](SettingsApi.md#getTaxProfile) | **GET** /c/{company_id}/settings/tax_profile | Get Tax Profile |
+| [**getTemplate()**](SettingsApi.md#getTemplate) | **GET** /c/{company_id}/settings/templates/{template_id} | Get Template |
+| [**getVatType()**](SettingsApi.md#getVatType) | **GET** /c/{company_id}/settings/vat_types/{vat_type_id} | Get Vat Type |
+| [**listTemplates()**](SettingsApi.md#listTemplates) | **GET** /c/{company_id}/settings/templates | List Templates |
+| [**modifyPaymentAccount()**](SettingsApi.md#modifyPaymentAccount) | **PUT** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Modify Payment Account |
+| [**modifyPaymentMethod()**](SettingsApi.md#modifyPaymentMethod) | **PUT** /c/{company_id}/settings/payment_methods/{payment_method_id} | Modify Payment Method |
+| [**modifyVatType()**](SettingsApi.md#modifyVatType) | **PUT** /c/{company_id}/settings/vat_types/{vat_type_id} | Modify Vat Type |
+
 
 ## `createPaymentAccount()`
 
@@ -46,7 +47,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $create_payment_account_request = new \FattureInCloud\Model\CreatePaymentAccountRequest; // \FattureInCloud\Model\CreatePaymentAccountRequest
 
 try {
@@ -59,10 +60,10 @@ try {
 
 ### Parameters
 
-| Name                               | Type                                                                                             | Description            | Notes      |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------ | ---------------------- | ---------- |
-| **company_id**                     | **int**                                                                                          | The ID of the company. |            |
-| **create_payment_account_request** | [**\FattureInCloud\Model\CreatePaymentAccountRequest**](../Model/CreatePaymentAccountRequest.md) |                        | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **create_payment_account_request** | [**\FattureInCloud\Model\CreatePaymentAccountRequest**](../Model/CreatePaymentAccountRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -107,7 +108,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $create_payment_method_request = new \FattureInCloud\Model\CreatePaymentMethodRequest; // \FattureInCloud\Model\CreatePaymentMethodRequest
 
 try {
@@ -120,10 +121,10 @@ try {
 
 ### Parameters
 
-| Name                              | Type                                                                                           | Description            | Notes      |
-| --------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------- | ---------- |
-| **company_id**                    | **int**                                                                                        | The ID of the company. |            |
-| **create_payment_method_request** | [**\FattureInCloud\Model\CreatePaymentMethodRequest**](../Model/CreatePaymentMethodRequest.md) |                        | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **create_payment_method_request** | [**\FattureInCloud\Model\CreatePaymentMethodRequest**](../Model/CreatePaymentMethodRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -168,8 +169,8 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$create_vat_type_request = new \FattureInCloud\Model\CreateVatTypeRequest; // \FattureInCloud\Model\CreateVatTypeRequest |
+    $company_id = 12345; // int | The ID of the company.
+$create_vat_type_request = new \FattureInCloud\Model\CreateVatTypeRequest; // \FattureInCloud\Model\CreateVatTypeRequest | 
 
 try {
     $result = $apiInstance->createVatType($company_id, $create_vat_type_request);
@@ -181,10 +182,10 @@ try {
 
 ### Parameters
 
-| Name                        | Type                                                                               | Description            | Notes      |
-| --------------------------- | ---------------------------------------------------------------------------------- | ---------------------- | ---------- |
-| **company_id**              | **int**                                                                            | The ID of the company. |            |
-| **create_vat_type_request** | [**\FattureInCloud\Model\CreateVatTypeRequest**](../Model/CreateVatTypeRequest.md) |                        | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **create_vat_type_request** | [**\FattureInCloud\Model\CreateVatTypeRequest**](../Model/CreateVatTypeRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -229,7 +230,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $payment_account_id = 56; // int | The Referred Payment Account Id.
 
 try {
@@ -241,10 +242,10 @@ try {
 
 ### Parameters
 
-| Name                   | Type    | Description                      | Notes |
-| ---------------------- | ------- | -------------------------------- | ----- |
-| **company_id**         | **int** | The ID of the company.           |       |
-| **payment_account_id** | **int** | The Referred Payment Account Id. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **payment_account_id** | **int**| The Referred Payment Account Id. | |
 
 ### Return type
 
@@ -289,7 +290,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $payment_method_id = 56; // int | The Referred Payment Method Id.
 
 try {
@@ -301,10 +302,10 @@ try {
 
 ### Parameters
 
-| Name                  | Type    | Description                     | Notes |
-| --------------------- | ------- | ------------------------------- | ----- |
-| **company_id**        | **int** | The ID of the company.          |       |
-| **payment_method_id** | **int** | The Referred Payment Method Id. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **payment_method_id** | **int**| The Referred Payment Method Id. | |
 
 ### Return type
 
@@ -349,7 +350,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $vat_type_id = 56; // int | The Referred Vat Type Id.
 
 try {
@@ -361,10 +362,10 @@ try {
 
 ### Parameters
 
-| Name            | Type    | Description               | Notes |
-| --------------- | ------- | ------------------------- | ----- |
-| **company_id**  | **int** | The ID of the company.    |       |
-| **vat_type_id** | **int** | The Referred Vat Type Id. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **vat_type_id** | **int**| The Referred Vat Type Id. | |
 
 ### Return type
 
@@ -409,7 +410,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $payment_account_id = 56; // int | The Referred Payment Account Id.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
@@ -424,12 +425,12 @@ try {
 
 ### Parameters
 
-| Name                   | Type       | Description                      | Notes      |
-| ---------------------- | ---------- | -------------------------------- | ---------- |
-| **company_id**         | **int**    | The ID of the company.           |            |
-| **payment_account_id** | **int**    | The Referred Payment Account Id. |            |
-| **fields**             | **string** | List of comma-separated fields.  | [optional] |
-| **fieldset**           | **string** | Name of the fieldset.            | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **payment_account_id** | **int**| The Referred Payment Account Id. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
 
 ### Return type
 
@@ -474,7 +475,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $payment_method_id = 56; // int | The Referred Payment Method Id.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
@@ -489,12 +490,12 @@ try {
 
 ### Parameters
 
-| Name                  | Type       | Description                     | Notes      |
-| --------------------- | ---------- | ------------------------------- | ---------- |
-| **company_id**        | **int**    | The ID of the company.          |            |
-| **payment_method_id** | **int**    | The Referred Payment Method Id. |            |
-| **fields**            | **string** | List of comma-separated fields. | [optional] |
-| **fieldset**          | **string** | Name of the fieldset.           | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **payment_method_id** | **int**| The Referred Payment Method Id. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
 
 ### Return type
 
@@ -539,7 +540,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 
 try {
     $result = $apiInstance->getTaxProfile($company_id);
@@ -551,9 +552,9 @@ try {
 
 ### Parameters
 
-| Name           | Type    | Description            | Notes |
-| -------------- | ------- | ---------------------- | ----- |
-| **company_id** | **int** | The ID of the company. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
 
 ### Return type
 
@@ -598,7 +599,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $template_id = 56; // int | The Referred Template Id.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
@@ -613,12 +614,12 @@ try {
 
 ### Parameters
 
-| Name            | Type       | Description                     | Notes      |
-| --------------- | ---------- | ------------------------------- | ---------- |
-| **company_id**  | **int**    | The ID of the company.          |            |
-| **template_id** | **int**    | The Referred Template Id.       |            |
-| **fields**      | **string** | List of comma-separated fields. | [optional] |
-| **fieldset**    | **string** | Name of the fieldset.           | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **template_id** | **int**| The Referred Template Id. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
 
 ### Return type
 
@@ -663,7 +664,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $vat_type_id = 56; // int | The Referred Vat Type Id.
 
 try {
@@ -676,10 +677,10 @@ try {
 
 ### Parameters
 
-| Name            | Type    | Description               | Notes |
-| --------------- | ------- | ------------------------- | ----- |
-| **company_id**  | **int** | The ID of the company.    |       |
-| **vat_type_id** | **int** | The Referred Vat Type Id. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **vat_type_id** | **int**| The Referred Vat Type Id. | |
 
 ### Return type
 
@@ -724,7 +725,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
 
@@ -738,11 +739,11 @@ try {
 
 ### Parameters
 
-| Name           | Type       | Description                     | Notes      |
-| -------------- | ---------- | ------------------------------- | ---------- |
-| **company_id** | **int**    | The ID of the company.          |            |
-| **fields**     | **string** | List of comma-separated fields. | [optional] |
-| **fieldset**   | **string** | Name of the fieldset.           | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
 
 ### Return type
 
@@ -787,7 +788,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $payment_account_id = 56; // int | The Referred Payment Account Id.
 $modify_payment_account_request = new \FattureInCloud\Model\ModifyPaymentAccountRequest; // \FattureInCloud\Model\ModifyPaymentAccountRequest
 
@@ -801,11 +802,11 @@ try {
 
 ### Parameters
 
-| Name                               | Type                                                                                             | Description                      | Notes      |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------ | -------------------------------- | ---------- |
-| **company_id**                     | **int**                                                                                          | The ID of the company.           |            |
-| **payment_account_id**             | **int**                                                                                          | The Referred Payment Account Id. |            |
-| **modify_payment_account_request** | [**\FattureInCloud\Model\ModifyPaymentAccountRequest**](../Model/ModifyPaymentAccountRequest.md) |                                  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **payment_account_id** | **int**| The Referred Payment Account Id. | |
+| **modify_payment_account_request** | [**\FattureInCloud\Model\ModifyPaymentAccountRequest**](../Model/ModifyPaymentAccountRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -850,9 +851,9 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $payment_method_id = 56; // int | The Referred Payment Method Id.
-$modify_payment_method_request = new \FattureInCloud\Model\ModifyPaymentMethodRequest; // \FattureInCloud\Model\ModifyPaymentMethodRequest |
+$modify_payment_method_request = new \FattureInCloud\Model\ModifyPaymentMethodRequest; // \FattureInCloud\Model\ModifyPaymentMethodRequest | 
 
 try {
     $result = $apiInstance->modifyPaymentMethod($company_id, $payment_method_id, $modify_payment_method_request);
@@ -864,11 +865,11 @@ try {
 
 ### Parameters
 
-| Name                              | Type                                                                                           | Description                     | Notes      |
-| --------------------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------- | ---------- |
-| **company_id**                    | **int**                                                                                        | The ID of the company.          |            |
-| **payment_method_id**             | **int**                                                                                        | The Referred Payment Method Id. |            |
-| **modify_payment_method_request** | [**\FattureInCloud\Model\ModifyPaymentMethodRequest**](../Model/ModifyPaymentMethodRequest.md) |                                 | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **payment_method_id** | **int**| The Referred Payment Method Id. | |
+| **modify_payment_method_request** | [**\FattureInCloud\Model\ModifyPaymentMethodRequest**](../Model/ModifyPaymentMethodRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -913,7 +914,7 @@ $apiInstance = new FattureInCloud\Api\SettingsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $vat_type_id = 56; // int | The Referred Vat Type Id.
 $modify_vat_type_request = new \FattureInCloud\Model\ModifyVatTypeRequest; // \FattureInCloud\Model\ModifyVatTypeRequest
 
@@ -927,11 +928,11 @@ try {
 
 ### Parameters
 
-| Name                        | Type                                                                               | Description               | Notes      |
-| --------------------------- | ---------------------------------------------------------------------------------- | ------------------------- | ---------- |
-| **company_id**              | **int**                                                                            | The ID of the company.    |            |
-| **vat_type_id**             | **int**                                                                            | The Referred Vat Type Id. |            |
-| **modify_vat_type_request** | [**\FattureInCloud\Model\ModifyVatTypeRequest**](../Model/ModifyVatTypeRequest.md) |                           | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **vat_type_id** | **int**| The Referred Vat Type Id. | |
+| **modify_vat_type_request** | [**\FattureInCloud\Model\ModifyVatTypeRequest**](../Model/ModifyVatTypeRequest.md)|  | [optional] |
 
 ### Return type
 

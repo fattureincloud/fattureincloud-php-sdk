@@ -1,4 +1,4 @@
-# # TemplateType
+# TemplateType
 
 ## Properties
 

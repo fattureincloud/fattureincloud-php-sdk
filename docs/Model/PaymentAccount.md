@@ -1,4 +1,4 @@
-# # PaymentAccount
+# PaymentAccount
 
 ## Properties
 

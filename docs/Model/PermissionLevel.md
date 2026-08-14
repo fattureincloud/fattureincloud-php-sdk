@@ -1,4 +1,4 @@
-# # PermissionLevel
+# PermissionLevel
 
 ## Properties
 

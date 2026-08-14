@@ -1,4 +1,4 @@
-# # ModifySupplierResponse
+# ModifySupplierResponse
 
 ## Properties
 

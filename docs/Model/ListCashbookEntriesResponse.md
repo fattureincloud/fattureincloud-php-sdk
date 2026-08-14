@@ -1,4 +1,4 @@
-# # ListCashbookEntriesResponse
+# ListCashbookEntriesResponse
 
 ## Properties
 

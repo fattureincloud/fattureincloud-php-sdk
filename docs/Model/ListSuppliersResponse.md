@@ -1,4 +1,4 @@
-# # ListSuppliersResponse
+# ListSuppliersResponse
 
 ## Properties
 

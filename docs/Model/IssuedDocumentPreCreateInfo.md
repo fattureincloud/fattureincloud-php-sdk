@@ -1,4 +1,4 @@
-# # IssuedDocumentPreCreateInfo
+# IssuedDocumentPreCreateInfo
 
 ## Properties
 

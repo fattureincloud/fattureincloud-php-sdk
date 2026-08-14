@@ -1,4 +1,4 @@
-# # SendEInvoiceRequestOptions
+# SendEInvoiceRequestOptions
 
 ## Properties
 

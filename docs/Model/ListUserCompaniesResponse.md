@@ -1,4 +1,4 @@
-# # ListUserCompaniesResponse
+# ListUserCompaniesResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # ListTemplatesResponse
+# ListTemplatesResponse
 
 ## Properties
 

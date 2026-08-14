@@ -1,4 +1,4 @@
-# # ListCurrenciesResponse
+# ListCurrenciesResponse
 
 ## Properties
 

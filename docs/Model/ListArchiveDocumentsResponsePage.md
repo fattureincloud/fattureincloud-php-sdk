@@ -1,4 +1,4 @@
-# # ListArchiveDocumentsResponsePage
+# ListArchiveDocumentsResponsePage
 
 ## Properties
 

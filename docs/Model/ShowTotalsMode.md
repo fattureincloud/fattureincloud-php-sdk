@@ -1,4 +1,4 @@
-# # ShowTotalsMode
+# ShowTotalsMode
 
 ## Properties
 

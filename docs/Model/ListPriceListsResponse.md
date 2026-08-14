@@ -1,4 +1,4 @@
-# # ListPriceListsResponse
+# ListPriceListsResponse
 
 ## Properties
 

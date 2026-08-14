@@ -1,4 +1,4 @@
-# # GetSupplierResponse
+# GetSupplierResponse
 
 ## Properties
 

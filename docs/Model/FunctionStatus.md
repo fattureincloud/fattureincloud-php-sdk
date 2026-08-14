@@ -1,4 +1,4 @@
-# # FunctionStatus
+# FunctionStatus
 
 ## Properties
 

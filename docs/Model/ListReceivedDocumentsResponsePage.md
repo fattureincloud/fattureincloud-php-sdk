@@ -1,4 +1,4 @@
-# # ListReceivedDocumentsResponsePage
+# ListReceivedDocumentsResponsePage
 
 ## Properties
 

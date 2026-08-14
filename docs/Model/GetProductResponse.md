@@ -1,4 +1,4 @@
-# # GetProductResponse
+# GetProductResponse
 
 ## Properties
 

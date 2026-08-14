@@ -1,4 +1,4 @@
-# # DocumentTemplate
+# DocumentTemplate
 
 ## Properties
 

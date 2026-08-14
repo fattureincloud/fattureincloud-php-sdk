@@ -1,4 +1,4 @@
-# # ListBinIssuedDocuments
+# ListBinIssuedDocuments
 
 ## Properties
 

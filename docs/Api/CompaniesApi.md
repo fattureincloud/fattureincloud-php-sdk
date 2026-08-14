@@ -2,10 +2,11 @@
 
 All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-| Method                                                           | HTTP request                               | Description            |
-| ---------------------------------------------------------------- | ------------------------------------------ | ---------------------- |
-| [**getCompanyInfo()**](CompaniesApi.md#getCompanyInfo)           | **GET** /c/{company_id}/company/info       | Get Company Info       |
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**getCompanyInfo()**](CompaniesApi.md#getCompanyInfo) | **GET** /c/{company_id}/company/info | Get Company Info |
 | [**getCompanyPlanUsage()**](CompaniesApi.md#getCompanyPlanUsage) | **GET** /c/{company_id}/company/plan_usage | Get Company Plan Usage |
+
 
 ## `getCompanyInfo()`
 
@@ -33,7 +34,7 @@ $apiInstance = new FattureInCloud\Api\CompaniesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 
 try {
     $result = $apiInstance->getCompanyInfo($company_id);
@@ -45,9 +46,9 @@ try {
 
 ### Parameters
 
-| Name           | Type    | Description            | Notes |
-| -------------- | ------- | ---------------------- | ----- |
-| **company_id** | **int** | The ID of the company. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
 
 ### Return type
 
@@ -92,7 +93,7 @@ $apiInstance = new FattureInCloud\Api\CompaniesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $category = 'category_example'; // string | Category
 
 try {
@@ -105,10 +106,10 @@ try {
 
 ### Parameters
 
-| Name           | Type       | Description            | Notes |
-| -------------- | ---------- | ---------------------- | ----- |
-| **company_id** | **int**    | The ID of the company. |       |
-| **category**   | **string** | Category               |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **category** | **string**| Category | |
 
 ### Return type
 

@@ -1,4 +1,4 @@
-# # ModifyReceivedDocumentRequest
+# ModifyReceivedDocumentRequest
 
 ## Properties
 

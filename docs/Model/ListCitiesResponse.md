@@ -1,4 +1,4 @@
-# # ListCitiesResponse
+# ListCitiesResponse
 
 ## Properties
 

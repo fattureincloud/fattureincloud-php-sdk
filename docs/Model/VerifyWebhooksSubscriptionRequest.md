@@ -1,4 +1,4 @@
-# # VerifyWebhooksSubscriptionRequest
+# VerifyWebhooksSubscriptionRequest
 
 ## Properties
 

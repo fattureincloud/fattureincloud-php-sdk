@@ -1,4 +1,4 @@
-# # ModifyVatTypeResponse
+# ModifyVatTypeResponse
 
 ## Properties
 

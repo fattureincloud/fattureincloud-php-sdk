@@ -1,4 +1,4 @@
-# # ListReceivedDocumentCategoriesResponse
+# ListReceivedDocumentCategoriesResponse
 
 ## Properties
 

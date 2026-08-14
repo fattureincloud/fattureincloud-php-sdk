@@ -1,4 +1,4 @@
-# # EmailData
+# EmailData
 
 ## Properties
 

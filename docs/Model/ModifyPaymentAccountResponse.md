@@ -1,4 +1,4 @@
-# # ModifyPaymentAccountResponse
+# ModifyPaymentAccountResponse
 
 ## Properties
 

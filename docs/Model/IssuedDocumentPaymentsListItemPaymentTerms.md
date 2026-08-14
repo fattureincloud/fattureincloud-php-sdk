@@ -1,4 +1,4 @@
-# # IssuedDocumentPaymentsListItemPaymentTerms
+# IssuedDocumentPaymentsListItemPaymentTerms
 
 ## Properties
 

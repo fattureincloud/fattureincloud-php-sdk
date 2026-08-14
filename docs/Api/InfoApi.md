@@ -2,24 +2,25 @@
 
 All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-| Method                                                                              | HTTP request                                              | Description                         |
-| ----------------------------------------------------------------------------------- | --------------------------------------------------------- | ----------------------------------- |
-| [**listArchiveCategories()**](InfoApi.md#listArchiveCategories)                     | **GET** /c/{company_id}/info/archive_categories           | List Archive Categories             |
-| [**listCities()**](InfoApi.md#listCities)                                           | **GET** /info/cities                                      | List Cities                         |
-| [**listCostCenters()**](InfoApi.md#listCostCenters)                                 | **GET** /c/{company_id}/info/cost_centers                 | List Cost Centers                   |
-| [**listCountries()**](InfoApi.md#listCountries)                                     | **GET** /info/countries                                   | List Countries                      |
-| [**listCurrencies()**](InfoApi.md#listCurrencies)                                   | **GET** /info/currencies                                  | List Currencies                     |
-| [**listDefaultTemplates()**](InfoApi.md#listDefaultTemplates)                       | **GET** /info/templates                                   | List Default Templates              |
-| [**listDeliveryNotesDefaultCausals()**](InfoApi.md#listDeliveryNotesDefaultCausals) | **GET** /info/dn_causals                                  | List Delivery Notes Default Causals |
-| [**listDetailedCountries()**](InfoApi.md#listDetailedCountries)                     | **GET** /info/detailed_countries                          | List Detailed Countries             |
-| [**listLanguages()**](InfoApi.md#listLanguages)                                     | **GET** /info/languages                                   | List Languages                      |
-| [**listPaymentAccounts()**](InfoApi.md#listPaymentAccounts)                         | **GET** /c/{company_id}/info/payment_accounts             | List Payment Accounts               |
-| [**listPaymentMethods()**](InfoApi.md#listPaymentMethods)                           | **GET** /c/{company_id}/info/payment_methods              | List Payment Methods                |
-| [**listProductCategories()**](InfoApi.md#listProductCategories)                     | **GET** /c/{company_id}/info/product_categories           | List Product Categories             |
-| [**listReceivedDocumentCategories()**](InfoApi.md#listReceivedDocumentCategories)   | **GET** /c/{company_id}/info/received_document_categories | List Received Document Categories   |
-| [**listRevenueCenters()**](InfoApi.md#listRevenueCenters)                           | **GET** /c/{company_id}/info/revenue_centers              | List Revenue Centers                |
-| [**listUnitsOfMeasure()**](InfoApi.md#listUnitsOfMeasure)                           | **GET** /info/measures                                    | List Units of Measure               |
-| [**listVatTypes()**](InfoApi.md#listVatTypes)                                       | **GET** /c/{company_id}/info/vat_types                    | List Vat Types                      |
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**listArchiveCategories()**](InfoApi.md#listArchiveCategories) | **GET** /c/{company_id}/info/archive_categories | List Archive Categories |
+| [**listCities()**](InfoApi.md#listCities) | **GET** /info/cities | List Cities |
+| [**listCostCenters()**](InfoApi.md#listCostCenters) | **GET** /c/{company_id}/info/cost_centers | List Cost Centers |
+| [**listCountries()**](InfoApi.md#listCountries) | **GET** /info/countries | List Countries |
+| [**listCurrencies()**](InfoApi.md#listCurrencies) | **GET** /info/currencies | List Currencies |
+| [**listDefaultTemplates()**](InfoApi.md#listDefaultTemplates) | **GET** /info/templates | List Default Templates |
+| [**listDeliveryNotesDefaultCausals()**](InfoApi.md#listDeliveryNotesDefaultCausals) | **GET** /info/dn_causals | List Delivery Notes Default Causals |
+| [**listDetailedCountries()**](InfoApi.md#listDetailedCountries) | **GET** /info/detailed_countries | List Detailed Countries |
+| [**listLanguages()**](InfoApi.md#listLanguages) | **GET** /info/languages | List Languages |
+| [**listPaymentAccounts()**](InfoApi.md#listPaymentAccounts) | **GET** /c/{company_id}/info/payment_accounts | List Payment Accounts |
+| [**listPaymentMethods()**](InfoApi.md#listPaymentMethods) | **GET** /c/{company_id}/info/payment_methods | List Payment Methods |
+| [**listProductCategories()**](InfoApi.md#listProductCategories) | **GET** /c/{company_id}/info/product_categories | List Product Categories |
+| [**listReceivedDocumentCategories()**](InfoApi.md#listReceivedDocumentCategories) | **GET** /c/{company_id}/info/received_document_categories | List Received Document Categories |
+| [**listRevenueCenters()**](InfoApi.md#listRevenueCenters) | **GET** /c/{company_id}/info/revenue_centers | List Revenue Centers |
+| [**listUnitsOfMeasure()**](InfoApi.md#listUnitsOfMeasure) | **GET** /info/measures | List Units of Measure |
+| [**listVatTypes()**](InfoApi.md#listVatTypes) | **GET** /c/{company_id}/info/vat_types | List Vat Types |
+
 
 ## `listArchiveCategories()`
 
@@ -47,7 +48,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 
 try {
     $result = $apiInstance->listArchiveCategories($company_id);
@@ -59,9 +60,9 @@ try {
 
 ### Parameters
 
-| Name           | Type    | Description            | Notes |
-| -------------- | ------- | ---------------------- | ----- |
-| **company_id** | **int** | The ID of the company. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
 
 ### Return type
 
@@ -106,7 +107,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$postal_code = 'postal_code_example'; // string | Postal code for filtering.
+    $postal_code = 'postal_code_example'; // string | Postal code for filtering.
 $city = 'city_example'; // string | City for filtering (ignored if postal_code is passed).
 
 try {
@@ -119,10 +120,10 @@ try {
 
 ### Parameters
 
-| Name            | Type       | Description                                            | Notes      |
-| --------------- | ---------- | ------------------------------------------------------ | ---------- |
-| **postal_code** | **string** | Postal code for filtering.                             | [optional] |
-| **city**        | **string** | City for filtering (ignored if postal_code is passed). | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **postal_code** | **string**| Postal code for filtering. | [optional] |
+| **city** | **string**| City for filtering (ignored if postal_code is passed). | [optional] |
 
 ### Return type
 
@@ -167,7 +168,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 
 try {
     $result = $apiInstance->listCostCenters($company_id);
@@ -179,9 +180,9 @@ try {
 
 ### Parameters
 
-| Name           | Type    | Description            | Notes |
-| -------------- | ------- | ---------------------- | ----- |
-| **company_id** | **int** | The ID of the company. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
 
 ### Return type
 
@@ -226,7 +227,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-
+    
 try {
     $result = $apiInstance->listCountries();
     print_r($result);
@@ -282,7 +283,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-
+    
 try {
     $result = $apiInstance->listCurrencies();
     print_r($result);
@@ -338,7 +339,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$type = 'all'; // string | Type of the templates.
+    $type = 'all'; // string | Type of the templates.
 $by_type = false; // bool | [Only if type=all] If true, splits the list in objects, grouping templates by type.
 
 try {
@@ -351,10 +352,10 @@ try {
 
 ### Parameters
 
-| Name        | Type       | Description                                                                              | Notes                                 |
-| ----------- | ---------- | ---------------------------------------------------------------------------------------- | ------------------------------------- |
-| **type**    | **string** | Type of the templates.                                                                   | [optional] [default to &#39;all&#39;] |
-| **by_type** | **bool**   | [Only if type&#x3D;all] If true, splits the list in objects, grouping templates by type. | [optional] [default to false]         |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **type** | **string**| Type of the templates. | [optional] [default to &#39;all&#39;] |
+| **by_type** | **bool**| [Only if type&#x3D;all] If true, splits the list in objects, grouping templates by type. | [optional] [default to false] |
 
 ### Return type
 
@@ -399,7 +400,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-
+    
 try {
     $result = $apiInstance->listDeliveryNotesDefaultCausals();
     print_r($result);
@@ -455,7 +456,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-
+    
 try {
     $result = $apiInstance->listDetailedCountries();
     print_r($result);
@@ -511,7 +512,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-
+    
 try {
     $result = $apiInstance->listLanguages();
     print_r($result);
@@ -567,7 +568,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
 $sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
@@ -582,12 +583,12 @@ try {
 
 ### Parameters
 
-| Name           | Type       | Description                                                                 | Notes      |
-| -------------- | ---------- | --------------------------------------------------------------------------- | ---------- |
-| **company_id** | **int**    | The ID of the company.                                                      |            |
-| **fields**     | **string** | List of comma-separated fields.                                             | [optional] |
-| **fieldset**   | **string** | Name of the fieldset.                                                       | [optional] |
-| **sort**       | **string** | List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
+| **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
 
 ### Return type
 
@@ -632,7 +633,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
 $sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
@@ -647,12 +648,12 @@ try {
 
 ### Parameters
 
-| Name           | Type       | Description                                                                 | Notes      |
-| -------------- | ---------- | --------------------------------------------------------------------------- | ---------- |
-| **company_id** | **int**    | The ID of the company.                                                      |            |
-| **fields**     | **string** | List of comma-separated fields.                                             | [optional] |
-| **fieldset**   | **string** | Name of the fieldset.                                                       | [optional] |
-| **sort**       | **string** | List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
+| **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
 
 ### Return type
 
@@ -697,7 +698,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $context = 'context_example'; // string | Categories resource type.
 
 try {
@@ -710,10 +711,10 @@ try {
 
 ### Parameters
 
-| Name           | Type       | Description               | Notes |
-| -------------- | ---------- | ------------------------- | ----- |
-| **company_id** | **int**    | The ID of the company.    |       |
-| **context**    | **string** | Categories resource type. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **context** | **string**| Categories resource type. | |
 
 ### Return type
 
@@ -758,7 +759,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 
 try {
     $result = $apiInstance->listReceivedDocumentCategories($company_id);
@@ -770,9 +771,9 @@ try {
 
 ### Parameters
 
-| Name           | Type    | Description            | Notes |
-| -------------- | ------- | ---------------------- | ----- |
-| **company_id** | **int** | The ID of the company. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
 
 ### Return type
 
@@ -817,7 +818,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 
 try {
     $result = $apiInstance->listRevenueCenters($company_id);
@@ -829,9 +830,9 @@ try {
 
 ### Parameters
 
-| Name           | Type    | Description            | Notes |
-| -------------- | ------- | ---------------------- | ----- |
-| **company_id** | **int** | The ID of the company. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
 
 ### Return type
 
@@ -876,7 +877,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-
+    
 try {
     $result = $apiInstance->listUnitsOfMeasure();
     print_r($result);
@@ -932,7 +933,7 @@ $apiInstance = new FattureInCloud\Api\InfoApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
 
 try {
@@ -945,10 +946,10 @@ try {
 
 ### Parameters
 
-| Name           | Type       | Description            | Notes      |
-| -------------- | ---------- | ---------------------- | ---------- |
-| **company_id** | **int**    | The ID of the company. |            |
-| **fieldset**   | **string** | Name of the fieldset.  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
 
 ### Return type
 

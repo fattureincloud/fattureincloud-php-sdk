@@ -1,4 +1,4 @@
-# # GetClientResponse
+# GetClientResponse
 
 ## Properties
 

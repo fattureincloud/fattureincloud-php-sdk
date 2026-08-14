@@ -1,4 +1,4 @@
-# # ListF24ResponsePage
+# ListF24ResponsePage
 
 ## Properties
 

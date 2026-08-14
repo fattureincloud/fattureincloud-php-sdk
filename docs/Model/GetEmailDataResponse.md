@@ -1,4 +1,4 @@
-# # GetEmailDataResponse
+# GetEmailDataResponse
 
 ## Properties
 

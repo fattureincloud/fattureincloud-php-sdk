@@ -1,4 +1,4 @@
-# # GetUserInfoResponseEmailConfirmationState
+# GetUserInfoResponseEmailConfirmationState
 
 ## Properties
 

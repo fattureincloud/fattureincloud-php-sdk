@@ -1,4 +1,4 @@
-# # PriceListItem
+# PriceListItem
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # City
+# City
 
 ## Properties
 

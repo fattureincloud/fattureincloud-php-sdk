@@ -1,4 +1,4 @@
-# # Email
+# Email
 
 ## Properties
 

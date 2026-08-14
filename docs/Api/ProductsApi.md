@@ -2,13 +2,14 @@
 
 All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-| Method                                              | HTTP request                                     | Description    |
-| --------------------------------------------------- | ------------------------------------------------ | -------------- |
-| [**createProduct()**](ProductsApi.md#createProduct) | **POST** /c/{company_id}/products                | Create Product |
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createProduct()**](ProductsApi.md#createProduct) | **POST** /c/{company_id}/products | Create Product |
 | [**deleteProduct()**](ProductsApi.md#deleteProduct) | **DELETE** /c/{company_id}/products/{product_id} | Delete Product |
-| [**getProduct()**](ProductsApi.md#getProduct)       | **GET** /c/{company_id}/products/{product_id}    | Get Product    |
-| [**listProducts()**](ProductsApi.md#listProducts)   | **GET** /c/{company_id}/products                 | List Products  |
-| [**modifyProduct()**](ProductsApi.md#modifyProduct) | **PUT** /c/{company_id}/products/{product_id}    | Modify Product |
+| [**getProduct()**](ProductsApi.md#getProduct) | **GET** /c/{company_id}/products/{product_id} | Get Product |
+| [**listProducts()**](ProductsApi.md#listProducts) | **GET** /c/{company_id}/products | List Products |
+| [**modifyProduct()**](ProductsApi.md#modifyProduct) | **PUT** /c/{company_id}/products/{product_id} | Modify Product |
+
 
 ## `createProduct()`
 
@@ -36,8 +37,8 @@ $apiInstance = new FattureInCloud\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
-$create_product_request = new \FattureInCloud\Model\CreateProductRequest; // \FattureInCloud\Model\CreateProductRequest |
+    $company_id = 12345; // int | The ID of the company.
+$create_product_request = new \FattureInCloud\Model\CreateProductRequest; // \FattureInCloud\Model\CreateProductRequest | 
 
 try {
     $result = $apiInstance->createProduct($company_id, $create_product_request);
@@ -49,10 +50,10 @@ try {
 
 ### Parameters
 
-| Name                       | Type                                                                               | Description            | Notes      |
-| -------------------------- | ---------------------------------------------------------------------------------- | ---------------------- | ---------- |
-| **company_id**             | **int**                                                                            | The ID of the company. |            |
-| **create_product_request** | [**\FattureInCloud\Model\CreateProductRequest**](../Model/CreateProductRequest.md) |                        | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **create_product_request** | [**\FattureInCloud\Model\CreateProductRequest**](../Model/CreateProductRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -97,7 +98,7 @@ $apiInstance = new FattureInCloud\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $product_id = 56; // int | The ID of the product.
 
 try {
@@ -109,10 +110,10 @@ try {
 
 ### Parameters
 
-| Name           | Type    | Description            | Notes |
-| -------------- | ------- | ---------------------- | ----- |
-| **company_id** | **int** | The ID of the company. |       |
-| **product_id** | **int** | The ID of the product. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **product_id** | **int**| The ID of the product. | |
 
 ### Return type
 
@@ -157,7 +158,7 @@ $apiInstance = new FattureInCloud\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $product_id = 56; // int | The ID of the product.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
@@ -172,12 +173,12 @@ try {
 
 ### Parameters
 
-| Name           | Type       | Description                     | Notes      |
-| -------------- | ---------- | ------------------------------- | ---------- |
-| **company_id** | **int**    | The ID of the company.          |            |
-| **product_id** | **int**    | The ID of the product.          |            |
-| **fields**     | **string** | List of comma-separated fields. | [optional] |
-| **fieldset**   | **string** | Name of the fieldset.           | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **product_id** | **int**| The ID of the product. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
 
 ### Return type
 
@@ -222,7 +223,7 @@ $apiInstance = new FattureInCloud\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
 $sort = 'sort_example'; // string | List of comma-separated fields for result sorting (minus for desc sorting).
@@ -240,15 +241,15 @@ try {
 
 ### Parameters
 
-| Name           | Type       | Description                                                                 | Notes                     |
-| -------------- | ---------- | --------------------------------------------------------------------------- | ------------------------- |
-| **company_id** | **int**    | The ID of the company.                                                      |                           |
-| **fields**     | **string** | List of comma-separated fields.                                             | [optional]                |
-| **fieldset**   | **string** | Name of the fieldset.                                                       | [optional]                |
-| **sort**       | **string** | List of comma-separated fields for result sorting (minus for desc sorting). | [optional]                |
-| **page**       | **int**    | The page to retrieve.                                                       | [optional] [default to 1] |
-| **per_page**   | **int**    | The size of the page.                                                       | [optional] [default to 5] |
-| **q**          | **string** | Query for filtering the results.                                            | [optional]                |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
+| **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
+| **page** | **int**| The page to retrieve. | [optional] [default to 1] |
+| **per_page** | **int**| The size of the page. | [optional] [default to 5] |
+| **q** | **string**| Query for filtering the results. | [optional] |
 
 ### Return type
 
@@ -293,7 +294,7 @@ $apiInstance = new FattureInCloud\Api\ProductsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $product_id = 56; // int | The ID of the product.
 $modify_product_request = new \FattureInCloud\Model\ModifyProductRequest; // \FattureInCloud\Model\ModifyProductRequest | Modified product details.
 
@@ -307,11 +308,11 @@ try {
 
 ### Parameters
 
-| Name                       | Type                                                                               | Description               | Notes      |
-| -------------------------- | ---------------------------------------------------------------------------------- | ------------------------- | ---------- |
-| **company_id**             | **int**                                                                            | The ID of the company.    |            |
-| **product_id**             | **int**                                                                            | The ID of the product.    |            |
-| **modify_product_request** | [**\FattureInCloud\Model\ModifyProductRequest**](../Model/ModifyProductRequest.md) | Modified product details. | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **product_id** | **int**| The ID of the product. | |
+| **modify_product_request** | [**\FattureInCloud\Model\ModifyProductRequest**](../Model/ModifyProductRequest.md)| Modified product details. | [optional] |
 
 ### Return type
 

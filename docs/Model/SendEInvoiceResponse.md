@@ -1,4 +1,4 @@
-# # SendEInvoiceResponse
+# SendEInvoiceResponse
 
 ## Properties
 

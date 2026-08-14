@@ -1,4 +1,4 @@
-# # CreateF24Request
+# CreateF24Request
 
 ## Properties
 

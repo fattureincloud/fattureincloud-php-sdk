@@ -1,4 +1,4 @@
-# # ListArchiveCategoriesResponse
+# ListArchiveCategoriesResponse
 
 ## Properties
 

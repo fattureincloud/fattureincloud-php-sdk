@@ -1,4 +1,4 @@
-# # PendingReceivedDocumentExtractedData
+# PendingReceivedDocumentExtractedData
 
 ## Properties
 

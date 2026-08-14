@@ -1,4 +1,4 @@
-# # VerifyEInvoiceXmlResponseData
+# VerifyEInvoiceXmlResponseData
 
 ## Properties
 

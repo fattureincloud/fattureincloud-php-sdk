@@ -1,4 +1,4 @@
-# # PendingReceivedDocumentPaymentsListItem
+# PendingReceivedDocumentPaymentsListItem
 
 ## Properties
 

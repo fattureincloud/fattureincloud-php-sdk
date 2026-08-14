@@ -1,4 +1,4 @@
-# # CashbookEntryDocument
+# CashbookEntryDocument
 
 ## Properties
 

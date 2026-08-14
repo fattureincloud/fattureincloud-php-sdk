@@ -1,4 +1,4 @@
-# # SendEInvoiceRequestData
+# SendEInvoiceRequestData
 
 ## Properties
 

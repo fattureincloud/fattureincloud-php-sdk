@@ -1,4 +1,4 @@
-# # ReceiptItemsListItem
+# ReceiptItemsListItem
 
 ## Properties
 

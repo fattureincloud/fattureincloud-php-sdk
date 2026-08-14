@@ -1,4 +1,4 @@
-# # GetCashbookEntryResponse
+# GetCashbookEntryResponse
 
 ## Properties
 

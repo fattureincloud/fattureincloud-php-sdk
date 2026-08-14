@@ -1,4 +1,4 @@
-# # PaymentAccountType
+# PaymentAccountType
 
 ## Properties
 

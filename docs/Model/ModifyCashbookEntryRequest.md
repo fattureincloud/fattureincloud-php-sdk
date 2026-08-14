@@ -1,4 +1,4 @@
-# # ModifyCashbookEntryRequest
+# ModifyCashbookEntryRequest
 
 ## Properties
 
