@@ -30,7 +30,7 @@ class OAuth2AuthorizationCodeManager extends OAuth2Manager
      * @param string|null $baseUri
      * @param Client|null $client
      */
-    public function __construct(string $clientId, string $clientSecret, string $redirectUri, string $baseUri = self::DEFAULT_BASE_URI, Client $client = null)
+    public function __construct(string $clientId, string $clientSecret, string $redirectUri, string $baseUri = self::DEFAULT_BASE_URI, ?Client $client = null)
     {
         parent::__construct($clientId, $baseUri, $client);
         $this->clientSecret = $clientSecret;

@@ -101,7 +101,7 @@ class ObjectSerializer
                         }
                     }
                     if ($value !== null) {
-                    // if (($data::isNullable($property) && $data->isNullableSetToNull($property)) || $value !== null) {
+                        // if (($data::isNullable($property) && $data->isNullableSetToNull($property)) || $value !== null) {
                         $values[$data::attributeMap()[$property]] = self::sanitizeForSerialization($value, $openAPIType, $formats[$property]);
                     }
                 }

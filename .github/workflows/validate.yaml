@@ -51,6 +51,10 @@ jobs:
         name: Run test suite
         run: ./vendor/bin/phpunit
 
+      - id: code-style-validation
+        name: Code Style Validation
+        run: ./vendor/bin/php-cs-fixer fix --dry-run --diff --allow-risky=yes --config=.php-cs-fixer.dist.php lib
+
       - id: psalm-validation
         name: Psalm Validation
         run: |
