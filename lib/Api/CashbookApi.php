@@ -150,7 +150,7 @@ class CashbookApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\CreateCashbookEntryResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\CreateCashbookEntryResponse|array<string,mixed>
      */
     public function createCashbookEntry($company_id, $create_cashbook_entry_request = null, string $contentType = self::contentTypes['createCashbookEntry'][0])
     {
@@ -169,7 +169,7 @@ class CashbookApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\CreateCashbookEntryResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\CreateCashbookEntryResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function createCashbookEntryWithHttpInfo($company_id, $create_cashbook_entry_request = null, string $contentType = self::contentTypes['createCashbookEntry'][0])
     {
@@ -877,7 +877,7 @@ class CashbookApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetCashbookEntryResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetCashbookEntryResponse|array<string,mixed>
      */
     public function getCashbookEntry($company_id, $document_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getCashbookEntry'][0])
     {
@@ -898,7 +898,7 @@ class CashbookApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetCashbookEntryResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetCashbookEntryResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCashbookEntryWithHttpInfo($company_id, $document_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getCashbookEntry'][0])
     {
@@ -1327,7 +1327,7 @@ class CashbookApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListCashbookEntriesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListCashbookEntriesResponse|array<string,mixed>
      */
     public function listCashbookEntries($company_id, $date_from, $date_to, $year = null, $type = null, $payment_account_id = null, string $contentType = self::contentTypes['listCashbookEntries'][0])
     {
@@ -1350,7 +1350,7 @@ class CashbookApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListCashbookEntriesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListCashbookEntriesResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listCashbookEntriesWithHttpInfo($company_id, $date_from, $date_to, $year = null, $type = null, $payment_account_id = null, string $contentType = self::contentTypes['listCashbookEntries'][0])
     {
@@ -1809,7 +1809,7 @@ class CashbookApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ModifyCashbookEntryResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ModifyCashbookEntryResponse|array<string,mixed>
      */
     public function modifyCashbookEntry($company_id, $document_id, $modify_cashbook_entry_request = null, string $contentType = self::contentTypes['modifyCashbookEntry'][0])
     {
@@ -1829,7 +1829,7 @@ class CashbookApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ModifyCashbookEntryResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ModifyCashbookEntryResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function modifyCashbookEntryWithHttpInfo($company_id, $document_id, $modify_cashbook_entry_request = null, string $contentType = self::contentTypes['modifyCashbookEntry'][0])
     {

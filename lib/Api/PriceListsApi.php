@@ -141,7 +141,7 @@ class PriceListsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetPriceListItemsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetPriceListItemsResponse|array<string,mixed>
      */
     public function getPriceListItems($company_id, $price_list_id, string $contentType = self::contentTypes['getPriceListItems'][0])
     {
@@ -160,7 +160,7 @@ class PriceListsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetPriceListItemsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetPriceListItemsResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPriceListItemsWithHttpInfo($company_id, $price_list_id, string $contentType = self::contentTypes['getPriceListItems'][0])
     {
@@ -558,7 +558,7 @@ class PriceListsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListPriceListsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListPriceListsResponse|array<string,mixed>
      */
     public function getPriceLists($company_id, string $contentType = self::contentTypes['getPriceLists'][0])
     {
@@ -576,7 +576,7 @@ class PriceListsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListPriceListsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListPriceListsResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPriceListsWithHttpInfo($company_id, string $contentType = self::contentTypes['getPriceLists'][0])
     {

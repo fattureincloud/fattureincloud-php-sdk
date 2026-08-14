@@ -180,7 +180,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\CreatePaymentAccountResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\CreatePaymentAccountResponse|array<string,mixed>
      */
     public function createPaymentAccount($company_id, $create_payment_account_request = null, string $contentType = self::contentTypes['createPaymentAccount'][0])
     {
@@ -199,7 +199,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\CreatePaymentAccountResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\CreatePaymentAccountResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPaymentAccountWithHttpInfo($company_id, $create_payment_account_request = null, string $contentType = self::contentTypes['createPaymentAccount'][0])
     {
@@ -591,7 +591,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\CreatePaymentMethodResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\CreatePaymentMethodResponse|array<string,mixed>
      */
     public function createPaymentMethod($company_id, $create_payment_method_request = null, string $contentType = self::contentTypes['createPaymentMethod'][0])
     {
@@ -610,7 +610,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\CreatePaymentMethodResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\CreatePaymentMethodResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPaymentMethodWithHttpInfo($company_id, $create_payment_method_request = null, string $contentType = self::contentTypes['createPaymentMethod'][0])
     {
@@ -1002,7 +1002,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\CreateVatTypeResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\CreateVatTypeResponse|array<string,mixed>
      */
     public function createVatType($company_id, $create_vat_type_request = null, string $contentType = self::contentTypes['createVatType'][0])
     {
@@ -1021,7 +1021,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\CreateVatTypeResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\CreateVatTypeResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function createVatTypeWithHttpInfo($company_id, $create_vat_type_request = null, string $contentType = self::contentTypes['createVatType'][0])
     {
@@ -2357,7 +2357,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetPaymentAccountResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetPaymentAccountResponse|array<string,mixed>
      */
     public function getPaymentAccount($company_id, $payment_account_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getPaymentAccount'][0])
     {
@@ -2378,7 +2378,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetPaymentAccountResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetPaymentAccountResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPaymentAccountWithHttpInfo($company_id, $payment_account_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getPaymentAccount'][0])
     {
@@ -2805,7 +2805,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetPaymentMethodResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetPaymentMethodResponse|array<string,mixed>
      */
     public function getPaymentMethod($company_id, $payment_method_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getPaymentMethod'][0])
     {
@@ -2826,7 +2826,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetPaymentMethodResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetPaymentMethodResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPaymentMethodWithHttpInfo($company_id, $payment_method_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getPaymentMethod'][0])
     {
@@ -3250,7 +3250,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetTaxProfileResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetTaxProfileResponse|array<string,mixed>
      */
     public function getTaxProfile($company_id, string $contentType = self::contentTypes['getTaxProfile'][0])
     {
@@ -3268,7 +3268,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetTaxProfileResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetTaxProfileResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTaxProfileWithHttpInfo($company_id, string $contentType = self::contentTypes['getTaxProfile'][0])
     {
@@ -3651,7 +3651,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetTemplatesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetTemplatesResponse|array<string,mixed>
      */
     public function getTemplate($company_id, $template_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getTemplate'][0])
     {
@@ -3672,7 +3672,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetTemplatesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetTemplatesResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getTemplateWithHttpInfo($company_id, $template_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getTemplate'][0])
     {
@@ -4097,7 +4097,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetVatTypeResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetVatTypeResponse|array<string,mixed>
      */
     public function getVatType($company_id, $vat_type_id, string $contentType = self::contentTypes['getVatType'][0])
     {
@@ -4116,7 +4116,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetVatTypeResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetVatTypeResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getVatTypeWithHttpInfo($company_id, $vat_type_id, string $contentType = self::contentTypes['getVatType'][0])
     {
@@ -4516,7 +4516,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListTemplatesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListTemplatesResponse|array<string,mixed>
      */
     public function listTemplates($company_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['listTemplates'][0])
     {
@@ -4536,7 +4536,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListTemplatesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListTemplatesResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listTemplatesWithHttpInfo($company_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['listTemplates'][0])
     {
@@ -4944,7 +4944,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ModifyPaymentAccountResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ModifyPaymentAccountResponse|array<string,mixed>
      */
     public function modifyPaymentAccount($company_id, $payment_account_id, $modify_payment_account_request = null, string $contentType = self::contentTypes['modifyPaymentAccount'][0])
     {
@@ -4964,7 +4964,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ModifyPaymentAccountResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ModifyPaymentAccountResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function modifyPaymentAccountWithHttpInfo($company_id, $payment_account_id, $modify_payment_account_request = null, string $contentType = self::contentTypes['modifyPaymentAccount'][0])
     {
@@ -5375,7 +5375,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ModifyPaymentMethodResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ModifyPaymentMethodResponse|array<string,mixed>
      */
     public function modifyPaymentMethod($company_id, $payment_method_id, $modify_payment_method_request = null, string $contentType = self::contentTypes['modifyPaymentMethod'][0])
     {
@@ -5395,7 +5395,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ModifyPaymentMethodResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ModifyPaymentMethodResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function modifyPaymentMethodWithHttpInfo($company_id, $payment_method_id, $modify_payment_method_request = null, string $contentType = self::contentTypes['modifyPaymentMethod'][0])
     {
@@ -5806,7 +5806,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ModifyVatTypeResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ModifyVatTypeResponse|array<string,mixed>
      */
     public function modifyVatType($company_id, $vat_type_id, $modify_vat_type_request = null, string $contentType = self::contentTypes['modifyVatType'][0])
     {
@@ -5826,7 +5826,7 @@ class SettingsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ModifyVatTypeResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ModifyVatTypeResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function modifyVatTypeWithHttpInfo($company_id, $vat_type_id, $modify_vat_type_request = null, string $contentType = self::contentTypes['modifyVatType'][0])
     {

@@ -183,7 +183,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\CreateReceivedDocumentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\CreateReceivedDocumentResponse|array<string,mixed>
      */
     public function createReceivedDocument($company_id, $create_received_document_request = null, string $contentType = self::contentTypes['createReceivedDocument'][0])
     {
@@ -202,7 +202,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\CreateReceivedDocumentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\CreateReceivedDocumentResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function createReceivedDocumentWithHttpInfo($company_id, $create_received_document_request = null, string $contentType = self::contentTypes['createReceivedDocument'][0])
     {
@@ -1536,7 +1536,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetBinReceivedDocumentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetBinReceivedDocumentResponse|array<string,mixed>
      */
     public function getBinReceivedDocument($company_id, $document_id, string $contentType = self::contentTypes['getBinReceivedDocument'][0])
     {
@@ -1555,7 +1555,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetBinReceivedDocumentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetBinReceivedDocumentResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBinReceivedDocumentWithHttpInfo($company_id, $document_id, string $contentType = self::contentTypes['getBinReceivedDocument'][0])
     {
@@ -1955,7 +1955,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetExistingReceivedDocumentTotalsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetExistingReceivedDocumentTotalsResponse|array<string,mixed>
      */
     public function getExistingReceivedDocumentTotals($company_id, $document_id, $get_existing_received_document_totals_request = null, string $contentType = self::contentTypes['getExistingReceivedDocumentTotals'][0])
     {
@@ -1975,7 +1975,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetExistingReceivedDocumentTotalsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetExistingReceivedDocumentTotalsResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getExistingReceivedDocumentTotalsWithHttpInfo($company_id, $document_id, $get_existing_received_document_totals_request = null, string $contentType = self::contentTypes['getExistingReceivedDocumentTotals'][0])
     {
@@ -2385,7 +2385,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetNewReceivedDocumentTotalsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetNewReceivedDocumentTotalsResponse|array<string,mixed>
      */
     public function getNewReceivedDocumentTotals($company_id, $get_new_received_document_totals_request = null, string $contentType = self::contentTypes['getNewReceivedDocumentTotals'][0])
     {
@@ -2404,7 +2404,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetNewReceivedDocumentTotalsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetNewReceivedDocumentTotalsResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getNewReceivedDocumentTotalsWithHttpInfo($company_id, $get_new_received_document_totals_request = null, string $contentType = self::contentTypes['getNewReceivedDocumentTotals'][0])
     {
@@ -2798,7 +2798,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetPendingReceivedDocumentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetPendingReceivedDocumentResponse|array<string,mixed>
      */
     public function getPendingReceivedDocument($company_id, $document_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getPendingReceivedDocument'][0])
     {
@@ -2819,7 +2819,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetPendingReceivedDocumentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetPendingReceivedDocumentResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPendingReceivedDocumentWithHttpInfo($company_id, $document_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getPendingReceivedDocument'][0])
     {
@@ -3246,7 +3246,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetReceivedDocumentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetReceivedDocumentResponse|array<string,mixed>
      */
     public function getReceivedDocument($company_id, $document_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getReceivedDocument'][0])
     {
@@ -3267,7 +3267,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetReceivedDocumentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetReceivedDocumentResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getReceivedDocumentWithHttpInfo($company_id, $document_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getReceivedDocument'][0])
     {
@@ -3692,7 +3692,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetReceivedDocumentPreCreateInfoResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetReceivedDocumentPreCreateInfoResponse|array<string,mixed>
      */
     public function getReceivedDocumentPreCreateInfo($company_id, $type, string $contentType = self::contentTypes['getReceivedDocumentPreCreateInfo'][0])
     {
@@ -3711,7 +3711,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetReceivedDocumentPreCreateInfoResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetReceivedDocumentPreCreateInfoResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getReceivedDocumentPreCreateInfoWithHttpInfo($company_id, $type, string $contentType = self::contentTypes['getReceivedDocumentPreCreateInfo'][0])
     {
@@ -4110,7 +4110,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListBinReceivedDocuments|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListBinReceivedDocuments|array<string,mixed>
      */
     public function listBinReceivedDocuments($company_id, string $contentType = self::contentTypes['listBinReceivedDocuments'][0])
     {
@@ -4128,7 +4128,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListBinReceivedDocuments|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListBinReceivedDocuments|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listBinReceivedDocumentsWithHttpInfo($company_id, string $contentType = self::contentTypes['listBinReceivedDocuments'][0])
     {
@@ -4515,7 +4515,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListPendingReceivedDocumentsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListPendingReceivedDocumentsResponse|array<string,mixed>
      */
     public function listPendingReceivedDocuments($company_id, $type, $fields = null, $fieldset = null, $sort = null, $page = 1, $per_page = 5, $q = null, string $contentType = self::contentTypes['listPendingReceivedDocuments'][0])
     {
@@ -4540,7 +4540,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListPendingReceivedDocumentsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListPendingReceivedDocumentsResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listPendingReceivedDocumentsWithHttpInfo($company_id, $type, $fields = null, $fieldset = null, $sort = null, $page = 1, $per_page = 5, $q = null, string $contentType = self::contentTypes['listPendingReceivedDocuments'][0])
     {
@@ -5030,7 +5030,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListReceivedDocumentsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListReceivedDocumentsResponse|array<string,mixed>
      */
     public function listReceivedDocuments($company_id, $type, $fields = null, $fieldset = null, $sort = null, $page = 1, $per_page = 5, $q = null, string $contentType = self::contentTypes['listReceivedDocuments'][0])
     {
@@ -5055,7 +5055,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListReceivedDocumentsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListReceivedDocumentsResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listReceivedDocumentsWithHttpInfo($company_id, $type, $fields = null, $fieldset = null, $sort = null, $page = 1, $per_page = 5, $q = null, string $contentType = self::contentTypes['listReceivedDocuments'][0])
     {
@@ -5540,7 +5540,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ModifyReceivedDocumentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ModifyReceivedDocumentResponse|array<string,mixed>
      */
     public function modifyReceivedDocument($company_id, $document_id, $modify_received_document_request = null, string $contentType = self::contentTypes['modifyReceivedDocument'][0])
     {
@@ -5560,7 +5560,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ModifyReceivedDocumentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ModifyReceivedDocumentResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function modifyReceivedDocumentWithHttpInfo($company_id, $document_id, $modify_received_document_request = null, string $contentType = self::contentTypes['modifyReceivedDocument'][0])
     {
@@ -6285,7 +6285,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\UploadReceivedDocumentAttachmentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\UploadReceivedDocumentAttachmentResponse|array<string,mixed>
      */
     public function uploadReceivedDocumentAttachment($company_id, $filename = null, $attachment = null, string $contentType = self::contentTypes['uploadReceivedDocumentAttachment'][0])
     {
@@ -6305,7 +6305,7 @@ class ReceivedDocumentsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\UploadReceivedDocumentAttachmentResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\UploadReceivedDocumentAttachmentResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function uploadReceivedDocumentAttachmentWithHttpInfo($company_id, $filename = null, $attachment = null, string $contentType = self::contentTypes['uploadReceivedDocumentAttachment'][0])
     {

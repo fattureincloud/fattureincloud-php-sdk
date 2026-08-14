@@ -182,7 +182,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListArchiveCategoriesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListArchiveCategoriesResponse|array<string,mixed>
      */
     public function listArchiveCategories($company_id, string $contentType = self::contentTypes['listArchiveCategories'][0])
     {
@@ -200,7 +200,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListArchiveCategoriesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListArchiveCategoriesResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listArchiveCategoriesWithHttpInfo($company_id, string $contentType = self::contentTypes['listArchiveCategories'][0])
     {
@@ -581,7 +581,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListCitiesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListCitiesResponse|array<string,mixed>
      */
     public function listCities($postal_code = null, $city = null, string $contentType = self::contentTypes['listCities'][0])
     {
@@ -600,7 +600,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListCitiesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListCitiesResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listCitiesWithHttpInfo($postal_code = null, $city = null, string $contentType = self::contentTypes['listCities'][0])
     {
@@ -988,7 +988,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListCostCentersResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListCostCentersResponse|array<string,mixed>
      */
     public function listCostCenters($company_id, string $contentType = self::contentTypes['listCostCenters'][0])
     {
@@ -1006,7 +1006,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListCostCentersResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListCostCentersResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listCostCentersWithHttpInfo($company_id, string $contentType = self::contentTypes['listCostCenters'][0])
     {
@@ -1385,7 +1385,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListCountriesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListCountriesResponse|array<string,mixed>
      */
     public function listCountries(string $contentType = self::contentTypes['listCountries'][0])
     {
@@ -1402,7 +1402,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListCountriesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListCountriesResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listCountriesWithHttpInfo(string $contentType = self::contentTypes['listCountries'][0])
     {
@@ -1763,7 +1763,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListCurrenciesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListCurrenciesResponse|array<string,mixed>
      */
     public function listCurrencies(string $contentType = self::contentTypes['listCurrencies'][0])
     {
@@ -1780,7 +1780,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListCurrenciesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListCurrenciesResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listCurrenciesWithHttpInfo(string $contentType = self::contentTypes['listCurrencies'][0])
     {
@@ -2143,7 +2143,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListTemplatesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListTemplatesResponse|array<string,mixed>
      */
     public function listDefaultTemplates($type = 'all', $by_type = false, string $contentType = self::contentTypes['listDefaultTemplates'][0])
     {
@@ -2162,7 +2162,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListTemplatesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListTemplatesResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listDefaultTemplatesWithHttpInfo($type = 'all', $by_type = false, string $contentType = self::contentTypes['listDefaultTemplates'][0])
     {
@@ -2549,7 +2549,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListDeliveryNotesDefaultCausalsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListDeliveryNotesDefaultCausalsResponse|array<string,mixed>
      */
     public function listDeliveryNotesDefaultCausals(string $contentType = self::contentTypes['listDeliveryNotesDefaultCausals'][0])
     {
@@ -2566,7 +2566,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListDeliveryNotesDefaultCausalsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListDeliveryNotesDefaultCausalsResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listDeliveryNotesDefaultCausalsWithHttpInfo(string $contentType = self::contentTypes['listDeliveryNotesDefaultCausals'][0])
     {
@@ -2927,7 +2927,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListDetailedCountriesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListDetailedCountriesResponse|array<string,mixed>
      */
     public function listDetailedCountries(string $contentType = self::contentTypes['listDetailedCountries'][0])
     {
@@ -2944,7 +2944,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListDetailedCountriesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListDetailedCountriesResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listDetailedCountriesWithHttpInfo(string $contentType = self::contentTypes['listDetailedCountries'][0])
     {
@@ -3305,7 +3305,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListLanguagesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListLanguagesResponse|array<string,mixed>
      */
     public function listLanguages(string $contentType = self::contentTypes['listLanguages'][0])
     {
@@ -3322,7 +3322,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListLanguagesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListLanguagesResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listLanguagesWithHttpInfo(string $contentType = self::contentTypes['listLanguages'][0])
     {
@@ -3687,7 +3687,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListPaymentAccountsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListPaymentAccountsResponse|array<string,mixed>
      */
     public function listPaymentAccounts($company_id, $fields = null, $fieldset = null, $sort = null, string $contentType = self::contentTypes['listPaymentAccounts'][0])
     {
@@ -3708,7 +3708,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListPaymentAccountsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListPaymentAccountsResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listPaymentAccountsWithHttpInfo($company_id, $fields = null, $fieldset = null, $sort = null, string $contentType = self::contentTypes['listPaymentAccounts'][0])
     {
@@ -4130,7 +4130,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListPaymentMethodsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListPaymentMethodsResponse|array<string,mixed>
      */
     public function listPaymentMethods($company_id, $fields = null, $fieldset = null, $sort = null, string $contentType = self::contentTypes['listPaymentMethods'][0])
     {
@@ -4151,7 +4151,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListPaymentMethodsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListPaymentMethodsResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listPaymentMethodsWithHttpInfo($company_id, $fields = null, $fieldset = null, $sort = null, string $contentType = self::contentTypes['listPaymentMethods'][0])
     {
@@ -4571,7 +4571,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListProductCategoriesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListProductCategoriesResponse|array<string,mixed>
      */
     public function listProductCategories($company_id, $context, string $contentType = self::contentTypes['listProductCategories'][0])
     {
@@ -4590,7 +4590,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListProductCategoriesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListProductCategoriesResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listProductCategoriesWithHttpInfo($company_id, $context, string $contentType = self::contentTypes['listProductCategories'][0])
     {
@@ -4989,7 +4989,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListReceivedDocumentCategoriesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListReceivedDocumentCategoriesResponse|array<string,mixed>
      */
     public function listReceivedDocumentCategories($company_id, string $contentType = self::contentTypes['listReceivedDocumentCategories'][0])
     {
@@ -5007,7 +5007,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListReceivedDocumentCategoriesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListReceivedDocumentCategoriesResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listReceivedDocumentCategoriesWithHttpInfo($company_id, string $contentType = self::contentTypes['listReceivedDocumentCategories'][0])
     {
@@ -5387,7 +5387,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListRevenueCentersResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListRevenueCentersResponse|array<string,mixed>
      */
     public function listRevenueCenters($company_id, string $contentType = self::contentTypes['listRevenueCenters'][0])
     {
@@ -5405,7 +5405,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListRevenueCentersResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListRevenueCentersResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listRevenueCentersWithHttpInfo($company_id, string $contentType = self::contentTypes['listRevenueCenters'][0])
     {
@@ -5784,7 +5784,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListUnitsOfMeasureResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListUnitsOfMeasureResponse|array<string,mixed>
      */
     public function listUnitsOfMeasure(string $contentType = self::contentTypes['listUnitsOfMeasure'][0])
     {
@@ -5801,7 +5801,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListUnitsOfMeasureResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListUnitsOfMeasureResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listUnitsOfMeasureWithHttpInfo(string $contentType = self::contentTypes['listUnitsOfMeasure'][0])
     {
@@ -6164,7 +6164,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListVatTypesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListVatTypesResponse|array<string,mixed>
      */
     public function listVatTypes($company_id, $fieldset = null, string $contentType = self::contentTypes['listVatTypes'][0])
     {
@@ -6183,7 +6183,7 @@ class InfoApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListVatTypesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListVatTypesResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listVatTypesWithHttpInfo($company_id, $fieldset = null, string $contentType = self::contentTypes['listVatTypes'][0])
     {

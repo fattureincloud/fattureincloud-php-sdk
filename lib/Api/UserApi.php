@@ -139,7 +139,7 @@ class UserApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetUserInfoResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetUserInfoResponse|array<string,mixed>
      */
     public function getUserInfo(string $contentType = self::contentTypes['getUserInfo'][0])
     {
@@ -156,7 +156,7 @@ class UserApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetUserInfoResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetUserInfoResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getUserInfoWithHttpInfo(string $contentType = self::contentTypes['getUserInfo'][0])
     {
@@ -517,7 +517,7 @@ class UserApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListUserCompaniesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListUserCompaniesResponse|array<string,mixed>
      */
     public function listUserCompanies(string $contentType = self::contentTypes['listUserCompanies'][0])
     {
@@ -534,7 +534,7 @@ class UserApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListUserCompaniesResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListUserCompaniesResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listUserCompaniesWithHttpInfo(string $contentType = self::contentTypes['listUserCompanies'][0])
     {

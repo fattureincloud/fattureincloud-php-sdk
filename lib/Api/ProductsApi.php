@@ -150,7 +150,7 @@ class ProductsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\CreateProductResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\CreateProductResponse|array<string,mixed>
      */
     public function createProduct($company_id, $create_product_request = null, string $contentType = self::contentTypes['createProduct'][0])
     {
@@ -169,7 +169,7 @@ class ProductsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\CreateProductResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\CreateProductResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function createProductWithHttpInfo($company_id, $create_product_request = null, string $contentType = self::contentTypes['createProduct'][0])
     {
@@ -877,7 +877,7 @@ class ProductsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\GetProductResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\GetProductResponse|array<string,mixed>
      */
     public function getProduct($company_id, $product_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getProduct'][0])
     {
@@ -898,7 +898,7 @@ class ProductsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\GetProductResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\GetProductResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function getProductWithHttpInfo($company_id, $product_id, $fields = null, $fieldset = null, string $contentType = self::contentTypes['getProduct'][0])
     {
@@ -1328,7 +1328,7 @@ class ProductsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ListProductsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ListProductsResponse|array<string,mixed>
      */
     public function listProducts($company_id, $fields = null, $fieldset = null, $sort = null, $page = 1, $per_page = 5, $q = null, string $contentType = self::contentTypes['listProducts'][0])
     {
@@ -1352,7 +1352,7 @@ class ProductsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ListProductsResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ListProductsResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function listProductsWithHttpInfo($company_id, $fields = null, $fieldset = null, $sort = null, $page = 1, $per_page = 5, $q = null, string $contentType = self::contentTypes['listProducts'][0])
     {
@@ -1818,7 +1818,7 @@ class ProductsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \FattureInCloud\Model\ModifyProductResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>
+     * @return \FattureInCloud\Model\ModifyProductResponse|array<string,mixed>
      */
     public function modifyProduct($company_id, $product_id, $modify_product_request = null, string $contentType = self::contentTypes['modifyProduct'][0])
     {
@@ -1838,7 +1838,7 @@ class ProductsApi
      *
      * @throws \FattureInCloud\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \FattureInCloud\Model\ModifyProductResponse|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \FattureInCloud\Model\ModifyProductResponse|array<string,mixed>, HTTP status code, HTTP response headers (array of strings)
      */
     public function modifyProductWithHttpInfo($company_id, $product_id, $modify_product_request = null, string $contentType = self::contentTypes['modifyProduct'][0])
     {
