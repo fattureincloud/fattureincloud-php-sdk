@@ -53,7 +53,6 @@ jobs:
 
       - id: code-style-validation
         name: Code Style Validation
-        if: matrix.php == '8.3'
         run: ./vendor/bin/php-cs-fixer fix --dry-run --diff --allow-risky=yes --config=.php-cs-fixer.dist.php lib
 
       - id: psalm-validation
