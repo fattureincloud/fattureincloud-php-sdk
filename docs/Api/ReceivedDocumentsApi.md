@@ -2,24 +2,25 @@
 
 All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-| Method                                                                                               | HTTP request                                                           | Description                            |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | -------------------------------------- |
-| [**createReceivedDocument()**](ReceivedDocumentsApi.md#createReceivedDocument)                       | **POST** /c/{company_id}/received_documents                            | Create Received Document               |
-| [**deleteBinReceivedDocument()**](ReceivedDocumentsApi.md#deleteBinReceivedDocument)                 | **DELETE** /c/{company_id}/bin/received_documents/{document_id}        | Delete Bin Received Document           |
-| [**deleteReceivedDocument()**](ReceivedDocumentsApi.md#deleteReceivedDocument)                       | **DELETE** /c/{company_id}/received_documents/{document_id}            | Delete Received Document               |
-| [**deleteReceivedDocumentAttachment()**](ReceivedDocumentsApi.md#deleteReceivedDocumentAttachment)   | **DELETE** /c/{company_id}/received_documents/{document_id}/attachment | Delete Received Document Attachment    |
-| [**getBinReceivedDocument()**](ReceivedDocumentsApi.md#getBinReceivedDocument)                       | **GET** /c/{company_id}/bin/received_documents/{document_id}           | Get Bin Received Documents List        |
-| [**getExistingReceivedDocumentTotals()**](ReceivedDocumentsApi.md#getExistingReceivedDocumentTotals) | **POST** /c/{company_id}/received_documents/{document_id}/totals       | Get Existing Received Document Totals  |
-| [**getNewReceivedDocumentTotals()**](ReceivedDocumentsApi.md#getNewReceivedDocumentTotals)           | **POST** /c/{company_id}/received_documents/totals                     | Get New Received Document Totals       |
-| [**getPendingReceivedDocument()**](ReceivedDocumentsApi.md#getPendingReceivedDocument)               | **GET** /c/{company_id}/received_documents/pending/{document_id}       | Get Pending Received Document          |
-| [**getReceivedDocument()**](ReceivedDocumentsApi.md#getReceivedDocument)                             | **GET** /c/{company_id}/received_documents/{document_id}               | Get Received Document                  |
-| [**getReceivedDocumentPreCreateInfo()**](ReceivedDocumentsApi.md#getReceivedDocumentPreCreateInfo)   | **GET** /c/{company_id}/received_documents/info                        | Get Received Document Pre-Create Info  |
-| [**listBinReceivedDocuments()**](ReceivedDocumentsApi.md#listBinReceivedDocuments)                   | **GET** /c/{company_id}/bin/received_documents                         | Get Bin Received Documents List        |
-| [**listPendingReceivedDocuments()**](ReceivedDocumentsApi.md#listPendingReceivedDocuments)           | **GET** /c/{company_id}/received_documents/pending                     | List Pending Received Documents        |
-| [**listReceivedDocuments()**](ReceivedDocumentsApi.md#listReceivedDocuments)                         | **GET** /c/{company_id}/received_documents                             | List Received Documents                |
-| [**modifyReceivedDocument()**](ReceivedDocumentsApi.md#modifyReceivedDocument)                       | **PUT** /c/{company_id}/received_documents/{document_id}               | Modify Received Document               |
-| [**recoverBinReceivedDocument()**](ReceivedDocumentsApi.md#recoverBinReceivedDocument)               | **POST** /c/{company_id}/bin/received_documents/{document_id}/recover  | Recover Received Document From The Bin |
-| [**uploadReceivedDocumentAttachment()**](ReceivedDocumentsApi.md#uploadReceivedDocumentAttachment)   | **POST** /c/{company_id}/received_documents/attachment                 | Upload Received Document Attachment    |
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createReceivedDocument()**](ReceivedDocumentsApi.md#createReceivedDocument) | **POST** /c/{company_id}/received_documents | Create Received Document |
+| [**deleteBinReceivedDocument()**](ReceivedDocumentsApi.md#deleteBinReceivedDocument) | **DELETE** /c/{company_id}/bin/received_documents/{document_id} | Delete Bin Received Document |
+| [**deleteReceivedDocument()**](ReceivedDocumentsApi.md#deleteReceivedDocument) | **DELETE** /c/{company_id}/received_documents/{document_id} | Delete Received Document |
+| [**deleteReceivedDocumentAttachment()**](ReceivedDocumentsApi.md#deleteReceivedDocumentAttachment) | **DELETE** /c/{company_id}/received_documents/{document_id}/attachment | Delete Received Document Attachment |
+| [**getBinReceivedDocument()**](ReceivedDocumentsApi.md#getBinReceivedDocument) | **GET** /c/{company_id}/bin/received_documents/{document_id} | Get Bin Received Documents List |
+| [**getExistingReceivedDocumentTotals()**](ReceivedDocumentsApi.md#getExistingReceivedDocumentTotals) | **POST** /c/{company_id}/received_documents/{document_id}/totals | Get Existing Received Document Totals |
+| [**getNewReceivedDocumentTotals()**](ReceivedDocumentsApi.md#getNewReceivedDocumentTotals) | **POST** /c/{company_id}/received_documents/totals | Get New Received Document Totals |
+| [**getPendingReceivedDocument()**](ReceivedDocumentsApi.md#getPendingReceivedDocument) | **GET** /c/{company_id}/received_documents/pending/{document_id} | Get Pending Received Document |
+| [**getReceivedDocument()**](ReceivedDocumentsApi.md#getReceivedDocument) | **GET** /c/{company_id}/received_documents/{document_id} | Get Received Document |
+| [**getReceivedDocumentPreCreateInfo()**](ReceivedDocumentsApi.md#getReceivedDocumentPreCreateInfo) | **GET** /c/{company_id}/received_documents/info | Get Received Document Pre-Create Info |
+| [**listBinReceivedDocuments()**](ReceivedDocumentsApi.md#listBinReceivedDocuments) | **GET** /c/{company_id}/bin/received_documents | Get Bin Received Documents List |
+| [**listPendingReceivedDocuments()**](ReceivedDocumentsApi.md#listPendingReceivedDocuments) | **GET** /c/{company_id}/received_documents/pending | List Pending Received Documents |
+| [**listReceivedDocuments()**](ReceivedDocumentsApi.md#listReceivedDocuments) | **GET** /c/{company_id}/received_documents | List Received Documents |
+| [**modifyReceivedDocument()**](ReceivedDocumentsApi.md#modifyReceivedDocument) | **PUT** /c/{company_id}/received_documents/{document_id} | Modify Received Document |
+| [**recoverBinReceivedDocument()**](ReceivedDocumentsApi.md#recoverBinReceivedDocument) | **POST** /c/{company_id}/bin/received_documents/{document_id}/recover | Recover Received Document From The Bin |
+| [**uploadReceivedDocumentAttachment()**](ReceivedDocumentsApi.md#uploadReceivedDocumentAttachment) | **POST** /c/{company_id}/received_documents/attachment | Upload Received Document Attachment |
+
 
 ## `createReceivedDocument()`
 
@@ -47,7 +48,7 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $create_received_document_request = new \FattureInCloud\Model\CreateReceivedDocumentRequest; // \FattureInCloud\Model\CreateReceivedDocumentRequest | Document to create
 
 try {
@@ -60,10 +61,10 @@ try {
 
 ### Parameters
 
-| Name                                 | Type                                                                                                 | Description            | Notes      |
-| ------------------------------------ | ---------------------------------------------------------------------------------------------------- | ---------------------- | ---------- |
-| **company_id**                       | **int**                                                                                              | The ID of the company. |            |
-| **create_received_document_request** | [**\FattureInCloud\Model\CreateReceivedDocumentRequest**](../Model/CreateReceivedDocumentRequest.md) | Document to create     | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **create_received_document_request** | [**\FattureInCloud\Model\CreateReceivedDocumentRequest**](../Model/CreateReceivedDocumentRequest.md)| Document to create | [optional] |
 
 ### Return type
 
@@ -108,7 +109,7 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 
 try {
@@ -120,10 +121,10 @@ try {
 
 ### Parameters
 
-| Name            | Type    | Description             | Notes |
-| --------------- | ------- | ----------------------- | ----- |
-| **company_id**  | **int** | The ID of the company.  |       |
-| **document_id** | **int** | The ID of the document. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
 
 ### Return type
 
@@ -168,7 +169,7 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 
 try {
@@ -180,10 +181,10 @@ try {
 
 ### Parameters
 
-| Name            | Type    | Description             | Notes |
-| --------------- | ------- | ----------------------- | ----- |
-| **company_id**  | **int** | The ID of the company.  |       |
-| **document_id** | **int** | The ID of the document. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
 
 ### Return type
 
@@ -228,7 +229,7 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 
 try {
@@ -240,10 +241,10 @@ try {
 
 ### Parameters
 
-| Name            | Type    | Description             | Notes |
-| --------------- | ------- | ----------------------- | ----- |
-| **company_id**  | **int** | The ID of the company.  |       |
-| **document_id** | **int** | The ID of the document. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
 
 ### Return type
 
@@ -288,7 +289,7 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 
 try {
@@ -301,10 +302,10 @@ try {
 
 ### Parameters
 
-| Name            | Type    | Description             | Notes |
-| --------------- | ------- | ----------------------- | ----- |
-| **company_id**  | **int** | The ID of the company.  |       |
-| **document_id** | **int** | The ID of the document. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
 
 ### Return type
 
@@ -349,7 +350,7 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 $get_existing_received_document_totals_request = new \FattureInCloud\Model\GetExistingReceivedDocumentTotalsRequest; // \FattureInCloud\Model\GetExistingReceivedDocumentTotalsRequest | Received document.
 
@@ -363,11 +364,11 @@ try {
 
 ### Parameters
 
-| Name                                              | Type                                                                                                                       | Description             | Notes      |
-| ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ----------------------- | ---------- |
-| **company_id**                                    | **int**                                                                                                                    | The ID of the company.  |            |
-| **document_id**                                   | **int**                                                                                                                    | The ID of the document. |            |
-| **get_existing_received_document_totals_request** | [**\FattureInCloud\Model\GetExistingReceivedDocumentTotalsRequest**](../Model/GetExistingReceivedDocumentTotalsRequest.md) | Received document.      | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
+| **get_existing_received_document_totals_request** | [**\FattureInCloud\Model\GetExistingReceivedDocumentTotalsRequest**](../Model/GetExistingReceivedDocumentTotalsRequest.md)| Received document. | [optional] |
 
 ### Return type
 
@@ -412,7 +413,7 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $get_new_received_document_totals_request = new \FattureInCloud\Model\GetNewReceivedDocumentTotalsRequest; // \FattureInCloud\Model\GetNewReceivedDocumentTotalsRequest | Received document.
 
 try {
@@ -425,10 +426,10 @@ try {
 
 ### Parameters
 
-| Name                                         | Type                                                                                                             | Description            | Notes      |
-| -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------- | ---------- |
-| **company_id**                               | **int**                                                                                                          | The ID of the company. |            |
-| **get_new_received_document_totals_request** | [**\FattureInCloud\Model\GetNewReceivedDocumentTotalsRequest**](../Model/GetNewReceivedDocumentTotalsRequest.md) | Received document.     | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **get_new_received_document_totals_request** | [**\FattureInCloud\Model\GetNewReceivedDocumentTotalsRequest**](../Model/GetNewReceivedDocumentTotalsRequest.md)| Received document. | [optional] |
 
 ### Return type
 
@@ -473,7 +474,7 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
@@ -488,12 +489,12 @@ try {
 
 ### Parameters
 
-| Name            | Type       | Description                     | Notes      |
-| --------------- | ---------- | ------------------------------- | ---------- |
-| **company_id**  | **int**    | The ID of the company.          |            |
-| **document_id** | **int**    | The ID of the document.         |            |
-| **fields**      | **string** | List of comma-separated fields. | [optional] |
-| **fieldset**    | **string** | Name of the fieldset.           | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
 
 ### Return type
 
@@ -538,7 +539,7 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
@@ -553,12 +554,12 @@ try {
 
 ### Parameters
 
-| Name            | Type       | Description                     | Notes      |
-| --------------- | ---------- | ------------------------------- | ---------- |
-| **company_id**  | **int**    | The ID of the company.          |            |
-| **document_id** | **int**    | The ID of the document.         |            |
-| **fields**      | **string** | List of comma-separated fields. | [optional] |
-| **fieldset**    | **string** | Name of the fieldset.           | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
 
 ### Return type
 
@@ -603,7 +604,7 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $type = 'type_example'; // string | The type of the received document.
 
 try {
@@ -616,10 +617,10 @@ try {
 
 ### Parameters
 
-| Name           | Type       | Description                        | Notes |
-| -------------- | ---------- | ---------------------------------- | ----- |
-| **company_id** | **int**    | The ID of the company.             |       |
-| **type**       | **string** | The type of the received document. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **type** | **string**| The type of the received document. | |
 
 ### Return type
 
@@ -664,7 +665,7 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 
 try {
     $result = $apiInstance->listBinReceivedDocuments($company_id);
@@ -676,9 +677,9 @@ try {
 
 ### Parameters
 
-| Name           | Type    | Description            | Notes |
-| -------------- | ------- | ---------------------- | ----- |
-| **company_id** | **int** | The ID of the company. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
 
 ### Return type
 
@@ -723,7 +724,7 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $type = 'type_example'; // string | The type of the pending received document.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
@@ -742,16 +743,16 @@ try {
 
 ### Parameters
 
-| Name           | Type       | Description                                                                 | Notes                     |
-| -------------- | ---------- | --------------------------------------------------------------------------- | ------------------------- |
-| **company_id** | **int**    | The ID of the company.                                                      |                           |
-| **type**       | **string** | The type of the pending received document.                                  |                           |
-| **fields**     | **string** | List of comma-separated fields.                                             | [optional]                |
-| **fieldset**   | **string** | Name of the fieldset.                                                       | [optional]                |
-| **sort**       | **string** | List of comma-separated fields for result sorting (minus for desc sorting). | [optional]                |
-| **page**       | **int**    | The page to retrieve.                                                       | [optional] [default to 1] |
-| **per_page**   | **int**    | The size of the page.                                                       | [optional] [default to 5] |
-| **q**          | **string** | Query for filtering the results.                                            | [optional]                |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **type** | **string**| The type of the pending received document. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
+| **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
+| **page** | **int**| The page to retrieve. | [optional] [default to 1] |
+| **per_page** | **int**| The size of the page. | [optional] [default to 5] |
+| **q** | **string**| Query for filtering the results. | [optional] |
 
 ### Return type
 
@@ -796,7 +797,7 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $type = 'type_example'; // string | The type of the received document.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
@@ -815,16 +816,16 @@ try {
 
 ### Parameters
 
-| Name           | Type       | Description                                                                 | Notes                     |
-| -------------- | ---------- | --------------------------------------------------------------------------- | ------------------------- |
-| **company_id** | **int**    | The ID of the company.                                                      |                           |
-| **type**       | **string** | The type of the received document.                                          |                           |
-| **fields**     | **string** | List of comma-separated fields.                                             | [optional]                |
-| **fieldset**   | **string** | Name of the fieldset.                                                       | [optional]                |
-| **sort**       | **string** | List of comma-separated fields for result sorting (minus for desc sorting). | [optional]                |
-| **page**       | **int**    | The page to retrieve.                                                       | [optional] [default to 1] |
-| **per_page**   | **int**    | The size of the page.                                                       | [optional] [default to 5] |
-| **q**          | **string** | Query for filtering the results.                                            | [optional]                |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **type** | **string**| The type of the received document. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
+| **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
+| **page** | **int**| The page to retrieve. | [optional] [default to 1] |
+| **per_page** | **int**| The size of the page. | [optional] [default to 5] |
+| **q** | **string**| Query for filtering the results. | [optional] |
 
 ### Return type
 
@@ -869,7 +870,7 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 $modify_received_document_request = new \FattureInCloud\Model\ModifyReceivedDocumentRequest; // \FattureInCloud\Model\ModifyReceivedDocumentRequest | Modified document.
 
@@ -883,11 +884,11 @@ try {
 
 ### Parameters
 
-| Name                                 | Type                                                                                                 | Description             | Notes      |
-| ------------------------------------ | ---------------------------------------------------------------------------------------------------- | ----------------------- | ---------- |
-| **company_id**                       | **int**                                                                                              | The ID of the company.  |            |
-| **document_id**                      | **int**                                                                                              | The ID of the document. |            |
-| **modify_received_document_request** | [**\FattureInCloud\Model\ModifyReceivedDocumentRequest**](../Model/ModifyReceivedDocumentRequest.md) | Modified document.      | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
+| **modify_received_document_request** | [**\FattureInCloud\Model\ModifyReceivedDocumentRequest**](../Model/ModifyReceivedDocumentRequest.md)| Modified document. | [optional] |
 
 ### Return type
 
@@ -932,7 +933,7 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 
 try {
@@ -944,10 +945,10 @@ try {
 
 ### Parameters
 
-| Name            | Type    | Description             | Notes |
-| --------------- | ------- | ----------------------- | ----- |
-| **company_id**  | **int** | The ID of the company.  |       |
-| **document_id** | **int** | The ID of the document. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
 
 ### Return type
 
@@ -992,7 +993,7 @@ $apiInstance = new FattureInCloud\Api\ReceivedDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $filename = 'filename_example'; // string | Attachment file name
 $attachment = '/path/to/file.txt'; // \SplFileObject | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx]
 
@@ -1006,11 +1007,11 @@ try {
 
 ### Parameters
 
-| Name           | Type                                     | Description                                                              | Notes      |
-| -------------- | ---------------------------------------- | ------------------------------------------------------------------------ | ---------- |
-| **company_id** | **int**                                  | The ID of the company.                                                   |            |
-| **filename**   | **string**                               | Attachment file name                                                     | [optional] |
-| **attachment** | **\SplFileObject\*\***\SplFileObject\*\* | Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx] | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **filename** | **string**| Attachment file name | [optional] |
+| **attachment** | **\SplFileObject****\SplFileObject**| Attachment file [.png, .jpg, .gif, .pdf, .zip, .xls, .xlsx, .doc, .docx] | [optional] |
 
 ### Return type
 

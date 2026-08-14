@@ -114,7 +114,7 @@ class CreateF24RequestTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CreateF24Request();
         $testValue = new \FattureInCloud\Model\F24();
-        
+
         $object->setData($testValue);
         $this->assertEquals($testValue, $object->getData());
     }

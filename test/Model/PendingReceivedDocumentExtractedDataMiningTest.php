@@ -78,7 +78,7 @@ class PendingReceivedDocumentExtractedDataMiningTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentExtractedDataMining();
         $this->assertInstanceOf(\FattureInCloud\Model\PendingReceivedDocumentExtractedDataMining::class, $object);
-        
+
         // Test that object can be created with valid data
         $object->setSaveEntity(true);
         $this->assertEquals(true, $object->getSaveEntity());
@@ -91,7 +91,7 @@ class PendingReceivedDocumentExtractedDataMiningTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentExtractedDataMining();
         $testValue = true;
-        
+
         $object->setSaveEntity($testValue);
         $this->assertEquals($testValue, $object->getSaveEntity());
     }
@@ -103,7 +103,7 @@ class PendingReceivedDocumentExtractedDataMiningTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentExtractedDataMining();
         $testValue = true;
-        
+
         $object->setSaveEntity($testValue);
         $this->assertEquals($testValue, $object->getSaveEntity());
     }

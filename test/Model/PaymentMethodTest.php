@@ -159,7 +159,7 @@ class PaymentMethodTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PaymentMethod();
         $testValue = 12345;
-        
+
         $object->setId($testValue);
         $this->assertEquals($testValue, $object->getId());
     }
@@ -171,7 +171,7 @@ class PaymentMethodTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PaymentMethod();
         $testValue = 'Test Payment Method';
-        
+
         $object->setName($testValue);
         $this->assertEquals($testValue, $object->getName());
     }
@@ -183,7 +183,7 @@ class PaymentMethodTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PaymentMethod();
         $testValue = 'custom';
-        
+
         $object->setType($testValue);
         $this->assertEquals($testValue, $object->getType());
     }
@@ -195,7 +195,7 @@ class PaymentMethodTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PaymentMethod();
         $testValue = false;
-        
+
         $object->setIsDefault($testValue);
         $this->assertEquals($testValue, $object->getIsDefault());
     }
@@ -207,7 +207,7 @@ class PaymentMethodTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PaymentMethod();
         $testValue = ['id' => 123, 'name' => 'Test Account'];
-        
+
         $object->setDefaultPaymentAccount($testValue);
         $this->assertEquals($testValue, $object->getDefaultPaymentAccount());
     }
@@ -219,7 +219,7 @@ class PaymentMethodTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PaymentMethod();
         $testValue = [['title' => 'Test Detail']];
-        
+
         $object->setDetails($testValue);
         $this->assertEquals($testValue, $object->getDetails());
     }
@@ -231,7 +231,7 @@ class PaymentMethodTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PaymentMethod();
         $testValue = 'IT60X0542811101000000123456';
-        
+
         $object->setBankIban($testValue);
         $this->assertEquals($testValue, $object->getBankIban());
     }
@@ -243,7 +243,7 @@ class PaymentMethodTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PaymentMethod();
         $testValue = 'Test Bank';
-        
+
         $object->setBankName($testValue);
         $this->assertEquals($testValue, $object->getBankName());
     }
@@ -255,7 +255,7 @@ class PaymentMethodTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PaymentMethod();
         $testValue = 'Test Beneficiary';
-        
+
         $object->setBankBeneficiary($testValue);
         $this->assertEquals($testValue, $object->getBankBeneficiary());
     }
@@ -267,7 +267,7 @@ class PaymentMethodTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PaymentMethod();
         $testValue = 'MP01';
-        
+
         $object->setEiPaymentMethod($testValue);
         $this->assertEquals($testValue, $object->getEiPaymentMethod());
     }

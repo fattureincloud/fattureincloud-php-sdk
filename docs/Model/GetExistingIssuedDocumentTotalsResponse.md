@@ -1,4 +1,4 @@
-# # GetExistingIssuedDocumentTotalsResponse
+# GetExistingIssuedDocumentTotalsResponse
 
 ## Properties
 

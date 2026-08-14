@@ -206,7 +206,7 @@ class IssuedDocumentEiDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentEiData();
         $testValue = \FattureInCloud\Model\VatKind::D;
-        
+
         $object->setVatKind($testValue);
         $this->assertEquals($testValue, $object->getVatKind());
     }
@@ -218,7 +218,7 @@ class IssuedDocumentEiDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentEiData();
         $testValue = \FattureInCloud\Model\OriginalDocumentType::CONTRATTO;
-        
+
         $object->setOriginalDocumentType($testValue);
         $this->assertEquals($testValue, $object->getOriginalDocumentType());
     }
@@ -230,7 +230,7 @@ class IssuedDocumentEiDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentEiData();
         $testValue = "ORD-2024-001";
-        
+
         $object->setOdNumber($testValue);
         $this->assertEquals($testValue, $object->getOdNumber());
     }
@@ -242,7 +242,7 @@ class IssuedDocumentEiDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentEiData();
         $testValue = new \DateTime('2024-03-15');
-        
+
         $object->setOdDate($testValue);
         $this->assertEquals($testValue, $object->getOdDate());
     }
@@ -254,7 +254,7 @@ class IssuedDocumentEiDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentEiData();
         $testValue = "CIG123456789";
-        
+
         $object->setCig($testValue);
         $this->assertEquals($testValue, $object->getCig());
     }
@@ -266,7 +266,7 @@ class IssuedDocumentEiDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentEiData();
         $testValue = "CUP123456789";
-        
+
         $object->setCup($testValue);
         $this->assertEquals($testValue, $object->getCup());
     }
@@ -278,7 +278,7 @@ class IssuedDocumentEiDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentEiData();
         $testValue = "MP05";
-        
+
         $object->setPaymentMethod($testValue);
         $this->assertEquals($testValue, $object->getPaymentMethod());
     }
@@ -290,7 +290,7 @@ class IssuedDocumentEiDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentEiData();
         $testValue = "Banca Test";
-        
+
         $object->setBankName($testValue);
         $this->assertEquals($testValue, $object->getBankName());
     }
@@ -302,7 +302,7 @@ class IssuedDocumentEiDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentEiData();
         $testValue = "IT12A1234567890123456789012";
-        
+
         $object->setBankIban($testValue);
         $this->assertEquals($testValue, $object->getBankIban());
     }
@@ -314,7 +314,7 @@ class IssuedDocumentEiDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentEiData();
         $testValue = "Test Beneficiary";
-        
+
         $object->setBankBeneficiary($testValue);
         $this->assertEquals($testValue, $object->getBankBeneficiary());
     }
@@ -326,7 +326,7 @@ class IssuedDocumentEiDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentEiData();
         $testValue = "INV-2024-001";
-        
+
         $object->setInvoiceNumber($testValue);
         $this->assertEquals($testValue, $object->getInvoiceNumber());
     }
@@ -338,7 +338,7 @@ class IssuedDocumentEiDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentEiData();
         $testValue = new \DateTime('2024-03-20');
-        
+
         $object->setInvoiceDate($testValue);
         $this->assertEquals($testValue, $object->getInvoiceDate());
     }

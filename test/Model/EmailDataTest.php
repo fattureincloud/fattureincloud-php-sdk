@@ -193,7 +193,7 @@ class EmailDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\EmailData();
         $testValue = 'test@example.com';
-        
+
         $object->setRecipientEmail($testValue);
         $this->assertEquals($testValue, $object->getRecipientEmail());
     }
@@ -205,7 +205,7 @@ class EmailDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\EmailData();
         $testValue = 'Test Email Subject';
-        
+
         $object->setSubject($testValue);
         $this->assertEquals($testValue, $object->getSubject());
     }
@@ -217,7 +217,7 @@ class EmailDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\EmailData();
         $testValue = true;
-        
+
         $object->setDocumentExists($testValue);
         $this->assertEquals($testValue, $object->getDocumentExists());
     }
@@ -229,7 +229,7 @@ class EmailDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\EmailData();
         $testValue = new \FattureInCloud\Model\EmailDataDefaultSenderEmail();
-        
+
         $object->setDefaultSenderEmail($testValue);
         $this->assertEquals($testValue, $object->getDefaultSenderEmail());
     }
@@ -241,7 +241,7 @@ class EmailDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\EmailData();
         $testValue = 'Test email body content';
-        
+
         $object->setBody($testValue);
         $this->assertEquals($testValue, $object->getBody());
     }
@@ -253,7 +253,7 @@ class EmailDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\EmailData();
         $testValue = false;
-        
+
         $object->setDeliveryNoteExists($testValue);
         $this->assertEquals($testValue, $object->getDeliveryNoteExists());
     }
@@ -265,7 +265,7 @@ class EmailDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\EmailData();
         $testValue = true;
-        
+
         $object->setAttachmentExists($testValue);
         $this->assertEquals($testValue, $object->getAttachmentExists());
     }
@@ -277,7 +277,7 @@ class EmailDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\EmailData();
         $testValue = false;
-        
+
         $object->setAccompanyingInvoiceExists($testValue);
         $this->assertEquals($testValue, $object->getAccompanyingInvoiceExists());
     }
@@ -289,7 +289,7 @@ class EmailDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\EmailData();
         $testValue = true;
-        
+
         $object->setDefaultAttachPdf($testValue);
         $this->assertEquals($testValue, $object->getDefaultAttachPdf());
     }

@@ -1,4 +1,4 @@
-# # GetF24Response
+# GetF24Response
 
 ## Properties
 

@@ -173,7 +173,7 @@ class EmailScheduleTest extends TestCase
     {
         $object = new \FattureInCloud\Model\EmailSchedule();
         $testValue = 123;
-        
+
         $object->setSenderId($testValue);
         $this->assertEquals($testValue, $object->getSenderId());
     }
@@ -185,7 +185,7 @@ class EmailScheduleTest extends TestCase
     {
         $object = new \FattureInCloud\Model\EmailSchedule();
         $testValue = "test@example.com";
-        
+
         $object->setSenderEmail($testValue);
         $this->assertEquals($testValue, $object->getSenderEmail());
     }
@@ -197,7 +197,7 @@ class EmailScheduleTest extends TestCase
     {
         $object = new \FattureInCloud\Model\EmailSchedule();
         $testValue = "recipient@example.com";
-        
+
         $object->setRecipientEmail($testValue);
         $this->assertEquals($testValue, $object->getRecipientEmail());
     }
@@ -209,7 +209,7 @@ class EmailScheduleTest extends TestCase
     {
         $object = new \FattureInCloud\Model\EmailSchedule();
         $testValue = "Test email subject";
-        
+
         $object->setSubject($testValue);
         $this->assertEquals($testValue, $object->getSubject());
     }
@@ -221,7 +221,7 @@ class EmailScheduleTest extends TestCase
     {
         $object = new \FattureInCloud\Model\EmailSchedule();
         $testValue = "<p>Test email body</p>";
-        
+
         $object->setBody($testValue);
         $this->assertEquals($testValue, $object->getBody());
     }
@@ -233,7 +233,7 @@ class EmailScheduleTest extends TestCase
     {
         $object = new \FattureInCloud\Model\EmailSchedule();
         $testValue = new \FattureInCloud\Model\EmailScheduleInclude();
-        
+
         $object->setInclude($testValue);
         $this->assertEquals($testValue, $object->getInclude());
     }
@@ -245,7 +245,7 @@ class EmailScheduleTest extends TestCase
     {
         $object = new \FattureInCloud\Model\EmailSchedule();
         $testValue = true;
-        
+
         $object->setAttachPdf($testValue);
         $this->assertEquals($testValue, $object->getAttachPdf());
     }
@@ -257,7 +257,7 @@ class EmailScheduleTest extends TestCase
     {
         $object = new \FattureInCloud\Model\EmailSchedule();
         $testValue = false;
-        
+
         $object->setSendCopy($testValue);
         $this->assertEquals($testValue, $object->getSendCopy());
     }

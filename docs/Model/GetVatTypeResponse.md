@@ -1,4 +1,4 @@
-# # GetVatTypeResponse
+# GetVatTypeResponse
 
 ## Properties
 

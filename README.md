@@ -1,7 +1,7 @@
 # FattureInCloud PHP SDK
 
 [![Packagist](https://img.shields.io/packagist/v/fattureincloud/fattureincloud-php-sdk?color=g)](https://packagist.org/packages/fattureincloud/fattureincloud-php-sdk) ![unit tests](https://github.com/fattureincloud/fattureincloud-php-sdk/actions/workflows/validate.yaml/badge.svg)
-Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy.
+    Connect your software with Fatture in Cloud, the invoicing platform chosen by more than 500.000 businesses in Italy. 
 
 The Fatture in Cloud API is based on REST, and makes possible to interact with the user related data prior authorization via OAuth2 protocol.
 
@@ -11,7 +11,7 @@ The Fatture in Cloud API is based on REST, and makes possible to interact with t
 
 ### Requirements
 
-PHP 7.4 and later.
+PHP 7.3 and later.
 
 ### Composer
 
@@ -24,13 +24,10 @@ $ composer require fattureincloud/fattureincloud-php-sdk
 ### Manual Installation
 
 There are three options:
-
 - [recommended] download the latest release of the fattureincloud-php-sdk [Phar Archive](https://github.com/fattureincloud/fattureincloud-php-sdk/releases) and simply include it in your project.
-
 ```php
 require_once('./fattureincloud-php-sdk.phar');
 ```
-
 - download our sdk using [php-download](https://php-download.com/package/fattureincloud/fattureincloud-php-sdk) and simply include it in your project.
 - create your own custom autoloader and download all the dependencies (transitive included) as explained [here](https://ehikioya.com/how-to-install-php-packages-without-composer/).
 
@@ -43,10 +40,10 @@ Please follow the [installation procedure](#installation--usage) and then run th
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
+    
             // Configure OAuth2 access token for authorization: OAuth2AuthenticationCodeFlow
     $config = FattureInCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
+    
 $apiInstance = new FattureInCloud\Api\ArchiveApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -69,131 +66,131 @@ try {
 
 All URIs are relative to *https://api-v2.fattureincloud.it*
 
-| Class                  | Method                                                                                                      | HTTP request                                                                  | Description                            |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | -------------------------------------- |
-| _ArchiveApi_           | [**createArchiveDocument**](docs/Api/ArchiveApi.md#createarchivedocument)                                   | **POST** /c/{company_id}/archive                                              | Create Archive Document                |
-| _ArchiveApi_           | [**deleteArchiveDocument**](docs/Api/ArchiveApi.md#deletearchivedocument)                                   | **DELETE** /c/{company_id}/archive/{document_id}                              | Delete Archive Document                |
-| _ArchiveApi_           | [**getArchiveDocument**](docs/Api/ArchiveApi.md#getarchivedocument)                                         | **GET** /c/{company_id}/archive/{document_id}                                 | Get Archive Document                   |
-| _ArchiveApi_           | [**listArchiveDocuments**](docs/Api/ArchiveApi.md#listarchivedocuments)                                     | **GET** /c/{company_id}/archive                                               | List Archive Documents                 |
-| _ArchiveApi_           | [**modifyArchiveDocument**](docs/Api/ArchiveApi.md#modifyarchivedocument)                                   | **PUT** /c/{company_id}/archive/{document_id}                                 | Modify Archive Document                |
-| _ArchiveApi_           | [**uploadArchiveDocumentAttachment**](docs/Api/ArchiveApi.md#uploadarchivedocumentattachment)               | **POST** /c/{company_id}/archive/attachment                                   | Upload Archive Document Attachment     |
-| _CashbookApi_          | [**createCashbookEntry**](docs/Api/CashbookApi.md#createcashbookentry)                                      | **POST** /c/{company_id}/cashbook                                             | Create Cashbook Entry                  |
-| _CashbookApi_          | [**deleteCashbookEntry**](docs/Api/CashbookApi.md#deletecashbookentry)                                      | **DELETE** /c/{company_id}/cashbook/{document_id}                             | Delete Cashbook Entry                  |
-| _CashbookApi_          | [**getCashbookEntry**](docs/Api/CashbookApi.md#getcashbookentry)                                            | **GET** /c/{company_id}/cashbook/{document_id}                                | Get Cashbook Entry                     |
-| _CashbookApi_          | [**listCashbookEntries**](docs/Api/CashbookApi.md#listcashbookentries)                                      | **GET** /c/{company_id}/cashbook                                              | List Cashbook Entries                  |
-| _CashbookApi_          | [**modifyCashbookEntry**](docs/Api/CashbookApi.md#modifycashbookentry)                                      | **PUT** /c/{company_id}/cashbook/{document_id}                                | Modify Cashbook Entry                  |
-| _ClientsApi_           | [**createClient**](docs/Api/ClientsApi.md#createclient)                                                     | **POST** /c/{company_id}/entities/clients                                     | Create Client                          |
-| _ClientsApi_           | [**deleteClient**](docs/Api/ClientsApi.md#deleteclient)                                                     | **DELETE** /c/{company_id}/entities/clients/{client_id}                       | Delete Client                          |
-| _ClientsApi_           | [**getClient**](docs/Api/ClientsApi.md#getclient)                                                           | **GET** /c/{company_id}/entities/clients/{client_id}                          | Get Client                             |
-| _ClientsApi_           | [**getClientInfo**](docs/Api/ClientsApi.md#getclientinfo)                                                   | **GET** /c/{company_id}/entities/clients/info                                 | Get Client info                        |
-| _ClientsApi_           | [**listClients**](docs/Api/ClientsApi.md#listclients)                                                       | **GET** /c/{company_id}/entities/clients                                      | List Clients                           |
-| _ClientsApi_           | [**modifyClient**](docs/Api/ClientsApi.md#modifyclient)                                                     | **PUT** /c/{company_id}/entities/clients/{client_id}                          | Modify Client                          |
-| _CompaniesApi_         | [**getCompanyInfo**](docs/Api/CompaniesApi.md#getcompanyinfo)                                               | **GET** /c/{company_id}/company/info                                          | Get Company Info                       |
-| _CompaniesApi_         | [**getCompanyPlanUsage**](docs/Api/CompaniesApi.md#getcompanyplanusage)                                     | **GET** /c/{company_id}/company/plan_usage                                    | Get Company Plan Usage                 |
-| _EmailsApi_            | [**listEmails**](docs/Api/EmailsApi.md#listemails)                                                          | **GET** /c/{company_id}/emails                                                | List Emails                            |
-| _InfoApi_              | [**listArchiveCategories**](docs/Api/InfoApi.md#listarchivecategories)                                      | **GET** /c/{company_id}/info/archive_categories                               | List Archive Categories                |
-| _InfoApi_              | [**listCities**](docs/Api/InfoApi.md#listcities)                                                            | **GET** /info/cities                                                          | List Cities                            |
-| _InfoApi_              | [**listCostCenters**](docs/Api/InfoApi.md#listcostcenters)                                                  | **GET** /c/{company_id}/info/cost_centers                                     | List Cost Centers                      |
-| _InfoApi_              | [**listCountries**](docs/Api/InfoApi.md#listcountries)                                                      | **GET** /info/countries                                                       | List Countries                         |
-| _InfoApi_              | [**listCurrencies**](docs/Api/InfoApi.md#listcurrencies)                                                    | **GET** /info/currencies                                                      | List Currencies                        |
-| _InfoApi_              | [**listDefaultTemplates**](docs/Api/InfoApi.md#listdefaulttemplates)                                        | **GET** /info/templates                                                       | List Default Templates                 |
-| _InfoApi_              | [**listDeliveryNotesDefaultCausals**](docs/Api/InfoApi.md#listdeliverynotesdefaultcausals)                  | **GET** /info/dn_causals                                                      | List Delivery Notes Default Causals    |
-| _InfoApi_              | [**listDetailedCountries**](docs/Api/InfoApi.md#listdetailedcountries)                                      | **GET** /info/detailed_countries                                              | List Detailed Countries                |
-| _InfoApi_              | [**listLanguages**](docs/Api/InfoApi.md#listlanguages)                                                      | **GET** /info/languages                                                       | List Languages                         |
-| _InfoApi_              | [**listPaymentAccounts**](docs/Api/InfoApi.md#listpaymentaccounts)                                          | **GET** /c/{company_id}/info/payment_accounts                                 | List Payment Accounts                  |
-| _InfoApi_              | [**listPaymentMethods**](docs/Api/InfoApi.md#listpaymentmethods)                                            | **GET** /c/{company_id}/info/payment_methods                                  | List Payment Methods                   |
-| _InfoApi_              | [**listProductCategories**](docs/Api/InfoApi.md#listproductcategories)                                      | **GET** /c/{company_id}/info/product_categories                               | List Product Categories                |
-| _InfoApi_              | [**listReceivedDocumentCategories**](docs/Api/InfoApi.md#listreceiveddocumentcategories)                    | **GET** /c/{company_id}/info/received_document_categories                     | List Received Document Categories      |
-| _InfoApi_              | [**listRevenueCenters**](docs/Api/InfoApi.md#listrevenuecenters)                                            | **GET** /c/{company_id}/info/revenue_centers                                  | List Revenue Centers                   |
-| _InfoApi_              | [**listUnitsOfMeasure**](docs/Api/InfoApi.md#listunitsofmeasure)                                            | **GET** /info/measures                                                        | List Units of Measure                  |
-| _InfoApi_              | [**listVatTypes**](docs/Api/InfoApi.md#listvattypes)                                                        | **GET** /c/{company_id}/info/vat_types                                        | List Vat Types                         |
-| _IssuedDocumentsApi_   | [**createIssuedDocument**](docs/Api/IssuedDocumentsApi.md#createissueddocument)                             | **POST** /c/{company_id}/issued_documents                                     | Create Issued Document                 |
-| _IssuedDocumentsApi_   | [**deleteBinIssuedDocument**](docs/Api/IssuedDocumentsApi.md#deletebinissueddocument)                       | **DELETE** /c/{company_id}/bin/issued_documents/{document_id}                 | Delete Bin Issued Document             |
-| _IssuedDocumentsApi_   | [**deleteIssuedDocument**](docs/Api/IssuedDocumentsApi.md#deleteissueddocument)                             | **DELETE** /c/{company_id}/issued_documents/{document_id}                     | Delete Issued Document                 |
-| _IssuedDocumentsApi_   | [**deleteIssuedDocumentAttachment**](docs/Api/IssuedDocumentsApi.md#deleteissueddocumentattachment)         | **DELETE** /c/{company_id}/issued_documents/{document_id}/attachment          | Delete Issued Document Attachment      |
-| _IssuedDocumentsApi_   | [**getBinIssuedDocument**](docs/Api/IssuedDocumentsApi.md#getbinissueddocument)                             | **GET** /c/{company_id}/bin/issued_documents/{document_id}                    | Get Bin Issued Documents List          |
-| _IssuedDocumentsApi_   | [**getEmailData**](docs/Api/IssuedDocumentsApi.md#getemaildata)                                             | **GET** /c/{company_id}/issued_documents/{document_id}/email                  | Get Email Data                         |
-| _IssuedDocumentsApi_   | [**getExistingIssuedDocumentTotals**](docs/Api/IssuedDocumentsApi.md#getexistingissueddocumenttotals)       | **POST** /c/{company_id}/issued_documents/{document_id}/totals                | Get Existing Issued Document Totals    |
-| _IssuedDocumentsApi_   | [**getIssuedDocument**](docs/Api/IssuedDocumentsApi.md#getissueddocument)                                   | **GET** /c/{company_id}/issued_documents/{document_id}                        | Get Issued Document                    |
-| _IssuedDocumentsApi_   | [**getIssuedDocumentPreCreateInfo**](docs/Api/IssuedDocumentsApi.md#getissueddocumentprecreateinfo)         | **GET** /c/{company_id}/issued_documents/info                                 | Get Issued Document Pre-Create Info    |
-| _IssuedDocumentsApi_   | [**getNewIssuedDocumentTotals**](docs/Api/IssuedDocumentsApi.md#getnewissueddocumenttotals)                 | **POST** /c/{company_id}/issued_documents/totals                              | Get New Issued Document Totals         |
-| _IssuedDocumentsApi_   | [**joinIssuedDocuments**](docs/Api/IssuedDocumentsApi.md#joinissueddocuments)                               | **GET** /c/{company_id}/issued_documents/join                                 | Join Issued Documents                  |
-| _IssuedDocumentsApi_   | [**listBinIssuedDocuments**](docs/Api/IssuedDocumentsApi.md#listbinissueddocuments)                         | **GET** /c/{company_id}/bin/issued_documents                                  | Get Bin Issued Documents List          |
-| _IssuedDocumentsApi_   | [**listIssuedDocuments**](docs/Api/IssuedDocumentsApi.md#listissueddocuments)                               | **GET** /c/{company_id}/issued_documents                                      | List Issued Documents                  |
-| _IssuedDocumentsApi_   | [**modifyIssuedDocument**](docs/Api/IssuedDocumentsApi.md#modifyissueddocument)                             | **PUT** /c/{company_id}/issued_documents/{document_id}                        | Modify Issued Document                 |
-| _IssuedDocumentsApi_   | [**recoverBinIssuedDocument**](docs/Api/IssuedDocumentsApi.md#recoverbinissueddocument)                     | **POST** /c/{company_id}/bin/issued_documents/{document_id}/recover           | Recover Issued Document From The Bin   |
-| _IssuedDocumentsApi_   | [**scheduleEmail**](docs/Api/IssuedDocumentsApi.md#scheduleemail)                                           | **POST** /c/{company_id}/issued_documents/{document_id}/email                 | Schedule Email                         |
-| _IssuedDocumentsApi_   | [**transformIssuedDocument**](docs/Api/IssuedDocumentsApi.md#transformissueddocument)                       | **GET** /c/{company_id}/issued_documents/transform                            | Transform Issued Document              |
-| _IssuedDocumentsApi_   | [**uploadIssuedDocumentAttachment**](docs/Api/IssuedDocumentsApi.md#uploadissueddocumentattachment)         | **POST** /c/{company_id}/issued_documents/attachment                          | Upload Issued Document Attachment      |
-| _IssuedEInvoicesApi_   | [**getEInvoiceRejectionReason**](docs/Api/IssuedEInvoicesApi.md#geteinvoicerejectionreason)                 | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/error_reason | Get E-Invoice Rejection Reason         |
-| _IssuedEInvoicesApi_   | [**getEInvoiceXml**](docs/Api/IssuedEInvoicesApi.md#geteinvoicexml)                                         | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml          | Get E-Invoice XML                      |
-| _IssuedEInvoicesApi_   | [**sendEInvoice**](docs/Api/IssuedEInvoicesApi.md#sendeinvoice)                                             | **POST** /c/{company_id}/issued_documents/{document_id}/e_invoice/send        | Send E-Invoice                         |
-| _IssuedEInvoicesApi_   | [**verifyEInvoiceXml**](docs/Api/IssuedEInvoicesApi.md#verifyeinvoicexml)                                   | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml_verify   | Verify E-Invoice XML                   |
-| _PriceListsApi_        | [**getPriceListItems**](docs/Api/PriceListsApi.md#getpricelistitems)                                        | **GET** /c/{company_id}/price_lists/{price_list_id}/items                     | Get PriceList Items List               |
-| _PriceListsApi_        | [**getPriceLists**](docs/Api/PriceListsApi.md#getpricelists)                                                | **GET** /c/{company_id}/price_lists                                           | Get PriceLists                         |
-| _ProductsApi_          | [**createProduct**](docs/Api/ProductsApi.md#createproduct)                                                  | **POST** /c/{company_id}/products                                             | Create Product                         |
-| _ProductsApi_          | [**deleteProduct**](docs/Api/ProductsApi.md#deleteproduct)                                                  | **DELETE** /c/{company_id}/products/{product_id}                              | Delete Product                         |
-| _ProductsApi_          | [**getProduct**](docs/Api/ProductsApi.md#getproduct)                                                        | **GET** /c/{company_id}/products/{product_id}                                 | Get Product                            |
-| _ProductsApi_          | [**listProducts**](docs/Api/ProductsApi.md#listproducts)                                                    | **GET** /c/{company_id}/products                                              | List Products                          |
-| _ProductsApi_          | [**modifyProduct**](docs/Api/ProductsApi.md#modifyproduct)                                                  | **PUT** /c/{company_id}/products/{product_id}                                 | Modify Product                         |
-| _ReceiptsApi_          | [**createReceipt**](docs/Api/ReceiptsApi.md#createreceipt)                                                  | **POST** /c/{company_id}/receipts                                             | Create Receipt                         |
-| _ReceiptsApi_          | [**deleteReceipt**](docs/Api/ReceiptsApi.md#deletereceipt)                                                  | **DELETE** /c/{company_id}/receipts/{document_id}                             | Delete Receipt                         |
-| _ReceiptsApi_          | [**getReceipt**](docs/Api/ReceiptsApi.md#getreceipt)                                                        | **GET** /c/{company_id}/receipts/{document_id}                                | Get Receipt                            |
-| _ReceiptsApi_          | [**getReceiptPreCreateInfo**](docs/Api/ReceiptsApi.md#getreceiptprecreateinfo)                              | **GET** /c/{company_id}/receipts/info                                         | Get Receipt Pre-Create Info            |
-| _ReceiptsApi_          | [**getReceiptsMonthlyTotals**](docs/Api/ReceiptsApi.md#getreceiptsmonthlytotals)                            | **GET** /c/{company_id}/receipts/monthly_totals                               | Get Receipts Monthly Totals            |
-| _ReceiptsApi_          | [**listReceipts**](docs/Api/ReceiptsApi.md#listreceipts)                                                    | **GET** /c/{company_id}/receipts                                              | List Receipts                          |
-| _ReceiptsApi_          | [**modifyReceipt**](docs/Api/ReceiptsApi.md#modifyreceipt)                                                  | **PUT** /c/{company_id}/receipts/{document_id}                                | Modify Receipt                         |
-| _ReceivedDocumentsApi_ | [**createReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#createreceiveddocument)                       | **POST** /c/{company_id}/received_documents                                   | Create Received Document               |
-| _ReceivedDocumentsApi_ | [**deleteBinReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#deletebinreceiveddocument)                 | **DELETE** /c/{company_id}/bin/received_documents/{document_id}               | Delete Bin Received Document           |
-| _ReceivedDocumentsApi_ | [**deleteReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#deletereceiveddocument)                       | **DELETE** /c/{company_id}/received_documents/{document_id}                   | Delete Received Document               |
-| _ReceivedDocumentsApi_ | [**deleteReceivedDocumentAttachment**](docs/Api/ReceivedDocumentsApi.md#deletereceiveddocumentattachment)   | **DELETE** /c/{company_id}/received_documents/{document_id}/attachment        | Delete Received Document Attachment    |
-| _ReceivedDocumentsApi_ | [**getBinReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#getbinreceiveddocument)                       | **GET** /c/{company_id}/bin/received_documents/{document_id}                  | Get Bin Received Documents List        |
-| _ReceivedDocumentsApi_ | [**getExistingReceivedDocumentTotals**](docs/Api/ReceivedDocumentsApi.md#getexistingreceiveddocumenttotals) | **POST** /c/{company_id}/received_documents/{document_id}/totals              | Get Existing Received Document Totals  |
-| _ReceivedDocumentsApi_ | [**getNewReceivedDocumentTotals**](docs/Api/ReceivedDocumentsApi.md#getnewreceiveddocumenttotals)           | **POST** /c/{company_id}/received_documents/totals                            | Get New Received Document Totals       |
-| _ReceivedDocumentsApi_ | [**getPendingReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#getpendingreceiveddocument)               | **GET** /c/{company_id}/received_documents/pending/{document_id}              | Get Pending Received Document          |
-| _ReceivedDocumentsApi_ | [**getReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#getreceiveddocument)                             | **GET** /c/{company_id}/received_documents/{document_id}                      | Get Received Document                  |
-| _ReceivedDocumentsApi_ | [**getReceivedDocumentPreCreateInfo**](docs/Api/ReceivedDocumentsApi.md#getreceiveddocumentprecreateinfo)   | **GET** /c/{company_id}/received_documents/info                               | Get Received Document Pre-Create Info  |
-| _ReceivedDocumentsApi_ | [**listBinReceivedDocuments**](docs/Api/ReceivedDocumentsApi.md#listbinreceiveddocuments)                   | **GET** /c/{company_id}/bin/received_documents                                | Get Bin Received Documents List        |
-| _ReceivedDocumentsApi_ | [**listPendingReceivedDocuments**](docs/Api/ReceivedDocumentsApi.md#listpendingreceiveddocuments)           | **GET** /c/{company_id}/received_documents/pending                            | List Pending Received Documents        |
-| _ReceivedDocumentsApi_ | [**listReceivedDocuments**](docs/Api/ReceivedDocumentsApi.md#listreceiveddocuments)                         | **GET** /c/{company_id}/received_documents                                    | List Received Documents                |
-| _ReceivedDocumentsApi_ | [**modifyReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#modifyreceiveddocument)                       | **PUT** /c/{company_id}/received_documents/{document_id}                      | Modify Received Document               |
-| _ReceivedDocumentsApi_ | [**recoverBinReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#recoverbinreceiveddocument)               | **POST** /c/{company_id}/bin/received_documents/{document_id}/recover         | Recover Received Document From The Bin |
-| _ReceivedDocumentsApi_ | [**uploadReceivedDocumentAttachment**](docs/Api/ReceivedDocumentsApi.md#uploadreceiveddocumentattachment)   | **POST** /c/{company_id}/received_documents/attachment                        | Upload Received Document Attachment    |
-| _SettingsApi_          | [**createPaymentAccount**](docs/Api/SettingsApi.md#createpaymentaccount)                                    | **POST** /c/{company_id}/settings/payment_accounts                            | Create Payment Account                 |
-| _SettingsApi_          | [**createPaymentMethod**](docs/Api/SettingsApi.md#createpaymentmethod)                                      | **POST** /c/{company_id}/settings/payment_methods                             | Create Payment Method                  |
-| _SettingsApi_          | [**createVatType**](docs/Api/SettingsApi.md#createvattype)                                                  | **POST** /c/{company_id}/settings/vat_types                                   | Create Vat Type                        |
-| _SettingsApi_          | [**deletePaymentAccount**](docs/Api/SettingsApi.md#deletepaymentaccount)                                    | **DELETE** /c/{company_id}/settings/payment_accounts/{payment_account_id}     | Delete Payment Account                 |
-| _SettingsApi_          | [**deletePaymentMethod**](docs/Api/SettingsApi.md#deletepaymentmethod)                                      | **DELETE** /c/{company_id}/settings/payment_methods/{payment_method_id}       | Delete Payment Method                  |
-| _SettingsApi_          | [**deleteVatType**](docs/Api/SettingsApi.md#deletevattype)                                                  | **DELETE** /c/{company_id}/settings/vat_types/{vat_type_id}                   | Delete Vat Type                        |
-| _SettingsApi_          | [**getPaymentAccount**](docs/Api/SettingsApi.md#getpaymentaccount)                                          | **GET** /c/{company_id}/settings/payment_accounts/{payment_account_id}        | Get Payment Account                    |
-| _SettingsApi_          | [**getPaymentMethod**](docs/Api/SettingsApi.md#getpaymentmethod)                                            | **GET** /c/{company_id}/settings/payment_methods/{payment_method_id}          | Get Payment Method                     |
-| _SettingsApi_          | [**getTaxProfile**](docs/Api/SettingsApi.md#gettaxprofile)                                                  | **GET** /c/{company_id}/settings/tax_profile                                  | Get Tax Profile                        |
-| _SettingsApi_          | [**getTemplate**](docs/Api/SettingsApi.md#gettemplate)                                                      | **GET** /c/{company_id}/settings/templates/{template_id}                      | Get Template                           |
-| _SettingsApi_          | [**getVatType**](docs/Api/SettingsApi.md#getvattype)                                                        | **GET** /c/{company_id}/settings/vat_types/{vat_type_id}                      | Get Vat Type                           |
-| _SettingsApi_          | [**listTemplates**](docs/Api/SettingsApi.md#listtemplates)                                                  | **GET** /c/{company_id}/settings/templates                                    | List Templates                         |
-| _SettingsApi_          | [**modifyPaymentAccount**](docs/Api/SettingsApi.md#modifypaymentaccount)                                    | **PUT** /c/{company_id}/settings/payment_accounts/{payment_account_id}        | Modify Payment Account                 |
-| _SettingsApi_          | [**modifyPaymentMethod**](docs/Api/SettingsApi.md#modifypaymentmethod)                                      | **PUT** /c/{company_id}/settings/payment_methods/{payment_method_id}          | Modify Payment Method                  |
-| _SettingsApi_          | [**modifyVatType**](docs/Api/SettingsApi.md#modifyvattype)                                                  | **PUT** /c/{company_id}/settings/vat_types/{vat_type_id}                      | Modify Vat Type                        |
-| _SuppliersApi_         | [**createSupplier**](docs/Api/SuppliersApi.md#createsupplier)                                               | **POST** /c/{company_id}/entities/suppliers                                   | Create Supplier                        |
-| _SuppliersApi_         | [**deleteSupplier**](docs/Api/SuppliersApi.md#deletesupplier)                                               | **DELETE** /c/{company_id}/entities/suppliers/{supplier_id}                   | Delete Supplier                        |
-| _SuppliersApi_         | [**getSupplier**](docs/Api/SuppliersApi.md#getsupplier)                                                     | **GET** /c/{company_id}/entities/suppliers/{supplier_id}                      | Get Supplier                           |
-| _SuppliersApi_         | [**listSuppliers**](docs/Api/SuppliersApi.md#listsuppliers)                                                 | **GET** /c/{company_id}/entities/suppliers                                    | List Suppliers                         |
-| _SuppliersApi_         | [**modifySupplier**](docs/Api/SuppliersApi.md#modifysupplier)                                               | **PUT** /c/{company_id}/entities/suppliers/{supplier_id}                      | Modify Supplier                        |
-| _TaxesApi_             | [**createF24**](docs/Api/TaxesApi.md#createf24)                                                             | **POST** /c/{company_id}/taxes                                                | Create F24                             |
-| _TaxesApi_             | [**deleteF24**](docs/Api/TaxesApi.md#deletef24)                                                             | **DELETE** /c/{company_id}/taxes/{document_id}                                | Delete F24                             |
-| _TaxesApi_             | [**deleteF24Attachment**](docs/Api/TaxesApi.md#deletef24attachment)                                         | **DELETE** /c/{company_id}/taxes/{document_id}/attachment                     | Delete F24 Attachment                  |
-| _TaxesApi_             | [**getF24**](docs/Api/TaxesApi.md#getf24)                                                                   | **GET** /c/{company_id}/taxes/{document_id}                                   | Get F24                                |
-| _TaxesApi_             | [**listF24**](docs/Api/TaxesApi.md#listf24)                                                                 | **GET** /c/{company_id}/taxes                                                 | List F24                               |
-| _TaxesApi_             | [**modifyF24**](docs/Api/TaxesApi.md#modifyf24)                                                             | **PUT** /c/{company_id}/taxes/{document_id}                                   | Modify F24                             |
-| _TaxesApi_             | [**uploadF24Attachment**](docs/Api/TaxesApi.md#uploadf24attachment)                                         | **POST** /c/{company_id}/taxes/attachment                                     | Upload F24 Attachment                  |
-| _UserApi_              | [**getUserInfo**](docs/Api/UserApi.md#getuserinfo)                                                          | **GET** /user/info                                                            | Get User Info                          |
-| _UserApi_              | [**listUserCompanies**](docs/Api/UserApi.md#listusercompanies)                                              | **GET** /user/companies                                                       | List User Companies                    |
-| _WebhooksApi_          | [**createWebhooksSubscription**](docs/Api/WebhooksApi.md#createwebhookssubscription)                        | **POST** /c/{company_id}/subscriptions                                        | Create a Webhook Subscription          |
-| _WebhooksApi_          | [**deleteWebhooksSubscription**](docs/Api/WebhooksApi.md#deletewebhookssubscription)                        | **DELETE** /c/{company_id}/subscriptions/{subscription_id}                    | Delete Webhooks Subscription           |
-| _WebhooksApi_          | [**getWebhooksSubscription**](docs/Api/WebhooksApi.md#getwebhookssubscription)                              | **GET** /c/{company_id}/subscriptions/{subscription_id}                       | Get Webhooks Subscription              |
-| _WebhooksApi_          | [**listWebhooksSubscriptions**](docs/Api/WebhooksApi.md#listwebhookssubscriptions)                          | **GET** /c/{company_id}/subscriptions                                         | List Webhooks Subscriptions            |
-| _WebhooksApi_          | [**modifyWebhooksSubscription**](docs/Api/WebhooksApi.md#modifywebhookssubscription)                        | **PUT** /c/{company_id}/subscriptions/{subscription_id}                       | Modify Webhooks Subscription           |
-| _WebhooksApi_          | [**verifyWebhooksSubscription**](docs/Api/WebhooksApi.md#verifywebhookssubscription)                        | **POST** /c/{company_id}/subscriptions/{subscription_id}/verify               | Verify Webhooks Subscription           |
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
+*ArchiveApi* | [**createArchiveDocument**](docs/Api/ArchiveApi.md#createarchivedocument) | **POST** /c/{company_id}/archive | Create Archive Document
+*ArchiveApi* | [**deleteArchiveDocument**](docs/Api/ArchiveApi.md#deletearchivedocument) | **DELETE** /c/{company_id}/archive/{document_id} | Delete Archive Document
+*ArchiveApi* | [**getArchiveDocument**](docs/Api/ArchiveApi.md#getarchivedocument) | **GET** /c/{company_id}/archive/{document_id} | Get Archive Document
+*ArchiveApi* | [**listArchiveDocuments**](docs/Api/ArchiveApi.md#listarchivedocuments) | **GET** /c/{company_id}/archive | List Archive Documents
+*ArchiveApi* | [**modifyArchiveDocument**](docs/Api/ArchiveApi.md#modifyarchivedocument) | **PUT** /c/{company_id}/archive/{document_id} | Modify Archive Document
+*ArchiveApi* | [**uploadArchiveDocumentAttachment**](docs/Api/ArchiveApi.md#uploadarchivedocumentattachment) | **POST** /c/{company_id}/archive/attachment | Upload Archive Document Attachment
+*CashbookApi* | [**createCashbookEntry**](docs/Api/CashbookApi.md#createcashbookentry) | **POST** /c/{company_id}/cashbook | Create Cashbook Entry
+*CashbookApi* | [**deleteCashbookEntry**](docs/Api/CashbookApi.md#deletecashbookentry) | **DELETE** /c/{company_id}/cashbook/{document_id} | Delete Cashbook Entry
+*CashbookApi* | [**getCashbookEntry**](docs/Api/CashbookApi.md#getcashbookentry) | **GET** /c/{company_id}/cashbook/{document_id} | Get Cashbook Entry
+*CashbookApi* | [**listCashbookEntries**](docs/Api/CashbookApi.md#listcashbookentries) | **GET** /c/{company_id}/cashbook | List Cashbook Entries
+*CashbookApi* | [**modifyCashbookEntry**](docs/Api/CashbookApi.md#modifycashbookentry) | **PUT** /c/{company_id}/cashbook/{document_id} | Modify Cashbook Entry
+*ClientsApi* | [**createClient**](docs/Api/ClientsApi.md#createclient) | **POST** /c/{company_id}/entities/clients | Create Client
+*ClientsApi* | [**deleteClient**](docs/Api/ClientsApi.md#deleteclient) | **DELETE** /c/{company_id}/entities/clients/{client_id} | Delete Client
+*ClientsApi* | [**getClient**](docs/Api/ClientsApi.md#getclient) | **GET** /c/{company_id}/entities/clients/{client_id} | Get Client
+*ClientsApi* | [**getClientInfo**](docs/Api/ClientsApi.md#getclientinfo) | **GET** /c/{company_id}/entities/clients/info | Get Client info
+*ClientsApi* | [**listClients**](docs/Api/ClientsApi.md#listclients) | **GET** /c/{company_id}/entities/clients | List Clients
+*ClientsApi* | [**modifyClient**](docs/Api/ClientsApi.md#modifyclient) | **PUT** /c/{company_id}/entities/clients/{client_id} | Modify Client
+*CompaniesApi* | [**getCompanyInfo**](docs/Api/CompaniesApi.md#getcompanyinfo) | **GET** /c/{company_id}/company/info | Get Company Info
+*CompaniesApi* | [**getCompanyPlanUsage**](docs/Api/CompaniesApi.md#getcompanyplanusage) | **GET** /c/{company_id}/company/plan_usage | Get Company Plan Usage
+*EmailsApi* | [**listEmails**](docs/Api/EmailsApi.md#listemails) | **GET** /c/{company_id}/emails | List Emails
+*InfoApi* | [**listArchiveCategories**](docs/Api/InfoApi.md#listarchivecategories) | **GET** /c/{company_id}/info/archive_categories | List Archive Categories
+*InfoApi* | [**listCities**](docs/Api/InfoApi.md#listcities) | **GET** /info/cities | List Cities
+*InfoApi* | [**listCostCenters**](docs/Api/InfoApi.md#listcostcenters) | **GET** /c/{company_id}/info/cost_centers | List Cost Centers
+*InfoApi* | [**listCountries**](docs/Api/InfoApi.md#listcountries) | **GET** /info/countries | List Countries
+*InfoApi* | [**listCurrencies**](docs/Api/InfoApi.md#listcurrencies) | **GET** /info/currencies | List Currencies
+*InfoApi* | [**listDefaultTemplates**](docs/Api/InfoApi.md#listdefaulttemplates) | **GET** /info/templates | List Default Templates
+*InfoApi* | [**listDeliveryNotesDefaultCausals**](docs/Api/InfoApi.md#listdeliverynotesdefaultcausals) | **GET** /info/dn_causals | List Delivery Notes Default Causals
+*InfoApi* | [**listDetailedCountries**](docs/Api/InfoApi.md#listdetailedcountries) | **GET** /info/detailed_countries | List Detailed Countries
+*InfoApi* | [**listLanguages**](docs/Api/InfoApi.md#listlanguages) | **GET** /info/languages | List Languages
+*InfoApi* | [**listPaymentAccounts**](docs/Api/InfoApi.md#listpaymentaccounts) | **GET** /c/{company_id}/info/payment_accounts | List Payment Accounts
+*InfoApi* | [**listPaymentMethods**](docs/Api/InfoApi.md#listpaymentmethods) | **GET** /c/{company_id}/info/payment_methods | List Payment Methods
+*InfoApi* | [**listProductCategories**](docs/Api/InfoApi.md#listproductcategories) | **GET** /c/{company_id}/info/product_categories | List Product Categories
+*InfoApi* | [**listReceivedDocumentCategories**](docs/Api/InfoApi.md#listreceiveddocumentcategories) | **GET** /c/{company_id}/info/received_document_categories | List Received Document Categories
+*InfoApi* | [**listRevenueCenters**](docs/Api/InfoApi.md#listrevenuecenters) | **GET** /c/{company_id}/info/revenue_centers | List Revenue Centers
+*InfoApi* | [**listUnitsOfMeasure**](docs/Api/InfoApi.md#listunitsofmeasure) | **GET** /info/measures | List Units of Measure
+*InfoApi* | [**listVatTypes**](docs/Api/InfoApi.md#listvattypes) | **GET** /c/{company_id}/info/vat_types | List Vat Types
+*IssuedDocumentsApi* | [**createIssuedDocument**](docs/Api/IssuedDocumentsApi.md#createissueddocument) | **POST** /c/{company_id}/issued_documents | Create Issued Document
+*IssuedDocumentsApi* | [**deleteBinIssuedDocument**](docs/Api/IssuedDocumentsApi.md#deletebinissueddocument) | **DELETE** /c/{company_id}/bin/issued_documents/{document_id} | Delete Bin Issued Document
+*IssuedDocumentsApi* | [**deleteIssuedDocument**](docs/Api/IssuedDocumentsApi.md#deleteissueddocument) | **DELETE** /c/{company_id}/issued_documents/{document_id} | Delete Issued Document
+*IssuedDocumentsApi* | [**deleteIssuedDocumentAttachment**](docs/Api/IssuedDocumentsApi.md#deleteissueddocumentattachment) | **DELETE** /c/{company_id}/issued_documents/{document_id}/attachment | Delete Issued Document Attachment
+*IssuedDocumentsApi* | [**getBinIssuedDocument**](docs/Api/IssuedDocumentsApi.md#getbinissueddocument) | **GET** /c/{company_id}/bin/issued_documents/{document_id} | Get Bin Issued Documents List
+*IssuedDocumentsApi* | [**getEmailData**](docs/Api/IssuedDocumentsApi.md#getemaildata) | **GET** /c/{company_id}/issued_documents/{document_id}/email | Get Email Data
+*IssuedDocumentsApi* | [**getExistingIssuedDocumentTotals**](docs/Api/IssuedDocumentsApi.md#getexistingissueddocumenttotals) | **POST** /c/{company_id}/issued_documents/{document_id}/totals | Get Existing Issued Document Totals
+*IssuedDocumentsApi* | [**getIssuedDocument**](docs/Api/IssuedDocumentsApi.md#getissueddocument) | **GET** /c/{company_id}/issued_documents/{document_id} | Get Issued Document
+*IssuedDocumentsApi* | [**getIssuedDocumentPreCreateInfo**](docs/Api/IssuedDocumentsApi.md#getissueddocumentprecreateinfo) | **GET** /c/{company_id}/issued_documents/info | Get Issued Document Pre-Create Info
+*IssuedDocumentsApi* | [**getNewIssuedDocumentTotals**](docs/Api/IssuedDocumentsApi.md#getnewissueddocumenttotals) | **POST** /c/{company_id}/issued_documents/totals | Get New Issued Document Totals
+*IssuedDocumentsApi* | [**joinIssuedDocuments**](docs/Api/IssuedDocumentsApi.md#joinissueddocuments) | **GET** /c/{company_id}/issued_documents/join | Join Issued Documents
+*IssuedDocumentsApi* | [**listBinIssuedDocuments**](docs/Api/IssuedDocumentsApi.md#listbinissueddocuments) | **GET** /c/{company_id}/bin/issued_documents | Get Bin Issued Documents List
+*IssuedDocumentsApi* | [**listIssuedDocuments**](docs/Api/IssuedDocumentsApi.md#listissueddocuments) | **GET** /c/{company_id}/issued_documents | List Issued Documents
+*IssuedDocumentsApi* | [**modifyIssuedDocument**](docs/Api/IssuedDocumentsApi.md#modifyissueddocument) | **PUT** /c/{company_id}/issued_documents/{document_id} | Modify Issued Document
+*IssuedDocumentsApi* | [**recoverBinIssuedDocument**](docs/Api/IssuedDocumentsApi.md#recoverbinissueddocument) | **POST** /c/{company_id}/bin/issued_documents/{document_id}/recover | Recover Issued Document From The Bin
+*IssuedDocumentsApi* | [**scheduleEmail**](docs/Api/IssuedDocumentsApi.md#scheduleemail) | **POST** /c/{company_id}/issued_documents/{document_id}/email | Schedule Email
+*IssuedDocumentsApi* | [**transformIssuedDocument**](docs/Api/IssuedDocumentsApi.md#transformissueddocument) | **GET** /c/{company_id}/issued_documents/transform | Transform Issued Document
+*IssuedDocumentsApi* | [**uploadIssuedDocumentAttachment**](docs/Api/IssuedDocumentsApi.md#uploadissueddocumentattachment) | **POST** /c/{company_id}/issued_documents/attachment | Upload Issued Document Attachment
+*IssuedEInvoicesApi* | [**getEInvoiceRejectionReason**](docs/Api/IssuedEInvoicesApi.md#geteinvoicerejectionreason) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/error_reason | Get E-Invoice Rejection Reason
+*IssuedEInvoicesApi* | [**getEInvoiceXml**](docs/Api/IssuedEInvoicesApi.md#geteinvoicexml) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml | Get E-Invoice XML
+*IssuedEInvoicesApi* | [**sendEInvoice**](docs/Api/IssuedEInvoicesApi.md#sendeinvoice) | **POST** /c/{company_id}/issued_documents/{document_id}/e_invoice/send | Send E-Invoice
+*IssuedEInvoicesApi* | [**verifyEInvoiceXml**](docs/Api/IssuedEInvoicesApi.md#verifyeinvoicexml) | **GET** /c/{company_id}/issued_documents/{document_id}/e_invoice/xml_verify | Verify E-Invoice XML
+*PriceListsApi* | [**getPriceListItems**](docs/Api/PriceListsApi.md#getpricelistitems) | **GET** /c/{company_id}/price_lists/{price_list_id}/items | Get PriceList Items List
+*PriceListsApi* | [**getPriceLists**](docs/Api/PriceListsApi.md#getpricelists) | **GET** /c/{company_id}/price_lists | Get PriceLists
+*ProductsApi* | [**createProduct**](docs/Api/ProductsApi.md#createproduct) | **POST** /c/{company_id}/products | Create Product
+*ProductsApi* | [**deleteProduct**](docs/Api/ProductsApi.md#deleteproduct) | **DELETE** /c/{company_id}/products/{product_id} | Delete Product
+*ProductsApi* | [**getProduct**](docs/Api/ProductsApi.md#getproduct) | **GET** /c/{company_id}/products/{product_id} | Get Product
+*ProductsApi* | [**listProducts**](docs/Api/ProductsApi.md#listproducts) | **GET** /c/{company_id}/products | List Products
+*ProductsApi* | [**modifyProduct**](docs/Api/ProductsApi.md#modifyproduct) | **PUT** /c/{company_id}/products/{product_id} | Modify Product
+*ReceiptsApi* | [**createReceipt**](docs/Api/ReceiptsApi.md#createreceipt) | **POST** /c/{company_id}/receipts | Create Receipt
+*ReceiptsApi* | [**deleteReceipt**](docs/Api/ReceiptsApi.md#deletereceipt) | **DELETE** /c/{company_id}/receipts/{document_id} | Delete Receipt
+*ReceiptsApi* | [**getReceipt**](docs/Api/ReceiptsApi.md#getreceipt) | **GET** /c/{company_id}/receipts/{document_id} | Get Receipt
+*ReceiptsApi* | [**getReceiptPreCreateInfo**](docs/Api/ReceiptsApi.md#getreceiptprecreateinfo) | **GET** /c/{company_id}/receipts/info | Get Receipt Pre-Create Info
+*ReceiptsApi* | [**getReceiptsMonthlyTotals**](docs/Api/ReceiptsApi.md#getreceiptsmonthlytotals) | **GET** /c/{company_id}/receipts/monthly_totals | Get Receipts Monthly Totals
+*ReceiptsApi* | [**listReceipts**](docs/Api/ReceiptsApi.md#listreceipts) | **GET** /c/{company_id}/receipts | List Receipts
+*ReceiptsApi* | [**modifyReceipt**](docs/Api/ReceiptsApi.md#modifyreceipt) | **PUT** /c/{company_id}/receipts/{document_id} | Modify Receipt
+*ReceivedDocumentsApi* | [**createReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#createreceiveddocument) | **POST** /c/{company_id}/received_documents | Create Received Document
+*ReceivedDocumentsApi* | [**deleteBinReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#deletebinreceiveddocument) | **DELETE** /c/{company_id}/bin/received_documents/{document_id} | Delete Bin Received Document
+*ReceivedDocumentsApi* | [**deleteReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#deletereceiveddocument) | **DELETE** /c/{company_id}/received_documents/{document_id} | Delete Received Document
+*ReceivedDocumentsApi* | [**deleteReceivedDocumentAttachment**](docs/Api/ReceivedDocumentsApi.md#deletereceiveddocumentattachment) | **DELETE** /c/{company_id}/received_documents/{document_id}/attachment | Delete Received Document Attachment
+*ReceivedDocumentsApi* | [**getBinReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#getbinreceiveddocument) | **GET** /c/{company_id}/bin/received_documents/{document_id} | Get Bin Received Documents List
+*ReceivedDocumentsApi* | [**getExistingReceivedDocumentTotals**](docs/Api/ReceivedDocumentsApi.md#getexistingreceiveddocumenttotals) | **POST** /c/{company_id}/received_documents/{document_id}/totals | Get Existing Received Document Totals
+*ReceivedDocumentsApi* | [**getNewReceivedDocumentTotals**](docs/Api/ReceivedDocumentsApi.md#getnewreceiveddocumenttotals) | **POST** /c/{company_id}/received_documents/totals | Get New Received Document Totals
+*ReceivedDocumentsApi* | [**getPendingReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#getpendingreceiveddocument) | **GET** /c/{company_id}/received_documents/pending/{document_id} | Get Pending Received Document
+*ReceivedDocumentsApi* | [**getReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#getreceiveddocument) | **GET** /c/{company_id}/received_documents/{document_id} | Get Received Document
+*ReceivedDocumentsApi* | [**getReceivedDocumentPreCreateInfo**](docs/Api/ReceivedDocumentsApi.md#getreceiveddocumentprecreateinfo) | **GET** /c/{company_id}/received_documents/info | Get Received Document Pre-Create Info
+*ReceivedDocumentsApi* | [**listBinReceivedDocuments**](docs/Api/ReceivedDocumentsApi.md#listbinreceiveddocuments) | **GET** /c/{company_id}/bin/received_documents | Get Bin Received Documents List
+*ReceivedDocumentsApi* | [**listPendingReceivedDocuments**](docs/Api/ReceivedDocumentsApi.md#listpendingreceiveddocuments) | **GET** /c/{company_id}/received_documents/pending | List Pending Received Documents
+*ReceivedDocumentsApi* | [**listReceivedDocuments**](docs/Api/ReceivedDocumentsApi.md#listreceiveddocuments) | **GET** /c/{company_id}/received_documents | List Received Documents
+*ReceivedDocumentsApi* | [**modifyReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#modifyreceiveddocument) | **PUT** /c/{company_id}/received_documents/{document_id} | Modify Received Document
+*ReceivedDocumentsApi* | [**recoverBinReceivedDocument**](docs/Api/ReceivedDocumentsApi.md#recoverbinreceiveddocument) | **POST** /c/{company_id}/bin/received_documents/{document_id}/recover | Recover Received Document From The Bin
+*ReceivedDocumentsApi* | [**uploadReceivedDocumentAttachment**](docs/Api/ReceivedDocumentsApi.md#uploadreceiveddocumentattachment) | **POST** /c/{company_id}/received_documents/attachment | Upload Received Document Attachment
+*SettingsApi* | [**createPaymentAccount**](docs/Api/SettingsApi.md#createpaymentaccount) | **POST** /c/{company_id}/settings/payment_accounts | Create Payment Account
+*SettingsApi* | [**createPaymentMethod**](docs/Api/SettingsApi.md#createpaymentmethod) | **POST** /c/{company_id}/settings/payment_methods | Create Payment Method
+*SettingsApi* | [**createVatType**](docs/Api/SettingsApi.md#createvattype) | **POST** /c/{company_id}/settings/vat_types | Create Vat Type
+*SettingsApi* | [**deletePaymentAccount**](docs/Api/SettingsApi.md#deletepaymentaccount) | **DELETE** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Delete Payment Account
+*SettingsApi* | [**deletePaymentMethod**](docs/Api/SettingsApi.md#deletepaymentmethod) | **DELETE** /c/{company_id}/settings/payment_methods/{payment_method_id} | Delete Payment Method
+*SettingsApi* | [**deleteVatType**](docs/Api/SettingsApi.md#deletevattype) | **DELETE** /c/{company_id}/settings/vat_types/{vat_type_id} | Delete Vat Type
+*SettingsApi* | [**getPaymentAccount**](docs/Api/SettingsApi.md#getpaymentaccount) | **GET** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Get Payment Account
+*SettingsApi* | [**getPaymentMethod**](docs/Api/SettingsApi.md#getpaymentmethod) | **GET** /c/{company_id}/settings/payment_methods/{payment_method_id} | Get Payment Method
+*SettingsApi* | [**getTaxProfile**](docs/Api/SettingsApi.md#gettaxprofile) | **GET** /c/{company_id}/settings/tax_profile | Get Tax Profile
+*SettingsApi* | [**getTemplate**](docs/Api/SettingsApi.md#gettemplate) | **GET** /c/{company_id}/settings/templates/{template_id} | Get Template
+*SettingsApi* | [**getVatType**](docs/Api/SettingsApi.md#getvattype) | **GET** /c/{company_id}/settings/vat_types/{vat_type_id} | Get Vat Type
+*SettingsApi* | [**listTemplates**](docs/Api/SettingsApi.md#listtemplates) | **GET** /c/{company_id}/settings/templates | List Templates
+*SettingsApi* | [**modifyPaymentAccount**](docs/Api/SettingsApi.md#modifypaymentaccount) | **PUT** /c/{company_id}/settings/payment_accounts/{payment_account_id} | Modify Payment Account
+*SettingsApi* | [**modifyPaymentMethod**](docs/Api/SettingsApi.md#modifypaymentmethod) | **PUT** /c/{company_id}/settings/payment_methods/{payment_method_id} | Modify Payment Method
+*SettingsApi* | [**modifyVatType**](docs/Api/SettingsApi.md#modifyvattype) | **PUT** /c/{company_id}/settings/vat_types/{vat_type_id} | Modify Vat Type
+*SuppliersApi* | [**createSupplier**](docs/Api/SuppliersApi.md#createsupplier) | **POST** /c/{company_id}/entities/suppliers | Create Supplier
+*SuppliersApi* | [**deleteSupplier**](docs/Api/SuppliersApi.md#deletesupplier) | **DELETE** /c/{company_id}/entities/suppliers/{supplier_id} | Delete Supplier
+*SuppliersApi* | [**getSupplier**](docs/Api/SuppliersApi.md#getsupplier) | **GET** /c/{company_id}/entities/suppliers/{supplier_id} | Get Supplier
+*SuppliersApi* | [**listSuppliers**](docs/Api/SuppliersApi.md#listsuppliers) | **GET** /c/{company_id}/entities/suppliers | List Suppliers
+*SuppliersApi* | [**modifySupplier**](docs/Api/SuppliersApi.md#modifysupplier) | **PUT** /c/{company_id}/entities/suppliers/{supplier_id} | Modify Supplier
+*TaxesApi* | [**createF24**](docs/Api/TaxesApi.md#createf24) | **POST** /c/{company_id}/taxes | Create F24
+*TaxesApi* | [**deleteF24**](docs/Api/TaxesApi.md#deletef24) | **DELETE** /c/{company_id}/taxes/{document_id} | Delete F24
+*TaxesApi* | [**deleteF24Attachment**](docs/Api/TaxesApi.md#deletef24attachment) | **DELETE** /c/{company_id}/taxes/{document_id}/attachment | Delete F24 Attachment
+*TaxesApi* | [**getF24**](docs/Api/TaxesApi.md#getf24) | **GET** /c/{company_id}/taxes/{document_id} | Get F24
+*TaxesApi* | [**listF24**](docs/Api/TaxesApi.md#listf24) | **GET** /c/{company_id}/taxes | List F24
+*TaxesApi* | [**modifyF24**](docs/Api/TaxesApi.md#modifyf24) | **PUT** /c/{company_id}/taxes/{document_id} | Modify F24
+*TaxesApi* | [**uploadF24Attachment**](docs/Api/TaxesApi.md#uploadf24attachment) | **POST** /c/{company_id}/taxes/attachment | Upload F24 Attachment
+*UserApi* | [**getUserInfo**](docs/Api/UserApi.md#getuserinfo) | **GET** /user/info | Get User Info
+*UserApi* | [**listUserCompanies**](docs/Api/UserApi.md#listusercompanies) | **GET** /user/companies | List User Companies
+*WebhooksApi* | [**createWebhooksSubscription**](docs/Api/WebhooksApi.md#createwebhookssubscription) | **POST** /c/{company_id}/subscriptions | Create a Webhook Subscription
+*WebhooksApi* | [**deleteWebhooksSubscription**](docs/Api/WebhooksApi.md#deletewebhookssubscription) | **DELETE** /c/{company_id}/subscriptions/{subscription_id} | Delete Webhooks Subscription
+*WebhooksApi* | [**getWebhooksSubscription**](docs/Api/WebhooksApi.md#getwebhookssubscription) | **GET** /c/{company_id}/subscriptions/{subscription_id} | Get Webhooks Subscription
+*WebhooksApi* | [**listWebhooksSubscriptions**](docs/Api/WebhooksApi.md#listwebhookssubscriptions) | **GET** /c/{company_id}/subscriptions | List Webhooks Subscriptions
+*WebhooksApi* | [**modifyWebhooksSubscription**](docs/Api/WebhooksApi.md#modifywebhookssubscription) | **PUT** /c/{company_id}/subscriptions/{subscription_id} | Modify Webhooks Subscription
+*WebhooksApi* | [**verifyWebhooksSubscription**](docs/Api/WebhooksApi.md#verifywebhookssubscription) | **POST** /c/{company_id}/subscriptions/{subscription_id}/verify | Verify Webhooks Subscription
 
 ## Models
 
@@ -461,13 +458,13 @@ All URIs are relative to *https://api-v2.fattureincloud.it*
 - [WebhooksSubscriptionVerificationMethod](docs/Model/WebhooksSubscriptionVerificationMethod.md)
 
 ## Authorization
-
+    
     ### OAuth2AuthenticationCodeFlow
 
         - **Type**: `OAuth`
         - **Flow**: `accessCode`
         - **Authorization URL**: `https://api-v2.fattureincloud.it/oauth/authorize`
-        - **Scopes**:
+        - **Scopes**: 
             - **entity.clients:r**: Read permission to the Clients registry
             - **entity.clients:a**: Write permission to the Clients registry
             - **entity.suppliers:r**: Read permission to the Suppliers registry

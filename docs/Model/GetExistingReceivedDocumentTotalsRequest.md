@@ -1,4 +1,4 @@
-# # GetExistingReceivedDocumentTotalsRequest
+# GetExistingReceivedDocumentTotalsRequest
 
 ## Properties
 

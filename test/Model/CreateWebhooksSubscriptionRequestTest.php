@@ -107,7 +107,7 @@ class CreateWebhooksSubscriptionRequestTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CreateWebhooksSubscriptionRequest();
         $testValue = new \FattureInCloud\Model\WebhooksSubscription();
-        
+
         $object->setData($testValue);
         $this->assertEquals($testValue, $object->getData());
     }

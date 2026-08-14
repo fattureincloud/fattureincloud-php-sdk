@@ -1,4 +1,4 @@
-# # EmailRecipientStatus
+# EmailRecipientStatus
 
 ## Properties
 

@@ -82,7 +82,7 @@ class EventTypeTest extends TestCase
     public function testEventType()
     {
         $this->assertEquals('it.fattureincloud.webhooks.cashbook.create', $this->type);
-        
+
         // Test other constants
         $this->assertNotEmpty(\FattureInCloud\Model\EventType::getAllowableEnumValues());
         $this->assertEquals('it.fattureincloud.webhooks.issued_documents.invoices.create', \FattureInCloud\Model\EventType::ISSUED_DOCUMENTS_INVOICES_CREATE);

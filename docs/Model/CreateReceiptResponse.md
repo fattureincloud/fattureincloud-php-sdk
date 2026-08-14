@@ -1,4 +1,4 @@
-# # CreateReceiptResponse
+# CreateReceiptResponse
 
 ## Properties
 

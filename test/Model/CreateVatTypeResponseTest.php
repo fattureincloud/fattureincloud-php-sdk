@@ -115,7 +115,7 @@ class CreateVatTypeResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CreateVatTypeResponse();
         $testValue = new \FattureInCloud\Model\VatType();
-        
+
         $object->setData($testValue);
         $this->assertEquals($testValue, $object->getData());
     }

@@ -136,7 +136,7 @@ class CreateSupplierRequestTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CreateSupplierRequest();
         $testValue = new \FattureInCloud\Model\Supplier();
-        
+
         $object->setData($testValue);
         $this->assertEquals($testValue, $object->getData());
     }

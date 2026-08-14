@@ -213,7 +213,7 @@ class EmailTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Email();
         $testValue = 12345;
-        
+
         $object->setId($testValue);
         $this->assertEquals($testValue, $object->getId());
     }
@@ -225,7 +225,7 @@ class EmailTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Email();
         $testValue = 'sent';
-        
+
         $object->setStatus($testValue);
         $this->assertEquals($testValue, $object->getStatus());
     }
@@ -237,7 +237,7 @@ class EmailTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Email();
         $testValue = '2024-04-17';
-        
+
         $object->setSentDate($testValue);
         $this->assertEquals($testValue, $object->getSentDate());
     }
@@ -249,7 +249,7 @@ class EmailTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Email();
         $testValue = 0;
-        
+
         $object->setErrorsCount($testValue);
         $this->assertEquals($testValue, $object->getErrorsCount());
     }
@@ -261,7 +261,7 @@ class EmailTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Email();
         $testValue = 'No errors';
-        
+
         $object->setErrorLog($testValue);
         $this->assertEquals($testValue, $object->getErrorLog());
     }
@@ -273,7 +273,7 @@ class EmailTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Email();
         $testValue = 'test@example.com';
-        
+
         $object->setFromEmail($testValue);
         $this->assertEquals($testValue, $object->getFromEmail());
     }
@@ -285,7 +285,7 @@ class EmailTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Email();
         $testValue = 'Test Sender';
-        
+
         $object->setFromName($testValue);
         $this->assertEquals($testValue, $object->getFromName());
     }
@@ -297,7 +297,7 @@ class EmailTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Email();
         $testValue = 'recipient@example.com';
-        
+
         $object->setToEmail($testValue);
         $this->assertEquals($testValue, $object->getToEmail());
     }
@@ -309,7 +309,7 @@ class EmailTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Email();
         $testValue = 'Test Recipient';
-        
+
         $object->setToName($testValue);
         $this->assertEquals($testValue, $object->getToName());
     }
@@ -321,7 +321,7 @@ class EmailTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Email();
         $testValue = 'Test Email Subject';
-        
+
         $object->setSubject($testValue);
         $this->assertEquals($testValue, $object->getSubject());
     }
@@ -333,7 +333,7 @@ class EmailTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Email();
         $testValue = 'Test email content body';
-        
+
         $object->setContent($testValue);
         $this->assertEquals($testValue, $object->getContent());
     }
@@ -345,7 +345,7 @@ class EmailTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Email();
         $testValue = 'cc@example.com';
-        
+
         $object->setCopyTo($testValue);
         $this->assertEquals($testValue, $object->getCopyTo());
     }
@@ -357,7 +357,7 @@ class EmailTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Email();
         $testValue = 'delivered';
-        
+
         $object->setRecipientStatus($testValue);
         $this->assertEquals($testValue, $object->getRecipientStatus());
     }
@@ -369,7 +369,7 @@ class EmailTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Email();
         $testValue = '2024-04-17';
-        
+
         $object->setRecipientDate($testValue);
         $this->assertEquals($testValue, $object->getRecipientDate());
     }
@@ -381,7 +381,7 @@ class EmailTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Email();
         $testValue = 'invoice';
-        
+
         $object->setKind($testValue);
         $this->assertEquals($testValue, $object->getKind());
     }
@@ -393,7 +393,7 @@ class EmailTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Email();
         $testValue = [['filename' => 'test.pdf', 'url' => 'test-url.pdf']];
-        
+
         $object->setAttachments($testValue);
         $this->assertEquals($testValue, $object->getAttachments());
     }

@@ -123,7 +123,7 @@ class DocumentTemplateTest extends TestCase
     {
         $object = new \FattureInCloud\Model\DocumentTemplate();
         $testValue = 123;
-        
+
         $object->setId($testValue);
         $this->assertEquals($testValue, $object->getId());
     }
@@ -135,7 +135,7 @@ class DocumentTemplateTest extends TestCase
     {
         $object = new \FattureInCloud\Model\DocumentTemplate();
         $testValue = 'Test Template';
-        
+
         $object->setName($testValue);
         $this->assertEquals($testValue, $object->getName());
     }
@@ -147,7 +147,7 @@ class DocumentTemplateTest extends TestCase
     {
         $object = new \FattureInCloud\Model\DocumentTemplate();
         $testValue = 'invoice';
-        
+
         $object->setType($testValue);
         $this->assertEquals($testValue, $object->getType());
     }

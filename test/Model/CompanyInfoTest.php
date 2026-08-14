@@ -206,7 +206,7 @@ class CompanyInfoTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfo();
         $testValue = 12345;
-        
+
         $object->setId($testValue);
         $this->assertEquals($testValue, $object->getId());
     }
@@ -218,7 +218,7 @@ class CompanyInfoTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfo();
         $testValue = 'Test Company S.r.l.';
-        
+
         $object->setName($testValue);
         $this->assertEquals($testValue, $object->getName());
     }
@@ -230,7 +230,7 @@ class CompanyInfoTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfo();
         $testValue = 'test@company.com';
-        
+
         $object->setEmail($testValue);
         $this->assertEquals($testValue, $object->getEmail());
     }
@@ -242,7 +242,7 @@ class CompanyInfoTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfo();
         $testValue = 'company';
-        
+
         $object->setType($testValue);
         $this->assertEquals($testValue, $object->getType());
     }
@@ -254,7 +254,7 @@ class CompanyInfoTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfo();
         $testValue = new \FattureInCloud\Model\CompanyInfoAccessInfo();
-        
+
         $object->setAccessInfo($testValue);
         $this->assertEquals($testValue, $object->getAccessInfo());
     }
@@ -266,7 +266,7 @@ class CompanyInfoTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfo();
         $testValue = new \FattureInCloud\Model\CompanyInfoPlanInfo();
-        
+
         $object->setPlanInfo($testValue);
         $this->assertEquals($testValue, $object->getPlanInfo());
     }
@@ -278,7 +278,7 @@ class CompanyInfoTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfo();
         $testValue = 9876;
-        
+
         $object->setAccountantId($testValue);
         $this->assertEquals($testValue, $object->getAccountantId());
     }
@@ -290,7 +290,7 @@ class CompanyInfoTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfo();
         $testValue = false;
-        
+
         $object->setIsAccountant($testValue);
         $this->assertEquals($testValue, $object->getIsAccountant());
     }

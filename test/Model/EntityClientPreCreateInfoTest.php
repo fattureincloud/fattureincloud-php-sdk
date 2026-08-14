@@ -220,7 +220,7 @@ class EntityClientPreCreateInfoTest extends TestCase
     {
         $object = new \FattureInCloud\Model\EntityClientPreCreateInfo();
         $testValue = ["Germany", "France", "Spain"];
-        
+
         $object->setCountriesList($testValue);
         $this->assertEquals($testValue, $object->getCountriesList());
     }
@@ -236,7 +236,7 @@ class EntityClientPreCreateInfoTest extends TestCase
             'name' => 'Test Payment Method'
         ]);
         $testValue = [$testMethod];
-        
+
         $object->setPaymentMethodsList($testValue);
         $this->assertEquals($testValue, $object->getPaymentMethodsList());
     }
@@ -252,7 +252,7 @@ class EntityClientPreCreateInfoTest extends TestCase
             'name' => 'Test Payment Account'
         ]);
         $testValue = [$testAccount];
-        
+
         $object->setPaymentAccountsList($testValue);
         $this->assertEquals($testValue, $object->getPaymentAccountsList());
     }
@@ -268,7 +268,7 @@ class EntityClientPreCreateInfoTest extends TestCase
             'value' => 10
         ]);
         $testValue = [$testVatType];
-        
+
         $object->setVatTypesList($testValue);
         $this->assertEquals($testValue, $object->getVatTypesList());
     }
@@ -284,7 +284,7 @@ class EntityClientPreCreateInfoTest extends TestCase
             'name' => 'Test Price List'
         ]);
         $testValue = [$testPriceList];
-        
+
         $object->setPriceLists($testValue);
         $this->assertEquals($testValue, $object->getPriceLists());
     }
@@ -296,7 +296,7 @@ class EntityClientPreCreateInfoTest extends TestCase
     {
         $object = new \FattureInCloud\Model\EntityClientPreCreateInfo();
         $testValue = 100.0;
-        
+
         $object->setLimit($testValue);
         $this->assertEquals($testValue, $object->getLimit());
     }
@@ -308,7 +308,7 @@ class EntityClientPreCreateInfoTest extends TestCase
     {
         $object = new \FattureInCloud\Model\EntityClientPreCreateInfo();
         $testValue = 25.5;
-        
+
         $object->setUsage($testValue);
         $this->assertEquals($testValue, $object->getUsage());
     }

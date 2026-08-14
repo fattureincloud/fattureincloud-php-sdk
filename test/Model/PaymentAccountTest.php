@@ -159,7 +159,7 @@ class PaymentAccountTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PaymentAccount();
         $testValue = 123;
-        
+
         $object->setId($testValue);
         $this->assertEquals($testValue, $object->getId());
     }
@@ -171,7 +171,7 @@ class PaymentAccountTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PaymentAccount();
         $testValue = 'Test Payment Account';
-        
+
         $object->setName($testValue);
         $this->assertEquals($testValue, $object->getName());
     }
@@ -183,7 +183,7 @@ class PaymentAccountTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PaymentAccount();
         $testValue = 'bank_account';
-        
+
         $object->setType($testValue);
         $this->assertEquals($testValue, $object->getType());
     }
@@ -195,7 +195,7 @@ class PaymentAccountTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PaymentAccount();
         $testValue = 'IT60X0542811101000000123456';
-        
+
         $object->setIban($testValue);
         $this->assertEquals($testValue, $object->getIban());
     }
@@ -207,7 +207,7 @@ class PaymentAccountTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PaymentAccount();
         $testValue = 'SIA123456';
-        
+
         $object->setSia($testValue);
         $this->assertEquals($testValue, $object->getSia());
     }
@@ -219,7 +219,7 @@ class PaymentAccountTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PaymentAccount();
         $testValue = 'CUC789012';
-        
+
         $object->setCuc($testValue);
         $this->assertEquals($testValue, $object->getCuc());
     }
@@ -231,7 +231,7 @@ class PaymentAccountTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PaymentAccount();
         $testValue = true;
-        
+
         $object->setVirtual($testValue);
         $this->assertEquals($testValue, $object->getVirtual());
     }

@@ -1,4 +1,4 @@
-# # GetNewReceivedDocumentTotalsRequest
+# GetNewReceivedDocumentTotalsRequest
 
 ## Properties
 

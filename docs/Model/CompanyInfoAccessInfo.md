@@ -1,4 +1,4 @@
-# # CompanyInfoAccessInfo
+# CompanyInfoAccessInfo
 
 ## Properties
 

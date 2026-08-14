@@ -1,4 +1,4 @@
-# # OriginalDocumentType
+# OriginalDocumentType
 
 ## Properties
 

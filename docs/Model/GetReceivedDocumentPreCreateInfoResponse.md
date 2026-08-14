@@ -1,4 +1,4 @@
-# # GetReceivedDocumentPreCreateInfoResponse
+# GetReceivedDocumentPreCreateInfoResponse
 
 ## Properties
 

@@ -138,7 +138,7 @@ class WebhooksSubscriptionTest extends TestCase
     {
         $configObject = $this->object->getConfig();
         $this->assertInstanceOf(\FattureInCloud\Model\WebhooksSubscriptionConfig::class, $configObject);
-        
+
         // Verify the config values match the setup data
         $this->assertEquals($this->array['config']['mapping'], $configObject->getMapping());
     }
@@ -150,7 +150,7 @@ class WebhooksSubscriptionTest extends TestCase
     {
         $object = new \FattureInCloud\Model\WebhooksSubscription();
         $testValue = 'wh_12345';
-        
+
         $object->setId($testValue);
         $this->assertEquals($testValue, $object->getId());
     }
@@ -162,7 +162,7 @@ class WebhooksSubscriptionTest extends TestCase
     {
         $object = new \FattureInCloud\Model\WebhooksSubscription();
         $testValue = 'https://example.com/webhook';
-        
+
         $object->setSink($testValue);
         $this->assertEquals($testValue, $object->getSink());
     }
@@ -174,7 +174,7 @@ class WebhooksSubscriptionTest extends TestCase
     {
         $object = new \FattureInCloud\Model\WebhooksSubscription();
         $testValue = true;
-        
+
         $object->setVerified($testValue);
         $this->assertEquals($testValue, $object->getVerified());
     }
@@ -186,7 +186,7 @@ class WebhooksSubscriptionTest extends TestCase
     {
         $object = new \FattureInCloud\Model\WebhooksSubscription();
         $testValue = [];
-        
+
         $object->setTypes($testValue);
         $this->assertEquals($testValue, $object->getTypes());
     }
@@ -198,7 +198,7 @@ class WebhooksSubscriptionTest extends TestCase
     {
         $object = new \FattureInCloud\Model\WebhooksSubscription();
         $testValue = new \FattureInCloud\Model\WebhooksSubscriptionConfig();
-        
+
         $object->setConfig($testValue);
         $this->assertEquals($testValue, $object->getConfig());
     }

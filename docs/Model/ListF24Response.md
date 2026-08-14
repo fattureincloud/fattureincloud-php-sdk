@@ -1,4 +1,4 @@
-# # ListF24Response
+# ListF24Response
 
 ## Properties
 

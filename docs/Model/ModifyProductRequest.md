@@ -1,4 +1,4 @@
-# # ModifyProductRequest
+# ModifyProductRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetBinIssuedDocumentResponse
+# GetBinIssuedDocumentResponse
 
 ## Properties
 

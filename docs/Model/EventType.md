@@ -1,4 +1,4 @@
-# # EventType
+# EventType
 
 ## Properties
 

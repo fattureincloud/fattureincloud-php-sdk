@@ -174,7 +174,7 @@ class ReceivedDocumentInfoTest extends TestCase
         $currenciesList = $this->object->getCurrenciesList();
         $this->assertIsArray($currenciesList);
         $this->assertCount(2, $currenciesList);
-        
+
         $currency = $currenciesList[0];
         $this->assertInstanceOf(\FattureInCloud\Model\Currency::class, $currency);
         $this->assertEquals($this->array['currencies_list'][0]['id'], $currency->getId());
@@ -197,7 +197,7 @@ class ReceivedDocumentInfoTest extends TestCase
         $paymentAccountsList = $this->object->getPaymentAccountsList();
         $this->assertIsArray($paymentAccountsList);
         $this->assertCount(1, $paymentAccountsList);
-        
+
         $paymentAccount = $paymentAccountsList[0];
         $this->assertInstanceOf(\FattureInCloud\Model\PaymentAccount::class, $paymentAccount);
         $this->assertEquals($this->array['payment_accounts_list'][0]['id'], $paymentAccount->getId());
@@ -212,7 +212,7 @@ class ReceivedDocumentInfoTest extends TestCase
         $vatTypesList = $this->object->getVatTypesList();
         $this->assertIsArray($vatTypesList);
         $this->assertCount(2, $vatTypesList);
-        
+
         $vatType = $vatTypesList[0];
         $this->assertInstanceOf(\FattureInCloud\Model\VatType::class, $vatType);
         $this->assertEquals($this->array['vat_types_list'][0]['id'], $vatType->getId());

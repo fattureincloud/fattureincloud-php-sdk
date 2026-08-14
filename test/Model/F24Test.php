@@ -176,7 +176,7 @@ class F24Test extends TestCase
     {
         $object = new \FattureInCloud\Model\F24();
         $testValue = 12345;
-        
+
         $object->setId($testValue);
         $this->assertEquals($testValue, $object->getId());
     }
@@ -188,7 +188,7 @@ class F24Test extends TestCase
     {
         $object = new \FattureInCloud\Model\F24();
         $testValue = '2024-04-17';
-        
+
         $object->setDueDate($testValue);
         $this->assertEquals($testValue, $object->getDueDate());
     }
@@ -200,7 +200,7 @@ class F24Test extends TestCase
     {
         $object = new \FattureInCloud\Model\F24();
         $testValue = 'pending';
-        
+
         $object->setStatus($testValue);
         $this->assertEquals($testValue, $object->getStatus());
     }
@@ -212,7 +212,7 @@ class F24Test extends TestCase
     {
         $object = new \FattureInCloud\Model\F24();
         $testValue = ['id' => 123, 'name' => 'Test Account'];
-        
+
         $object->setPaymentAccount($testValue);
         $this->assertEquals($testValue, $object->getPaymentAccount());
     }
@@ -224,7 +224,7 @@ class F24Test extends TestCase
     {
         $object = new \FattureInCloud\Model\F24();
         $testValue = 1250.50;
-        
+
         $object->setAmount($testValue);
         $this->assertEquals($testValue, $object->getAmount());
     }
@@ -236,7 +236,7 @@ class F24Test extends TestCase
     {
         $object = new \FattureInCloud\Model\F24();
         $testValue = 'test-attachment-url.pdf';
-        
+
         $object->setAttachmentUrl($testValue);
         $this->assertEquals($testValue, $object->getAttachmentUrl());
     }
@@ -248,7 +248,7 @@ class F24Test extends TestCase
     {
         $object = new \FattureInCloud\Model\F24();
         $testValue = 'test-attachment-token';
-        
+
         $object->setAttachmentToken($testValue);
         $this->assertEquals($testValue, $object->getAttachmentToken());
     }
@@ -260,7 +260,7 @@ class F24Test extends TestCase
     {
         $object = new \FattureInCloud\Model\F24();
         $testValue = 'Test F24 Description';
-        
+
         $object->setDescription($testValue);
         $this->assertEquals($testValue, $object->getDescription());
     }

@@ -1,4 +1,4 @@
-# # EmailStatus
+# EmailStatus
 
 ## Properties
 

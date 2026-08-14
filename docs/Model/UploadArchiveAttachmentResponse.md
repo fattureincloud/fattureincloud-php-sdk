@@ -1,4 +1,4 @@
-# # UploadArchiveAttachmentResponse
+# UploadArchiveAttachmentResponse
 
 ## Properties
 

@@ -273,7 +273,7 @@ class ProductTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Product();
         $testValue = 12345;
-        
+
         $object->setId($testValue);
         $this->assertEquals($testValue, $object->getId());
     }
@@ -285,7 +285,7 @@ class ProductTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Product();
         $testValue = 'Test Product';
-        
+
         $object->setName($testValue);
         $this->assertEquals($testValue, $object->getName());
     }
@@ -297,7 +297,7 @@ class ProductTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Product();
         $testValue = 'PROD-001';
-        
+
         $object->setCode($testValue);
         $this->assertEquals($testValue, $object->getCode());
     }
@@ -309,7 +309,7 @@ class ProductTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Product();
         $testValue = 100.50;
-        
+
         $object->setNetPrice($testValue);
         $this->assertEquals($testValue, $object->getNetPrice());
     }
@@ -321,7 +321,7 @@ class ProductTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Product();
         $testValue = 122.61;
-        
+
         $object->setGrossPrice($testValue);
         $this->assertEquals($testValue, $object->getGrossPrice());
     }
@@ -333,7 +333,7 @@ class ProductTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Product();
         $testValue = true;
-        
+
         $object->setUseGrossPrice($testValue);
         $this->assertEquals($testValue, $object->getUseGrossPrice());
     }
@@ -345,7 +345,7 @@ class ProductTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Product();
         $testValue = ['id' => 1, 'value' => 22];
-        
+
         $object->setDefaultVat($testValue);
         $this->assertEquals($testValue, $object->getDefaultVat());
     }
@@ -357,7 +357,7 @@ class ProductTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Product();
         $testValue = 80.25;
-        
+
         $object->setNetCost($testValue);
         $this->assertEquals($testValue, $object->getNetCost());
     }
@@ -369,7 +369,7 @@ class ProductTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Product();
         $testValue = 'pz';
-        
+
         $object->setMeasure($testValue);
         $this->assertEquals($testValue, $object->getMeasure());
     }
@@ -381,7 +381,7 @@ class ProductTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Product();
         $testValue = 'Test product description';
-        
+
         $object->setDescription($testValue);
         $this->assertEquals($testValue, $object->getDescription());
     }
@@ -393,7 +393,7 @@ class ProductTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Product();
         $testValue = 'Electronics';
-        
+
         $object->setCategory($testValue);
         $this->assertEquals($testValue, $object->getCategory());
     }
@@ -405,7 +405,7 @@ class ProductTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Product();
         $testValue = 'Test product notes';
-        
+
         $object->setNotes($testValue);
         $this->assertEquals($testValue, $object->getNotes());
     }
@@ -417,7 +417,7 @@ class ProductTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Product();
         $testValue = true;
-        
+
         $object->setInStock($testValue);
         $this->assertEquals($testValue, $object->getInStock());
     }
@@ -429,7 +429,7 @@ class ProductTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Product();
         $testValue = 100;
-        
+
         $object->setStockInitial($testValue);
         $this->assertEquals($testValue, $object->getStockInitial());
     }
@@ -441,7 +441,7 @@ class ProductTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Product();
         $testValue = 75;
-        
+
         $object->setStockCurrent($testValue);
         $this->assertEquals($testValue, $object->getStockCurrent());
     }
@@ -453,7 +453,7 @@ class ProductTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Product();
         $testValue = 85.30;
-        
+
         $object->setAverageCost($testValue);
         $this->assertEquals($testValue, $object->getAverageCost());
     }
@@ -465,7 +465,7 @@ class ProductTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Product();
         $testValue = 110.75;
-        
+
         $object->setAveragePrice($testValue);
         $this->assertEquals($testValue, $object->getAveragePrice());
     }
@@ -477,7 +477,7 @@ class ProductTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Product();
         $testValue = '2024-04-17';
-        
+
         $object->setCreatedAt($testValue);
         $this->assertEquals($testValue, $object->getCreatedAt());
     }
@@ -489,7 +489,7 @@ class ProductTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Product();
         $testValue = '2024-04-17';
-        
+
         $object->setUpdatedAt($testValue);
         $this->assertEquals($testValue, $object->getUpdatedAt());
     }

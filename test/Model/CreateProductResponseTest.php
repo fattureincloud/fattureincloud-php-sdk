@@ -131,7 +131,7 @@ class CreateProductResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CreateProductResponse();
         $testValue = new \FattureInCloud\Model\Product();
-        
+
         $object->setData($testValue);
         $this->assertEquals($testValue, $object->getData());
     }

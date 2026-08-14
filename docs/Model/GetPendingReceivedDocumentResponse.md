@@ -1,4 +1,4 @@
-# # GetPendingReceivedDocumentResponse
+# GetPendingReceivedDocumentResponse
 
 ## Properties
 

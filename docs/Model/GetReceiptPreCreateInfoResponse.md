@@ -1,4 +1,4 @@
-# # GetReceiptPreCreateInfoResponse
+# GetReceiptPreCreateInfoResponse
 
 ## Properties
 

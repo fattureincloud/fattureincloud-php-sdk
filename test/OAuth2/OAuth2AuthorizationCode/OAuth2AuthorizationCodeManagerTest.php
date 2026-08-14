@@ -182,7 +182,7 @@ class OAuth2AuthorizationCodeManagerTest extends TestCase
         $customClient = new Client(['handler' => $handler]);
 
         $e = new OAuth2AuthorizationCodeManager('CLIENT_ID', 'CLIENT_SECRET', 'http://localhost:3000/redirect', 'http://fic.api.test', $customClient);
-        
+
         $this->expectException(\GuzzleHttp\Exception\ClientException::class);
         $e->fetchToken('invalid_code');
     }
@@ -202,7 +202,7 @@ class OAuth2AuthorizationCodeManagerTest extends TestCase
         $customClient = new Client(['handler' => $handler]);
 
         $e = new OAuth2AuthorizationCodeManager('CLIENT_ID', 'CLIENT_SECRET', 'http://localhost:3000/redirect', 'http://fic.api.test', $customClient);
-        
+
         $this->expectException(\GuzzleHttp\Exception\ClientException::class);
         $e->refreshToken('expired_refresh_token');
     }
@@ -222,7 +222,7 @@ class OAuth2AuthorizationCodeManagerTest extends TestCase
         $customClient = new Client(['handler' => $handler]);
 
         $e = new OAuth2AuthorizationCodeManager('CLIENT_ID', 'CLIENT_SECRET', 'http://localhost:3000/redirect', 'http://fic.api.test', $customClient);
-        
+
         // SDK may handle malformed JSON in various ways
         try {
             $e->fetchToken('test_code');

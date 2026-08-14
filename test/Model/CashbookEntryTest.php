@@ -221,7 +221,7 @@ class CashbookEntryTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CashbookEntry();
         $testValue = "test-cashbook-id-123";
-        
+
         $object->setId($testValue);
         $this->assertEquals($testValue, $object->getId());
     }
@@ -233,7 +233,7 @@ class CashbookEntryTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CashbookEntry();
         $testValue = new \DateTime('2024-01-15');
-        
+
         $object->setDate($testValue);
         $this->assertEquals($testValue, $object->getDate());
     }
@@ -245,7 +245,7 @@ class CashbookEntryTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CashbookEntry();
         $testValue = "Test cashbook entry description";
-        
+
         $object->setDescription($testValue);
         $this->assertEquals($testValue, $object->getDescription());
     }
@@ -257,7 +257,7 @@ class CashbookEntryTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CashbookEntry();
         $testValue = \FattureInCloud\Model\CashbookEntryKind::CASHBOOK;
-        
+
         $object->setKind($testValue);
         $this->assertEquals($testValue, $object->getKind());
     }
@@ -269,7 +269,7 @@ class CashbookEntryTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CashbookEntry();
         $testValue = \FattureInCloud\Model\CashbookEntryType::IN;
-        
+
         $object->setType($testValue);
         $this->assertEquals($testValue, $object->getType());
     }
@@ -281,7 +281,7 @@ class CashbookEntryTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CashbookEntry();
         $testValue = "Test Entity Name";
-        
+
         $object->setEntityName($testValue);
         $this->assertEquals($testValue, $object->getEntityName());
     }
@@ -293,7 +293,7 @@ class CashbookEntryTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CashbookEntry();
         $testValue = new \FattureInCloud\Model\CashbookEntryDocument();
-        
+
         $object->setDocument($testValue);
         $this->assertEquals($testValue, $object->getDocument());
     }
@@ -305,7 +305,7 @@ class CashbookEntryTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CashbookEntry();
         $testValue = 150.75;
-        
+
         $object->setAmountIn($testValue);
         $this->assertEquals($testValue, $object->getAmountIn());
     }
@@ -317,7 +317,7 @@ class CashbookEntryTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CashbookEntry();
         $testValue = new \FattureInCloud\Model\PaymentAccount();
-        
+
         $object->setPaymentAccountIn($testValue);
         $this->assertEquals($testValue, $object->getPaymentAccountIn());
     }
@@ -329,7 +329,7 @@ class CashbookEntryTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CashbookEntry();
         $testValue = 250.50;
-        
+
         $object->setAmountOut($testValue);
         $this->assertEquals($testValue, $object->getAmountOut());
     }
@@ -341,7 +341,7 @@ class CashbookEntryTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CashbookEntry();
         $testValue = new \FattureInCloud\Model\PaymentAccount();
-        
+
         $object->setPaymentAccountOut($testValue);
         $this->assertEquals($testValue, $object->getPaymentAccountOut());
     }

@@ -120,7 +120,7 @@ class CreateCashbookEntryResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CreateCashbookEntryResponse();
         $testValue = new \FattureInCloud\Model\CashbookEntry();
-        
+
         $object->setData($testValue);
         $this->assertEquals($testValue, $object->getData());
     }

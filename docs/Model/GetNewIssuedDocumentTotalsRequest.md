@@ -1,4 +1,4 @@
-# # GetNewIssuedDocumentTotalsRequest
+# GetNewIssuedDocumentTotalsRequest
 
 ## Properties
 

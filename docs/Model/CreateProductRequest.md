@@ -1,4 +1,4 @@
-# # CreateProductRequest
+# CreateProductRequest
 
 ## Properties
 

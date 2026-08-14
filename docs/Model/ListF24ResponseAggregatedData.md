@@ -1,4 +1,4 @@
-# # ListF24ResponseAggregatedData
+# ListF24ResponseAggregatedData
 
 ## Properties
 

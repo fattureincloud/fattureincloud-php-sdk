@@ -1,4 +1,4 @@
-# # PermissionsFicIssuedDocumentsDetailed
+# PermissionsFicIssuedDocumentsDetailed
 
 ## Properties
 

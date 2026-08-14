@@ -118,7 +118,7 @@ class CreateCashbookEntryRequestTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CreateCashbookEntryRequest();
         $testValue = new \FattureInCloud\Model\CashbookEntry();
-        
+
         $object->setData($testValue);
         $this->assertEquals($testValue, $object->getData());
     }

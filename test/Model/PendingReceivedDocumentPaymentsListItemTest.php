@@ -78,12 +78,12 @@ class PendingReceivedDocumentPaymentsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItem();
         $this->assertInstanceOf(\FattureInCloud\Model\PendingReceivedDocumentPaymentsListItem::class, $object);
-        
+
         // Test that object can be created with valid data
         $object->setAmount(150.75);
         $object->setDueDate('2024-05-15');
         $object->setStatus('paid');
-        
+
         $this->assertEquals(150.75, $object->getAmount());
         $this->assertEquals('2024-05-15', $object->getDueDate());
         $this->assertEquals('paid', $object->getStatus());
@@ -96,7 +96,7 @@ class PendingReceivedDocumentPaymentsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItem();
         $testValue = 150.75;
-        
+
         $object->setAmount($testValue);
         $this->assertEquals($testValue, $object->getAmount());
     }
@@ -108,7 +108,7 @@ class PendingReceivedDocumentPaymentsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItem();
         $testValue = '2024-05-15';
-        
+
         $object->setDueDate($testValue);
         $this->assertEquals($testValue, $object->getDueDate());
     }
@@ -120,7 +120,7 @@ class PendingReceivedDocumentPaymentsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItem();
         $testValue = '2024-05-20';
-        
+
         $object->setPaidDate($testValue);
         $this->assertEquals($testValue, $object->getPaidDate());
     }
@@ -132,7 +132,7 @@ class PendingReceivedDocumentPaymentsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItem();
         $testValue = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItemPaymentTerms();
-        
+
         $object->setPaymentTerms($testValue);
         $this->assertEquals($testValue, $object->getPaymentTerms());
     }
@@ -144,7 +144,7 @@ class PendingReceivedDocumentPaymentsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItem();
         $testValue = 'paid';
-        
+
         $object->setStatus($testValue);
         $this->assertEquals($testValue, $object->getStatus());
     }
@@ -156,7 +156,7 @@ class PendingReceivedDocumentPaymentsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItem();
         $testValue = true;
-        
+
         $object->setPaidWithTsPay($testValue);
         $this->assertEquals($testValue, $object->getPaidWithTsPay());
     }
@@ -168,7 +168,7 @@ class PendingReceivedDocumentPaymentsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItem();
         $testValue = new \FattureInCloud\Model\PaymentAccount();
-        
+
         $object->setPaymentAccount($testValue);
         $this->assertEquals($testValue, $object->getPaymentAccount());
     }
@@ -180,7 +180,7 @@ class PendingReceivedDocumentPaymentsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItem();
         $testValue = 150.75;
-        
+
         $object->setAmount($testValue);
         $this->assertEquals($testValue, $object->getAmount());
     }
@@ -192,7 +192,7 @@ class PendingReceivedDocumentPaymentsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItem();
         $testValue = '2024-05-15';
-        
+
         $object->setDueDate($testValue);
         $this->assertEquals($testValue, $object->getDueDate());
     }
@@ -204,7 +204,7 @@ class PendingReceivedDocumentPaymentsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItem();
         $testValue = '2024-05-20';
-        
+
         $object->setPaidDate($testValue);
         $this->assertEquals($testValue, $object->getPaidDate());
     }
@@ -216,7 +216,7 @@ class PendingReceivedDocumentPaymentsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItem();
         $testValue = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItemPaymentTerms();
-        
+
         $object->setPaymentTerms($testValue);
         $this->assertEquals($testValue, $object->getPaymentTerms());
     }
@@ -228,7 +228,7 @@ class PendingReceivedDocumentPaymentsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItem();
         $testValue = 'paid';
-        
+
         $object->setStatus($testValue);
         $this->assertEquals($testValue, $object->getStatus());
     }
@@ -240,7 +240,7 @@ class PendingReceivedDocumentPaymentsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItem();
         $testValue = true;
-        
+
         $object->setPaidWithTsPay($testValue);
         $this->assertEquals($testValue, $object->getPaidWithTsPay());
     }
@@ -252,7 +252,7 @@ class PendingReceivedDocumentPaymentsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItem();
         $testValue = new \FattureInCloud\Model\PaymentAccount();
-        
+
         $object->setPaymentAccount($testValue);
         $this->assertEquals($testValue, $object->getPaymentAccount());
     }

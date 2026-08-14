@@ -112,7 +112,7 @@ class CreatePaymentAccountRequestTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CreatePaymentAccountRequest();
         $testValue = new \FattureInCloud\Model\PaymentAccount();
-        
+
         $object->setData($testValue);
         $this->assertEquals($testValue, $object->getData());
     }

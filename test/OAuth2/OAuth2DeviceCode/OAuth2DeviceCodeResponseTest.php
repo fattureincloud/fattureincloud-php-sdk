@@ -110,7 +110,7 @@ class OAuth2DeviceCodeResponseTest extends TestCase
     {
         $scope = ['situation' => 'r'];
         $params = new OAuth2DeviceCodeResponse('initial_device', 'initial_user', $scope, 'initial_uri', 1, 100);
-        
+
         $newScope = ['settings' => 'a', 'invoices' => 'rw'];
         $params->setDeviceCode('new_device_code');
         $params->setUserCode('new_user_code');
@@ -118,7 +118,7 @@ class OAuth2DeviceCodeResponseTest extends TestCase
         $params->setVerificationUri('https://example.com/verify');
         $params->setInterval(10);
         $params->setExpiresIn(600);
-        
+
         $this->assertEquals('new_device_code', $params->getDeviceCode());
         $this->assertEquals('new_user_code', $params->getUserCode());
         $this->assertEquals($newScope, $params->getScope());

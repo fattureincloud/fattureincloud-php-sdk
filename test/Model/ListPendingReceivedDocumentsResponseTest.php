@@ -78,12 +78,12 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $this->assertInstanceOf(\FattureInCloud\Model\ListPendingReceivedDocumentsResponse::class, $object);
-        
+
         // Test that object can be created with valid data
         $object->setCurrentPage(2);
         $object->setTotal(500);
         $object->setPerPage(50);
-        
+
         $this->assertEquals(2, $object->getCurrentPage());
         $this->assertEquals(500, $object->getTotal());
         $this->assertEquals(50, $object->getPerPage());
@@ -96,7 +96,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 2;
-        
+
         $object->setCurrentPage($testValue);
         $this->assertEquals($testValue, $object->getCurrentPage());
     }
@@ -108,7 +108,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 'https://api.fattureincloud.it/v2/documents?page=1';
-        
+
         $object->setFirstPageUrl($testValue);
         $this->assertEquals($testValue, $object->getFirstPageUrl());
     }
@@ -120,7 +120,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 1;
-        
+
         $object->setFrom($testValue);
         $this->assertEquals($testValue, $object->getFrom());
     }
@@ -132,7 +132,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 10;
-        
+
         $object->setLastPage($testValue);
         $this->assertEquals($testValue, $object->getLastPage());
     }
@@ -144,7 +144,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 'https://api.fattureincloud.it/v2/documents?page=10';
-        
+
         $object->setLastPageUrl($testValue);
         $this->assertEquals($testValue, $object->getLastPageUrl());
     }
@@ -156,7 +156,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 'https://api.fattureincloud.it/v2/documents?page=3';
-        
+
         $object->setNextPageUrl($testValue);
         $this->assertEquals($testValue, $object->getNextPageUrl());
     }
@@ -168,7 +168,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 'https://api.fattureincloud.it/v2/documents';
-        
+
         $object->setPath($testValue);
         $this->assertEquals($testValue, $object->getPath());
     }
@@ -180,7 +180,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 50;
-        
+
         $object->setPerPage($testValue);
         $this->assertEquals($testValue, $object->getPerPage());
     }
@@ -192,7 +192,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 'https://api.fattureincloud.it/v2/documents?page=1';
-        
+
         $object->setPrevPageUrl($testValue);
         $this->assertEquals($testValue, $object->getPrevPageUrl());
     }
@@ -204,7 +204,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 50;
-        
+
         $object->setTo($testValue);
         $this->assertEquals($testValue, $object->getTo());
     }
@@ -216,7 +216,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 500;
-        
+
         $object->setTotal($testValue);
         $this->assertEquals($testValue, $object->getTotal());
     }
@@ -228,7 +228,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = [new \FattureInCloud\Model\PendingReceivedDocument()];
-        
+
         $object->setData($testValue);
         $this->assertEquals($testValue, $object->getData());
     }
@@ -240,7 +240,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 2;
-        
+
         $object->setCurrentPage($testValue);
         $this->assertEquals($testValue, $object->getCurrentPage());
     }
@@ -252,7 +252,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 'https://api.fattureincloud.it/v2/documents?page=1';
-        
+
         $object->setFirstPageUrl($testValue);
         $this->assertEquals($testValue, $object->getFirstPageUrl());
     }
@@ -264,7 +264,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 1;
-        
+
         $object->setFrom($testValue);
         $this->assertEquals($testValue, $object->getFrom());
     }
@@ -276,7 +276,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 10;
-        
+
         $object->setLastPage($testValue);
         $this->assertEquals($testValue, $object->getLastPage());
     }
@@ -288,7 +288,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 'https://api.fattureincloud.it/v2/documents?page=10';
-        
+
         $object->setLastPageUrl($testValue);
         $this->assertEquals($testValue, $object->getLastPageUrl());
     }
@@ -300,7 +300,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 'https://api.fattureincloud.it/v2/documents?page=3';
-        
+
         $object->setNextPageUrl($testValue);
         $this->assertEquals($testValue, $object->getNextPageUrl());
     }
@@ -312,7 +312,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 'https://api.fattureincloud.it/v2/documents';
-        
+
         $object->setPath($testValue);
         $this->assertEquals($testValue, $object->getPath());
     }
@@ -324,7 +324,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 50;
-        
+
         $object->setPerPage($testValue);
         $this->assertEquals($testValue, $object->getPerPage());
     }
@@ -336,7 +336,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 'https://api.fattureincloud.it/v2/documents?page=1';
-        
+
         $object->setPrevPageUrl($testValue);
         $this->assertEquals($testValue, $object->getPrevPageUrl());
     }
@@ -348,7 +348,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 50;
-        
+
         $object->setTo($testValue);
         $this->assertEquals($testValue, $object->getTo());
     }
@@ -360,7 +360,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = 500;
-        
+
         $object->setTotal($testValue);
         $this->assertEquals($testValue, $object->getTotal());
     }
@@ -372,7 +372,7 @@ class ListPendingReceivedDocumentsResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListPendingReceivedDocumentsResponse();
         $testValue = [new \FattureInCloud\Model\PendingReceivedDocument()];
-        
+
         $object->setData($testValue);
         $this->assertEquals($testValue, $object->getData());
     }

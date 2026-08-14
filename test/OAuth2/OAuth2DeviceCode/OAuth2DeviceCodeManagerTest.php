@@ -227,7 +227,7 @@ class OAuth2DeviceCodeManagerTest extends TestCase
         $customClient = new Client(['handler' => $handler]);
 
         $e = new OAuth2DeviceCodeManager('CLIENT_ID', 'http://fic.api.test', $customClient);
-        
+
         $this->expectException(\GuzzleHttp\Exception\ClientException::class);
         $e->getDeviceCode([Scope::SITUATION_READ]);
     }
@@ -247,7 +247,7 @@ class OAuth2DeviceCodeManagerTest extends TestCase
         $customClient = new Client(['handler' => $handler]);
 
         $e = new OAuth2DeviceCodeManager('CLIENT_ID', 'http://fic.api.test', $customClient);
-        
+
         $this->expectException(\GuzzleHttp\Exception\ClientException::class);
         $e->fetchToken('pending_device_code');
     }
@@ -259,7 +259,7 @@ class OAuth2DeviceCodeManagerTest extends TestCase
     {
         $mock = new MockHandler([
             new \GuzzleHttp\Exception\ConnectException(
-                'Connection timeout', 
+                'Connection timeout',
                 new \GuzzleHttp\Psr7\Request('POST', 'http://fic.api.test')
             )
         ]);
@@ -268,7 +268,7 @@ class OAuth2DeviceCodeManagerTest extends TestCase
         $customClient = new Client(['handler' => $handler]);
 
         $e = new OAuth2DeviceCodeManager('CLIENT_ID', 'http://fic.api.test', $customClient);
-        
+
         $this->expectException(\GuzzleHttp\Exception\ConnectException::class);
         $e->getDeviceCode([Scope::SITUATION_READ]);
     }
@@ -289,7 +289,7 @@ class OAuth2DeviceCodeManagerTest extends TestCase
         $customClient = new Client(['handler' => $handler]);
 
         $e = new OAuth2DeviceCodeManager('CLIENT_ID', 'http://fic.api.test', $customClient);
-        
+
         // This should handle responses either with or without 'data' wrapper gracefully
         try {
             $res = $e->getDeviceCode([Scope::SITUATION_READ]);

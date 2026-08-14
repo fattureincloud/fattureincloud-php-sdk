@@ -113,7 +113,7 @@ class AttachmentTest extends TestCase
     {
         $attachment = new \FattureInCloud\Model\Attachment();
         $testValue = 'test-filename.pdf';
-        
+
         $attachment->setFilename($testValue);
         $this->assertEquals($testValue, $attachment->getFilename());
     }
@@ -125,7 +125,7 @@ class AttachmentTest extends TestCase
     {
         $attachment = new \FattureInCloud\Model\Attachment();
         $testValue = 'JVBERi0xLjQKJdPr6eEKMSAwIG9iatest';
-        
+
         $attachment->setAttachment($testValue);
         $this->assertEquals($testValue, $attachment->getAttachment());
     }

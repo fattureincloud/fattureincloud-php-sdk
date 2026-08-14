@@ -1,4 +1,4 @@
-# # IssuedDocumentType
+# IssuedDocumentType
 
 ## Properties
 

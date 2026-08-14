@@ -105,7 +105,7 @@ class FunctionStatusTest extends TestCase
     {
         $object = new \FattureInCloud\Model\FunctionStatus();
         $testValue = false;
-        
+
         $object->setActive($testValue);
         $this->assertEquals($testValue, $object->getActive());
     }

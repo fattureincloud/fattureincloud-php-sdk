@@ -249,7 +249,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
         $testValue = false;
-        
+
         $object->setArchive($testValue);
         $this->assertEquals($testValue, $object->getArchive());
     }
@@ -261,7 +261,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
         $testValue = false;
-        
+
         $object->setCerved($testValue);
         $this->assertEquals($testValue, $object->getCerved());
     }
@@ -273,7 +273,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
         $testValue = false;
-        
+
         $object->setDocumentAttachments($testValue);
         $this->assertEquals($testValue, $object->getDocumentAttachments());
     }
@@ -285,7 +285,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
         $testValue = false;
-        
+
         $object->setEInvoice($testValue);
         $this->assertEquals($testValue, $object->getEInvoice());
     }
@@ -297,7 +297,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
         $testValue = false;
-        
+
         $object->setGenius($testValue);
         $this->assertEquals($testValue, $object->getGenius());
     }
@@ -309,7 +309,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
         $testValue = false;
-        
+
         $object->setMailTracking($testValue);
         $this->assertEquals($testValue, $object->getMailTracking());
     }
@@ -321,7 +321,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
         $testValue = false;
-        
+
         $object->setPaymentNotifications($testValue);
         $this->assertEquals($testValue, $object->getPaymentNotifications());
     }
@@ -333,7 +333,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
         $testValue = false;
-        
+
         $object->setPaypal($testValue);
         $this->assertEquals($testValue, $object->getPaypal());
     }
@@ -345,7 +345,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
         $testValue = false;
-        
+
         $object->setReceipts($testValue);
         $this->assertEquals($testValue, $object->getReceipts());
     }
@@ -357,7 +357,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
         $testValue = false;
-        
+
         $object->setRecurring($testValue);
         $this->assertEquals($testValue, $object->getRecurring());
     }
@@ -369,7 +369,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
         $testValue = false;
-        
+
         $object->setSmtp($testValue);
         $this->assertEquals($testValue, $object->getSmtp());
     }
@@ -381,7 +381,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
         $testValue = false;
-        
+
         $object->setStock($testValue);
         $this->assertEquals($testValue, $object->getStock());
     }
@@ -393,7 +393,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
         $testValue = false;
-        
+
         $object->setSubaccounts($testValue);
         $this->assertEquals($testValue, $object->getSubaccounts());
     }
@@ -405,7 +405,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
         $testValue = false;
-        
+
         $object->setTesseraSanitaria($testValue);
         $this->assertEquals($testValue, $object->getTesseraSanitaria());
     }
@@ -417,7 +417,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
         $testValue = false;
-        
+
         $object->setTsDigital($testValue);
         $this->assertEquals($testValue, $object->getTsDigital());
     }
@@ -429,7 +429,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
         $testValue = false;
-        
+
         $object->setTsInvoiceTrading($testValue);
         $this->assertEquals($testValue, $object->getTsInvoiceTrading());
     }
@@ -441,7 +441,7 @@ class CompanyInfoPlanInfoFunctionsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfoPlanInfoFunctions();
         $testValue = false;
-        
+
         $object->setTsPay($testValue);
         $this->assertEquals($testValue, $object->getTsPay());
     }

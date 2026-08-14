@@ -162,7 +162,7 @@ class UserTest extends TestCase
     {
         $user = new \FattureInCloud\Model\User();
         $testValue = 98765;
-        
+
         $user->setId($testValue);
         $this->assertEquals($testValue, $user->getId());
     }
@@ -174,7 +174,7 @@ class UserTest extends TestCase
     {
         $user = new \FattureInCloud\Model\User();
         $testValue = 'Test User Name';
-        
+
         $user->setName($testValue);
         $this->assertEquals($testValue, $user->getName());
     }
@@ -186,7 +186,7 @@ class UserTest extends TestCase
     {
         $user = new \FattureInCloud\Model\User();
         $testValue = 'TestFirstName';
-        
+
         $user->setFirstName($testValue);
         $this->assertEquals($testValue, $user->getFirstName());
     }
@@ -198,7 +198,7 @@ class UserTest extends TestCase
     {
         $user = new \FattureInCloud\Model\User();
         $testValue = 'TestLastName';
-        
+
         $user->setLastName($testValue);
         $this->assertEquals($testValue, $user->getLastName());
     }
@@ -210,7 +210,7 @@ class UserTest extends TestCase
     {
         $user = new \FattureInCloud\Model\User();
         $testValue = 'test@example.com';
-        
+
         $user->setEmail($testValue);
         $this->assertEquals($testValue, $user->getEmail());
     }
@@ -222,7 +222,7 @@ class UserTest extends TestCase
     {
         $user = new \FattureInCloud\Model\User();
         $testValue = 'testhash123456789abcdef';
-        
+
         $user->setHash($testValue);
         $this->assertEquals($testValue, $user->getHash());
     }
@@ -234,7 +234,7 @@ class UserTest extends TestCase
     {
         $user = new \FattureInCloud\Model\User();
         $testValue = 'test-picture.jpg';
-        
+
         $user->setPicture($testValue);
         $this->assertEquals($testValue, $user->getPicture());
     }

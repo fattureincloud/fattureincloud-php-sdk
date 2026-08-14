@@ -78,7 +78,7 @@ class GetTemplatesResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\GetTemplatesResponse();
         $this->assertInstanceOf(\FattureInCloud\Model\GetTemplatesResponse::class, $object);
-        
+
         // Test that object can be created with valid data
         $testData = [new \FattureInCloud\Model\DocumentTemplate()];
         $object->setData($testData);
@@ -92,7 +92,7 @@ class GetTemplatesResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\GetTemplatesResponse();
         $testValue = [new \FattureInCloud\Model\DocumentTemplate()];
-        
+
         $object->setData($testValue);
         $this->assertEquals($testValue, $object->getData());
     }
@@ -104,7 +104,7 @@ class GetTemplatesResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\GetTemplatesResponse();
         $testValue = [new \FattureInCloud\Model\DocumentTemplate()];
-        
+
         $object->setData($testValue);
         $this->assertEquals($testValue, $object->getData());
     }

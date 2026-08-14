@@ -141,7 +141,7 @@ class DetailedCountryTest extends TestCase
     {
         $object = new \FattureInCloud\Model\DetailedCountry();
         $testValue = "Test Country";
-        
+
         $object->setName($testValue);
         $this->assertEquals($testValue, $object->getName());
     }
@@ -153,7 +153,7 @@ class DetailedCountryTest extends TestCase
     {
         $object = new \FattureInCloud\Model\DetailedCountry();
         $testValue = "Test Settings Country";
-        
+
         $object->setSettingsName($testValue);
         $this->assertEquals($testValue, $object->getSettingsName());
     }
@@ -165,7 +165,7 @@ class DetailedCountryTest extends TestCase
     {
         $object = new \FattureInCloud\Model\DetailedCountry();
         $testValue = "US";
-        
+
         $object->setIso($testValue);
         $this->assertEquals($testValue, $object->getIso());
     }
@@ -177,7 +177,7 @@ class DetailedCountryTest extends TestCase
     {
         $object = new \FattureInCloud\Model\DetailedCountry();
         $testValue = "USD";
-        
+
         $object->setFiscalIso($testValue);
         $this->assertEquals($testValue, $object->getFiscalIso());
     }
@@ -189,7 +189,7 @@ class DetailedCountryTest extends TestCase
     {
         $object = new \FattureInCloud\Model\DetailedCountry();
         $testValue = "123";
-        
+
         $object->setUic($testValue);
         $this->assertEquals($testValue, $object->getUic());
     }

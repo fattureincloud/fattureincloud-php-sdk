@@ -89,10 +89,10 @@ class DisjunctionTest extends TestCase
         $left = new Condition('category', Operator::EQ, 'premium');
         $right = new Condition('score', Operator::GT, 85);
         $inner = new Disjunction($left, $right);
-        
+
         $outer = new Condition('active', Operator::EQ, true);
         $nested = new Disjunction($inner, $outer);
-        
+
         $expected = "((category = 'premium' or score > 85) or active = 1)";
         $this->assertEquals($expected, $nested->buildQuery());
     }

@@ -214,7 +214,7 @@ class IssuedDocumentExtraDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
         $testValue = 5;
-        
+
         $object->setMultifattureSent($testValue);
         $this->assertEquals($testValue, $object->getMultifattureSent());
     }
@@ -226,7 +226,7 @@ class IssuedDocumentExtraDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
         $testValue = false;
-        
+
         $object->setTsCommunication($testValue);
         $this->assertEquals($testValue, $object->getTsCommunication());
     }
@@ -238,7 +238,7 @@ class IssuedDocumentExtraDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
         $testValue = 2.5;
-        
+
         $object->setTsFlagTipoSpesa($testValue);
         $this->assertEquals($testValue, $object->getTsFlagTipoSpesa());
     }
@@ -250,7 +250,7 @@ class IssuedDocumentExtraDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
         $testValue = false;
-        
+
         $object->setTsPagamentoTracciato($testValue);
         $this->assertEquals($testValue, $object->getTsPagamentoTracciato());
     }
@@ -262,7 +262,7 @@ class IssuedDocumentExtraDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
         $testValue = "SM";
-        
+
         $object->setTsTipoSpesa($testValue);
         $this->assertEquals($testValue, $object->getTsTipoSpesa());
     }
@@ -274,7 +274,7 @@ class IssuedDocumentExtraDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
         $testValue = false;
-        
+
         $object->setTsOpposizione($testValue);
         $this->assertEquals($testValue, $object->getTsOpposizione());
     }
@@ -286,7 +286,7 @@ class IssuedDocumentExtraDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
         $testValue = 2;
-        
+
         $object->setTsStatus($testValue);
         $this->assertEquals($testValue, $object->getTsStatus());
     }
@@ -298,7 +298,7 @@ class IssuedDocumentExtraDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
         $testValue = "document.pdf";
-        
+
         $object->setTsFileId($testValue);
         $this->assertEquals($testValue, $object->getTsFileId());
     }
@@ -310,7 +310,7 @@ class IssuedDocumentExtraDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
         $testValue = new \DateTime('2024-02-15');
-        
+
         $object->setTsSentDate($testValue);
         $this->assertEquals($testValue, $object->getTsSentDate());
     }
@@ -322,7 +322,7 @@ class IssuedDocumentExtraDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
         $testValue = false;
-        
+
         $object->setTsFullAmount($testValue);
         $this->assertEquals($testValue, $object->getTsFullAmount());
     }
@@ -334,7 +334,7 @@ class IssuedDocumentExtraDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
         $testValue = "api_import";
-        
+
         $object->setImportedBy($testValue);
         $this->assertEquals($testValue, $object->getImportedBy());
     }
@@ -346,7 +346,7 @@ class IssuedDocumentExtraDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
         $testValue = true;
-        
+
         $object->setDebtVatDetect($testValue);
         $this->assertEquals($testValue, $object->getDebtVatDetect());
     }
@@ -358,7 +358,7 @@ class IssuedDocumentExtraDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentExtraData();
         $testValue = true;
-        
+
         $object->setRevenueDetect($testValue);
         $this->assertEquals($testValue, $object->getRevenueDetect());
     }

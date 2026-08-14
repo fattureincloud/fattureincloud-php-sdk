@@ -425,7 +425,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
         $testValue = ["2024" => ["A" => 1, "B" => 2]];
-        
+
         $object->setNumerations($testValue);
         $this->assertEquals($testValue, $object->getNumerations());
     }
@@ -437,7 +437,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
         $testValue = ["2024" => ["" => 500]];
-        
+
         $object->setDnNumerations($testValue);
         $this->assertEquals($testValue, $object->getDnNumerations());
     }
@@ -449,7 +449,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
         $testValue = new \FattureInCloud\Model\IssuedDocumentPreCreateInfoDefaultValues();
-        
+
         $object->setDefaultValues($testValue);
         $this->assertEquals($testValue, $object->getDefaultValues());
     }
@@ -461,7 +461,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
         $testValue = new \FattureInCloud\Model\IssuedDocumentPreCreateInfoExtraDataDefaultValues();
-        
+
         $object->setExtraDataDefaultValues($testValue);
         $this->assertEquals($testValue, $object->getExtraDataDefaultValues());
     }
@@ -473,7 +473,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
         $testValue = new \FattureInCloud\Model\IssuedDocumentPreCreateInfoItemsDefaultValues();
-        
+
         $object->setItemsDefaultValues($testValue);
         $this->assertEquals($testValue, $object->getItemsDefaultValues());
     }
@@ -485,7 +485,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
     {
         $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
         $testValue = ["Italia", "Francia", "Germania"];
-        
+
         $object->setCountriesList($testValue);
         $this->assertEquals($testValue, $object->getCountriesList());
     }
@@ -499,7 +499,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
         $currency1 = new \FattureInCloud\Model\Currency();
         $currency2 = new \FattureInCloud\Model\Currency();
         $testValue = [$currency1, $currency2];
-        
+
         $object->setCurrenciesList($testValue);
         $this->assertEquals($testValue, $object->getCurrenciesList());
     }
@@ -513,7 +513,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
         $template1 = new \FattureInCloud\Model\DocumentTemplate();
         $template2 = new \FattureInCloud\Model\DocumentTemplate();
         $testValue = [$template1, $template2];
-        
+
         $object->setTemplatesList($testValue);
         $this->assertEquals($testValue, $object->getTemplatesList());
     }
@@ -526,7 +526,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
         $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
         $template1 = new \FattureInCloud\Model\DocumentTemplate();
         $testValue = [$template1];
-        
+
         $object->setDnTemplatesList($testValue);
         $this->assertEquals($testValue, $object->getDnTemplatesList());
     }
@@ -539,7 +539,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
         $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
         $template1 = new \FattureInCloud\Model\DocumentTemplate();
         $testValue = [$template1];
-        
+
         $object->setAiTemplatesList($testValue);
         $this->assertEquals($testValue, $object->getAiTemplatesList());
     }
@@ -552,7 +552,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
         $object = new \FattureInCloud\Model\IssuedDocumentPreCreateInfo();
         $paymentMethod1 = new \FattureInCloud\Model\PaymentMethod();
         $testValue = [$paymentMethod1];
-        
+
         $object->setPaymentMethodsList($testValue);
         $this->assertEquals($testValue, $object->getPaymentMethodsList());
     }
@@ -566,7 +566,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
         $account1 = new \FattureInCloud\Model\PaymentAccount();
         $account2 = new \FattureInCloud\Model\PaymentAccount();
         $testValue = [$account1, $account2];
-        
+
         $object->setPaymentAccountsList($testValue);
         $this->assertEquals($testValue, $object->getPaymentAccountsList());
     }
@@ -580,7 +580,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
         $vatType1 = new \FattureInCloud\Model\VatType();
         $vatType2 = new \FattureInCloud\Model\VatType();
         $testValue = [$vatType1, $vatType2];
-        
+
         $object->setVatTypesList($testValue);
         $this->assertEquals($testValue, $object->getVatTypesList());
     }
@@ -594,7 +594,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
         $language1 = new \FattureInCloud\Model\Language();
         $language2 = new \FattureInCloud\Model\Language();
         $testValue = [$language1, $language2];
-        
+
         $object->setLanguagesList($testValue);
         $this->assertEquals($testValue, $object->getLanguagesList());
     }
@@ -608,7 +608,7 @@ class IssuedDocumentPreCreateInfoTest extends TestCase
         $priceList1 = new \FattureInCloud\Model\PriceList();
         $priceList2 = new \FattureInCloud\Model\PriceList();
         $testValue = [$priceList1, $priceList2];
-        
+
         $object->setPriceLists($testValue);
         $this->assertEquals($testValue, $object->getPriceLists());
     }

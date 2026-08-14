@@ -1,4 +1,4 @@
-# # ModifyWebhooksSubscriptionResponse
+# ModifyWebhooksSubscriptionResponse
 
 ## Properties
 

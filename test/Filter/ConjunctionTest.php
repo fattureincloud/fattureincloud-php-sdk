@@ -89,10 +89,10 @@ class ConjunctionTest extends TestCase
         $left = new Condition('city', Operator::EQ, 'Milano');
         $right = new Condition('age', Operator::GT, 25);
         $inner = new Conjunction($left, $right);
-        
+
         $outer = new Condition('status', Operator::EQ, 'active');
         $nested = new Conjunction($inner, $outer);
-        
+
         $expected = "((city = 'Milano' and age > 25) and status = 'active')";
         $this->assertEquals($expected, $nested->buildQuery());
     }

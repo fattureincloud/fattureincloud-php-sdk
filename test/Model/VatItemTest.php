@@ -117,7 +117,7 @@ class VatItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\VatItem();
         $testValue = 100.00;
-        
+
         $object->setAmountNet($testValue);
         $this->assertEquals($testValue, $object->getAmountNet());
     }
@@ -129,7 +129,7 @@ class VatItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\VatItem();
         $testValue = 22.00;
-        
+
         $object->setAmountVat($testValue);
         $this->assertEquals($testValue, $object->getAmountVat());
     }

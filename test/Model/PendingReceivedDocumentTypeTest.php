@@ -91,9 +91,9 @@ class PendingReceivedDocumentTypeTest extends TestCase
             'mail',
             'browser'
         ];
-        
+
         $actualValues = \FattureInCloud\Model\PendingReceivedDocumentType::getAllowableEnumValues();
-        
+
         $this->assertEquals($expectedValues, $actualValues);
         $this->assertCount(3, $actualValues);
     }
@@ -104,7 +104,7 @@ class PendingReceivedDocumentTypeTest extends TestCase
     public function testEnumValuesAreStrings()
     {
         $values = \FattureInCloud\Model\PendingReceivedDocumentType::getAllowableEnumValues();
-        
+
         foreach ($values as $value) {
             $this->assertIsString($value);
         }

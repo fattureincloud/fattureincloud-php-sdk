@@ -341,7 +341,7 @@ class ReceivedDocumentTest extends TestCase
         $itemsList = $this->object->getItemsList();
         $this->assertIsArray($itemsList);
         $this->assertCount(1, $itemsList);
-        
+
         $item = $itemsList[0];
         $this->assertInstanceOf(\FattureInCloud\Model\ReceivedDocumentItemsListItem::class, $item);
         $this->assertEquals($this->array['items_list'][0]['id'], $item->getId());
@@ -356,7 +356,7 @@ class ReceivedDocumentTest extends TestCase
         $paymentsList = $this->object->getPaymentsList();
         $this->assertIsArray($paymentsList);
         $this->assertCount(1, $paymentsList);
-        
+
         $payment = $paymentsList[0];
         $this->assertInstanceOf(\FattureInCloud\Model\ReceivedDocumentPaymentsListItem::class, $payment);
         $this->assertEquals($this->array['payments_list'][0]['amount'], $payment->getAmount());

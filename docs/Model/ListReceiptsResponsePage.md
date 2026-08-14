@@ -1,4 +1,4 @@
-# # ListReceiptsResponsePage
+# ListReceiptsResponsePage
 
 ## Properties
 

@@ -110,7 +110,7 @@ class CreateArchiveDocumentRequestTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CreateArchiveDocumentRequest();
         $testValue = new \FattureInCloud\Model\ArchiveDocument();
-        
+
         $object->setData($testValue);
         $this->assertEquals($testValue, $object->getData());
     }

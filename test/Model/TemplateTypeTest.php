@@ -92,9 +92,9 @@ class TemplateTypeTest extends TestCase
             'delivery_note', 
             'accompanying_invoice'
         ];
-        
+
         $actualValues = \FattureInCloud\Model\TemplateType::getAllowableEnumValues();
-        
+
         $this->assertEquals($expectedValues, $actualValues);
         $this->assertCount(3, $actualValues);
     }
@@ -105,7 +105,7 @@ class TemplateTypeTest extends TestCase
     public function testEnumValuesAreStrings()
     {
         $values = \FattureInCloud\Model\TemplateType::getAllowableEnumValues();
-        
+
         foreach ($values as $value) {
             $this->assertIsString($value);
         }

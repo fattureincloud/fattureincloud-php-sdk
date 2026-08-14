@@ -1,4 +1,4 @@
-# # CreateReceiptRequest
+# CreateReceiptRequest
 
 ## Properties
 

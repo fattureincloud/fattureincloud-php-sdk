@@ -105,7 +105,7 @@ class AttachmentDataTest extends TestCase
     {
         $object = new \FattureInCloud\Model\AttachmentData();
         $testValue = 'tkn_abc123def456';
-        
+
         $object->setAttachmentToken($testValue);
         $this->assertEquals($testValue, $object->getAttachmentToken());
     }

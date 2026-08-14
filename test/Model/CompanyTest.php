@@ -210,7 +210,7 @@ class CompanyTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Company();
         $testValue = 12345;
-        
+
         $object->setId($testValue);
         $this->assertEquals($testValue, $object->getId());
     }
@@ -222,7 +222,7 @@ class CompanyTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Company();
         $testValue = 'Test Company';
-        
+
         $object->setName($testValue);
         $this->assertEquals($testValue, $object->getName());
     }
@@ -234,7 +234,7 @@ class CompanyTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Company();
         $testValue = 'company';
-        
+
         $object->setType($testValue);
         $this->assertEquals($testValue, $object->getType());
     }
@@ -246,7 +246,7 @@ class CompanyTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Company();
         $testValue = 'test-access-token';
-        
+
         $object->setAccessToken($testValue);
         $this->assertEquals($testValue, $object->getAccessToken());
     }
@@ -258,7 +258,7 @@ class CompanyTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Company();
         $testValue = [];
-        
+
         $object->setControlledCompanies($testValue);
         $this->assertEquals($testValue, $object->getControlledCompanies());
     }
@@ -270,7 +270,7 @@ class CompanyTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Company();
         $testValue = '2024-12-31';
-        
+
         $object->setFicLicenseExpire($testValue);
         $this->assertEquals($testValue, $object->getFicLicenseExpire());
     }
@@ -282,7 +282,7 @@ class CompanyTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Company();
         $testValue = 'premium';
-        
+
         $object->setFicPlan($testValue);
         $this->assertEquals($testValue, $object->getFicPlan());
     }
@@ -294,7 +294,7 @@ class CompanyTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Company();
         $testValue = 12345;
-        
+
         $object->setConnectionId($testValue);
         $this->assertEquals($testValue, $object->getConnectionId());
     }
@@ -306,7 +306,7 @@ class CompanyTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Company();
         $testValue = 'ABCDEFGH89I012L';
-        
+
         $object->setTaxCode($testValue);
         $this->assertEquals($testValue, $object->getTaxCode());
     }
@@ -318,7 +318,7 @@ class CompanyTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Company();
         $testValue = 'IT12345678901';
-        
+
         $object->setVatNumber($testValue);
         $this->assertEquals($testValue, $object->getVatNumber());
     }

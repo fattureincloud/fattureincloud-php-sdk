@@ -114,7 +114,7 @@ class LanguageTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Language();
         $testValue = 'en';
-        
+
         $object->setCode($testValue);
         $this->assertEquals($testValue, $object->getCode());
     }
@@ -126,7 +126,7 @@ class LanguageTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Language();
         $testValue = 'English';
-        
+
         $object->setName($testValue);
         $this->assertEquals($testValue, $object->getName());
     }

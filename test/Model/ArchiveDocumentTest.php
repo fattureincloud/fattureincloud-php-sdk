@@ -156,7 +156,7 @@ class ArchiveDocumentTest extends TestCase
     {
         $document = new \FattureInCloud\Model\ArchiveDocument();
         $testValue = 54321;
-        
+
         $document->setId($testValue);
         $this->assertEquals($testValue, $document->getId());
     }
@@ -168,7 +168,7 @@ class ArchiveDocumentTest extends TestCase
     {
         $document = new \FattureInCloud\Model\ArchiveDocument();
         $testValue = '2024-04-17';
-        
+
         $document->setDate($testValue);
         $this->assertEquals($testValue, $document->getDate());
     }
@@ -180,7 +180,7 @@ class ArchiveDocumentTest extends TestCase
     {
         $document = new \FattureInCloud\Model\ArchiveDocument();
         $testValue = 'Test description for archive document';
-        
+
         $document->setDescription($testValue);
         $this->assertEquals($testValue, $document->getDescription());
     }
@@ -192,7 +192,7 @@ class ArchiveDocumentTest extends TestCase
     {
         $document = new \FattureInCloud\Model\ArchiveDocument();
         $testValue = 'https://example.com/test-document.pdf';
-        
+
         $document->setAttachmentUrl($testValue);
         $this->assertEquals($testValue, $document->getAttachmentUrl());
     }
@@ -204,7 +204,7 @@ class ArchiveDocumentTest extends TestCase
     {
         $document = new \FattureInCloud\Model\ArchiveDocument();
         $testValue = 'Test Category';
-        
+
         $document->setCategory($testValue);
         $this->assertEquals($testValue, $document->getCategory());
     }
@@ -216,7 +216,7 @@ class ArchiveDocumentTest extends TestCase
     {
         $document = new \FattureInCloud\Model\ArchiveDocument();
         $testValue = 'test_token_123456789abcdef';
-        
+
         $document->setAttachmentToken($testValue);
         $this->assertEquals($testValue, $document->getAttachmentToken());
     }

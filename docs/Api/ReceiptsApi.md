@@ -2,15 +2,16 @@
 
 All URIs are relative to https://api-v2.fattureincloud.it, except if the operation defines another base path.
 
-| Method                                                                    | HTTP request                                      | Description                 |
-| ------------------------------------------------------------------------- | ------------------------------------------------- | --------------------------- |
-| [**createReceipt()**](ReceiptsApi.md#createReceipt)                       | **POST** /c/{company_id}/receipts                 | Create Receipt              |
-| [**deleteReceipt()**](ReceiptsApi.md#deleteReceipt)                       | **DELETE** /c/{company_id}/receipts/{document_id} | Delete Receipt              |
-| [**getReceipt()**](ReceiptsApi.md#getReceipt)                             | **GET** /c/{company_id}/receipts/{document_id}    | Get Receipt                 |
-| [**getReceiptPreCreateInfo()**](ReceiptsApi.md#getReceiptPreCreateInfo)   | **GET** /c/{company_id}/receipts/info             | Get Receipt Pre-Create Info |
-| [**getReceiptsMonthlyTotals()**](ReceiptsApi.md#getReceiptsMonthlyTotals) | **GET** /c/{company_id}/receipts/monthly_totals   | Get Receipts Monthly Totals |
-| [**listReceipts()**](ReceiptsApi.md#listReceipts)                         | **GET** /c/{company_id}/receipts                  | List Receipts               |
-| [**modifyReceipt()**](ReceiptsApi.md#modifyReceipt)                       | **PUT** /c/{company_id}/receipts/{document_id}    | Modify Receipt              |
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createReceipt()**](ReceiptsApi.md#createReceipt) | **POST** /c/{company_id}/receipts | Create Receipt |
+| [**deleteReceipt()**](ReceiptsApi.md#deleteReceipt) | **DELETE** /c/{company_id}/receipts/{document_id} | Delete Receipt |
+| [**getReceipt()**](ReceiptsApi.md#getReceipt) | **GET** /c/{company_id}/receipts/{document_id} | Get Receipt |
+| [**getReceiptPreCreateInfo()**](ReceiptsApi.md#getReceiptPreCreateInfo) | **GET** /c/{company_id}/receipts/info | Get Receipt Pre-Create Info |
+| [**getReceiptsMonthlyTotals()**](ReceiptsApi.md#getReceiptsMonthlyTotals) | **GET** /c/{company_id}/receipts/monthly_totals | Get Receipts Monthly Totals |
+| [**listReceipts()**](ReceiptsApi.md#listReceipts) | **GET** /c/{company_id}/receipts | List Receipts |
+| [**modifyReceipt()**](ReceiptsApi.md#modifyReceipt) | **PUT** /c/{company_id}/receipts/{document_id} | Modify Receipt |
+
 
 ## `createReceipt()`
 
@@ -38,7 +39,7 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $create_receipt_request = new \FattureInCloud\Model\CreateReceiptRequest; // \FattureInCloud\Model\CreateReceiptRequest | The Receipt to create.
 
 try {
@@ -51,10 +52,10 @@ try {
 
 ### Parameters
 
-| Name                       | Type                                                                               | Description            | Notes      |
-| -------------------------- | ---------------------------------------------------------------------------------- | ---------------------- | ---------- |
-| **company_id**             | **int**                                                                            | The ID of the company. |            |
-| **create_receipt_request** | [**\FattureInCloud\Model\CreateReceiptRequest**](../Model/CreateReceiptRequest.md) | The Receipt to create. | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **create_receipt_request** | [**\FattureInCloud\Model\CreateReceiptRequest**](../Model/CreateReceiptRequest.md)| The Receipt to create. | [optional] |
 
 ### Return type
 
@@ -99,7 +100,7 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 
 try {
@@ -111,10 +112,10 @@ try {
 
 ### Parameters
 
-| Name            | Type    | Description             | Notes |
-| --------------- | ------- | ----------------------- | ----- |
-| **company_id**  | **int** | The ID of the company.  |       |
-| **document_id** | **int** | The ID of the document. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
 
 ### Return type
 
@@ -159,7 +160,7 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
@@ -174,12 +175,12 @@ try {
 
 ### Parameters
 
-| Name            | Type       | Description                     | Notes      |
-| --------------- | ---------- | ------------------------------- | ---------- |
-| **company_id**  | **int**    | The ID of the company.          |            |
-| **document_id** | **int**    | The ID of the document.         |            |
-| **fields**      | **string** | List of comma-separated fields. | [optional] |
-| **fieldset**    | **string** | Name of the fieldset.           | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
 
 ### Return type
 
@@ -224,7 +225,7 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 
 try {
     $result = $apiInstance->getReceiptPreCreateInfo($company_id);
@@ -236,9 +237,9 @@ try {
 
 ### Parameters
 
-| Name           | Type    | Description            | Notes |
-| -------------- | ------- | ---------------------- | ----- |
-| **company_id** | **int** | The ID of the company. |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
 
 ### Return type
 
@@ -283,7 +284,7 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $type = 'type_example'; // string | Receipt Type
 $year = 'year_example'; // string | Year for which you want monthly totals
 
@@ -297,11 +298,11 @@ try {
 
 ### Parameters
 
-| Name           | Type       | Description                            | Notes |
-| -------------- | ---------- | -------------------------------------- | ----- |
-| **company_id** | **int**    | The ID of the company.                 |       |
-| **type**       | **string** | Receipt Type                           |       |
-| **year**       | **string** | Year for which you want monthly totals |       |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **type** | **string**| Receipt Type | |
+| **year** | **string**| Year for which you want monthly totals | |
 
 ### Return type
 
@@ -346,7 +347,7 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $fields = 'fields_example'; // string | List of comma-separated fields.
 $fieldset = 'fieldset_example'; // string | Name of the fieldset.
 $page = 1; // int | The page to retrieve.
@@ -364,15 +365,15 @@ try {
 
 ### Parameters
 
-| Name           | Type       | Description                                                                 | Notes                     |
-| -------------- | ---------- | --------------------------------------------------------------------------- | ------------------------- |
-| **company_id** | **int**    | The ID of the company.                                                      |                           |
-| **fields**     | **string** | List of comma-separated fields.                                             | [optional]                |
-| **fieldset**   | **string** | Name of the fieldset.                                                       | [optional]                |
-| **page**       | **int**    | The page to retrieve.                                                       | [optional] [default to 1] |
-| **per_page**   | **int**    | The size of the page.                                                       | [optional] [default to 5] |
-| **sort**       | **string** | List of comma-separated fields for result sorting (minus for desc sorting). | [optional]                |
-| **q**          | **string** | Query for filtering the results.                                            | [optional]                |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **fields** | **string**| List of comma-separated fields. | [optional] |
+| **fieldset** | **string**| Name of the fieldset. | [optional] |
+| **page** | **int**| The page to retrieve. | [optional] [default to 1] |
+| **per_page** | **int**| The size of the page. | [optional] [default to 5] |
+| **sort** | **string**| List of comma-separated fields for result sorting (minus for desc sorting). | [optional] |
+| **q** | **string**| Query for filtering the results. | [optional] |
 
 ### Return type
 
@@ -417,7 +418,7 @@ $apiInstance = new FattureInCloud\Api\ReceiptsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 12345; // int | The ID of the company.
+    $company_id = 12345; // int | The ID of the company.
 $document_id = 56; // int | The ID of the document.
 $modify_receipt_request = new \FattureInCloud\Model\ModifyReceiptRequest; // \FattureInCloud\Model\ModifyReceiptRequest | Modified receipt.
 
@@ -431,11 +432,11 @@ try {
 
 ### Parameters
 
-| Name                       | Type                                                                               | Description             | Notes      |
-| -------------------------- | ---------------------------------------------------------------------------------- | ----------------------- | ---------- |
-| **company_id**             | **int**                                                                            | The ID of the company.  |            |
-| **document_id**            | **int**                                                                            | The ID of the document. |            |
-| **modify_receipt_request** | [**\FattureInCloud\Model\ModifyReceiptRequest**](../Model/ModifyReceiptRequest.md) | Modified receipt.       | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **int**| The ID of the company. | |
+| **document_id** | **int**| The ID of the document. | |
+| **modify_receipt_request** | [**\FattureInCloud\Model\ModifyReceiptRequest**](../Model/ModifyReceiptRequest.md)| Modified receipt. | [optional] |
 
 ### Return type
 

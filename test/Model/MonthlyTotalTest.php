@@ -123,7 +123,7 @@ class MonthlyTotalTest extends TestCase
     {
         $object = new \FattureInCloud\Model\MonthlyTotal();
         $testValue = 1250.50;
-        
+
         $object->setNet($testValue);
         $this->assertEquals($testValue, $object->getNet());
     }
@@ -135,7 +135,7 @@ class MonthlyTotalTest extends TestCase
     {
         $object = new \FattureInCloud\Model\MonthlyTotal();
         $testValue = 1525.61;
-        
+
         $object->setGross($testValue);
         $this->assertEquals($testValue, $object->getGross());
     }
@@ -147,7 +147,7 @@ class MonthlyTotalTest extends TestCase
     {
         $object = new \FattureInCloud\Model\MonthlyTotal();
         $testValue = 42;
-        
+
         $object->setCount($testValue);
         $this->assertEquals($testValue, $object->getCount());
     }

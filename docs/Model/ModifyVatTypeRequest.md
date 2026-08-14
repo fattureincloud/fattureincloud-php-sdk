@@ -1,4 +1,4 @@
-# # ModifyVatTypeRequest
+# ModifyVatTypeRequest
 
 ## Properties
 

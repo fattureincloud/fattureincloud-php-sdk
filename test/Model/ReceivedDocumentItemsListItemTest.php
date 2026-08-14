@@ -196,7 +196,7 @@ class ReceivedDocumentItemsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
         $testValue = 123;
-        
+
         $object->setId($testValue);
         $this->assertEquals($testValue, $object->getId());
     }
@@ -208,7 +208,7 @@ class ReceivedDocumentItemsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
         $testValue = 456;
-        
+
         $object->setProductId($testValue);
         $this->assertEquals($testValue, $object->getProductId());
     }
@@ -220,7 +220,7 @@ class ReceivedDocumentItemsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
         $testValue = "TEST123";
-        
+
         $object->setCode($testValue);
         $this->assertEquals($testValue, $object->getCode());
     }
@@ -232,7 +232,7 @@ class ReceivedDocumentItemsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
         $testValue = "Test Product Name";
-        
+
         $object->setName($testValue);
         $this->assertEquals($testValue, $object->getName());
     }
@@ -244,7 +244,7 @@ class ReceivedDocumentItemsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
         $testValue = "kg";
-        
+
         $object->setMeasure($testValue);
         $this->assertEquals($testValue, $object->getMeasure());
     }
@@ -256,7 +256,7 @@ class ReceivedDocumentItemsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
         $testValue = 99.99;
-        
+
         $object->setNetPrice($testValue);
         $this->assertEquals($testValue, $object->getNetPrice());
     }
@@ -268,7 +268,7 @@ class ReceivedDocumentItemsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
         $testValue = "electronics";
-        
+
         $object->setCategory($testValue);
         $this->assertEquals($testValue, $object->getCategory());
     }
@@ -280,7 +280,7 @@ class ReceivedDocumentItemsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
         $testValue = 5.0;
-        
+
         $object->setQty($testValue);
         $this->assertEquals($testValue, $object->getQty());
     }
@@ -292,7 +292,7 @@ class ReceivedDocumentItemsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
         $testValue = new \FattureInCloud\Model\VatType();
-        
+
         $object->setVat($testValue);
         $this->assertEquals($testValue, $object->getVat());
     }
@@ -304,7 +304,7 @@ class ReceivedDocumentItemsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
         $testValue = 50.0;
-        
+
         $object->setStock($testValue);
         $this->assertEquals($testValue, $object->getStock());
     }
@@ -316,7 +316,7 @@ class ReceivedDocumentItemsListItemTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ReceivedDocumentItemsListItem();
         $testValue = 22.0;
-        
+
         $object->setDeductibilityVatPercentage($testValue);
         $this->assertEquals($testValue, $object->getDeductibilityVatPercentage());
     }

@@ -106,7 +106,7 @@ class ListTemplatesResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ListTemplatesResponse();
         $testValue = [new \FattureInCloud\Model\DocumentTemplate()];
-        
+
         $object->setData($testValue);
         $this->assertEquals($testValue, $object->getData());
     }

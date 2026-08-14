@@ -1,4 +1,4 @@
-# # GetCompanyPlanUsageResponse
+# GetCompanyPlanUsageResponse
 
 ## Properties
 

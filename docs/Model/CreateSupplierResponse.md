@@ -1,4 +1,4 @@
-# # CreateSupplierResponse
+# CreateSupplierResponse
 
 ## Properties
 

@@ -123,7 +123,7 @@ class CityTest extends TestCase
     {
         $object = new \FattureInCloud\Model\City();
         $testValue = '12345';
-        
+
         $object->setPostalCode($testValue);
         $this->assertEquals($testValue, $object->getPostalCode());
     }
@@ -135,7 +135,7 @@ class CityTest extends TestCase
     {
         $object = new \FattureInCloud\Model\City();
         $testValue = 'test-city';
-        
+
         $object->setCity($testValue);
         $this->assertEquals($testValue, $object->getCity());
     }
@@ -147,7 +147,7 @@ class CityTest extends TestCase
     {
         $object = new \FattureInCloud\Model\City();
         $testValue = 'RM';
-        
+
         $object->setProvince($testValue);
         $this->assertEquals($testValue, $object->getProvince());
     }

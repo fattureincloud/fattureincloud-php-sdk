@@ -1,4 +1,4 @@
-# # PriceList
+# PriceList
 
 ## Properties
 

@@ -132,7 +132,7 @@ class CompanyInfoPlanInfoLimitsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfoPlanInfoLimits();
         $testValue = 1000;
-        
+
         $object->setClients($testValue);
         $this->assertEquals($testValue, $object->getClients());
     }
@@ -144,7 +144,7 @@ class CompanyInfoPlanInfoLimitsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfoPlanInfoLimits();
         $testValue = 2000;
-        
+
         $object->setSuppliers($testValue);
         $this->assertEquals($testValue, $object->getSuppliers());
     }
@@ -156,7 +156,7 @@ class CompanyInfoPlanInfoLimitsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfoPlanInfoLimits();
         $testValue = 3000;
-        
+
         $object->setProducts($testValue);
         $this->assertEquals($testValue, $object->getProducts());
     }
@@ -168,7 +168,7 @@ class CompanyInfoPlanInfoLimitsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CompanyInfoPlanInfoLimits();
         $testValue = 4000;
-        
+
         $object->setDocuments($testValue);
         $this->assertEquals($testValue, $object->getDocuments());
     }

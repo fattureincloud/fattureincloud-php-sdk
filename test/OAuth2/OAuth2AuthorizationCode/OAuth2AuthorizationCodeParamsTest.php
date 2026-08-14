@@ -93,10 +93,10 @@ class OAuth2AuthorizationCodeParamsTest extends TestCase
     public function testSetters()
     {
         $params = new OAuth2AuthorizationCodeParams('initial_code', 'initial_state');
-        
+
         $params->setAuthorizationCode('new_auth_code');
         $params->setState('new_state');
-        
+
         $this->assertEquals('new_auth_code', $params->getAuthorizationCode());
         $this->assertEquals('new_state', $params->getState());
     }

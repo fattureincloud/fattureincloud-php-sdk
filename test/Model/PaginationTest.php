@@ -195,7 +195,7 @@ class PaginationTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Pagination();
         $testValue = 2;
-        
+
         $object->setCurrentPage($testValue);
         $this->assertEquals($testValue, $object->getCurrentPage());
     }
@@ -207,7 +207,7 @@ class PaginationTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Pagination();
         $testValue = 'https://api.example.com?page=1';
-        
+
         $object->setFirstPageUrl($testValue);
         $this->assertEquals($testValue, $object->getFirstPageUrl());
     }
@@ -219,7 +219,7 @@ class PaginationTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Pagination();
         $testValue = 21;
-        
+
         $object->setFrom($testValue);
         $this->assertEquals($testValue, $object->getFrom());
     }
@@ -231,7 +231,7 @@ class PaginationTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Pagination();
         $testValue = 10;
-        
+
         $object->setLastPage($testValue);
         $this->assertEquals($testValue, $object->getLastPage());
     }
@@ -243,7 +243,7 @@ class PaginationTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Pagination();
         $testValue = 'https://api.example.com?page=10';
-        
+
         $object->setLastPageUrl($testValue);
         $this->assertEquals($testValue, $object->getLastPageUrl());
     }
@@ -255,7 +255,7 @@ class PaginationTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Pagination();
         $testValue = 'https://api.example.com?page=3';
-        
+
         $object->setNextPageUrl($testValue);
         $this->assertEquals($testValue, $object->getNextPageUrl());
     }
@@ -267,7 +267,7 @@ class PaginationTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Pagination();
         $testValue = '/api/v2/items';
-        
+
         $object->setPath($testValue);
         $this->assertEquals($testValue, $object->getPath());
     }
@@ -279,7 +279,7 @@ class PaginationTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Pagination();
         $testValue = 20;
-        
+
         $object->setPerPage($testValue);
         $this->assertEquals($testValue, $object->getPerPage());
     }
@@ -291,7 +291,7 @@ class PaginationTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Pagination();
         $testValue = 'https://api.example.com?page=1';
-        
+
         $object->setPrevPageUrl($testValue);
         $this->assertEquals($testValue, $object->getPrevPageUrl());
     }
@@ -303,7 +303,7 @@ class PaginationTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Pagination();
         $testValue = 40;
-        
+
         $object->setTo($testValue);
         $this->assertEquals($testValue, $object->getTo());
     }
@@ -315,7 +315,7 @@ class PaginationTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Pagination();
         $testValue = 200;
-        
+
         $object->setTotal($testValue);
         $this->assertEquals($testValue, $object->getTotal());
     }

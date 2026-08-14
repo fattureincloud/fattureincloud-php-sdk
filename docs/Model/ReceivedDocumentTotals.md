@@ -1,4 +1,4 @@
-# # ReceivedDocumentTotals
+# ReceivedDocumentTotals
 
 ## Properties
 

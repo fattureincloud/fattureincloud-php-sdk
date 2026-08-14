@@ -1,4 +1,4 @@
-# # CreateIssuedDocumentResponse
+# CreateIssuedDocumentResponse
 
 ## Properties
 

@@ -120,7 +120,7 @@ class CreatePaymentMethodResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CreatePaymentMethodResponse();
         $testValue = new \FattureInCloud\Model\PaymentMethod();
-        
+
         $object->setData($testValue);
         $this->assertEquals($testValue, $object->getData());
     }

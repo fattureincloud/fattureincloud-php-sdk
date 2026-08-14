@@ -132,7 +132,7 @@ class CurrencyTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Currency();
         $testValue = 'USD';
-        
+
         $object->setId($testValue);
         $this->assertEquals($testValue, $object->getId());
     }
@@ -144,7 +144,7 @@ class CurrencyTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Currency();
         $testValue = '$';
-        
+
         $object->setSymbol($testValue);
         $this->assertEquals($testValue, $object->getSymbol());
     }
@@ -156,7 +156,7 @@ class CurrencyTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Currency();
         $testValue = '1.05000';
-        
+
         $object->setExchangeRate($testValue);
         $this->assertEquals($testValue, $object->getExchangeRate());
     }
@@ -168,7 +168,7 @@ class CurrencyTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Currency();
         $testValue = '&dollar;';
-        
+
         $object->setHtmlSymbol($testValue);
         $this->assertEquals($testValue, $object->getHtmlSymbol());
     }

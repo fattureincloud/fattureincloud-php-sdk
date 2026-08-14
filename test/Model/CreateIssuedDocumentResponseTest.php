@@ -216,7 +216,7 @@ class CreateIssuedDocumentResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CreateIssuedDocumentResponse();
         $testValue = new \FattureInCloud\Model\IssuedDocument();
-        
+
         $object->setData($testValue);
         $this->assertEquals($testValue, $object->getData());
     }

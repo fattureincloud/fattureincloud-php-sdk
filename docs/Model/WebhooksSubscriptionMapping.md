@@ -1,4 +1,4 @@
-# # WebhooksSubscriptionMapping
+# WebhooksSubscriptionMapping
 
 ## Properties
 

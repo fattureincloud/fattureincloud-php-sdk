@@ -244,7 +244,7 @@ class ReceiptTest extends TestCase
         $itemsList = $this->object->getItemsList();
         $this->assertIsArray($itemsList);
         $this->assertCount(1, $itemsList);
-        
+
         $item = $itemsList[0];
         $this->assertInstanceOf(\FattureInCloud\Model\ReceiptItemsListItem::class, $item);
         $this->assertEquals($this->array['items_list'][0]['id'], $item->getId());
@@ -260,7 +260,7 @@ class ReceiptTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Receipt();
         $testValue = 12345;
-        
+
         $object->setId($testValue);
         $this->assertEquals($testValue, $object->getId());
     }
@@ -272,7 +272,7 @@ class ReceiptTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Receipt();
         $testValue = '2024-04-17';
-        
+
         $object->setDate($testValue);
         $this->assertEquals($testValue, $object->getDate());
     }
@@ -284,7 +284,7 @@ class ReceiptTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Receipt();
         $testValue = 123;
-        
+
         $object->setNumber($testValue);
         $this->assertEquals($testValue, $object->getNumber());
     }
@@ -296,7 +296,7 @@ class ReceiptTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Receipt();
         $testValue = 'REC2024';
-        
+
         $object->setNumeration($testValue);
         $this->assertEquals($testValue, $object->getNumeration());
     }
@@ -308,7 +308,7 @@ class ReceiptTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Receipt();
         $testValue = 100.50;
-        
+
         $object->setAmountNet($testValue);
         $this->assertEquals($testValue, $object->getAmountNet());
     }
@@ -320,7 +320,7 @@ class ReceiptTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Receipt();
         $testValue = 22.11;
-        
+
         $object->setAmountVat($testValue);
         $this->assertEquals($testValue, $object->getAmountVat());
     }
@@ -332,7 +332,7 @@ class ReceiptTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Receipt();
         $testValue = 122.61;
-        
+
         $object->setAmountGross($testValue);
         $this->assertEquals($testValue, $object->getAmountGross());
     }
@@ -344,7 +344,7 @@ class ReceiptTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Receipt();
         $testValue = true;
-        
+
         $object->setUseGrossPrices($testValue);
         $this->assertEquals($testValue, $object->getUseGrossPrices());
     }
@@ -356,7 +356,7 @@ class ReceiptTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Receipt();
         $testValue = 'fiscal';
-        
+
         $object->setType($testValue);
         $this->assertEquals($testValue, $object->getType());
     }
@@ -368,7 +368,7 @@ class ReceiptTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Receipt();
         $testValue = 'Test receipt description';
-        
+
         $object->setDescription($testValue);
         $this->assertEquals($testValue, $object->getDescription());
     }
@@ -380,7 +380,7 @@ class ReceiptTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Receipt();
         $testValue = 'Test RC Center';
-        
+
         $object->setRcCenter($testValue);
         $this->assertEquals($testValue, $object->getRcCenter());
     }
@@ -392,7 +392,7 @@ class ReceiptTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Receipt();
         $testValue = '2024-04-17';
-        
+
         $object->setCreatedAt($testValue);
         $this->assertEquals($testValue, $object->getCreatedAt());
     }
@@ -404,7 +404,7 @@ class ReceiptTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Receipt();
         $testValue = '2024-04-17';
-        
+
         $object->setUpdatedAt($testValue);
         $this->assertEquals($testValue, $object->getUpdatedAt());
     }
@@ -416,7 +416,7 @@ class ReceiptTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Receipt();
         $testValue = ['id' => 123, 'name' => 'Test Account'];
-        
+
         $object->setPaymentAccount($testValue);
         $this->assertEquals($testValue, $object->getPaymentAccount());
     }
@@ -428,7 +428,7 @@ class ReceiptTest extends TestCase
     {
         $object = new \FattureInCloud\Model\Receipt();
         $testValue = [['id' => 1, 'name' => 'Test Item']];
-        
+
         $object->setItemsList($testValue);
         $this->assertEquals($testValue, $object->getItemsList());
     }

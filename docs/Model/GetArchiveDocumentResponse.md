@@ -1,4 +1,4 @@
-# # GetArchiveDocumentResponse
+# GetArchiveDocumentResponse
 
 ## Properties
 

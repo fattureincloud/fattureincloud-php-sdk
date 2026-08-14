@@ -1,4 +1,4 @@
-# # CreateF24Response
+# CreateF24Response
 
 ## Properties
 

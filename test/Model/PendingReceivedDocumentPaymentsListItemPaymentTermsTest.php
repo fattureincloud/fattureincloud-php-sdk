@@ -78,11 +78,11 @@ class PendingReceivedDocumentPaymentsListItemPaymentTermsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItemPaymentTerms();
         $this->assertInstanceOf(\FattureInCloud\Model\PendingReceivedDocumentPaymentsListItemPaymentTerms::class, $object);
-        
+
         // Test that object can be created with valid data
         $object->setDays(30);
         $object->setType(\FattureInCloud\Model\PaymentTermsType::STANDARD);
-        
+
         $this->assertEquals(30, $object->getDays());
         $this->assertEquals(\FattureInCloud\Model\PaymentTermsType::STANDARD, $object->getType());
     }
@@ -94,7 +94,7 @@ class PendingReceivedDocumentPaymentsListItemPaymentTermsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItemPaymentTerms();
         $testValue = 30;
-        
+
         $object->setDays($testValue);
         $this->assertEquals($testValue, $object->getDays());
     }
@@ -106,7 +106,7 @@ class PendingReceivedDocumentPaymentsListItemPaymentTermsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItemPaymentTerms();
         $testValue = \FattureInCloud\Model\PaymentTermsType::STANDARD;
-        
+
         $object->setType($testValue);
         $this->assertEquals($testValue, $object->getType());
     }
@@ -118,7 +118,7 @@ class PendingReceivedDocumentPaymentsListItemPaymentTermsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItemPaymentTerms();
         $testValue = 30;
-        
+
         $object->setDays($testValue);
         $this->assertEquals($testValue, $object->getDays());
     }
@@ -130,7 +130,7 @@ class PendingReceivedDocumentPaymentsListItemPaymentTermsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItemPaymentTerms();
         $testValue = \FattureInCloud\Model\PaymentTermsType::STANDARD;
-        
+
         $object->setType($testValue);
         $this->assertEquals($testValue, $object->getType());
     }

@@ -1,4 +1,4 @@
-# # IssuedDocumentStatus
+# IssuedDocumentStatus
 
 ## Properties
 

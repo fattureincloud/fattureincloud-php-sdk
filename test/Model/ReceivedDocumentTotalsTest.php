@@ -159,7 +159,7 @@ class ReceivedDocumentTotalsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ReceivedDocumentTotals();
         $testValue = 123.45;
-        
+
         $object->setAmountNet($testValue);
         $this->assertEquals($testValue, $object->getAmountNet());
     }
@@ -171,7 +171,7 @@ class ReceivedDocumentTotalsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ReceivedDocumentTotals();
         $testValue = 27.36;
-        
+
         $object->setAmountVat($testValue);
         $this->assertEquals($testValue, $object->getAmountVat());
     }
@@ -183,7 +183,7 @@ class ReceivedDocumentTotalsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ReceivedDocumentTotals();
         $testValue = 150.81;
-        
+
         $object->setAmountGross($testValue);
         $this->assertEquals($testValue, $object->getAmountGross());
     }
@@ -195,7 +195,7 @@ class ReceivedDocumentTotalsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ReceivedDocumentTotals();
         $testValue = 24.69;
-        
+
         $object->setAmountWithholdingTax($testValue);
         $this->assertEquals($testValue, $object->getAmountWithholdingTax());
     }
@@ -207,7 +207,7 @@ class ReceivedDocumentTotalsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ReceivedDocumentTotals();
         $testValue = 10.25;
-        
+
         $object->setAmountOtherWithholdingTax($testValue);
         $this->assertEquals($testValue, $object->getAmountOtherWithholdingTax());
     }
@@ -219,7 +219,7 @@ class ReceivedDocumentTotalsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ReceivedDocumentTotals();
         $testValue = 115.87;
-        
+
         $object->setAmountDue($testValue);
         $this->assertEquals($testValue, $object->getAmountDue());
     }
@@ -231,7 +231,7 @@ class ReceivedDocumentTotalsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\ReceivedDocumentTotals();
         $testValue = 50.00;
-        
+
         $object->setPaymentsSum($testValue);
         $this->assertEquals($testValue, $object->getPaymentsSum());
     }

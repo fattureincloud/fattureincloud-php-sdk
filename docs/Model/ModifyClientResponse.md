@@ -1,4 +1,4 @@
-# # ModifyClientResponse
+# ModifyClientResponse
 
 ## Properties
 

@@ -111,7 +111,7 @@ class CreateReceivedDocumentRequestTest extends TestCase
         }';
 
         $this->array = json_decode($json, true);
-        
+
         $this->object = ObjectSerializer::deserialize($json, '\FattureInCloud\Model\CreateReceivedDocumentRequest');
     }
 
@@ -149,11 +149,11 @@ class CreateReceivedDocumentRequestTest extends TestCase
         $this->assertEquals(12345, $data->getId());
         $this->assertEquals("expense", $data->getType());
         $this->assertEquals("Soggiorno di lavoro", $data->getDescription());
-        
+
         // Test date as DateTime object
         $this->assertInstanceOf('\DateTime', $data->getDate());
         $this->assertEquals("2021-08-15", $data->getDate()->format('Y-m-d'));
-        
+
         $this->assertEquals(592, $data->getAmountNet());
         $this->assertEquals(0, $data->getAmountVat());
         $this->assertEquals(592, $data->getAmountGross());

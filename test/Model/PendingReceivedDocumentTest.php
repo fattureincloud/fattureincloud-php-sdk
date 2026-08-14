@@ -78,13 +78,13 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $this->assertInstanceOf(\FattureInCloud\Model\PendingReceivedDocument::class, $object);
-        
+
         // Test that object can be created with valid data
         $object->setId(12345);
         $object->setDate('2024-04-17');
         $object->setSubject('Test Document');
         $object->setFilename('test.pdf');
-        
+
         $this->assertEquals(12345, $object->getId());
         $this->assertEquals('2024-04-17', $object->getDate());
         $this->assertEquals('Test Document', $object->getSubject());
@@ -98,7 +98,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 12345;
-        
+
         $object->setId($testValue);
         $this->assertEquals($testValue, $object->getId());
     }
@@ -110,7 +110,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = '2024-04-17';
-        
+
         $object->setDate($testValue);
         $this->assertEquals($testValue, $object->getDate());
     }
@@ -122,7 +122,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 'Test Document Subject';
-        
+
         $object->setSubject($testValue);
         $this->assertEquals($testValue, $object->getSubject());
     }
@@ -134,7 +134,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 'test-document.pdf';
-        
+
         $object->setFilename($testValue);
         $this->assertEquals($testValue, $object->getFilename());
     }
@@ -146,7 +146,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = \FattureInCloud\Model\PendingReceivedDocumentType::MAIL;
-        
+
         $object->setType($testValue);
         $this->assertEquals($testValue, $object->getType());
     }
@@ -158,7 +158,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 'https://example.com/attachment.pdf';
-        
+
         $object->setAttachmentUrl($testValue);
         $this->assertEquals($testValue, $object->getAttachmentUrl());
     }
@@ -170,7 +170,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 122.50;
-        
+
         $object->setAmountGross($testValue);
         $this->assertEquals($testValue, $object->getAmountGross());
     }
@@ -182,7 +182,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = new \FattureInCloud\Model\Currency();
-        
+
         $object->setCurrency($testValue);
         $this->assertEquals($testValue, $object->getCurrency());
     }
@@ -194,7 +194,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 'invoice';
-        
+
         $object->setDocumentType($testValue);
         $this->assertEquals($testValue, $object->getDocumentType());
     }
@@ -206,7 +206,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 'Test Supplier Name';
-        
+
         $object->setSupplierName($testValue);
         $this->assertEquals($testValue, $object->getSupplierName());
     }
@@ -218,7 +218,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 'Test Cost Center';
-        
+
         $object->setCostCenter($testValue);
         $this->assertEquals($testValue, $object->getCostCenter());
     }
@@ -230,7 +230,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 'Test Category';
-        
+
         $object->setCategory($testValue);
         $this->assertEquals($testValue, $object->getCategory());
     }
@@ -242,7 +242,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = [new \FattureInCloud\Model\Attachment()];
-        
+
         $object->setOtherAttachments($testValue);
         $this->assertEquals($testValue, $object->getOtherAttachments());
     }
@@ -254,7 +254,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = '2024-04-15';
-        
+
         $object->setEmssionDate($testValue);
         $this->assertEquals($testValue, $object->getEmssionDate());
     }
@@ -266,7 +266,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = [new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItem()];
-        
+
         $object->setPaymentsList($testValue);
         $this->assertEquals($testValue, $object->getPaymentsList());
     }
@@ -278,7 +278,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 100.00;
-        
+
         $object->setAmountNet($testValue);
         $this->assertEquals($testValue, $object->getAmountNet());
     }
@@ -290,7 +290,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 22.50;
-        
+
         $object->setAmountVat($testValue);
         $this->assertEquals($testValue, $object->getAmountVat());
     }
@@ -302,7 +302,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 'Test import error message';
-        
+
         $object->setImportError($testValue);
         $this->assertEquals($testValue, $object->getImportError());
     }
@@ -314,7 +314,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = new \FattureInCloud\Model\PendingReceivedDocumentExtractedData();
-        
+
         $object->setExtractedData($testValue);
         $this->assertEquals($testValue, $object->getExtractedData());
     }
@@ -326,7 +326,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 12345;
-        
+
         $object->setId($testValue);
         $this->assertEquals($testValue, $object->getId());
     }
@@ -338,7 +338,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = '2024-04-17';
-        
+
         $object->setDate($testValue);
         $this->assertEquals($testValue, $object->getDate());
     }
@@ -350,7 +350,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 'Test Document Subject';
-        
+
         $object->setSubject($testValue);
         $this->assertEquals($testValue, $object->getSubject());
     }
@@ -362,7 +362,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 'test-document.pdf';
-        
+
         $object->setFilename($testValue);
         $this->assertEquals($testValue, $object->getFilename());
     }
@@ -374,7 +374,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = \FattureInCloud\Model\PendingReceivedDocumentType::MAIL;
-        
+
         $object->setType($testValue);
         $this->assertEquals($testValue, $object->getType());
     }
@@ -386,7 +386,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 'https://example.com/attachment.pdf';
-        
+
         $object->setAttachmentUrl($testValue);
         $this->assertEquals($testValue, $object->getAttachmentUrl());
     }
@@ -398,7 +398,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 122.50;
-        
+
         $object->setAmountGross($testValue);
         $this->assertEquals($testValue, $object->getAmountGross());
     }
@@ -410,7 +410,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = new \FattureInCloud\Model\Currency();
-        
+
         $object->setCurrency($testValue);
         $this->assertEquals($testValue, $object->getCurrency());
     }
@@ -422,7 +422,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 'invoice';
-        
+
         $object->setDocumentType($testValue);
         $this->assertEquals($testValue, $object->getDocumentType());
     }
@@ -434,7 +434,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 'Test Supplier Name';
-        
+
         $object->setSupplierName($testValue);
         $this->assertEquals($testValue, $object->getSupplierName());
     }
@@ -446,7 +446,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 'Test Cost Center';
-        
+
         $object->setCostCenter($testValue);
         $this->assertEquals($testValue, $object->getCostCenter());
     }
@@ -458,7 +458,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 'Test Category';
-        
+
         $object->setCategory($testValue);
         $this->assertEquals($testValue, $object->getCategory());
     }
@@ -470,7 +470,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = [new \FattureInCloud\Model\Attachment()];
-        
+
         $object->setOtherAttachments($testValue);
         $this->assertEquals($testValue, $object->getOtherAttachments());
     }
@@ -482,7 +482,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = '2024-04-15';
-        
+
         $object->setEmssionDate($testValue);
         $this->assertEquals($testValue, $object->getEmssionDate());
     }
@@ -494,7 +494,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = [new \FattureInCloud\Model\PendingReceivedDocumentPaymentsListItem()];
-        
+
         $object->setPaymentsList($testValue);
         $this->assertEquals($testValue, $object->getPaymentsList());
     }
@@ -506,7 +506,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 100.00;
-        
+
         $object->setAmountNet($testValue);
         $this->assertEquals($testValue, $object->getAmountNet());
     }
@@ -518,7 +518,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 22.50;
-        
+
         $object->setAmountVat($testValue);
         $this->assertEquals($testValue, $object->getAmountVat());
     }
@@ -530,7 +530,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = 'Test import error message';
-        
+
         $object->setImportError($testValue);
         $this->assertEquals($testValue, $object->getImportError());
     }
@@ -542,7 +542,7 @@ class PendingReceivedDocumentTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PendingReceivedDocument();
         $testValue = new \FattureInCloud\Model\PendingReceivedDocumentExtractedData();
-        
+
         $object->setExtractedData($testValue);
         $this->assertEquals($testValue, $object->getExtractedData());
     }

@@ -99,12 +99,12 @@ class OAuth2TokenResponseTest extends TestCase
     public function testSetters()
     {
         $e = new OAuth2TokenResponse('bearer', 'initial_access', 'initial_refresh', 3600);
-        
+
         $e->setTokenType('Bearer');
         $e->setAccessToken('new_access_token');
         $e->setRefreshToken('new_refresh_token');
         $e->setExpiresIn(7200);
-        
+
         $this->assertEquals('Bearer', $e->getTokenType());
         $this->assertEquals('new_access_token', $e->getAccessToken());
         $this->assertEquals('new_refresh_token', $e->getRefreshToken());

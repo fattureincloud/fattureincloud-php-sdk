@@ -78,7 +78,7 @@ class GetPendingReceivedDocumentResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\GetPendingReceivedDocumentResponse();
         $this->assertInstanceOf(\FattureInCloud\Model\GetPendingReceivedDocumentResponse::class, $object);
-        
+
         // Test that object can be created with valid data
         $testData = new \FattureInCloud\Model\PendingReceivedDocument();
         $object->setData($testData);
@@ -92,7 +92,7 @@ class GetPendingReceivedDocumentResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\GetPendingReceivedDocumentResponse();
         $testValue = new \FattureInCloud\Model\PendingReceivedDocument();
-        
+
         $object->setData($testValue);
         $this->assertEquals($testValue, $object->getData());
     }
@@ -104,7 +104,7 @@ class GetPendingReceivedDocumentResponseTest extends TestCase
     {
         $object = new \FattureInCloud\Model\GetPendingReceivedDocumentResponse();
         $testValue = new \FattureInCloud\Model\PendingReceivedDocument();
-        
+
         $object->setData($testValue);
         $this->assertEquals($testValue, $object->getData());
     }

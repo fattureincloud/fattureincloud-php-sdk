@@ -1,4 +1,4 @@
-# # GetReceivedDocumentResponse
+# GetReceivedDocumentResponse
 
 ## Properties
 

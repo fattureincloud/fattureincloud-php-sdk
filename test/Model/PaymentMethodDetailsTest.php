@@ -114,7 +114,7 @@ class PaymentMethodDetailsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PaymentMethodDetails();
         $testValue = "Test Title";
-        
+
         $object->setTitle($testValue);
         $this->assertEquals($testValue, $object->getTitle());
     }
@@ -126,7 +126,7 @@ class PaymentMethodDetailsTest extends TestCase
     {
         $object = new \FattureInCloud\Model\PaymentMethodDetails();
         $testValue = "Test Description";
-        
+
         $object->setDescription($testValue);
         $this->assertEquals($testValue, $object->getDescription());
     }

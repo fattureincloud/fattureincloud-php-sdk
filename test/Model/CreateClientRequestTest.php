@@ -139,7 +139,7 @@ class CreateClientRequestTest extends TestCase
     {
         $object = new \FattureInCloud\Model\CreateClientRequest();
         $testValue = new \FattureInCloud\Model\Client();
-        
+
         $object->setData($testValue);
         $this->assertEquals($testValue, $object->getData());
     }

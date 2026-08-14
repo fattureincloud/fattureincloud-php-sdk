@@ -60,7 +60,7 @@ class EmptyConditionTest extends TestCase
     {
         $emptyCondition1 = new EmptyCondition();
         $emptyCondition2 = new EmptyCondition();
-        
+
         $this->assertEquals($emptyCondition1, $emptyCondition2);
     }
 }

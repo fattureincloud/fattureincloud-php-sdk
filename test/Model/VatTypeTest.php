@@ -180,7 +180,7 @@ class VatTypeTest extends TestCase
     {
         $object = new \FattureInCloud\Model\VatType();
         $testValue = 12345;
-        
+
         $object->setId($testValue);
         $this->assertEquals($testValue, $object->getId());
     }
@@ -192,7 +192,7 @@ class VatTypeTest extends TestCase
     {
         $object = new \FattureInCloud\Model\VatType();
         $testValue = 22.5;
-        
+
         $object->setValue($testValue);
         $this->assertEquals($testValue, $object->getValue());
     }
@@ -204,7 +204,7 @@ class VatTypeTest extends TestCase
     {
         $object = new \FattureInCloud\Model\VatType();
         $testValue = 'Test VAT Description';
-        
+
         $object->setDescription($testValue);
         $this->assertEquals($testValue, $object->getDescription());
     }
@@ -216,7 +216,7 @@ class VatTypeTest extends TestCase
     {
         $object = new \FattureInCloud\Model\VatType();
         $testValue = 'Test notes for VAT type';
-        
+
         $object->setNotes($testValue);
         $this->assertEquals($testValue, $object->getNotes());
     }
@@ -228,7 +228,7 @@ class VatTypeTest extends TestCase
     {
         $object = new \FattureInCloud\Model\VatType();
         $testValue = false;
-        
+
         $object->setEInvoice($testValue);
         $this->assertEquals($testValue, $object->getEInvoice());
     }
@@ -240,7 +240,7 @@ class VatTypeTest extends TestCase
     {
         $object = new \FattureInCloud\Model\VatType();
         $testValue = 3;
-        
+
         $object->setEiType($testValue);
         $this->assertEquals($testValue, $object->getEiType());
     }
@@ -252,7 +252,7 @@ class VatTypeTest extends TestCase
     {
         $object = new \FattureInCloud\Model\VatType();
         $testValue = 'Test EI Description';
-        
+
         $object->setEiDescription($testValue);
         $this->assertEquals($testValue, $object->getEiDescription());
     }
@@ -264,7 +264,7 @@ class VatTypeTest extends TestCase
     {
         $object = new \FattureInCloud\Model\VatType();
         $testValue = false;
-        
+
         $object->setEditable($testValue);
         $this->assertEquals($testValue, $object->getEditable());
     }
@@ -276,7 +276,7 @@ class VatTypeTest extends TestCase
     {
         $object = new \FattureInCloud\Model\VatType();
         $testValue = true;
-        
+
         $object->setIsDisabled($testValue);
         $this->assertEquals($testValue, $object->getIsDisabled());
     }
@@ -288,7 +288,7 @@ class VatTypeTest extends TestCase
     {
         $object = new \FattureInCloud\Model\VatType();
         $testValue = true;
-        
+
         $object->setDefault($testValue);
         $this->assertEquals($testValue, $object->getDefault());
     }

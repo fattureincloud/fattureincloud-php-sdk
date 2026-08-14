@@ -103,7 +103,7 @@ class VerifyWebhooksSubscriptionRequestTest extends TestCase
     {
         $dataObject = $this->object->getData();
         $this->assertInstanceOf(\FattureInCloud\Model\VerifyWebhooksSubscription::class, $dataObject);
-        
+
         // Verify the data values match the setup data
         $this->assertEquals($this->array['data']['id'], $dataObject->getId());
         $this->assertEquals($this->array['data']['verification_method'], $dataObject->getVerificationMethod());

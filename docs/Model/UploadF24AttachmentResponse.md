@@ -1,4 +1,4 @@
-# # UploadF24AttachmentResponse
+# UploadF24AttachmentResponse
 
 ## Properties
 

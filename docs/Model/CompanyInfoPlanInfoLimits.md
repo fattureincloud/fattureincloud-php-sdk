@@ -1,4 +1,4 @@
-# # CompanyInfoPlanInfoLimits
+# CompanyInfoPlanInfoLimits
 
 ## Properties
 

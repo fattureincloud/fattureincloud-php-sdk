@@ -1,4 +1,4 @@
-# # SupplierType
+# SupplierType
 
 ## Properties
 
