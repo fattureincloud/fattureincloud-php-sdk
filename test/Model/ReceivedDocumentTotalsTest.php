@@ -3,7 +3,7 @@
 /**
  * ReceivedDocumentTotalsTest
  *
- * PHP version 7.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  FattureInCloud
@@ -170,7 +170,7 @@ class ReceivedDocumentTotalsTest extends TestCase
     public function testSetAmountVat()
     {
         $object = new \FattureInCloud\Model\ReceivedDocumentTotals();
-        $testValue = 27.36;
+        $testValue = 27.46;
         
         $object->setAmountVat($testValue);
         $this->assertEquals($testValue, $object->getAmountVat());
