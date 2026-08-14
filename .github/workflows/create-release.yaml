@@ -2,42 +2,73 @@ name: Release PHP SDK Phar Archive
 on:
   repository_dispatch:
     types: [create-release]
-    
+
 jobs:
   create-release:
     runs-on: ubuntu-latest
-    steps: 
-    - id: setup-php
-      name: Setup PHP with PECL extension
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: 8.1.0
-        ini-values: phar.readonly=Off
+    permissions:
+      contents: write # Required to upload the phar to the release
+    steps:
+      - id: setup-php
+        name: Setup PHP with PECL extension
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1.0
+          ini-values: phar.readonly=Off
 
-    - id: setup-composer
-      name: Setup Composer
-      run: |
-        php -v
-        wget -O composer-setup.php https://getcomposer.org/installer
-        sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+      - id: setup-composer
+        name: Setup Composer
+        run: |
+          php -v
+          wget -O composer-setup.php https://getcomposer.org/installer
+          sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
-    - id: create-phar
-      name: Create binaries
-      run: |
-        mkdir workfolder
-        cd workfolder
-        echo "{\"name\":\"gen/binaries\",\"require\":{\"fattureincloud/fattureincloud-php-sdk\":\"^2.0\"},\"config\":{\"platform\":{\"php\":\"7.1\"}}}" > composer.json
-        composer install
-        mv vendor/autoload.php vendor/index.php
-        echo "<?php \$pharFile = 'fattureincloud-php-sdk.phar'; \$p = new Phar(\$pharFile); \$p->buildFromDirectory('./vendor/'); \$p->createDefaultStub('./vendor/index.php');" > file.php
-        php file.php
+      - id: resolve-version
+        name: Resolve SDK version
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PAYLOAD_VERSION: ${{ github.event.client_payload.version }}
+        run: |
+          VERSION="$PAYLOAD_VERSION"
+          # the event can be dispatched without payload: fall back to the latest release
+          if [ -z "$VERSION" ]; then
+            VERSION=$(gh api "repos/$GITHUB_REPOSITORY/releases/latest" --jq '.tag_name' | sed 's/^v//')
+          fi
+          if [ -z "$VERSION" ] || [ "$VERSION" = "null" ]; then
+            echo "::error::Unable to resolve the SDK version to build"
+            exit 1
+          fi
+          echo "Building phar for version: $VERSION"
+          echo "sdk_version=$VERSION" >> $GITHUB_ENV
 
-    - id: release-phar
-      name: Release phar
-      if: ${{ !env.ACT }}
-      uses: svenstaro/upload-release-action@v2
-      with:
-        repo_token: ${{ github.token }}
-        file: workfolder/fattureincloud-php-sdk.phar
-        asset_name: fattureincloud-php-sdk.phar
-        tag: "refs/tags/v${{ github.event.client_payload.version }}"
+      - id: create-phar
+        name: Create binaries
+        env:
+          SDK_VERSION: ${{ env.sdk_version }}
+        run: |
+          mkdir workfolder
+          cd workfolder
+          echo "{\"name\":\"gen/binaries\",\"require\":{\"fattureincloud/fattureincloud-php-sdk\":\"$SDK_VERSION\"},\"config\":{\"platform\":{\"php\":\"7.4\"}}}" > composer.json
+          # the tag is pushed right before this workflow runs: give Packagist time to index it
+          for attempt in 1 2 3 4 5; do
+            composer update --no-dev --prefer-dist && break
+            if [ "$attempt" = "5" ]; then
+              echo "::error::fattureincloud/fattureincloud-php-sdk $SDK_VERSION not available on Packagist"
+              exit 1
+            fi
+            echo "Version $SDK_VERSION not on Packagist yet, retrying in 30s (attempt $attempt/5)..."
+            sleep 30
+          done
+          mv vendor/autoload.php vendor/index.php
+          echo "<?php \$pharFile = 'fattureincloud-php-sdk.phar'; \$p = new Phar(\$pharFile); \$p->buildFromDirectory('./vendor/'); \$p->createDefaultStub('./vendor/index.php');" > file.php
+          php file.php
+
+      - id: release-phar
+        name: Release phar
+        if: ${{ !env.ACT }}
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ github.token }}
+          file: workfolder/fattureincloud-php-sdk.phar
+          asset_name: fattureincloud-php-sdk.phar
+          tag: "refs/tags/v${{ env.sdk_version }}"
