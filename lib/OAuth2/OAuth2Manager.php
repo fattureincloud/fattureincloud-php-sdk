@@ -29,7 +29,7 @@ abstract class OAuth2Manager
      * @param string|null $baseUri
      * @param Client|null $client
      */
-    public function __construct(string $clientId, string $baseUri = self::DEFAULT_BASE_URI, Client $client = null)
+    public function __construct(string $clientId, string $baseUri = self::DEFAULT_BASE_URI, ?Client $client = null)
     {
         if ($client === null) {
             $this->client = new Client();
@@ -51,7 +51,7 @@ abstract class OAuth2Manager
     /**
      * @param Client|null $client
      */
-    public function setClient(Client $client = null): void
+    public function setClient(?Client $client = null): void
     {
         if ($client === null) {
             $this->client = new Client();
